@@ -67,18 +67,17 @@ message CheckUserExists{
 }
 
 
-message CreateNotification{
+message CreateNotification {
   model.Notification notification = 1;
 }
 
-message UpdateNotification{
+message UpdateNotification {
   model.Notification notification = 1;
 }
 
-message DeleteNotification{
+message DeleteNotification {
   model.Notification notification = 1;
 }
-
 
 message GetNotifications{
   int64 total_count = 1;

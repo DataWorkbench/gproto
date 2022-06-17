@@ -11,11 +11,11 @@ option java_outer_classname = "PBSvcNotifier";
 option java_multiple_files = false;
 
 import "proto/types/request/notifier.proto";
-import "proto/types/response/notifier.proto";
+//import "proto/types/response/notifier.proto";
 import "proto/types/model/empty.proto";
 
 service Notifier {
   rpc SendNotification(request.SendNotification) returns (model.EmptyStruct) {}
 
-  rpc ListNotifications(request.ListNotifications) returns (response.ListNotifications) {}
+//  rpc ListNotifications(request.ListNotifications) returns (response.ListNotifications) {}
 }

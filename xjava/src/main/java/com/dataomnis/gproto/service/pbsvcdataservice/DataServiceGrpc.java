@@ -263,184 +263,184 @@ public final class DataServiceGrpc {
     return getDeleteApiGroupsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> getCreateDataServiceApiMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> getListApiConfigsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListApiConfigs",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> getCreateDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> getCreateDataServiceApiMethod;
-    if ((getCreateDataServiceApiMethod = DataServiceGrpc.getCreateDataServiceApiMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> getListApiConfigsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> getListApiConfigsMethod;
+    if ((getListApiConfigsMethod = DataServiceGrpc.getListApiConfigsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getCreateDataServiceApiMethod = DataServiceGrpc.getCreateDataServiceApiMethod) == null) {
-          DataServiceGrpc.getCreateDataServiceApiMethod = getCreateDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi>newBuilder()
+        if ((getListApiConfigsMethod = DataServiceGrpc.getListApiConfigsMethod) == null) {
+          DataServiceGrpc.getListApiConfigsMethod = getListApiConfigsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDataServiceApi"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListApiConfigs"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("CreateDataServiceApi"))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("ListApiConfigs"))
               .build();
         }
       }
     }
-    return getCreateDataServiceApiMethod;
+    return getListApiConfigsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateDataServiceApiMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> getDescribeApiConfigMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.class,
+      fullMethodName = SERVICE_NAME + '/' + "DescribeApiConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> getDescribeApiConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> getDescribeApiConfigMethod;
+    if ((getDescribeApiConfigMethod = DataServiceGrpc.getDescribeApiConfigMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDescribeApiConfigMethod = DataServiceGrpc.getDescribeApiConfigMethod) == null) {
+          DataServiceGrpc.getDescribeApiConfigMethod = getDescribeApiConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeApiConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeApiConfig"))
+              .build();
+        }
+      }
+    }
+    return getDescribeApiConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> getCreateApiConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateApiConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> getCreateApiConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> getCreateApiConfigMethod;
+    if ((getCreateApiConfigMethod = DataServiceGrpc.getCreateApiConfigMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getCreateApiConfigMethod = DataServiceGrpc.getCreateApiConfigMethod) == null) {
+          DataServiceGrpc.getCreateApiConfigMethod = getCreateApiConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateApiConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("CreateApiConfig"))
+              .build();
+        }
+      }
+    }
+    return getCreateApiConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateApiConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateDataServiceApiMethod;
-    if ((getUpdateDataServiceApiMethod = DataServiceGrpc.getUpdateDataServiceApiMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiConfigMethod;
+    if ((getUpdateApiConfigMethod = DataServiceGrpc.getUpdateApiConfigMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getUpdateDataServiceApiMethod = DataServiceGrpc.getUpdateDataServiceApiMethod) == null) {
-          DataServiceGrpc.getUpdateDataServiceApiMethod = getUpdateDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getUpdateApiConfigMethod = DataServiceGrpc.getUpdateApiConfigMethod) == null) {
+          DataServiceGrpc.getUpdateApiConfigMethod = getUpdateApiConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDataServiceApi"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateApiConfig"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("UpdateDataServiceApi"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("UpdateApiConfig"))
               .build();
         }
       }
     }
-    return getUpdateDataServiceApiMethod;
+    return getUpdateApiConfigMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> getDescribeDataServiceApiMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteApiConfigsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> getDescribeDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> getDescribeDataServiceApiMethod;
-    if ((getDescribeDataServiceApiMethod = DataServiceGrpc.getDescribeDataServiceApiMethod) == null) {
-      synchronized (DataServiceGrpc.class) {
-        if ((getDescribeDataServiceApiMethod = DataServiceGrpc.getDescribeDataServiceApiMethod) == null) {
-          DataServiceGrpc.getDescribeDataServiceApiMethod = getDescribeDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataServiceApi"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeDataServiceApi"))
-              .build();
-        }
-      }
-    }
-    return getDescribeDataServiceApiMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> getListDataServiceApisMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListDataServiceApis",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> getListDataServiceApisMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> getListDataServiceApisMethod;
-    if ((getListDataServiceApisMethod = DataServiceGrpc.getListDataServiceApisMethod) == null) {
-      synchronized (DataServiceGrpc.class) {
-        if ((getListDataServiceApisMethod = DataServiceGrpc.getListDataServiceApisMethod) == null) {
-          DataServiceGrpc.getListDataServiceApisMethod = getListDataServiceApisMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataServiceApis"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("ListDataServiceApis"))
-              .build();
-        }
-      }
-    }
-    return getListDataServiceApisMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteDataServiceApisMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteDataServiceApis",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.class,
+      fullMethodName = SERVICE_NAME + '/' + "DeleteApiConfigs",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteDataServiceApisMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteDataServiceApisMethod;
-    if ((getDeleteDataServiceApisMethod = DataServiceGrpc.getDeleteDataServiceApisMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteApiConfigsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getDeleteApiConfigsMethod;
+    if ((getDeleteApiConfigsMethod = DataServiceGrpc.getDeleteApiConfigsMethod) == null) {
       synchronized (DataServiceGrpc.class) {
-        if ((getDeleteDataServiceApisMethod = DataServiceGrpc.getDeleteDataServiceApisMethod) == null) {
-          DataServiceGrpc.getDeleteDataServiceApisMethod = getDeleteDataServiceApisMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+        if ((getDeleteApiConfigsMethod = DataServiceGrpc.getDeleteApiConfigsMethod) == null) {
+          DataServiceGrpc.getDeleteApiConfigsMethod = getDeleteApiConfigsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDataServiceApis"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteApiConfigs"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DeleteDataServiceApis"))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DeleteApiConfigs"))
               .build();
         }
       }
     }
-    return getDeleteDataServiceApisMethod;
+    return getDeleteApiConfigsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> getTestDataServiceApiMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> getTestDataServiceApiMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "TestDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> getTestDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> getTestDataServiceApiMethod;
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> getTestDataServiceApiMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> getTestDataServiceApiMethod;
     if ((getTestDataServiceApiMethod = DataServiceGrpc.getTestDataServiceApiMethod) == null) {
       synchronized (DataServiceGrpc.class) {
         if ((getTestDataServiceApiMethod = DataServiceGrpc.getTestDataServiceApiMethod) == null) {
           DataServiceGrpc.getTestDataServiceApiMethod = getTestDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestDataServiceApi"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi.getDefaultInstance()))
               .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("TestDataServiceApi"))
               .build();
         }
@@ -449,27 +449,27 @@ public final class DataServiceGrpc {
     return getTestDataServiceApiMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getPublishDataServiceApiMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "PublishDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getPublishDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getPublishDataServiceApiMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getPublishDataServiceApiMethod;
     if ((getPublishDataServiceApiMethod = DataServiceGrpc.getPublishDataServiceApiMethod) == null) {
       synchronized (DataServiceGrpc.class) {
         if ((getPublishDataServiceApiMethod = DataServiceGrpc.getPublishDataServiceApiMethod) == null) {
           DataServiceGrpc.getPublishDataServiceApiMethod = getPublishDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PublishDataServiceApi"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("PublishDataServiceApi"))
@@ -480,120 +480,27 @@ public final class DataServiceGrpc {
     return getPublishDataServiceApiMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> getListDataServiceApiVersionsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListDataServiceApiVersions",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> getListDataServiceApiVersionsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> getListDataServiceApiVersionsMethod;
-    if ((getListDataServiceApiVersionsMethod = DataServiceGrpc.getListDataServiceApiVersionsMethod) == null) {
-      synchronized (DataServiceGrpc.class) {
-        if ((getListDataServiceApiVersionsMethod = DataServiceGrpc.getListDataServiceApiVersionsMethod) == null) {
-          DataServiceGrpc.getListDataServiceApiVersionsMethod = getListDataServiceApiVersionsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataServiceApiVersions"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("ListDataServiceApiVersions"))
-              .build();
-        }
-      }
-    }
-    return getListDataServiceApiVersionsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> getDescribeDataServiceApiVersionMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DescribeDataServiceApiVersion",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.class,
-      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
-      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> getDescribeDataServiceApiVersionMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> getDescribeDataServiceApiVersionMethod;
-    if ((getDescribeDataServiceApiVersionMethod = DataServiceGrpc.getDescribeDataServiceApiVersionMethod) == null) {
-      synchronized (DataServiceGrpc.class) {
-        if ((getDescribeDataServiceApiVersionMethod = DataServiceGrpc.getDescribeDataServiceApiVersionMethod) == null) {
-          DataServiceGrpc.getDescribeDataServiceApiVersionMethod = getDescribeDataServiceApiVersionMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataServiceApiVersion"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeDataServiceApiVersion"))
-              .build();
-        }
-      }
-    }
-    return getDescribeDataServiceApiVersionMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RepublishDataServiceApi",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
-      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod;
-    if ((getRepublishDataServiceApiMethod = DataServiceGrpc.getRepublishDataServiceApiMethod) == null) {
-      synchronized (DataServiceGrpc.class) {
-        if ((getRepublishDataServiceApiMethod = DataServiceGrpc.getRepublishDataServiceApiMethod) == null) {
-          DataServiceGrpc.getRepublishDataServiceApiMethod = getRepublishDataServiceApiMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RepublishDataServiceApi"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
-              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("RepublishDataServiceApi"))
-              .build();
-        }
-      }
-    }
-    return getRepublishDataServiceApiMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAbolishDataServiceApisMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "AbolishDataServiceApis",
-      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.class,
       responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAbolishDataServiceApisMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAbolishDataServiceApisMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getAbolishDataServiceApisMethod;
     if ((getAbolishDataServiceApisMethod = DataServiceGrpc.getAbolishDataServiceApisMethod) == null) {
       synchronized (DataServiceGrpc.class) {
         if ((getAbolishDataServiceApisMethod = DataServiceGrpc.getAbolishDataServiceApisMethod) == null) {
           DataServiceGrpc.getAbolishDataServiceApisMethod = getAbolishDataServiceApisMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AbolishDataServiceApis"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
               .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("AbolishDataServiceApis"))
@@ -602,6 +509,99 @@ public final class DataServiceGrpc {
       }
     }
     return getAbolishDataServiceApisMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> getListDataServiceApiVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDataServiceApiVersions",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> getListDataServiceApiVersionsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> getListDataServiceApiVersionsMethod;
+    if ((getListDataServiceApiVersionsMethod = DataServiceGrpc.getListDataServiceApiVersionsMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getListDataServiceApiVersionsMethod = DataServiceGrpc.getListDataServiceApiVersionsMethod) == null) {
+          DataServiceGrpc.getListDataServiceApiVersionsMethod = getListDataServiceApiVersionsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDataServiceApiVersions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("ListDataServiceApiVersions"))
+              .build();
+        }
+      }
+    }
+    return getListDataServiceApiVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> getDescribeDataServiceApiVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeDataServiceApiVersion",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> getDescribeDataServiceApiVersionMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> getDescribeDataServiceApiVersionMethod;
+    if ((getDescribeDataServiceApiVersionMethod = DataServiceGrpc.getDescribeDataServiceApiVersionMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDescribeDataServiceApiVersionMethod = DataServiceGrpc.getDescribeDataServiceApiVersionMethod) == null) {
+          DataServiceGrpc.getDescribeDataServiceApiVersionMethod = getDescribeDataServiceApiVersionMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataServiceApiVersion"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeDataServiceApiVersion"))
+              .build();
+        }
+      }
+    }
+    return getDescribeDataServiceApiVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepublishDataServiceApi",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRepublishDataServiceApiMethod;
+    if ((getRepublishDataServiceApiMethod = DataServiceGrpc.getRepublishDataServiceApiMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getRepublishDataServiceApiMethod = DataServiceGrpc.getRepublishDataServiceApiMethod) == null) {
+          DataServiceGrpc.getRepublishDataServiceApiMethod = getRepublishDataServiceApiMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RepublishDataServiceApi"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("RepublishDataServiceApi"))
+              .build();
+        }
+      }
+    }
+    return getRepublishDataServiceApiMethod;
   }
 
   /**
@@ -710,79 +710,79 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public void createDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDataServiceApiMethod(), responseObserver);
+    public void listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListApiConfigsMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi request,
+    public void describeApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeApiConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void createApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateApiConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDataServiceApiMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiConfigMethod(), responseObserver);
     }
 
     /**
      */
-    public void describeDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataServiceApiMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void listDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataServiceApisMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void deleteDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis request,
+    public void deleteApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteDataServiceApisMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteApiConfigsMethod(), responseObserver);
     }
 
     /**
      */
-    public void testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> responseObserver) {
+    public void testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTestDataServiceApiMethod(), responseObserver);
     }
 
     /**
      */
-    public void publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi request,
+    public void publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPublishDataServiceApiMethod(), responseObserver);
     }
 
     /**
      */
-    public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> responseObserver) {
+    public void abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAbolishDataServiceApisMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataServiceApiVersionsMethod(), responseObserver);
     }
 
     /**
      */
-    public void describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> responseObserver) {
+    public void describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataServiceApiVersionMethod(), responseObserver);
     }
 
     /**
      */
-    public void republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request,
+    public void republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRepublishDataServiceApiMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAbolishDataServiceApisMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -844,82 +844,82 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_API_GROUPS)))
           .addMethod(
-            getCreateDataServiceApiMethod(),
+            getListApiConfigsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi>(
-                  this, METHODID_CREATE_DATA_SERVICE_API)))
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs>(
+                  this, METHODID_LIST_API_CONFIGS)))
           .addMethod(
-            getUpdateDataServiceApiMethod(),
+            getDescribeApiConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi,
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig>(
+                  this, METHODID_DESCRIBE_API_CONFIG)))
+          .addMethod(
+            getCreateApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig>(
+                  this, METHODID_CREATE_API_CONFIG)))
+          .addMethod(
+            getUpdateApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_UPDATE_DATA_SERVICE_API)))
+                  this, METHODID_UPDATE_API_CONFIG)))
           .addMethod(
-            getDescribeDataServiceApiMethod(),
+            getDeleteApiConfigsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi>(
-                  this, METHODID_DESCRIBE_DATA_SERVICE_API)))
-          .addMethod(
-            getListDataServiceApisMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis>(
-                  this, METHODID_LIST_DATA_SERVICE_APIS)))
-          .addMethod(
-            getDeleteDataServiceApisMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis,
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_DELETE_DATA_SERVICE_APIS)))
+                  this, METHODID_DELETE_API_CONFIGS)))
           .addMethod(
             getTestDataServiceApiMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi>(
                   this, METHODID_TEST_DATA_SERVICE_API)))
           .addMethod(
             getPublishDataServiceApiMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi,
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_PUBLISH_DATA_SERVICE_API)))
+          .addMethod(
+            getAbolishDataServiceApisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_ABOLISH_DATA_SERVICE_APIS)))
           .addMethod(
             getListDataServiceApiVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions>(
                   this, METHODID_LIST_DATA_SERVICE_API_VERSIONS)))
           .addMethod(
             getDescribeDataServiceApiVersionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
-                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion>(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion>(
                   this, METHODID_DESCRIBE_DATA_SERVICE_API_VERSION)))
           .addMethod(
             getRepublishDataServiceApiMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion,
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_REPUBLISH_DATA_SERVICE_API)))
-          .addMethod(
-            getAbolishDataServiceApisMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis,
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
-                  this, METHODID_ABOLISH_DATA_SERVICE_APIS)))
           .build();
     }
   }
@@ -1004,55 +1004,55 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public void createDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> responseObserver) {
+    public void listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateDataServiceApiMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListApiConfigsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi request,
+    public void describeApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeApiConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void createApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateApiConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateDataServiceApiMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateApiConfigMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void describeDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDescribeDataServiceApiMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void listDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListDataServiceApisMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void deleteDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis request,
+    public void deleteApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteDataServiceApisMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getDeleteApiConfigsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> responseObserver) {
+    public void testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestDataServiceApiMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi request,
+    public void publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPublishDataServiceApiMethod(), getCallOptions()), request, responseObserver);
@@ -1060,34 +1060,34 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> responseObserver) {
+    public void abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAbolishDataServiceApisMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDataServiceApiVersionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> responseObserver) {
+    public void describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeDataServiceApiVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request,
+    public void republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRepublishDataServiceApiMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAbolishDataServiceApisMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -1163,79 +1163,79 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi createDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDataServiceApiMethod(), getCallOptions(), request);
+          getChannel(), getListApiConfigsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig describeApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateDataServiceApiMethod(), getCallOptions(), request);
+          getChannel(), getDescribeApiConfigMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi describeDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig createApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDescribeDataServiceApiMethod(), getCallOptions(), request);
+          getChannel(), getCreateApiConfigMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis listDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListDataServiceApisMethod(), getCallOptions(), request);
+          getChannel(), getUpdateApiConfigMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDataServiceApisMethod(), getCallOptions(), request);
+          getChannel(), getDeleteApiConfigsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi testDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestDataServiceApiMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct publishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPublishDataServiceApiMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAbolishDataServiceApisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDataServiceApiVersionsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion describeDataServiceApiVersion(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeDataServiceApiVersionMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request) {
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct republishDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRepublishDataServiceApiMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAbolishDataServiceApisMethod(), getCallOptions(), request);
     }
   }
 
@@ -1319,48 +1319,48 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi> createDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> listApiConfigs(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateDataServiceApiMethod(), getCallOptions()), request);
+          getChannel().newCall(getListApiConfigsMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig> describeApiConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateDataServiceApiMethod(), getCallOptions()), request);
+          getChannel().newCall(getDescribeApiConfigMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi> describeDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig> createApiConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDescribeDataServiceApiMethod(), getCallOptions()), request);
+          getChannel().newCall(getCreateApiConfigMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis> listDataServiceApis(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateApiConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListDataServiceApisMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateApiConfigMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteDataServiceApis(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteApiConfigs(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteDataServiceApisMethod(), getCallOptions()), request);
+          getChannel().newCall(getDeleteApiConfigsMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi> testDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi> testDataServiceApi(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestDataServiceApiMethod(), getCallOptions()), request);
     }
@@ -1368,23 +1368,31 @@ public final class DataServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> publishDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPublishDataServiceApiMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions> listDataServiceApiVersions(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> abolishDataServiceApis(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAbolishDataServiceApisMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> listDataServiceApiVersions(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDataServiceApiVersionsMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion> describeDataServiceApiVersion(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion> describeDataServiceApiVersion(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeDataServiceApiVersionMethod(), getCallOptions()), request);
     }
@@ -1392,17 +1400,9 @@ public final class DataServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> republishDataServiceApi(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRepublishDataServiceApiMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> abolishDataServiceApis(
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAbolishDataServiceApisMethod(), getCallOptions()), request);
     }
   }
 
@@ -1414,17 +1414,17 @@ public final class DataServiceGrpc {
   private static final int METHODID_CREATE_API_GROUP = 5;
   private static final int METHODID_LIST_API_GROUPS = 6;
   private static final int METHODID_DELETE_API_GROUPS = 7;
-  private static final int METHODID_CREATE_DATA_SERVICE_API = 8;
-  private static final int METHODID_UPDATE_DATA_SERVICE_API = 9;
-  private static final int METHODID_DESCRIBE_DATA_SERVICE_API = 10;
-  private static final int METHODID_LIST_DATA_SERVICE_APIS = 11;
-  private static final int METHODID_DELETE_DATA_SERVICE_APIS = 12;
+  private static final int METHODID_LIST_API_CONFIGS = 8;
+  private static final int METHODID_DESCRIBE_API_CONFIG = 9;
+  private static final int METHODID_CREATE_API_CONFIG = 10;
+  private static final int METHODID_UPDATE_API_CONFIG = 11;
+  private static final int METHODID_DELETE_API_CONFIGS = 12;
   private static final int METHODID_TEST_DATA_SERVICE_API = 13;
   private static final int METHODID_PUBLISH_DATA_SERVICE_API = 14;
-  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 15;
-  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 16;
-  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 17;
-  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 18;
+  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 15;
+  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 16;
+  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 17;
+  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1475,48 +1475,48 @@ public final class DataServiceGrpc {
           serviceImpl.deleteApiGroups((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiGroups) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_CREATE_DATA_SERVICE_API:
-          serviceImpl.createDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateCustomerApi>) responseObserver);
+        case METHODID_LIST_API_CONFIGS:
+          serviceImpl.listApiConfigs((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs>) responseObserver);
           break;
-        case METHODID_UPDATE_DATA_SERVICE_API:
-          serviceImpl.updateDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi) request,
+        case METHODID_DESCRIBE_API_CONFIG:
+          serviceImpl.describeApiConfig((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig>) responseObserver);
+          break;
+        case METHODID_CREATE_API_CONFIG:
+          serviceImpl.createApiConfig((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.CreateApiConfig>) responseObserver);
+          break;
+        case METHODID_UPDATE_API_CONFIG:
+          serviceImpl.updateApiConfig((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
-        case METHODID_DESCRIBE_DATA_SERVICE_API:
-          serviceImpl.describeDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeCustomerApi>) responseObserver);
-          break;
-        case METHODID_LIST_DATA_SERVICE_APIS:
-          serviceImpl.listDataServiceApis((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListCustomerApis>) responseObserver);
-          break;
-        case METHODID_DELETE_DATA_SERVICE_APIS:
-          serviceImpl.deleteDataServiceApis((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis) request,
+        case METHODID_DELETE_API_CONFIGS:
+          serviceImpl.deleteApiConfigs((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_TEST_DATA_SERVICE_API:
-          serviceImpl.testDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestCustomerApi>) responseObserver);
+          serviceImpl.testDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi>) responseObserver);
           break;
         case METHODID_PUBLISH_DATA_SERVICE_API:
-          serviceImpl.publishDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
-          break;
-        case METHODID_LIST_DATA_SERVICE_API_VERSIONS:
-          serviceImpl.listDataServiceApiVersions((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiVersions>) responseObserver);
-          break;
-        case METHODID_DESCRIBE_DATA_SERVICE_API_VERSION:
-          serviceImpl.describeDataServiceApiVersion((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiVersion>) responseObserver);
-          break;
-        case METHODID_REPUBLISH_DATA_SERVICE_API:
-          serviceImpl.republishDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion) request,
+          serviceImpl.publishDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_ABOLISH_DATA_SERVICE_APIS:
-          serviceImpl.abolishDataServiceApis((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis) request,
+          serviceImpl.abolishDataServiceApis((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_LIST_DATA_SERVICE_API_VERSIONS:
+          serviceImpl.listDataServiceApiVersions((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_DATA_SERVICE_API_VERSION:
+          serviceImpl.describeDataServiceApiVersion((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion>) responseObserver);
+          break;
+        case METHODID_REPUBLISH_DATA_SERVICE_API:
+          serviceImpl.republishDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
@@ -1588,17 +1588,17 @@ public final class DataServiceGrpc {
               .addMethod(getCreateApiGroupMethod())
               .addMethod(getListApiGroupsMethod())
               .addMethod(getDeleteApiGroupsMethod())
-              .addMethod(getCreateDataServiceApiMethod())
-              .addMethod(getUpdateDataServiceApiMethod())
-              .addMethod(getDescribeDataServiceApiMethod())
-              .addMethod(getListDataServiceApisMethod())
-              .addMethod(getDeleteDataServiceApisMethod())
+              .addMethod(getListApiConfigsMethod())
+              .addMethod(getDescribeApiConfigMethod())
+              .addMethod(getCreateApiConfigMethod())
+              .addMethod(getUpdateApiConfigMethod())
+              .addMethod(getDeleteApiConfigsMethod())
               .addMethod(getTestDataServiceApiMethod())
               .addMethod(getPublishDataServiceApiMethod())
+              .addMethod(getAbolishDataServiceApisMethod())
               .addMethod(getListDataServiceApiVersionsMethod())
               .addMethod(getDescribeDataServiceApiVersionMethod())
               .addMethod(getRepublishDataServiceApiMethod())
-              .addMethod(getAbolishDataServiceApisMethod())
               .build();
         }
       }

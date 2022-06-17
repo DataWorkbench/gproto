@@ -28,7 +28,7 @@ public final class PBSvcDataService {
       "dataservice_manage.proto\032-proto/types/re" +
       "sponse/dataservice_manage.proto\032\035proto/t" +
       "ypes/model/empty.proto\032#proto/types/mode" +
-      "l/dataservice.proto2\250\014\n\013DataService\022c\n\030C" +
+      "l/dataservice.proto2\274\014\n\013DataService\022c\n\030C" +
       "reateDataServiceCluster\022!.request.Create" +
       "DataServiceCluster\032\".response.CreateData" +
       "ServiceCluster\"\000\022`\n\027ListDataServiceClust" +
@@ -45,33 +45,33 @@ public final class PBSvcDataService {
       "ateApiGroup\"\000\022B\n\rListApiGroups\022\026.request" +
       ".ListApiGroups\032\027.response.ListApiGroups\"" +
       "\000\022A\n\017DeleteApiGroups\022\030.request.DeleteApi" +
-      "Groups\032\022.model.EmptyStruct\"\000\022Q\n\024CreateDa" +
-      "taServiceApi\022\032.request.CreateCustomerApi" +
-      "\032\033.response.CreateCustomerApi\"\000\022H\n\024Updat" +
-      "eDataServiceApi\022\032.request.UpdateCustomer" +
-      "Api\032\022.model.EmptyStruct\"\000\022W\n\026DescribeDat" +
-      "aServiceApi\022\034.request.DescribeCustomerAp" +
-      "i\032\035.response.DescribeCustomerApi\"\000\022N\n\023Li" +
-      "stDataServiceApis\022\031.request.ListCustomer" +
-      "Apis\032\032.response.ListCustomerApis\"\000\022J\n\025De" +
-      "leteDataServiceApis\022\033.request.DeleteCust" +
-      "omerApis\032\022.model.EmptyStruct\"\000\022K\n\022TestDa" +
-      "taServiceApi\022\030.request.TestCustomerApi\032\031" +
-      ".response.TestCustomerApi\"\000\022J\n\025PublishDa" +
-      "taServiceApi\022\033.request.PublishCustomerAp" +
-      "i\032\022.model.EmptyStruct\"\000\022S\n\032ListDataServi" +
-      "ceApiVersions\022\030.request.ListApiVersions\032" +
-      "\031.response.ListApiVersions\"\000\022\\\n\035Describe" +
-      "DataServiceApiVersion\022\033.request.Describe" +
-      "ApiVersion\032\034.response.DescribeApiVersion" +
-      "\"\000\022L\n\027RepublishDataServiceApi\022\033.request." +
-      "DescribeApiVersion\032\022.model.EmptyStruct\"\000" +
-      "\022L\n\026AbolishDataServiceApis\022\034.request.Abo" +
-      "lishCustomerApis\032\022.model.EmptyStruct\"\000B\201" +
-      "\001\n-com.dataomnis.gproto.service.pbsvcdat" +
-      "aserviceB\020PBSvcDataServiceP\000Z<github.com" +
-      "/DataWorkbench/gproto/xgo/service/pbsvcd" +
-      "ataserviceb\006proto3"
+      "Groups\032\022.model.EmptyStruct\"\000\022E\n\016ListApiC" +
+      "onfigs\022\027.request.ListApiConfigs\032\030.respon" +
+      "se.ListApiConfigs\"\000\022N\n\021DescribeApiConfig" +
+      "\022\032.request.DescribeApiConfig\032\033.response." +
+      "DescribeApiConfig\"\000\022H\n\017CreateApiConfig\022\030" +
+      ".request.CreateApiConfig\032\031.response.Crea" +
+      "teApiConfig\"\000\022A\n\017UpdateApiConfig\022\030.reque" +
+      "st.UpdateApiConfig\032\022.model.EmptyStruct\"\000" +
+      "\022C\n\020DeleteApiConfigs\022\031.request.DeleteApi" +
+      "Configs\032\022.model.EmptyStruct\"\000\022Q\n\022TestDat" +
+      "aServiceApi\022\033.request.TestDataServiceApi" +
+      "\032\034.response.TestDataServiceApi\"\000\022M\n\025Publ" +
+      "ishDataServiceApi\022\036.request.PublishDataS" +
+      "erviceApi\032\022.model.EmptyStruct\"\000\022O\n\026Aboli" +
+      "shDataServiceApis\022\037.request.AbolishDataS" +
+      "erviceApis\032\022.model.EmptyStruct\"\000\022i\n\032List" +
+      "DataServiceApiVersions\022#.request.ListDat" +
+      "aServiceApiVersions\032$.response.ListDataS" +
+      "erviceApiVersions\"\000\022r\n\035DescribeDataServi" +
+      "ceApiVersion\022&.request.DescribeDataServi" +
+      "ceApiVersion\032\'.response.DescribeDataServ" +
+      "iceApiVersion\"\000\022Q\n\027RepublishDataServiceA" +
+      "pi\022 .request.RepublishDataServiceApi\032\022.m" +
+      "odel.EmptyStruct\"\000B\201\001\n-com.dataomnis.gpr" +
+      "oto.service.pbsvcdataserviceB\020PBSvcDataS" +
+      "erviceP\000Z<github.com/DataWorkbench/gprot" +
+      "o/xgo/service/pbsvcdataserviceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

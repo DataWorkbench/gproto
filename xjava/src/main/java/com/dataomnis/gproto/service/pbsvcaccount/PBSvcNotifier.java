@@ -25,26 +25,21 @@ public final class PBSvcNotifier {
     java.lang.String[] descriptorData = {
       "\n%proto/service/notifier/notifier.proto\022" +
       "\010notifier\032\"proto/types/request/notifier." +
-      "proto\032#proto/types/response/notifier.pro" +
-      "to\032\035proto/types/model/empty.proto2\237\001\n\010No" +
-      "tifier\022C\n\020SendNotification\022\031.request.Sen" +
-      "dNotification\032\022.model.EmptyStruct\"\000\022N\n\021L" +
-      "istNotifications\022\032.request.ListNotificat" +
-      "ions\032\033.response.ListNotifications\"\000Bw\n)c" +
-      "om.dataomnis.gproto.service.pbsvcaccount" +
-      "B\rPBSvcNotifierP\000Z9github.com/DataWorkbe" +
-      "nch/gproto/xgo/service/pbsvcnotifierb\006pr" +
-      "oto3"
+      "proto\032\035proto/types/model/empty.proto2O\n\010" +
+      "Notifier\022C\n\020SendNotification\022\031.request.S" +
+      "endNotification\032\022.model.EmptyStruct\"\000Bw\n" +
+      ")com.dataomnis.gproto.service.pbsvcaccou" +
+      "ntB\rPBSvcNotifierP\000Z9github.com/DataWork" +
+      "bench/gproto/xgo/service/pbsvcnotifierb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.getDescriptor(),
-          com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.getDescriptor();
-    com.dataomnis.gproto.types.pbresponse.PBResponseNotifier.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
   }
 

@@ -8744,24 +8744,12 @@ public final class PBRequestAccount {
         getNoteBytes();
 
     /**
-     * <code>string status = 4;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
@@ -8783,7 +8771,6 @@ public final class PBRequestAccount {
       userId_ = "";
       recipient_ = "";
       note_ = "";
-      status_ = "";
       email_ = "";
     }
 
@@ -8836,12 +8823,6 @@ public final class PBRequestAccount {
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               email_ = s;
@@ -8993,48 +8974,10 @@ public final class PBRequestAccount {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 4;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 5;
+    public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The email.
      */
     @java.lang.Override
@@ -9051,7 +8994,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -9092,11 +9035,8 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, note_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
       }
       unknownFields.writeTo(output);
     }
@@ -9116,11 +9056,8 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, note_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9143,8 +9080,6 @@ public final class PBRequestAccount {
           .equals(other.getRecipient())) return false;
       if (!getNote()
           .equals(other.getNote())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -9164,8 +9099,6 @@ public final class PBRequestAccount {
       hash = (53 * hash) + getRecipient().hashCode();
       hash = (37 * hash) + NOTE_FIELD_NUMBER;
       hash = (53 * hash) + getNote().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9307,8 +9240,6 @@ public final class PBRequestAccount {
 
         note_ = "";
 
-        status_ = "";
-
         email_ = "";
 
         return this;
@@ -9340,7 +9271,6 @@ public final class PBRequestAccount {
         result.userId_ = userId_;
         result.recipient_ = recipient_;
         result.note_ = note_;
-        result.status_ = status_;
         result.email_ = email_;
         onBuilt();
         return result;
@@ -9400,10 +9330,6 @@ public final class PBRequestAccount {
         }
         if (!other.getNote().isEmpty()) {
           note_ = other.note_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
           onChanged();
         }
         if (!other.getEmail().isEmpty()) {
@@ -9667,85 +9593,9 @@ public final class PBRequestAccount {
         return this;
       }
 
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 4;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return The email.
        */
       public java.lang.String getEmail() {
@@ -9761,7 +9611,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
@@ -9778,7 +9628,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @param value The email to set.
        * @return This builder for chaining.
        */
@@ -9793,7 +9643,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
@@ -9803,7 +9653,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
@@ -9912,28 +9762,22 @@ public final class PBRequestAccount {
         getNoteBytes();
 
     /**
-     * <code>string status = 4;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
         getEmailBytes();
+
+    /**
+     * <code>int64 id = 6;</code>
+     * @return The id.
+     */
+    long getId();
   }
   /**
    * Protobuf type {@code request.UpdateNotification}
@@ -9951,7 +9795,6 @@ public final class PBRequestAccount {
       userId_ = "";
       recipient_ = "";
       note_ = "";
-      status_ = "";
       email_ = "";
     }
 
@@ -10006,13 +9849,12 @@ public final class PBRequestAccount {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              status_ = s;
+              email_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 48: {
 
-              email_ = s;
+              id_ = input.readInt64();
               break;
             }
             default: {
@@ -10161,48 +10003,10 @@ public final class PBRequestAccount {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 4;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 4;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 4;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 5;
+    public static final int EMAIL_FIELD_NUMBER = 4;
     private volatile java.lang.Object email_;
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The email.
      */
     @java.lang.Override
@@ -10219,7 +10023,7 @@ public final class PBRequestAccount {
       }
     }
     /**
-     * <code>string email = 5;</code>
+     * <code>string email = 4;</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -10235,6 +10039,17 @@ public final class PBRequestAccount {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int ID_FIELD_NUMBER = 6;
+    private long id_;
+    /**
+     * <code>int64 id = 6;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -10260,11 +10075,11 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, note_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
+      }
+      if (id_ != 0L) {
+        output.writeInt64(6, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -10284,11 +10099,12 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(note_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, note_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
+      }
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10311,10 +10127,10 @@ public final class PBRequestAccount {
           .equals(other.getRecipient())) return false;
       if (!getNote()
           .equals(other.getNote())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10332,10 +10148,11 @@ public final class PBRequestAccount {
       hash = (53 * hash) + getRecipient().hashCode();
       hash = (37 * hash) + NOTE_FIELD_NUMBER;
       hash = (53 * hash) + getNote().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10475,9 +10292,9 @@ public final class PBRequestAccount {
 
         note_ = "";
 
-        status_ = "";
-
         email_ = "";
+
+        id_ = 0L;
 
         return this;
       }
@@ -10508,8 +10325,8 @@ public final class PBRequestAccount {
         result.userId_ = userId_;
         result.recipient_ = recipient_;
         result.note_ = note_;
-        result.status_ = status_;
         result.email_ = email_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -10570,13 +10387,12 @@ public final class PBRequestAccount {
           note_ = other.note_;
           onChanged();
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
           onChanged();
+        }
+        if (other.getId() != 0L) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10835,85 +10651,9 @@ public final class PBRequestAccount {
         return this;
       }
 
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 4;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 4;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object email_ = "";
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return The email.
        */
       public java.lang.String getEmail() {
@@ -10929,7 +10669,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
@@ -10946,7 +10686,7 @@ public final class PBRequestAccount {
         }
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @param value The email to set.
        * @return This builder for chaining.
        */
@@ -10961,7 +10701,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
@@ -10971,7 +10711,7 @@ public final class PBRequestAccount {
         return this;
       }
       /**
-       * <code>string email = 5;</code>
+       * <code>string email = 4;</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
@@ -10983,6 +10723,37 @@ public final class PBRequestAccount {
   checkByteStringIsUtf8(value);
         
         email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 6;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 6;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
         onChanged();
         return this;
       }
@@ -11056,28 +10827,10 @@ public final class PBRequestAccount {
         getUserIdBytes();
 
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>int64 id = 2;</code>
+     * @return The id.
      */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
+    long getId();
   }
   /**
    * Protobuf type {@code request.DeleteNotification}
@@ -11093,8 +10846,6 @@ public final class PBRequestAccount {
     }
     private DeleteNotification() {
       userId_ = "";
-      status_ = "";
-      email_ = "";
     }
 
     @java.lang.Override
@@ -11133,16 +10884,9 @@ public final class PBRequestAccount {
               userId_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16: {
 
-              status_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
+              id_ = input.readInt64();
               break;
             }
             default: {
@@ -11215,80 +10959,15 @@ public final class PBRequestAccount {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 2;
-    private volatile java.lang.Object status_;
+    public static final int ID_FIELD_NUMBER = 2;
+    private long id_;
     /**
-     * <code>string status = 2;</code>
-     * @return The status.
+     * <code>int64 id = 2;</code>
+     * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 2;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 3;</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getId() {
+      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11308,11 +10987,8 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+      if (id_ != 0L) {
+        output.writeInt64(2, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -11326,11 +11002,9 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11349,10 +11023,8 @@ public final class PBRequestAccount {
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11366,10 +11038,9 @@ public final class PBRequestAccount {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11505,9 +11176,7 @@ public final class PBRequestAccount {
         super.clear();
         userId_ = "";
 
-        status_ = "";
-
-        email_ = "";
+        id_ = 0L;
 
         return this;
       }
@@ -11536,8 +11205,7 @@ public final class PBRequestAccount {
       public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.DeleteNotification(this);
         result.userId_ = userId_;
-        result.status_ = status_;
-        result.email_ = email_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -11590,13 +11258,8 @@ public final class PBRequestAccount {
           userId_ = other.userId_;
           onChanged();
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          onChanged();
+        if (other.getId() != 0L) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11703,154 +11366,33 @@ public final class PBRequestAccount {
         return this;
       }
 
-      private java.lang.Object status_ = "";
+      private long id_ ;
       /**
-       * <code>string status = 2;</code>
-       * @return The status.
+       * <code>int64 id = 2;</code>
+       * @return The id.
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getId() {
+        return id_;
       }
       /**
-       * <code>string status = 2;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @param value The status to set.
+       * <code>int64 id = 2;</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
+      public Builder setId(long value) {
         
-        status_ = getDefaultInstance().getStatus();
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string status = 2;</code>
-       * @param value The bytes for status to set.
+       * <code>int64 id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearId() {
         
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 3;</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        email_ = value;
+        id_ = 0L;
         onChanged();
         return this;
       }
@@ -11934,31 +11476,6 @@ public final class PBRequestAccount {
      * @return The offset.
      */
     int getOffset();
-
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @return A list containing the emails.
-     */
-    java.util.List<java.lang.String>
-        getEmailsList();
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @return The count of emails.
-     */
-    int getEmailsCount();
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @param index The index of the element to return.
-     * @return The emails at the given index.
-     */
-    java.lang.String getEmails(int index);
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the emails at the given index.
-     */
-    com.google.protobuf.ByteString
-        getEmailsBytes(int index);
   }
   /**
    * Protobuf type {@code request.GetNotifications}
@@ -11974,7 +11491,6 @@ public final class PBRequestAccount {
     }
     private GetNotifications() {
       userId_ = "";
-      emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -11997,7 +11513,6 @@ public final class PBRequestAccount {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12024,15 +11539,6 @@ public final class PBRequestAccount {
               offset_ = input.readInt32();
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                emails_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              emails_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -12048,9 +11554,6 @@ public final class PBRequestAccount {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          emails_ = emails_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -12128,41 +11631,6 @@ public final class PBRequestAccount {
       return offset_;
     }
 
-    public static final int EMAILS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList emails_;
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @return A list containing the emails.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getEmailsList() {
-      return emails_;
-    }
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @return The count of emails.
-     */
-    public int getEmailsCount() {
-      return emails_.size();
-    }
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @param index The index of the element to return.
-     * @return The emails at the given index.
-     */
-    public java.lang.String getEmails(int index) {
-      return emails_.get(index);
-    }
-    /**
-     * <code>repeated string emails = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the emails at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getEmailsBytes(int index) {
-      return emails_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12186,9 +11654,6 @@ public final class PBRequestAccount {
       if (offset_ != 0) {
         output.writeInt32(3, offset_);
       }
-      for (int i = 0; i < emails_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, emails_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -12208,14 +11673,6 @@ public final class PBRequestAccount {
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, offset_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < emails_.size(); i++) {
-          dataSize += computeStringSizeNoTag(emails_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getEmailsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12238,8 +11695,6 @@ public final class PBRequestAccount {
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (!getEmailsList()
-          .equals(other.getEmailsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12257,10 +11712,6 @@ public final class PBRequestAccount {
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      if (getEmailsCount() > 0) {
-        hash = (37 * hash) + EMAILS_FIELD_NUMBER;
-        hash = (53 * hash) + getEmailsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12400,8 +11851,6 @@ public final class PBRequestAccount {
 
         offset_ = 0;
 
-        emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -12428,15 +11877,9 @@ public final class PBRequestAccount {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.GetNotifications(this);
-        int from_bitField0_ = bitField0_;
         result.userId_ = userId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          emails_ = emails_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.emails_ = emails_;
         onBuilt();
         return result;
       }
@@ -12495,16 +11938,6 @@ public final class PBRequestAccount {
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
         }
-        if (!other.emails_.isEmpty()) {
-          if (emails_.isEmpty()) {
-            emails_ = other.emails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureEmailsIsMutable();
-            emails_.addAll(other.emails_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -12533,7 +11966,6 @@ public final class PBRequestAccount {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object userId_ = "";
       /**
@@ -12669,116 +12101,6 @@ public final class PBRequestAccount {
       public Builder clearOffset() {
         
         offset_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureEmailsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          emails_ = new com.google.protobuf.LazyStringArrayList(emails_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @return A list containing the emails.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getEmailsList() {
-        return emails_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @return The count of emails.
-       */
-      public int getEmailsCount() {
-        return emails_.size();
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param index The index of the element to return.
-       * @return The emails at the given index.
-       */
-      public java.lang.String getEmails(int index) {
-        return emails_.get(index);
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the emails at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getEmailsBytes(int index) {
-        return emails_.getByteString(index);
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The emails to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmails(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEmailsIsMutable();
-        emails_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param value The emails to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEmails(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEmailsIsMutable();
-        emails_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param values The emails to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllEmails(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureEmailsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, emails_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmails() {
-        emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string emails = 4;</code>
-       * @param value The bytes of the emails to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEmailsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureEmailsIsMutable();
-        emails_.add(value);
         onChanged();
         return this;
       }
@@ -12931,21 +12253,20 @@ public final class PBRequestAccount {
       " \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\t" +
       "B\020\342\337\037\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n\017ignore_password\030\003 " +
       "\001(\010\"6\n\017CheckUserExists\022#\n\tuser_name\030\001 \001(" +
-      "\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\"z\n\022CreateNotificatio" +
+      "\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\"j\n\022CreateNotificatio" +
       "n\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022" +
-      "\021\n\trecipient\030\002 \001(\t\022\014\n\004note\030\003 \001(\t\022\016\n\006stat" +
-      "us\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\"z\n\022UpdateNotific" +
-      "ation\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004u" +
-      "sr-\022\021\n\trecipient\030\002 \001(\t\022\014\n\004note\030\003 \001(\t\022\016\n\006" +
-      "status\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\"Y\n\022DeleteNot" +
-      "ification\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004usr-\022\016\n\006status\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\"g" +
-      "\n\020GetNotifications\022$\n\007user_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\r\n\005limit\030\002 \001(\005\022\016\n\006offse" +
-      "t\030\003 \001(\005\022\016\n\006emails\030\004 \003(\tBo\n$com.dataomnis" +
-      ".gproto.types.pbrequestB\020PBRequestAccoun" +
-      "tP\000Z3github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbrequestb\006proto3"
+      "\021\n\trecipient\030\002 \001(\t\022\014\n\004note\030\003 \001(\t\022\r\n\005emai" +
+      "l\030\004 \001(\t\"v\n\022UpdateNotification\022$\n\007user_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\021\n\trecipient" +
+      "\030\002 \001(\t\022\014\n\004note\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\n\n\002i" +
+      "d\030\006 \001(\003\"F\n\022DeleteNotification\022$\n\007user_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\n\n\002id\030\002 \001(\003\"" +
+      "W\n\020GetNotifications\022$\n\007user_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\r\n\005limit\030\002 \001(\005\022\016\n\006offs" +
+      "et\030\003 \001(\005Bo\n$com.dataomnis.gproto.types.p" +
+      "brequestB\020PBRequestAccountP\000Z3github.com" +
+      "/DataWorkbench/gproto/xgo/types/pbreques" +
+      "tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13005,25 +12326,25 @@ public final class PBRequestAccount {
     internal_static_request_CreateNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateNotification_descriptor,
-        new java.lang.String[] { "UserId", "Recipient", "Note", "Status", "Email", });
+        new java.lang.String[] { "UserId", "Recipient", "Note", "Email", });
     internal_static_request_UpdateNotification_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_request_UpdateNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateNotification_descriptor,
-        new java.lang.String[] { "UserId", "Recipient", "Note", "Status", "Email", });
+        new java.lang.String[] { "UserId", "Recipient", "Note", "Email", "Id", });
     internal_static_request_DeleteNotification_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_request_DeleteNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteNotification_descriptor,
-        new java.lang.String[] { "UserId", "Status", "Email", });
+        new java.lang.String[] { "UserId", "Id", });
     internal_static_request_GetNotifications_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_request_GetNotifications_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_GetNotifications_descriptor,
-        new java.lang.String[] { "UserId", "Limit", "Offset", "Emails", });
+        new java.lang.String[] { "UserId", "Limit", "Offset", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

@@ -14,2431 +14,6 @@ public final class PBModelAccount {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface UserOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.User)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string user_id = 1;</code>
-     * @return The userId.
-     */
-    java.lang.String getUserId();
-    /**
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <code>string user_name = 2;</code>
-     * @return The userName.
-     */
-    java.lang.String getUserName();
-    /**
-     * <code>string user_name = 2;</code>
-     * @return The bytes for userName.
-     */
-    com.google.protobuf.ByteString
-        getUserNameBytes();
-
-    /**
-     * <code>string lang = 3;</code>
-     * @return The lang.
-     */
-    java.lang.String getLang();
-    /**
-     * <code>string lang = 3;</code>
-     * @return The bytes for lang.
-     */
-    com.google.protobuf.ByteString
-        getLangBytes();
-
-    /**
-     * <code>string email = 4;</code>
-     * @return The email.
-     */
-    java.lang.String getEmail();
-    /**
-     * <code>string email = 4;</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
-
-    /**
-     * <code>string phone = 5;</code>
-     * @return The phone.
-     */
-    java.lang.String getPhone();
-    /**
-     * <code>string phone = 5;</code>
-     * @return The bytes for phone.
-     */
-    com.google.protobuf.ByteString
-        getPhoneBytes();
-
-    /**
-     * <code>string status = 6;</code>
-     * @return The status.
-     */
-    java.lang.String getStatus();
-    /**
-     * <code>string status = 6;</code>
-     * @return The bytes for status.
-     */
-    com.google.protobuf.ByteString
-        getStatusBytes();
-
-    /**
-     * <code>string role = 7;</code>
-     * @return The role.
-     */
-    java.lang.String getRole();
-    /**
-     * <code>string role = 7;</code>
-     * @return The bytes for role.
-     */
-    com.google.protobuf.ByteString
-        getRoleBytes();
-
-    /**
-     * <code>string currency = 8;</code>
-     * @return The currency.
-     */
-    java.lang.String getCurrency();
-    /**
-     * <code>string currency = 8;</code>
-     * @return The bytes for currency.
-     */
-    com.google.protobuf.ByteString
-        getCurrencyBytes();
-
-    /**
-     * <code>string gravatar_email = 9;</code>
-     * @return The gravatarEmail.
-     */
-    java.lang.String getGravatarEmail();
-    /**
-     * <code>string gravatar_email = 9;</code>
-     * @return The bytes for gravatarEmail.
-     */
-    com.google.protobuf.ByteString
-        getGravatarEmailBytes();
-
-    /**
-     * <code>int32 privilege = 10;</code>
-     * @return The privilege.
-     */
-    int getPrivilege();
-
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @return A list containing the zones.
-     */
-    java.util.List<java.lang.String>
-        getZonesList();
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @return The count of zones.
-     */
-    int getZonesCount();
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @param index The index of the element to return.
-     * @return The zones at the given index.
-     */
-    java.lang.String getZones(int index);
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the zones at the given index.
-     */
-    com.google.protobuf.ByteString
-        getZonesBytes(int index);
-
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @return A list containing the regions.
-     */
-    java.util.List<java.lang.String>
-        getRegionsList();
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @return The count of regions.
-     */
-    int getRegionsCount();
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @param index The index of the element to return.
-     * @return The regions at the given index.
-     */
-    java.lang.String getRegions(int index);
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the regions at the given index.
-     */
-    com.google.protobuf.ByteString
-        getRegionsBytes(int index);
-
-    /**
-     * <code>string password = 13;</code>
-     * @return The password.
-     */
-    java.lang.String getPassword();
-    /**
-     * <code>string password = 13;</code>
-     * @return The bytes for password.
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-  }
-  /**
-   * Protobuf type {@code model.User}
-   */
-  public static final class User extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.User)
-      UserOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use User.newBuilder() to construct.
-    private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private User() {
-      userId_ = "";
-      userName_ = "";
-      lang_ = "";
-      email_ = "";
-      phone_ = "";
-      status_ = "";
-      role_ = "";
-      currency_ = "";
-      gravatarEmail_ = "";
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      password_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new User();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private User(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userName_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lang_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              email_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              phone_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              status_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              role_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              currency_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gravatarEmail_ = s;
-              break;
-            }
-            case 80: {
-
-              privilege_ = input.readInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                zones_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              zones_.add(s);
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                regions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              regions_.add(s);
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              password_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          zones_ = zones_.getUnmodifiableView();
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          regions_ = regions_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder.class);
-    }
-
-    public static final int USER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userId_;
-    /**
-     * <code>string user_id = 1;</code>
-     * @return The userId.
-     */
-    @java.lang.Override
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user_id = 1;</code>
-     * @return The bytes for userId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USER_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object userName_;
-    /**
-     * <code>string user_name = 2;</code>
-     * @return The userName.
-     */
-    @java.lang.Override
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user_name = 2;</code>
-     * @return The bytes for userName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUserNameBytes() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LANG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object lang_;
-    /**
-     * <code>string lang = 3;</code>
-     * @return The lang.
-     */
-    @java.lang.Override
-    public java.lang.String getLang() {
-      java.lang.Object ref = lang_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lang_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string lang = 3;</code>
-     * @return The bytes for lang.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLangBytes() {
-      java.lang.Object ref = lang_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lang_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int EMAIL_FIELD_NUMBER = 4;
-    private volatile java.lang.Object email_;
-    /**
-     * <code>string email = 4;</code>
-     * @return The email.
-     */
-    @java.lang.Override
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        email_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string email = 4;</code>
-     * @return The bytes for email.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        email_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PHONE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object phone_;
-    /**
-     * <code>string phone = 5;</code>
-     * @return The phone.
-     */
-    @java.lang.Override
-    public java.lang.String getPhone() {
-      java.lang.Object ref = phone_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        phone_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string phone = 5;</code>
-     * @return The bytes for phone.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPhoneBytes() {
-      java.lang.Object ref = phone_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        phone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 6;
-    private volatile java.lang.Object status_;
-    /**
-     * <code>string status = 6;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        status_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string status = 6;</code>
-     * @return The bytes for status.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        status_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROLE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object role_;
-    /**
-     * <code>string role = 7;</code>
-     * @return The role.
-     */
-    @java.lang.Override
-    public java.lang.String getRole() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        role_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string role = 7;</code>
-     * @return The bytes for role.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRoleBytes() {
-      java.lang.Object ref = role_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        role_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CURRENCY_FIELD_NUMBER = 8;
-    private volatile java.lang.Object currency_;
-    /**
-     * <code>string currency = 8;</code>
-     * @return The currency.
-     */
-    @java.lang.Override
-    public java.lang.String getCurrency() {
-      java.lang.Object ref = currency_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        currency_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string currency = 8;</code>
-     * @return The bytes for currency.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCurrencyBytes() {
-      java.lang.Object ref = currency_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        currency_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int GRAVATAR_EMAIL_FIELD_NUMBER = 9;
-    private volatile java.lang.Object gravatarEmail_;
-    /**
-     * <code>string gravatar_email = 9;</code>
-     * @return The gravatarEmail.
-     */
-    @java.lang.Override
-    public java.lang.String getGravatarEmail() {
-      java.lang.Object ref = gravatarEmail_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gravatarEmail_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string gravatar_email = 9;</code>
-     * @return The bytes for gravatarEmail.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getGravatarEmailBytes() {
-      java.lang.Object ref = gravatarEmail_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gravatarEmail_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRIVILEGE_FIELD_NUMBER = 10;
-    private int privilege_;
-    /**
-     * <code>int32 privilege = 10;</code>
-     * @return The privilege.
-     */
-    @java.lang.Override
-    public int getPrivilege() {
-      return privilege_;
-    }
-
-    public static final int ZONES_FIELD_NUMBER = 11;
-    private com.google.protobuf.LazyStringList zones_;
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @return A list containing the zones.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getZonesList() {
-      return zones_;
-    }
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @return The count of zones.
-     */
-    public int getZonesCount() {
-      return zones_.size();
-    }
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @param index The index of the element to return.
-     * @return The zones at the given index.
-     */
-    public java.lang.String getZones(int index) {
-      return zones_.get(index);
-    }
-    /**
-     * <code>repeated string zones = 11;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the zones at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getZonesBytes(int index) {
-      return zones_.getByteString(index);
-    }
-
-    public static final int REGIONS_FIELD_NUMBER = 12;
-    private com.google.protobuf.LazyStringList regions_;
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @return A list containing the regions.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getRegionsList() {
-      return regions_;
-    }
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @return The count of regions.
-     */
-    public int getRegionsCount() {
-      return regions_.size();
-    }
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @param index The index of the element to return.
-     * @return The regions at the given index.
-     */
-    public java.lang.String getRegions(int index) {
-      return regions_.get(index);
-    }
-    /**
-     * <code>repeated string regions = 12;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the regions at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getRegionsBytes(int index) {
-      return regions_.getByteString(index);
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 13;
-    private volatile java.lang.Object password_;
-    /**
-     * <code>string password = 13;</code>
-     * @return The password.
-     */
-    @java.lang.Override
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string password = 13;</code>
-     * @return The bytes for password.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lang_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, phone_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, role_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, currency_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravatarEmail_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, gravatarEmail_);
-      }
-      if (privilege_ != 0) {
-        output.writeInt32(10, privilege_);
-      }
-      for (int i = 0; i < zones_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, zones_.getRaw(i));
-      }
-      for (int i = 0; i < regions_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, regions_.getRaw(i));
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, password_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lang_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, phone_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, role_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, currency_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravatarEmail_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, gravatarEmail_);
-      }
-      if (privilege_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, privilege_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < zones_.size(); i++) {
-          dataSize += computeStringSizeNoTag(zones_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getZonesList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < regions_.size(); i++) {
-          dataSize += computeStringSizeNoTag(regions_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getRegionsList().size();
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, password_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.User)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.PBModelAccount.User other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) obj;
-
-      if (!getUserId()
-          .equals(other.getUserId())) return false;
-      if (!getUserName()
-          .equals(other.getUserName())) return false;
-      if (!getLang()
-          .equals(other.getLang())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (!getPhone()
-          .equals(other.getPhone())) return false;
-      if (!getStatus()
-          .equals(other.getStatus())) return false;
-      if (!getRole()
-          .equals(other.getRole())) return false;
-      if (!getCurrency()
-          .equals(other.getCurrency())) return false;
-      if (!getGravatarEmail()
-          .equals(other.getGravatarEmail())) return false;
-      if (getPrivilege()
-          != other.getPrivilege()) return false;
-      if (!getZonesList()
-          .equals(other.getZonesList())) return false;
-      if (!getRegionsList()
-          .equals(other.getRegionsList())) return false;
-      if (!getPassword()
-          .equals(other.getPassword())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUserName().hashCode();
-      hash = (37 * hash) + LANG_FIELD_NUMBER;
-      hash = (53 * hash) + getLang().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + PHONE_FIELD_NUMBER;
-      hash = (53 * hash) + getPhone().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      hash = (37 * hash) + ROLE_FIELD_NUMBER;
-      hash = (53 * hash) + getRole().hashCode();
-      hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrency().hashCode();
-      hash = (37 * hash) + GRAVATAR_EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getGravatarEmail().hashCode();
-      hash = (37 * hash) + PRIVILEGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrivilege();
-      if (getZonesCount() > 0) {
-        hash = (37 * hash) + ZONES_FIELD_NUMBER;
-        hash = (53 * hash) + getZonesList().hashCode();
-      }
-      if (getRegionsCount() > 0) {
-        hash = (37 * hash) + REGIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getRegionsList().hashCode();
-      }
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code model.User}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.User)
-        com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        userId_ = "";
-
-        userName_ = "";
-
-        lang_ = "";
-
-        email_ = "";
-
-        phone_ = "";
-
-        status_ = "";
-
-        role_ = "";
-
-        currency_ = "";
-
-        gravatarEmail_ = "";
-
-        privilege_ = 0;
-
-        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        password_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User build() {
-        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.User(this);
-        int from_bitField0_ = bitField0_;
-        result.userId_ = userId_;
-        result.userName_ = userName_;
-        result.lang_ = lang_;
-        result.email_ = email_;
-        result.phone_ = phone_;
-        result.status_ = status_;
-        result.role_ = role_;
-        result.currency_ = currency_;
-        result.gravatarEmail_ = gravatarEmail_;
-        result.privilege_ = privilege_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          zones_ = zones_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.zones_ = zones_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          regions_ = regions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.regions_ = regions_;
-        result.password_ = password_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.User)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance()) return this;
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
-        }
-        if (!other.getUserName().isEmpty()) {
-          userName_ = other.userName_;
-          onChanged();
-        }
-        if (!other.getLang().isEmpty()) {
-          lang_ = other.lang_;
-          onChanged();
-        }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
-          onChanged();
-        }
-        if (!other.getPhone().isEmpty()) {
-          phone_ = other.phone_;
-          onChanged();
-        }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
-          onChanged();
-        }
-        if (!other.getRole().isEmpty()) {
-          role_ = other.role_;
-          onChanged();
-        }
-        if (!other.getCurrency().isEmpty()) {
-          currency_ = other.currency_;
-          onChanged();
-        }
-        if (!other.getGravatarEmail().isEmpty()) {
-          gravatarEmail_ = other.gravatarEmail_;
-          onChanged();
-        }
-        if (other.getPrivilege() != 0) {
-          setPrivilege(other.getPrivilege());
-        }
-        if (!other.zones_.isEmpty()) {
-          if (zones_.isEmpty()) {
-            zones_ = other.zones_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureZonesIsMutable();
-            zones_.addAll(other.zones_);
-          }
-          onChanged();
-        }
-        if (!other.regions_.isEmpty()) {
-          if (regions_.isEmpty()) {
-            regions_ = other.regions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureRegionsIsMutable();
-            regions_.addAll(other.regions_);
-          }
-          onChanged();
-        }
-        if (!other.getPassword().isEmpty()) {
-          password_ = other.password_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <code>string user_id = 1;</code>
-       * @return The userId.
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       * @return The bytes for userId.
-       */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       * @param value The userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       * @param value The bytes for userId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object userName_ = "";
-      /**
-       * <code>string user_name = 2;</code>
-       * @return The userName.
-       */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string user_name = 2;</code>
-       * @return The bytes for userName.
-       */
-      public com.google.protobuf.ByteString
-          getUserNameBytes() {
-        java.lang.Object ref = userName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_name = 2;</code>
-       * @param value The userName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUserName() {
-        
-        userName_ = getDefaultInstance().getUserName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_name = 2;</code>
-       * @param value The bytes for userName to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUserNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object lang_ = "";
-      /**
-       * <code>string lang = 3;</code>
-       * @return The lang.
-       */
-      public java.lang.String getLang() {
-        java.lang.Object ref = lang_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lang_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string lang = 3;</code>
-       * @return The bytes for lang.
-       */
-      public com.google.protobuf.ByteString
-          getLangBytes() {
-        java.lang.Object ref = lang_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lang_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string lang = 3;</code>
-       * @param value The lang to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLang(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        lang_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string lang = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLang() {
-        
-        lang_ = getDefaultInstance().getLang();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string lang = 3;</code>
-       * @param value The bytes for lang to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLangBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lang_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object email_ = "";
-      /**
-       * <code>string email = 4;</code>
-       * @return The email.
-       */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          email_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string email = 4;</code>
-       * @return The bytes for email.
-       */
-      public com.google.protobuf.ByteString
-          getEmailBytes() {
-        java.lang.Object ref = email_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          email_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string email = 4;</code>
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 4;</code>
-       * @param value The bytes for email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        email_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object phone_ = "";
-      /**
-       * <code>string phone = 5;</code>
-       * @return The phone.
-       */
-      public java.lang.String getPhone() {
-        java.lang.Object ref = phone_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          phone_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string phone = 5;</code>
-       * @return The bytes for phone.
-       */
-      public com.google.protobuf.ByteString
-          getPhoneBytes() {
-        java.lang.Object ref = phone_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          phone_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string phone = 5;</code>
-       * @param value The phone to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhone(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        phone_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhone() {
-        
-        phone_ = getDefaultInstance().getPhone();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string phone = 5;</code>
-       * @param value The bytes for phone to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhoneBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        phone_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object status_ = "";
-      /**
-       * <code>string status = 6;</code>
-       * @return The status.
-       */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          status_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string status = 6;</code>
-       * @return The bytes for status.
-       */
-      public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          status_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string status = 6;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = getDefaultInstance().getStatus();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string status = 6;</code>
-       * @param value The bytes for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object role_ = "";
-      /**
-       * <code>string role = 7;</code>
-       * @return The role.
-       */
-      public java.lang.String getRole() {
-        java.lang.Object ref = role_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          role_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string role = 7;</code>
-       * @return The bytes for role.
-       */
-      public com.google.protobuf.ByteString
-          getRoleBytes() {
-        java.lang.Object ref = role_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          role_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string role = 7;</code>
-       * @param value The role to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRole(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        role_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string role = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRole() {
-        
-        role_ = getDefaultInstance().getRole();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string role = 7;</code>
-       * @param value The bytes for role to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRoleBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        role_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object currency_ = "";
-      /**
-       * <code>string currency = 8;</code>
-       * @return The currency.
-       */
-      public java.lang.String getCurrency() {
-        java.lang.Object ref = currency_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          currency_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string currency = 8;</code>
-       * @return The bytes for currency.
-       */
-      public com.google.protobuf.ByteString
-          getCurrencyBytes() {
-        java.lang.Object ref = currency_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          currency_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string currency = 8;</code>
-       * @param value The currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrency(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurrency() {
-        
-        currency_ = getDefaultInstance().getCurrency();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 8;</code>
-       * @param value The bytes for currency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurrencyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object gravatarEmail_ = "";
-      /**
-       * <code>string gravatar_email = 9;</code>
-       * @return The gravatarEmail.
-       */
-      public java.lang.String getGravatarEmail() {
-        java.lang.Object ref = gravatarEmail_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gravatarEmail_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string gravatar_email = 9;</code>
-       * @return The bytes for gravatarEmail.
-       */
-      public com.google.protobuf.ByteString
-          getGravatarEmailBytes() {
-        java.lang.Object ref = gravatarEmail_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gravatarEmail_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string gravatar_email = 9;</code>
-       * @param value The gravatarEmail to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGravatarEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        gravatarEmail_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string gravatar_email = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGravatarEmail() {
-        
-        gravatarEmail_ = getDefaultInstance().getGravatarEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string gravatar_email = 9;</code>
-       * @param value The bytes for gravatarEmail to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGravatarEmailBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gravatarEmail_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int privilege_ ;
-      /**
-       * <code>int32 privilege = 10;</code>
-       * @return The privilege.
-       */
-      @java.lang.Override
-      public int getPrivilege() {
-        return privilege_;
-      }
-      /**
-       * <code>int32 privilege = 10;</code>
-       * @param value The privilege to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPrivilege(int value) {
-        
-        privilege_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 privilege = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPrivilege() {
-        
-        privilege_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureZonesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @return A list containing the zones.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getZonesList() {
-        return zones_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @return The count of zones.
-       */
-      public int getZonesCount() {
-        return zones_.size();
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param index The index of the element to return.
-       * @return The zones at the given index.
-       */
-      public java.lang.String getZones(int index) {
-        return zones_.get(index);
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the zones at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getZonesBytes(int index) {
-        return zones_.getByteString(index);
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param index The index to set the value at.
-       * @param value The zones to set.
-       * @return This builder for chaining.
-       */
-      public Builder setZones(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureZonesIsMutable();
-        zones_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param value The zones to add.
-       * @return This builder for chaining.
-       */
-      public Builder addZones(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureZonesIsMutable();
-        zones_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param values The zones to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllZones(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureZonesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, zones_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearZones() {
-        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string zones = 11;</code>
-       * @param value The bytes of the zones to add.
-       * @return This builder for chaining.
-       */
-      public Builder addZonesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureZonesIsMutable();
-        zones_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureRegionsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @return A list containing the regions.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getRegionsList() {
-        return regions_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @return The count of regions.
-       */
-      public int getRegionsCount() {
-        return regions_.size();
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param index The index of the element to return.
-       * @return The regions at the given index.
-       */
-      public java.lang.String getRegions(int index) {
-        return regions_.get(index);
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the regions at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getRegionsBytes(int index) {
-        return regions_.getByteString(index);
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param index The index to set the value at.
-       * @param value The regions to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegions(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRegionsIsMutable();
-        regions_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param value The regions to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRegions(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRegionsIsMutable();
-        regions_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param values The regions to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllRegions(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureRegionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, regions_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegions() {
-        regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string regions = 12;</code>
-       * @param value The bytes of the regions to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRegionsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureRegionsIsMutable();
-        regions_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <code>string password = 13;</code>
-       * @return The password.
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string password = 13;</code>
-       * @return The bytes for password.
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string password = 13;</code>
-       * @param value The password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 13;</code>
-       * @param value The bytes for password to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.User)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.User)
-    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.User DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.User();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<User>
-        PARSER = new com.google.protobuf.AbstractParser<User>() {
-      @java.lang.Override
-      public User parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new User(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<User> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<User> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface RoleOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.Role)
       com.google.protobuf.MessageOrBuilder {
@@ -3782,6 +1357,10 @@ public final class PBModelAccount {
        * <code>AuthManage = 4;</code>
        */
       AuthManage(4),
+      /**
+       * <code>NotificationManage = 5;</code>
+       */
+      NotificationManage(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -3805,6 +1384,10 @@ public final class PBModelAccount {
        * <code>AuthManage = 4;</code>
        */
       public static final int AuthManage_VALUE = 4;
+      /**
+       * <code>NotificationManage = 5;</code>
+       */
+      public static final int NotificationManage_VALUE = 5;
 
 
       public final int getNumber() {
@@ -3836,6 +1419,7 @@ public final class PBModelAccount {
           case 2: return SessionManage;
           case 3: return MessageManage;
           case 4: return AuthManage;
+          case 5: return NotificationManage;
           default: return null;
         }
       }
@@ -7972,6 +5556,10635 @@ public final class PBModelAccount {
 
   }
 
+  public interface UserOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.User)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_name"
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    java.lang.String getUserName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_name"
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <pre>
+     * Language "zh-cn" | "en-us"
+     * &#64;inject_tag: json:"lang"
+     * </pre>
+     *
+     * <code>string lang = 3;</code>
+     * @return The lang.
+     */
+    java.lang.String getLang();
+    /**
+     * <pre>
+     * Language "zh-cn" | "en-us"
+     * &#64;inject_tag: json:"lang"
+     * </pre>
+     *
+     * <code>string lang = 3;</code>
+     * @return The bytes for lang.
+     */
+    com.google.protobuf.ByteString
+        getLangBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"email"
+     * </pre>
+     *
+     * <code>string email = 4;</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"email"
+     * </pre>
+     *
+     * <code>string email = 4;</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"root_user_id"
+     * </pre>
+     *
+     * <code>string root_user_id = 5;</code>
+     * @return The rootUserId.
+     */
+    java.lang.String getRootUserId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"root_user_id"
+     * </pre>
+     *
+     * <code>string root_user_id = 5;</code>
+     * @return The bytes for rootUserId.
+     */
+    com.google.protobuf.ByteString
+        getRootUserIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"role"
+     * </pre>
+     *
+     * <code>string role = 6;</code>
+     * @return The role.
+     */
+    java.lang.String getRole();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"role"
+     * </pre>
+     *
+     * <code>string role = 6;</code>
+     * @return The bytes for role.
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"privilege"
+     * </pre>
+     *
+     * <code>int32 privilege = 7;</code>
+     * @return The privilege.
+     */
+    int getPrivilege();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status"
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status"
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @return A list containing the zones.
+     */
+    java.util.List<java.lang.String>
+        getZonesList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @return The count of zones.
+     */
+    int getZonesCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @param index The index of the element to return.
+     * @return The zones at the given index.
+     */
+    java.lang.String getZones(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the zones at the given index.
+     */
+    com.google.protobuf.ByteString
+        getZonesBytes(int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @return A list containing the regions.
+     */
+    java.util.List<java.lang.String>
+        getRegionsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @return The count of regions.
+     */
+    int getRegionsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
+     */
+    java.lang.String getRegions(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the regions at the given index.
+     */
+    com.google.protobuf.ByteString
+        getRegionsBytes(int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notify_email"
+     * </pre>
+     *
+     * <code>string notify_email = 11;</code>
+     * @return The notifyEmail.
+     */
+    java.lang.String getNotifyEmail();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notify_email"
+     * </pre>
+     *
+     * <code>string notify_email = 11;</code>
+     * @return The bytes for notifyEmail.
+     */
+    com.google.protobuf.ByteString
+        getNotifyEmailBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"verify_type"
+     * </pre>
+     *
+     * <code>string verify_type = 12;</code>
+     * @return The verifyType.
+     */
+    java.lang.String getVerifyType();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"verify_type"
+     * </pre>
+     *
+     * <code>string verify_type = 12;</code>
+     * @return The bytes for verifyType.
+     */
+    com.google.protobuf.ByteString
+        getVerifyTypeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"paid_mode"
+     * </pre>
+     *
+     * <code>string paid_mode = 13;</code>
+     * @return The paidMode.
+     */
+    java.lang.String getPaidMode();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"paid_mode"
+     * </pre>
+     *
+     * <code>string paid_mode = 13;</code>
+     * @return The bytes for paidMode.
+     */
+    com.google.protobuf.ByteString
+        getPaidModeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gravatar_email"
+     * </pre>
+     *
+     * <code>string gravatar_email = 14;</code>
+     * @return The gravatarEmail.
+     */
+    java.lang.String getGravatarEmail();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gravatar_email"
+     * </pre>
+     *
+     * <code>string gravatar_email = 14;</code>
+     * @return The bytes for gravatarEmail.
+     */
+    com.google.protobuf.ByteString
+        getGravatarEmailBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"personal_name"
+     * </pre>
+     *
+     * <code>string personal_name = 15;</code>
+     * @return The personalName.
+     */
+    java.lang.String getPersonalName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"personal_name"
+     * </pre>
+     *
+     * <code>string personal_name = 15;</code>
+     * @return The bytes for personalName.
+     */
+    com.google.protobuf.ByteString
+        getPersonalNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_name"
+     * </pre>
+     *
+     * <code>string company_name = 16;</code>
+     * @return The companyName.
+     */
+    java.lang.String getCompanyName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_name"
+     * </pre>
+     *
+     * <code>string company_name = 16;</code>
+     * @return The bytes for companyName.
+     */
+    com.google.protobuf.ByteString
+        getCompanyNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_phone"
+     * </pre>
+     *
+     * <code>string company_phone = 17;</code>
+     * @return The companyPhone.
+     */
+    java.lang.String getCompanyPhone();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_phone"
+     * </pre>
+     *
+     * <code>string company_phone = 17;</code>
+     * @return The bytes for companyPhone.
+     */
+    com.google.protobuf.ByteString
+        getCompanyPhoneBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_code"
+     * </pre>
+     *
+     * <code>string company_code = 18;</code>
+     * @return The companyCode.
+     */
+    java.lang.String getCompanyCode();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_code"
+     * </pre>
+     *
+     * <code>string company_code = 18;</code>
+     * @return The bytes for companyCode.
+     */
+    com.google.protobuf.ByteString
+        getCompanyCodeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"phone"
+     * </pre>
+     *
+     * <code>string phone = 19;</code>
+     * @return The phone.
+     */
+    java.lang.String getPhone();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"phone"
+     * </pre>
+     *
+     * <code>string phone = 19;</code>
+     * @return The bytes for phone.
+     */
+    com.google.protobuf.ByteString
+        getPhoneBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"console_id"
+     * </pre>
+     *
+     * <code>string console_id = 20;</code>
+     * @return The consoleId.
+     */
+    java.lang.String getConsoleId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"console_id"
+     * </pre>
+     *
+     * <code>string console_id = 20;</code>
+     * @return The bytes for consoleId.
+     */
+    com.google.protobuf.ByteString
+        getConsoleIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gender"
+     * </pre>
+     *
+     * <code>string gender = 21;</code>
+     * @return The gender.
+     */
+    java.lang.String getGender();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gender"
+     * </pre>
+     *
+     * <code>string gender = 21;</code>
+     * @return The bytes for gender.
+     */
+    com.google.protobuf.ByteString
+        getGenderBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"remarks"
+     * </pre>
+     *
+     * <code>string remarks = 22;</code>
+     * @return The remarks.
+     */
+    java.lang.String getRemarks();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"remarks"
+     * </pre>
+     *
+     * <code>string remarks = 22;</code>
+     * @return The bytes for remarks.
+     */
+    com.google.protobuf.ByteString
+        getRemarksBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"mkt_source"
+     * </pre>
+     *
+     * <code>string mkt_source = 23;</code>
+     * @return The mktSource.
+     */
+    java.lang.String getMktSource();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"mkt_source"
+     * </pre>
+     *
+     * <code>string mkt_source = 23;</code>
+     * @return The bytes for mktSource.
+     */
+    com.google.protobuf.ByteString
+        getMktSourceBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 24;</code>
+     * @return The createTime.
+     */
+    java.lang.String getCreateTime();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 24;</code>
+     * @return The bytes for createTime.
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status_time"
+     * </pre>
+     *
+     * <code>string status_time = 25;</code>
+     * @return The statusTime.
+     */
+    java.lang.String getStatusTime();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status_time"
+     * </pre>
+     *
+     * <code>string status_time = 25;</code>
+     * @return The bytes for statusTime.
+     */
+    com.google.protobuf.ByteString
+        getStatusTimeBytes();
+
+    /**
+     * <pre>
+     * 0: root user, 1: sub user.
+     * &#64;inject_tag: json:"user_type"
+     * </pre>
+     *
+     * <code>int32 user_type = 26;</code>
+     * @return The userType.
+     */
+    int getUserType();
+  }
+  /**
+   * Protobuf type {@code model.User}
+   */
+  public static final class User extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.User)
+      UserOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use User.newBuilder() to construct.
+    private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private User() {
+      userId_ = "";
+      userName_ = "";
+      lang_ = "";
+      email_ = "";
+      rootUserId_ = "";
+      role_ = "";
+      status_ = "";
+      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      notifyEmail_ = "";
+      verifyType_ = "";
+      paidMode_ = "";
+      gravatarEmail_ = "";
+      personalName_ = "";
+      companyName_ = "";
+      companyPhone_ = "";
+      companyCode_ = "";
+      phone_ = "";
+      consoleId_ = "";
+      gender_ = "";
+      remarks_ = "";
+      mktSource_ = "";
+      createTime_ = "";
+      statusTime_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new User();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private User(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lang_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rootUserId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 56: {
+
+              privilege_ = input.readInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                zones_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              zones_.add(s);
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                regions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              regions_.add(s);
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notifyEmail_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              verifyType_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              paidMode_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gravatarEmail_ = s;
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              personalName_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              companyName_ = s;
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              companyPhone_ = s;
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              companyCode_ = s;
+              break;
+            }
+            case 154: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              phone_ = s;
+              break;
+            }
+            case 162: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              consoleId_ = s;
+              break;
+            }
+            case 170: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gender_ = s;
+              break;
+            }
+            case 178: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              remarks_ = s;
+              break;
+            }
+            case 186: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mktSource_ = s;
+              break;
+            }
+            case 194: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createTime_ = s;
+              break;
+            }
+            case 202: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusTime_ = s;
+              break;
+            }
+            case 208: {
+
+              userType_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          zones_ = zones_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          regions_ = regions_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.User.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>_StatusUnset = 0;</code>
+       */
+      _StatusUnset(0),
+      /**
+       * <code>active = 1;</code>
+       */
+      active(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>_StatusUnset = 0;</code>
+       */
+      public static final int _StatusUnset_VALUE = 0;
+      /**
+       * <code>active = 1;</code>
+       */
+      public static final int active_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return _StatusUnset;
+          case 1: return active;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.User.Status)
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_id"
+     * </pre>
+     *
+     * <code>string user_id = 1;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object userName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_name"
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The userName.
+     */
+    @java.lang.Override
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_name"
+     * </pre>
+     *
+     * <code>string user_name = 2;</code>
+     * @return The bytes for userName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LANG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object lang_;
+    /**
+     * <pre>
+     * Language "zh-cn" | "en-us"
+     * &#64;inject_tag: json:"lang"
+     * </pre>
+     *
+     * <code>string lang = 3;</code>
+     * @return The lang.
+     */
+    @java.lang.Override
+    public java.lang.String getLang() {
+      java.lang.Object ref = lang_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lang_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Language "zh-cn" | "en-us"
+     * &#64;inject_tag: json:"lang"
+     * </pre>
+     *
+     * <code>string lang = 3;</code>
+     * @return The bytes for lang.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLangBytes() {
+      java.lang.Object ref = lang_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lang_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 4;
+    private volatile java.lang.Object email_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"email"
+     * </pre>
+     *
+     * <code>string email = 4;</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"email"
+     * </pre>
+     *
+     * <code>string email = 4;</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOT_USER_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object rootUserId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"root_user_id"
+     * </pre>
+     *
+     * <code>string root_user_id = 5;</code>
+     * @return The rootUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getRootUserId() {
+      java.lang.Object ref = rootUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rootUserId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"root_user_id"
+     * </pre>
+     *
+     * <code>string root_user_id = 5;</code>
+     * @return The bytes for rootUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRootUserIdBytes() {
+      java.lang.Object ref = rootUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rootUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object role_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"role"
+     * </pre>
+     *
+     * <code>string role = 6;</code>
+     * @return The role.
+     */
+    @java.lang.Override
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"role"
+     * </pre>
+     *
+     * <code>string role = 6;</code>
+     * @return The bytes for role.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVILEGE_FIELD_NUMBER = 7;
+    private int privilege_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"privilege"
+     * </pre>
+     *
+     * <code>int32 privilege = 7;</code>
+     * @return The privilege.
+     */
+    @java.lang.Override
+    public int getPrivilege() {
+      return privilege_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 8;
+    private volatile java.lang.Object status_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status"
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status"
+     * </pre>
+     *
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ZONES_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList zones_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @return A list containing the zones.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getZonesList() {
+      return zones_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @return The count of zones.
+     */
+    public int getZonesCount() {
+      return zones_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @param index The index of the element to return.
+     * @return The zones at the given index.
+     */
+    public java.lang.String getZones(int index) {
+      return zones_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"zones"
+     * </pre>
+     *
+     * <code>repeated string zones = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the zones at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getZonesBytes(int index) {
+      return zones_.getByteString(index);
+    }
+
+    public static final int REGIONS_FIELD_NUMBER = 10;
+    private com.google.protobuf.LazyStringList regions_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @return A list containing the regions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRegionsList() {
+      return regions_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @return The count of regions.
+     */
+    public int getRegionsCount() {
+      return regions_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @param index The index of the element to return.
+     * @return The regions at the given index.
+     */
+    public java.lang.String getRegions(int index) {
+      return regions_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"regions"
+     * </pre>
+     *
+     * <code>repeated string regions = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the regions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRegionsBytes(int index) {
+      return regions_.getByteString(index);
+    }
+
+    public static final int NOTIFY_EMAIL_FIELD_NUMBER = 11;
+    private volatile java.lang.Object notifyEmail_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notify_email"
+     * </pre>
+     *
+     * <code>string notify_email = 11;</code>
+     * @return The notifyEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getNotifyEmail() {
+      java.lang.Object ref = notifyEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notifyEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notify_email"
+     * </pre>
+     *
+     * <code>string notify_email = 11;</code>
+     * @return The bytes for notifyEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNotifyEmailBytes() {
+      java.lang.Object ref = notifyEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notifyEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERIFY_TYPE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object verifyType_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"verify_type"
+     * </pre>
+     *
+     * <code>string verify_type = 12;</code>
+     * @return The verifyType.
+     */
+    @java.lang.Override
+    public java.lang.String getVerifyType() {
+      java.lang.Object ref = verifyType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verifyType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"verify_type"
+     * </pre>
+     *
+     * <code>string verify_type = 12;</code>
+     * @return The bytes for verifyType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVerifyTypeBytes() {
+      java.lang.Object ref = verifyType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        verifyType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PAID_MODE_FIELD_NUMBER = 13;
+    private volatile java.lang.Object paidMode_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"paid_mode"
+     * </pre>
+     *
+     * <code>string paid_mode = 13;</code>
+     * @return The paidMode.
+     */
+    @java.lang.Override
+    public java.lang.String getPaidMode() {
+      java.lang.Object ref = paidMode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paidMode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"paid_mode"
+     * </pre>
+     *
+     * <code>string paid_mode = 13;</code>
+     * @return The bytes for paidMode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPaidModeBytes() {
+      java.lang.Object ref = paidMode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paidMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GRAVATAR_EMAIL_FIELD_NUMBER = 14;
+    private volatile java.lang.Object gravatarEmail_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gravatar_email"
+     * </pre>
+     *
+     * <code>string gravatar_email = 14;</code>
+     * @return The gravatarEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getGravatarEmail() {
+      java.lang.Object ref = gravatarEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gravatarEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gravatar_email"
+     * </pre>
+     *
+     * <code>string gravatar_email = 14;</code>
+     * @return The bytes for gravatarEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGravatarEmailBytes() {
+      java.lang.Object ref = gravatarEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gravatarEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PERSONAL_NAME_FIELD_NUMBER = 15;
+    private volatile java.lang.Object personalName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"personal_name"
+     * </pre>
+     *
+     * <code>string personal_name = 15;</code>
+     * @return The personalName.
+     */
+    @java.lang.Override
+    public java.lang.String getPersonalName() {
+      java.lang.Object ref = personalName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        personalName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"personal_name"
+     * </pre>
+     *
+     * <code>string personal_name = 15;</code>
+     * @return The bytes for personalName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPersonalNameBytes() {
+      java.lang.Object ref = personalName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        personalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANY_NAME_FIELD_NUMBER = 16;
+    private volatile java.lang.Object companyName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_name"
+     * </pre>
+     *
+     * <code>string company_name = 16;</code>
+     * @return The companyName.
+     */
+    @java.lang.Override
+    public java.lang.String getCompanyName() {
+      java.lang.Object ref = companyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_name"
+     * </pre>
+     *
+     * <code>string company_name = 16;</code>
+     * @return The bytes for companyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCompanyNameBytes() {
+      java.lang.Object ref = companyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        companyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANY_PHONE_FIELD_NUMBER = 17;
+    private volatile java.lang.Object companyPhone_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_phone"
+     * </pre>
+     *
+     * <code>string company_phone = 17;</code>
+     * @return The companyPhone.
+     */
+    @java.lang.Override
+    public java.lang.String getCompanyPhone() {
+      java.lang.Object ref = companyPhone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyPhone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_phone"
+     * </pre>
+     *
+     * <code>string company_phone = 17;</code>
+     * @return The bytes for companyPhone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCompanyPhoneBytes() {
+      java.lang.Object ref = companyPhone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        companyPhone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANY_CODE_FIELD_NUMBER = 18;
+    private volatile java.lang.Object companyCode_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_code"
+     * </pre>
+     *
+     * <code>string company_code = 18;</code>
+     * @return The companyCode.
+     */
+    @java.lang.Override
+    public java.lang.String getCompanyCode() {
+      java.lang.Object ref = companyCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companyCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"company_code"
+     * </pre>
+     *
+     * <code>string company_code = 18;</code>
+     * @return The bytes for companyCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCompanyCodeBytes() {
+      java.lang.Object ref = companyCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        companyCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PHONE_FIELD_NUMBER = 19;
+    private volatile java.lang.Object phone_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"phone"
+     * </pre>
+     *
+     * <code>string phone = 19;</code>
+     * @return The phone.
+     */
+    @java.lang.Override
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"phone"
+     * </pre>
+     *
+     * <code>string phone = 19;</code>
+     * @return The bytes for phone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPhoneBytes() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONSOLE_ID_FIELD_NUMBER = 20;
+    private volatile java.lang.Object consoleId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"console_id"
+     * </pre>
+     *
+     * <code>string console_id = 20;</code>
+     * @return The consoleId.
+     */
+    @java.lang.Override
+    public java.lang.String getConsoleId() {
+      java.lang.Object ref = consoleId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consoleId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"console_id"
+     * </pre>
+     *
+     * <code>string console_id = 20;</code>
+     * @return The bytes for consoleId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConsoleIdBytes() {
+      java.lang.Object ref = consoleId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consoleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GENDER_FIELD_NUMBER = 21;
+    private volatile java.lang.Object gender_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gender"
+     * </pre>
+     *
+     * <code>string gender = 21;</code>
+     * @return The gender.
+     */
+    @java.lang.Override
+    public java.lang.String getGender() {
+      java.lang.Object ref = gender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"gender"
+     * </pre>
+     *
+     * <code>string gender = 21;</code>
+     * @return The bytes for gender.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGenderBytes() {
+      java.lang.Object ref = gender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REMARKS_FIELD_NUMBER = 22;
+    private volatile java.lang.Object remarks_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"remarks"
+     * </pre>
+     *
+     * <code>string remarks = 22;</code>
+     * @return The remarks.
+     */
+    @java.lang.Override
+    public java.lang.String getRemarks() {
+      java.lang.Object ref = remarks_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remarks_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"remarks"
+     * </pre>
+     *
+     * <code>string remarks = 22;</code>
+     * @return The bytes for remarks.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRemarksBytes() {
+      java.lang.Object ref = remarks_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        remarks_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MKT_SOURCE_FIELD_NUMBER = 23;
+    private volatile java.lang.Object mktSource_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"mkt_source"
+     * </pre>
+     *
+     * <code>string mkt_source = 23;</code>
+     * @return The mktSource.
+     */
+    @java.lang.Override
+    public java.lang.String getMktSource() {
+      java.lang.Object ref = mktSource_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mktSource_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"mkt_source"
+     * </pre>
+     *
+     * <code>string mkt_source = 23;</code>
+     * @return The bytes for mktSource.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMktSourceBytes() {
+      java.lang.Object ref = mktSource_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mktSource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 24;
+    private volatile java.lang.Object createTime_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 24;</code>
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 24;</code>
+     * @return The bytes for createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_TIME_FIELD_NUMBER = 25;
+    private volatile java.lang.Object statusTime_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status_time"
+     * </pre>
+     *
+     * <code>string status_time = 25;</code>
+     * @return The statusTime.
+     */
+    @java.lang.Override
+    public java.lang.String getStatusTime() {
+      java.lang.Object ref = statusTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"status_time"
+     * </pre>
+     *
+     * <code>string status_time = 25;</code>
+     * @return The bytes for statusTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusTimeBytes() {
+      java.lang.Object ref = statusTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_TYPE_FIELD_NUMBER = 26;
+    private int userType_;
+    /**
+     * <pre>
+     * 0: root user, 1: sub user.
+     * &#64;inject_tag: json:"user_type"
+     * </pre>
+     *
+     * <code>int32 user_type = 26;</code>
+     * @return The userType.
+     */
+    @java.lang.Override
+    public int getUserType() {
+      return userType_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lang_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rootUserId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, role_);
+      }
+      if (privilege_ != 0) {
+        output.writeInt32(7, privilege_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, status_);
+      }
+      for (int i = 0; i < zones_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, zones_.getRaw(i));
+      }
+      for (int i = 0; i < regions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, regions_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notifyEmail_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, notifyEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verifyType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, verifyType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paidMode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, paidMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravatarEmail_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, gravatarEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(personalName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, personalName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, companyName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyPhone_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, companyPhone_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, companyCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, phone_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consoleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, consoleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, gender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remarks_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, remarks_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mktSource_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, mktSource_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, statusTime_);
+      }
+      if (userType_ != 0) {
+        output.writeInt32(26, userType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lang_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lang_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rootUserId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(role_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, role_);
+      }
+      if (privilege_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, privilege_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, status_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < zones_.size(); i++) {
+          dataSize += computeStringSizeNoTag(zones_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getZonesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < regions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(regions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRegionsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notifyEmail_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, notifyEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verifyType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, verifyType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paidMode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, paidMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gravatarEmail_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, gravatarEmail_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(personalName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, personalName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, companyName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyPhone_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, companyPhone_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(companyCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, companyCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, phone_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consoleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, consoleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gender_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, gender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(remarks_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, remarks_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mktSource_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, mktSource_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, statusTime_);
+      }
+      if (userType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(26, userType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.User)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.User other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) obj;
+
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (!getUserName()
+          .equals(other.getUserName())) return false;
+      if (!getLang()
+          .equals(other.getLang())) return false;
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+      if (!getRootUserId()
+          .equals(other.getRootUserId())) return false;
+      if (!getRole()
+          .equals(other.getRole())) return false;
+      if (getPrivilege()
+          != other.getPrivilege()) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getZonesList()
+          .equals(other.getZonesList())) return false;
+      if (!getRegionsList()
+          .equals(other.getRegionsList())) return false;
+      if (!getNotifyEmail()
+          .equals(other.getNotifyEmail())) return false;
+      if (!getVerifyType()
+          .equals(other.getVerifyType())) return false;
+      if (!getPaidMode()
+          .equals(other.getPaidMode())) return false;
+      if (!getGravatarEmail()
+          .equals(other.getGravatarEmail())) return false;
+      if (!getPersonalName()
+          .equals(other.getPersonalName())) return false;
+      if (!getCompanyName()
+          .equals(other.getCompanyName())) return false;
+      if (!getCompanyPhone()
+          .equals(other.getCompanyPhone())) return false;
+      if (!getCompanyCode()
+          .equals(other.getCompanyCode())) return false;
+      if (!getPhone()
+          .equals(other.getPhone())) return false;
+      if (!getConsoleId()
+          .equals(other.getConsoleId())) return false;
+      if (!getGender()
+          .equals(other.getGender())) return false;
+      if (!getRemarks()
+          .equals(other.getRemarks())) return false;
+      if (!getMktSource()
+          .equals(other.getMktSource())) return false;
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+      if (!getStatusTime()
+          .equals(other.getStatusTime())) return false;
+      if (getUserType()
+          != other.getUserType()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + LANG_FIELD_NUMBER;
+      hash = (53 * hash) + getLang().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + ROOT_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRootUserId().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      hash = (37 * hash) + PRIVILEGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivilege();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      if (getZonesCount() > 0) {
+        hash = (37 * hash) + ZONES_FIELD_NUMBER;
+        hash = (53 * hash) + getZonesList().hashCode();
+      }
+      if (getRegionsCount() > 0) {
+        hash = (37 * hash) + REGIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRegionsList().hashCode();
+      }
+      hash = (37 * hash) + NOTIFY_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getNotifyEmail().hashCode();
+      hash = (37 * hash) + VERIFY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifyType().hashCode();
+      hash = (37 * hash) + PAID_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getPaidMode().hashCode();
+      hash = (37 * hash) + GRAVATAR_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getGravatarEmail().hashCode();
+      hash = (37 * hash) + PERSONAL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonalName().hashCode();
+      hash = (37 * hash) + COMPANY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyName().hashCode();
+      hash = (37 * hash) + COMPANY_PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyPhone().hashCode();
+      hash = (37 * hash) + COMPANY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanyCode().hashCode();
+      hash = (37 * hash) + PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getPhone().hashCode();
+      hash = (37 * hash) + CONSOLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsoleId().hashCode();
+      hash = (37 * hash) + GENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getGender().hashCode();
+      hash = (37 * hash) + REMARKS_FIELD_NUMBER;
+      hash = (53 * hash) + getRemarks().hashCode();
+      hash = (37 * hash) + MKT_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getMktSource().hashCode();
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+      hash = (37 * hash) + STATUS_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusTime().hashCode();
+      hash = (37 * hash) + USER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getUserType();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.User}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.User)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        userName_ = "";
+
+        lang_ = "";
+
+        email_ = "";
+
+        rootUserId_ = "";
+
+        role_ = "";
+
+        privilege_ = 0;
+
+        status_ = "";
+
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        notifyEmail_ = "";
+
+        verifyType_ = "";
+
+        paidMode_ = "";
+
+        gravatarEmail_ = "";
+
+        personalName_ = "";
+
+        companyName_ = "";
+
+        companyPhone_ = "";
+
+        companyCode_ = "";
+
+        phone_ = "";
+
+        consoleId_ = "";
+
+        gender_ = "";
+
+        remarks_ = "";
+
+        mktSource_ = "";
+
+        createTime_ = "";
+
+        statusTime_ = "";
+
+        userType_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_User_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.User(this);
+        int from_bitField0_ = bitField0_;
+        result.userId_ = userId_;
+        result.userName_ = userName_;
+        result.lang_ = lang_;
+        result.email_ = email_;
+        result.rootUserId_ = rootUserId_;
+        result.role_ = role_;
+        result.privilege_ = privilege_;
+        result.status_ = status_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          zones_ = zones_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.zones_ = zones_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          regions_ = regions_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.regions_ = regions_;
+        result.notifyEmail_ = notifyEmail_;
+        result.verifyType_ = verifyType_;
+        result.paidMode_ = paidMode_;
+        result.gravatarEmail_ = gravatarEmail_;
+        result.personalName_ = personalName_;
+        result.companyName_ = companyName_;
+        result.companyPhone_ = companyPhone_;
+        result.companyCode_ = companyCode_;
+        result.phone_ = phone_;
+        result.consoleId_ = consoleId_;
+        result.gender_ = gender_;
+        result.remarks_ = remarks_;
+        result.mktSource_ = mktSource_;
+        result.createTime_ = createTime_;
+        result.statusTime_ = statusTime_;
+        result.userType_ = userType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.User)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          onChanged();
+        }
+        if (!other.getLang().isEmpty()) {
+          lang_ = other.lang_;
+          onChanged();
+        }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getRootUserId().isEmpty()) {
+          rootUserId_ = other.rootUserId_;
+          onChanged();
+        }
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.getPrivilege() != 0) {
+          setPrivilege(other.getPrivilege());
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.zones_.isEmpty()) {
+          if (zones_.isEmpty()) {
+            zones_ = other.zones_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureZonesIsMutable();
+            zones_.addAll(other.zones_);
+          }
+          onChanged();
+        }
+        if (!other.regions_.isEmpty()) {
+          if (regions_.isEmpty()) {
+            regions_ = other.regions_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRegionsIsMutable();
+            regions_.addAll(other.regions_);
+          }
+          onChanged();
+        }
+        if (!other.getNotifyEmail().isEmpty()) {
+          notifyEmail_ = other.notifyEmail_;
+          onChanged();
+        }
+        if (!other.getVerifyType().isEmpty()) {
+          verifyType_ = other.verifyType_;
+          onChanged();
+        }
+        if (!other.getPaidMode().isEmpty()) {
+          paidMode_ = other.paidMode_;
+          onChanged();
+        }
+        if (!other.getGravatarEmail().isEmpty()) {
+          gravatarEmail_ = other.gravatarEmail_;
+          onChanged();
+        }
+        if (!other.getPersonalName().isEmpty()) {
+          personalName_ = other.personalName_;
+          onChanged();
+        }
+        if (!other.getCompanyName().isEmpty()) {
+          companyName_ = other.companyName_;
+          onChanged();
+        }
+        if (!other.getCompanyPhone().isEmpty()) {
+          companyPhone_ = other.companyPhone_;
+          onChanged();
+        }
+        if (!other.getCompanyCode().isEmpty()) {
+          companyCode_ = other.companyCode_;
+          onChanged();
+        }
+        if (!other.getPhone().isEmpty()) {
+          phone_ = other.phone_;
+          onChanged();
+        }
+        if (!other.getConsoleId().isEmpty()) {
+          consoleId_ = other.consoleId_;
+          onChanged();
+        }
+        if (!other.getGender().isEmpty()) {
+          gender_ = other.gender_;
+          onChanged();
+        }
+        if (!other.getRemarks().isEmpty()) {
+          remarks_ = other.remarks_;
+          onChanged();
+        }
+        if (!other.getMktSource().isEmpty()) {
+          mktSource_ = other.mktSource_;
+          onChanged();
+        }
+        if (!other.getCreateTime().isEmpty()) {
+          createTime_ = other.createTime_;
+          onChanged();
+        }
+        if (!other.getStatusTime().isEmpty()) {
+          statusTime_ = other.statusTime_;
+          onChanged();
+        }
+        if (other.getUserType() != 0) {
+          setUserType(other.getUserType());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.User) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_id"
+       * </pre>
+       *
+       * <code>string user_id = 1;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_name"
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return The userName.
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_name"
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return The bytes for userName.
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_name"
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @param value The userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_name"
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_name"
+       * </pre>
+       *
+       * <code>string user_name = 2;</code>
+       * @param value The bytes for userName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lang_ = "";
+      /**
+       * <pre>
+       * Language "zh-cn" | "en-us"
+       * &#64;inject_tag: json:"lang"
+       * </pre>
+       *
+       * <code>string lang = 3;</code>
+       * @return The lang.
+       */
+      public java.lang.String getLang() {
+        java.lang.Object ref = lang_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lang_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Language "zh-cn" | "en-us"
+       * &#64;inject_tag: json:"lang"
+       * </pre>
+       *
+       * <code>string lang = 3;</code>
+       * @return The bytes for lang.
+       */
+      public com.google.protobuf.ByteString
+          getLangBytes() {
+        java.lang.Object ref = lang_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lang_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Language "zh-cn" | "en-us"
+       * &#64;inject_tag: json:"lang"
+       * </pre>
+       *
+       * <code>string lang = 3;</code>
+       * @param value The lang to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLang(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lang_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Language "zh-cn" | "en-us"
+       * &#64;inject_tag: json:"lang"
+       * </pre>
+       *
+       * <code>string lang = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLang() {
+        
+        lang_ = getDefaultInstance().getLang();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Language "zh-cn" | "en-us"
+       * &#64;inject_tag: json:"lang"
+       * </pre>
+       *
+       * <code>string lang = 3;</code>
+       * @param value The bytes for lang to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLangBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lang_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"email"
+       * </pre>
+       *
+       * <code>string email = 4;</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"email"
+       * </pre>
+       *
+       * <code>string email = 4;</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"email"
+       * </pre>
+       *
+       * <code>string email = 4;</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"email"
+       * </pre>
+       *
+       * <code>string email = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"email"
+       * </pre>
+       *
+       * <code>string email = 4;</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rootUserId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"root_user_id"
+       * </pre>
+       *
+       * <code>string root_user_id = 5;</code>
+       * @return The rootUserId.
+       */
+      public java.lang.String getRootUserId() {
+        java.lang.Object ref = rootUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rootUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"root_user_id"
+       * </pre>
+       *
+       * <code>string root_user_id = 5;</code>
+       * @return The bytes for rootUserId.
+       */
+      public com.google.protobuf.ByteString
+          getRootUserIdBytes() {
+        java.lang.Object ref = rootUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rootUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"root_user_id"
+       * </pre>
+       *
+       * <code>string root_user_id = 5;</code>
+       * @param value The rootUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rootUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"root_user_id"
+       * </pre>
+       *
+       * <code>string root_user_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRootUserId() {
+        
+        rootUserId_ = getDefaultInstance().getRootUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"root_user_id"
+       * </pre>
+       *
+       * <code>string root_user_id = 5;</code>
+       * @param value The bytes for rootUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rootUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>string role = 6;</code>
+       * @return The role.
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>string role = 6;</code>
+       * @return The bytes for role.
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>string role = 6;</code>
+       * @param value The role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>string role = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"role"
+       * </pre>
+       *
+       * <code>string role = 6;</code>
+       * @param value The bytes for role to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int privilege_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"privilege"
+       * </pre>
+       *
+       * <code>int32 privilege = 7;</code>
+       * @return The privilege.
+       */
+      @java.lang.Override
+      public int getPrivilege() {
+        return privilege_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"privilege"
+       * </pre>
+       *
+       * <code>int32 privilege = 7;</code>
+       * @param value The privilege to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivilege(int value) {
+        
+        privilege_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"privilege"
+       * </pre>
+       *
+       * <code>int32 privilege = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivilege() {
+        
+        privilege_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status"
+       * </pre>
+       *
+       * <code>string status = 8;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status"
+       * </pre>
+       *
+       * <code>string status = 8;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status"
+       * </pre>
+       *
+       * <code>string status = 8;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status"
+       * </pre>
+       *
+       * <code>string status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status"
+       * </pre>
+       *
+       * <code>string status = 8;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureZonesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @return A list containing the zones.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getZonesList() {
+        return zones_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @return The count of zones.
+       */
+      public int getZonesCount() {
+        return zones_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param index The index of the element to return.
+       * @return The zones at the given index.
+       */
+      public java.lang.String getZones(int index) {
+        return zones_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the zones at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getZonesBytes(int index) {
+        return zones_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param index The index to set the value at.
+       * @param value The zones to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZones(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureZonesIsMutable();
+        zones_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param value The zones to add.
+       * @return This builder for chaining.
+       */
+      public Builder addZones(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureZonesIsMutable();
+        zones_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param values The zones to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllZones(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureZonesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, zones_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearZones() {
+        zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"zones"
+       * </pre>
+       *
+       * <code>repeated string zones = 9;</code>
+       * @param value The bytes of the zones to add.
+       * @return This builder for chaining.
+       */
+      public Builder addZonesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureZonesIsMutable();
+        zones_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRegionsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @return A list containing the regions.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRegionsList() {
+        return regions_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @return The count of regions.
+       */
+      public int getRegionsCount() {
+        return regions_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param index The index of the element to return.
+       * @return The regions at the given index.
+       */
+      public java.lang.String getRegions(int index) {
+        return regions_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the regions at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getRegionsBytes(int index) {
+        return regions_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The regions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegions(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRegionsIsMutable();
+        regions_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param value The regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRegions(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRegionsIsMutable();
+        regions_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param values The regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRegions(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, regions_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegions() {
+        regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"regions"
+       * </pre>
+       *
+       * <code>repeated string regions = 10;</code>
+       * @param value The bytes of the regions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRegionsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRegionsIsMutable();
+        regions_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notifyEmail_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notify_email"
+       * </pre>
+       *
+       * <code>string notify_email = 11;</code>
+       * @return The notifyEmail.
+       */
+      public java.lang.String getNotifyEmail() {
+        java.lang.Object ref = notifyEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notifyEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notify_email"
+       * </pre>
+       *
+       * <code>string notify_email = 11;</code>
+       * @return The bytes for notifyEmail.
+       */
+      public com.google.protobuf.ByteString
+          getNotifyEmailBytes() {
+        java.lang.Object ref = notifyEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notifyEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notify_email"
+       * </pre>
+       *
+       * <code>string notify_email = 11;</code>
+       * @param value The notifyEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotifyEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        notifyEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notify_email"
+       * </pre>
+       *
+       * <code>string notify_email = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNotifyEmail() {
+        
+        notifyEmail_ = getDefaultInstance().getNotifyEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notify_email"
+       * </pre>
+       *
+       * <code>string notify_email = 11;</code>
+       * @param value The bytes for notifyEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotifyEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        notifyEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object verifyType_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"verify_type"
+       * </pre>
+       *
+       * <code>string verify_type = 12;</code>
+       * @return The verifyType.
+       */
+      public java.lang.String getVerifyType() {
+        java.lang.Object ref = verifyType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          verifyType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"verify_type"
+       * </pre>
+       *
+       * <code>string verify_type = 12;</code>
+       * @return The bytes for verifyType.
+       */
+      public com.google.protobuf.ByteString
+          getVerifyTypeBytes() {
+        java.lang.Object ref = verifyType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          verifyType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"verify_type"
+       * </pre>
+       *
+       * <code>string verify_type = 12;</code>
+       * @param value The verifyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        verifyType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"verify_type"
+       * </pre>
+       *
+       * <code>string verify_type = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerifyType() {
+        
+        verifyType_ = getDefaultInstance().getVerifyType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"verify_type"
+       * </pre>
+       *
+       * <code>string verify_type = 12;</code>
+       * @param value The bytes for verifyType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        verifyType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object paidMode_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"paid_mode"
+       * </pre>
+       *
+       * <code>string paid_mode = 13;</code>
+       * @return The paidMode.
+       */
+      public java.lang.String getPaidMode() {
+        java.lang.Object ref = paidMode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          paidMode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"paid_mode"
+       * </pre>
+       *
+       * <code>string paid_mode = 13;</code>
+       * @return The bytes for paidMode.
+       */
+      public com.google.protobuf.ByteString
+          getPaidModeBytes() {
+        java.lang.Object ref = paidMode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          paidMode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"paid_mode"
+       * </pre>
+       *
+       * <code>string paid_mode = 13;</code>
+       * @param value The paidMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPaidMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        paidMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"paid_mode"
+       * </pre>
+       *
+       * <code>string paid_mode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPaidMode() {
+        
+        paidMode_ = getDefaultInstance().getPaidMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"paid_mode"
+       * </pre>
+       *
+       * <code>string paid_mode = 13;</code>
+       * @param value The bytes for paidMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPaidModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        paidMode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gravatarEmail_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gravatar_email"
+       * </pre>
+       *
+       * <code>string gravatar_email = 14;</code>
+       * @return The gravatarEmail.
+       */
+      public java.lang.String getGravatarEmail() {
+        java.lang.Object ref = gravatarEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gravatarEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gravatar_email"
+       * </pre>
+       *
+       * <code>string gravatar_email = 14;</code>
+       * @return The bytes for gravatarEmail.
+       */
+      public com.google.protobuf.ByteString
+          getGravatarEmailBytes() {
+        java.lang.Object ref = gravatarEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gravatarEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gravatar_email"
+       * </pre>
+       *
+       * <code>string gravatar_email = 14;</code>
+       * @param value The gravatarEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGravatarEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        gravatarEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gravatar_email"
+       * </pre>
+       *
+       * <code>string gravatar_email = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGravatarEmail() {
+        
+        gravatarEmail_ = getDefaultInstance().getGravatarEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gravatar_email"
+       * </pre>
+       *
+       * <code>string gravatar_email = 14;</code>
+       * @param value The bytes for gravatarEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGravatarEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        gravatarEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object personalName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"personal_name"
+       * </pre>
+       *
+       * <code>string personal_name = 15;</code>
+       * @return The personalName.
+       */
+      public java.lang.String getPersonalName() {
+        java.lang.Object ref = personalName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          personalName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"personal_name"
+       * </pre>
+       *
+       * <code>string personal_name = 15;</code>
+       * @return The bytes for personalName.
+       */
+      public com.google.protobuf.ByteString
+          getPersonalNameBytes() {
+        java.lang.Object ref = personalName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          personalName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"personal_name"
+       * </pre>
+       *
+       * <code>string personal_name = 15;</code>
+       * @param value The personalName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPersonalName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        personalName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"personal_name"
+       * </pre>
+       *
+       * <code>string personal_name = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPersonalName() {
+        
+        personalName_ = getDefaultInstance().getPersonalName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"personal_name"
+       * </pre>
+       *
+       * <code>string personal_name = 15;</code>
+       * @param value The bytes for personalName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPersonalNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        personalName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object companyName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_name"
+       * </pre>
+       *
+       * <code>string company_name = 16;</code>
+       * @return The companyName.
+       */
+      public java.lang.String getCompanyName() {
+        java.lang.Object ref = companyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_name"
+       * </pre>
+       *
+       * <code>string company_name = 16;</code>
+       * @return The bytes for companyName.
+       */
+      public com.google.protobuf.ByteString
+          getCompanyNameBytes() {
+        java.lang.Object ref = companyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          companyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_name"
+       * </pre>
+       *
+       * <code>string company_name = 16;</code>
+       * @param value The companyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        companyName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_name"
+       * </pre>
+       *
+       * <code>string company_name = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanyName() {
+        
+        companyName_ = getDefaultInstance().getCompanyName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_name"
+       * </pre>
+       *
+       * <code>string company_name = 16;</code>
+       * @param value The bytes for companyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        companyName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object companyPhone_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_phone"
+       * </pre>
+       *
+       * <code>string company_phone = 17;</code>
+       * @return The companyPhone.
+       */
+      public java.lang.String getCompanyPhone() {
+        java.lang.Object ref = companyPhone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companyPhone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_phone"
+       * </pre>
+       *
+       * <code>string company_phone = 17;</code>
+       * @return The bytes for companyPhone.
+       */
+      public com.google.protobuf.ByteString
+          getCompanyPhoneBytes() {
+        java.lang.Object ref = companyPhone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          companyPhone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_phone"
+       * </pre>
+       *
+       * <code>string company_phone = 17;</code>
+       * @param value The companyPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        companyPhone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_phone"
+       * </pre>
+       *
+       * <code>string company_phone = 17;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanyPhone() {
+        
+        companyPhone_ = getDefaultInstance().getCompanyPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_phone"
+       * </pre>
+       *
+       * <code>string company_phone = 17;</code>
+       * @param value The bytes for companyPhone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        companyPhone_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object companyCode_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_code"
+       * </pre>
+       *
+       * <code>string company_code = 18;</code>
+       * @return The companyCode.
+       */
+      public java.lang.String getCompanyCode() {
+        java.lang.Object ref = companyCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companyCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_code"
+       * </pre>
+       *
+       * <code>string company_code = 18;</code>
+       * @return The bytes for companyCode.
+       */
+      public com.google.protobuf.ByteString
+          getCompanyCodeBytes() {
+        java.lang.Object ref = companyCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          companyCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_code"
+       * </pre>
+       *
+       * <code>string company_code = 18;</code>
+       * @param value The companyCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        companyCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_code"
+       * </pre>
+       *
+       * <code>string company_code = 18;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanyCode() {
+        
+        companyCode_ = getDefaultInstance().getCompanyCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"company_code"
+       * </pre>
+       *
+       * <code>string company_code = 18;</code>
+       * @param value The bytes for companyCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanyCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        companyCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object phone_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"phone"
+       * </pre>
+       *
+       * <code>string phone = 19;</code>
+       * @return The phone.
+       */
+      public java.lang.String getPhone() {
+        java.lang.Object ref = phone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"phone"
+       * </pre>
+       *
+       * <code>string phone = 19;</code>
+       * @return The bytes for phone.
+       */
+      public com.google.protobuf.ByteString
+          getPhoneBytes() {
+        java.lang.Object ref = phone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"phone"
+       * </pre>
+       *
+       * <code>string phone = 19;</code>
+       * @param value The phone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        phone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"phone"
+       * </pre>
+       *
+       * <code>string phone = 19;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPhone() {
+        
+        phone_ = getDefaultInstance().getPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"phone"
+       * </pre>
+       *
+       * <code>string phone = 19;</code>
+       * @param value The bytes for phone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        phone_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object consoleId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"console_id"
+       * </pre>
+       *
+       * <code>string console_id = 20;</code>
+       * @return The consoleId.
+       */
+      public java.lang.String getConsoleId() {
+        java.lang.Object ref = consoleId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          consoleId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"console_id"
+       * </pre>
+       *
+       * <code>string console_id = 20;</code>
+       * @return The bytes for consoleId.
+       */
+      public com.google.protobuf.ByteString
+          getConsoleIdBytes() {
+        java.lang.Object ref = consoleId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          consoleId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"console_id"
+       * </pre>
+       *
+       * <code>string console_id = 20;</code>
+       * @param value The consoleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsoleId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        consoleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"console_id"
+       * </pre>
+       *
+       * <code>string console_id = 20;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsoleId() {
+        
+        consoleId_ = getDefaultInstance().getConsoleId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"console_id"
+       * </pre>
+       *
+       * <code>string console_id = 20;</code>
+       * @param value The bytes for consoleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsoleIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        consoleId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gender_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gender"
+       * </pre>
+       *
+       * <code>string gender = 21;</code>
+       * @return The gender.
+       */
+      public java.lang.String getGender() {
+        java.lang.Object ref = gender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gender"
+       * </pre>
+       *
+       * <code>string gender = 21;</code>
+       * @return The bytes for gender.
+       */
+      public com.google.protobuf.ByteString
+          getGenderBytes() {
+        java.lang.Object ref = gender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gender"
+       * </pre>
+       *
+       * <code>string gender = 21;</code>
+       * @param value The gender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        gender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gender"
+       * </pre>
+       *
+       * <code>string gender = 21;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGender() {
+        
+        gender_ = getDefaultInstance().getGender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"gender"
+       * </pre>
+       *
+       * <code>string gender = 21;</code>
+       * @param value The bytes for gender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        gender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object remarks_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"remarks"
+       * </pre>
+       *
+       * <code>string remarks = 22;</code>
+       * @return The remarks.
+       */
+      public java.lang.String getRemarks() {
+        java.lang.Object ref = remarks_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          remarks_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"remarks"
+       * </pre>
+       *
+       * <code>string remarks = 22;</code>
+       * @return The bytes for remarks.
+       */
+      public com.google.protobuf.ByteString
+          getRemarksBytes() {
+        java.lang.Object ref = remarks_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          remarks_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"remarks"
+       * </pre>
+       *
+       * <code>string remarks = 22;</code>
+       * @param value The remarks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemarks(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        remarks_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"remarks"
+       * </pre>
+       *
+       * <code>string remarks = 22;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemarks() {
+        
+        remarks_ = getDefaultInstance().getRemarks();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"remarks"
+       * </pre>
+       *
+       * <code>string remarks = 22;</code>
+       * @param value The bytes for remarks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemarksBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        remarks_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mktSource_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"mkt_source"
+       * </pre>
+       *
+       * <code>string mkt_source = 23;</code>
+       * @return The mktSource.
+       */
+      public java.lang.String getMktSource() {
+        java.lang.Object ref = mktSource_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mktSource_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"mkt_source"
+       * </pre>
+       *
+       * <code>string mkt_source = 23;</code>
+       * @return The bytes for mktSource.
+       */
+      public com.google.protobuf.ByteString
+          getMktSourceBytes() {
+        java.lang.Object ref = mktSource_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mktSource_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"mkt_source"
+       * </pre>
+       *
+       * <code>string mkt_source = 23;</code>
+       * @param value The mktSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMktSource(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mktSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"mkt_source"
+       * </pre>
+       *
+       * <code>string mkt_source = 23;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMktSource() {
+        
+        mktSource_ = getDefaultInstance().getMktSource();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"mkt_source"
+       * </pre>
+       *
+       * <code>string mkt_source = 23;</code>
+       * @param value The bytes for mktSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMktSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mktSource_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createTime_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 24;</code>
+       * @return The createTime.
+       */
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 24;</code>
+       * @return The bytes for createTime.
+       */
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 24;</code>
+       * @param value The createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 24;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreateTime() {
+        
+        createTime_ = getDefaultInstance().getCreateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 24;</code>
+       * @param value The bytes for createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object statusTime_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status_time"
+       * </pre>
+       *
+       * <code>string status_time = 25;</code>
+       * @return The statusTime.
+       */
+      public java.lang.String getStatusTime() {
+        java.lang.Object ref = statusTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          statusTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status_time"
+       * </pre>
+       *
+       * <code>string status_time = 25;</code>
+       * @return The bytes for statusTime.
+       */
+      public com.google.protobuf.ByteString
+          getStatusTimeBytes() {
+        java.lang.Object ref = statusTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          statusTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status_time"
+       * </pre>
+       *
+       * <code>string status_time = 25;</code>
+       * @param value The statusTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        statusTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status_time"
+       * </pre>
+       *
+       * <code>string status_time = 25;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatusTime() {
+        
+        statusTime_ = getDefaultInstance().getStatusTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"status_time"
+       * </pre>
+       *
+       * <code>string status_time = 25;</code>
+       * @param value The bytes for statusTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        statusTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int userType_ ;
+      /**
+       * <pre>
+       * 0: root user, 1: sub user.
+       * &#64;inject_tag: json:"user_type"
+       * </pre>
+       *
+       * <code>int32 user_type = 26;</code>
+       * @return The userType.
+       */
+      @java.lang.Override
+      public int getUserType() {
+        return userType_;
+      }
+      /**
+       * <pre>
+       * 0: root user, 1: sub user.
+       * &#64;inject_tag: json:"user_type"
+       * </pre>
+       *
+       * <code>int32 user_type = 26;</code>
+       * @param value The userType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserType(int value) {
+        
+        userType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0: root user, 1: sub user.
+       * &#64;inject_tag: json:"user_type"
+       * </pre>
+       *
+       * <code>int32 user_type = 26;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserType() {
+        
+        userType_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.User)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.User)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.User DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.User();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<User>
+        PARSER = new com.google.protobuf.AbstractParser<User>() {
+      @java.lang.Override
+      public User parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new User(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<User> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<User> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AccessKeyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.AccessKey)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string access_key_id = 1;</code>
+     * @return The accessKeyId.
+     */
+    java.lang.String getAccessKeyId();
+    /**
+     * <code>string access_key_id = 1;</code>
+     * @return The bytes for accessKeyId.
+     */
+    com.google.protobuf.ByteString
+        getAccessKeyIdBytes();
+
+    /**
+     * <code>string secret_access_key = 2;</code>
+     * @return The secretAccessKey.
+     */
+    java.lang.String getSecretAccessKey();
+    /**
+     * <code>string secret_access_key = 2;</code>
+     * @return The bytes for secretAccessKey.
+     */
+    com.google.protobuf.ByteString
+        getSecretAccessKeyBytes();
+
+    /**
+     * <code>string owner = 3;</code>
+     * @return The owner.
+     */
+    java.lang.String getOwner();
+    /**
+     * <code>string owner = 3;</code>
+     * @return The bytes for owner.
+     */
+    com.google.protobuf.ByteString
+        getOwnerBytes();
+
+    /**
+     * <code>string root_user_id = 4;</code>
+     * @return The rootUserId.
+     */
+    java.lang.String getRootUserId();
+    /**
+     * <code>string root_user_id = 4;</code>
+     * @return The bytes for rootUserId.
+     */
+    com.google.protobuf.ByteString
+        getRootUserIdBytes();
+
+    /**
+     * <code>string status = 5;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 5;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <code>string description = 6;</code>
+     * @return The description.
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 6;</code>
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
+
+    /**
+     * <code>string ip_white_list = 7;</code>
+     * @return The ipWhiteList.
+     */
+    java.lang.String getIpWhiteList();
+    /**
+     * <code>string ip_white_list = 7;</code>
+     * @return The bytes for ipWhiteList.
+     */
+    com.google.protobuf.ByteString
+        getIpWhiteListBytes();
+
+    /**
+     * <code>string console_id = 8;</code>
+     * @return The consoleId.
+     */
+    java.lang.String getConsoleId();
+    /**
+     * <code>string console_id = 8;</code>
+     * @return The bytes for consoleId.
+     */
+    com.google.protobuf.ByteString
+        getConsoleIdBytes();
+
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    java.lang.String getCreateTime();
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    /**
+     * <code>string status_time = 10;</code>
+     * @return The statusTime.
+     */
+    java.lang.String getStatusTime();
+    /**
+     * <code>string status_time = 10;</code>
+     * @return The bytes for statusTime.
+     */
+    com.google.protobuf.ByteString
+        getStatusTimeBytes();
+
+    /**
+     * <code>string controller = 11;</code>
+     * @return The controller.
+     */
+    java.lang.String getController();
+    /**
+     * <code>string controller = 11;</code>
+     * @return The bytes for controller.
+     */
+    com.google.protobuf.ByteString
+        getControllerBytes();
+  }
+  /**
+   * Protobuf type {@code model.AccessKey}
+   */
+  public static final class AccessKey extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.AccessKey)
+      AccessKeyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AccessKey.newBuilder() to construct.
+    private AccessKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AccessKey() {
+      accessKeyId_ = "";
+      secretAccessKey_ = "";
+      owner_ = "";
+      rootUserId_ = "";
+      status_ = "";
+      description_ = "";
+      ipWhiteList_ = "";
+      consoleId_ = "";
+      createTime_ = "";
+      statusTime_ = "";
+      controller_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AccessKey();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AccessKey(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accessKeyId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secretAccessKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              owner_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rootUserId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              status_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ipWhiteList_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              consoleId_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createTime_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusTime_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              controller_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AccessKey_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AccessKey_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.AccessKey.Controller}
+     */
+    public enum Controller
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>_ControllerUnset = 0;</code>
+       */
+      _ControllerUnset(0),
+      /**
+       * <code>pitrix = 1;</code>
+       */
+      pitrix(1),
+      /**
+       * <code>self = 2;</code>
+       */
+      self(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>_ControllerUnset = 0;</code>
+       */
+      public static final int _ControllerUnset_VALUE = 0;
+      /**
+       * <code>pitrix = 1;</code>
+       */
+      public static final int pitrix_VALUE = 1;
+      /**
+       * <code>self = 2;</code>
+       */
+      public static final int self_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Controller valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Controller forNumber(int value) {
+        switch (value) {
+          case 0: return _ControllerUnset;
+          case 1: return pitrix;
+          case 2: return self;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Controller>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Controller> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Controller>() {
+              public Controller findValueByNumber(int number) {
+                return Controller.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Controller[] VALUES = values();
+
+      public static Controller valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Controller(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AccessKey.Controller)
+    }
+
+    /**
+     * Protobuf enum {@code model.AccessKey.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>_StatusUnset = 0;</code>
+       */
+      _StatusUnset(0),
+      /**
+       * <code>active = 1;</code>
+       */
+      active(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>_StatusUnset = 0;</code>
+       */
+      public static final int _StatusUnset_VALUE = 0;
+      /**
+       * <code>active = 1;</code>
+       */
+      public static final int active_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return _StatusUnset;
+          case 1: return active;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AccessKey.Status)
+    }
+
+    public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object accessKeyId_;
+    /**
+     * <code>string access_key_id = 1;</code>
+     * @return The accessKeyId.
+     */
+    @java.lang.Override
+    public java.lang.String getAccessKeyId() {
+      java.lang.Object ref = accessKeyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessKeyId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string access_key_id = 1;</code>
+     * @return The bytes for accessKeyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccessKeyIdBytes() {
+      java.lang.Object ref = accessKeyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessKeyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECRET_ACCESS_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object secretAccessKey_;
+    /**
+     * <code>string secret_access_key = 2;</code>
+     * @return The secretAccessKey.
+     */
+    @java.lang.Override
+    public java.lang.String getSecretAccessKey() {
+      java.lang.Object ref = secretAccessKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretAccessKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string secret_access_key = 2;</code>
+     * @return The bytes for secretAccessKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSecretAccessKeyBytes() {
+      java.lang.Object ref = secretAccessKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secretAccessKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object owner_;
+    /**
+     * <code>string owner = 3;</code>
+     * @return The owner.
+     */
+    @java.lang.Override
+    public java.lang.String getOwner() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        owner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string owner = 3;</code>
+     * @return The bytes for owner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOwnerBytes() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        owner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROOT_USER_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object rootUserId_;
+    /**
+     * <code>string root_user_id = 4;</code>
+     * @return The rootUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getRootUserId() {
+      java.lang.Object ref = rootUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rootUserId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string root_user_id = 4;</code>
+     * @return The bytes for rootUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRootUserIdBytes() {
+      java.lang.Object ref = rootUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rootUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private volatile java.lang.Object status_;
+    /**
+     * <code>string status = 5;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 5;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 6;</code>
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 6;</code>
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IP_WHITE_LIST_FIELD_NUMBER = 7;
+    private volatile java.lang.Object ipWhiteList_;
+    /**
+     * <code>string ip_white_list = 7;</code>
+     * @return The ipWhiteList.
+     */
+    @java.lang.Override
+    public java.lang.String getIpWhiteList() {
+      java.lang.Object ref = ipWhiteList_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipWhiteList_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ip_white_list = 7;</code>
+     * @return The bytes for ipWhiteList.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIpWhiteListBytes() {
+      java.lang.Object ref = ipWhiteList_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipWhiteList_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONSOLE_ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object consoleId_;
+    /**
+     * <code>string console_id = 8;</code>
+     * @return The consoleId.
+     */
+    @java.lang.Override
+    public java.lang.String getConsoleId() {
+      java.lang.Object ref = consoleId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consoleId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string console_id = 8;</code>
+     * @return The bytes for consoleId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getConsoleIdBytes() {
+      java.lang.Object ref = consoleId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consoleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object createTime_;
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string create_time = 9;</code>
+     * @return The bytes for createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_TIME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object statusTime_;
+    /**
+     * <code>string status_time = 10;</code>
+     * @return The statusTime.
+     */
+    @java.lang.Override
+    public java.lang.String getStatusTime() {
+      java.lang.Object ref = statusTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        statusTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status_time = 10;</code>
+     * @return The bytes for statusTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusTimeBytes() {
+      java.lang.Object ref = statusTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        statusTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTROLLER_FIELD_NUMBER = 11;
+    private volatile java.lang.Object controller_;
+    /**
+     * <code>string controller = 11;</code>
+     * @return The controller.
+     */
+    @java.lang.Override
+    public java.lang.String getController() {
+      java.lang.Object ref = controller_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        controller_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string controller = 11;</code>
+     * @return The bytes for controller.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getControllerBytes() {
+      java.lang.Object ref = controller_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        controller_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessKeyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretAccessKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, rootUserId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipWhiteList_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, ipWhiteList_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consoleId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, consoleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, statusTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controller_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, controller_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessKeyId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessKeyId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretAccessKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rootUserId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipWhiteList_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, ipWhiteList_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consoleId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, consoleId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, createTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(statusTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, statusTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controller_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, controller_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey) obj;
+
+      if (!getAccessKeyId()
+          .equals(other.getAccessKeyId())) return false;
+      if (!getSecretAccessKey()
+          .equals(other.getSecretAccessKey())) return false;
+      if (!getOwner()
+          .equals(other.getOwner())) return false;
+      if (!getRootUserId()
+          .equals(other.getRootUserId())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getDescription()
+          .equals(other.getDescription())) return false;
+      if (!getIpWhiteList()
+          .equals(other.getIpWhiteList())) return false;
+      if (!getConsoleId()
+          .equals(other.getConsoleId())) return false;
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+      if (!getStatusTime()
+          .equals(other.getStatusTime())) return false;
+      if (!getController()
+          .equals(other.getController())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCESS_KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessKeyId().hashCode();
+      hash = (37 * hash) + SECRET_ACCESS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretAccessKey().hashCode();
+      hash = (37 * hash) + OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwner().hashCode();
+      hash = (37 * hash) + ROOT_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRootUserId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (37 * hash) + IP_WHITE_LIST_FIELD_NUMBER;
+      hash = (53 * hash) + getIpWhiteList().hashCode();
+      hash = (37 * hash) + CONSOLE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsoleId().hashCode();
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+      hash = (37 * hash) + STATUS_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusTime().hashCode();
+      hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
+      hash = (53 * hash) + getController().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.AccessKey}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.AccessKey)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKeyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AccessKey_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AccessKey_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        accessKeyId_ = "";
+
+        secretAccessKey_ = "";
+
+        owner_ = "";
+
+        rootUserId_ = "";
+
+        status_ = "";
+
+        description_ = "";
+
+        ipWhiteList_ = "";
+
+        consoleId_ = "";
+
+        createTime_ = "";
+
+        statusTime_ = "";
+
+        controller_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_AccessKey_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey(this);
+        result.accessKeyId_ = accessKeyId_;
+        result.secretAccessKey_ = secretAccessKey_;
+        result.owner_ = owner_;
+        result.rootUserId_ = rootUserId_;
+        result.status_ = status_;
+        result.description_ = description_;
+        result.ipWhiteList_ = ipWhiteList_;
+        result.consoleId_ = consoleId_;
+        result.createTime_ = createTime_;
+        result.statusTime_ = statusTime_;
+        result.controller_ = controller_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey.getDefaultInstance()) return this;
+        if (!other.getAccessKeyId().isEmpty()) {
+          accessKeyId_ = other.accessKeyId_;
+          onChanged();
+        }
+        if (!other.getSecretAccessKey().isEmpty()) {
+          secretAccessKey_ = other.secretAccessKey_;
+          onChanged();
+        }
+        if (!other.getOwner().isEmpty()) {
+          owner_ = other.owner_;
+          onChanged();
+        }
+        if (!other.getRootUserId().isEmpty()) {
+          rootUserId_ = other.rootUserId_;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          onChanged();
+        }
+        if (!other.getIpWhiteList().isEmpty()) {
+          ipWhiteList_ = other.ipWhiteList_;
+          onChanged();
+        }
+        if (!other.getConsoleId().isEmpty()) {
+          consoleId_ = other.consoleId_;
+          onChanged();
+        }
+        if (!other.getCreateTime().isEmpty()) {
+          createTime_ = other.createTime_;
+          onChanged();
+        }
+        if (!other.getStatusTime().isEmpty()) {
+          statusTime_ = other.statusTime_;
+          onChanged();
+        }
+        if (!other.getController().isEmpty()) {
+          controller_ = other.controller_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object accessKeyId_ = "";
+      /**
+       * <code>string access_key_id = 1;</code>
+       * @return The accessKeyId.
+       */
+      public java.lang.String getAccessKeyId() {
+        java.lang.Object ref = accessKeyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessKeyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string access_key_id = 1;</code>
+       * @return The bytes for accessKeyId.
+       */
+      public com.google.protobuf.ByteString
+          getAccessKeyIdBytes() {
+        java.lang.Object ref = accessKeyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accessKeyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string access_key_id = 1;</code>
+       * @param value The accessKeyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessKeyId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accessKeyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string access_key_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccessKeyId() {
+        
+        accessKeyId_ = getDefaultInstance().getAccessKeyId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string access_key_id = 1;</code>
+       * @param value The bytes for accessKeyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessKeyIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accessKeyId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object secretAccessKey_ = "";
+      /**
+       * <code>string secret_access_key = 2;</code>
+       * @return The secretAccessKey.
+       */
+      public java.lang.String getSecretAccessKey() {
+        java.lang.Object ref = secretAccessKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretAccessKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string secret_access_key = 2;</code>
+       * @return The bytes for secretAccessKey.
+       */
+      public com.google.protobuf.ByteString
+          getSecretAccessKeyBytes() {
+        java.lang.Object ref = secretAccessKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secretAccessKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string secret_access_key = 2;</code>
+       * @param value The secretAccessKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSecretAccessKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secretAccessKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret_access_key = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSecretAccessKey() {
+        
+        secretAccessKey_ = getDefaultInstance().getSecretAccessKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret_access_key = 2;</code>
+       * @param value The bytes for secretAccessKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSecretAccessKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secretAccessKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object owner_ = "";
+      /**
+       * <code>string owner = 3;</code>
+       * @return The owner.
+       */
+      public java.lang.String getOwner() {
+        java.lang.Object ref = owner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          owner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string owner = 3;</code>
+       * @return The bytes for owner.
+       */
+      public com.google.protobuf.ByteString
+          getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          owner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string owner = 3;</code>
+       * @param value The owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string owner = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOwner() {
+        
+        owner_ = getDefaultInstance().getOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string owner = 3;</code>
+       * @param value The bytes for owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rootUserId_ = "";
+      /**
+       * <code>string root_user_id = 4;</code>
+       * @return The rootUserId.
+       */
+      public java.lang.String getRootUserId() {
+        java.lang.Object ref = rootUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rootUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string root_user_id = 4;</code>
+       * @return The bytes for rootUserId.
+       */
+      public com.google.protobuf.ByteString
+          getRootUserIdBytes() {
+        java.lang.Object ref = rootUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rootUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string root_user_id = 4;</code>
+       * @param value The rootUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rootUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string root_user_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRootUserId() {
+        
+        rootUserId_ = getDefaultInstance().getRootUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string root_user_id = 4;</code>
+       * @param value The bytes for rootUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rootUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 5;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 5;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 5;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 5;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 6;</code>
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 6;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 6;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ipWhiteList_ = "";
+      /**
+       * <code>string ip_white_list = 7;</code>
+       * @return The ipWhiteList.
+       */
+      public java.lang.String getIpWhiteList() {
+        java.lang.Object ref = ipWhiteList_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ipWhiteList_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ip_white_list = 7;</code>
+       * @return The bytes for ipWhiteList.
+       */
+      public com.google.protobuf.ByteString
+          getIpWhiteListBytes() {
+        java.lang.Object ref = ipWhiteList_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ipWhiteList_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ip_white_list = 7;</code>
+       * @param value The ipWhiteList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIpWhiteList(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ipWhiteList_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ip_white_list = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIpWhiteList() {
+        
+        ipWhiteList_ = getDefaultInstance().getIpWhiteList();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ip_white_list = 7;</code>
+       * @param value The bytes for ipWhiteList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIpWhiteListBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ipWhiteList_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object consoleId_ = "";
+      /**
+       * <code>string console_id = 8;</code>
+       * @return The consoleId.
+       */
+      public java.lang.String getConsoleId() {
+        java.lang.Object ref = consoleId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          consoleId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string console_id = 8;</code>
+       * @return The bytes for consoleId.
+       */
+      public com.google.protobuf.ByteString
+          getConsoleIdBytes() {
+        java.lang.Object ref = consoleId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          consoleId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string console_id = 8;</code>
+       * @param value The consoleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsoleId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        consoleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string console_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConsoleId() {
+        
+        consoleId_ = getDefaultInstance().getConsoleId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string console_id = 8;</code>
+       * @param value The bytes for consoleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsoleIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        consoleId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createTime_ = "";
+      /**
+       * <code>string create_time = 9;</code>
+       * @return The createTime.
+       */
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @return The bytes for createTime.
+       */
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @param value The createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreateTime() {
+        
+        createTime_ = getDefaultInstance().getCreateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string create_time = 9;</code>
+       * @param value The bytes for createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object statusTime_ = "";
+      /**
+       * <code>string status_time = 10;</code>
+       * @return The statusTime.
+       */
+      public java.lang.String getStatusTime() {
+        java.lang.Object ref = statusTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          statusTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status_time = 10;</code>
+       * @return The bytes for statusTime.
+       */
+      public com.google.protobuf.ByteString
+          getStatusTimeBytes() {
+        java.lang.Object ref = statusTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          statusTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status_time = 10;</code>
+       * @param value The statusTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        statusTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatusTime() {
+        
+        statusTime_ = getDefaultInstance().getStatusTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status_time = 10;</code>
+       * @param value The bytes for statusTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        statusTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object controller_ = "";
+      /**
+       * <code>string controller = 11;</code>
+       * @return The controller.
+       */
+      public java.lang.String getController() {
+        java.lang.Object ref = controller_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          controller_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string controller = 11;</code>
+       * @return The bytes for controller.
+       */
+      public com.google.protobuf.ByteString
+          getControllerBytes() {
+        java.lang.Object ref = controller_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          controller_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string controller = 11;</code>
+       * @param value The controller to set.
+       * @return This builder for chaining.
+       */
+      public Builder setController(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        controller_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string controller = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearController() {
+        
+        controller_ = getDefaultInstance().getController();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string controller = 11;</code>
+       * @param value The bytes for controller to set.
+       * @return This builder for chaining.
+       */
+      public Builder setControllerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        controller_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.AccessKey)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.AccessKey)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccessKey>
+        PARSER = new com.google.protobuf.AbstractParser<AccessKey>() {
+      @java.lang.Override
+      public AccessKey parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AccessKey(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AccessKey> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccessKey> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.AccessKey getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface NotificationListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.NotificationList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 1;</code>
+     * @return The createTime.
+     */
+    java.lang.String getCreateTime();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 1;</code>
+     * @return The bytes for createTime.
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
+     * <code>string notification_list_id = 3;</code>
+     * @return The notificationListId.
+     */
+    java.lang.String getNotificationListId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
+     * <code>string notification_list_id = 3;</code>
+     * @return The bytes for notificationListId.
+     */
+    com.google.protobuf.ByteString
+        getNotificationListIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
+     * <code>string notification_list_name = 4;</code>
+     * @return The notificationListName.
+     */
+    java.lang.String getNotificationListName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
+     * <code>string notification_list_name = 4;</code>
+     * @return The bytes for notificationListName.
+     */
+    com.google.protobuf.ByteString
+        getNotificationListNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
+     * <code>string owner = 5;</code>
+     * @return The owner.
+     */
+    java.lang.String getOwner();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
+     * <code>string owner = 5;</code>
+     * @return The bytes for owner.
+     */
+    com.google.protobuf.ByteString
+        getOwnerBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> 
+        getItemsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getItems(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    int getItemsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder> 
+        getItemsOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder getItemsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code model.NotificationList}
+   */
+  public static final class NotificationList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.NotificationList)
+      NotificationListOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NotificationList.newBuilder() to construct.
+    private NotificationList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NotificationList() {
+      createTime_ = "";
+      notificationListId_ = "";
+      notificationListName_ = "";
+      owner_ = "";
+      items_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NotificationList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NotificationList(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createTime_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              items_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationListId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationListName_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              owner_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          items_ = java.util.Collections.unmodifiableList(items_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder.class);
+    }
+
+    public interface ItemOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:model.NotificationList.Item)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The content.
+       */
+      java.lang.String getContent();
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The bytes for content.
+       */
+      com.google.protobuf.ByteString
+          getContentBytes();
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The createTime.
+       */
+      java.lang.String getCreateTime();
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The bytes for createTime.
+       */
+      com.google.protobuf.ByteString
+          getCreateTimeBytes();
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The notificationItemId.
+       */
+      java.lang.String getNotificationItemId();
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The bytes for notificationItemId.
+       */
+      com.google.protobuf.ByteString
+          getNotificationItemIdBytes();
+
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The notificationItemType.
+       */
+      java.lang.String getNotificationItemType();
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The bytes for notificationItemType.
+       */
+      com.google.protobuf.ByteString
+          getNotificationItemTypeBytes();
+
+      /**
+       * <pre>
+       * The item whether verified. 1 for true, 0 for false.
+       * &#64;inject_tag: json:"verified"
+       * </pre>
+       *
+       * <code>int32 verified = 5;</code>
+       * @return The verified.
+       */
+      int getVerified();
+    }
+    /**
+     * Protobuf type {@code model.NotificationList.Item}
+     */
+    public static final class Item extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:model.NotificationList.Item)
+        ItemOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use Item.newBuilder() to construct.
+      private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private Item() {
+        content_ = "";
+        createTime_ = "";
+        notificationItemId_ = "";
+        notificationItemType_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new Item();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Item(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                content_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                createTime_ = s;
+                break;
+              }
+              case 26: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                notificationItemId_ = s;
+                break;
+              }
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                notificationItemType_ = s;
+                break;
+              }
+              case 40: {
+
+                verified_ = input.readInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_Item_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_Item_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder.class);
+      }
+
+      public static final int CONTENT_FIELD_NUMBER = 1;
+      private volatile java.lang.Object content_;
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The content.
+       */
+      @java.lang.Override
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The content of notification item set.
+       * The value is email address if notification_item_type == "email".
+       * The value is phone number is notification_item_type == "phone".
+       * The value is webhook address if notification_item_type == "webhook".
+       * &#64;inject_tag: json:"content"
+       * </pre>
+       *
+       * <code>string content = 1;</code>
+       * @return The bytes for content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CREATE_TIME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object createTime_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The createTime.
+       */
+      @java.lang.Override
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 2;</code>
+       * @return The bytes for createTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int NOTIFICATION_ITEM_ID_FIELD_NUMBER = 3;
+      private volatile java.lang.Object notificationItemId_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The notificationItemId.
+       */
+      @java.lang.Override
+      public java.lang.String getNotificationItemId() {
+        java.lang.Object ref = notificationItemId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationItemId_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_item_id"
+       * </pre>
+       *
+       * <code>string notification_item_id = 3;</code>
+       * @return The bytes for notificationItemId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNotificationItemIdBytes() {
+        java.lang.Object ref = notificationItemId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationItemId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int NOTIFICATION_ITEM_TYPE_FIELD_NUMBER = 4;
+      private volatile java.lang.Object notificationItemType_;
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The notificationItemType.
+       */
+      @java.lang.Override
+      public java.lang.String getNotificationItemType() {
+        java.lang.Object ref = notificationItemType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationItemType_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The notification type. Optional Values: email|phone|webhook
+       * &#64;inject_tag: json:"notification_item_type"
+       * </pre>
+       *
+       * <code>string notification_item_type = 4;</code>
+       * @return The bytes for notificationItemType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getNotificationItemTypeBytes() {
+        java.lang.Object ref = notificationItemType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationItemType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VERIFIED_FIELD_NUMBER = 5;
+      private int verified_;
+      /**
+       * <pre>
+       * The item whether verified. 1 for true, 0 for false.
+       * &#64;inject_tag: json:"verified"
+       * </pre>
+       *
+       * <code>int32 verified = 5;</code>
+       * @return The verified.
+       */
+      @java.lang.Override
+      public int getVerified() {
+        return verified_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, createTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, notificationItemId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, notificationItemType_);
+        }
+        if (verified_ != 0) {
+          output.writeInt32(5, verified_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, createTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, notificationItemId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationItemType_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, notificationItemType_);
+        }
+        if (verified_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(5, verified_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item)) {
+          return super.equals(obj);
+        }
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item) obj;
+
+        if (!getContent()
+            .equals(other.getContent())) return false;
+        if (!getCreateTime()
+            .equals(other.getCreateTime())) return false;
+        if (!getNotificationItemId()
+            .equals(other.getNotificationItemId())) return false;
+        if (!getNotificationItemType()
+            .equals(other.getNotificationItemType())) return false;
+        if (getVerified()
+            != other.getVerified()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime().hashCode();
+        hash = (37 * hash) + NOTIFICATION_ITEM_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationItemId().hashCode();
+        hash = (37 * hash) + NOTIFICATION_ITEM_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationItemType().hashCode();
+        hash = (37 * hash) + VERIFIED_FIELD_NUMBER;
+        hash = (53 * hash) + getVerified();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code model.NotificationList.Item}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:model.NotificationList.Item)
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_Item_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_Item_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder.class);
+        }
+
+        // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          content_ = "";
+
+          createTime_ = "";
+
+          notificationItemId_ = "";
+
+          notificationItemType_ = "";
+
+          verified_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_Item_descriptor;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getDefaultInstanceForType() {
+          return com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item build() {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item buildPartial() {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item(this);
+          result.content_ = content_;
+          result.createTime_ = createTime_;
+          result.notificationItemId_ = notificationItemId_;
+          result.notificationItemType_ = notificationItemType_;
+          result.verified_ = verified_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item) {
+            return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item other) {
+          if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.getDefaultInstance()) return this;
+          if (!other.getContent().isEmpty()) {
+            content_ = other.content_;
+            onChanged();
+          }
+          if (!other.getCreateTime().isEmpty()) {
+            createTime_ = other.createTime_;
+            onChanged();
+          }
+          if (!other.getNotificationItemId().isEmpty()) {
+            notificationItemId_ = other.notificationItemId_;
+            onChanged();
+          }
+          if (!other.getNotificationItemType().isEmpty()) {
+            notificationItemType_ = other.notificationItemType_;
+            onChanged();
+          }
+          if (other.getVerified() != 0) {
+            setVerified(other.getVerified());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object content_ = "";
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return The content.
+         */
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            content_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return The bytes for content.
+         */
+        public com.google.protobuf.ByteString
+            getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @param value The content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContent(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          content_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearContent() {
+          
+          content_ = getDefaultInstance().getContent();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The content of notification item set.
+         * The value is email address if notification_item_type == "email".
+         * The value is phone number is notification_item_type == "phone".
+         * The value is webhook address if notification_item_type == "webhook".
+         * &#64;inject_tag: json:"content"
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         * @param value The bytes for content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          content_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object createTime_ = "";
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return The createTime.
+         */
+        public java.lang.String getCreateTime() {
+          java.lang.Object ref = createTime_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            createTime_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return The bytes for createTime.
+         */
+        public com.google.protobuf.ByteString
+            getCreateTimeBytes() {
+          java.lang.Object ref = createTime_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            createTime_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @param value The createTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreateTime(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          createTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearCreateTime() {
+          
+          createTime_ = getDefaultInstance().getCreateTime();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"create_time"
+         * </pre>
+         *
+         * <code>string create_time = 2;</code>
+         * @param value The bytes for createTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCreateTimeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          createTime_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object notificationItemId_ = "";
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return The notificationItemId.
+         */
+        public java.lang.String getNotificationItemId() {
+          java.lang.Object ref = notificationItemId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            notificationItemId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return The bytes for notificationItemId.
+         */
+        public com.google.protobuf.ByteString
+            getNotificationItemIdBytes() {
+          java.lang.Object ref = notificationItemId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            notificationItemId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @param value The notificationItemId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          notificationItemId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearNotificationItemId() {
+          
+          notificationItemId_ = getDefaultInstance().getNotificationItemId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * &#64;inject_tag: json:"notification_item_id"
+         * </pre>
+         *
+         * <code>string notification_item_id = 3;</code>
+         * @param value The bytes for notificationItemId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          notificationItemId_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object notificationItemType_ = "";
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return The notificationItemType.
+         */
+        public java.lang.String getNotificationItemType() {
+          java.lang.Object ref = notificationItemType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            notificationItemType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return The bytes for notificationItemType.
+         */
+        public com.google.protobuf.ByteString
+            getNotificationItemTypeBytes() {
+          java.lang.Object ref = notificationItemType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            notificationItemType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @param value The notificationItemType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemType(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          notificationItemType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearNotificationItemType() {
+          
+          notificationItemType_ = getDefaultInstance().getNotificationItemType();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The notification type. Optional Values: email|phone|webhook
+         * &#64;inject_tag: json:"notification_item_type"
+         * </pre>
+         *
+         * <code>string notification_item_type = 4;</code>
+         * @param value The bytes for notificationItemType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNotificationItemTypeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          notificationItemType_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int verified_ ;
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @return The verified.
+         */
+        @java.lang.Override
+        public int getVerified() {
+          return verified_;
+        }
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @param value The verified to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVerified(int value) {
+          
+          verified_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The item whether verified. 1 for true, 0 for false.
+         * &#64;inject_tag: json:"verified"
+         * </pre>
+         *
+         * <code>int32 verified = 5;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearVerified() {
+          
+          verified_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:model.NotificationList.Item)
+      }
+
+      // @@protoc_insertion_point(class_scope:model.NotificationList.Item)
+      private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item();
+      }
+
+      public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Item>
+          PARSER = new com.google.protobuf.AbstractParser<Item>() {
+        @java.lang.Override
+        public Item parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Item(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<Item> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Item> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int CREATE_TIME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object createTime_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 1;</code>
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createTime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"create_time"
+     * </pre>
+     *
+     * <code>string create_time = 1;</code>
+     * @return The bytes for createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFICATION_LIST_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object notificationListId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
+     * <code>string notification_list_id = 3;</code>
+     * @return The notificationListId.
+     */
+    @java.lang.Override
+    public java.lang.String getNotificationListId() {
+      java.lang.Object ref = notificationListId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notificationListId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_id"
+     * </pre>
+     *
+     * <code>string notification_list_id = 3;</code>
+     * @return The bytes for notificationListId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNotificationListIdBytes() {
+      java.lang.Object ref = notificationListId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notificationListId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFICATION_LIST_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object notificationListName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
+     * <code>string notification_list_name = 4;</code>
+     * @return The notificationListName.
+     */
+    @java.lang.Override
+    public java.lang.String getNotificationListName() {
+      java.lang.Object ref = notificationListName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notificationListName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_list_name"
+     * </pre>
+     *
+     * <code>string notification_list_name = 4;</code>
+     * @return The bytes for notificationListName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNotificationListNameBytes() {
+      java.lang.Object ref = notificationListName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notificationListName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OWNER_FIELD_NUMBER = 5;
+    private volatile java.lang.Object owner_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
+     * <code>string owner = 5;</code>
+     * @return The owner.
+     */
+    @java.lang.Override
+    public java.lang.String getOwner() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        owner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"owner"
+     * </pre>
+     *
+     * <code>string owner = 5;</code>
+     * @return The bytes for owner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOwnerBytes() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        owner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ITEMS_FIELD_NUMBER = 2;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> items_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> getItemsList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder> 
+        getItemsOrBuilderList() {
+      return items_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public int getItemsCount() {
+      return items_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getItems(int index) {
+      return items_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"items"
+     * </pre>
+     *
+     * <code>repeated .model.NotificationList.Item items = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder getItemsOrBuilder(
+        int index) {
+      return items_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, createTime_);
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        output.writeMessage(2, items_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationListId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, notificationListId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationListName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, notificationListName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, owner_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createTime_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, createTime_);
+      }
+      for (int i = 0; i < items_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, items_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationListId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, notificationListId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationListName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, notificationListName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, owner_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList other = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList) obj;
+
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
+      if (!getNotificationListId()
+          .equals(other.getNotificationListId())) return false;
+      if (!getNotificationListName()
+          .equals(other.getNotificationListName())) return false;
+      if (!getOwner()
+          .equals(other.getOwner())) return false;
+      if (!getItemsList()
+          .equals(other.getItemsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+      hash = (37 * hash) + NOTIFICATION_LIST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNotificationListId().hashCode();
+      hash = (37 * hash) + NOTIFICATION_LIST_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNotificationListName().hashCode();
+      hash = (37 * hash) + OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwner().hashCode();
+      if (getItemsCount() > 0) {
+        hash = (37 * hash) + ITEMS_FIELD_NUMBER;
+        hash = (53 * hash) + getItemsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.NotificationList}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.NotificationList)
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.class, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getItemsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        createTime_ = "";
+
+        notificationListId_ = "";
+
+        notificationListName_ = "";
+
+        owner_ = "";
+
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.internal_static_model_NotificationList_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList result = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList(this);
+        int from_bitField0_ = bitField0_;
+        result.createTime_ = createTime_;
+        result.notificationListId_ = notificationListId_;
+        result.notificationListName_ = notificationListName_;
+        result.owner_ = owner_;
+        if (itemsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            items_ = java.util.Collections.unmodifiableList(items_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.items_ = items_;
+        } else {
+          result.items_ = itemsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.getDefaultInstance()) return this;
+        if (!other.getCreateTime().isEmpty()) {
+          createTime_ = other.createTime_;
+          onChanged();
+        }
+        if (!other.getNotificationListId().isEmpty()) {
+          notificationListId_ = other.notificationListId_;
+          onChanged();
+        }
+        if (!other.getNotificationListName().isEmpty()) {
+          notificationListName_ = other.notificationListName_;
+          onChanged();
+        }
+        if (!other.getOwner().isEmpty()) {
+          owner_ = other.owner_;
+          onChanged();
+        }
+        if (itemsBuilder_ == null) {
+          if (!other.items_.isEmpty()) {
+            if (items_.isEmpty()) {
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureItemsIsMutable();
+              items_.addAll(other.items_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.items_.isEmpty()) {
+            if (itemsBuilder_.isEmpty()) {
+              itemsBuilder_.dispose();
+              itemsBuilder_ = null;
+              items_ = other.items_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              itemsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getItemsFieldBuilder() : null;
+            } else {
+              itemsBuilder_.addAllMessages(other.items_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object createTime_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 1;</code>
+       * @return The createTime.
+       */
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 1;</code>
+       * @return The bytes for createTime.
+       */
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 1;</code>
+       * @param value The createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreateTime() {
+        
+        createTime_ = getDefaultInstance().getCreateTime();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"create_time"
+       * </pre>
+       *
+       * <code>string create_time = 1;</code>
+       * @param value The bytes for createTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createTime_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notificationListId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
+       * <code>string notification_list_id = 3;</code>
+       * @return The notificationListId.
+       */
+      public java.lang.String getNotificationListId() {
+        java.lang.Object ref = notificationListId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationListId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
+       * <code>string notification_list_id = 3;</code>
+       * @return The bytes for notificationListId.
+       */
+      public com.google.protobuf.ByteString
+          getNotificationListIdBytes() {
+        java.lang.Object ref = notificationListId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationListId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
+       * <code>string notification_list_id = 3;</code>
+       * @param value The notificationListId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationListId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        notificationListId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
+       * <code>string notification_list_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNotificationListId() {
+        
+        notificationListId_ = getDefaultInstance().getNotificationListId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_id"
+       * </pre>
+       *
+       * <code>string notification_list_id = 3;</code>
+       * @param value The bytes for notificationListId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationListIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        notificationListId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object notificationListName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
+       * <code>string notification_list_name = 4;</code>
+       * @return The notificationListName.
+       */
+      public java.lang.String getNotificationListName() {
+        java.lang.Object ref = notificationListName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          notificationListName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
+       * <code>string notification_list_name = 4;</code>
+       * @return The bytes for notificationListName.
+       */
+      public com.google.protobuf.ByteString
+          getNotificationListNameBytes() {
+        java.lang.Object ref = notificationListName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          notificationListName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
+       * <code>string notification_list_name = 4;</code>
+       * @param value The notificationListName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationListName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        notificationListName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
+       * <code>string notification_list_name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNotificationListName() {
+        
+        notificationListName_ = getDefaultInstance().getNotificationListName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_list_name"
+       * </pre>
+       *
+       * <code>string notification_list_name = 4;</code>
+       * @param value The bytes for notificationListName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationListNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        notificationListName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object owner_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
+       * <code>string owner = 5;</code>
+       * @return The owner.
+       */
+      public java.lang.String getOwner() {
+        java.lang.Object ref = owner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          owner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
+       * <code>string owner = 5;</code>
+       * @return The bytes for owner.
+       */
+      public com.google.protobuf.ByteString
+          getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          owner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
+       * <code>string owner = 5;</code>
+       * @param value The owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
+       * <code>string owner = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOwner() {
+        
+        owner_ = getDefaultInstance().getOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"owner"
+       * </pre>
+       *
+       * <code>string owner = 5;</code>
+       * @param value The bytes for owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        owner_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> items_ =
+        java.util.Collections.emptyList();
+      private void ensureItemsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          items_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item>(items_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder> itemsBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> getItemsList() {
+        if (itemsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(items_);
+        } else {
+          return itemsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public int getItemsCount() {
+        if (itemsBuilder_ == null) {
+          return items_.size();
+        } else {
+          return itemsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item getItems(int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);
+        } else {
+          return itemsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder setItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.set(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder setItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item value) {
+        if (itemsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureItemsIsMutable();
+          items_.add(index, value);
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addItems(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder builderForValue) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          itemsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder addAllItems(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item> values) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, items_);
+          onChanged();
+        } else {
+          itemsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder clearItems() {
+        if (itemsBuilder_ == null) {
+          items_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          itemsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public Builder removeItems(int index) {
+        if (itemsBuilder_ == null) {
+          ensureItemsIsMutable();
+          items_.remove(index);
+          onChanged();
+        } else {
+          itemsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder getItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder getItemsOrBuilder(
+          int index) {
+        if (itemsBuilder_ == null) {
+          return items_.get(index);  } else {
+          return itemsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder> 
+           getItemsOrBuilderList() {
+        if (itemsBuilder_ != null) {
+          return itemsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(items_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder addItemsBuilder() {
+        return getItemsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder addItemsBuilder(
+          int index) {
+        return getItemsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"items"
+       * </pre>
+       *
+       * <code>repeated .model.NotificationList.Item items = 2;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder> 
+           getItemsBuilderList() {
+        return getItemsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder> 
+          getItemsFieldBuilder() {
+        if (itemsBuilder_ == null) {
+          itemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Item.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.ItemOrBuilder>(
+                  items_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          items_ = null;
+        }
+        return itemsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.NotificationList)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.NotificationList)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NotificationList>
+        PARSER = new com.google.protobuf.AbstractParser<NotificationList>() {
+      @java.lang.Override
+      public NotificationList parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NotificationList(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<NotificationList> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NotificationList> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NotificationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.Notification)
       com.google.protobuf.MessageOrBuilder {
@@ -8043,10 +16256,29 @@ public final class PBModelAccount {
      * @return The updatedAt.
      */
     long getUpdatedAt();
+
+    /**
+     * <code>string user_id = 7;</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 7;</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>int64 id = 8;</code>
+     * @return The id.
+     */
+    long getId();
   }
   /**
    * <pre>
    * notification
+   * FIXME: removed it.
    * </pre>
    *
    * Protobuf type {@code model.Notification}
@@ -8065,6 +16297,7 @@ public final class PBModelAccount {
       note_ = "";
       status_ = "";
       email_ = "";
+      userId_ = "";
     }
 
     @java.lang.Override
@@ -8129,6 +16362,17 @@ public final class PBModelAccount {
             case 48: {
 
               updatedAt_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 64: {
+
+              id_ = input.readInt64();
               break;
             }
             default: {
@@ -8345,6 +16589,55 @@ public final class PBModelAccount {
       return updatedAt_;
     }
 
+    public static final int USER_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 7;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 7;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 8;
+    private long id_;
+    /**
+     * <code>int64 id = 8;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8377,6 +16670,12 @@ public final class PBModelAccount {
       if (updatedAt_ != 0L) {
         output.writeInt64(6, updatedAt_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userId_);
+      }
+      if (id_ != 0L) {
+        output.writeInt64(8, id_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8406,6 +16705,13 @@ public final class PBModelAccount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, updatedAt_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userId_);
+      }
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, id_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8433,6 +16739,10 @@ public final class PBModelAccount {
           != other.getCreatedAt()) return false;
       if (getUpdatedAt()
           != other.getUpdatedAt()) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -8458,6 +16768,11 @@ public final class PBModelAccount {
       hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdatedAt());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8556,6 +16871,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * notification
+     * FIXME: removed it.
      * </pre>
      *
      * Protobuf type {@code model.Notification}
@@ -8607,6 +16923,10 @@ public final class PBModelAccount {
 
         updatedAt_ = 0L;
 
+        userId_ = "";
+
+        id_ = 0L;
+
         return this;
       }
 
@@ -8639,6 +16959,8 @@ public final class PBModelAccount {
         result.email_ = email_;
         result.createdAt_ = createdAt_;
         result.updatedAt_ = updatedAt_;
+        result.userId_ = userId_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -8708,6 +17030,13 @@ public final class PBModelAccount {
         }
         if (other.getUpdatedAt() != 0L) {
           setUpdatedAt(other.getUpdatedAt());
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (other.getId() != 0L) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9123,6 +17452,113 @@ public final class PBModelAccount {
         onChanged();
         return this;
       }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 7;</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7;</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 7;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 7;</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 8;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 8;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9177,11 +17613,6 @@ public final class PBModelAccount {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_User_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_User_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_Role_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9207,6 +17638,26 @@ public final class PBModelAccount {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_AdminAPI_RolesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_User_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_User_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AccessKey_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AccessKey_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_NotificationList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_NotificationList_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_NotificationList_Item_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_NotificationList_Item_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_Notification_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -9222,66 +17673,85 @@ public final class PBModelAccount {
     java.lang.String[] descriptorData = {
       "\n\037proto/types/model/account.proto\022\005model" +
       "\0323github.com/yu31/protoc-plugin/proto/va" +
-      "lidator.proto\"\343\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022" +
-      "\021\n\tuser_name\030\002 \001(\t\022\014\n\004lang\030\003 \001(\t\022\r\n\005emai" +
-      "l\030\004 \001(\t\022\r\n\005phone\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\014" +
-      "\n\004role\030\007 \001(\t\022\020\n\010currency\030\010 \001(\t\022\026\n\016gravat" +
-      "ar_email\030\t \001(\t\022\021\n\tprivilege\030\n \001(\005\022\r\n\005zon" +
-      "es\030\013 \003(\t\022\017\n\007regions\030\014 \003(\t\022\020\n\010password\030\r " +
-      "\001(\t\"\271\001\n\004Role\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004ros-\022-\n\004type\030\002 \001(\0162\020.model.Role.TypeB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
-      "F\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Admin\020\001\022\r\n\tDev" +
-      "eloper\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\"\220\002\n\013Admi" +
-      "nModule\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004pmo-" +
-      "\022<\n\010classify\030\002 \001(\0162\033.model.AdminModule.C" +
-      "lassifyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337" +
-      "\037\007\022\005\302\001\002\"\000\022\"\n\tapi_lists\030\004 \003(\0132\017.model.Adm" +
-      "inAPI\"c\n\010Classify\022\021\n\rClassifyUnSet\020\000\022\016\n\n" +
-      "UserManage\020\001\022\021\n\rSessionManage\020\002\022\021\n\rMessa" +
-      "geManage\020\003\022\016\n\nAuthManage\020\004\"\232\003\n\010AdminAPI\022" +
-      "\035\n\010api_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014displa" +
-      "y_name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022:\n\tperm_type\030\003" +
-      " \001(\0162\030.model.AdminAPI.PermTypeB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022<\n\013permissions\030\004 \003(\0132\032.model.Admin" +
-      "API.PermissionB\013\342\337\037\007\022\005\352\001\0020\000\0226\n\005roles\030\006 \003" +
-      "(\0132\032.model.AdminAPI.RolesEntryB\013\342\337\037\007\022\005\362\001" +
-      "\0020\000\0328\n\nPermission\022\031\n\004role\030\001 \001(\0132\013.model." +
-      "Role\022\017\n\007allowed\030\002 \001(\010\032,\n\nRolesEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010PermType\022" +
-      "\021\n\rPermTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002\"" +
-      "v\n\014Notification\022\021\n\trecipient\030\001 \001(\t\022\014\n\004no" +
-      "te\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022" +
-      "\022\n\ncreated_at\030\005 \001(\003\022\022\n\nupdated_at\030\006 \001(\003B" +
-      "i\n\"com.dataomnis.gproto.types.pbmodelB\016P" +
-      "BModelAccountP\000Z1github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodelb\006proto3"
+      "lidator.proto\"\271\001\n\004Role\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004ros-\022-\n\004type\030\002 \001(\0162\020.model.Ro" +
+      "le.TypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000\"F\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005Admi" +
+      "n\020\001\022\r\n\tDeveloper\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020" +
+      "\004\"\250\002\n\013AdminModule\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004pmo-\022<\n\010classify\030\002 \001(\0162\033.model.Adm" +
+      "inModule.ClassifyB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name" +
+      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\"\n\tapi_lists\030\004 \003(\0132\017" +
+      ".model.AdminAPI\"{\n\010Classify\022\021\n\rClassifyU" +
+      "nSet\020\000\022\016\n\nUserManage\020\001\022\021\n\rSessionManage\020" +
+      "\002\022\021\n\rMessageManage\020\003\022\016\n\nAuthManage\020\004\022\026\n\022" +
+      "NotificationManage\020\005\"\232\003\n\010AdminAPI\022\035\n\010api" +
+      "_name\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014display_name" +
+      "\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022:\n\tperm_type\030\003 \001(\0162\030" +
+      ".model.AdminAPI.PermTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "<\n\013permissions\030\004 \003(\0132\032.model.AdminAPI.Pe" +
+      "rmissionB\013\342\337\037\007\022\005\352\001\0020\000\0226\n\005roles\030\006 \003(\0132\032.m" +
+      "odel.AdminAPI.RolesEntryB\013\342\337\037\007\022\005\362\001\0020\000\0328\n" +
+      "\nPermission\022\031\n\004role\030\001 \001(\0132\013.model.Role\022\017" +
+      "\n\007allowed\030\002 \001(\010\032,\n\nRolesEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\010:\0028\001\"2\n\010PermType\022\021\n\rPer" +
+      "mTypeUnset\020\000\022\t\n\005Write\020\001\022\010\n\004Read\020\002\"\233\004\n\004Us" +
+      "er\022\017\n\007user_id\030\001 \001(\t\022\021\n\tuser_name\030\002 \001(\t\022\014" +
+      "\n\004lang\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\024\n\014root_user" +
+      "_id\030\005 \001(\t\022\014\n\004role\030\006 \001(\t\022\021\n\tprivilege\030\007 \001" +
+      "(\005\022\016\n\006status\030\010 \001(\t\022\r\n\005zones\030\t \003(\t\022\017\n\007reg" +
+      "ions\030\n \003(\t\022\024\n\014notify_email\030\013 \001(\t\022\023\n\013veri" +
+      "fy_type\030\014 \001(\t\022\021\n\tpaid_mode\030\r \001(\t\022\026\n\016grav" +
+      "atar_email\030\016 \001(\t\022\025\n\rpersonal_name\030\017 \001(\t\022" +
+      "\024\n\014company_name\030\020 \001(\t\022\025\n\rcompany_phone\030\021" +
+      " \001(\t\022\024\n\014company_code\030\022 \001(\t\022\r\n\005phone\030\023 \001(" +
+      "\t\022\022\n\nconsole_id\030\024 \001(\t\022\016\n\006gender\030\025 \001(\t\022\017\n" +
+      "\007remarks\030\026 \001(\t\022\022\n\nmkt_source\030\027 \001(\t\022\023\n\013cr" +
+      "eate_time\030\030 \001(\t\022\023\n\013status_time\030\031 \001(\t\022\021\n\t" +
+      "user_type\030\032 \001(\005\"&\n\006Status\022\020\n\014_StatusUnse" +
+      "t\020\000\022\n\n\006active\020\001\"\322\002\n\tAccessKey\022\025\n\raccess_" +
+      "key_id\030\001 \001(\t\022\031\n\021secret_access_key\030\002 \001(\t\022" +
+      "\r\n\005owner\030\003 \001(\t\022\024\n\014root_user_id\030\004 \001(\t\022\016\n\006" +
+      "status\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\025\n\rip_" +
+      "white_list\030\007 \001(\t\022\022\n\nconsole_id\030\010 \001(\t\022\023\n\013" +
+      "create_time\030\t \001(\t\022\023\n\013status_time\030\n \001(\t\022\022" +
+      "\n\ncontroller\030\013 \001(\t\"8\n\nController\022\024\n\020_Con" +
+      "trollerUnset\020\000\022\n\n\006pitrix\020\001\022\010\n\004self\020\002\"&\n\006" +
+      "Status\022\020\n\014_StatusUnset\020\000\022\n\n\006active\020\001\"\237\002\n" +
+      "\020NotificationList\022\023\n\013create_time\030\001 \001(\t\022\034" +
+      "\n\024notification_list_id\030\003 \001(\t\022\036\n\026notifica" +
+      "tion_list_name\030\004 \001(\t\022\r\n\005owner\030\005 \001(\t\022+\n\005i" +
+      "tems\030\002 \003(\0132\034.model.NotificationList.Item" +
+      "\032|\n\004Item\022\017\n\007content\030\001 \001(\t\022\023\n\013create_time" +
+      "\030\002 \001(\t\022\034\n\024notification_item_id\030\003 \001(\t\022\036\n\026" +
+      "notification_item_type\030\004 \001(\t\022\020\n\010verified" +
+      "\030\005 \001(\005\"\223\001\n\014Notification\022\021\n\trecipient\030\001 \001" +
+      "(\t\022\014\n\004note\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\r\n\005emai" +
+      "l\030\004 \001(\t\022\022\n\ncreated_at\030\005 \001(\003\022\022\n\nupdated_a" +
+      "t\030\006 \001(\003\022\017\n\007user_id\030\007 \001(\t\022\n\n\002id\030\010 \001(\003Bi\n\"" +
+      "com.dataomnis.gproto.types.pbmodelB\016PBMo" +
+      "delAccountP\000Z1github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
         });
-    internal_static_model_User_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_model_User_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_User_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "Lang", "Email", "Phone", "Status", "Role", "Currency", "GravatarEmail", "Privilege", "Zones", "Regions", "Password", });
     internal_static_model_Role_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_model_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Role_descriptor,
         new java.lang.String[] { "Id", "Type", "Name", });
     internal_static_model_AdminModule_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_model_AdminModule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AdminModule_descriptor,
         new java.lang.String[] { "Id", "Classify", "Name", "ApiLists", });
     internal_static_model_AdminAPI_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_model_AdminAPI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AdminAPI_descriptor,
@@ -9298,12 +17768,36 @@ public final class PBModelAccount {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AdminAPI_RolesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_model_Notification_descriptor =
+    internal_static_model_User_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_model_User_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_User_descriptor,
+        new java.lang.String[] { "UserId", "UserName", "Lang", "Email", "RootUserId", "Role", "Privilege", "Status", "Zones", "Regions", "NotifyEmail", "VerifyType", "PaidMode", "GravatarEmail", "PersonalName", "CompanyName", "CompanyPhone", "CompanyCode", "Phone", "ConsoleId", "Gender", "Remarks", "MktSource", "CreateTime", "StatusTime", "UserType", });
+    internal_static_model_AccessKey_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_model_AccessKey_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AccessKey_descriptor,
+        new java.lang.String[] { "AccessKeyId", "SecretAccessKey", "Owner", "RootUserId", "Status", "Description", "IpWhiteList", "ConsoleId", "CreateTime", "StatusTime", "Controller", });
+    internal_static_model_NotificationList_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_model_NotificationList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_NotificationList_descriptor,
+        new java.lang.String[] { "CreateTime", "NotificationListId", "NotificationListName", "Owner", "Items", });
+    internal_static_model_NotificationList_Item_descriptor =
+      internal_static_model_NotificationList_descriptor.getNestedTypes().get(0);
+    internal_static_model_NotificationList_Item_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_NotificationList_Item_descriptor,
+        new java.lang.String[] { "Content", "CreateTime", "NotificationItemId", "NotificationItemType", "Verified", });
+    internal_static_model_Notification_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_model_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_Notification_descriptor,
-        new java.lang.String[] { "Recipient", "Note", "Status", "Email", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Recipient", "Note", "Status", "Email", "CreatedAt", "UpdatedAt", "UserId", "Id", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

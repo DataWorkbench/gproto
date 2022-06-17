@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\032PBRequestDataServiceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/request/dataservice_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a#proto/types/model/dataservice.proto\"\xea\x01\n\x17ListDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x12\n\x04name\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\"l\n\x1a\x44\x65scribeDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\"\xd7\x01\n\x18UpdateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\xf5\x01\n\x18\x43reateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12#\n\ncreated_by\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12L\n\rresource_spec\x18\x05 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"r\n\x19\x44\x65leteDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"\xcc\x01\n\rListApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"V\n\x0e\x43reateApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\"f\n\x0f\x44\x65leteApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12,\n\tgroup_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sg-\"`\n\x10ListCustomerApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\"\xf7\x05\n\x11UpdateCustomerApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12!\n\x08\x61pi_name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x05 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12-\n\tprotocols\x18\x07 \x03(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x08 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\t \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\n \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x0b \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x0c \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\r \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x33\n\rwizardDetails\x18\x0e \x01(\x0b\x32\x16.request.WizardDetailsB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x06script\x18\x0f \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x10 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x11 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\":\n\x13\x44\x65scribeCustomerApi\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"g\n\x12\x44\x65leteCustomerApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\xf7\x05\n\x11\x43reateCustomerApi\x12!\n\x08\x61pi_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x03 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12-\n\tprotocols\x18\x06 \x03(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x07 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x08 \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\t \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\n \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x0b \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\x0c \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x33\n\rwizardDetails\x18\r \x01(\x0b\x32\x16.request.WizardDetailsB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x06script\x18\x0e \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x0f \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x10 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12#\n\ncreated_by\x18\x11 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\x85\x01\n\rWizardDetails\x12\x38\n\x0erequest_params\x18\x01 \x03(\x0b\x32 .request.WizardRequestParameters\x12:\n\x0fresponse_params\x18\x02 \x03(\x0b\x32!.request.WizardResponseParameters\"\xd5\x03\n\x17WizardRequestParameters\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12\x19\n\x0bis_required\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12:\n\tdata_type\x18\x05 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12P\n\x0eparam_operator\x18\x08 \x01(\x0e\x32).model.ApiRequestParams.ParameterOperatorB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12P\n\x0eparam_position\x18\t \x01(\x0e\x32).model.ApiRequestParams.ParameterPositionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\x97\x02\n\x18WizardResponseParameters\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12:\n\tdata_type\x18\x04 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\"\xaf\x01\n\x0fListApiVersions\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x04 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xe8\x01\n\x11ListPublishedApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"d\n\x12\x44\x65scribeApiVersion\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\nversion_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sv-\"`\n\x12PublishCustomerApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"h\n\x13\x41\x62olishCustomerApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\x89\x01\n\x0fTestCustomerApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12*\n\x0frequest_content\x18\x03 \x01(\tB\x11\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\x80\x02\x00\x98\x02\xa0\x9c\x01\x42y\n$com.dataomnis.gproto.types.pbrequestB\x1aPBRequestDataServiceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n,proto/types/request/dataservice_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a#proto/types/model/dataservice.proto\"\xea\x01\n\x17ListDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x12\n\x04name\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\"l\n\x1a\x44\x65scribeDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\"\xd7\x01\n\x18UpdateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\xf5\x01\n\x18\x43reateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12#\n\ncreated_by\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12L\n\rresource_spec\x18\x05 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"r\n\x19\x44\x65leteDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"\xcc\x01\n\rListApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"V\n\x0e\x43reateApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\"f\n\x0f\x44\x65leteApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12,\n\tgroup_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sg-\"^\n\x0eListApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\"\xf5\x05\n\x0fUpdateApiConfig\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12!\n\x08\x61pi_name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x05 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12-\n\tprotocols\x18\x07 \x03(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x08 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\t \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\n \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x0b \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x0c \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\r \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x33\n\rwizardDetails\x18\x0e \x01(\x0b\x32\x16.request.WizardDetailsB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x06script\x18\x0f \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x10 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x11 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\"8\n\x11\x44\x65scribeApiConfig\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"e\n\x10\x44\x65leteApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\xf5\x05\n\x0f\x43reateApiConfig\x12!\n\x08\x61pi_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x03 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12-\n\tprotocols\x18\x06 \x03(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x07 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x08 \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\t \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\n \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x0b \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\x0c \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x33\n\rwizardDetails\x18\r \x01(\x0b\x32\x16.request.WizardDetailsB\x04\xe2\xdf\x1f\x00\x12\x1e\n\x06script\x18\x0e \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x0f \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x10 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12#\n\ncreated_by\x18\x11 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\x85\x01\n\rWizardDetails\x12\x38\n\x0erequest_params\x18\x01 \x03(\x0b\x32 .request.WizardRequestParameters\x12:\n\x0fresponse_params\x18\x02 \x03(\x0b\x32!.request.WizardResponseParameters\"\xd5\x03\n\x17WizardRequestParameters\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12\x19\n\x0bis_required\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12:\n\tdata_type\x18\x05 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12P\n\x0eparam_operator\x18\x08 \x01(\x0e\x32).model.ApiRequestParams.ParameterOperatorB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12P\n\x0eparam_position\x18\t \x01(\x0e\x32).model.ApiRequestParams.ParameterPositionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\x97\x02\n\x18WizardResponseParameters\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12:\n\tdata_type\x18\x04 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\"\xe1\x01\n\x1aListDataServiceApiVersions\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xe8\x01\n\x11ListPublishedApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"\x94\x01\n\x1d\x44\x65scribeDataServiceApiVersion\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12\'\n\nversion_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sv-\"\x8e\x01\n\x17RepublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12\'\n\nversion_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sv-\"c\n\x15PublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"k\n\x16\x41\x62olishDataServiceApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\x8c\x01\n\x12TestDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12*\n\x0frequest_content\x18\x03 \x01(\tB\x11\xe2\xdf\x1f\r\x12\x0b\xc2\x01\x08\x80\x02\x00\x98\x02\xa0\x9c\x01\x42y\n$com.dataomnis.gproto.types.pbrequestB\x1aPBRequestDataServiceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_dataservice__pb2.DESCRIPTOR,])
 
@@ -425,23 +425,23 @@ _DELETEAPIGROUPS = _descriptor.Descriptor(
 )
 
 
-_LISTCUSTOMERAPIS = _descriptor.Descriptor(
-  name='ListCustomerApis',
-  full_name='request.ListCustomerApis',
+_LISTAPICONFIGS = _descriptor.Descriptor(
+  name='ListApiConfigs',
+  full_name='request.ListApiConfigs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.ListCustomerApis.space_id', index=0,
+      name='space_id', full_name='request.ListApiConfigs.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='group_id', full_name='request.ListCustomerApis.group_id', index=1,
+      name='group_id', full_name='request.ListApiConfigs.group_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -460,132 +460,132 @@ _LISTCUSTOMERAPIS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1527,
-  serialized_end=1623,
+  serialized_end=1621,
 )
 
 
-_UPDATECUSTOMERAPI = _descriptor.Descriptor(
-  name='UpdateCustomerApi',
-  full_name='request.UpdateCustomerApi',
+_UPDATEAPICONFIG = _descriptor.Descriptor(
+  name='UpdateApiConfig',
+  full_name='request.UpdateApiConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.UpdateCustomerApi.space_id', index=0,
+      name='space_id', full_name='request.UpdateApiConfig.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_id', full_name='request.UpdateCustomerApi.api_id', index=1,
+      name='api_id', full_name='request.UpdateApiConfig.api_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_name', full_name='request.UpdateCustomerApi.api_name', index=2,
+      name='api_name', full_name='request.UpdateApiConfig.api_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_path', full_name='request.UpdateCustomerApi.api_path', index=3,
+      name='api_path', full_name='request.UpdateApiConfig.api_path', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_mode', full_name='request.UpdateCustomerApi.api_mode', index=4,
+      name='api_mode', full_name='request.UpdateApiConfig.api_mode', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_description', full_name='request.UpdateCustomerApi.api_description', index=5,
+      name='api_description', full_name='request.UpdateApiConfig.api_description', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\230\002\201\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='protocols', full_name='request.UpdateCustomerApi.protocols', index=6,
+      name='protocols', full_name='request.UpdateApiConfig.protocols', index=6,
       number=7, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='request_method', full_name='request.UpdateCustomerApi.request_method', index=7,
+      name='request_method', full_name='request.UpdateApiConfig.request_method', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='response_type', full_name='request.UpdateCustomerApi.response_type', index=8,
+      name='response_type', full_name='request.UpdateApiConfig.response_type', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cross_domain', full_name='request.UpdateCustomerApi.cross_domain', index=9,
+      name='cross_domain', full_name='request.UpdateApiConfig.cross_domain', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeout', full_name='request.UpdateCustomerApi.timeout', index=10,
+      name='timeout', full_name='request.UpdateApiConfig.timeout', index=10,
       number=11, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\n\022\010\262\001\0058\264\001@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource_id', full_name='request.UpdateCustomerApi.datasource_id', index=11,
+      name='datasource_id', full_name='request.UpdateApiConfig.datasource_id', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='table_name', full_name='request.UpdateCustomerApi.table_name', index=12,
+      name='table_name', full_name='request.UpdateApiConfig.table_name', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='wizardDetails', full_name='request.UpdateCustomerApi.wizardDetails', index=13,
+      name='wizardDetails', full_name='request.UpdateApiConfig.wizardDetails', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='script', full_name='request.UpdateCustomerApi.script', index=14,
+      name='script', full_name='request.UpdateApiConfig.script', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\n\022\010\302\001\005\230\002\240\234\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='group_id', full_name='request.UpdateCustomerApi.group_id', index=15,
+      name='group_id', full_name='request.UpdateApiConfig.group_id', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='request.UpdateCustomerApi.cluster_id', index=16,
+      name='cluster_id', full_name='request.UpdateApiConfig.cluster_id', index=16,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -603,21 +603,21 @@ _UPDATECUSTOMERAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1626,
-  serialized_end=2385,
+  serialized_start=1624,
+  serialized_end=2381,
 )
 
 
-_DESCRIBECUSTOMERAPI = _descriptor.Descriptor(
-  name='DescribeCustomerApi',
-  full_name='request.DescribeCustomerApi',
+_DESCRIBEAPICONFIG = _descriptor.Descriptor(
+  name='DescribeApiConfig',
+  full_name='request.DescribeApiConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='api_id', full_name='request.DescribeCustomerApi.api_id', index=0,
+      name='api_id', full_name='request.DescribeApiConfig.api_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -635,28 +635,28 @@ _DESCRIBECUSTOMERAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2387,
-  serialized_end=2445,
+  serialized_start=2383,
+  serialized_end=2439,
 )
 
 
-_DELETECUSTOMERAPIS = _descriptor.Descriptor(
-  name='DeleteCustomerApis',
-  full_name='request.DeleteCustomerApis',
+_DELETEAPICONFIGS = _descriptor.Descriptor(
+  name='DeleteApiConfigs',
+  full_name='request.DeleteApiConfigs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.DeleteCustomerApis.space_id', index=0,
+      name='space_id', full_name='request.DeleteApiConfigs.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_ids', full_name='request.DeleteCustomerApis.api_ids', index=1,
+      name='api_ids', full_name='request.DeleteApiConfigs.api_ids', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -674,133 +674,133 @@ _DELETECUSTOMERAPIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2447,
-  serialized_end=2550,
+  serialized_start=2441,
+  serialized_end=2542,
 )
 
 
-_CREATECUSTOMERAPI = _descriptor.Descriptor(
-  name='CreateCustomerApi',
-  full_name='request.CreateCustomerApi',
+_CREATEAPICONFIG = _descriptor.Descriptor(
+  name='CreateApiConfig',
+  full_name='request.CreateApiConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='api_name', full_name='request.CreateCustomerApi.api_name', index=0,
+      name='api_name', full_name='request.CreateApiConfig.api_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_path', full_name='request.CreateCustomerApi.api_path', index=1,
+      name='api_path', full_name='request.CreateApiConfig.api_path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_mode', full_name='request.CreateCustomerApi.api_mode', index=2,
+      name='api_mode', full_name='request.CreateApiConfig.api_mode', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_description', full_name='request.CreateCustomerApi.api_description', index=3,
+      name='api_description', full_name='request.CreateApiConfig.api_description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\302\001\004\230\002\201\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.CreateCustomerApi.space_id', index=4,
+      name='space_id', full_name='request.CreateApiConfig.space_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='protocols', full_name='request.CreateCustomerApi.protocols', index=5,
+      name='protocols', full_name='request.CreateApiConfig.protocols', index=5,
       number=6, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='request_method', full_name='request.CreateCustomerApi.request_method', index=6,
+      name='request_method', full_name='request.CreateApiConfig.request_method', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='response_type', full_name='request.CreateCustomerApi.response_type', index=7,
+      name='response_type', full_name='request.CreateApiConfig.response_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cross_domain', full_name='request.CreateCustomerApi.cross_domain', index=8,
+      name='cross_domain', full_name='request.CreateApiConfig.cross_domain', index=8,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeout', full_name='request.CreateCustomerApi.timeout', index=9,
+      name='timeout', full_name='request.CreateApiConfig.timeout', index=9,
       number=10, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\n\022\010\262\001\0058\264\001@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='datasource_id', full_name='request.CreateCustomerApi.datasource_id', index=10,
+      name='datasource_id', full_name='request.CreateApiConfig.datasource_id', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='table_name', full_name='request.CreateCustomerApi.table_name', index=11,
+      name='table_name', full_name='request.CreateApiConfig.table_name', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='wizardDetails', full_name='request.CreateCustomerApi.wizardDetails', index=12,
+      name='wizardDetails', full_name='request.CreateApiConfig.wizardDetails', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='script', full_name='request.CreateCustomerApi.script', index=13,
+      name='script', full_name='request.CreateApiConfig.script', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\n\022\010\302\001\005\230\002\240\234\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='group_id', full_name='request.CreateCustomerApi.group_id', index=14,
+      name='group_id', full_name='request.CreateApiConfig.group_id', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='request.CreateCustomerApi.cluster_id', index=15,
+      name='cluster_id', full_name='request.CreateApiConfig.cluster_id', index=15,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_by', full_name='request.CreateCustomerApi.created_by', index=16,
+      name='created_by', full_name='request.CreateApiConfig.created_by', index=16,
       number=17, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -818,8 +818,8 @@ _CREATECUSTOMERAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2553,
-  serialized_end=3312,
+  serialized_start=2545,
+  serialized_end=3302,
 )
 
 
@@ -857,8 +857,8 @@ _WIZARDDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3315,
-  serialized_end=3448,
+  serialized_start=3305,
+  serialized_end=3438,
 )
 
 
@@ -945,8 +945,8 @@ _WIZARDREQUESTPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3451,
-  serialized_end=3920,
+  serialized_start=3441,
+  serialized_end=3910,
 )
 
 
@@ -1012,43 +1012,50 @@ _WIZARDRESPONSEPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3923,
-  serialized_end=4202,
+  serialized_start=3913,
+  serialized_end=4192,
 )
 
 
-_LISTAPIVERSIONS = _descriptor.Descriptor(
-  name='ListApiVersions',
-  full_name='request.ListApiVersions',
+_LISTDATASERVICEAPIVERSIONS = _descriptor.Descriptor(
+  name='ListDataServiceApiVersions',
+  full_name='request.ListDataServiceApiVersions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='api_id', full_name='request.ListApiVersions.api_id', index=0,
+      name='space_id', full_name='request.ListDataServiceApiVersions.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_id', full_name='request.ListDataServiceApiVersions.api_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='request.ListApiVersions.limit', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      name='limit', full_name='request.ListDataServiceApiVersions.limit', index=2,
+      number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='request.ListApiVersions.offset', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      name='offset', full_name='request.ListDataServiceApiVersions.offset', index=3,
+      number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sort_by', full_name='request.ListApiVersions.sort_by', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='sort_by', full_name='request.ListDataServiceApiVersions.sort_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1065,8 +1072,8 @@ _LISTAPIVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4205,
-  serialized_end=4380,
+  serialized_start=4195,
+  serialized_end=4420,
 )
 
 
@@ -1139,29 +1146,36 @@ _LISTPUBLISHEDAPIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4383,
-  serialized_end=4615,
+  serialized_start=4423,
+  serialized_end=4655,
 )
 
 
-_DESCRIBEAPIVERSION = _descriptor.Descriptor(
-  name='DescribeApiVersion',
-  full_name='request.DescribeApiVersion',
+_DESCRIBEDATASERVICEAPIVERSION = _descriptor.Descriptor(
+  name='DescribeDataServiceApiVersion',
+  full_name='request.DescribeDataServiceApiVersion',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.DescribeApiVersion.space_id', index=0,
+      name='space_id', full_name='request.DescribeDataServiceApiVersion.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version_id', full_name='request.DescribeApiVersion.version_id', index=1,
+      name='api_id', full_name='request.DescribeDataServiceApiVersion.api_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version_id', full_name='request.DescribeDataServiceApiVersion.version_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1178,28 +1192,74 @@ _DESCRIBEAPIVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4617,
-  serialized_end=4717,
+  serialized_start=4658,
+  serialized_end=4806,
 )
 
 
-_PUBLISHCUSTOMERAPI = _descriptor.Descriptor(
-  name='PublishCustomerApi',
-  full_name='request.PublishCustomerApi',
+_REPUBLISHDATASERVICEAPI = _descriptor.Descriptor(
+  name='RepublishDataServiceApi',
+  full_name='request.RepublishDataServiceApi',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.PublishCustomerApi.space_id', index=0,
+      name='space_id', full_name='request.RepublishDataServiceApi.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_id', full_name='request.PublishCustomerApi.api_id', index=1,
+      name='api_id', full_name='request.RepublishDataServiceApi.api_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version_id', full_name='request.RepublishDataServiceApi.version_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4809,
+  serialized_end=4951,
+)
+
+
+_PUBLISHDATASERVICEAPI = _descriptor.Descriptor(
+  name='PublishDataServiceApi',
+  full_name='request.PublishDataServiceApi',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.PublishDataServiceApi.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_id', full_name='request.PublishDataServiceApi.api_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1217,28 +1277,28 @@ _PUBLISHCUSTOMERAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4719,
-  serialized_end=4815,
+  serialized_start=4953,
+  serialized_end=5052,
 )
 
 
-_ABOLISHCUSTOMERAPIS = _descriptor.Descriptor(
-  name='AbolishCustomerApis',
-  full_name='request.AbolishCustomerApis',
+_ABOLISHDATASERVICEAPIS = _descriptor.Descriptor(
+  name='AbolishDataServiceApis',
+  full_name='request.AbolishDataServiceApis',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.AbolishCustomerApis.space_id', index=0,
+      name='space_id', full_name='request.AbolishDataServiceApis.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_ids', full_name='request.AbolishCustomerApis.api_ids', index=1,
+      name='api_ids', full_name='request.AbolishDataServiceApis.api_ids', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1256,35 +1316,35 @@ _ABOLISHCUSTOMERAPIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4817,
-  serialized_end=4921,
+  serialized_start=5054,
+  serialized_end=5161,
 )
 
 
-_TESTCUSTOMERAPI = _descriptor.Descriptor(
-  name='TestCustomerApi',
-  full_name='request.TestCustomerApi',
+_TESTDATASERVICEAPI = _descriptor.Descriptor(
+  name='TestDataServiceApi',
+  full_name='request.TestDataServiceApi',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='space_id', full_name='request.TestCustomerApi.space_id', index=0,
+      name='space_id', full_name='request.TestDataServiceApi.space_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='api_id', full_name='request.TestCustomerApi.api_id', index=1,
+      name='api_id', full_name='request.TestDataServiceApi.api_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='request_content', full_name='request.TestCustomerApi.request_content', index=2,
+      name='request_content', full_name='request.TestDataServiceApi.request_content', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1302,22 +1362,22 @@ _TESTCUSTOMERAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4924,
-  serialized_end=5061,
+  serialized_start=5164,
+  serialized_end=5304,
 )
 
 _UPDATEDATASERVICECLUSTER.fields_by_name['resource_spec'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER_RESOURCESPEC
 _CREATEDATASERVICECLUSTER.fields_by_name['resource_spec'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER_RESOURCESPEC
-_UPDATECUSTOMERAPI.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
-_UPDATECUSTOMERAPI.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
-_UPDATECUSTOMERAPI.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
-_UPDATECUSTOMERAPI.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
-_UPDATECUSTOMERAPI.fields_by_name['wizardDetails'].message_type = _WIZARDDETAILS
-_CREATECUSTOMERAPI.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
-_CREATECUSTOMERAPI.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
-_CREATECUSTOMERAPI.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
-_CREATECUSTOMERAPI.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
-_CREATECUSTOMERAPI.fields_by_name['wizardDetails'].message_type = _WIZARDDETAILS
+_UPDATEAPICONFIG.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
+_UPDATEAPICONFIG.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
+_UPDATEAPICONFIG.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
+_UPDATEAPICONFIG.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
+_UPDATEAPICONFIG.fields_by_name['wizardDetails'].message_type = _WIZARDDETAILS
+_CREATEAPICONFIG.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
+_CREATEAPICONFIG.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
+_CREATEAPICONFIG.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
+_CREATEAPICONFIG.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
+_CREATEAPICONFIG.fields_by_name['wizardDetails'].message_type = _WIZARDDETAILS
 _WIZARDDETAILS.fields_by_name['request_params'].message_type = _WIZARDREQUESTPARAMETERS
 _WIZARDDETAILS.fields_by_name['response_params'].message_type = _WIZARDRESPONSEPARAMETERS
 _WIZARDREQUESTPARAMETERS.fields_by_name['data_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._PARAMETERDATATYPE
@@ -1332,20 +1392,21 @@ DESCRIPTOR.message_types_by_name['DeleteDataServiceClusters'] = _DELETEDATASERVI
 DESCRIPTOR.message_types_by_name['ListApiGroups'] = _LISTAPIGROUPS
 DESCRIPTOR.message_types_by_name['CreateApiGroup'] = _CREATEAPIGROUP
 DESCRIPTOR.message_types_by_name['DeleteApiGroups'] = _DELETEAPIGROUPS
-DESCRIPTOR.message_types_by_name['ListCustomerApis'] = _LISTCUSTOMERAPIS
-DESCRIPTOR.message_types_by_name['UpdateCustomerApi'] = _UPDATECUSTOMERAPI
-DESCRIPTOR.message_types_by_name['DescribeCustomerApi'] = _DESCRIBECUSTOMERAPI
-DESCRIPTOR.message_types_by_name['DeleteCustomerApis'] = _DELETECUSTOMERAPIS
-DESCRIPTOR.message_types_by_name['CreateCustomerApi'] = _CREATECUSTOMERAPI
+DESCRIPTOR.message_types_by_name['ListApiConfigs'] = _LISTAPICONFIGS
+DESCRIPTOR.message_types_by_name['UpdateApiConfig'] = _UPDATEAPICONFIG
+DESCRIPTOR.message_types_by_name['DescribeApiConfig'] = _DESCRIBEAPICONFIG
+DESCRIPTOR.message_types_by_name['DeleteApiConfigs'] = _DELETEAPICONFIGS
+DESCRIPTOR.message_types_by_name['CreateApiConfig'] = _CREATEAPICONFIG
 DESCRIPTOR.message_types_by_name['WizardDetails'] = _WIZARDDETAILS
 DESCRIPTOR.message_types_by_name['WizardRequestParameters'] = _WIZARDREQUESTPARAMETERS
 DESCRIPTOR.message_types_by_name['WizardResponseParameters'] = _WIZARDRESPONSEPARAMETERS
-DESCRIPTOR.message_types_by_name['ListApiVersions'] = _LISTAPIVERSIONS
+DESCRIPTOR.message_types_by_name['ListDataServiceApiVersions'] = _LISTDATASERVICEAPIVERSIONS
 DESCRIPTOR.message_types_by_name['ListPublishedApis'] = _LISTPUBLISHEDAPIS
-DESCRIPTOR.message_types_by_name['DescribeApiVersion'] = _DESCRIBEAPIVERSION
-DESCRIPTOR.message_types_by_name['PublishCustomerApi'] = _PUBLISHCUSTOMERAPI
-DESCRIPTOR.message_types_by_name['AbolishCustomerApis'] = _ABOLISHCUSTOMERAPIS
-DESCRIPTOR.message_types_by_name['TestCustomerApi'] = _TESTCUSTOMERAPI
+DESCRIPTOR.message_types_by_name['DescribeDataServiceApiVersion'] = _DESCRIBEDATASERVICEAPIVERSION
+DESCRIPTOR.message_types_by_name['RepublishDataServiceApi'] = _REPUBLISHDATASERVICEAPI
+DESCRIPTOR.message_types_by_name['PublishDataServiceApi'] = _PUBLISHDATASERVICEAPI
+DESCRIPTOR.message_types_by_name['AbolishDataServiceApis'] = _ABOLISHDATASERVICEAPIS
+DESCRIPTOR.message_types_by_name['TestDataServiceApi'] = _TESTDATASERVICEAPI
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListDataServiceClusters = _reflection.GeneratedProtocolMessageType('ListDataServiceClusters', (_message.Message,), {
@@ -1404,40 +1465,40 @@ DeleteApiGroups = _reflection.GeneratedProtocolMessageType('DeleteApiGroups', (_
   })
 _sym_db.RegisterMessage(DeleteApiGroups)
 
-ListCustomerApis = _reflection.GeneratedProtocolMessageType('ListCustomerApis', (_message.Message,), {
-  'DESCRIPTOR' : _LISTCUSTOMERAPIS,
+ListApiConfigs = _reflection.GeneratedProtocolMessageType('ListApiConfigs', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAPICONFIGS,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.ListCustomerApis)
+  # @@protoc_insertion_point(class_scope:request.ListApiConfigs)
   })
-_sym_db.RegisterMessage(ListCustomerApis)
+_sym_db.RegisterMessage(ListApiConfigs)
 
-UpdateCustomerApi = _reflection.GeneratedProtocolMessageType('UpdateCustomerApi', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATECUSTOMERAPI,
+UpdateApiConfig = _reflection.GeneratedProtocolMessageType('UpdateApiConfig', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEAPICONFIG,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.UpdateCustomerApi)
+  # @@protoc_insertion_point(class_scope:request.UpdateApiConfig)
   })
-_sym_db.RegisterMessage(UpdateCustomerApi)
+_sym_db.RegisterMessage(UpdateApiConfig)
 
-DescribeCustomerApi = _reflection.GeneratedProtocolMessageType('DescribeCustomerApi', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBECUSTOMERAPI,
+DescribeApiConfig = _reflection.GeneratedProtocolMessageType('DescribeApiConfig', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBEAPICONFIG,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DescribeCustomerApi)
+  # @@protoc_insertion_point(class_scope:request.DescribeApiConfig)
   })
-_sym_db.RegisterMessage(DescribeCustomerApi)
+_sym_db.RegisterMessage(DescribeApiConfig)
 
-DeleteCustomerApis = _reflection.GeneratedProtocolMessageType('DeleteCustomerApis', (_message.Message,), {
-  'DESCRIPTOR' : _DELETECUSTOMERAPIS,
+DeleteApiConfigs = _reflection.GeneratedProtocolMessageType('DeleteApiConfigs', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEAPICONFIGS,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DeleteCustomerApis)
+  # @@protoc_insertion_point(class_scope:request.DeleteApiConfigs)
   })
-_sym_db.RegisterMessage(DeleteCustomerApis)
+_sym_db.RegisterMessage(DeleteApiConfigs)
 
-CreateCustomerApi = _reflection.GeneratedProtocolMessageType('CreateCustomerApi', (_message.Message,), {
-  'DESCRIPTOR' : _CREATECUSTOMERAPI,
+CreateApiConfig = _reflection.GeneratedProtocolMessageType('CreateApiConfig', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEAPICONFIG,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.CreateCustomerApi)
+  # @@protoc_insertion_point(class_scope:request.CreateApiConfig)
   })
-_sym_db.RegisterMessage(CreateCustomerApi)
+_sym_db.RegisterMessage(CreateApiConfig)
 
 WizardDetails = _reflection.GeneratedProtocolMessageType('WizardDetails', (_message.Message,), {
   'DESCRIPTOR' : _WIZARDDETAILS,
@@ -1460,12 +1521,12 @@ WizardResponseParameters = _reflection.GeneratedProtocolMessageType('WizardRespo
   })
 _sym_db.RegisterMessage(WizardResponseParameters)
 
-ListApiVersions = _reflection.GeneratedProtocolMessageType('ListApiVersions', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAPIVERSIONS,
+ListDataServiceApiVersions = _reflection.GeneratedProtocolMessageType('ListDataServiceApiVersions', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDATASERVICEAPIVERSIONS,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.ListApiVersions)
+  # @@protoc_insertion_point(class_scope:request.ListDataServiceApiVersions)
   })
-_sym_db.RegisterMessage(ListApiVersions)
+_sym_db.RegisterMessage(ListDataServiceApiVersions)
 
 ListPublishedApis = _reflection.GeneratedProtocolMessageType('ListPublishedApis', (_message.Message,), {
   'DESCRIPTOR' : _LISTPUBLISHEDAPIS,
@@ -1474,33 +1535,40 @@ ListPublishedApis = _reflection.GeneratedProtocolMessageType('ListPublishedApis'
   })
 _sym_db.RegisterMessage(ListPublishedApis)
 
-DescribeApiVersion = _reflection.GeneratedProtocolMessageType('DescribeApiVersion', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBEAPIVERSION,
+DescribeDataServiceApiVersion = _reflection.GeneratedProtocolMessageType('DescribeDataServiceApiVersion', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBEDATASERVICEAPIVERSION,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.DescribeApiVersion)
+  # @@protoc_insertion_point(class_scope:request.DescribeDataServiceApiVersion)
   })
-_sym_db.RegisterMessage(DescribeApiVersion)
+_sym_db.RegisterMessage(DescribeDataServiceApiVersion)
 
-PublishCustomerApi = _reflection.GeneratedProtocolMessageType('PublishCustomerApi', (_message.Message,), {
-  'DESCRIPTOR' : _PUBLISHCUSTOMERAPI,
+RepublishDataServiceApi = _reflection.GeneratedProtocolMessageType('RepublishDataServiceApi', (_message.Message,), {
+  'DESCRIPTOR' : _REPUBLISHDATASERVICEAPI,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.PublishCustomerApi)
+  # @@protoc_insertion_point(class_scope:request.RepublishDataServiceApi)
   })
-_sym_db.RegisterMessage(PublishCustomerApi)
+_sym_db.RegisterMessage(RepublishDataServiceApi)
 
-AbolishCustomerApis = _reflection.GeneratedProtocolMessageType('AbolishCustomerApis', (_message.Message,), {
-  'DESCRIPTOR' : _ABOLISHCUSTOMERAPIS,
+PublishDataServiceApi = _reflection.GeneratedProtocolMessageType('PublishDataServiceApi', (_message.Message,), {
+  'DESCRIPTOR' : _PUBLISHDATASERVICEAPI,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.AbolishCustomerApis)
+  # @@protoc_insertion_point(class_scope:request.PublishDataServiceApi)
   })
-_sym_db.RegisterMessage(AbolishCustomerApis)
+_sym_db.RegisterMessage(PublishDataServiceApi)
 
-TestCustomerApi = _reflection.GeneratedProtocolMessageType('TestCustomerApi', (_message.Message,), {
-  'DESCRIPTOR' : _TESTCUSTOMERAPI,
+AbolishDataServiceApis = _reflection.GeneratedProtocolMessageType('AbolishDataServiceApis', (_message.Message,), {
+  'DESCRIPTOR' : _ABOLISHDATASERVICEAPIS,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
-  # @@protoc_insertion_point(class_scope:request.TestCustomerApi)
+  # @@protoc_insertion_point(class_scope:request.AbolishDataServiceApis)
   })
-_sym_db.RegisterMessage(TestCustomerApi)
+_sym_db.RegisterMessage(AbolishDataServiceApis)
+
+TestDataServiceApi = _reflection.GeneratedProtocolMessageType('TestDataServiceApi', (_message.Message,), {
+  'DESCRIPTOR' : _TESTDATASERVICEAPI,
+  '__module__' : 'proto.types.request.dataservice_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.TestDataServiceApi)
+  })
+_sym_db.RegisterMessage(TestDataServiceApi)
 
 
 DESCRIPTOR._options = None
@@ -1532,43 +1600,43 @@ _CREATEAPIGROUP.fields_by_name['space_id']._options = None
 _CREATEAPIGROUP.fields_by_name['name']._options = None
 _DELETEAPIGROUPS.fields_by_name['space_id']._options = None
 _DELETEAPIGROUPS.fields_by_name['group_ids']._options = None
-_LISTCUSTOMERAPIS.fields_by_name['space_id']._options = None
-_LISTCUSTOMERAPIS.fields_by_name['group_id']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['space_id']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['api_id']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['api_name']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['api_path']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['api_mode']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['api_description']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['request_method']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['response_type']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['cross_domain']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['timeout']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['datasource_id']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['table_name']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['wizardDetails']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['script']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['group_id']._options = None
-_UPDATECUSTOMERAPI.fields_by_name['cluster_id']._options = None
-_DESCRIBECUSTOMERAPI.fields_by_name['api_id']._options = None
-_DELETECUSTOMERAPIS.fields_by_name['space_id']._options = None
-_DELETECUSTOMERAPIS.fields_by_name['api_ids']._options = None
-_CREATECUSTOMERAPI.fields_by_name['api_name']._options = None
-_CREATECUSTOMERAPI.fields_by_name['api_path']._options = None
-_CREATECUSTOMERAPI.fields_by_name['api_mode']._options = None
-_CREATECUSTOMERAPI.fields_by_name['api_description']._options = None
-_CREATECUSTOMERAPI.fields_by_name['space_id']._options = None
-_CREATECUSTOMERAPI.fields_by_name['request_method']._options = None
-_CREATECUSTOMERAPI.fields_by_name['response_type']._options = None
-_CREATECUSTOMERAPI.fields_by_name['cross_domain']._options = None
-_CREATECUSTOMERAPI.fields_by_name['timeout']._options = None
-_CREATECUSTOMERAPI.fields_by_name['datasource_id']._options = None
-_CREATECUSTOMERAPI.fields_by_name['table_name']._options = None
-_CREATECUSTOMERAPI.fields_by_name['wizardDetails']._options = None
-_CREATECUSTOMERAPI.fields_by_name['script']._options = None
-_CREATECUSTOMERAPI.fields_by_name['group_id']._options = None
-_CREATECUSTOMERAPI.fields_by_name['cluster_id']._options = None
-_CREATECUSTOMERAPI.fields_by_name['created_by']._options = None
+_LISTAPICONFIGS.fields_by_name['space_id']._options = None
+_LISTAPICONFIGS.fields_by_name['group_id']._options = None
+_UPDATEAPICONFIG.fields_by_name['space_id']._options = None
+_UPDATEAPICONFIG.fields_by_name['api_id']._options = None
+_UPDATEAPICONFIG.fields_by_name['api_name']._options = None
+_UPDATEAPICONFIG.fields_by_name['api_path']._options = None
+_UPDATEAPICONFIG.fields_by_name['api_mode']._options = None
+_UPDATEAPICONFIG.fields_by_name['api_description']._options = None
+_UPDATEAPICONFIG.fields_by_name['request_method']._options = None
+_UPDATEAPICONFIG.fields_by_name['response_type']._options = None
+_UPDATEAPICONFIG.fields_by_name['cross_domain']._options = None
+_UPDATEAPICONFIG.fields_by_name['timeout']._options = None
+_UPDATEAPICONFIG.fields_by_name['datasource_id']._options = None
+_UPDATEAPICONFIG.fields_by_name['table_name']._options = None
+_UPDATEAPICONFIG.fields_by_name['wizardDetails']._options = None
+_UPDATEAPICONFIG.fields_by_name['script']._options = None
+_UPDATEAPICONFIG.fields_by_name['group_id']._options = None
+_UPDATEAPICONFIG.fields_by_name['cluster_id']._options = None
+_DESCRIBEAPICONFIG.fields_by_name['api_id']._options = None
+_DELETEAPICONFIGS.fields_by_name['space_id']._options = None
+_DELETEAPICONFIGS.fields_by_name['api_ids']._options = None
+_CREATEAPICONFIG.fields_by_name['api_name']._options = None
+_CREATEAPICONFIG.fields_by_name['api_path']._options = None
+_CREATEAPICONFIG.fields_by_name['api_mode']._options = None
+_CREATEAPICONFIG.fields_by_name['api_description']._options = None
+_CREATEAPICONFIG.fields_by_name['space_id']._options = None
+_CREATEAPICONFIG.fields_by_name['request_method']._options = None
+_CREATEAPICONFIG.fields_by_name['response_type']._options = None
+_CREATEAPICONFIG.fields_by_name['cross_domain']._options = None
+_CREATEAPICONFIG.fields_by_name['timeout']._options = None
+_CREATEAPICONFIG.fields_by_name['datasource_id']._options = None
+_CREATEAPICONFIG.fields_by_name['table_name']._options = None
+_CREATEAPICONFIG.fields_by_name['wizardDetails']._options = None
+_CREATEAPICONFIG.fields_by_name['script']._options = None
+_CREATEAPICONFIG.fields_by_name['group_id']._options = None
+_CREATEAPICONFIG.fields_by_name['cluster_id']._options = None
+_CREATEAPICONFIG.fields_by_name['created_by']._options = None
 _WIZARDREQUESTPARAMETERS.fields_by_name['column_name']._options = None
 _WIZARDREQUESTPARAMETERS.fields_by_name['default_value']._options = None
 _WIZARDREQUESTPARAMETERS.fields_by_name['example_value']._options = None
@@ -1584,21 +1652,26 @@ _WIZARDRESPONSEPARAMETERS.fields_by_name['example_value']._options = None
 _WIZARDRESPONSEPARAMETERS.fields_by_name['data_type']._options = None
 _WIZARDRESPONSEPARAMETERS.fields_by_name['param_description']._options = None
 _WIZARDRESPONSEPARAMETERS.fields_by_name['param_name']._options = None
-_LISTAPIVERSIONS.fields_by_name['api_id']._options = None
-_LISTAPIVERSIONS.fields_by_name['limit']._options = None
-_LISTAPIVERSIONS.fields_by_name['offset']._options = None
-_LISTAPIVERSIONS.fields_by_name['sort_by']._options = None
+_LISTDATASERVICEAPIVERSIONS.fields_by_name['space_id']._options = None
+_LISTDATASERVICEAPIVERSIONS.fields_by_name['api_id']._options = None
+_LISTDATASERVICEAPIVERSIONS.fields_by_name['limit']._options = None
+_LISTDATASERVICEAPIVERSIONS.fields_by_name['offset']._options = None
+_LISTDATASERVICEAPIVERSIONS.fields_by_name['sort_by']._options = None
 _LISTPUBLISHEDAPIS.fields_by_name['space_id']._options = None
 _LISTPUBLISHEDAPIS.fields_by_name['limit']._options = None
 _LISTPUBLISHEDAPIS.fields_by_name['offset']._options = None
 _LISTPUBLISHEDAPIS.fields_by_name['sort_by']._options = None
-_DESCRIBEAPIVERSION.fields_by_name['space_id']._options = None
-_DESCRIBEAPIVERSION.fields_by_name['version_id']._options = None
-_PUBLISHCUSTOMERAPI.fields_by_name['space_id']._options = None
-_PUBLISHCUSTOMERAPI.fields_by_name['api_id']._options = None
-_ABOLISHCUSTOMERAPIS.fields_by_name['space_id']._options = None
-_ABOLISHCUSTOMERAPIS.fields_by_name['api_ids']._options = None
-_TESTCUSTOMERAPI.fields_by_name['space_id']._options = None
-_TESTCUSTOMERAPI.fields_by_name['api_id']._options = None
-_TESTCUSTOMERAPI.fields_by_name['request_content']._options = None
+_DESCRIBEDATASERVICEAPIVERSION.fields_by_name['space_id']._options = None
+_DESCRIBEDATASERVICEAPIVERSION.fields_by_name['api_id']._options = None
+_DESCRIBEDATASERVICEAPIVERSION.fields_by_name['version_id']._options = None
+_REPUBLISHDATASERVICEAPI.fields_by_name['space_id']._options = None
+_REPUBLISHDATASERVICEAPI.fields_by_name['api_id']._options = None
+_REPUBLISHDATASERVICEAPI.fields_by_name['version_id']._options = None
+_PUBLISHDATASERVICEAPI.fields_by_name['space_id']._options = None
+_PUBLISHDATASERVICEAPI.fields_by_name['api_id']._options = None
+_ABOLISHDATASERVICEAPIS.fields_by_name['space_id']._options = None
+_ABOLISHDATASERVICEAPIS.fields_by_name['api_ids']._options = None
+_TESTDATASERVICEAPI.fields_by_name['space_id']._options = None
+_TESTDATASERVICEAPI.fields_by_name['api_id']._options = None
+_TESTDATASERVICEAPI.fields_by_name['request_content']._options = None
 # @@protoc_insertion_point(module_scope)

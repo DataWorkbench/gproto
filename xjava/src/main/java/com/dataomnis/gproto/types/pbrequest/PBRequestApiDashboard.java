@@ -28646,24 +28646,47 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-     * @return The apiServiceId.
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIds.
      */
-    java.lang.String getApiServiceId();
+    java.util.List<java.lang.String>
+        getApiServiceIdsList();
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for apiServiceId.
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIds.
+     */
+    int getApiServiceIdsCount();
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIds at the given index.
+     */
+    java.lang.String getApiServiceIds(int index);
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIds at the given index.
      */
     com.google.protobuf.ByteString
-        getApiServiceIdBytes();
+        getApiServiceIdsBytes(int index);
   }
   /**
    * Protobuf type {@code request.BindAuthKey}
@@ -28679,7 +28702,7 @@ public final class PBRequestApiDashboard {
     }
     private BindAuthKey() {
       authKeyId_ = "";
-      apiServiceId_ = "";
+      apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -28702,6 +28725,7 @@ public final class PBRequestApiDashboard {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -28720,8 +28744,11 @@ public final class PBRequestApiDashboard {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              apiServiceId_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                apiServiceIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              apiServiceIds_.add(s);
               break;
             }
             default: {
@@ -28739,6 +28766,9 @@ public final class PBRequestApiDashboard {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = apiServiceIds_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -28804,52 +28834,59 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object apiServiceId_;
+    public static final int API_SERVICE_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList apiServiceIds_;
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-     * @return The apiServiceId.
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIds.
      */
-    @java.lang.Override
-    public java.lang.String getApiServiceId() {
-      java.lang.Object ref = apiServiceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apiServiceId_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getApiServiceIdsList() {
+      return apiServiceIds_;
     }
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-     * @return The bytes for apiServiceId.
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIds.
      */
-    @java.lang.Override
+    public int getApiServiceIdsCount() {
+      return apiServiceIds_.size();
+    }
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIds at the given index.
+     */
+    public java.lang.String getApiServiceIds(int index) {
+      return apiServiceIds_.get(index);
+    }
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIds at the given index.
+     */
     public com.google.protobuf.ByteString
-        getApiServiceIdBytes() {
-      java.lang.Object ref = apiServiceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apiServiceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getApiServiceIdsBytes(int index) {
+      return apiServiceIds_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -28869,8 +28906,8 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiServiceId_);
+      for (int i = 0; i < apiServiceIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiServiceIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -28884,8 +28921,13 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authKeyId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authKeyId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiServiceId_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < apiServiceIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(apiServiceIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getApiServiceIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -28904,8 +28946,8 @@ public final class PBRequestApiDashboard {
 
       if (!getAuthKeyId()
           .equals(other.getAuthKeyId())) return false;
-      if (!getApiServiceId()
-          .equals(other.getApiServiceId())) return false;
+      if (!getApiServiceIdsList()
+          .equals(other.getApiServiceIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -28919,8 +28961,10 @@ public final class PBRequestApiDashboard {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AUTH_KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthKeyId().hashCode();
-      hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getApiServiceId().hashCode();
+      if (getApiServiceIdsCount() > 0) {
+        hash = (37 * hash) + API_SERVICE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getApiServiceIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -29056,8 +29100,8 @@ public final class PBRequestApiDashboard {
         super.clear();
         authKeyId_ = "";
 
-        apiServiceId_ = "";
-
+        apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -29084,8 +29128,13 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.BindAuthKey buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.BindAuthKey result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.BindAuthKey(this);
+        int from_bitField0_ = bitField0_;
         result.authKeyId_ = authKeyId_;
-        result.apiServiceId_ = apiServiceId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = apiServiceIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.apiServiceIds_ = apiServiceIds_;
         onBuilt();
         return result;
       }
@@ -29138,8 +29187,14 @@ public final class PBRequestApiDashboard {
           authKeyId_ = other.authKeyId_;
           onChanged();
         }
-        if (!other.getApiServiceId().isEmpty()) {
-          apiServiceId_ = other.apiServiceId_;
+        if (!other.apiServiceIds_.isEmpty()) {
+          if (apiServiceIds_.isEmpty()) {
+            apiServiceIds_ = other.apiServiceIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureApiServiceIdsIsMutable();
+            apiServiceIds_.addAll(other.apiServiceIds_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -29170,6 +29225,7 @@ public final class PBRequestApiDashboard {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object authKeyId_ = "";
       /**
@@ -29272,103 +29328,157 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object apiServiceId_ = "";
-      /**
-       * <pre>
-       * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
-       * </pre>
-       *
-       * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-       * @return The apiServiceId.
-       */
-      public java.lang.String getApiServiceId() {
-        java.lang.Object ref = apiServiceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apiServiceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureApiServiceIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = new com.google.protobuf.LazyStringArrayList(apiServiceIds_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-       * @return The bytes for apiServiceId.
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @return A list containing the apiServiceIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getApiServiceIdsList() {
+        return apiServiceIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @return The count of apiServiceIds.
+       */
+      public int getApiServiceIdsCount() {
+        return apiServiceIds_.size();
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The apiServiceIds at the given index.
+       */
+      public java.lang.String getApiServiceIds(int index) {
+        return apiServiceIds_.get(index);
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the apiServiceIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getApiServiceIdBytes() {
-        java.lang.Object ref = apiServiceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apiServiceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getApiServiceIdsBytes(int index) {
+        return apiServiceIds_.getByteString(index);
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The apiServiceId to set.
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The apiServiceIds to set.
        * @return This builder for chaining.
        */
-      public Builder setApiServiceId(
+      public Builder setApiServiceIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureApiServiceIdsIsMutable();
+        apiServiceIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The apiServiceIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        apiServiceId_ = value;
+  ensureApiServiceIdsIsMutable();
+        apiServiceIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param values The apiServiceIds to add.
        * @return This builder for chaining.
        */
-      public Builder clearApiServiceId() {
-        
-        apiServiceId_ = getDefaultInstance().getApiServiceId();
+      public Builder addAllApiServiceIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureApiServiceIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, apiServiceIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 2 [(.validator.field) = { ... }</code>
-       * @param value The bytes for apiServiceId to set.
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder setApiServiceIdBytes(
+      public Builder clearApiServiceIds() {
+        apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the apiServiceIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        apiServiceId_ = value;
+        ensureApiServiceIdsIsMutable();
+        apiServiceIds_.add(value);
         onChanged();
         return this;
       }
@@ -29432,24 +29542,47 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-     * @return The apiServiceId.
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIds.
      */
-    java.lang.String getApiServiceId();
+    java.util.List<java.lang.String>
+        getApiServiceIdsList();
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for apiServiceId.
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIds.
+     */
+    int getApiServiceIdsCount();
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIds at the given index.
+     */
+    java.lang.String getApiServiceIds(int index);
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIds at the given index.
      */
     com.google.protobuf.ByteString
-        getApiServiceIdBytes();
+        getApiServiceIdsBytes(int index);
   }
   /**
    * Protobuf type {@code request.UnbindAuthKey}
@@ -29464,7 +29597,7 @@ public final class PBRequestApiDashboard {
       super(builder);
     }
     private UnbindAuthKey() {
-      apiServiceId_ = "";
+      apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -29487,6 +29620,7 @@ public final class PBRequestApiDashboard {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -29499,8 +29633,11 @@ public final class PBRequestApiDashboard {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              apiServiceId_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                apiServiceIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              apiServiceIds_.add(s);
               break;
             }
             default: {
@@ -29518,6 +29655,9 @@ public final class PBRequestApiDashboard {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = apiServiceIds_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -29535,52 +29675,59 @@ public final class PBRequestApiDashboard {
               com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey.class, com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey.Builder.class);
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object apiServiceId_;
+    public static final int API_SERVICE_IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList apiServiceIds_;
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-     * @return The apiServiceId.
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @return A list containing the apiServiceIds.
      */
-    @java.lang.Override
-    public java.lang.String getApiServiceId() {
-      java.lang.Object ref = apiServiceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        apiServiceId_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getApiServiceIdsList() {
+      return apiServiceIds_;
     }
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_ids"
      * </pre>
      *
-     * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for apiServiceId.
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @return The count of apiServiceIds.
      */
-    @java.lang.Override
+    public int getApiServiceIdsCount() {
+      return apiServiceIds_.size();
+    }
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The apiServiceIds at the given index.
+     */
+    public java.lang.String getApiServiceIds(int index) {
+      return apiServiceIds_.get(index);
+    }
+    /**
+     * <pre>
+     * ApiService ID
+     * &#64;inject_tag: json:"api_service_ids"
+     * </pre>
+     *
+     * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the apiServiceIds at the given index.
+     */
     public com.google.protobuf.ByteString
-        getApiServiceIdBytes() {
-      java.lang.Object ref = apiServiceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        apiServiceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getApiServiceIdsBytes(int index) {
+      return apiServiceIds_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -29597,8 +29744,8 @@ public final class PBRequestApiDashboard {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiServiceId_);
+      for (int i = 0; i < apiServiceIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiServiceIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -29609,8 +29756,13 @@ public final class PBRequestApiDashboard {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, apiServiceId_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < apiServiceIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(apiServiceIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getApiServiceIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -29627,8 +29779,8 @@ public final class PBRequestApiDashboard {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey other = (com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey) obj;
 
-      if (!getApiServiceId()
-          .equals(other.getApiServiceId())) return false;
+      if (!getApiServiceIdsList()
+          .equals(other.getApiServiceIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -29640,8 +29792,10 @@ public final class PBRequestApiDashboard {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + API_SERVICE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getApiServiceId().hashCode();
+      if (getApiServiceIdsCount() > 0) {
+        hash = (37 * hash) + API_SERVICE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getApiServiceIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -29775,8 +29929,8 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        apiServiceId_ = "";
-
+        apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -29803,7 +29957,12 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey(this);
-        result.apiServiceId_ = apiServiceId_;
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = apiServiceIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.apiServiceIds_ = apiServiceIds_;
         onBuilt();
         return result;
       }
@@ -29852,8 +30011,14 @@ public final class PBRequestApiDashboard {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.UnbindAuthKey.getDefaultInstance()) return this;
-        if (!other.getApiServiceId().isEmpty()) {
-          apiServiceId_ = other.apiServiceId_;
+        if (!other.apiServiceIds_.isEmpty()) {
+          if (apiServiceIds_.isEmpty()) {
+            apiServiceIds_ = other.apiServiceIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureApiServiceIdsIsMutable();
+            apiServiceIds_.addAll(other.apiServiceIds_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -29884,104 +30049,159 @@ public final class PBRequestApiDashboard {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object apiServiceId_ = "";
-      /**
-       * <pre>
-       * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
-       * </pre>
-       *
-       * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-       * @return The apiServiceId.
-       */
-      public java.lang.String getApiServiceId() {
-        java.lang.Object ref = apiServiceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          apiServiceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureApiServiceIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          apiServiceIds_ = new com.google.protobuf.LazyStringArrayList(apiServiceIds_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for apiServiceId.
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @return A list containing the apiServiceIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getApiServiceIdsList() {
+        return apiServiceIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @return The count of apiServiceIds.
+       */
+      public int getApiServiceIdsCount() {
+        return apiServiceIds_.size();
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The apiServiceIds at the given index.
+       */
+      public java.lang.String getApiServiceIds(int index) {
+        return apiServiceIds_.get(index);
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the apiServiceIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getApiServiceIdBytes() {
-        java.lang.Object ref = apiServiceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          apiServiceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getApiServiceIdsBytes(int index) {
+        return apiServiceIds_.getByteString(index);
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The apiServiceId to set.
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The apiServiceIds to set.
        * @return This builder for chaining.
        */
-      public Builder setApiServiceId(
+      public Builder setApiServiceIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureApiServiceIdsIsMutable();
+        apiServiceIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param value The apiServiceIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        apiServiceId_ = value;
+  ensureApiServiceIdsIsMutable();
+        apiServiceIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param values The apiServiceIds to add.
        * @return This builder for chaining.
        */
-      public Builder clearApiServiceId() {
-        
-        apiServiceId_ = getDefaultInstance().getApiServiceId();
+      public Builder addAllApiServiceIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureApiServiceIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, apiServiceIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_ids"
        * </pre>
        *
-       * <code>string api_service_id = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for apiServiceId to set.
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder setApiServiceIdBytes(
+      public Builder clearApiServiceIds() {
+        apiServiceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * ApiService ID
+       * &#64;inject_tag: json:"api_service_ids"
+       * </pre>
+       *
+       * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the apiServiceIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApiServiceIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        apiServiceId_ = value;
+        ensureApiServiceIdsIsMutable();
+        apiServiceIds_.add(value);
         onChanged();
         return this;
       }
@@ -30274,14 +30494,14 @@ public final class PBRequestApiDashboard {
       "J\000J\002idJ\013create_timeJ\013update_time\022\017\n\007reve" +
       "rse\030\005 \001(\010\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated_b" +
       "y\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.model.Sta" +
-      "tusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"V\n\013BindAuthKey\022!\n\013a" +
-      "uth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022$\n\016api_se" +
-      "rvice_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"5\n\rUnbindAu" +
-      "thKey\022$\n\016api_service_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\200\002\000Bt\n$com.dataomnis.gproto.types.pbrequ" +
-      "estB\025PBRequestApiDashboardP\000Z3github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbreques" +
-      "tb\006proto3"
+      "tusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"X\n\013BindAuthKey\022!\n\013a" +
+      "uth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_se" +
+      "rvice_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbind" +
+      "AuthKey\022&\n\017api_service_ids\030\001 \003(\tB\r\342\337\037\t\022\007" +
+      "\352\001\0040\0008dBt\n$com.dataomnis.gproto.types.pb" +
+      "requestB\025PBRequestApiDashboardP\000Z3github" +
+      ".com/DataWorkbench/gproto/xgo/types/pbre" +
+      "questb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30445,13 +30665,13 @@ public final class PBRequestApiDashboard {
     internal_static_request_BindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_BindAuthKey_descriptor,
-        new java.lang.String[] { "AuthKeyId", "ApiServiceId", });
+        new java.lang.String[] { "AuthKeyId", "ApiServiceIds", });
     internal_static_request_UnbindAuthKey_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_request_UnbindAuthKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UnbindAuthKey_descriptor,
-        new java.lang.String[] { "ApiServiceId", });
+        new java.lang.String[] { "ApiServiceIds", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);
