@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseApiDashboardP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/response/apidashboard.proto\x12\x08response\x1a$proto/types/model/apidashboard.proto\"\x19\n\x0b\x43reateRoute\x12\n\n\x02id\x18\x01 \x01(\t\";\n\nListRoutes\x12\x1e\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x0c.model.Route\x12\r\n\x05total\x18\x02 \x01(\x03\"G\n\rListUpstreams\x12\'\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x15.model.UpstreamEntity\x12\r\n\x05total\x18\x02 \x01(\x03\"\x1c\n\x0e\x43reateUpstream\x12\n\n\x02id\x18\x01 \x01(\t\"\x17\n\tCreateSSL\x12\n\n\x02id\x18\x01 \x01(\t\"7\n\x08ListSSLs\x12\x1c\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\n.model.SSL\x12\r\n\x05total\x18\x02 \x01(\x03\"\x1e\n\x10\x43reateApiService\x12\n\n\x02id\x18\x01 \x01(\t\"K\n\x0fListApiServices\x12)\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x17.model.ApiServiceEntity\x12\r\n\x05total\x18\x02 \x01(\x03\"E\n\x0cListAuthKeys\x12&\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x14.model.AuthKeyEntity\x12\r\n\x05total\x18\x02 \x01(\x03\"/\n\rCreateAuthKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nsecret_key\x18\x02 \x01(\t\"+\n\x0eGetSvcReqCount\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseApiDashboardP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\'proto/types/response/apidashboard.proto\x12\x08response\x1a$proto/types/model/apidashboard.proto\"\x19\n\x0b\x43reateRoute\x12\n\n\x02id\x18\x01 \x01(\t\"M\n\nListRoutes\x12\x1e\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x0c.model.Route\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"Y\n\rListUpstreams\x12\'\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x15.model.UpstreamEntity\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"\x1c\n\x0e\x43reateUpstream\x12\n\n\x02id\x18\x01 \x01(\t\"\x17\n\tCreateSSL\x12\n\n\x02id\x18\x01 \x01(\t\"7\n\x08ListSSLs\x12\x1c\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\n.model.SSL\x12\r\n\x05total\x18\x02 \x01(\x03\"\x1e\n\x10\x43reateApiService\x12\n\n\x02id\x18\x01 \x01(\t\"]\n\x0fListApiServices\x12)\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x17.model.ApiServiceEntity\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"W\n\x0cListAuthKeys\x12&\n\x08\x65ntities\x18\x01 \x03(\x0b\x32\x14.model.AuthKeyEntity\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"/\n\rCreateAuthKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nsecret_key\x18\x02 \x01(\t\"+\n\x0eGetSvcReqCount\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseApiDashboardP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_apidashboard__pb2.DESCRIPTOR,])
 
@@ -81,6 +81,13 @@ _LISTROUTES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListRoutes.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -94,7 +101,7 @@ _LISTROUTES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=118,
-  serialized_end=177,
+  serialized_end=195,
 )
 
 
@@ -120,6 +127,13 @@ _LISTUPSTREAMS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListUpstreams.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -132,8 +146,8 @@ _LISTUPSTREAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=179,
-  serialized_end=250,
+  serialized_start=197,
+  serialized_end=286,
 )
 
 
@@ -164,8 +178,8 @@ _CREATEUPSTREAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=252,
-  serialized_end=280,
+  serialized_start=288,
+  serialized_end=316,
 )
 
 
@@ -196,8 +210,8 @@ _CREATESSL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=305,
+  serialized_start=318,
+  serialized_end=341,
 )
 
 
@@ -235,8 +249,8 @@ _LISTSSLS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=307,
-  serialized_end=362,
+  serialized_start=343,
+  serialized_end=398,
 )
 
 
@@ -267,8 +281,8 @@ _CREATEAPISERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=394,
+  serialized_start=400,
+  serialized_end=430,
 )
 
 
@@ -294,6 +308,13 @@ _LISTAPISERVICES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListApiServices.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,8 +327,8 @@ _LISTAPISERVICES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=471,
+  serialized_start=432,
+  serialized_end=525,
 )
 
 
@@ -333,6 +354,13 @@ _LISTAUTHKEYS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListAuthKeys.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -345,8 +373,8 @@ _LISTAUTHKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=473,
-  serialized_end=542,
+  serialized_start=527,
+  serialized_end=614,
 )
 
 
@@ -384,8 +412,8 @@ _CREATEAUTHKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=544,
-  serialized_end=591,
+  serialized_start=616,
+  serialized_end=663,
 )
 
 
@@ -423,8 +451,8 @@ _GETSVCREQCOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=593,
-  serialized_end=636,
+  serialized_start=665,
+  serialized_end=708,
 )
 
 _LISTROUTES.fields_by_name['entities'].message_type = proto_dot_types_dot_model_dot_apidashboard__pb2._ROUTE

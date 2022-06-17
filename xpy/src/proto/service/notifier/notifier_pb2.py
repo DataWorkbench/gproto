@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from proto.types.request import notifier_pb2 as proto_dot_types_dot_request_dot_notifier__pb2
-from proto.types.response import notifier_pb2 as proto_dot_types_dot_response_dot_notifier__pb2
 from proto.types.model import empty_pb2 as proto_dot_types_dot_model_dot_empty__pb2
 
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)com.dataomnis.gproto.service.pbsvcaccountB\rPBSvcNotifierP\000Z9github.com/DataWorkbench/gproto/xgo/service/pbsvcnotifier',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%proto/service/notifier/notifier.proto\x12\x08notifier\x1a\"proto/types/request/notifier.proto\x1a#proto/types/response/notifier.proto\x1a\x1dproto/types/model/empty.proto2\x9f\x01\n\x08Notifier\x12\x43\n\x10SendNotification\x12\x19.request.SendNotification\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11ListNotifications\x12\x1a.request.ListNotifications\x1a\x1b.response.ListNotifications\"\x00\x42w\n)com.dataomnis.gproto.service.pbsvcaccountB\rPBSvcNotifierP\x00Z9github.com/DataWorkbench/gproto/xgo/service/pbsvcnotifierb\x06proto3'
+  serialized_pb=b'\n%proto/service/notifier/notifier.proto\x12\x08notifier\x1a\"proto/types/request/notifier.proto\x1a\x1dproto/types/model/empty.proto2O\n\x08Notifier\x12\x43\n\x10SendNotification\x12\x19.request.SendNotification\x1a\x12.model.EmptyStruct\"\x00\x42w\n)com.dataomnis.gproto.service.pbsvcaccountB\rPBSvcNotifierP\x00Z9github.com/DataWorkbench/gproto/xgo/service/pbsvcnotifierb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_request_dot_notifier__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_notifier__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_request_dot_notifier__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,])
 
 
 
@@ -40,8 +39,8 @@ _NOTIFIER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=156,
-  serialized_end=315,
+  serialized_start=118,
+  serialized_end=197,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendNotification',
@@ -50,16 +49,6 @@ _NOTIFIER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_notifier__pb2._SENDNOTIFICATION,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListNotifications',
-    full_name='notifier.Notifier.ListNotifications',
-    index=1,
-    containing_service=None,
-    input_type=proto_dot_types_dot_request_dot_notifier__pb2._LISTNOTIFICATIONS,
-    output_type=proto_dot_types_dot_response_dot_notifier__pb2._LISTNOTIFICATIONS,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

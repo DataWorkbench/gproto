@@ -8119,8 +8119,8 @@ public final class PBRequestDataServiceManage {
 
   }
 
-  public interface ListCustomerApisOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.ListCustomerApis)
+  public interface ListApiConfigsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ListApiConfigs)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -8145,7 +8145,7 @@ public final class PBRequestDataServiceManage {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"group_id" form:"group_id"
      * </pre>
      *
      * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8154,7 +8154,7 @@ public final class PBRequestDataServiceManage {
     java.lang.String getGroupId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"group_id" form:"group_id"
      * </pre>
      *
      * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8164,18 +8164,18 @@ public final class PBRequestDataServiceManage {
         getGroupIdBytes();
   }
   /**
-   * Protobuf type {@code request.ListCustomerApis}
+   * Protobuf type {@code request.ListApiConfigs}
    */
-  public static final class ListCustomerApis extends
+  public static final class ListApiConfigs extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.ListCustomerApis)
-      ListCustomerApisOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.ListApiConfigs)
+      ListApiConfigsOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListCustomerApis.newBuilder() to construct.
-    private ListCustomerApis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListApiConfigs.newBuilder() to construct.
+    private ListApiConfigs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListCustomerApis() {
+    private ListApiConfigs() {
       spaceId_ = "";
       groupId_ = "";
     }
@@ -8184,7 +8184,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListCustomerApis();
+      return new ListApiConfigs();
     }
 
     @java.lang.Override
@@ -8192,7 +8192,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListCustomerApis(
+    private ListApiConfigs(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8243,15 +8243,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListCustomerApis_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiConfigs_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListCustomerApis_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiConfigs_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -8304,7 +8304,7 @@ public final class PBRequestDataServiceManage {
     private volatile java.lang.Object groupId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"group_id" form:"group_id"
      * </pre>
      *
      * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8325,7 +8325,7 @@ public final class PBRequestDataServiceManage {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+     * &#64;inject_tag: json:"group_id" form:"group_id"
      * </pre>
      *
      * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8391,10 +8391,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -8420,69 +8420,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8495,7 +8495,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8511,26 +8511,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.ListCustomerApis}
+     * Protobuf type {@code request.ListApiConfigs}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.ListCustomerApis)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApisOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.ListApiConfigs)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiConfigs_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListCustomerApis_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiConfigs_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8558,17 +8558,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiConfigs_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8576,8 +8576,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs(this);
         result.spaceId_ = spaceId_;
         result.groupId_ = groupId_;
         onBuilt();
@@ -8618,16 +8618,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -8651,11 +8651,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8764,7 +8764,7 @@ public final class PBRequestDataServiceManage {
       private java.lang.Object groupId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"group_id" form:"group_id"
        * </pre>
        *
        * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8784,7 +8784,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"group_id" form:"group_id"
        * </pre>
        *
        * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8805,7 +8805,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"group_id" form:"group_id"
        * </pre>
        *
        * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8824,7 +8824,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"group_id" form:"group_id"
        * </pre>
        *
        * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8838,7 +8838,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"group_id"  uri:"group_id" swaggerignore:"true"
+       * &#64;inject_tag: json:"group_id" form:"group_id"
        * </pre>
        *
        * <code>string group_id = 2 [(.validator.field) = { ... }</code>
@@ -8869,48 +8869,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.ListCustomerApis)
+      // @@protoc_insertion_point(builder_scope:request.ListApiConfigs)
     }
 
-    // @@protoc_insertion_point(class_scope:request.ListCustomerApis)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.ListApiConfigs)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListCustomerApis>
-        PARSER = new com.google.protobuf.AbstractParser<ListCustomerApis>() {
+    private static final com.google.protobuf.Parser<ListApiConfigs>
+        PARSER = new com.google.protobuf.AbstractParser<ListApiConfigs>() {
       @java.lang.Override
-      public ListCustomerApis parsePartialFrom(
+      public ListApiConfigs parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListCustomerApis(input, extensionRegistry);
+        return new ListApiConfigs(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListCustomerApis> parser() {
+    public static com.google.protobuf.Parser<ListApiConfigs> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListCustomerApis> getParserForType() {
+    public com.google.protobuf.Parser<ListApiConfigs> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListCustomerApis getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateCustomerApiOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.UpdateCustomerApi)
+  public interface UpdateApiConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpdateApiConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9267,18 +9267,18 @@ public final class PBRequestDataServiceManage {
         getClusterIdBytes();
   }
   /**
-   * Protobuf type {@code request.UpdateCustomerApi}
+   * Protobuf type {@code request.UpdateApiConfig}
    */
-  public static final class UpdateCustomerApi extends
+  public static final class UpdateApiConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.UpdateCustomerApi)
-      UpdateCustomerApiOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.UpdateApiConfig)
+      UpdateApiConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateCustomerApi.newBuilder() to construct.
-    private UpdateCustomerApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UpdateApiConfig.newBuilder() to construct.
+    private UpdateApiConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateCustomerApi() {
+    private UpdateApiConfig() {
       spaceId_ = "";
       apiId_ = "";
       apiName_ = "";
@@ -9299,7 +9299,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateCustomerApi();
+      return new UpdateApiConfig();
     }
 
     @java.lang.Override
@@ -9307,7 +9307,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateCustomerApi(
+    private UpdateApiConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9474,15 +9474,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateCustomerApi_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateCustomerApi_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -10327,10 +10327,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -10421,69 +10421,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10496,7 +10496,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10512,26 +10512,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.UpdateCustomerApi}
+     * Protobuf type {@code request.UpdateApiConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.UpdateCustomerApi)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApiOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.UpdateApiConfig)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateCustomerApi_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10593,17 +10593,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10611,8 +10611,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig(this);
         int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         result.apiId_ = apiId_;
@@ -10677,16 +10677,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -10770,11 +10770,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12408,48 +12408,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.UpdateCustomerApi)
+      // @@protoc_insertion_point(builder_scope:request.UpdateApiConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:request.UpdateCustomerApi)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.UpdateApiConfig)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateCustomerApi>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateCustomerApi>() {
+    private static final com.google.protobuf.Parser<UpdateApiConfig>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApiConfig>() {
       @java.lang.Override
-      public UpdateCustomerApi parsePartialFrom(
+      public UpdateApiConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateCustomerApi(input, extensionRegistry);
+        return new UpdateApiConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateCustomerApi> parser() {
+    public static com.google.protobuf.Parser<UpdateApiConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateCustomerApi> getParserForType() {
+    public com.google.protobuf.Parser<UpdateApiConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateCustomerApi getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DescribeCustomerApiOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.DescribeCustomerApi)
+  public interface DescribeApiConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeApiConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -12473,18 +12473,18 @@ public final class PBRequestDataServiceManage {
         getApiIdBytes();
   }
   /**
-   * Protobuf type {@code request.DescribeCustomerApi}
+   * Protobuf type {@code request.DescribeApiConfig}
    */
-  public static final class DescribeCustomerApi extends
+  public static final class DescribeApiConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.DescribeCustomerApi)
-      DescribeCustomerApiOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.DescribeApiConfig)
+      DescribeApiConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescribeCustomerApi.newBuilder() to construct.
-    private DescribeCustomerApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DescribeApiConfig.newBuilder() to construct.
+    private DescribeApiConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescribeCustomerApi() {
+    private DescribeApiConfig() {
       apiId_ = "";
     }
 
@@ -12492,7 +12492,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DescribeCustomerApi();
+      return new DescribeApiConfig();
     }
 
     @java.lang.Override
@@ -12500,7 +12500,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescribeCustomerApi(
+    private DescribeApiConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12545,15 +12545,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeCustomerApi_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeCustomerApi_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.Builder.class);
     }
 
     public static final int API_ID_FIELD_NUMBER = 1;
@@ -12641,10 +12641,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig) obj;
 
       if (!getApiId()
           .equals(other.getApiId())) return false;
@@ -12666,69 +12666,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12741,7 +12741,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -12757,26 +12757,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.DescribeCustomerApi}
+     * Protobuf type {@code request.DescribeApiConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.DescribeCustomerApi)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApiOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.DescribeApiConfig)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeCustomerApi_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12802,17 +12802,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -12820,8 +12820,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig(this);
         result.apiId_ = apiId_;
         onBuilt();
         return result;
@@ -12861,16 +12861,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig.getDefaultInstance()) return this;
         if (!other.getApiId().isEmpty()) {
           apiId_ = other.apiId_;
           onChanged();
@@ -12890,11 +12890,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13012,48 +13012,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.DescribeCustomerApi)
+      // @@protoc_insertion_point(builder_scope:request.DescribeApiConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:request.DescribeCustomerApi)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.DescribeApiConfig)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescribeCustomerApi>
-        PARSER = new com.google.protobuf.AbstractParser<DescribeCustomerApi>() {
+    private static final com.google.protobuf.Parser<DescribeApiConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeApiConfig>() {
       @java.lang.Override
-      public DescribeCustomerApi parsePartialFrom(
+      public DescribeApiConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescribeCustomerApi(input, extensionRegistry);
+        return new DescribeApiConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescribeCustomerApi> parser() {
+    public static com.google.protobuf.Parser<DescribeApiConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescribeCustomerApi> getParserForType() {
+    public com.google.protobuf.Parser<DescribeApiConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeCustomerApi getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface DeleteCustomerApisOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.DeleteCustomerApis)
+  public interface DeleteApiConfigsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DeleteApiConfigs)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -13118,18 +13118,18 @@ public final class PBRequestDataServiceManage {
         getApiIdsBytes(int index);
   }
   /**
-   * Protobuf type {@code request.DeleteCustomerApis}
+   * Protobuf type {@code request.DeleteApiConfigs}
    */
-  public static final class DeleteCustomerApis extends
+  public static final class DeleteApiConfigs extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.DeleteCustomerApis)
-      DeleteCustomerApisOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.DeleteApiConfigs)
+      DeleteApiConfigsOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DeleteCustomerApis.newBuilder() to construct.
-    private DeleteCustomerApis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DeleteApiConfigs.newBuilder() to construct.
+    private DeleteApiConfigs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DeleteCustomerApis() {
+    private DeleteApiConfigs() {
       spaceId_ = "";
       apiIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -13138,7 +13138,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DeleteCustomerApis();
+      return new DeleteApiConfigs();
     }
 
     @java.lang.Override
@@ -13146,7 +13146,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeleteCustomerApis(
+    private DeleteApiConfigs(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13204,15 +13204,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteCustomerApis_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteApiConfigs_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteCustomerApis_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteApiConfigs_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -13362,10 +13362,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -13393,69 +13393,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13468,7 +13468,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -13484,26 +13484,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.DeleteCustomerApis}
+     * Protobuf type {@code request.DeleteApiConfigs}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.DeleteCustomerApis)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApisOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.DeleteApiConfigs)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteApiConfigs_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteCustomerApis_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteApiConfigs_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13531,17 +13531,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DeleteApiConfigs_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -13549,8 +13549,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs(this);
         int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -13596,16 +13596,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -13635,11 +13635,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13904,48 +13904,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.DeleteCustomerApis)
+      // @@protoc_insertion_point(builder_scope:request.DeleteApiConfigs)
     }
 
-    // @@protoc_insertion_point(class_scope:request.DeleteCustomerApis)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.DeleteApiConfigs)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DeleteCustomerApis>
-        PARSER = new com.google.protobuf.AbstractParser<DeleteCustomerApis>() {
+    private static final com.google.protobuf.Parser<DeleteApiConfigs>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteApiConfigs>() {
       @java.lang.Override
-      public DeleteCustomerApis parsePartialFrom(
+      public DeleteApiConfigs parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeleteCustomerApis(input, extensionRegistry);
+        return new DeleteApiConfigs(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DeleteCustomerApis> parser() {
+    public static com.google.protobuf.Parser<DeleteApiConfigs> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DeleteCustomerApis> getParserForType() {
+    public com.google.protobuf.Parser<DeleteApiConfigs> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteCustomerApis getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface CreateCustomerApiOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.CreateCustomerApi)
+  public interface CreateApiConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateApiConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -14302,18 +14302,18 @@ public final class PBRequestDataServiceManage {
         getCreatedByBytes();
   }
   /**
-   * Protobuf type {@code request.CreateCustomerApi}
+   * Protobuf type {@code request.CreateApiConfig}
    */
-  public static final class CreateCustomerApi extends
+  public static final class CreateApiConfig extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.CreateCustomerApi)
-      CreateCustomerApiOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.CreateApiConfig)
+      CreateApiConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateCustomerApi.newBuilder() to construct.
-    private CreateCustomerApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use CreateApiConfig.newBuilder() to construct.
+    private CreateApiConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateCustomerApi() {
+    private CreateApiConfig() {
       apiName_ = "";
       apiPath_ = "";
       apiMode_ = 0;
@@ -14334,7 +14334,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new CreateCustomerApi();
+      return new CreateApiConfig();
     }
 
     @java.lang.Override
@@ -14342,7 +14342,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateCustomerApi(
+    private CreateApiConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -14509,15 +14509,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateCustomerApi_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateApiConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateCustomerApi_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateApiConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.Builder.class);
     }
 
     public static final int API_NAME_FIELD_NUMBER = 1;
@@ -15362,10 +15362,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig) obj;
 
       if (!getApiName()
           .equals(other.getApiName())) return false;
@@ -15456,69 +15456,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -15531,7 +15531,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -15547,26 +15547,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.CreateCustomerApi}
+     * Protobuf type {@code request.CreateApiConfig}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.CreateCustomerApi)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApiOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.CreateApiConfig)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfigOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateApiConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateCustomerApi_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateApiConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -15628,17 +15628,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_CreateApiConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -15646,8 +15646,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig(this);
         int from_bitField0_ = bitField0_;
         result.apiName_ = apiName_;
         result.apiPath_ = apiPath_;
@@ -15712,16 +15712,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig.getDefaultInstance()) return this;
         if (!other.getApiName().isEmpty()) {
           apiName_ = other.apiName_;
           onChanged();
@@ -15805,11 +15805,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -17443,41 +17443,41 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.CreateCustomerApi)
+      // @@protoc_insertion_point(builder_scope:request.CreateApiConfig)
     }
 
-    // @@protoc_insertion_point(class_scope:request.CreateCustomerApi)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.CreateApiConfig)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateCustomerApi>
-        PARSER = new com.google.protobuf.AbstractParser<CreateCustomerApi>() {
+    private static final com.google.protobuf.Parser<CreateApiConfig>
+        PARSER = new com.google.protobuf.AbstractParser<CreateApiConfig>() {
       @java.lang.Override
-      public CreateCustomerApi parsePartialFrom(
+      public CreateApiConfig parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateCustomerApi(input, extensionRegistry);
+        return new CreateApiConfig(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateCustomerApi> parser() {
+    public static com.google.protobuf.Parser<CreateApiConfig> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateCustomerApi> getParserForType() {
+    public com.google.protobuf.Parser<CreateApiConfig> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateCustomerApi getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -22231,16 +22231,36 @@ public final class PBRequestDataServiceManage {
 
   }
 
-  public interface ListApiVersionsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.ListApiVersions)
+  public interface ListDataServiceApiVersionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ListDataServiceApiVersions)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
 
     /**
      * <pre>
      * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
      * @return The apiId.
      */
     java.lang.String getApiId();
@@ -22249,7 +22269,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for apiId.
      */
     com.google.protobuf.ByteString
@@ -22260,7 +22280,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
-     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 3 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     int getLimit();
@@ -22270,7 +22290,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 4 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     int getOffset();
@@ -22280,7 +22300,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     java.lang.String getSortBy();
@@ -22289,25 +22309,26 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     com.google.protobuf.ByteString
         getSortByBytes();
   }
   /**
-   * Protobuf type {@code request.ListApiVersions}
+   * Protobuf type {@code request.ListDataServiceApiVersions}
    */
-  public static final class ListApiVersions extends
+  public static final class ListDataServiceApiVersions extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.ListApiVersions)
-      ListApiVersionsOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.ListDataServiceApiVersions)
+      ListDataServiceApiVersionsOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListApiVersions.newBuilder() to construct.
-    private ListApiVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListDataServiceApiVersions.newBuilder() to construct.
+    private ListDataServiceApiVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListApiVersions() {
+    private ListDataServiceApiVersions() {
+      spaceId_ = "";
       apiId_ = "";
       sortBy_ = "";
     }
@@ -22316,7 +22337,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListApiVersions();
+      return new ListDataServiceApiVersions();
     }
 
     @java.lang.Override
@@ -22324,7 +22345,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListApiVersions(
+    private ListDataServiceApiVersions(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -22345,20 +22366,26 @@ public final class PBRequestDataServiceManage {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              apiId_ = s;
+              spaceId_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              limit_ = input.readInt32();
+              apiId_ = s;
               break;
             }
             case 24: {
 
+              limit_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
               offset_ = input.readInt32();
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               sortBy_ = s;
@@ -22385,25 +22412,71 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiVersions_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListDataServiceApiVersions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiVersions_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListDataServiceApiVersions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.Builder.class);
     }
 
-    public static final int API_ID_FIELD_NUMBER = 1;
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object apiId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
      * @return The apiId.
      */
     @java.lang.Override
@@ -22424,7 +22497,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
      * @return The bytes for apiId.
      */
     @java.lang.Override
@@ -22442,14 +22515,14 @@ public final class PBRequestDataServiceManage {
       }
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 2;
+    public static final int LIMIT_FIELD_NUMBER = 3;
     private int limit_;
     /**
      * <pre>
      * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
-     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+     * <code>int32 limit = 3 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -22457,14 +22530,14 @@ public final class PBRequestDataServiceManage {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 3;
+    public static final int OFFSET_FIELD_NUMBER = 4;
     private int offset_;
     /**
      * <pre>
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 4 [(.validator.field) = { ... }</code>
      * @return The offset.
      */
     @java.lang.Override
@@ -22472,14 +22545,14 @@ public final class PBRequestDataServiceManage {
       return offset_;
     }
 
-    public static final int SORT_BY_FIELD_NUMBER = 4;
+    public static final int SORT_BY_FIELD_NUMBER = 5;
     private volatile java.lang.Object sortBy_;
     /**
      * <pre>
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
      * @return The sortBy.
      */
     @java.lang.Override
@@ -22500,7 +22573,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
-     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for sortBy.
      */
     @java.lang.Override
@@ -22532,17 +22605,20 @@ public final class PBRequestDataServiceManage {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiId_);
       }
       if (limit_ != 0) {
-        output.writeInt32(2, limit_);
+        output.writeInt32(3, limit_);
       }
       if (offset_ != 0) {
-        output.writeInt32(3, offset_);
+        output.writeInt32(4, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortBy_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sortBy_);
       }
       unknownFields.writeTo(output);
     }
@@ -22553,19 +22629,22 @@ public final class PBRequestDataServiceManage {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, apiId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiId_);
       }
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, limit_);
+          .computeInt32Size(3, limit_);
       }
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, offset_);
+          .computeInt32Size(4, offset_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortBy_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sortBy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -22577,11 +22656,13 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions) obj;
 
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
       if (!getApiId()
           .equals(other.getApiId())) return false;
       if (getLimit()
@@ -22601,6 +22682,8 @@ public final class PBRequestDataServiceManage {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + API_ID_FIELD_NUMBER;
       hash = (53 * hash) + getApiId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
@@ -22614,69 +22697,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -22689,7 +22772,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -22705,26 +22788,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.ListApiVersions}
+     * Protobuf type {@code request.ListDataServiceApiVersions}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.ListApiVersions)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersionsOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.ListDataServiceApiVersions)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersionsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiVersions_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListDataServiceApiVersions_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiVersions_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListDataServiceApiVersions_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -22742,6 +22825,8 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        spaceId_ = "";
+
         apiId_ = "";
 
         limit_ = 0;
@@ -22756,17 +22841,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListApiVersions_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_ListDataServiceApiVersions_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -22774,8 +22859,9 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions(this);
+        result.spaceId_ = spaceId_;
         result.apiId_ = apiId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
@@ -22818,16 +22904,20 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
         if (!other.getApiId().isEmpty()) {
           apiId_ = other.apiId_;
           onChanged();
@@ -22857,11 +22947,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -22871,13 +22961,109 @@ public final class PBRequestDataServiceManage {
         return this;
       }
 
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object apiId_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
        * @return The apiId.
        */
       public java.lang.String getApiId() {
@@ -22897,7 +23083,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
        * @return The bytes for apiId.
        */
       public com.google.protobuf.ByteString
@@ -22918,7 +23104,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
        * @param value The apiId to set.
        * @return This builder for chaining.
        */
@@ -22937,7 +23123,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearApiId() {
@@ -22951,7 +23137,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string api_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiId to set.
        * @return This builder for chaining.
        */
@@ -22973,7 +23159,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 3 [(.defaults.field) = { ... }</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -22985,7 +23171,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 3 [(.defaults.field) = { ... }</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -23000,7 +23186,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
-       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * <code>int32 limit = 3 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -23016,7 +23202,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 4 [(.validator.field) = { ... }</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -23028,7 +23214,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 4 [(.validator.field) = { ... }</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -23043,7 +23229,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
@@ -23059,7 +23245,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
        * @return The sortBy.
        */
       public java.lang.String getSortBy() {
@@ -23079,7 +23265,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for sortBy.
        */
       public com.google.protobuf.ByteString
@@ -23100,7 +23286,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
        * @param value The sortBy to set.
        * @return This builder for chaining.
        */
@@ -23119,7 +23305,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSortBy() {
@@ -23133,7 +23319,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
-       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * <code>string sort_by = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for sortBy to set.
        * @return This builder for chaining.
        */
@@ -23161,41 +23347,41 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.ListApiVersions)
+      // @@protoc_insertion_point(builder_scope:request.ListDataServiceApiVersions)
     }
 
-    // @@protoc_insertion_point(class_scope:request.ListApiVersions)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.ListDataServiceApiVersions)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListApiVersions>
-        PARSER = new com.google.protobuf.AbstractParser<ListApiVersions>() {
+    private static final com.google.protobuf.Parser<ListDataServiceApiVersions>
+        PARSER = new com.google.protobuf.AbstractParser<ListDataServiceApiVersions>() {
       @java.lang.Override
-      public ListApiVersions parsePartialFrom(
+      public ListDataServiceApiVersions parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListApiVersions(input, extensionRegistry);
+        return new ListDataServiceApiVersions(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListApiVersions> parser() {
+    public static com.google.protobuf.Parser<ListDataServiceApiVersions> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListApiVersions> getParserForType() {
+    public com.google.protobuf.Parser<ListDataServiceApiVersions> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiVersions getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -24634,8 +24820,8 @@ public final class PBRequestDataServiceManage {
 
   }
 
-  public interface DescribeApiVersionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.DescribeApiVersion)
+  public interface DescribeDataServiceApiVersionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeDataServiceApiVersion)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -24660,10 +24846,30 @@ public final class PBRequestDataServiceManage {
 
     /**
      * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    java.lang.String getApiId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    com.google.protobuf.ByteString
+        getApiIdBytes();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
      * @return The versionId.
      */
     java.lang.String getVersionId();
@@ -24672,26 +24878,27 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for versionId.
      */
     com.google.protobuf.ByteString
         getVersionIdBytes();
   }
   /**
-   * Protobuf type {@code request.DescribeApiVersion}
+   * Protobuf type {@code request.DescribeDataServiceApiVersion}
    */
-  public static final class DescribeApiVersion extends
+  public static final class DescribeDataServiceApiVersion extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.DescribeApiVersion)
-      DescribeApiVersionOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.DescribeDataServiceApiVersion)
+      DescribeDataServiceApiVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use DescribeApiVersion.newBuilder() to construct.
-    private DescribeApiVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DescribeDataServiceApiVersion.newBuilder() to construct.
+    private DescribeDataServiceApiVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DescribeApiVersion() {
+    private DescribeDataServiceApiVersion() {
       spaceId_ = "";
+      apiId_ = "";
       versionId_ = "";
     }
 
@@ -24699,7 +24906,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new DescribeApiVersion();
+      return new DescribeDataServiceApiVersion();
     }
 
     @java.lang.Override
@@ -24707,7 +24914,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DescribeApiVersion(
+    private DescribeDataServiceApiVersion(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -24734,6 +24941,12 @@ public final class PBRequestDataServiceManage {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              apiId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               versionId_ = s;
               break;
             }
@@ -24758,15 +24971,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiVersion_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeDataServiceApiVersion_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiVersion_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -24815,14 +25028,60 @@ public final class PBRequestDataServiceManage {
       }
     }
 
-    public static final int VERSION_ID_FIELD_NUMBER = 2;
+    public static final int API_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiId() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiIdBytes() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object versionId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
      * @return The versionId.
      */
     @java.lang.Override
@@ -24843,7 +25102,7 @@ public final class PBRequestDataServiceManage {
      * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
      * @return The bytes for versionId.
      */
     @java.lang.Override
@@ -24878,8 +25137,11 @@ public final class PBRequestDataServiceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, versionId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
       }
       unknownFields.writeTo(output);
     }
@@ -24893,8 +25155,11 @@ public final class PBRequestDataServiceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiId_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, versionId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24906,13 +25171,15 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getApiId()
+          .equals(other.getApiId())) return false;
       if (!getVersionId()
           .equals(other.getVersionId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -24928,6 +25195,8 @@ public final class PBRequestDataServiceManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + API_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiId().hashCode();
       hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVersionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -24935,69 +25204,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -25010,7 +25279,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -25026,26 +25295,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.DescribeApiVersion}
+     * Protobuf type {@code request.DescribeDataServiceApiVersion}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.DescribeApiVersion)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersionOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.DescribeDataServiceApiVersion)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiVersion_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeDataServiceApiVersion_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiVersion_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -25065,6 +25334,8 @@ public final class PBRequestDataServiceManage {
         super.clear();
         spaceId_ = "";
 
+        apiId_ = "";
+
         versionId_ = "";
 
         return this;
@@ -25073,17 +25344,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiVersion_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeDataServiceApiVersion_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -25091,9 +25362,10 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion(this);
         result.spaceId_ = spaceId_;
+        result.apiId_ = apiId_;
         result.versionId_ = versionId_;
         onBuilt();
         return result;
@@ -25133,18 +25405,22 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getApiId().isEmpty()) {
+          apiId_ = other.apiId_;
           onChanged();
         }
         if (!other.getVersionId().isEmpty()) {
@@ -25166,11 +25442,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -25276,13 +25552,109 @@ public final class PBRequestDataServiceManage {
         return this;
       }
 
+      private java.lang.Object apiId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return The apiId.
+       */
+      public java.lang.String getApiId() {
+        java.lang.Object ref = apiId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiId.
+       */
+      public com.google.protobuf.ByteString
+          getApiIdBytes() {
+        java.lang.Object ref = apiId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiId() {
+        
+        apiId_ = getDefaultInstance().getApiId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object versionId_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
        * @return The versionId.
        */
       public java.lang.String getVersionId() {
@@ -25302,7 +25674,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
        * @return The bytes for versionId.
        */
       public com.google.protobuf.ByteString
@@ -25323,7 +25695,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
        * @param value The versionId to set.
        * @return This builder for chaining.
        */
@@ -25342,7 +25714,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearVersionId() {
@@ -25356,7 +25728,7 @@ public final class PBRequestDataServiceManage {
        * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string version_id = 2 [(.validator.field) = { ... }</code>
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
        * @param value The bytes for versionId to set.
        * @return This builder for chaining.
        */
@@ -25384,48 +25756,1024 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.DescribeApiVersion)
+      // @@protoc_insertion_point(builder_scope:request.DescribeDataServiceApiVersion)
     }
 
-    // @@protoc_insertion_point(class_scope:request.DescribeApiVersion)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.DescribeDataServiceApiVersion)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DescribeApiVersion>
-        PARSER = new com.google.protobuf.AbstractParser<DescribeApiVersion>() {
+    private static final com.google.protobuf.Parser<DescribeDataServiceApiVersion>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeDataServiceApiVersion>() {
       @java.lang.Override
-      public DescribeApiVersion parsePartialFrom(
+      public DescribeDataServiceApiVersion parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DescribeApiVersion(input, extensionRegistry);
+        return new DescribeDataServiceApiVersion(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<DescribeApiVersion> parser() {
+    public static com.google.protobuf.Parser<DescribeDataServiceApiVersion> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<DescribeApiVersion> getParserForType() {
+    public com.google.protobuf.Parser<DescribeDataServiceApiVersion> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiVersion getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceApiVersion getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PublishCustomerApiOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.PublishCustomerApi)
+  public interface RepublishDataServiceApiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.RepublishDataServiceApi)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    java.lang.String getApiId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    com.google.protobuf.ByteString
+        getApiIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+     * @return The versionId.
+     */
+    java.lang.String getVersionId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for versionId.
+     */
+    com.google.protobuf.ByteString
+        getVersionIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.RepublishDataServiceApi}
+   */
+  public static final class RepublishDataServiceApi extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.RepublishDataServiceApi)
+      RepublishDataServiceApiOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RepublishDataServiceApi.newBuilder() to construct.
+    private RepublishDataServiceApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RepublishDataServiceApi() {
+      spaceId_ = "";
+      apiId_ = "";
+      versionId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RepublishDataServiceApi();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RepublishDataServiceApi(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              versionId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_RepublishDataServiceApi_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_RepublishDataServiceApi_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiId() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiIdBytes() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VERSION_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object versionId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+     * @return The versionId.
+     */
+    @java.lang.Override
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for versionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, versionId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, versionId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getApiId()
+          .equals(other.getApiId())) return false;
+      if (!getVersionId()
+          .equals(other.getVersionId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + API_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiId().hashCode();
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.RepublishDataServiceApi}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.RepublishDataServiceApi)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApiOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_RepublishDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_RepublishDataServiceApi_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        apiId_ = "";
+
+        versionId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_RepublishDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi(this);
+        result.spaceId_ = spaceId_;
+        result.apiId_ = apiId_;
+        result.versionId_ = versionId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getApiId().isEmpty()) {
+          apiId_ = other.apiId_;
+          onChanged();
+        }
+        if (!other.getVersionId().isEmpty()) {
+          versionId_ = other.versionId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return The apiId.
+       */
+      public java.lang.String getApiId() {
+        java.lang.Object ref = apiId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiId.
+       */
+      public com.google.protobuf.ByteString
+          getApiIdBytes() {
+        java.lang.Object ref = apiId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiId() {
+        
+        apiId_ = getDefaultInstance().getApiId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object versionId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+       * @return The versionId.
+       */
+      public java.lang.String getVersionId() {
+        java.lang.Object ref = versionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          versionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for versionId.
+       */
+      public com.google.protobuf.ByteString
+          getVersionIdBytes() {
+        java.lang.Object ref = versionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          versionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The versionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = getDefaultInstance().getVersionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string version_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for versionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.RepublishDataServiceApi)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.RepublishDataServiceApi)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RepublishDataServiceApi>
+        PARSER = new com.google.protobuf.AbstractParser<RepublishDataServiceApi>() {
+      @java.lang.Override
+      public RepublishDataServiceApi parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RepublishDataServiceApi(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RepublishDataServiceApi> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RepublishDataServiceApi> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PublishDataServiceApiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.PublishDataServiceApi)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -25469,18 +26817,18 @@ public final class PBRequestDataServiceManage {
         getApiIdBytes();
   }
   /**
-   * Protobuf type {@code request.PublishCustomerApi}
+   * Protobuf type {@code request.PublishDataServiceApi}
    */
-  public static final class PublishCustomerApi extends
+  public static final class PublishDataServiceApi extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.PublishCustomerApi)
-      PublishCustomerApiOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.PublishDataServiceApi)
+      PublishDataServiceApiOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PublishCustomerApi.newBuilder() to construct.
-    private PublishCustomerApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PublishDataServiceApi.newBuilder() to construct.
+    private PublishDataServiceApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PublishCustomerApi() {
+    private PublishDataServiceApi() {
       spaceId_ = "";
       apiId_ = "";
     }
@@ -25489,7 +26837,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PublishCustomerApi();
+      return new PublishDataServiceApi();
     }
 
     @java.lang.Override
@@ -25497,7 +26845,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PublishCustomerApi(
+    private PublishDataServiceApi(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -25548,15 +26896,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishCustomerApi_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishDataServiceApi_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishCustomerApi_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishDataServiceApi_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -25696,10 +27044,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -25725,69 +27073,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -25800,7 +27148,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -25816,26 +27164,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.PublishCustomerApi}
+     * Protobuf type {@code request.PublishDataServiceApi}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.PublishCustomerApi)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApiOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.PublishDataServiceApi)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApiOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishDataServiceApi_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishCustomerApi_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishDataServiceApi_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -25863,17 +27211,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_PublishDataServiceApi_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -25881,8 +27229,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi(this);
         result.spaceId_ = spaceId_;
         result.apiId_ = apiId_;
         onBuilt();
@@ -25923,16 +27271,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -25956,11 +27304,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -26174,48 +27522,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.PublishCustomerApi)
+      // @@protoc_insertion_point(builder_scope:request.PublishDataServiceApi)
     }
 
-    // @@protoc_insertion_point(class_scope:request.PublishCustomerApi)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.PublishDataServiceApi)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PublishCustomerApi>
-        PARSER = new com.google.protobuf.AbstractParser<PublishCustomerApi>() {
+    private static final com.google.protobuf.Parser<PublishDataServiceApi>
+        PARSER = new com.google.protobuf.AbstractParser<PublishDataServiceApi>() {
       @java.lang.Override
-      public PublishCustomerApi parsePartialFrom(
+      public PublishDataServiceApi parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PublishCustomerApi(input, extensionRegistry);
+        return new PublishDataServiceApi(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<PublishCustomerApi> parser() {
+    public static com.google.protobuf.Parser<PublishDataServiceApi> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PublishCustomerApi> getParserForType() {
+    public com.google.protobuf.Parser<PublishDataServiceApi> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishCustomerApi getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.PublishDataServiceApi getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface AbolishCustomerApisOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.AbolishCustomerApis)
+  public interface AbolishDataServiceApisOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.AbolishDataServiceApis)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -26280,18 +27628,18 @@ public final class PBRequestDataServiceManage {
         getApiIdsBytes(int index);
   }
   /**
-   * Protobuf type {@code request.AbolishCustomerApis}
+   * Protobuf type {@code request.AbolishDataServiceApis}
    */
-  public static final class AbolishCustomerApis extends
+  public static final class AbolishDataServiceApis extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.AbolishCustomerApis)
-      AbolishCustomerApisOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.AbolishDataServiceApis)
+      AbolishDataServiceApisOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AbolishCustomerApis.newBuilder() to construct.
-    private AbolishCustomerApis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AbolishDataServiceApis.newBuilder() to construct.
+    private AbolishDataServiceApis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AbolishCustomerApis() {
+    private AbolishDataServiceApis() {
       spaceId_ = "";
       apiIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -26300,7 +27648,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new AbolishCustomerApis();
+      return new AbolishDataServiceApis();
     }
 
     @java.lang.Override
@@ -26308,7 +27656,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbolishCustomerApis(
+    private AbolishDataServiceApis(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -26366,15 +27714,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishCustomerApis_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishDataServiceApis_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishCustomerApis_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishDataServiceApis_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -26524,10 +27872,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -26555,69 +27903,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -26630,7 +27978,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -26646,26 +27994,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.AbolishCustomerApis}
+     * Protobuf type {@code request.AbolishDataServiceApis}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.AbolishCustomerApis)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApisOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.AbolishDataServiceApis)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApisOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishDataServiceApis_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishCustomerApis_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishDataServiceApis_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -26693,17 +28041,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishCustomerApis_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_AbolishDataServiceApis_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -26711,8 +28059,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis(this);
         int from_bitField0_ = bitField0_;
         result.spaceId_ = spaceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -26758,16 +28106,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -26797,11 +28145,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -27066,48 +28414,48 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.AbolishCustomerApis)
+      // @@protoc_insertion_point(builder_scope:request.AbolishDataServiceApis)
     }
 
-    // @@protoc_insertion_point(class_scope:request.AbolishCustomerApis)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.AbolishDataServiceApis)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AbolishCustomerApis>
-        PARSER = new com.google.protobuf.AbstractParser<AbolishCustomerApis>() {
+    private static final com.google.protobuf.Parser<AbolishDataServiceApis>
+        PARSER = new com.google.protobuf.AbstractParser<AbolishDataServiceApis>() {
       @java.lang.Override
-      public AbolishCustomerApis parsePartialFrom(
+      public AbolishDataServiceApis parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbolishCustomerApis(input, extensionRegistry);
+        return new AbolishDataServiceApis(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AbolishCustomerApis> parser() {
+    public static com.google.protobuf.Parser<AbolishDataServiceApis> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AbolishCustomerApis> getParserForType() {
+    public com.google.protobuf.Parser<AbolishDataServiceApis> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishCustomerApis getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface TestCustomerApiOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:request.TestCustomerApi)
+  public interface TestDataServiceApiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.TestDataServiceApi)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -27171,18 +28519,18 @@ public final class PBRequestDataServiceManage {
         getRequestContentBytes();
   }
   /**
-   * Protobuf type {@code request.TestCustomerApi}
+   * Protobuf type {@code request.TestDataServiceApi}
    */
-  public static final class TestCustomerApi extends
+  public static final class TestDataServiceApi extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:request.TestCustomerApi)
-      TestCustomerApiOrBuilder {
+      // @@protoc_insertion_point(message_implements:request.TestDataServiceApi)
+      TestDataServiceApiOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use TestCustomerApi.newBuilder() to construct.
-    private TestCustomerApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TestDataServiceApi.newBuilder() to construct.
+    private TestDataServiceApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TestCustomerApi() {
+    private TestDataServiceApi() {
       spaceId_ = "";
       apiId_ = "";
       requestContent_ = "";
@@ -27192,7 +28540,7 @@ public final class PBRequestDataServiceManage {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new TestCustomerApi();
+      return new TestDataServiceApi();
     }
 
     @java.lang.Override
@@ -27200,7 +28548,7 @@ public final class PBRequestDataServiceManage {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TestCustomerApi(
+    private TestDataServiceApi(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -27257,15 +28605,15 @@ public final class PBRequestDataServiceManage {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestCustomerApi_descriptor;
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestDataServiceApi_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestCustomerApi_fieldAccessorTable
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestDataServiceApi_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.Builder.class);
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.Builder.class);
     }
 
     public static final int SPACE_ID_FIELD_NUMBER = 1;
@@ -27457,10 +28805,10 @@ public final class PBRequestDataServiceManage {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi)) {
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi)) {
         return super.equals(obj);
       }
-      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi) obj;
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi) obj;
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
@@ -27490,69 +28838,69 @@ public final class PBRequestDataServiceManage {
       return hash;
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(byte[] data)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseDelimitedFrom(java.io.InputStream input)
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseDelimitedFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parseFrom(
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -27565,7 +28913,7 @@ public final class PBRequestDataServiceManage {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi prototype) {
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -27581,26 +28929,26 @@ public final class PBRequestDataServiceManage {
       return builder;
     }
     /**
-     * Protobuf type {@code request.TestCustomerApi}
+     * Protobuf type {@code request.TestDataServiceApi}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:request.TestCustomerApi)
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApiOrBuilder {
+        // @@protoc_insertion_point(builder_implements:request.TestDataServiceApi)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApiOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestDataServiceApi_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestCustomerApi_fieldAccessorTable
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestDataServiceApi_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.Builder.class);
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.Builder.class);
       }
 
-      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.newBuilder()
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -27630,17 +28978,17 @@ public final class PBRequestDataServiceManage {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestCustomerApi_descriptor;
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_TestDataServiceApi_descriptor;
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.getDefaultInstance();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi build() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi result = buildPartial();
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -27648,8 +28996,8 @@ public final class PBRequestDataServiceManage {
       }
 
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi buildPartial() {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi(this);
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi(this);
         result.spaceId_ = spaceId_;
         result.apiId_ = apiId_;
         result.requestContent_ = requestContent_;
@@ -27691,16 +29039,16 @@ public final class PBRequestDataServiceManage {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi) {
-          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi)other);
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi other) {
-        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
           onChanged();
@@ -27728,11 +29076,11 @@ public final class PBRequestDataServiceManage {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi parsedMessage = null;
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi) e.getUnfinishedMessage();
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -28042,41 +29390,41 @@ public final class PBRequestDataServiceManage {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:request.TestCustomerApi)
+      // @@protoc_insertion_point(builder_scope:request.TestDataServiceApi)
     }
 
-    // @@protoc_insertion_point(class_scope:request.TestCustomerApi)
-    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:request.TestDataServiceApi)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi();
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi();
     }
 
-    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi getDefaultInstance() {
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TestCustomerApi>
-        PARSER = new com.google.protobuf.AbstractParser<TestCustomerApi>() {
+    private static final com.google.protobuf.Parser<TestDataServiceApi>
+        PARSER = new com.google.protobuf.AbstractParser<TestDataServiceApi>() {
       @java.lang.Override
-      public TestCustomerApi parsePartialFrom(
+      public TestDataServiceApi parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TestCustomerApi(input, extensionRegistry);
+        return new TestDataServiceApi(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TestCustomerApi> parser() {
+    public static com.google.protobuf.Parser<TestDataServiceApi> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TestCustomerApi> getParserForType() {
+    public com.google.protobuf.Parser<TestDataServiceApi> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestCustomerApi getDefaultInstanceForType() {
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.TestDataServiceApi getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -28123,30 +29471,30 @@ public final class PBRequestDataServiceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteApiGroups_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_ListCustomerApis_descriptor;
+    internal_static_request_ListApiConfigs_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_ListCustomerApis_fieldAccessorTable;
+      internal_static_request_ListApiConfigs_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_UpdateCustomerApi_descriptor;
+    internal_static_request_UpdateApiConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_UpdateCustomerApi_fieldAccessorTable;
+      internal_static_request_UpdateApiConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_DescribeCustomerApi_descriptor;
+    internal_static_request_DescribeApiConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_DescribeCustomerApi_fieldAccessorTable;
+      internal_static_request_DescribeApiConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_DeleteCustomerApis_descriptor;
+    internal_static_request_DeleteApiConfigs_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_DeleteCustomerApis_fieldAccessorTable;
+      internal_static_request_DeleteApiConfigs_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_CreateCustomerApi_descriptor;
+    internal_static_request_CreateApiConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_CreateCustomerApi_fieldAccessorTable;
+      internal_static_request_CreateApiConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_WizardDetails_descriptor;
   private static final 
@@ -28163,35 +29511,40 @@ public final class PBRequestDataServiceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_WizardResponseParameters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_ListApiVersions_descriptor;
+    internal_static_request_ListDataServiceApiVersions_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_ListApiVersions_fieldAccessorTable;
+      internal_static_request_ListDataServiceApiVersions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListPublishedApis_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ListPublishedApis_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_DescribeApiVersion_descriptor;
+    internal_static_request_DescribeDataServiceApiVersion_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_DescribeApiVersion_fieldAccessorTable;
+      internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_PublishCustomerApi_descriptor;
+    internal_static_request_RepublishDataServiceApi_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_PublishCustomerApi_fieldAccessorTable;
+      internal_static_request_RepublishDataServiceApi_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_AbolishCustomerApis_descriptor;
+    internal_static_request_PublishDataServiceApi_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_AbolishCustomerApis_fieldAccessorTable;
+      internal_static_request_PublishDataServiceApi_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_request_TestCustomerApi_descriptor;
+    internal_static_request_AbolishDataServiceApis_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_request_TestCustomerApi_fieldAccessorTable;
+      internal_static_request_AbolishDataServiceApis_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_TestDataServiceApi_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_TestDataServiceApi_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -28239,98 +29592,104 @@ public final class PBRequestDataServiceManage {
       " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\"f\n\017DeleteApiGroups" +
       "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
       ",\n\tgroup_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002" +
-      "\004dsg-\"`\n\020ListCustomerApis\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\"\367\005\n\021UpdateCustom" +
-      "erApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa" +
-      "-\022!\n\010api_name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010" +
-      "api_path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_" +
-      "mode\030\005 \001(\0162\030.model.ApiConfig.ApiModeB\r\342\337" +
-      "\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\006 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\230\002\201\002\022-\n\tprotocols\030\007 \003(\0162\032.model.A" +
-      "piConfig.Protocols\022E\n\016request_method\030\010 \001" +
+      "\004dsg-\"^\n\016ListApiConfigs\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\"\365\005\n\017UpdateApiConfi" +
+      "g\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n" +
+      "\010api_name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_" +
+      "path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode" +
+      "\030\005 \001(\0162\030.model.ApiConfig.ApiModeB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\022&\n\017api_description\030\006 \001(\tB\r\342\337\037\t\022\007" +
+      "\302\001\004\230\002\201\002\022-\n\tprotocols\030\007 \003(\0162\032.model.ApiCo" +
+      "nfig.Protocols\022E\n\016request_method\030\010 \001(\0162\036" +
+      ".model.ApiConfig.RequestMethodB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022C\n\rresponse_type\030\t \001(\0162\035.model.Api" +
+      "Config.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cr" +
+      "oss_domain\030\n \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\013 \001(\003B" +
+      "\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\014 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\r \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\016 \001(\0132" +
+      "\026.request.WizardDetailsB\004\342\337\037\000\022\036\n\006script\030" +
+      "\017 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\020 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\021 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\"8\n\021DescribeApiConf" +
+      "ig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"" +
+      "e\n\020DeleteApiConfigs\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB\031\342\337\037" +
+      "\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\365\005\n\017CreateApiConf" +
+      "ig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n" +
+      "\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api" +
+      "_mode\030\003 \001(\0162\030.model.ApiConfig.ApiModeB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\004 \001(\tB\r\342" +
+      "\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \003(\0162\032.model.A" +
+      "piConfig.Protocols\022E\n\016request_method\030\007 \001" +
       "(\0162\036.model.ApiConfig.RequestMethodB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\t \001(\0162\035.model" +
+      "\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001(\0162\035.model" +
       ".ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032" +
-      "\n\014cross_domain\030\n \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\013 " +
-      "\001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\014 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\r " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\016 " +
+      "\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\n " +
+      "\001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\013 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\014 " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\r " +
       "\001(\0132\026.request.WizardDetailsB\004\342\337\037\000\022\036\n\006scr" +
-      "ipt\030\017 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\020 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\021" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\":\n\023DescribeCus" +
-      "tomerApi\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004dsa-\"g\n\022DeleteCustomerApis\022%\n\010space_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 " +
-      "\003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\367\005\n\021Creat" +
-      "eCustomerApi\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001" +
-      "\006\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230" +
-      "\002\310\001\0229\n\010api_mode\030\003 \001(\0162\030.model.ApiConfig." +
-      "ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descriptio" +
-      "n\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \003(\016" +
-      "2\032.model.ApiConfig.Protocols\022E\n\016request_" +
-      "method\030\007 \001(\0162\036.model.ApiConfig.RequestMe" +
-      "thodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001" +
-      "(\0162\035.model.ApiConfig.ResponseTypeB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007" +
-      "timeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasou" +
-      "rce_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntab" +
-      "le_name\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizard" +
-      "Details\030\r \001(\0132\026.request.WizardDetailsB\004\342" +
-      "\337\037\000\022\036\n\006script\030\016 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010g" +
-      "roup_id\030\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncl" +
-      "uster_id\030\020 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022#\n\nc" +
-      "reated_by\030\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\205\001\n\rWiz" +
-      "ardDetails\0228\n\016request_params\030\001 \003(\0132 .req" +
-      "uest.WizardRequestParameters\022:\n\017response" +
-      "_params\030\002 \003(\0132!.request.WizardResponsePa" +
-      "rameters\"\325\003\n\027WizardRequestParameters\022$\n\013" +
-      "column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rde" +
-      "fault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexam" +
-      "ple_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_req" +
-      "uired\030\004 \001(\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030.m" +
-      "odel.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n" +
-      "\021param_description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022" +
-      "#\n\nparam_name\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016" +
-      "param_operator\030\010 \001(\0162).model.ApiRequestP" +
-      "arams.ParameterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P" +
-      "\n\016param_position\030\t \001(\0162).model.ApiReques" +
-      "tParams.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\"\227\002\n\030WizardResponseParameters\022$\n\013column_" +
-      "name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_v" +
-      "alue\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_val" +
-      "ue\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001" +
-      "(\0162\030.model.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022(\n\021param_description\030\005 \001(\tB\r\342\337\037\t\022\007\302\001" +
-      "\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230" +
-      "\002@\"\257\001\n\017ListApiVersions\022#\n\006api_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006" +
-      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\002@\000\0222\n\007sort_by\030\004 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002" +
+      "ipt\030\016 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\017 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\020" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022#\n\ncreated_by\030" +
+      "\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\205\001\n\rWizardDetails" +
+      "\0228\n\016request_params\030\001 \003(\0132 .request.Wizar" +
+      "dRequestParameters\022:\n\017response_params\030\002 " +
+      "\003(\0132!.request.WizardResponseParameters\"\325" +
+      "\003\n\027WizardRequestParameters\022$\n\013column_nam" +
+      "e\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_valu" +
+      "e\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030" +
+      "\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_required\030\004 \001(" +
+      "\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030.model.Param" +
+      "eterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_des" +
+      "cription\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_n" +
+      "ame\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016param_oper" +
+      "ator\030\010 \001(\0162).model.ApiRequestParams.Para" +
+      "meterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n\016param_po" +
+      "sition\030\t \001(\0162).model.ApiRequestParams.Pa" +
+      "rameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\227\002\n\030Wizar" +
+      "dResponseParameters\022$\n\013column_name\030\001 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001(\0162\030.model" +
+      ".ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021par" +
+      "am_description\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\np" +
+      "aram_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\"\341\001\n\032Lis" +
+      "tDataServiceApiVersions\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006" +
+      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037" +
+      "\007\022\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002" +
       "idJ\007createdJ\007updated\"\350\001\n\021ListPublishedAp" +
       "is\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
       "-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
       "d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_b" +
       "y\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updat" +
       "edJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(" +
-      "\t\022\014\n\004name\030\007 \001(\t\"d\n\022DescribeApiVersion\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\n" +
-      "version_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-\"`\n" +
-      "\022PublishCustomerApi\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004dsa-\"h\n\023AbolishCustomerApis\022%" +
+      "\t\022\014\n\004name\030\007 \001(\t\"\224\001\n\035DescribeDataServiceA" +
+      "piVersion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004dsa-\022\'\n\nversion_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004dsv-\"\216\001\n\027RepublishDataServiceApi\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022\'\n\nversio" +
+      "n_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-\"c\n\025Publi" +
+      "shDataServiceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004dsa-\"k\n\026AbolishDataServiceApis\022%" +
       "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n" +
       "\007api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa" +
-      "-\"\211\001\n\017TestCustomerApi\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022*\n\017request_content\030\003 \001" +
-      "(\tB\021\342\337\037\r\022\013\302\001\010\200\002\000\230\002\240\234\001By\n$com.dataomnis.g" +
-      "proto.types.pbrequestB\032PBRequestDataServ" +
-      "iceManageP\000Z3github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbrequestb\006proto3"
+      "-\"\214\001\n\022TestDataServiceApi\022%\n\010space_id\030\001 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022*\n\017request_content\030" +
+      "\003 \001(\tB\021\342\337\037\r\022\013\302\001\010\200\002\000\230\002\240\234\001By\n$com.dataomni" +
+      "s.gproto.types.pbrequestB\032PBRequestDataS" +
+      "erviceManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28387,35 +29746,35 @@ public final class PBRequestDataServiceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiGroups_descriptor,
         new java.lang.String[] { "SpaceId", "GroupIds", });
-    internal_static_request_ListCustomerApis_descriptor =
+    internal_static_request_ListApiConfigs_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_request_ListCustomerApis_fieldAccessorTable = new
+    internal_static_request_ListApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_ListCustomerApis_descriptor,
+        internal_static_request_ListApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "GroupId", });
-    internal_static_request_UpdateCustomerApi_descriptor =
+    internal_static_request_UpdateApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(9);
-    internal_static_request_UpdateCustomerApi_fieldAccessorTable = new
+    internal_static_request_UpdateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_UpdateCustomerApi_descriptor,
+        internal_static_request_UpdateApiConfig_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "WizardDetails", "Script", "GroupId", "ClusterId", });
-    internal_static_request_DescribeCustomerApi_descriptor =
+    internal_static_request_DescribeApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(10);
-    internal_static_request_DescribeCustomerApi_fieldAccessorTable = new
+    internal_static_request_DescribeApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_DescribeCustomerApi_descriptor,
+        internal_static_request_DescribeApiConfig_descriptor,
         new java.lang.String[] { "ApiId", });
-    internal_static_request_DeleteCustomerApis_descriptor =
+    internal_static_request_DeleteApiConfigs_descriptor =
       getDescriptor().getMessageTypes().get(11);
-    internal_static_request_DeleteCustomerApis_fieldAccessorTable = new
+    internal_static_request_DeleteApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_DeleteCustomerApis_descriptor,
+        internal_static_request_DeleteApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "ApiIds", });
-    internal_static_request_CreateCustomerApi_descriptor =
+    internal_static_request_CreateApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(12);
-    internal_static_request_CreateCustomerApi_fieldAccessorTable = new
+    internal_static_request_CreateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_CreateCustomerApi_descriptor,
+        internal_static_request_CreateApiConfig_descriptor,
         new java.lang.String[] { "ApiName", "ApiPath", "ApiMode", "ApiDescription", "SpaceId", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "WizardDetails", "Script", "GroupId", "ClusterId", "CreatedBy", });
     internal_static_request_WizardDetails_descriptor =
       getDescriptor().getMessageTypes().get(13);
@@ -28435,41 +29794,47 @@ public final class PBRequestDataServiceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_WizardResponseParameters_descriptor,
         new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "DataType", "ParamDescription", "ParamName", });
-    internal_static_request_ListApiVersions_descriptor =
+    internal_static_request_ListDataServiceApiVersions_descriptor =
       getDescriptor().getMessageTypes().get(16);
-    internal_static_request_ListApiVersions_fieldAccessorTable = new
+    internal_static_request_ListDataServiceApiVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_ListApiVersions_descriptor,
-        new java.lang.String[] { "ApiId", "Limit", "Offset", "SortBy", });
+        internal_static_request_ListDataServiceApiVersions_descriptor,
+        new java.lang.String[] { "SpaceId", "ApiId", "Limit", "Offset", "SortBy", });
     internal_static_request_ListPublishedApis_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_request_ListPublishedApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListPublishedApis_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", });
-    internal_static_request_DescribeApiVersion_descriptor =
+    internal_static_request_DescribeDataServiceApiVersion_descriptor =
       getDescriptor().getMessageTypes().get(18);
-    internal_static_request_DescribeApiVersion_fieldAccessorTable = new
+    internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_DescribeApiVersion_descriptor,
-        new java.lang.String[] { "SpaceId", "VersionId", });
-    internal_static_request_PublishCustomerApi_descriptor =
+        internal_static_request_DescribeDataServiceApiVersion_descriptor,
+        new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
+    internal_static_request_RepublishDataServiceApi_descriptor =
       getDescriptor().getMessageTypes().get(19);
-    internal_static_request_PublishCustomerApi_fieldAccessorTable = new
+    internal_static_request_RepublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_PublishCustomerApi_descriptor,
-        new java.lang.String[] { "SpaceId", "ApiId", });
-    internal_static_request_AbolishCustomerApis_descriptor =
+        internal_static_request_RepublishDataServiceApi_descriptor,
+        new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
+    internal_static_request_PublishDataServiceApi_descriptor =
       getDescriptor().getMessageTypes().get(20);
-    internal_static_request_AbolishCustomerApis_fieldAccessorTable = new
+    internal_static_request_PublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_AbolishCustomerApis_descriptor,
-        new java.lang.String[] { "SpaceId", "ApiIds", });
-    internal_static_request_TestCustomerApi_descriptor =
+        internal_static_request_PublishDataServiceApi_descriptor,
+        new java.lang.String[] { "SpaceId", "ApiId", });
+    internal_static_request_AbolishDataServiceApis_descriptor =
       getDescriptor().getMessageTypes().get(21);
-    internal_static_request_TestCustomerApi_fieldAccessorTable = new
+    internal_static_request_AbolishDataServiceApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_request_TestCustomerApi_descriptor,
+        internal_static_request_AbolishDataServiceApis_descriptor,
+        new java.lang.String[] { "SpaceId", "ApiIds", });
+    internal_static_request_TestDataServiceApi_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_request_TestDataServiceApi_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_TestDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "RequestContent", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

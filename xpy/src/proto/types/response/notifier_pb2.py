@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from proto.types.model import notifier_pb2 as proto_dot_types_dot_model_dot_notifier__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,61 +19,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\022PBResponseNotifierP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/types/response/notifier.proto\x12\x08response\x1a proto/types/model/notifier.proto\"W\n\x11ListNotifications\x12\x33\n\x12notification_lists\x18\x01 \x03(\x0b\x32\x17.model.NotificationList\x12\r\n\x05total\x18\x02 \x01(\x05\x42s\n%com.dataomnis.gproto.types.pbresponseB\x12PBResponseNotifierP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
-  ,
-  dependencies=[proto_dot_types_dot_model_dot_notifier__pb2.DESCRIPTOR,])
-
-
-
-
-_LISTNOTIFICATIONS = _descriptor.Descriptor(
-  name='ListNotifications',
-  full_name='response.ListNotifications',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='notification_lists', full_name='response.ListNotifications.notification_lists', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='total', full_name='response.ListNotifications.total', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=83,
-  serialized_end=170,
+  serialized_pb=b'\n#proto/types/response/notifier.proto\x12\x08responseBs\n%com.dataomnis.gproto.types.pbresponseB\x12PBResponseNotifierP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
 )
 
-_LISTNOTIFICATIONS.fields_by_name['notification_lists'].message_type = proto_dot_types_dot_model_dot_notifier__pb2._NOTIFICATIONLIST
-DESCRIPTOR.message_types_by_name['ListNotifications'] = _LISTNOTIFICATIONS
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ListNotifications = _reflection.GeneratedProtocolMessageType('ListNotifications', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNOTIFICATIONS,
-  '__module__' : 'proto.types.response.notifier_pb2'
-  # @@protoc_insertion_point(class_scope:response.ListNotifications)
-  })
-_sym_db.RegisterMessage(ListNotifications)
+
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 DESCRIPTOR._options = None

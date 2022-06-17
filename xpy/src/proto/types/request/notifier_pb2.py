@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
-from github.com.yu31.protoc_plugin.proto import defaults_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\021PBRequestNotifierP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/request/notifier.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xb4\x01\n\x10SendNotification\x12\x1b\n\x05owner\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\"\n\x0bnf_list_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12#\n\rshort_content\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1d\n\x07\x63ontent\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\"\x8b\x01\n\x11ListNotifications\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\r\n\x05owner\x18\x03 \x01(\t\x12\"\n\x0bnf_list_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x42p\n$com.dataomnis.gproto.types.pbrequestB\x11PBRequestNotifierP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\"proto/types/request/notifier.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xb4\x01\n\x10SendNotification\x12\x1b\n\x05owner\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\"\n\x0bnf_list_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12#\n\rshort_content\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1d\n\x07\x63ontent\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x42p\n$com.dataomnis.gproto.types.pbrequestB\x11PBRequestNotifierP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
 
 
@@ -83,65 +82,11 @@ _SENDNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=153,
-  serialized_end=333,
-)
-
-
-_LISTNOTIFICATIONS = _descriptor.Descriptor(
-  name='ListNotifications',
-  full_name='request.ListNotifications',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='limit', full_name='request.ListNotifications.limit', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='offset', full_name='request.ListNotifications.offset', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='owner', full_name='request.ListNotifications.owner', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='nf_list_ids', full_name='request.ListNotifications.nf_list_ids', index=3,
-      number=4, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0048d@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=336,
-  serialized_end=475,
+  serialized_start=101,
+  serialized_end=281,
 )
 
 DESCRIPTOR.message_types_by_name['SendNotification'] = _SENDNOTIFICATION
-DESCRIPTOR.message_types_by_name['ListNotifications'] = _LISTNOTIFICATIONS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 SendNotification = _reflection.GeneratedProtocolMessageType('SendNotification', (_message.Message,), {
@@ -151,13 +96,6 @@ SendNotification = _reflection.GeneratedProtocolMessageType('SendNotification', 
   })
 _sym_db.RegisterMessage(SendNotification)
 
-ListNotifications = _reflection.GeneratedProtocolMessageType('ListNotifications', (_message.Message,), {
-  'DESCRIPTOR' : _LISTNOTIFICATIONS,
-  '__module__' : 'proto.types.request.notifier_pb2'
-  # @@protoc_insertion_point(class_scope:request.ListNotifications)
-  })
-_sym_db.RegisterMessage(ListNotifications)
-
 
 DESCRIPTOR._options = None
 _SENDNOTIFICATION.fields_by_name['owner']._options = None
@@ -165,7 +103,4 @@ _SENDNOTIFICATION.fields_by_name['nf_list_ids']._options = None
 _SENDNOTIFICATION.fields_by_name['title']._options = None
 _SENDNOTIFICATION.fields_by_name['short_content']._options = None
 _SENDNOTIFICATION.fields_by_name['content']._options = None
-_LISTNOTIFICATIONS.fields_by_name['limit']._options = None
-_LISTNOTIFICATIONS.fields_by_name['offset']._options = None
-_LISTNOTIFICATIONS.fields_by_name['nf_list_ids']._options = None
 # @@protoc_insertion_point(module_scope)

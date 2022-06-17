@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\021PBResponseAccountP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\" \n\rCreateSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"?\n\x0bGetUserRole\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x11\n\tprivilege\x18\x03 \x01(\x05\"!\n\x0f\x43heckUserExists\x12\x0e\n\x06\x65xists\x18\x01 \x01(\x08\"?\n\x12\x43reateNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"?\n\x12UpdateNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"?\n\x12\x44\x65leteNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"V\n\x10GetNotifications\x12\x13\n\x0btotal_count\x18\x03 \x01(\x03\x12-\n\x10notification_set\x18\x04 \x03(\x0b\x32\x13.model.NotificationBr\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\"proto/types/response/account.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x11\x44\x65scribeAccessKey\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\"d\n\rDescribeUsers\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x0f\n\x07message\x18\x04 \x01(\t\"\'\n\nCreateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\'\n\nUpdateUser\x12\x19\n\x04user\x18\x01 \x01(\x0b\x32\x0b.model.User\"\x1d\n\nDeleteUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"Q\n\x0c\x43heckSession\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x15\n\raccess_key_id\x18\x02 \x01(\t\x12\x19\n\x11secret_access_key\x18\x03 \x01(\t\" \n\rCreateSession\x12\x0f\n\x07session\x18\x01 \x01(\t\"?\n\x0bGetUserRole\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12\x11\n\tprivilege\x18\x03 \x01(\x05\"!\n\x0f\x43heckUserExists\x12\x0e\n\x06\x65xists\x18\x01 \x01(\x08\"?\n\x12\x43reateNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"?\n\x12UpdateNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"?\n\x12\x44\x65leteNotification\x12)\n\x0cnotification\x18\x01 \x01(\x0b\x32\x13.model.Notification\"V\n\x10GetNotifications\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12-\n\x10notification_set\x18\x02 \x03(\x0b\x32\x13.model.NotificationBr\n%com.dataomnis.gproto.types.pbresponseB\x11PBResponseAccountP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
@@ -477,14 +477,14 @@ _GETNOTIFICATIONS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='total_count', full_name='response.GetNotifications.total_count', index=0,
-      number=3, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='notification_set', full_name='response.GetNotifications.notification_set', index=1,
-      number=4, type=11, cpp_type=10, label=3,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
