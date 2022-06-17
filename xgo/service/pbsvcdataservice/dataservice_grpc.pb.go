@@ -25,11 +25,14 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DataServiceClient interface {
+	// rpc DeleteByWorkspaces  request space_ids
 	CreateDataServiceCluster(ctx context.Context, in *pbrequest.CreateDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(ctx context.Context, in *pbrequest.ListDataServiceClusters, opts ...grpc.CallOption) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(ctx context.Context, in *pbrequest.UpdateDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.DataServiceCluster, error)
 	DeleteDataServiceClusters(ctx context.Context, in *pbrequest.DeleteDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	StartDataServiceClusters(ctx context.Context, in *pbrequest.StartDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	StopDataServiceClusters(ctx context.Context, in *pbrequest.StopDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateApiGroup(ctx context.Context, in *pbrequest.CreateApiGroup, opts ...grpc.CallOption) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(ctx context.Context, in *pbrequest.ListApiGroups, opts ...grpc.CallOption) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(ctx context.Context, in *pbrequest.DeleteApiGroups, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -93,6 +96,24 @@ func (c *dataServiceClient) DescribeDataServiceCluster(ctx context.Context, in *
 func (c *dataServiceClient) DeleteDataServiceClusters(ctx context.Context, in *pbrequest.DeleteDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/DeleteDataServiceClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) StartDataServiceClusters(ctx context.Context, in *pbrequest.StartDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/StartDataServiceClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) StopDataServiceClusters(ctx context.Context, in *pbrequest.StopDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/StopDataServiceClusters", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -229,11 +250,14 @@ func (c *dataServiceClient) RepublishDataServiceApi(ctx context.Context, in *pbr
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
 type DataServiceServer interface {
+	// rpc DeleteByWorkspaces  request space_ids
 	CreateDataServiceCluster(context.Context, *pbrequest.CreateDataServiceCluster) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(context.Context, *pbrequest.ListDataServiceClusters) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(context.Context, *pbrequest.UpdateDataServiceCluster) (*pbmodel.EmptyStruct, error)
 	DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbmodel.DataServiceCluster, error)
 	DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error)
+	StartDataServiceClusters(context.Context, *pbrequest.StartDataServiceClusters) (*pbmodel.EmptyStruct, error)
+	StopDataServiceClusters(context.Context, *pbrequest.StopDataServiceClusters) (*pbmodel.EmptyStruct, error)
 	CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(context.Context, *pbrequest.ListApiGroups) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error)
@@ -269,6 +293,12 @@ func (UnimplementedDataServiceServer) DescribeDataServiceCluster(context.Context
 }
 func (UnimplementedDataServiceServer) DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDataServiceClusters not implemented")
+}
+func (UnimplementedDataServiceServer) StartDataServiceClusters(context.Context, *pbrequest.StartDataServiceClusters) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StartDataServiceClusters not implemented")
+}
+func (UnimplementedDataServiceServer) StopDataServiceClusters(context.Context, *pbrequest.StopDataServiceClusters) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StopDataServiceClusters not implemented")
 }
 func (UnimplementedDataServiceServer) CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateApiGroup not implemented")
@@ -411,6 +441,42 @@ func _DataService_DeleteDataServiceClusters_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).DeleteDataServiceClusters(ctx, req.(*pbrequest.DeleteDataServiceClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_StartDataServiceClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StartDataServiceClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).StartDataServiceClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/StartDataServiceClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).StartDataServiceClusters(ctx, req.(*pbrequest.StartDataServiceClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_StopDataServiceClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.StopDataServiceClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).StopDataServiceClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/StopDataServiceClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).StopDataServiceClusters(ctx, req.(*pbrequest.StopDataServiceClusters))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -693,6 +759,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteDataServiceClusters",
 			Handler:    _DataService_DeleteDataServiceClusters_Handler,
+		},
+		{
+			MethodName: "StartDataServiceClusters",
+			Handler:    _DataService_StartDataServiceClusters_Handler,
+		},
+		{
+			MethodName: "StopDataServiceClusters",
+			Handler:    _DataService_StopDataServiceClusters_Handler,
 		},
 		{
 			MethodName: "CreateApiGroup",

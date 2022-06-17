@@ -68,6 +68,20 @@ message DeleteDataServiceClusters {
   repeated string cluster_ids = 2 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsc-" } } } ];
 }
 
+message StartDataServiceClusters {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"cluster_ids"
+  repeated string cluster_ids = 2 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsc-" } } } ];
+}
+
+message StopDataServiceClusters {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"cluster_ids"
+  repeated string cluster_ids = 2 [ (validator.field).tags.repeated = { len_gte: 1, len_lte: 100, item: { string: { prefix: "dsc-" } } } ];
+}
+
 message ListApiGroups {
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];

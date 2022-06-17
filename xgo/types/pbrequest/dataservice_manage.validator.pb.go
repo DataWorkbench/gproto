@@ -278,6 +278,86 @@ func (this *DeleteDataServiceClusters) Validate() error {
 	return nil
 }
 
+func (this *StartDataServiceClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StartDataServiceClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StartDataServiceClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *StartDataServiceClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
+	if !(len(this.ClusterIds) >= 1) {
+		return protovalidator.FieldError1("StartDataServiceClusters", "the length of field 'cluster_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	if !(len(this.ClusterIds) <= 100) {
+		return protovalidator.FieldError1("StartDataServiceClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsc-")) {
+			return protovalidator.FieldError1("StartDataServiceClusters", "the value of array item where in field 'cluster_ids' must start with string 'dsc-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.StartDataServiceClusters
+func (this *StartDataServiceClusters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *StopDataServiceClusters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("StopDataServiceClusters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("StopDataServiceClusters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *StopDataServiceClusters) _xxx_xxx_Validator_Validate_cluster_ids() error {
+	if !(len(this.ClusterIds) >= 1) {
+		return protovalidator.FieldError1("StopDataServiceClusters", "the length of field 'cluster_ids' must be greater than or equal to '1'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	if !(len(this.ClusterIds) <= 100) {
+		return protovalidator.FieldError1("StopDataServiceClusters", "the length of field 'cluster_ids' must be less than or equal to '100'", strconv.Itoa(len(this.ClusterIds)))
+	}
+	for _, item := range this.ClusterIds {
+		_ = item // To avoid unused panics.
+		if !(strings.HasPrefix(item, "dsc-")) {
+			return protovalidator.FieldError1("StopDataServiceClusters", "the value of array item where in field 'cluster_ids' must start with string 'dsc-'", item)
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.StopDataServiceClusters
+func (this *StopDataServiceClusters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_ids(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ListApiGroups) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("ListApiGroups", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
