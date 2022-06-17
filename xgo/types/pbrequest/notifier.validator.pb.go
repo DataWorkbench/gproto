@@ -6,7 +6,6 @@
 package pbrequest
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
@@ -68,50 +67,6 @@ func (this *SendNotification) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_content(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ListNotifications) _xxx_xxx_Validator_Validate_limit() error {
-	if !(this.Limit > 0) {
-		return protovalidator.FieldError1("ListNotifications", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
-	}
-	if !(this.Limit <= 100) {
-		return protovalidator.FieldError1("ListNotifications", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
-	}
-	return nil
-}
-
-func (this *ListNotifications) _xxx_xxx_Validator_Validate_offset() error {
-	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListNotifications", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
-	}
-	return nil
-}
-
-func (this *ListNotifications) _xxx_xxx_Validator_Validate_nf_list_ids() error {
-	if !(len(this.NfListIds) >= 0) {
-		return protovalidator.FieldError1("ListNotifications", "the length of field 'nf_list_ids' must be greater than or equal to '0'", strconv.Itoa(len(this.NfListIds)))
-	}
-	if !(len(this.NfListIds) <= 100) {
-		return protovalidator.FieldError1("ListNotifications", "the length of field 'nf_list_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NfListIds)))
-	}
-	return nil
-}
-
-// Set default value for message request.ListNotifications
-func (this *ListNotifications) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_nf_list_ids(); err != nil {
 		return err
 	}
 	return nil

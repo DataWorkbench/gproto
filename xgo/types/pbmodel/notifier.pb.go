@@ -10,7 +10,6 @@ import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	sync "sync"
 )
 
 const (
@@ -20,203 +19,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type NotificationList struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	CreateTime           string                   `protobuf:"bytes,1,opt,name=create_time,json=createTime,proto3" json:"create_time"`
-	NotificationListId   string                   `protobuf:"bytes,3,opt,name=notification_list_id,json=notificationListId,proto3" json:"notification_list_id"`
-	NotificationListName string                   `protobuf:"bytes,4,opt,name=notification_list_name,json=notificationListName,proto3" json:"notification_list_name"`
-	Owner                string                   `protobuf:"bytes,5,opt,name=owner,proto3" json:"owner"`
-	Items                []*NotificationList_Item `protobuf:"bytes,2,rep,name=items,proto3" json:"items"`
-}
-
-func (x *NotificationList) Reset() {
-	*x = NotificationList{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_notifier_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *NotificationList) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NotificationList) ProtoMessage() {}
-
-func (x *NotificationList) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_notifier_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NotificationList.ProtoReflect.Descriptor instead.
-func (*NotificationList) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_notifier_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *NotificationList) GetCreateTime() string {
-	if x != nil {
-		return x.CreateTime
-	}
-	return ""
-}
-
-func (x *NotificationList) GetNotificationListId() string {
-	if x != nil {
-		return x.NotificationListId
-	}
-	return ""
-}
-
-func (x *NotificationList) GetNotificationListName() string {
-	if x != nil {
-		return x.NotificationListName
-	}
-	return ""
-}
-
-func (x *NotificationList) GetOwner() string {
-	if x != nil {
-		return x.Owner
-	}
-	return ""
-}
-
-func (x *NotificationList) GetItems() []*NotificationList_Item {
-	if x != nil {
-		return x.Items
-	}
-	return nil
-}
-
-type NotificationList_Item struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// The content of notification item set.
-	// The value is email address if notification_item_type == "email".
-	// The value is phone number is notification_item_type == "phone".
-	// The value is webhook address if notification_item_type == "webhook".
-	Content            string `protobuf:"bytes,1,opt,name=content,proto3" json:"content"`
-	CreateTime         string `protobuf:"bytes,2,opt,name=create_time,json=createTime,proto3" json:"create_time"`
-	NotificationItemId string `protobuf:"bytes,3,opt,name=notification_item_id,json=notificationItemId,proto3" json:"notification_item_id"`
-	// The notification type. Optional Values: email|phone|webhook
-	NotificationItemType string `protobuf:"bytes,4,opt,name=notification_item_type,json=notificationItemType,proto3" json:"notification_item_type"`
-	// The item whether verified. 1 for true, 0 for false.
-	Verified int32 `protobuf:"varint,5,opt,name=verified,proto3" json:"verified"`
-}
-
-func (x *NotificationList_Item) Reset() {
-	*x = NotificationList_Item{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_notifier_proto_msgTypes[1]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *NotificationList_Item) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NotificationList_Item) ProtoMessage() {}
-
-func (x *NotificationList_Item) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_notifier_proto_msgTypes[1]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NotificationList_Item.ProtoReflect.Descriptor instead.
-func (*NotificationList_Item) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_notifier_proto_rawDescGZIP(), []int{0, 0}
-}
-
-func (x *NotificationList_Item) GetContent() string {
-	if x != nil {
-		return x.Content
-	}
-	return ""
-}
-
-func (x *NotificationList_Item) GetCreateTime() string {
-	if x != nil {
-		return x.CreateTime
-	}
-	return ""
-}
-
-func (x *NotificationList_Item) GetNotificationItemId() string {
-	if x != nil {
-		return x.NotificationItemId
-	}
-	return ""
-}
-
-func (x *NotificationList_Item) GetNotificationItemType() string {
-	if x != nil {
-		return x.NotificationItemType
-	}
-	return ""
-}
-
-func (x *NotificationList_Item) GetVerified() int32 {
-	if x != nil {
-		return x.Verified
-	}
-	return 0
-}
-
 var File_proto_types_model_notifier_proto protoreflect.FileDescriptor
 
 var file_proto_types_model_notifier_proto_rawDesc = []byte{
 	0x0a, 0x20, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x6d, 0x6f,
 	0x64, 0x65, 0x6c, 0x2f, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x12, 0x05, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x22, 0xad, 0x03, 0x0a, 0x10, 0x4e, 0x6f,
-	0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x1f,
-	0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x12,
-	0x30, 0x0a, 0x14, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
-	0x6c, 0x69, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x12, 0x6e,
-	0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x49,
-	0x64, 0x12, 0x34, 0x0a, 0x16, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x14, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c,
-	0x69, 0x73, 0x74, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72,
-	0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6f, 0x77, 0x6e, 0x65, 0x72, 0x12, 0x32, 0x0a,
-	0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6d,
-	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x4c, 0x69, 0x73, 0x74, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d,
-	0x73, 0x1a, 0xc5, 0x01, 0x0a, 0x04, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f,
-	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e,
-	0x74, 0x65, 0x6e, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x5f, 0x74,
-	0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x61, 0x74,
-	0x65, 0x54, 0x69, 0x6d, 0x65, 0x12, 0x30, 0x0a, 0x14, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x12, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x49, 0x74, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x34, 0x0a, 0x16, 0x6e, 0x6f, 0x74, 0x69, 0x66,
-	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x74, 0x65, 0x6d, 0x5f, 0x74, 0x79, 0x70,
-	0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x14, 0x6e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x74, 0x65, 0x6d, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1a, 0x0a,
-	0x08, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x65, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05, 0x52,
-	0x08, 0x76, 0x65, 0x72, 0x69, 0x66, 0x69, 0x65, 0x64, 0x42, 0x6a, 0x0a, 0x22, 0x63, 0x6f, 0x6d,
+	0x74, 0x6f, 0x12, 0x05, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x42, 0x6a, 0x0a, 0x22, 0x63, 0x6f, 0x6d,
 	0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x42,
 	0x0f, 0x50, 0x42, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72,
@@ -226,30 +34,13 @@ var file_proto_types_model_notifier_proto_rawDesc = []byte{
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
-var (
-	file_proto_types_model_notifier_proto_rawDescOnce sync.Once
-	file_proto_types_model_notifier_proto_rawDescData = file_proto_types_model_notifier_proto_rawDesc
-)
-
-func file_proto_types_model_notifier_proto_rawDescGZIP() []byte {
-	file_proto_types_model_notifier_proto_rawDescOnce.Do(func() {
-		file_proto_types_model_notifier_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_types_model_notifier_proto_rawDescData)
-	})
-	return file_proto_types_model_notifier_proto_rawDescData
-}
-
-var file_proto_types_model_notifier_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_proto_types_model_notifier_proto_goTypes = []interface{}{
-	(*NotificationList)(nil),      // 0: model.NotificationList
-	(*NotificationList_Item)(nil), // 1: model.NotificationList.Item
-}
+var file_proto_types_model_notifier_proto_goTypes = []interface{}{}
 var file_proto_types_model_notifier_proto_depIdxs = []int32{
-	1, // 0: model.NotificationList.items:type_name -> model.NotificationList.Item
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_notifier_proto_init() }
@@ -257,45 +48,18 @@ func file_proto_types_model_notifier_proto_init() {
 	if File_proto_types_model_notifier_proto != nil {
 		return
 	}
-	if !protoimpl.UnsafeEnabled {
-		file_proto_types_model_notifier_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotificationList); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_types_model_notifier_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NotificationList_Item); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_notifier_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   0,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_proto_types_model_notifier_proto_goTypes,
 		DependencyIndexes: file_proto_types_model_notifier_proto_depIdxs,
-		MessageInfos:      file_proto_types_model_notifier_proto_msgTypes,
 	}.Build()
 	File_proto_types_model_notifier_proto = out.File
 	file_proto_types_model_notifier_proto_rawDesc = nil

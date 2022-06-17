@@ -6,7 +6,6 @@
 package pbrequest
 
 import (
-	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
@@ -14,17 +13,6 @@ import (
 func (this *SendNotification) SetDefaults() {
 	if this == nil {
 		return
-	}
-	return
-}
-
-// Set default value for message request.ListNotifications
-func (this *ListNotifications) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.Limit == 0 {
-		this.Limit = 100
 	}
 	return
 }

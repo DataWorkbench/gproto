@@ -12,14 +12,6 @@ import (
 	strings "strings"
 )
 
-// Set default value for message model.User
-func (this *User) Validate() error {
-	if this == nil {
-		return nil
-	}
-	return nil
-}
-
 func (this *Role) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
 		return protovalidator.FieldError1("Role", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
@@ -214,6 +206,53 @@ func (this *AdminAPI_Permission) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_role(); err != nil {
 		return err
+	}
+	return nil
+}
+
+// Set default value for message model.User
+func (this *User) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+// Set default value for message model.AccessKey
+func (this *AccessKey) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
+func (this *NotificationList) _xxx_xxx_Validator_Validate_items() error {
+	for _, item := range this.Items {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.NotificationList
+func (this *NotificationList) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_items(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message model.NotificationList.Item
+func (this *NotificationList_Item) Validate() error {
+	if this == nil {
+		return nil
 	}
 	return nil
 }
