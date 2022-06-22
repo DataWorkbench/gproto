@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)com.dataomnis.gproto.types.pbmodel.pbiaasB\nPBIaasUserP\000Z8github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaas',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!proto/types/model/iaas/user.proto\x12\x04iaas\"\xad\x04\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\x14\n\x0croot_user_id\x18\x05 \x01(\t\x12\x0c\n\x04role\x18\x06 \x01(\t\x12\x11\n\tprivilege\x18\x07 \x01(\x05\x12\x0e\n\x06status\x18\x08 \x01(\t\x12\r\n\x05zones\x18\t \x03(\t\x12\x0f\n\x07regions\x18\n \x03(\t\x12\x14\n\x0cnotify_email\x18\x0b \x01(\t\x12\x13\n\x0bverify_type\x18\x0c \x01(\t\x12\x11\n\tpaid_mode\x18\r \x01(\t\x12\x16\n\x0egravatar_email\x18\x0e \x01(\t\x12\x15\n\rpersonal_name\x18\x0f \x01(\t\x12\x14\n\x0c\x63ompany_name\x18\x10 \x01(\t\x12\x15\n\rcompany_phone\x18\x11 \x01(\t\x12\x14\n\x0c\x63ompany_code\x18\x12 \x01(\t\x12\r\n\x05phone\x18\x13 \x01(\t\x12\x12\n\nconsole_id\x18\x14 \x01(\t\x12\x0e\n\x06gender\x18\x15 \x01(\t\x12\x0f\n\x07remarks\x18\x16 \x01(\t\x12\x12\n\nmkt_source\x18\x17 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x18 \x01(\t\x12\x13\n\x0bstatus_time\x18\x19 \x01(\t\x12\x11\n\tuser_type\x18\x1a \x01(\x05\x12\x10\n\x08\x63urrency\x18\x1b \x01(\t\"&\n\x06Status\x12\x10\n\x0c_StatusUnset\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\"\xf0\x01\n\tAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\ncontroller\x18\x04 \x01(\t\x12\x14\n\x0croot_user_id\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x15\n\rip_white_list\x18\x08 \x01(\t\x12\x12\n\nconsole_id\x18\t \x01(\t\x12\x13\n\x0b\x63reate_time\x18\n \x01(\t\x12\x13\n\x0bstatus_time\x18\x0b \x01(\t\"\xfa\x02\n\x10NotificationList\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\t\x12\x1c\n\x14notification_list_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_list_name\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.iaas.NotificationList.Item\x1a\xd7\x01\n\x04Item\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\t\x12\x1c\n\x14notification_item_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_item_type\x18\x04 \x01(\t\x12\x10\n\x08verified\x18\x05 \x01(\x05\"Y\n\x14NotificationItemType\x12\x1e\n\x1a_NotificationItemTypeUnset\x10\x00\x12\t\n\x05\x65mail\x10\x01\x12\t\n\x05phone\x10\x02\x12\x0b\n\x07webhook\x10\x03\x42s\n)com.dataomnis.gproto.types.pbmodel.pbiaasB\nPBIaasUserP\x00Z8github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaasb\x06proto3'
+  serialized_pb=b'\n!proto/types/model/iaas/user.proto\x12\x04iaas\"\xad\x04\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\x14\n\x0croot_user_id\x18\x05 \x01(\t\x12\x0c\n\x04role\x18\x06 \x01(\t\x12\x11\n\tprivilege\x18\x07 \x01(\x05\x12\x0e\n\x06status\x18\x08 \x01(\t\x12\r\n\x05zones\x18\t \x03(\t\x12\x0f\n\x07regions\x18\n \x03(\t\x12\x14\n\x0cnotify_email\x18\x0b \x01(\t\x12\x13\n\x0bverify_type\x18\x0c \x01(\t\x12\x11\n\tpaid_mode\x18\r \x01(\t\x12\x16\n\x0egravatar_email\x18\x0e \x01(\t\x12\x15\n\rpersonal_name\x18\x0f \x01(\t\x12\x14\n\x0c\x63ompany_name\x18\x10 \x01(\t\x12\x15\n\rcompany_phone\x18\x11 \x01(\t\x12\x14\n\x0c\x63ompany_code\x18\x12 \x01(\t\x12\r\n\x05phone\x18\x13 \x01(\t\x12\x12\n\nconsole_id\x18\x14 \x01(\t\x12\x0e\n\x06gender\x18\x15 \x01(\t\x12\x0f\n\x07remarks\x18\x16 \x01(\t\x12\x12\n\nmkt_source\x18\x17 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x18 \x01(\t\x12\x13\n\x0bstatus_time\x18\x19 \x01(\t\x12\x11\n\tuser_type\x18\x1a \x01(\x05\x12\x10\n\x08\x63urrency\x18\x1b \x01(\t\"&\n\x06Status\x12\x10\n\x0c_StatusUnset\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\"\x89\x02\n\tAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\x12\x17\n\x0f\x61\x63\x63\x65ss_key_name\x18\x0c \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\ncontroller\x18\x04 \x01(\t\x12\x14\n\x0croot_user_id\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x15\n\rip_white_list\x18\x08 \x01(\t\x12\x12\n\nconsole_id\x18\t \x01(\t\x12\x13\n\x0b\x63reate_time\x18\n \x01(\t\x12\x13\n\x0bstatus_time\x18\x0b \x01(\t\"\xfa\x02\n\x10NotificationList\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\t\x12\x1c\n\x14notification_list_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_list_name\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\x12*\n\x05items\x18\x02 \x03(\x0b\x32\x1b.iaas.NotificationList.Item\x1a\xd7\x01\n\x04Item\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\t\x12\x1c\n\x14notification_item_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_item_type\x18\x04 \x01(\t\x12\x10\n\x08verified\x18\x05 \x01(\x05\"Y\n\x14NotificationItemType\x12\x1e\n\x1a_NotificationItemTypeUnset\x10\x00\x12\t\n\x05\x65mail\x10\x01\x12\t\n\x05phone\x10\x02\x12\x0b\n\x07webhook\x10\x03\x42s\n)com.dataomnis.gproto.types.pbmodel.pbiaasB\nPBIaasUserP\x00Z8github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaasb\x06proto3'
 )
 
 
@@ -79,8 +79,8 @@ _NOTIFICATIONLIST_ITEM_NOTIFICATIONITEMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1136,
-  serialized_end=1225,
+  serialized_start=1161,
+  serialized_end=1250,
 )
 _sym_db.RegisterEnumDescriptor(_NOTIFICATIONLIST_ITEM_NOTIFICATIONITEMTYPE)
 
@@ -323,63 +323,70 @@ _ACCESSKEY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='owner', full_name='iaas.AccessKey.owner', index=2,
+      name='access_key_name', full_name='iaas.AccessKey.access_key_name', index=2,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='owner', full_name='iaas.AccessKey.owner', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='controller', full_name='iaas.AccessKey.controller', index=3,
+      name='controller', full_name='iaas.AccessKey.controller', index=4,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='root_user_id', full_name='iaas.AccessKey.root_user_id', index=4,
+      name='root_user_id', full_name='iaas.AccessKey.root_user_id', index=5,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='iaas.AccessKey.status', index=5,
+      name='status', full_name='iaas.AccessKey.status', index=6,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='iaas.AccessKey.description', index=6,
+      name='description', full_name='iaas.AccessKey.description', index=7,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ip_white_list', full_name='iaas.AccessKey.ip_white_list', index=7,
+      name='ip_white_list', full_name='iaas.AccessKey.ip_white_list', index=8,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='console_id', full_name='iaas.AccessKey.console_id', index=8,
+      name='console_id', full_name='iaas.AccessKey.console_id', index=9,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_time', full_name='iaas.AccessKey.create_time', index=9,
+      name='create_time', full_name='iaas.AccessKey.create_time', index=10,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status_time', full_name='iaas.AccessKey.status_time', index=10,
+      name='status_time', full_name='iaas.AccessKey.status_time', index=11,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -398,7 +405,7 @@ _ACCESSKEY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=604,
-  serialized_end=844,
+  serialized_end=869,
 )
 
 
@@ -458,8 +465,8 @@ _NOTIFICATIONLIST_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1225,
+  serialized_start=1035,
+  serialized_end=1250,
 )
 
 _NOTIFICATIONLIST = _descriptor.Descriptor(
@@ -517,8 +524,8 @@ _NOTIFICATIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=847,
-  serialized_end=1225,
+  serialized_start=872,
+  serialized_end=1250,
 )
 
 _USER_STATUS.containing_type = _USER
