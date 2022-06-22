@@ -23,6 +23,9 @@ func (this *ListUsersByProxy) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
 	return
 }
 

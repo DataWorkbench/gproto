@@ -20,12 +20,12 @@ func (this *DescribeAccessKeyByProxy) Validate() error {
 	return nil
 }
 
-func (this *ListUsersByProxy) _xxx_xxx_Validator_Validate_users() error {
-	if !(len(this.Users) > 0) {
-		return protovalidator.FieldError1("ListUsersByProxy", "the length of field 'users' must be greater than '0'", strconv.Itoa(len(this.Users)))
+func (this *ListUsersByProxy) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListUsersByProxy", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
 	}
-	if !(len(this.Users) <= 100) {
-		return protovalidator.FieldError1("ListUsersByProxy", "the length of field 'users' must be less than or equal to '100'", strconv.Itoa(len(this.Users)))
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListUsersByProxy", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
 	}
 	return nil
 }
@@ -35,8 +35,15 @@ func (this *ListUsersByProxy) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_users(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(this.UserId != "") {
+		return protovalidator.FieldError1("ListNotificationsByProxy", "the value of field 'user_id' must be not equal to ''", this.UserId)
 	}
 	return nil
 }
@@ -51,19 +58,12 @@ func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_limit() error 
 	return nil
 }
 
-func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_offset() error {
-	if !(this.Offset >= 0) {
-		return protovalidator.FieldError1("ListNotificationsByProxy", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_nf_ids() error {
+	if !(len(this.NfIds) >= 0) {
+		return protovalidator.FieldError1("ListNotificationsByProxy", "the length of field 'nf_ids' must be greater than or equal to '0'", strconv.Itoa(len(this.NfIds)))
 	}
-	return nil
-}
-
-func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_nf_list_ids() error {
-	if !(len(this.NfListIds) >= 0) {
-		return protovalidator.FieldError1("ListNotificationsByProxy", "the length of field 'nf_list_ids' must be greater than or equal to '0'", strconv.Itoa(len(this.NfListIds)))
-	}
-	if !(len(this.NfListIds) <= 100) {
-		return protovalidator.FieldError1("ListNotificationsByProxy", "the length of field 'nf_list_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NfListIds)))
+	if !(len(this.NfIds) <= 100) {
+		return protovalidator.FieldError1("ListNotificationsByProxy", "the length of field 'nf_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NfIds)))
 	}
 	return nil
 }
@@ -73,13 +73,13 @@ func (this *ListNotificationsByProxy) Validate() error {
 	if this == nil {
 		return nil
 	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_nf_list_ids(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_nf_ids(); err != nil {
 		return err
 	}
 	return nil

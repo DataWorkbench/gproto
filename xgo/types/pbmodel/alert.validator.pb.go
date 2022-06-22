@@ -141,8 +141,8 @@ func (this *AlertPolicy) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
-func (this *AlertPolicy) _xxx_xxx_Validator_Validate_notification_lists() error {
-	for _, item := range this.NotificationLists {
+func (this *AlertPolicy) _xxx_xxx_Validator_Validate_notifications() error {
+	for _, item := range this.Notifications {
 		_ = item // To avoid unused panics.
 		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
 			if err := dt.Validate(); err != nil {
@@ -197,7 +197,7 @@ func (this *AlertPolicy) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_notification_lists(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_notifications(); err != nil {
 		return err
 	}
 	return nil

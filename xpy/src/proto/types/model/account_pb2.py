@@ -20,51 +20,11 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\016PBModelAccountP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xb9\x01\n\x04Role\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04ros-\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"F\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05\x41\x64min\x10\x01\x12\r\n\tDeveloper\x10\x02\x12\x08\n\x04User\x10\x03\x12\x0b\n\x07Visitor\x10\x04\"\xa8\x02\n\x0b\x41\x64minModule\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\x08\x63lassify\x18\x02 \x01(\x0e\x32\x1b.model.AdminModule.ClassifyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\tapi_lists\x18\x04 \x03(\x0b\x32\x0f.model.AdminAPI\"{\n\x08\x43lassify\x12\x11\n\rClassifyUnSet\x10\x00\x12\x0e\n\nUserManage\x10\x01\x12\x11\n\rSessionManage\x10\x02\x12\x11\n\rMessageManage\x10\x03\x12\x0e\n\nAuthManage\x10\x04\x12\x16\n\x12NotificationManage\x10\x05\"\x9a\x03\n\x08\x41\x64minAPI\x12\x1d\n\x08\x61pi_name\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12:\n\tperm_type\x18\x03 \x01(\x0e\x32\x18.model.AdminAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\x0bpermissions\x18\x04 \x03(\x0b\x32\x1a.model.AdminAPI.PermissionB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\x36\n\x05roles\x18\x06 \x03(\x0b\x32\x1a.model.AdminAPI.RolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x38\n\nPermission\x12\x19\n\x04role\x18\x01 \x01(\x0b\x32\x0b.model.Role\x12\x0f\n\x07\x61llowed\x18\x02 \x01(\x08\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"2\n\x08PermType\x12\x11\n\rPermTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\"\x9b\x04\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\x12\x0c\n\x04lang\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x14\n\x0croot_user_id\x18\x05 \x01(\t\x12\x0c\n\x04role\x18\x06 \x01(\t\x12\x11\n\tprivilege\x18\x07 \x01(\x05\x12\x0e\n\x06status\x18\x08 \x01(\t\x12\r\n\x05zones\x18\t \x03(\t\x12\x0f\n\x07regions\x18\n \x03(\t\x12\x14\n\x0cnotify_email\x18\x0b \x01(\t\x12\x13\n\x0bverify_type\x18\x0c \x01(\t\x12\x11\n\tpaid_mode\x18\r \x01(\t\x12\x16\n\x0egravatar_email\x18\x0e \x01(\t\x12\x15\n\rpersonal_name\x18\x0f \x01(\t\x12\x14\n\x0c\x63ompany_name\x18\x10 \x01(\t\x12\x15\n\rcompany_phone\x18\x11 \x01(\t\x12\x14\n\x0c\x63ompany_code\x18\x12 \x01(\t\x12\r\n\x05phone\x18\x13 \x01(\t\x12\x12\n\nconsole_id\x18\x14 \x01(\t\x12\x0e\n\x06gender\x18\x15 \x01(\t\x12\x0f\n\x07remarks\x18\x16 \x01(\t\x12\x12\n\nmkt_source\x18\x17 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x18 \x01(\t\x12\x13\n\x0bstatus_time\x18\x19 \x01(\t\x12\x11\n\tuser_type\x18\x1a \x01(\x05\"&\n\x06Status\x12\x10\n\x0c_StatusUnset\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\"\xd2\x02\n\tAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x14\n\x0croot_user_id\x18\x04 \x01(\t\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x15\n\rip_white_list\x18\x07 \x01(\t\x12\x12\n\nconsole_id\x18\x08 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\t \x01(\t\x12\x13\n\x0bstatus_time\x18\n \x01(\t\x12\x12\n\ncontroller\x18\x0b \x01(\t\"8\n\nController\x12\x14\n\x10_ControllerUnset\x10\x00\x12\n\n\x06pitrix\x10\x01\x12\x08\n\x04self\x10\x02\"&\n\x06Status\x12\x10\n\x0c_StatusUnset\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\"\x9f\x02\n\x10NotificationList\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\t\x12\x1c\n\x14notification_list_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_list_name\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.model.NotificationList.Item\x1a|\n\x04Item\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x02 \x01(\t\x12\x1c\n\x14notification_item_id\x18\x03 \x01(\t\x12\x1e\n\x16notification_item_type\x18\x04 \x01(\t\x12\x10\n\x08verified\x18\x05 \x01(\x05\"\x93\x01\n\x0cNotification\x12\x11\n\trecipient\x18\x01 \x01(\t\x12\x0c\n\x04note\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x12\n\ncreated_at\x18\x05 \x01(\x03\x12\x12\n\nupdated_at\x18\x06 \x01(\x03\x12\x0f\n\x07user_id\x18\x07 \x01(\t\x12\n\n\x02id\x18\x08 \x01(\x03\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1fproto/types/model/account.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xa8\x02\n\x0b\x41\x64minModule\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04pmo-\x12<\n\x08\x63lassify\x18\x02 \x01(\x0e\x32\x1b.model.AdminModule.ClassifyB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\"\n\tapi_lists\x18\x04 \x03(\x0b\x32\x0f.model.AdminAPI\"{\n\x08\x43lassify\x12\x11\n\rClassifyUnSet\x10\x00\x12\x0e\n\nUserManage\x10\x01\x12\x11\n\rSessionManage\x10\x02\x12\x11\n\rMessageManage\x10\x03\x12\x0e\n\nAuthManage\x10\x04\x12\x16\n\x12NotificationManage\x10\x05\"\x9a\x03\n\x08\x41\x64minAPI\x12\x1d\n\x08\x61pi_name\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12:\n\tperm_type\x18\x03 \x01(\x0e\x32\x18.model.AdminAPI.PermTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\x0bpermissions\x18\x04 \x03(\x0b\x32\x1a.model.AdminAPI.PermissionB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\x12\x36\n\x05roles\x18\x06 \x03(\x0b\x32\x1a.model.AdminAPI.RolesEntryB\x0b\xe2\xdf\x1f\x07\x12\x05\xf2\x01\x02\x30\x00\x1a\x38\n\nPermission\x12\x19\n\x04role\x18\x01 \x01(\x0b\x32\x0b.model.Role\x12\x0f\n\x07\x61llowed\x18\x02 \x01(\x08\x1a,\n\nRolesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"2\n\x08PermType\x12\x11\n\rPermTypeUnset\x10\x00\x12\t\n\x05Write\x10\x01\x12\x08\n\x04Read\x10\x02\"\xc9\x01\n\x04Role\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04ros-\x12-\n\x04type\x18\x02 \x01(\x0e\x32\x10.model.Role.TypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x19\n\x04name\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"V\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\x0e\n\nSuperAdmin\x10\x01\x12\t\n\x05\x41\x64min\x10\x02\x12\x08\n\x04User\x10\x03\x12\x0b\n\x07Visitor\x10\x04\x12\r\n\tDeveloper\x10\x05\"\xf7\x02\n\x04User\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x19\n\x04name\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12-\n\x04role\x18\x04 \x01(\x0e\x32\x10.model.User.RoleB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x31\n\x06status\x18\x05 \x01(\x0e\x32\x12.model.User.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\">\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x64\x65leted\x10\x01\x12\n\n\x06\x61\x63tive\x10\x02\x12\n\n\x06\x62\x61nned\x10\x03\"7\n\x04Role\x12\r\n\tTypeUnset\x10\x00\x12\x08\n\x04User\x10\x01\x12\t\n\x05\x41\x64min\x10\x02\x12\x0b\n\x07Visitor\x10\x03\"\xf9\x03\n\tAccessKey\x12\"\n\raccess_key_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12&\n\x11secret_access_key\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1a\n\x05owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x19\n\x04name\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12>\n\ncontroller\x18\x05 \x01(\x0e\x32\x1b.model.AccessKey.ControllerB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x36\n\x06status\x18\x06 \x01(\x0e\x32\x17.model.AccessKey.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\"\n\x0b\x64\x65scription\x18\x07 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x02\x12\x15\n\rip_white_list\x18\x08 \x01(\t\x12\x1c\n\x07\x63reated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\n \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"7\n\nController\x12\x13\n\x0f\x43ontrollerUnset\x10\x00\x12\n\n\x06pitrix\x10\x01\x12\x08\n\x04self\x10\x02\"A\n\x06Status\x12\x10\n\x0c_StatusUnset\x10\x00\x12\x0b\n\x07\x64\x65leted\x10\x01\x12\n\n\x06\x61\x63tive\x10\x02\x12\x0c\n\x08inactive\x10\x03\"\x97\x01\n\x0cNotification\x12\r\n\x05owner\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x42i\n\"com.dataomnis.gproto.types.pbmodelB\x0ePBModelAccountP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
 
-
-_ROLE_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='model.Role.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TypeUnset', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Admin', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Developer', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='User', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Visitor', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=211,
-  serialized_end=281,
-)
-_sym_db.RegisterEnumDescriptor(_ROLE_TYPE)
 
 _ADMINMODULE_CLASSIFY = _descriptor.EnumDescriptor(
   name='Classify',
@@ -106,8 +66,8 @@ _ADMINMODULE_CLASSIFY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=457,
-  serialized_end=580,
+  serialized_start=269,
+  serialized_end=392,
 )
 _sym_db.RegisterEnumDescriptor(_ADMINMODULE_CLASSIFY)
 
@@ -136,10 +96,55 @@ _ADMINAPI_PERMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=943,
-  serialized_end=993,
+  serialized_start=755,
+  serialized_end=805,
 )
 _sym_db.RegisterEnumDescriptor(_ADMINAPI_PERMTYPE)
+
+_ROLE_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='model.Role.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SuperAdmin', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Admin', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='User', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Visitor', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Developer', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=923,
+  serialized_end=1009,
+)
+_sym_db.RegisterEnumDescriptor(_ROLE_TYPE)
 
 _USER_STATUS = _descriptor.EnumDescriptor(
   name='Status',
@@ -149,22 +154,67 @@ _USER_STATUS = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='_StatusUnset', index=0, number=0,
+      name='StatusUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='active', index=1, number=1,
+      name='deleted', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='active', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='banned', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1497,
-  serialized_end=1535,
+  serialized_start=1268,
+  serialized_end=1330,
 )
 _sym_db.RegisterEnumDescriptor(_USER_STATUS)
+
+_USER_ROLE = _descriptor.EnumDescriptor(
+  name='Role',
+  full_name='model.User.Role',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='User', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Admin', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Visitor', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1332,
+  serialized_end=1387,
+)
+_sym_db.RegisterEnumDescriptor(_USER_ROLE)
 
 _ACCESSKEY_CONTROLLER = _descriptor.EnumDescriptor(
   name='Controller',
@@ -174,7 +224,7 @@ _ACCESSKEY_CONTROLLER = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='_ControllerUnset', index=0, number=0,
+      name='ControllerUnset', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -191,8 +241,8 @@ _ACCESSKEY_CONTROLLER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1780,
-  serialized_end=1836,
+  serialized_start=1773,
+  serialized_end=1828,
 )
 _sym_db.RegisterEnumDescriptor(_ACCESSKEY_CONTROLLER)
 
@@ -209,64 +259,27 @@ _ACCESSKEY_STATUS = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='active', index=1, number=1,
+      name='deleted', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='active', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='inactive', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1497,
-  serialized_end=1535,
+  serialized_start=1830,
+  serialized_end=1895,
 )
 _sym_db.RegisterEnumDescriptor(_ACCESSKEY_STATUS)
-
-
-_ROLE = _descriptor.Descriptor(
-  name='Role',
-  full_name='model.Role',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='model.Role.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ros-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='model.Role.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='model.Role.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _ROLE_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=96,
-  serialized_end=281,
-)
 
 
 _ADMINMODULE = _descriptor.Descriptor(
@@ -318,8 +331,8 @@ _ADMINMODULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=284,
-  serialized_end=580,
+  serialized_start=96,
+  serialized_end=392,
 )
 
 
@@ -357,8 +370,8 @@ _ADMINAPI_PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=839,
-  serialized_end=895,
+  serialized_start=651,
+  serialized_end=707,
 )
 
 _ADMINAPI_ROLESENTRY = _descriptor.Descriptor(
@@ -395,8 +408,8 @@ _ADMINAPI_ROLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=897,
-  serialized_end=941,
+  serialized_start=709,
+  serialized_end=753,
 )
 
 _ADMINAPI = _descriptor.Descriptor(
@@ -455,8 +468,55 @@ _ADMINAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=583,
-  serialized_end=993,
+  serialized_start=395,
+  serialized_end=805,
+)
+
+
+_ROLE = _descriptor.Descriptor(
+  name='Role',
+  full_name='model.Role',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.Role.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ros-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='model.Role.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='model.Role.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ROLE_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=808,
+  serialized_end=1009,
 )
 
 
@@ -474,188 +534,63 @@ _USER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user_name', full_name='model.User.user_name', index=1,
+      name='name', full_name='model.User.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lang', full_name='model.User.lang', index=2,
+      name='email', full_name='model.User.email', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email', full_name='model.User.email', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='role', full_name='model.User.role', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='root_user_id', full_name='model.User.root_user_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='status', full_name='model.User.status', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='role', full_name='model.User.role', index=5,
+      name='password', full_name='model.User.password', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='privilege', full_name='model.User.privilege', index=6,
-      number=7, type=5, cpp_type=1, label=1,
+      name='created', full_name='model.User.created', index=6,
+      number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='model.User.status', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zones', full_name='model.User.zones', index=8,
-      number=9, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='regions', full_name='model.User.regions', index=9,
-      number=10, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='notify_email', full_name='model.User.notify_email', index=10,
-      number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='verify_type', full_name='model.User.verify_type', index=11,
-      number=12, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='paid_mode', full_name='model.User.paid_mode', index=12,
-      number=13, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='gravatar_email', full_name='model.User.gravatar_email', index=13,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='personal_name', full_name='model.User.personal_name', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='company_name', full_name='model.User.company_name', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='company_phone', full_name='model.User.company_phone', index=16,
-      number=17, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='company_code', full_name='model.User.company_code', index=17,
-      number=18, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='phone', full_name='model.User.phone', index=18,
-      number=19, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='console_id', full_name='model.User.console_id', index=19,
-      number=20, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='gender', full_name='model.User.gender', index=20,
-      number=21, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='remarks', full_name='model.User.remarks', index=21,
-      number=22, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='mkt_source', full_name='model.User.mkt_source', index=22,
-      number=23, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='create_time', full_name='model.User.create_time', index=23,
-      number=24, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status_time', full_name='model.User.status_time', index=24,
-      number=25, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user_type', full_name='model.User.user_type', index=25,
-      number=26, type=5, cpp_type=1, label=1,
+      name='updated', full_name='model.User.updated', index=7,
+      number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
     _USER_STATUS,
+    _USER_ROLE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -663,8 +598,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=996,
-  serialized_end=1535,
+  serialized_start=1012,
+  serialized_end=1387,
 )
 
 
@@ -682,77 +617,70 @@ _ACCESSKEY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='secret_access_key', full_name='model.AccessKey.secret_access_key', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='owner', full_name='model.AccessKey.owner', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='root_user_id', full_name='model.AccessKey.root_user_id', index=3,
+      name='name', full_name='model.AccessKey.name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='model.AccessKey.status', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='controller', full_name='model.AccessKey.controller', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='description', full_name='model.AccessKey.description', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='status', full_name='model.AccessKey.status', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ip_white_list', full_name='model.AccessKey.ip_white_list', index=6,
+      name='description', full_name='model.AccessKey.description', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='console_id', full_name='model.AccessKey.console_id', index=7,
+      name='ip_white_list', full_name='model.AccessKey.ip_white_list', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='create_time', full_name='model.AccessKey.create_time', index=8,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='created', full_name='model.AccessKey.created', index=8,
+      number=9, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status_time', full_name='model.AccessKey.status_time', index=9,
-      number=10, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='updated', full_name='model.AccessKey.updated', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='controller', full_name='model.AccessKey.controller', index=10,
-      number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -767,127 +695,8 @@ _ACCESSKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1538,
-  serialized_end=1876,
-)
-
-
-_NOTIFICATIONLIST_ITEM = _descriptor.Descriptor(
-  name='Item',
-  full_name='model.NotificationList.Item',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='content', full_name='model.NotificationList.Item.content', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='create_time', full_name='model.NotificationList.Item.create_time', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='notification_item_id', full_name='model.NotificationList.Item.notification_item_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='notification_item_type', full_name='model.NotificationList.Item.notification_item_type', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='verified', full_name='model.NotificationList.Item.verified', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2042,
-  serialized_end=2166,
-)
-
-_NOTIFICATIONLIST = _descriptor.Descriptor(
-  name='NotificationList',
-  full_name='model.NotificationList',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='create_time', full_name='model.NotificationList.create_time', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='notification_list_id', full_name='model.NotificationList.notification_list_id', index=1,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='notification_list_name', full_name='model.NotificationList.notification_list_name', index=2,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='owner', full_name='model.NotificationList.owner', index=3,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='items', full_name='model.NotificationList.items', index=4,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_NOTIFICATIONLIST_ITEM, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1879,
-  serialized_end=2166,
+  serialized_start=1390,
+  serialized_end=1895,
 )
 
 
@@ -900,61 +709,54 @@ _NOTIFICATION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='recipient', full_name='model.Notification.recipient', index=0,
+      name='owner', full_name='model.Notification.owner', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='note', full_name='model.Notification.note', index=1,
+      name='id', full_name='model.Notification.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='model.Notification.status', index=2,
+      name='name', full_name='model.Notification.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email', full_name='model.Notification.email', index=3,
+      name='description', full_name='model.Notification.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_at', full_name='model.Notification.created_at', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='updated_at', full_name='model.Notification.updated_at', index=5,
-      number=6, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user_id', full_name='model.Notification.user_id', index=6,
-      number=7, type=9, cpp_type=9, label=1,
+      name='email', full_name='model.Notification.email', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='id', full_name='model.Notification.id', index=7,
+      name='created', full_name='model.Notification.created', index=5,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updated', full_name='model.Notification.updated', index=6,
+      number=9, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -967,12 +769,10 @@ _NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2169,
-  serialized_end=2316,
+  serialized_start=1898,
+  serialized_end=2049,
 )
 
-_ROLE.fields_by_name['type'].enum_type = _ROLE_TYPE
-_ROLE_TYPE.containing_type = _ROLE
 _ADMINMODULE.fields_by_name['classify'].enum_type = _ADMINMODULE_CLASSIFY
 _ADMINMODULE.fields_by_name['api_lists'].message_type = _ADMINAPI
 _ADMINMODULE_CLASSIFY.containing_type = _ADMINMODULE
@@ -983,26 +783,23 @@ _ADMINAPI.fields_by_name['perm_type'].enum_type = _ADMINAPI_PERMTYPE
 _ADMINAPI.fields_by_name['permissions'].message_type = _ADMINAPI_PERMISSION
 _ADMINAPI.fields_by_name['roles'].message_type = _ADMINAPI_ROLESENTRY
 _ADMINAPI_PERMTYPE.containing_type = _ADMINAPI
+_ROLE.fields_by_name['type'].enum_type = _ROLE_TYPE
+_ROLE_TYPE.containing_type = _ROLE
+_USER.fields_by_name['role'].enum_type = _USER_ROLE
+_USER.fields_by_name['status'].enum_type = _USER_STATUS
 _USER_STATUS.containing_type = _USER
+_USER_ROLE.containing_type = _USER
+_ACCESSKEY.fields_by_name['controller'].enum_type = _ACCESSKEY_CONTROLLER
+_ACCESSKEY.fields_by_name['status'].enum_type = _ACCESSKEY_STATUS
 _ACCESSKEY_CONTROLLER.containing_type = _ACCESSKEY
 _ACCESSKEY_STATUS.containing_type = _ACCESSKEY
-_NOTIFICATIONLIST_ITEM.containing_type = _NOTIFICATIONLIST
-_NOTIFICATIONLIST.fields_by_name['items'].message_type = _NOTIFICATIONLIST_ITEM
-DESCRIPTOR.message_types_by_name['Role'] = _ROLE
 DESCRIPTOR.message_types_by_name['AdminModule'] = _ADMINMODULE
 DESCRIPTOR.message_types_by_name['AdminAPI'] = _ADMINAPI
+DESCRIPTOR.message_types_by_name['Role'] = _ROLE
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['AccessKey'] = _ACCESSKEY
-DESCRIPTOR.message_types_by_name['NotificationList'] = _NOTIFICATIONLIST
 DESCRIPTOR.message_types_by_name['Notification'] = _NOTIFICATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
-  'DESCRIPTOR' : _ROLE,
-  '__module__' : 'proto.types.model.account_pb2'
-  # @@protoc_insertion_point(class_scope:model.Role)
-  })
-_sym_db.RegisterMessage(Role)
 
 AdminModule = _reflection.GeneratedProtocolMessageType('AdminModule', (_message.Message,), {
   'DESCRIPTOR' : _ADMINMODULE,
@@ -1034,6 +831,13 @@ _sym_db.RegisterMessage(AdminAPI)
 _sym_db.RegisterMessage(AdminAPI.Permission)
 _sym_db.RegisterMessage(AdminAPI.RolesEntry)
 
+Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), {
+  'DESCRIPTOR' : _ROLE,
+  '__module__' : 'proto.types.model.account_pb2'
+  # @@protoc_insertion_point(class_scope:model.Role)
+  })
+_sym_db.RegisterMessage(Role)
+
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
   'DESCRIPTOR' : _USER,
   '__module__' : 'proto.types.model.account_pb2'
@@ -1048,21 +852,6 @@ AccessKey = _reflection.GeneratedProtocolMessageType('AccessKey', (_message.Mess
   })
 _sym_db.RegisterMessage(AccessKey)
 
-NotificationList = _reflection.GeneratedProtocolMessageType('NotificationList', (_message.Message,), {
-
-  'Item' : _reflection.GeneratedProtocolMessageType('Item', (_message.Message,), {
-    'DESCRIPTOR' : _NOTIFICATIONLIST_ITEM,
-    '__module__' : 'proto.types.model.account_pb2'
-    # @@protoc_insertion_point(class_scope:model.NotificationList.Item)
-    })
-  ,
-  'DESCRIPTOR' : _NOTIFICATIONLIST,
-  '__module__' : 'proto.types.model.account_pb2'
-  # @@protoc_insertion_point(class_scope:model.NotificationList)
-  })
-_sym_db.RegisterMessage(NotificationList)
-_sym_db.RegisterMessage(NotificationList.Item)
-
 Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), {
   'DESCRIPTOR' : _NOTIFICATION,
   '__module__' : 'proto.types.model.account_pb2'
@@ -1072,9 +861,6 @@ _sym_db.RegisterMessage(Notification)
 
 
 DESCRIPTOR._options = None
-_ROLE.fields_by_name['id']._options = None
-_ROLE.fields_by_name['type']._options = None
-_ROLE.fields_by_name['name']._options = None
 _ADMINMODULE.fields_by_name['id']._options = None
 _ADMINMODULE.fields_by_name['classify']._options = None
 _ADMINMODULE.fields_by_name['name']._options = None
@@ -1084,4 +870,24 @@ _ADMINAPI.fields_by_name['display_name']._options = None
 _ADMINAPI.fields_by_name['perm_type']._options = None
 _ADMINAPI.fields_by_name['permissions']._options = None
 _ADMINAPI.fields_by_name['roles']._options = None
+_ROLE.fields_by_name['id']._options = None
+_ROLE.fields_by_name['type']._options = None
+_ROLE.fields_by_name['name']._options = None
+_USER.fields_by_name['user_id']._options = None
+_USER.fields_by_name['name']._options = None
+_USER.fields_by_name['role']._options = None
+_USER.fields_by_name['status']._options = None
+_USER.fields_by_name['created']._options = None
+_USER.fields_by_name['updated']._options = None
+_ACCESSKEY.fields_by_name['access_key_id']._options = None
+_ACCESSKEY.fields_by_name['secret_access_key']._options = None
+_ACCESSKEY.fields_by_name['owner']._options = None
+_ACCESSKEY.fields_by_name['name']._options = None
+_ACCESSKEY.fields_by_name['controller']._options = None
+_ACCESSKEY.fields_by_name['status']._options = None
+_ACCESSKEY.fields_by_name['description']._options = None
+_ACCESSKEY.fields_by_name['created']._options = None
+_ACCESSKEY.fields_by_name['updated']._options = None
+_NOTIFICATION.fields_by_name['created']._options = None
+_NOTIFICATION.fields_by_name['updated']._options = None
 # @@protoc_insertion_point(module_scope)

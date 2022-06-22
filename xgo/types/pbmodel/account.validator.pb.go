@@ -10,53 +10,8 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
-
-func (this *Role) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) == 20) {
-		return protovalidator.FieldError1("Role", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
-	}
-	if !(strings.HasPrefix(this.Id, "ros-")) {
-		return protovalidator.FieldError1("Role", "the value of field 'id' must start with string 'ros-'", this.Id)
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_Role_InEnums_Type = map[Role_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *Role) _xxx_xxx_Validator_Validate_type() error {
-	if !(this.Type > 0) {
-		return protovalidator.FieldError1("Role", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	if !(_xxx_xxx_Validator_Role_InEnums_Type[this.Type]) {
-		return protovalidator.FieldError1("Role", "the value of field 'type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Type)))
-	}
-	return nil
-}
-
-func (this *Role) _xxx_xxx_Validator_Validate_name() error {
-	if !(this.Name != "") {
-		return protovalidator.FieldError1("Role", "the value of field 'name' must be not equal to ''", this.Name)
-	}
-	return nil
-}
-
-// Set default value for message model.Role
-func (this *Role) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
-		return err
-	}
-	return nil
-}
 
 func (this *AdminModule) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) == 20) {
@@ -210,10 +165,199 @@ func (this *AdminAPI_Permission) Validate() error {
 	return nil
 }
 
+func (this *Role) _xxx_xxx_Validator_Validate_id() error {
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("Role", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(strings.HasPrefix(this.Id, "ros-")) {
+		return protovalidator.FieldError1("Role", "the value of field 'id' must start with string 'ros-'", this.Id)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_Role_InEnums_Type = map[Role_Type]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true}
+
+func (this *Role) _xxx_xxx_Validator_Validate_type() error {
+	if !(this.Type > 0) {
+		return protovalidator.FieldError1("Role", "the value of field 'type' must be greater than '0'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	if !(_xxx_xxx_Validator_Role_InEnums_Type[this.Type]) {
+		return protovalidator.FieldError1("Role", "the value of field 'type' must in enums of '[0 1 2 3 4 5]'", protovalidator.Int32ToString(int32(this.Type)))
+	}
+	return nil
+}
+
+func (this *Role) _xxx_xxx_Validator_Validate_name() error {
+	if !(this.Name != "") {
+		return protovalidator.FieldError1("Role", "the value of field 'name' must be not equal to ''", this.Name)
+	}
+	return nil
+}
+
+// Set default value for message model.Role
+func (this *Role) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *User) _xxx_xxx_Validator_Validate_user_id() error {
+	if !(this.UserId != "") {
+		return protovalidator.FieldError1("User", "the value of field 'user_id' must be not equal to ''", this.UserId)
+	}
+	return nil
+}
+
+func (this *User) _xxx_xxx_Validator_Validate_name() error {
+	if !(this.Name != "") {
+		return protovalidator.FieldError1("User", "the value of field 'name' must be not equal to ''", this.Name)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_User_InEnums_Role = map[User_Role]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *User) _xxx_xxx_Validator_Validate_role() error {
+	if !(this.Role > 0) {
+		return protovalidator.FieldError1("User", "the value of field 'role' must be greater than '0'", protovalidator.Int32ToString(int32(this.Role)))
+	}
+	if !(_xxx_xxx_Validator_User_InEnums_Role[this.Role]) {
+		return protovalidator.FieldError1("User", "the value of field 'role' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Role)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_User_InEnums_Status = map[User_Status]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *User) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("User", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_User_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("User", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
+func (this *User) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("User", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *User) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("User", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
 // Set default value for message model.User
 func (this *User) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_role(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_access_key_id() error {
+	if !(this.AccessKeyId != "") {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'access_key_id' must be not equal to ''", this.AccessKeyId)
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_secret_access_key() error {
+	if !(this.SecretAccessKey != "") {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'secret_access_key' must be not equal to ''", this.SecretAccessKey)
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_owner() error {
+	if !(this.Owner != "") {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'owner' must be not equal to ''", this.Owner)
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_name() error {
+	if !(this.Name != "") {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'name' must be not equal to ''", this.Name)
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_AccessKey_InEnums_Controller = map[AccessKey_Controller]bool{0: true, 1: true, 2: true}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_controller() error {
+	if !(this.Controller > 0) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'controller' must be greater than '0'", protovalidator.Int32ToString(int32(this.Controller)))
+	}
+	if !(_xxx_xxx_Validator_AccessKey_InEnums_Controller[this.Controller]) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'controller' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Controller)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_AccessKey_InEnums_Status = map[AccessKey_Status]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_AccessKey_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'status' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_description() error {
+	if !(utf8.RuneCountInString(this.Description) <= 256) {
+		return protovalidator.FieldError1("AccessKey", "the character length of field 'description' must be less than or equal to '256'", protovalidator.StringCharsetLenToString(this.Description))
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *AccessKey) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("AccessKey", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
 	}
 	return nil
 }
@@ -223,36 +367,46 @@ func (this *AccessKey) Validate() error {
 	if this == nil {
 		return nil
 	}
-	return nil
-}
-
-func (this *NotificationList) _xxx_xxx_Validator_Validate_items() error {
-	for _, item := range this.Items {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
+	if err := this._xxx_xxx_Validator_Validate_access_key_id(); err != nil {
+		return err
 	}
-	return nil
-}
-
-// Set default value for message model.NotificationList
-func (this *NotificationList) Validate() error {
-	if this == nil {
-		return nil
+	if err := this._xxx_xxx_Validator_Validate_secret_access_key(); err != nil {
+		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_items(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_owner(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_controller(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
 	return nil
 }
 
-// Set default value for message model.NotificationList.Item
-func (this *NotificationList_Item) Validate() error {
-	if this == nil {
-		return nil
+func (this *Notification) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("Notification", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *Notification) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("Notification", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
 	}
 	return nil
 }
@@ -261,6 +415,12 @@ func (this *NotificationList_Item) Validate() error {
 func (this *Notification) Validate() error {
 	if this == nil {
 		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
 	}
 	return nil
 }

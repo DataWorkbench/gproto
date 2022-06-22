@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseAccountProxyP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/response/account_proxy.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x18\x44\x65scribeAccessKeyByProxy\x12!\n\x07key_set\x18\x01 \x01(\x0b\x32\x10.model.AccessKey\"F\n\x10ListUsersByProxy\x12\x1d\n\x08user_set\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\"^\n\x18ListNotificationsByProxy\x12\x33\n\x12notification_lists\x18\x01 \x03(\x0b\x32\x17.model.NotificationList\x12\r\n\x05total\x18\x02 \x01(\x03\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseAccountProxyP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n(proto/types/response/account_proxy.proto\x12\x08response\x1a\x1fproto/types/model/account.proto\"=\n\x18\x44\x65scribeAccessKeyByProxy\x12!\n\x07key_set\x18\x01 \x01(\x0b\x32\x10.model.AccessKey\"O\n\x10ListUsersByProxy\x12\x1a\n\x05infos\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"_\n\x18ListNotificationsByProxy\x12\"\n\x05infos\x18\x01 \x03(\x0b\x32\x13.model.Notification\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\x42w\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseAccountProxyP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
@@ -68,16 +68,23 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_set', full_name='response.ListUsersByProxy.user_set', index=0,
+      name='infos', full_name='response.ListUsersByProxy.infos', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='total_count', full_name='response.ListUsersByProxy.total_count', index=1,
+      name='total', full_name='response.ListUsersByProxy.total', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListUsersByProxy.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -94,7 +101,7 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=150,
-  serialized_end=220,
+  serialized_end=229,
 )
 
 
@@ -107,7 +114,7 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='notification_lists', full_name='response.ListNotificationsByProxy.notification_lists', index=0,
+      name='infos', full_name='response.ListNotificationsByProxy.infos', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -117,6 +124,13 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
       name='total', full_name='response.ListNotificationsByProxy.total', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListNotificationsByProxy.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -132,13 +146,13 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=316,
+  serialized_start=231,
+  serialized_end=326,
 )
 
 _DESCRIBEACCESSKEYBYPROXY.fields_by_name['key_set'].message_type = proto_dot_types_dot_model_dot_account__pb2._ACCESSKEY
-_LISTUSERSBYPROXY.fields_by_name['user_set'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
-_LISTNOTIFICATIONSBYPROXY.fields_by_name['notification_lists'].message_type = proto_dot_types_dot_model_dot_account__pb2._NOTIFICATIONLIST
+_LISTUSERSBYPROXY.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
+_LISTNOTIFICATIONSBYPROXY.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_account__pb2._NOTIFICATION
 DESCRIPTOR.message_types_by_name['DescribeAccessKeyByProxy'] = _DESCRIBEACCESSKEYBYPROXY
 DESCRIPTOR.message_types_by_name['ListUsersByProxy'] = _LISTUSERSBYPROXY
 DESCRIPTOR.message_types_by_name['ListNotificationsByProxy'] = _LISTNOTIFICATIONSBYPROXY

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestAccountProxyP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/account_proxy.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"1\n\x18\x44\x65scribeAccessKeyByProxy\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"O\n\x10ListUsersByProxy\x12\x1c\n\x05users\x18\x01 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\r\n\x05limit\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\"\x92\x01\n\x18ListNotificationsByProxy\x12\r\n\x05owner\x18\x01 \x01(\t\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\"\n\x0bnf_list_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestAccountProxyP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/account_proxy.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"1\n\x18\x44\x65scribeAccessKeyByProxy\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"j\n\x10ListUsersByProxy\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\x10\n\x08user_ids\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"\x8f\x01\n\x18ListNotificationsByProxy\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x1d\n\x06nf_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestAccountProxyP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -69,23 +69,30 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='users', full_name='request.ListUsersByProxy.users', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='limit', full_name='request.ListUsersByProxy.limit', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='limit', full_name='request.ListUsersByProxy.limit', index=1,
+      name='offset', full_name='request.ListUsersByProxy.offset', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='offset', full_name='request.ListUsersByProxy.offset', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='user_ids', full_name='request.ListUsersByProxy.user_ids', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.ListUsersByProxy.name', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -102,7 +109,7 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=208,
-  serialized_end=287,
+  serialized_end=314,
 )
 
 
@@ -115,12 +122,12 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='owner', full_name='request.ListNotificationsByProxy.owner', index=0,
+      name='user_id', full_name='request.ListNotificationsByProxy.user_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='limit', full_name='request.ListNotificationsByProxy.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
@@ -134,9 +141,9 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nf_list_ids', full_name='request.ListNotificationsByProxy.nf_list_ids', index=3,
+      name='nf_ids', full_name='request.ListNotificationsByProxy.nf_ids', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -154,8 +161,8 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=290,
-  serialized_end=436,
+  serialized_start=317,
+  serialized_end=460,
 )
 
 DESCRIPTOR.message_types_by_name['DescribeAccessKeyByProxy'] = _DESCRIBEACCESSKEYBYPROXY
@@ -186,8 +193,8 @@ _sym_db.RegisterMessage(ListNotificationsByProxy)
 
 
 DESCRIPTOR._options = None
-_LISTUSERSBYPROXY.fields_by_name['users']._options = None
+_LISTUSERSBYPROXY.fields_by_name['limit']._options = None
+_LISTNOTIFICATIONSBYPROXY.fields_by_name['user_id']._options = None
 _LISTNOTIFICATIONSBYPROXY.fields_by_name['limit']._options = None
-_LISTNOTIFICATIONSBYPROXY.fields_by_name['offset']._options = None
-_LISTNOTIFICATIONSBYPROXY.fields_by_name['nf_list_ids']._options = None
+_LISTNOTIFICATIONSBYPROXY.fields_by_name['nf_ids']._options = None
 # @@protoc_insertion_point(module_scope)
