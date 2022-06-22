@@ -134,8 +134,9 @@ message AlertPolicy {
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
 
-  // @inject_tag: json:"notification_lists" gorm:"-"
-  repeated model.NotificationList notification_lists = 14;
+  // The notification information list.
+  // @inject_tag: json:"notifications" gorm:"-"
+  repeated model.Notification notifications = 14;
 }
 
 // AlertPolicyMapping for record the relationships between alert policy and monitor object.

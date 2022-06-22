@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+package response;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbresponse";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbresponse";
+// File name of class.
+option java_outer_classname = "PBResponseAccount";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+
+import "proto/types/model/account.proto";
+
+message ListUsers {
+  // @inject_tag: json:"infos"
+  repeated model.User infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message DescribeUser {
+  // @inject_tag: json:"user_set"
+  model.User user_set = 1;
+}
+
+message CreateUser {
+  // The user id.
+  // @inject_tag: json:"id"
+  string id = 1;
+}
+
+message ListAccessKeys {
+  // @inject_tag: json:"infos"
+  repeated model.AccessKey infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message DescribeAccessKey {
+  // @inject_tag: json:"key_set"
+  model.AccessKey key_set = 1;
+}
+
+message CreateAccessKey {
+  // @inject_tag: json:"access_key_id"
+  string access_key_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // @inject_tag: json:"secret_access_key"
+  string secret_access_key = 2 [ (validator.field).tags.string = { ne: "" } ];
+}
+
+// FIXME: confirm the reply parameters.
+message CheckSession {
+  // @inject_tag: json:"user_set"
+  model.User user_set = 1;
+
+  // @inject_tag: json:"key_set"
+  model.AccessKey key_set = 2;
+}
+
+message CreateSession {
+  // The session key.
+  // @inject_tag: json:"session_id"
+  string session_id = 1;
+
+  // @inject_tag: json:"user_set"
+  model.User user_set = 2;
+}
+
+message CreateNotification {
+  // The notification id.
+  // @inject_tag: json:"id"
+  string id = 1;
+}
+
+message ListNotifications {
+  // @inject_tag: json:"infos"
+  repeated model.Notification infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message DescribeNotification {
+  // @inject_tag: json:"nf_set"
+  model.Notification nf_set = 1;
+}

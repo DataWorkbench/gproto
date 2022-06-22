@@ -12,27 +12,6 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
-
-// Role declares the information of built-in role.
-message Role {
-  enum Type {
-    TypeUnset = 0; // useless.
-    Admin = 1;
-    Developer = 2;
-    User = 3;
-    Visitor = 4;
-  }
-
-  // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_eq:20, prefix: "ros-" } ];
-
-  // @inject_tag: json:"type"
-  Type type = 2 [ (validator.field).tags.enum = {gt: 0, in_enums: true } ];
-
-  // @inject_tag: json:"name"
-  string name = 3 [(validator.field).tags.string = { ne: "" }];
-}
-
 // AdminModule declares the module information in the admin.
 message AdminModule {
   enum Classify {
@@ -103,168 +82,161 @@ message AdminAPI {
   map<string, bool> roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
 }
 
-message User {
-  enum Status {
-    _StatusUnset = 0;
-    active = 1;
+// Role declares the information of built-in role.
+message Role {
+  enum Type {
+    TypeUnset = 0; // useless.
+    SuperAdmin = 1;
+    Admin = 2;
+    User = 3;
+    Visitor = 4;
+    Developer = 5;
   }
 
-  // @inject_tag: json:"user_id"
-  string user_id = 1;
+  // @inject_tag: json:"id"
+  string id = 1 [ (validator.field).tags.string = { byte_len_eq:20, prefix: "ros-" } ];
 
-  // @inject_tag: json:"user_name"
-  string user_name = 2;
+  // @inject_tag: json:"type"
+  Type type = 2 [ (validator.field).tags.enum = {gt: 0, in_enums: true } ];
 
-  // Language "zh-cn" | "en-us"
-  // @inject_tag: json:"lang"
-  string lang = 3;
-
-  // @inject_tag: json:"email"
-  string email = 4;
-
-  // @inject_tag: json:"root_user_id"
-  string root_user_id = 5;
-
-  // @inject_tag: json:"role"
-  string role = 6;
-
-  // @inject_tag: json:"privilege"
-  int32 privilege = 7;
-
-  // @inject_tag: json:"status"
-  string status = 8;
-
-  // @inject_tag: json:"zones"
-  repeated string zones = 9;
-
-  // @inject_tag: json:"regions"
-  repeated string regions = 10;
-
-  // @inject_tag: json:"notify_email"
-  string notify_email = 11;
-
-  // @inject_tag: json:"verify_type"
-  string verify_type = 12;
-
-  // @inject_tag: json:"paid_mode"
-  string paid_mode = 13;
-
-  // @inject_tag: json:"gravatar_email"
-  string gravatar_email = 14;
-
-  // @inject_tag: json:"personal_name"
-  string personal_name = 15;
-
-  // @inject_tag: json:"company_name"
-  string company_name = 16;
-
-  // @inject_tag: json:"company_phone"
-  string company_phone = 17;
-
-  // @inject_tag: json:"company_code"
-  string company_code = 18;
-
-  // @inject_tag: json:"phone"
-  string phone = 19;
-
-  // @inject_tag: json:"console_id"
-  string console_id = 20;
-
-  // @inject_tag: json:"gender"
-  string gender = 21;
-
-  // @inject_tag: json:"remarks"
-  string remarks = 22;
-
-  // @inject_tag: json:"mkt_source"
-  string mkt_source = 23;
-
-  // @inject_tag: json:"create_time"
-  string create_time = 24;
-
-  // @inject_tag: json:"status_time"
-  string status_time = 25;
-
-  // 0: root user, 1: sub user.
-  // @inject_tag: json:"user_type"
-  int32 user_type = 26;
+  // @inject_tag: json:"name"
+  string name = 3 [(validator.field).tags.string = { ne: "" }];
 }
 
+// User declares the information of users.
+message User {
+  enum Status {
+    StatusUnset = 0;
+    deleted = 1;
+    active = 2;
+    banned = 3;
+  }
+
+  enum Role {
+    TypeUnset = 0; // useless.
+    User = 1; // Ordinary tenants can only log in to the console.
+    Admin = 2;
+    Visitor = 3;
+  }
+
+  // The id of user. Both in Dataomnis and IaaS.
+  // @inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+  string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The name of User. Both in Dataomnis and IaaS.
+  // Cannot be modified in Dataomnis.
+  // @inject_tag: json:"name" gorm:"column:name"
+  string name = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The email. Both in Dataomnis and IaaS.
+  // Cannot be modified in IaaS.
+  // @inject_tag: json:"email" gorm:"column:email"
+  string email = 3;
+
+  // @inject_tag: json:"role" gorm:"column:role"
+  Role role = 4 [ (validator.field).tags.enum = { gt: 0, in_enums: true} ];
+
+  // 2 => active
+  // @inject_tag: json:"status" gorm:"column:status"
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0, in_enums: true} ];
+
+  // The Max Length is 128.
+  // @inject_tag: json:"password" gorm:"column:password"
+  string password = 6;
+
+  // @inject_tag: json:"created" gorm:"column:created;autoUpdateTime;"
+  int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
+}
+
+// AccessKey declares the information of user's access key.
 message AccessKey {
   enum Controller {
-    _ControllerUnset = 0;
+    ControllerUnset = 0;
     pitrix = 1;
     self  = 2;
   }
 
   enum Status {
     _StatusUnset = 0;
-    active = 1;
+    deleted = 1;
+    active = 2;
+    inactive = 3;
   }
 
-  string access_key_id = 1;
-  string secret_access_key = 2;
-  string owner = 3;
-  string root_user_id = 4;
-  string status = 5;
-  string description = 6;
-  string ip_white_list = 7;
-  string console_id = 8;
-  string create_time = 9;
-  string status_time = 10;
-  string controller = 11;
+  // @inject_tag: json:"access_key_id" gorm:"column:access_key_id;primarykey;"
+  string access_key_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // @inject_tag: json:"secret_access_key" gorm:"column:secret_access_key;"
+  string secret_access_key = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The user id of owner.
+  // @inject_tag: json:"owner" gorm:"column:owner;"
+  string owner = 3 [ (validator.field).tags.string = { ne: "" } ];
+
+  string name = 4 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The "pitrix" controller is automatically generated by the system and invisible to users.
+  // @inject_tag: json:"controller" gorm:"column:controller;"
+  Controller controller = 5 [ (validator.field).tags.enum = { gt: 0, in_enums: true} ];
+
+  // The user status. 2 => "active" 3 => "inactive"
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true} ];
+
+  // Max length is 256 characters.
+  // @inject_tag: json:"description" gorm:"column:description;"
+  string description = 7 [ (validator.field).tags.string = { char_len_lte: 256 } ];
+
+  // Reserved fields.
+  // @inject_tag: json:"ip_white_list" gorm:"column:ip_white_list;"
+  string ip_white_list = 8;
+
+  // @inject_tag: json:"created" gorm:"column:created;autoUpdateTime;"
+  int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
-message NotificationList {
-  message Item {
-    // The content of notification item set.
-    // The value is email address if notification_item_type == "email".
-    // The value is phone number is notification_item_type == "phone".
-    // The value is webhook address if notification_item_type == "webhook".
-    // @inject_tag: json:"content"
-    string content = 1;
-
-    // @inject_tag: json:"create_time"
-    string create_time = 2;
-
-    // @inject_tag: json:"notification_item_id"
-    string notification_item_id = 3;
-
-    // The notification type. Optional Values: email|phone|webhook
-    // @inject_tag: json:"notification_item_type"
-    string notification_item_type = 4;
-
-    // The item whether verified. 1 for true, 0 for false.
-    // @inject_tag: json:"verified"
-    int32 verified = 5;
-  }
-
-  // @inject_tag: json:"create_time"
-  string create_time = 1;
-
-  // @inject_tag: json:"notification_list_id"
-  string notification_list_id = 3;
-
-  // @inject_tag: json:"notification_list_name"
-  string notification_list_name = 4;
-
-  // @inject_tag: json:"owner"
-  string owner = 5;
-
-  // @inject_tag: json:"items"
-  repeated Item items = 2;
-}
-
-// notification
-// FIXME: removed it.
+// NotificationList declares the struct of user's receiver.
 message Notification {
-  // messager receiver
-  string recipient = 1;
-  string note = 2;
-  string status = 3;
-  string email = 4;
-  int64 created_at = 5;
-  int64 updated_at = 6;
-  string user_id = 7;
-  int64 id = 8;
+  // The user id of owner.
+  // @inject_tag: json:"owner" gorm:"column:owner;"
+  string owner = 1;
+
+  // @inject_tag: json:"id" gorm:"column:id;"
+  string id  = 2;
+
+  // The name must be unique for a user.
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name  = 3;
+
+  // @inject_tag: json:"description" gorm:"column:description;"
+  string description = 4;
+
+  // @inject_tag: json:"email" gorm:"column:email;"
+  string email = 5;
+
+  // @inject_tag: json:"created" gorm:"column:created;autoUpdateTime;"
+  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
 }
+
+//// notification
+//// FIXME: removed it.
+//message Notification {
+//  // messager receiver
+//  string recipient = 1;
+//  string note = 2;
+//  string status = 3;
+//  string email = 4;
+//  int64 created_at = 5;
+//  int64 updated_at = 6;
+//  string user_id = 7;
+//  int64 id = 8;
+//}
