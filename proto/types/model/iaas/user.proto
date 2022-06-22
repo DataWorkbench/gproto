@@ -113,6 +113,9 @@ message AccessKey {
   // @inject_tag: json:"secret_access_key"
   string secret_access_key = 2;
 
+  // @inject_tag: json:"access_key_name"
+  string access_key_name = 12;
+
   // @inject_tag: json:"owner"
   string owner = 3;
 
