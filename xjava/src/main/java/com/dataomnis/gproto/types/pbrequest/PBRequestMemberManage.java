@@ -14,6 +14,604 @@ public final class PBRequestMemberManage {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ListAvailableUsersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ListAvailableUsers)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+     * @return The limit.
+     */
+    int getLimit();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 2;</code>
+     * @return The offset.
+     */
+    int getOffset();
+  }
+  /**
+   * Protobuf type {@code request.ListAvailableUsers}
+   */
+  public static final class ListAvailableUsers extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.ListAvailableUsers)
+      ListAvailableUsersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAvailableUsers.newBuilder() to construct.
+    private ListAvailableUsers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAvailableUsers() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAvailableUsers();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAvailableUsers(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              limit_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              offset_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListAvailableUsers_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListAvailableUsers_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.Builder.class);
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 1;
+    private int limit_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public int getLimit() {
+      return limit_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 2;
+    private int offset_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 2;</code>
+     * @return The offset.
+     */
+    @java.lang.Override
+    public int getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (limit_ != 0) {
+        output.writeInt32(1, limit_);
+      }
+      if (offset_ != 0) {
+        output.writeInt32(2, offset_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, limit_);
+      }
+      if (offset_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, offset_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers other = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers) obj;
+
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + getOffset();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.ListAvailableUsers}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.ListAvailableUsers)
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListAvailableUsers_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListAvailableUsers_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.class, com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        limit_ = 0;
+
+        offset_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.internal_static_request_ListAvailableUsers_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers(this);
+        result.limit_ = limit_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.getDefaultInstance()) return this;
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        if (other.getOffset() != 0) {
+          setOffset(other.getOffset());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int limit_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(int value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int offset_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
+       * @return The offset.
+       */
+      @java.lang.Override
+      public int getOffset() {
+        return offset_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(int value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.ListAvailableUsers)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.ListAvailableUsers)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAvailableUsers>
+        PARSER = new com.google.protobuf.AbstractParser<ListAvailableUsers>() {
+      @java.lang.Override
+      public ListAvailableUsers parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAvailableUsers(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAvailableUsers> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAvailableUsers> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListMembersOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.ListMembers)
       com.google.protobuf.MessageOrBuilder {
@@ -6020,6 +6618,11 @@ public final class PBRequestMemberManage {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_ListAvailableUsers_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_ListAvailableUsers_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListMembers_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6056,30 +6659,32 @@ public final class PBRequestMemberManage {
       "\n\'proto/types/request/member_manage.prot" +
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
-      "/protoc-plugin/proto/defaults.proto\"\303\001\n\013" +
-      "ListMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037" +
-      "\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022" +
-      "7\n\007sort_by\030\004 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007user_idJ\007" +
-      "createdJ\007updated\022\017\n\007reverse\030\005 \001(\010\"U\n\rDel" +
-      "eteMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d" +
-      "\"\354\001\n\nAddMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005" +
-      "\302\001\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222" +
-      "\n\017system_role_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n" +
-      "\302\001\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"" +
-      "\250\001\n\014UpdateMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t" +
-      "\302\001\006\200\002\000\210\002A\0222\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025" +
-      "\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037" +
-      "\t\022\007\302\001\004\310\001\200\010\"Y\n\016DescribeMember\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002" +
-      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.g" +
-      "proto.types.pbrequestB\025PBRequestMemberMa" +
-      "nageP\000Z3github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbrequestb\006proto3"
+      "/protoc-plugin/proto/defaults.proto\"L\n\022L" +
+      "istAvailableUsers\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\"\303\001\n\013Li" +
+      "stMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
+      "\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n" +
+      "\007sort_by\030\004 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007user_idJ\007cr" +
+      "eatedJ\007updated\022\017\n\007reverse\030\005 \001(\010\"U\n\rDelet" +
+      "eMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\354" +
+      "\001\n\nAddMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t" +
+      "\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222\n\017" +
+      "system_role_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001" +
+      "\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001" +
+      "\n\014UpdateMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\000\210\002A\0222\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025\022\023" +
+      "\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022" +
+      "\007\302\001\004\310\001\200\010\"Y\n\016DescribeMember\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001" +
+      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.gpr" +
+      "oto.types.pbrequestB\025PBRequestMemberMana" +
+      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
+      "o/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6087,32 +6692,38 @@ public final class PBRequestMemberManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           io.github.yu31.protoc.pb.pbdefaults.PBDefaults.getDescriptor(),
         });
-    internal_static_request_ListMembers_descriptor =
+    internal_static_request_ListAvailableUsers_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_request_ListAvailableUsers_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_ListAvailableUsers_descriptor,
+        new java.lang.String[] { "Limit", "Offset", });
+    internal_static_request_ListMembers_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_request_ListMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListMembers_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", });
     internal_static_request_DeleteMembers_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_request_DeleteMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteMembers_descriptor,
         new java.lang.String[] { "SpaceId", "UserIds", });
     internal_static_request_AddMembers_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_request_AddMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AddMembers_descriptor,
         new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "UserIds", "SystemRoleIds", "Desc", });
     internal_static_request_UpdateMember_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_request_UpdateMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateMember_descriptor,
         new java.lang.String[] { "SpaceId", "UserId", "SystemRoleIds", "Desc", });
     internal_static_request_DescribeMember_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_request_DescribeMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeMember_descriptor,

@@ -18,6 +18,37 @@ public final class MemberManageGrpc {
   public static final String SERVICE_NAME = "spacemanager.MemberManage";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers,
+      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> getListAvailableUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAvailableUsers",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers,
+      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> getListAvailableUsersMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> getListAvailableUsersMethod;
+    if ((getListAvailableUsersMethod = MemberManageGrpc.getListAvailableUsersMethod) == null) {
+      synchronized (MemberManageGrpc.class) {
+        if ((getListAvailableUsersMethod = MemberManageGrpc.getListAvailableUsersMethod) == null) {
+          MemberManageGrpc.getListAvailableUsersMethod = getListAvailableUsersMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAvailableUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.getDefaultInstance()))
+              .setSchemaDescriptor(new MemberManageMethodDescriptorSupplier("ListAvailableUsers"))
+              .build();
+        }
+      }
+    }
+    return getListAvailableUsersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers,
       com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers> getListMembersMethod;
 
@@ -226,6 +257,16 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
+     * ListAvailableUsers for get all available users. not work when in IaaS.
+     * </pre>
+     */
+    public void listAvailableUsers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAvailableUsersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * ListMembers get a lists of workspace member.
      * </pre>
      */
@@ -264,6 +305,13 @@ public final class MemberManageGrpc {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getListAvailableUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers,
+                com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers>(
+                  this, METHODID_LIST_AVAILABLE_USERS)))
           .addMethod(
             getListMembersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -318,6 +366,17 @@ public final class MemberManageGrpc {
     protected MemberManageStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new MemberManageStub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * ListAvailableUsers for get all available users. not work when in IaaS.
+     * </pre>
+     */
+    public void listAvailableUsers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAvailableUsersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -383,6 +442,16 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
+     * ListAvailableUsers for get all available users. not work when in IaaS.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers listAvailableUsers(com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAvailableUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * ListMembers get a lists of workspace member.
      * </pre>
      */
@@ -439,6 +508,17 @@ public final class MemberManageGrpc {
 
     /**
      * <pre>
+     * ListAvailableUsers for get all available users. not work when in IaaS.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers> listAvailableUsers(
+        com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAvailableUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * ListMembers get a lists of workspace member.
      * </pre>
      */
@@ -481,11 +561,12 @@ public final class MemberManageGrpc {
     }
   }
 
-  private static final int METHODID_LIST_MEMBERS = 0;
-  private static final int METHODID_DELETE_MEMBERS = 1;
-  private static final int METHODID_ADD_MEMBERS = 2;
-  private static final int METHODID_UPDATE_MEMBER = 3;
-  private static final int METHODID_DESCRIBE_MEMBER = 4;
+  private static final int METHODID_LIST_AVAILABLE_USERS = 0;
+  private static final int METHODID_LIST_MEMBERS = 1;
+  private static final int METHODID_DELETE_MEMBERS = 2;
+  private static final int METHODID_ADD_MEMBERS = 3;
+  private static final int METHODID_UPDATE_MEMBER = 4;
+  private static final int METHODID_DESCRIBE_MEMBER = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -504,6 +585,10 @@ public final class MemberManageGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_AVAILABLE_USERS:
+          serviceImpl.listAvailableUsers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers>) responseObserver);
+          break;
         case METHODID_LIST_MEMBERS:
           serviceImpl.listMembers((com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListMembers) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListMembers>) responseObserver);
@@ -585,6 +670,7 @@ public final class MemberManageGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MemberManageFileDescriptorSupplier())
+              .addMethod(getListAvailableUsersMethod())
               .addMethod(getListMembersMethod())
               .addMethod(getDeleteMembersMethod())
               .addMethod(getAddMembersMethod())

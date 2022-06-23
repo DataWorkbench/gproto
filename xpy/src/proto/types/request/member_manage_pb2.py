@@ -21,11 +21,50 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestMemberManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/member_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"\xc3\x01\n\x0bListMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x04 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07user_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\"U\n\rDeleteMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x08user_ids\x18\x02 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\"\xec\x01\n\nAddMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1f\n\x08user_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x32\n\x0fsystem_role_ids\x18\x05 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00P\x01Z\n\xc2\x01\x07\xca\x02\x04ros-\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"\xa8\x01\n\x0cUpdateMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\x07user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x32\n\x0fsystem_role_ids\x18\x03 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00P\x01Z\n\xc2\x01\x07\xca\x02\x04ros-\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"Y\n\x0e\x44\x65scribeMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\x07user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestMemberManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/member_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"L\n\x12ListAvailableUsers\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\"\xc3\x01\n\x0bListMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x37\n\x07sort_by\x18\x04 \x01(\tB&\xe2\xdf\x1f\"\x12 \xc2\x01\x1dJ\x00J\x07user_idJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\"U\n\rDeleteMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x08user_ids\x18\x02 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\"\xec\x01\n\nAddMembers\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1f\n\x08user_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x32\n\x0fsystem_role_ids\x18\x05 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00P\x01Z\n\xc2\x01\x07\xca\x02\x04ros-\x12\x1b\n\x04\x64\x65sc\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"\xa8\x01\n\x0cUpdateMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\x07user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x32\n\x0fsystem_role_ids\x18\x03 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x30\x00P\x01Z\n\xc2\x01\x07\xca\x02\x04ros-\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"Y\n\x0e\x44\x65scribeMember\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\x07user_id\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestMemberManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
 
+
+
+_LISTAVAILABLEUSERS = _descriptor.Descriptor(
+  name='ListAvailableUsers',
+  full_name='request.ListAvailableUsers',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListAvailableUsers.limit', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='request.ListAvailableUsers.offset', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=157,
+  serialized_end=233,
+)
 
 
 _LISTMEMBERS = _descriptor.Descriptor(
@@ -83,8 +122,8 @@ _LISTMEMBERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=158,
-  serialized_end=353,
+  serialized_start=236,
+  serialized_end=431,
 )
 
 
@@ -122,8 +161,8 @@ _DELETEMEMBERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=440,
+  serialized_start=433,
+  serialized_end=518,
 )
 
 
@@ -189,8 +228,8 @@ _ADDMEMBERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=679,
+  serialized_start=521,
+  serialized_end=757,
 )
 
 
@@ -242,8 +281,8 @@ _UPDATEMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=850,
+  serialized_start=760,
+  serialized_end=928,
 )
 
 
@@ -281,16 +320,24 @@ _DESCRIBEMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=852,
-  serialized_end=941,
+  serialized_start=930,
+  serialized_end=1019,
 )
 
+DESCRIPTOR.message_types_by_name['ListAvailableUsers'] = _LISTAVAILABLEUSERS
 DESCRIPTOR.message_types_by_name['ListMembers'] = _LISTMEMBERS
 DESCRIPTOR.message_types_by_name['DeleteMembers'] = _DELETEMEMBERS
 DESCRIPTOR.message_types_by_name['AddMembers'] = _ADDMEMBERS
 DESCRIPTOR.message_types_by_name['UpdateMember'] = _UPDATEMEMBER
 DESCRIPTOR.message_types_by_name['DescribeMember'] = _DESCRIBEMEMBER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ListAvailableUsers = _reflection.GeneratedProtocolMessageType('ListAvailableUsers', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAVAILABLEUSERS,
+  '__module__' : 'proto.types.request.member_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.ListAvailableUsers)
+  })
+_sym_db.RegisterMessage(ListAvailableUsers)
 
 ListMembers = _reflection.GeneratedProtocolMessageType('ListMembers', (_message.Message,), {
   'DESCRIPTOR' : _LISTMEMBERS,
@@ -329,6 +376,7 @@ _sym_db.RegisterMessage(DescribeMember)
 
 
 DESCRIPTOR._options = None
+_LISTAVAILABLEUSERS.fields_by_name['limit']._options = None
 _LISTMEMBERS.fields_by_name['space_id']._options = None
 _LISTMEMBERS.fields_by_name['limit']._options = None
 _LISTMEMBERS.fields_by_name['offset']._options = None
