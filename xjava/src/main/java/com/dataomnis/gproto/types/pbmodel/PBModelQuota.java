@@ -3630,7 +3630,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Size is the maximum size of single file. default is 100MB.
-     * &#64;inject_tag: json:"size"
+     * &#64;inject_tag: json:"size_single"
      * </pre>
      *
      * <code>int64 size_single = 2;</code>
@@ -3762,7 +3762,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Size is the maximum size of single file. default is 100MB.
-     * &#64;inject_tag: json:"size"
+     * &#64;inject_tag: json:"size_single"
      * </pre>
      *
      * <code>int64 size_single = 2;</code>
@@ -4178,7 +4178,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Size is the maximum size of single file. default is 100MB.
-       * &#64;inject_tag: json:"size"
+       * &#64;inject_tag: json:"size_single"
        * </pre>
        *
        * <code>int64 size_single = 2;</code>
@@ -4191,7 +4191,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Size is the maximum size of single file. default is 100MB.
-       * &#64;inject_tag: json:"size"
+       * &#64;inject_tag: json:"size_single"
        * </pre>
        *
        * <code>int64 size_single = 2;</code>
@@ -4207,7 +4207,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Size is the maximum size of single file. default is 100MB.
-       * &#64;inject_tag: json:"size"
+       * &#64;inject_tag: json:"size_single"
        * </pre>
        *
        * <code>int64 size_single = 2;</code>
@@ -4336,7 +4336,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Cu is the maximum number of cu for single cluster. default 8.
-     * &#64;inject_tag: json:"cu"
+     * &#64;inject_tag: json:"cu_single"
      * </pre>
      *
      * <code>float cu_single = 2;</code>
@@ -4468,7 +4468,7 @@ public final class PBModelQuota {
     /**
      * <pre>
      * Cu is the maximum number of cu for single cluster. default 8.
-     * &#64;inject_tag: json:"cu"
+     * &#64;inject_tag: json:"cu_single"
      * </pre>
      *
      * <code>float cu_single = 2;</code>
@@ -4886,7 +4886,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Cu is the maximum number of cu for single cluster. default 8.
-       * &#64;inject_tag: json:"cu"
+       * &#64;inject_tag: json:"cu_single"
        * </pre>
        *
        * <code>float cu_single = 2;</code>
@@ -4899,7 +4899,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Cu is the maximum number of cu for single cluster. default 8.
-       * &#64;inject_tag: json:"cu"
+       * &#64;inject_tag: json:"cu_single"
        * </pre>
        *
        * <code>float cu_single = 2;</code>
@@ -4915,7 +4915,7 @@ public final class PBModelQuota {
       /**
        * <pre>
        * Cu is the maximum number of cu for single cluster. default 8.
-       * &#64;inject_tag: json:"cu"
+       * &#64;inject_tag: json:"cu_single"
        * </pre>
        *
        * <code>float cu_single = 2;</code>
