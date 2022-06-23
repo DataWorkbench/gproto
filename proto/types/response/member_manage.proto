@@ -14,6 +14,18 @@ option java_multiple_files = false;
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 import "proto/types/model/member.proto";
+import "proto/types/model/account.proto";
+
+message ListAvailableUsers {
+  // @inject_tag: json:"infos"
+  repeated model.User infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
 
 // ListMembers used as reply parameters in RPC or response body in HTTP.
 message ListMembers {
