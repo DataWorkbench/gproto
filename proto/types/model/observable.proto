@@ -1,0 +1,203 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel";
+// File name of class.
+option java_outer_classname = "PBModelObserver";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+//import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+
+// WorkspaceOverview declares the struct for workspace statistics overview.
+message WorkspaceOverview {
+  message StreamJobRelease {
+    // The total number of release stream job in the workspace.
+    // @inject_tag: json:"total" gorm:"total;<-:false"
+    int64 total = 1;
+
+    // The number of release stream job in the workspace that are in the inline status.
+    // @inject_tag: json:"inline" gorm:"inline;<-:false"
+    int64 inline = 2;
+
+    // The number of release stream job in the workspace that are in the offline status.
+    // @inject_tag: json:"offline" gorm:"offline;<-:false"
+    int64 offline = 3;
+
+    // The number of release stream job in the workspace that are in the finished status.
+    // @inject_tag: json:"finished" gorm:"finished;<-:false"
+    int64 finished = 4;
+  }
+
+  message SyncJobRelease {
+    // The total number of release sync job in the workspace.
+    // @inject_tag: json:"total" gorm:"total;<-:false"
+    int64 total = 1;
+
+    // The number of release sync job in the workspace that are in the inline status.
+    // @inject_tag: json:"inline" gorm:"inline;<-:false"
+    int64 inline = 2;
+
+    // The number of release sync job in the workspace that are in the offline status.
+    // @inject_tag: json:"offline" gorm:"offline;<-:false"
+    int64 offline = 3;
+
+    // The number of release sync job in the workspace that are in the finished status.
+    // @inject_tag: json:"finished" gorm:"finished;<-:false"
+    int64 finished = 4;
+  }
+
+  message StreamInstance {
+    // The total number of stream instance in the workspace.
+    // @inject_tag: json:"total" gorm:"total;<-:false"
+    int64 total = 1;
+
+    // The number of stream instance in the workspace that are in the pending state.
+    // @inject_tag: json:"pending" gorm:"pending;<-:false"
+    int64 pending = 2;
+
+    // The number of stream instance in the workspace that are in the running state.
+    // @inject_tag: json:"running" gorm:"running;<-:false"
+    int64 running = 3;
+
+    // The number of stream instance in the workspace that are in the retrying state.
+    // @inject_tag: json:"retrying" gorm:"retrying;<-:false"
+    int64 retrying = 4;
+
+    // The number of stream instance in the workspace that are in the suspended state.
+    // @inject_tag: json:"suspended" gorm:"suspended;<-:false"
+    int64 suspended = 5;
+
+    // The number of stream instance in the workspace that are in the terminated state.
+    // @inject_tag: json:"terminated" gorm:"terminated;<-:false"
+    int64 terminated = 6;
+
+    // The number of stream instance in the workspace that are in the succeed state.
+    // @inject_tag: json:"succeed" gorm:"succeed;<-:false"
+    int64 succeed = 7;
+
+    // The number of stream instance in the workspace that are in the timeout state.
+    // @inject_tag: json:"timeout" gorm:"timeout;<-:false"
+    int64 timeout = 8;
+
+    // The number of stream instance in the workspace that are in the failed state.
+    // @inject_tag: json:"failed" gorm:"failed;<-:false"
+    int64 failed = 9;
+  }
+
+  message SyncInstance {
+    // The total number of stream instance in the workspace.
+    // @inject_tag: json:"total" gorm:"total;<-:false"
+    int64 total = 1;
+
+    // The number of stream instance in the workspace that are in the pending state.
+    // @inject_tag: json:"pending" gorm:"pending;<-:false"
+    int64 pending = 2;
+
+    // The number of stream instance in the workspace that are in the running state.
+    // @inject_tag: json:"running" gorm:"running;<-:false"
+    int64 running = 3;
+
+    // The number of stream instance in the workspace that are in the retrying state.
+    // @inject_tag: json:"retrying" gorm:"retrying;<-:false"
+    int64 retrying = 4;
+
+    // The number of stream instance in the workspace that are in the suspended state.
+    // @inject_tag: json:"suspended" gorm:"suspended;<-:false"
+    int64 suspended = 5;
+
+    // The number of stream instance in the workspace that are in the terminated state.
+    // @inject_tag: json:"terminated" gorm:"terminated;<-:false"
+    int64 terminated = 6;
+
+    // The number of stream instance in the workspace that are in the succeed state.
+    // @inject_tag: json:"succeed" gorm:"succeed;<-:false"
+    int64 succeed = 7;
+
+    // The number of stream instance in the workspace that are in the timeout state.
+    // @inject_tag: json:"timeout" gorm:"timeout;<-:false"
+    int64 timeout = 8;
+
+    // The number of stream instance in the workspace that are in the failed state.
+    // @inject_tag: json:"failed" gorm:"failed;<-:false"
+    int64 failed = 9;
+  }
+
+  message FlinkCluster {
+    // The total number of flink cluster in the workspace.
+    // @inject_tag: json:"cluster_total" gorm:"cluster_total;<-:false"
+    int64 cluster_total = 1;
+
+    // The number of flink cluster in the workspace that are in the running status.
+    // @inject_tag: json:"cluster_running" gorm:"cluster_running;<-:false"
+    int64 cluster_running = 2;
+
+    // The number of flink cluster in the workspace that are in the stopped status.
+    // @inject_tag: json:"cluster_stopped" gorm:"cluster_stopped;<-:false"
+    int64 cluster_stopped = 3;
+
+    // The number of flink cluster in the workspace that are in the starting status.
+    // @inject_tag: json:"cluster_starting" gorm:"cluster_starting;<-:false"
+    int64 cluster_starting = 4;
+
+    // The number of flink cluster in the workspace that are in the exception status.
+    // @inject_tag: json:"cluster_exception" gorm:"cluster_exception;<-:false"
+    int64 cluster_exception = 5;
+
+    // The number of flink cluster in the workspace that are in the arrears status.
+    // @inject_tag: json:"cluster_arrears" gorm:"cluster_arrears;<-:false"
+    int64 cluster_arrears = 6;
+
+    // The total CU of flink cluster in the workspace.
+    // @inject_tag: json:"cu_total" gorm:"cu_total;<-:false"
+    int64 cu_total = 7;
+
+    // The number CU of flink cluster in the workspace that are in the running status.
+    // @inject_tag: json:"cu_running" gorm:"cu_running;<-:false"
+    int64 cu_running = 8;
+
+    // The number CU of flink cluster in the workspace that are in the stopped status.
+    // @inject_tag: json:"cu_stopped" gorm:"cu_stopped;<-:false"
+    int64 cu_stopped = 9;
+
+    // The number CU of flink cluster in the workspace that are in the starting status.
+    // @inject_tag: json:"cu_starting" gorm:"cu_starting;<-:false"
+    int64 cu_starting = 10;
+
+    // The number CU of flink cluster in the workspace that are in the exception status.
+    // @inject_tag: json:"cu_exception" gorm:"cu_exception;<-:false"
+    int64 cu_exception = 11;
+
+    // The number CU of flink cluster in the workspace that are in the arrears status.
+    // @inject_tag: json:"cu_arrears" gorm:"cu_arrears;<-:false"
+    int64 cu_arrears = 12;
+  }
+
+  // The workspace id.
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The statistic overview for release stream job.
+  // @inject_tag: json:"stream_job_release"
+  StreamJobRelease stream_job_release = 2;
+
+  // The statistic overview for release sync job.
+  // @inject_tag: json:"sync_job_release"
+  SyncJobRelease sync_job_release = 3;
+
+  // The statistic overview for stream job instance.
+  // @inject_tag: json:"stream_job_instance"
+  StreamInstance stream_job_instance = 4;
+
+  // The statistic overview for sync job instance.
+  // @inject_tag: json:"sync_job_instance"
+  SyncInstance sync_job_instance = 5;
+
+  // The statistic overview for flink cluster.
+  // @inject_tag: json:"flink_cluster"
+  FlinkCluster flink_cluster = 6;
+}
