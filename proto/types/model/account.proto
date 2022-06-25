@@ -120,7 +120,7 @@ message User {
   }
 
   // The id of user. Both in Dataomnis and IaaS.
-  // @inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+  // @inject_tag: json:"user_id" gorm:"column:user_id"
   string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
 
   // The name of User. Both in Dataomnis and IaaS.
