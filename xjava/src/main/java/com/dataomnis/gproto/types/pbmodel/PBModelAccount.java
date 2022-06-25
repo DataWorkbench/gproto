@@ -5572,7 +5572,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The id of user. Both in Dataomnis and IaaS.
-     * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
      * </pre>
      *
      * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -5582,7 +5582,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The id of user. Both in Dataomnis and IaaS.
-     * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
      * </pre>
      *
      * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6127,7 +6127,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The id of user. Both in Dataomnis and IaaS.
-     * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
      * </pre>
      *
      * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6149,7 +6149,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The id of user. Both in Dataomnis and IaaS.
-     * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+     * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
      * </pre>
      *
      * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6833,7 +6833,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The id of user. Both in Dataomnis and IaaS.
-       * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
        * </pre>
        *
        * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6854,7 +6854,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The id of user. Both in Dataomnis and IaaS.
-       * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
        * </pre>
        *
        * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6876,7 +6876,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The id of user. Both in Dataomnis and IaaS.
-       * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
        * </pre>
        *
        * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6896,7 +6896,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The id of user. Both in Dataomnis and IaaS.
-       * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
        * </pre>
        *
        * <code>string user_id = 1 [(.validator.field) = { ... }</code>
@@ -6911,7 +6911,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The id of user. Both in Dataomnis and IaaS.
-       * &#64;inject_tag: json:"user_id" gorm:"column:access_key_id;user_id;"
+       * &#64;inject_tag: json:"user_id" gorm:"column:user_id"
        * </pre>
        *
        * <code>string user_id = 1 [(.validator.field) = { ... }</code>
