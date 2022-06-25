@@ -626,7 +626,7 @@ type User struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The id of user. Both in Dataomnis and IaaS.
-	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:access_key_id;user_id;"`
+	UserId string `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" gorm:"column:user_id"`
 	// The name of User. Both in Dataomnis and IaaS.
 	// Cannot be modified in Dataomnis.
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" gorm:"column:name"`
