@@ -231,6 +231,15 @@ func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_url() error {
 	return nil
 }
 
+func (this *UpdateDataSource) _xxx_xxx_Validator_Validate_last_connection() error {
+	if dt, ok := interface{}(this.LastConnection).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message request.UpdateDataSource
 func (this *UpdateDataSource) Validate() error {
 	if this == nil {
@@ -252,6 +261,9 @@ func (this *UpdateDataSource) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_url(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_last_connection(); err != nil {
 		return err
 	}
 	return nil

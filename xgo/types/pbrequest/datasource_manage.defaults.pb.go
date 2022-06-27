@@ -50,6 +50,11 @@ func (this *UpdateDataSource) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.LastConnection != nil {
+		if dt, ok := interface{}(this.LastConnection).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 
