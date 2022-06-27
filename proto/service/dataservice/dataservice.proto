@@ -20,7 +20,7 @@ service DataService {
   rpc CreateDataServiceCluster(request.CreateDataServiceCluster) returns (response.CreateDataServiceCluster) {}
   rpc ListDataServiceClusters(request.ListDataServiceClusters) returns (response.ListDataServiceClusters) {}
   rpc UpdateDataServiceCluster(request.UpdateDataServiceCluster) returns (model.EmptyStruct) {}
-  rpc DescribeDataServiceCluster(request.DescribeDataServiceCluster) returns (model.DataServiceCluster) {}
+  rpc DescribeDataServiceCluster(request.DescribeDataServiceCluster) returns (response.DescribeDataServiceCluster) {}
 
   rpc DeleteDataServiceClusters(request.DeleteDataServiceClusters)   returns (model.EmptyStruct) {}
   rpc StartDataServiceClusters(request.StartDataServiceClusters)   returns (model.EmptyStruct) {}

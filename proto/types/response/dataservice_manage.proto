@@ -21,6 +21,13 @@ message ListDataServiceClusters {
   int64 total = 3;
 }
 
+message DescribeDataServiceCluster {
+  // @inject_tag: json:"info"
+  model.DataServiceCluster info = 1;
+  // @inject_tag: json:"api_version"
+  model.ApiVersion api_version = 2;
+}
+
 message CreateDataServiceCluster {
   // @inject_tag: json:"id"
   string id = 1;

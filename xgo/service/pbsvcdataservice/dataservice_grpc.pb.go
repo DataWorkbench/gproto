@@ -29,7 +29,7 @@ type DataServiceClient interface {
 	CreateDataServiceCluster(ctx context.Context, in *pbrequest.CreateDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(ctx context.Context, in *pbrequest.ListDataServiceClusters, opts ...grpc.CallOption) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(ctx context.Context, in *pbrequest.UpdateDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.DataServiceCluster, error)
+	DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceCluster, error)
 	DeleteDataServiceClusters(ctx context.Context, in *pbrequest.DeleteDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	StartDataServiceClusters(ctx context.Context, in *pbrequest.StartDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	StopDataServiceClusters(ctx context.Context, in *pbrequest.StopDataServiceClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -84,8 +84,8 @@ func (c *dataServiceClient) UpdateDataServiceCluster(ctx context.Context, in *pb
 	return out, nil
 }
 
-func (c *dataServiceClient) DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbmodel.DataServiceCluster, error) {
-	out := new(pbmodel.DataServiceCluster)
+func (c *dataServiceClient) DescribeDataServiceCluster(ctx context.Context, in *pbrequest.DescribeDataServiceCluster, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceCluster, error) {
+	out := new(pbresponse.DescribeDataServiceCluster)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribeDataServiceCluster", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -254,7 +254,7 @@ type DataServiceServer interface {
 	CreateDataServiceCluster(context.Context, *pbrequest.CreateDataServiceCluster) (*pbresponse.CreateDataServiceCluster, error)
 	ListDataServiceClusters(context.Context, *pbrequest.ListDataServiceClusters) (*pbresponse.ListDataServiceClusters, error)
 	UpdateDataServiceCluster(context.Context, *pbrequest.UpdateDataServiceCluster) (*pbmodel.EmptyStruct, error)
-	DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbmodel.DataServiceCluster, error)
+	DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbresponse.DescribeDataServiceCluster, error)
 	DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error)
 	StartDataServiceClusters(context.Context, *pbrequest.StartDataServiceClusters) (*pbmodel.EmptyStruct, error)
 	StopDataServiceClusters(context.Context, *pbrequest.StopDataServiceClusters) (*pbmodel.EmptyStruct, error)
@@ -288,7 +288,7 @@ func (UnimplementedDataServiceServer) ListDataServiceClusters(context.Context, *
 func (UnimplementedDataServiceServer) UpdateDataServiceCluster(context.Context, *pbrequest.UpdateDataServiceCluster) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDataServiceCluster not implemented")
 }
-func (UnimplementedDataServiceServer) DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbmodel.DataServiceCluster, error) {
+func (UnimplementedDataServiceServer) DescribeDataServiceCluster(context.Context, *pbrequest.DescribeDataServiceCluster) (*pbresponse.DescribeDataServiceCluster, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataServiceCluster not implemented")
 }
 func (UnimplementedDataServiceServer) DeleteDataServiceClusters(context.Context, *pbrequest.DeleteDataServiceClusters) (*pbmodel.EmptyStruct, error) {

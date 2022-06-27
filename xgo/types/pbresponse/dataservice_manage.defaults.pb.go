@@ -17,6 +17,24 @@ func (this *ListDataServiceClusters) SetDefaults() {
 	return
 }
 
+// Set default value for message response.DescribeDataServiceCluster
+func (this *DescribeDataServiceCluster) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ApiVersion != nil {
+		if dt, ok := interface{}(this.ApiVersion).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
 // Set default value for message response.CreateDataServiceCluster
 func (this *CreateDataServiceCluster) SetDefaults() {
 	if this == nil {
