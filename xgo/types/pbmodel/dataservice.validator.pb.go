@@ -7,10 +7,12 @@ package pbmodel
 
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	_ "google.golang.org/protobuf/types/known/anypb"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_id() error {
@@ -153,6 +155,23 @@ func (this *ApiGroup) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
+func (this *ApiGroup) _xxx_xxx_Validator_Validate_group_path() error {
+	if !(len(this.GroupPath) > 0) {
+		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'group_path' must be greater than '0'", protovalidator.StringByteLenToString(this.GroupPath))
+	}
+	if !(len(this.GroupPath) <= 64) {
+		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'group_path' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.GroupPath))
+	}
+	return nil
+}
+
+func (this *ApiGroup) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("ApiGroup", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ApiGroup_InEnums_Status = map[ApiGroup_Status]bool{0: true, 1: true, 2: true}
 
 func (this *ApiGroup) _xxx_xxx_Validator_Validate_status() error {
@@ -177,6 +196,12 @@ func (this *ApiGroup) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_group_path(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
@@ -361,6 +386,24 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
+func (this *ApiConfig) _xxx_xxx_Validator_Validate_request_params() error {
+	if dt, ok := interface{}(this.RequestParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *ApiConfig) _xxx_xxx_Validator_Validate_response_params() error {
+	if dt, ok := interface{}(this.ResponseParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.ApiConfig
 func (this *ApiConfig) Validate() error {
 	if this == nil {
@@ -420,15 +463,271 @@ func (this *ApiConfig) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
 		return err
 	}
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *RequestParameters) _xxx_xxx_Validator_Validate_request_params() error {
+	for _, item := range this.RequestParams {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.RequestParameters
+func (this *RequestParameters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_column_name() error {
+	if !(len(this.ColumnName) > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
+	}
+	if !(len(this.ColumnName) <= 64) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
+	}
+	return nil
+}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_default_value() error {
+	if !(len(this.DefaultValue) <= 257) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
+	}
+	return nil
+}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_example_value() error {
+	if !(len(this.ExampleValue) <= 257) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_RequestParameter_InEnums_DataType = map[ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_data_type() error {
+	if !(this.DataType > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
+	}
+	if !(_xxx_xxx_Validator_RequestParameter_InEnums_DataType[this.DataType]) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
+	}
+	return nil
+}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_description() error {
+	if !(len(this.ParamDescription) <= 257) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
+	}
+	return nil
+}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_name() error {
+	if !(len(this.ParamName) > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
+	}
+	if !(len(this.ParamName) <= 64) {
+		return protovalidator.FieldError1("RequestParameter", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_RequestParameter_InEnums_ParamOperator = map[RequestParameter_ParameterOperator]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_operator() error {
+	if !(this.ParamOperator > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_operator' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamOperator)))
+	}
+	if !(_xxx_xxx_Validator_RequestParameter_InEnums_ParamOperator[this.ParamOperator]) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_operator' must in enums of '[0 1 2 3 4 5 6 7]'", protovalidator.Int32ToString(int32(this.ParamOperator)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_RequestParameter_InEnums_ParamPosition = map[RequestParameter_ParameterPosition]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_position() error {
+	if !(this.ParamPosition > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_position' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamPosition)))
+	}
+	if !(_xxx_xxx_Validator_RequestParameter_InEnums_ParamPosition[this.ParamPosition]) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_position' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.ParamPosition)))
+	}
+	return nil
+}
+
+// Set default value for message model.RequestParameter
+func (this *RequestParameter) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_operator(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_position(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ResponseParameters) _xxx_xxx_Validator_Validate_response_params() error {
+	for _, item := range this.ResponseParams {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message model.ResponseParameters
+func (this *ResponseParameters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_column_name() error {
+	if !(len(this.ColumnName) > 0) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
+	}
+	if !(len(this.ColumnName) <= 64) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_default_value() error {
+	if !(len(this.DefaultValue) <= 257) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_example_value() error {
+	if !(len(this.ExampleValue) <= 257) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ResponseParameter_InEnums_DataType = map[ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_data_type() error {
+	if !(this.DataType > 0) {
+		return protovalidator.FieldError1("ResponseParameter", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
+	}
+	if !(_xxx_xxx_Validator_ResponseParameter_InEnums_DataType[this.DataType]) {
+		return protovalidator.FieldError1("ResponseParameter", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_param_description() error {
+	if !(len(this.ParamDescription) <= 257) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_param_name() error {
+	if !(len(this.ParamName) > 0) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
+	}
+	if !(len(this.ParamName) <= 64) {
+		return protovalidator.FieldError1("ResponseParameter", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
+	}
+	return nil
+}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_order_num() error {
+	return nil
+}
+
+var _xxx_xxx_Validator_ResponseParameter_InEnums_OrderMode = map[ResponseParameter_OrderMode]bool{0: true, 1: true, 2: true}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_order_mode() error {
+	if !(_xxx_xxx_Validator_ResponseParameter_InEnums_OrderMode[this.OrderMode]) {
+		return protovalidator.FieldError1("ResponseParameter", "the value of field 'order_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.OrderMode)))
+	}
+	return nil
+}
+
+// Set default value for message model.ResponseParameter
+func (this *ResponseParameter) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_order_num(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_order_mode(); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (this *ApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
-	if !(len(this.VersionId) == 20) {
-		return protovalidator.FieldError1("ApiVersion", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
-	}
-	if !(strings.HasPrefix(this.VersionId, "dsv-")) {
-		return protovalidator.FieldError1("ApiVersion", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
+	if !(len(this.VersionId) == 16) {
+		return protovalidator.FieldError1("ApiVersion", "the byte length of field 'version_id' must be equal to '16'", protovalidator.StringByteLenToString(this.VersionId))
 	}
 	return nil
 }
@@ -599,6 +898,24 @@ func (this *ApiVersion) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *ApiVersion) _xxx_xxx_Validator_Validate_request_params() error {
+	if dt, ok := interface{}(this.RequestParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *ApiVersion) _xxx_xxx_Validator_Validate_response_params() error {
+	if dt, ok := interface{}(this.ResponseParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.ApiVersion
 func (this *ApiVersion) Validate() error {
 	if this == nil {
@@ -658,244 +975,10 @@ func (this *ApiVersion) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_param_id() error {
-	if !(len(this.ParamId) == 20) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'param_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ParamId))
-	}
-	if !(strings.HasPrefix(this.ParamId, "req-")) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'param_id' must start with string 'req-'", this.ParamId)
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_api_id() error {
-	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
-	}
-	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_column_name() error {
-	if !(len(this.ColumnName) > 0) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	if !(len(this.ColumnName) <= 64) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_default_value() error {
-	if !(len(this.DefaultValue) <= 257) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_example_value() error {
-	if !(len(this.ExampleValue) <= 257) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ApiRequestParams_InEnums_DataType = map[ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_data_type() error {
-	if !(this.DataType > 0) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	if !(_xxx_xxx_Validator_ApiRequestParams_InEnums_DataType[this.DataType]) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_param_description() error {
-	if !(len(this.ParamDescription) <= 257) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
-	}
-	return nil
-}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_param_name() error {
-	if !(len(this.ParamName) > 0) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	if !(len(this.ParamName) <= 64) {
-		return protovalidator.FieldError1("ApiRequestParams", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ApiRequestParams_InEnums_ParamOperator = map[ApiRequestParams_ParameterOperator]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_param_operator() error {
-	if !(this.ParamOperator > 0) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'param_operator' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamOperator)))
-	}
-	if !(_xxx_xxx_Validator_ApiRequestParams_InEnums_ParamOperator[this.ParamOperator]) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'param_operator' must in enums of '[0 1 2 3 4 5 6 7]'", protovalidator.Int32ToString(int32(this.ParamOperator)))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ApiRequestParams_InEnums_ParamPosition = map[ApiRequestParams_ParameterPosition]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *ApiRequestParams) _xxx_xxx_Validator_Validate_param_position() error {
-	if !(this.ParamPosition > 0) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'param_position' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamPosition)))
-	}
-	if !(_xxx_xxx_Validator_ApiRequestParams_InEnums_ParamPosition[this.ParamPosition]) {
-		return protovalidator.FieldError1("ApiRequestParams", "the value of field 'param_position' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.ParamPosition)))
-	}
-	return nil
-}
-
-// Set default value for message model.ApiRequestParams
-func (this *ApiRequestParams) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_id(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_operator(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_position(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_param_id() error {
-	if !(len(this.ParamId) == 20) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'param_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ParamId))
-	}
-	if !(strings.HasPrefix(this.ParamId, "rsp-")) {
-		return protovalidator.FieldError1("ApiResponseParams", "the value of field 'param_id' must start with string 'rsp-'", this.ParamId)
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_api_id() error {
-	if !(len(this.ApiId) == 20) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
-	}
-	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
-		return protovalidator.FieldError1("ApiResponseParams", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_column_name() error {
-	if !(len(this.ColumnName) > 0) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	if !(len(this.ColumnName) <= 64) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_default_value() error {
-	if !(len(this.DefaultValue) <= 257) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_example_value() error {
-	if !(len(this.ExampleValue) <= 257) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_ApiResponseParams_InEnums_DataType = map[ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_data_type() error {
-	if !(this.DataType > 0) {
-		return protovalidator.FieldError1("ApiResponseParams", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	if !(_xxx_xxx_Validator_ApiResponseParams_InEnums_DataType[this.DataType]) {
-		return protovalidator.FieldError1("ApiResponseParams", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_param_description() error {
-	if !(len(this.ParamDescription) <= 257) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
-	}
-	return nil
-}
-
-func (this *ApiResponseParams) _xxx_xxx_Validator_Validate_param_name() error {
-	if !(len(this.ParamName) > 0) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	if !(len(this.ParamName) <= 64) {
-		return protovalidator.FieldError1("ApiResponseParams", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	return nil
-}
-
-// Set default value for message model.ApiResponseParams
-func (this *ApiResponseParams) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
 		return err
 	}
 	return nil

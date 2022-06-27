@@ -52,10 +52,6 @@ message ListApiConfigs {
 message DescribeApiConfig {
   // @inject_tag: json:"api_config"
   model.ApiConfig api_config = 1;
-  // @inject_tag: json:"request_params"
-  repeated model.ApiRequestParams request_params = 2;
-  // @inject_tag: json:"response_params"
-  repeated model.ApiResponseParams response_params = 3;
 }
 
 message CreateApiConfig {
@@ -66,10 +62,6 @@ message CreateApiConfig {
 message DescribeDataServiceApiVersion {
   // @inject_tag: json:"api_version"
   model.ApiVersion api_version = 1;
-  // @inject_tag: json:"request_params"
-  repeated model.ApiRequestParams request_params = 2;
-  // @inject_tag: json:"response_params"
-  repeated model.ApiResponseParams response_params = 3;
 }
 
 message ListDataServiceApiVersions {

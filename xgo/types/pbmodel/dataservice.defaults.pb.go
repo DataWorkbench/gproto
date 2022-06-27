@@ -7,6 +7,7 @@ package pbmodel
 
 import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbdefaults"
+	_ "github.com/yu31/protoc-plugin/xgo/pb/pbgosql"
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 	_ "google.golang.org/protobuf/types/known/anypb"
 )
@@ -32,6 +33,48 @@ func (this *ApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}
+	if this.RequestParams != nil {
+		if dt, ok := interface{}(this.RequestParams).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ResponseParams != nil {
+		if dt, ok := interface{}(this.ResponseParams).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message model.RequestParameters
+func (this *RequestParameters) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.RequestParameter
+func (this *RequestParameter) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.ResponseParameters
+func (this *ResponseParameters) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.ResponseParameter
+func (this *ResponseParameter) SetDefaults() {
+	if this == nil {
+		return
+	}
 	return
 }
 
@@ -40,21 +83,15 @@ func (this *ApiVersion) SetDefaults() {
 	if this == nil {
 		return
 	}
-	return
-}
-
-// Set default value for message model.ApiRequestParams
-func (this *ApiRequestParams) SetDefaults() {
-	if this == nil {
-		return
+	if this.RequestParams != nil {
+		if dt, ok := interface{}(this.RequestParams).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
-	return
-}
-
-// Set default value for message model.ApiResponseParams
-func (this *ApiResponseParams) SetDefaults() {
-	if this == nil {
-		return
+	if this.ResponseParams != nil {
+		if dt, ok := interface{}(this.ResponseParams).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
 	}
 	return
 }

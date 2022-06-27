@@ -12,6 +12,7 @@ import (
 	protovalidator "github.com/yu31/protoc-plugin/xgo/pkg/protovalidator"
 	strconv "strconv"
 	strings "strings"
+	utf8 "unicode/utf8"
 )
 
 func (this *ListDataServiceClusters) _xxx_xxx_Validator_Validate_space_id() error {
@@ -434,6 +435,23 @@ func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
+func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_group_path() error {
+	if !(len(this.GroupPath) > 0) {
+		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'group_path' must be greater than '0'", protovalidator.StringByteLenToString(this.GroupPath))
+	}
+	if !(len(this.GroupPath) <= 64) {
+		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'group_path' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.GroupPath))
+	}
+	return nil
+}
+
+func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_desc() error {
+	if !(utf8.RuneCountInString(this.Desc) <= 1024) {
+		return protovalidator.FieldError1("CreateApiGroup", "the character length of field 'desc' must be less than or equal to '1024'", protovalidator.StringCharsetLenToString(this.Desc))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateApiGroup
 func (this *CreateApiGroup) Validate() error {
 	if this == nil {
@@ -443,6 +461,12 @@ func (this *CreateApiGroup) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_group_path(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	return nil
@@ -635,15 +659,6 @@ func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_table_name() error {
 	return nil
 }
 
-func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_wizardDetails() error {
-	if dt, ok := interface{}(this.WizardDetails).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_script() error {
 	if !(len(this.Script) <= 20000) {
 		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
@@ -667,6 +682,24 @@ func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_cluster_id() error {
 	}
 	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
 		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_request_params() error {
+	if dt, ok := interface{}(this.RequestParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_response_params() error {
+	if dt, ok := interface{}(this.ResponseParams).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
 	}
 	return nil
 }
@@ -709,9 +742,6 @@ func (this *UpdateApiConfig) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_table_name(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_wizardDetails(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_script(); err != nil {
 		return err
 	}
@@ -719,6 +749,12 @@ func (this *UpdateApiConfig) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
 		return err
 	}
 	return nil
@@ -868,58 +904,12 @@ func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_timeout() error {
 	return nil
 }
 
-func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_datasource_id() error {
-	if !(len(this.DatasourceId) == 20) {
-		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
-	}
-	if !(strings.HasPrefix(this.DatasourceId, "som-")) {
-		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
-	}
-	return nil
-}
-
-func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_table_name() error {
-	if !(len(this.TableName) > 0) {
-		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
-	}
-	if !(len(this.TableName) <= 64) {
-		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
-	}
-	return nil
-}
-
-func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_wizardDetails() error {
-	if dt, ok := interface{}(this.WizardDetails).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_script() error {
-	if !(len(this.Script) <= 20000) {
-		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'script' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.Script))
-	}
-	return nil
-}
-
 func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_group_id() error {
 	if !(len(this.GroupId) == 20) {
 		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
 	}
 	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
 		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
-	}
-	return nil
-}
-
-func (this *CreateApiConfig) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("CreateApiConfig", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
-		return protovalidator.FieldError1("CreateApiConfig", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
 	}
 	return nil
 }
@@ -963,251 +953,10 @@ func (this *CreateApiConfig) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_datasource_id(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_table_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_wizardDetails(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_script(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_group_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *WizardDetails) _xxx_xxx_Validator_Validate_request_params() error {
-	for _, item := range this.RequestParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *WizardDetails) _xxx_xxx_Validator_Validate_response_params() error {
-	for _, item := range this.ResponseParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-// Set default value for message request.WizardDetails
-func (this *WizardDetails) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_column_name() error {
-	if !(len(this.ColumnName) > 0) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	if !(len(this.ColumnName) <= 64) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	return nil
-}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_default_value() error {
-	if !(len(this.DefaultValue) <= 257) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
-	}
-	return nil
-}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_example_value() error {
-	if !(len(this.ExampleValue) <= 257) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_WizardRequestParameters_InEnums_DataType = map[pbmodel.ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_data_type() error {
-	if !(this.DataType > 0) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	if !(_xxx_xxx_Validator_WizardRequestParameters_InEnums_DataType[this.DataType]) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	return nil
-}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_param_description() error {
-	if !(len(this.ParamDescription) <= 257) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
-	}
-	return nil
-}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_param_name() error {
-	if !(len(this.ParamName) > 0) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	if !(len(this.ParamName) <= 64) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_WizardRequestParameters_InEnums_ParamOperator = map[pbmodel.ApiRequestParams_ParameterOperator]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_param_operator() error {
-	if !(this.ParamOperator > 0) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'param_operator' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamOperator)))
-	}
-	if !(_xxx_xxx_Validator_WizardRequestParameters_InEnums_ParamOperator[this.ParamOperator]) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'param_operator' must in enums of '[0 1 2 3 4 5 6 7]'", protovalidator.Int32ToString(int32(this.ParamOperator)))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_WizardRequestParameters_InEnums_ParamPosition = map[pbmodel.ApiRequestParams_ParameterPosition]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *WizardRequestParameters) _xxx_xxx_Validator_Validate_param_position() error {
-	if !(this.ParamPosition > 0) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'param_position' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamPosition)))
-	}
-	if !(_xxx_xxx_Validator_WizardRequestParameters_InEnums_ParamPosition[this.ParamPosition]) {
-		return protovalidator.FieldError1("WizardRequestParameters", "the value of field 'param_position' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.ParamPosition)))
-	}
-	return nil
-}
-
-// Set default value for message request.WizardRequestParameters
-func (this *WizardRequestParameters) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_operator(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_position(); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_column_name() error {
-	if !(len(this.ColumnName) > 0) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'column_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	if !(len(this.ColumnName) <= 64) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'column_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ColumnName))
-	}
-	return nil
-}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_default_value() error {
-	if !(len(this.DefaultValue) <= 257) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'default_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.DefaultValue))
-	}
-	return nil
-}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_example_value() error {
-	if !(len(this.ExampleValue) <= 257) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'example_value' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ExampleValue))
-	}
-	return nil
-}
-
-var _xxx_xxx_Validator_WizardResponseParameters_InEnums_DataType = map[pbmodel.ParameterDataType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_data_type() error {
-	if !(this.DataType > 0) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the value of field 'data_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	if !(_xxx_xxx_Validator_WizardResponseParameters_InEnums_DataType[this.DataType]) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the value of field 'data_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.DataType)))
-	}
-	return nil
-}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_param_description() error {
-	if !(len(this.ParamDescription) <= 257) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'param_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ParamDescription))
-	}
-	return nil
-}
-
-func (this *WizardResponseParameters) _xxx_xxx_Validator_Validate_param_name() error {
-	if !(len(this.ParamName) > 0) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'param_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	if !(len(this.ParamName) <= 64) {
-		return protovalidator.FieldError1("WizardResponseParameters", "the byte length of field 'param_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ParamName))
-	}
-	return nil
-}
-
-// Set default value for message request.WizardResponseParameters
-func (this *WizardResponseParameters) Validate() error {
-	if this == nil {
-		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_column_name(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_default_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_example_value(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_data_type(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_description(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_param_name(); err != nil {
 		return err
 	}
 	return nil
@@ -1359,11 +1108,8 @@ func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_id() 
 }
 
 func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
-	if !(len(this.VersionId) == 20) {
-		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
-	}
-	if !(strings.HasPrefix(this.VersionId, "dsv-")) {
-		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
+	if !(len(this.VersionId) == 16) {
+		return protovalidator.FieldError1("DescribeDataServiceApiVersion", "the byte length of field 'version_id' must be equal to '16'", protovalidator.StringByteLenToString(this.VersionId))
 	}
 	return nil
 }
@@ -1406,11 +1152,8 @@ func (this *RepublishDataServiceApi) _xxx_xxx_Validator_Validate_api_id() error 
 }
 
 func (this *RepublishDataServiceApi) _xxx_xxx_Validator_Validate_version_id() error {
-	if !(len(this.VersionId) == 20) {
-		return protovalidator.FieldError1("RepublishDataServiceApi", "the byte length of field 'version_id' must be equal to '20'", protovalidator.StringByteLenToString(this.VersionId))
-	}
-	if !(strings.HasPrefix(this.VersionId, "dsv-")) {
-		return protovalidator.FieldError1("RepublishDataServiceApi", "the value of field 'version_id' must start with string 'dsv-'", this.VersionId)
+	if !(len(this.VersionId) == 16) {
+		return protovalidator.FieldError1("RepublishDataServiceApi", "the byte length of field 'version_id' must be equal to '16'", protovalidator.StringByteLenToString(this.VersionId))
 	}
 	return nil
 }

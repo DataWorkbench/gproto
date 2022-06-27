@@ -12,6 +12,7 @@ option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 import "google/protobuf/any.proto";
 
 // table dataservice_cluster
@@ -62,8 +63,12 @@ message ApiGroup{
   string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" }];
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
+  // @inject_tag: json:"group_path"  gorm:"column:group_path;"
+  string group_path = 4 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  // @inject_tag: json:"desc"  gorm:"column:desc;"
+  string desc = 5 [(validator.field).tags.string = { char_len_lte: 1024 }];
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 // table api_config
@@ -110,8 +115,8 @@ message ApiConfig {
   ApiMode api_mode = 7  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"api_description" gorm:"column:api_description;"
   string api_description = 8 [ (validator.field).tags.string = { byte_len_lte: 257 }   ];
-  // @inject_tag: json:"protocols" gorm:"column:protocols;"
-  repeated Protocols protocols = 9 ;
+//  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+//  repeated Protocols protocols = 9 ;
   // @inject_tag: json:"request_method" gorm:"column:request_method;"
   RequestMethod request_method = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type" gorm:"column:response_type;"
@@ -136,6 +141,91 @@ message ApiConfig {
   Status status = 20 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
   // @inject_tag: json:"accessible_version" gorm:"column:accessible_version;"
   string  accessible_version = 21 ;
+  // @inject_tag: json:"request_params" gorm:"column:request_params;type:json"
+  RequestParameters request_params = 22 [(validator.field) = {}];
+  // @inject_tag: json:"response_params" gorm:"column:response_params;type:json"
+  ResponseParameters response_params = 23 [(validator.field) = {}];
+}
+
+message RequestParameters {
+  option (gosql.serialize) = {json: {}};
+  // @inject_tag: json:"request_params"
+  repeated RequestParameter request_params = 22 [(validator.field) = {}];
+}
+
+message RequestParameter {
+  option (gosql.serialize) = {json: {}};
+
+  enum ParameterOperator{
+    OperatorUnset = 0;
+    Equal = 1;
+    NotEqual = 2;
+    GreaterThan = 3;
+    LessThan = 4;
+    Like = 5;
+    Const = 6;
+    In = 7;
+  }
+
+  enum ParameterPosition{
+    PositionUnset = 0;
+    Body = 1;
+    Query = 2;
+    Path = 3;
+    Head = 4;
+  }
+
+  // @inject_tag: json:"column_name"
+  string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  // @inject_tag: json:"default_value"
+  string default_value = 2 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
+  // @inject_tag: json:"example_value"
+  string example_value = 3 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
+  // @inject_tag: json:"is_required"
+  bool is_required = 4 [ (validator.field) = { } ];
+  // @inject_tag: json:"data_type"
+  model.ParameterDataType data_type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // @inject_tag: json:"param_description"
+  string param_description = 6 [ (validator.field).tags.string = { byte_len_lte: 257 } ];
+  // @inject_tag: json:"param_name"
+  string param_name = 7 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
+  // @inject_tag: json:"param_operator"
+  ParameterOperator param_operator = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // @inject_tag: json:"param_position"
+  ParameterPosition param_position = 9  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+}
+
+message ResponseParameters {
+  option (gosql.serialize) = {json: {}};
+  // @inject_tag: json:"response_params"
+  repeated ResponseParameter response_params = 22 [(validator.field) = {}];
+}
+
+message ResponseParameter {
+  option (gosql.serialize) = {json: {}};
+
+  enum OrderMode {
+    StatusUnset = 0;
+    Ase = 1;
+    Desc = 2;
+  }
+  // @inject_tag: json:"column_name"
+  string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
+  // @inject_tag: json:"default_value"
+  string default_value = 2 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
+  // @inject_tag: json:"example_value"
+  string example_value = 3 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
+  // @inject_tag: json:"data_type"
+  model.ParameterDataType data_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // @inject_tag: json:"param_description"
+  string param_description = 5 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
+  // @inject_tag: json:"param_name"
+  string param_name = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }   ];
+  // @inject_tag: json:"order_num"
+  int64 order_num = 7 [ (validator.field).tags.int = { } ];
+  // @inject_tag: json:"order_mode"
+  OrderMode order_mode = 8 [ (validator.field).tags.enum = {  in_enums: true }  ];
 }
 
 // table api_versions
@@ -166,7 +256,7 @@ message ApiVersion{
     HTTPS = 2;
   }
   // @inject_tag: json:"version_id" gorm:"column:version_id;primaryKey;"
-  string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+  string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
   // @inject_tag: json:"publish_status" gorm:"column:publish_status;"
   Status publish_status = 2 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
   //int64 publish_time = 3 [ (validator.field).tags.int = { gt: 0 } ];
@@ -186,8 +276,8 @@ message ApiVersion{
   ApiMode api_mode = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"api_description" gorm:"column:api_description;"
   string api_description = 11 [ (validator.field).tags.string = { byte_len_lte: 257 }   ];
-  // @inject_tag: json:"protocols" gorm:"column:protocols;"
-  repeated Protocols protocols = 12 ;
+//  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+//  repeated Protocols protocols = 12 ;
   // @inject_tag: json:"request_method" gorm:"column:request_method;"
   RequestMethod request_method = 13 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type" gorm:"column:response_type;"
@@ -206,6 +296,10 @@ message ApiVersion{
   int64 created = 3 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 20 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"request_params" gorm:"column:request_params;type:json"
+  RequestParameters request_params = 21 [(validator.field) = {}];
+  // @inject_tag: json:"response_params" gorm:"column:response_params;type:json"
+  ResponseParameters response_params = 22 [(validator.field) = {}];
 }
 
 enum ParameterDataType {
@@ -219,72 +313,6 @@ enum ParameterDataType {
   // JSON  = 8
 }
 
-// api_request_parameters table model
-message ApiRequestParams {
-  enum ParameterOperator{
-    OperatorUnset = 0;
-    Equal = 1;
-    NotEqual = 2;
-    GreaterThan = 3;
-    LessThan = 4;
-    Like = 5;
-    Const = 6;
-    In = 7;
-  }
-  enum ParameterPosition{
-    PositionUnset = 0;
-    Body = 1;
-    Query = 2;
-    Path = 3;
-    Head = 4;
-  }
-  // @inject_tag: json:"param_id" gorm:"column:param_id;primaryKey;"
-  string param_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "req-" }];
-  // @inject_tag: json:"api_id" gorm:"column:api_id;"
-  string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
-  // @inject_tag: json:"column_name" gorm:"column:column_name;"
-  string column_name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
-  // @inject_tag: json:"default_value" gorm:"column:default_value;"
-  string default_value = 4 [  (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"example_value" gorm:"column:example_value;"
-  string example_value = 5 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"is_required" gorm:"column:is_required;"
-  bool is_required = 6 [(validator.field) = {}];
-  // @inject_tag: json:"data_type" gorm:"column:data_type;"
-  ParameterDataType data_type = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true }];
-  // @inject_tag: json:"param_description" gorm:"column:param_description;"
-  string param_description = 8 [ (validator.field).tags.string = { byte_len_lte: 257 } ];
-  // @inject_tag: json:"param_name" gorm:"column:param_name;"
-  string param_name = 9 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
-  // @inject_tag: json:"param_operator" gorm:"column:param_operator;"
-  ParameterOperator param_operator = 10  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"param_position" gorm:"column:param_position;"
-  ParameterPosition param_position = 11  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"version_id" gorm:"column:version_id;"
-  string	version_id = 12 ; //beta  dsv-
-}
-
-// api_response_parameters table model
-message ApiResponseParams {
-  // @inject_tag: json:"param_id" gorm:"column:param_id;primaryKey;"
-  string	param_id = 1 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "rsp-" }];
-  // @inject_tag: json:"api_id" gorm:"column:api_id;"
-  string	api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
-  // @inject_tag: json:"column_name" gorm:"column:column_name;"
-  string column_name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
-  // @inject_tag: json:"default_value" gorm:"column:default_value;"
-  string default_value = 4 [  (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"example_value" gorm:"column:example_value;"
-  string example_value = 5 [  (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"data_type" gorm:"column:data_type;"
-  ParameterDataType data_type = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true }];
-  // @inject_tag: json:"param_description" gorm:"column:param_description;"
-  string param_description = 7 [ (validator.field).tags.string = { byte_len_lte: 257 } ];
-  // @inject_tag: json:"param_name" gorm:"column:param_name;"
-  string param_name = 8 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
-  // @inject_tag: json:"version_id" gorm:"column:version_id;"
-  string	version_id = 9;
-}
 
 
 

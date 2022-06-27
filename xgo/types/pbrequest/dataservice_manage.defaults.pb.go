@@ -110,8 +110,13 @@ func (this *UpdateApiConfig) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.WizardDetails != nil {
-		if dt, ok := interface{}(this.WizardDetails).(interface{ SetDefaults() }); ok {
+	if this.RequestParams != nil {
+		if dt, ok := interface{}(this.RequestParams).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ResponseParams != nil {
+		if dt, ok := interface{}(this.ResponseParams).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}
@@ -136,35 +141,6 @@ func (this *DeleteApiConfigs) SetDefaults() {
 
 // Set default value for message request.CreateApiConfig
 func (this *CreateApiConfig) SetDefaults() {
-	if this == nil {
-		return
-	}
-	if this.WizardDetails != nil {
-		if dt, ok := interface{}(this.WizardDetails).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message request.WizardDetails
-func (this *WizardDetails) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.WizardRequestParameters
-func (this *WizardRequestParameters) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message request.WizardResponseParameters
-func (this *WizardResponseParameters) SetDefaults() {
 	if this == nil {
 		return
 	}

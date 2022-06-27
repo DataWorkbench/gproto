@@ -103,42 +103,12 @@ func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_config() error {
 	return nil
 }
 
-func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_request_params() error {
-	for _, item := range this.RequestParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_response_params() error {
-	for _, item := range this.ResponseParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
 // Set default value for message response.DescribeApiConfig
 func (this *DescribeApiConfig) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_config(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
 		return err
 	}
 	return nil
@@ -161,42 +131,12 @@ func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_versi
 	return nil
 }
 
-func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_request_params() error {
-	for _, item := range this.RequestParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
-func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_response_params() error {
-	for _, item := range this.ResponseParams {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
 // Set default value for message response.DescribeDataServiceApiVersion
 func (this *DescribeDataServiceApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_version(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
 		return err
 	}
 	return nil

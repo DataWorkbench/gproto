@@ -100,6 +100,10 @@ message CreateApiGroup {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"name"
   string name = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  // @inject_tag: json:"group_path"
+  string group_path = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  // @inject_tag: json:"desc"
+  string desc = 4 [(validator.field).tags.string = { char_len_lte: 1024 }];
 }
 
 message DeleteApiGroups {
@@ -143,14 +147,16 @@ message UpdateApiConfig {
   string datasource_id = 12 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
   // @inject_tag: json:"table_name"
   string table_name = 13 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];
-  // @inject_tag: json:"wizardDetails"
-  WizardDetails wizardDetails = 14 [ (validator.field) = { } ];
   // @inject_tag: json:"script"
-  string script = 15 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
+  string script = 14 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
   // @inject_tag: json:"group_id"
-  string group_id = 16 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
+  string group_id = 15 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
   // @inject_tag: json:"cluster_id"
-  string cluster_id = 17 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+  string cluster_id = 16 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+  // @inject_tag: json:"request_params"
+  model.RequestParameters request_params = 17;
+  // @inject_tag: json:"response_params"
+  model.ResponseParameters response_params = 18;
 }
 
 message DescribeApiConfig {
@@ -187,63 +193,10 @@ message CreateApiConfig {
   bool cross_domain = 9 [ (validator.field) = { } ];
   // @inject_tag: json:"timeout"
   int64 timeout = 10 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
-  // @inject_tag: json:"datasource_id"
-  string datasource_id = 11 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
-  // @inject_tag: json:"table_name"
-  string table_name = 12 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];
-  // @inject_tag: json:"wizardDetails"
-  WizardDetails wizardDetails = 13 [ (validator.field) = { } ];
-  // @inject_tag: json:"script"
-  string script = 14 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
   // @inject_tag: json:"group_id"
-  string group_id = 15 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
-  // @inject_tag: json:"cluster_id"
-  string cluster_id = 16 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+  string group_id = 11 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
   // @inject_tag: json:"created_by" swaggerignore:"true"
-  string created_by = 17 [(validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 }];
-}
-
-message WizardDetails {
-  // @inject_tag: json:"request_params"
-  repeated WizardRequestParameters request_params = 1;
-  // @inject_tag: json:"response_params"
-  repeated WizardResponseParameters response_params = 2;
-}
-
-message WizardRequestParameters {
-  // @inject_tag: json:"column_name"
-  string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
-  // @inject_tag: json:"default_value"
-  string default_value = 2 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"example_value"
-  string example_value = 3 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"is_required"
-  bool is_required = 4 [ (validator.field) = { } ];
-  // @inject_tag: json:"data_type"
-  model.ParameterDataType data_type = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"param_description"
-  string param_description = 6 [ (validator.field).tags.string = { byte_len_lte: 257 } ];
-  // @inject_tag: json:"param_name"
-  string param_name = 7 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
-  // @inject_tag: json:"param_operator"
-  model.ApiRequestParams.ParameterOperator param_operator = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"param_position"
-  model.ApiRequestParams.ParameterPosition param_position = 9  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-}
-
-message WizardResponseParameters {
-  // @inject_tag: json:"column_name"
-  string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
-  // @inject_tag: json:"default_value"
-  string default_value = 2 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"example_value"
-  string example_value = 3 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"data_type"
-  model.ParameterDataType data_type = 4 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"param_description"
-  string param_description = 5 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"param_name"
-  string param_name = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }   ];
+  string created_by = 12 [(validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 }];
 }
 
 message ListDataServiceApiVersions {
@@ -282,7 +235,7 @@ message DescribeDataServiceApiVersion{
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
   // @inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
-  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
 }
 
 message RepublishDataServiceApi{
@@ -291,7 +244,7 @@ message RepublishDataServiceApi{
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
   // @inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
-  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsv-" } ];
+  string version_id = 3 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
 }
 
 message PublishDataServiceApi {
