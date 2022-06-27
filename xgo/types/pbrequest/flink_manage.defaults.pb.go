@@ -12,6 +12,14 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message request.ListAvailableFlinkVersions
+func (this *ListAvailableFlinkVersions) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DescribeFlinkClusterAPI
 func (this *DescribeFlinkClusterAPI) SetDefaults() {
 	if this == nil {

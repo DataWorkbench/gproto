@@ -14,6 +14,702 @@ public final class PBRequestFlinkManage {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ListAvailableFlinkVersionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ListAvailableFlinkVersions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The kind of source that will used the flink cluster. Not required.
+     * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+     * &#64;inject_tag: json:"source_kind" form:"source_kind"
+     * </pre>
+     *
+     * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceKind.
+     */
+    int getSourceKindValue();
+    /**
+     * <pre>
+     * The kind of source that will used the flink cluster. Not required.
+     * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+     * &#64;inject_tag: json:"source_kind" form:"source_kind"
+     * </pre>
+     *
+     * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+     * @return The sourceKind.
+     */
+    com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind getSourceKind();
+  }
+  /**
+   * Protobuf type {@code request.ListAvailableFlinkVersions}
+   */
+  public static final class ListAvailableFlinkVersions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.ListAvailableFlinkVersions)
+      ListAvailableFlinkVersionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAvailableFlinkVersions.newBuilder() to construct.
+    private ListAvailableFlinkVersions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAvailableFlinkVersions() {
+      sourceKind_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAvailableFlinkVersions();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAvailableFlinkVersions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              sourceKind_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.internal_static_request_ListAvailableFlinkVersions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.internal_static_request_ListAvailableFlinkVersions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code request.ListAvailableFlinkVersions.SourceKind}
+     */
+    public enum SourceKind
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>_SourceKindUnset = 0;</code>
+       */
+      _SourceKindUnset(0),
+      /**
+       * <code>StreamJob = 1;</code>
+       */
+      StreamJob(1),
+      /**
+       * <code>SyncJob = 2;</code>
+       */
+      SyncJob(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>_SourceKindUnset = 0;</code>
+       */
+      public static final int _SourceKindUnset_VALUE = 0;
+      /**
+       * <code>StreamJob = 1;</code>
+       */
+      public static final int StreamJob_VALUE = 1;
+      /**
+       * <code>SyncJob = 2;</code>
+       */
+      public static final int SyncJob_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SourceKind valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SourceKind forNumber(int value) {
+        switch (value) {
+          case 0: return _SourceKindUnset;
+          case 1: return StreamJob;
+          case 2: return SyncJob;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SourceKind>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          SourceKind> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SourceKind>() {
+              public SourceKind findValueByNumber(int number) {
+                return SourceKind.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final SourceKind[] VALUES = values();
+
+      public static SourceKind valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SourceKind(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:request.ListAvailableFlinkVersions.SourceKind)
+    }
+
+    public static final int SOURCE_KIND_FIELD_NUMBER = 1;
+    private int sourceKind_;
+    /**
+     * <pre>
+     * The kind of source that will used the flink cluster. Not required.
+     * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+     * &#64;inject_tag: json:"source_kind" form:"source_kind"
+     * </pre>
+     *
+     * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for sourceKind.
+     */
+    @java.lang.Override public int getSourceKindValue() {
+      return sourceKind_;
+    }
+    /**
+     * <pre>
+     * The kind of source that will used the flink cluster. Not required.
+     * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+     * &#64;inject_tag: json:"source_kind" form:"source_kind"
+     * </pre>
+     *
+     * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+     * @return The sourceKind.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind getSourceKind() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind result = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind.valueOf(sourceKind_);
+      return result == null ? com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (sourceKind_ != com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind._SourceKindUnset.getNumber()) {
+        output.writeEnum(1, sourceKind_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sourceKind_ != com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind._SourceKindUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, sourceKind_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions other = (com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions) obj;
+
+      if (sourceKind_ != other.sourceKind_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SOURCE_KIND_FIELD_NUMBER;
+      hash = (53 * hash) + sourceKind_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.ListAvailableFlinkVersions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.ListAvailableFlinkVersions)
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.internal_static_request_ListAvailableFlinkVersions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.internal_static_request_ListAvailableFlinkVersions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.class, com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        sourceKind_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.internal_static_request_ListAvailableFlinkVersions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions result = new com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions(this);
+        result.sourceKind_ = sourceKind_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.getDefaultInstance()) return this;
+        if (other.sourceKind_ != 0) {
+          setSourceKindValue(other.getSourceKindValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int sourceKind_ = 0;
+      /**
+       * <pre>
+       * The kind of source that will used the flink cluster. Not required.
+       * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+       * &#64;inject_tag: json:"source_kind" form:"source_kind"
+       * </pre>
+       *
+       * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for sourceKind.
+       */
+      @java.lang.Override public int getSourceKindValue() {
+        return sourceKind_;
+      }
+      /**
+       * <pre>
+       * The kind of source that will used the flink cluster. Not required.
+       * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+       * &#64;inject_tag: json:"source_kind" form:"source_kind"
+       * </pre>
+       *
+       * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for sourceKind to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceKindValue(int value) {
+        
+        sourceKind_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The kind of source that will used the flink cluster. Not required.
+       * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+       * &#64;inject_tag: json:"source_kind" form:"source_kind"
+       * </pre>
+       *
+       * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+       * @return The sourceKind.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind getSourceKind() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind result = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind.valueOf(sourceKind_);
+        return result == null ? com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The kind of source that will used the flink cluster. Not required.
+       * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+       * &#64;inject_tag: json:"source_kind" form:"source_kind"
+       * </pre>
+       *
+       * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+       * @param value The sourceKind to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceKind(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.SourceKind value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        sourceKind_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The kind of source that will used the flink cluster. Not required.
+       * Optional values: 1 =&gt; "StreamJob" 2 =&gt; "SyncJob", default return all.
+       * &#64;inject_tag: json:"source_kind" form:"source_kind"
+       * </pre>
+       *
+       * <code>.request.ListAvailableFlinkVersions.SourceKind source_kind = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceKind() {
+        
+        sourceKind_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.ListAvailableFlinkVersions)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.ListAvailableFlinkVersions)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAvailableFlinkVersions>
+        PARSER = new com.google.protobuf.AbstractParser<ListAvailableFlinkVersions>() {
+      @java.lang.Override
+      public ListAvailableFlinkVersions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAvailableFlinkVersions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAvailableFlinkVersions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAvailableFlinkVersions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DescribeFlinkClusterAPIOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.DescribeFlinkClusterAPI)
       com.google.protobuf.MessageOrBuilder {
@@ -12265,6 +12961,11 @@ public final class PBRequestFlinkManage {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_ListAvailableFlinkVersions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_ListAvailableFlinkVersions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DescribeFlinkClusterAPI_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12328,60 +13029,65 @@ public final class PBRequestFlinkManage {
       "/proto/validator.proto\0322github.com/yu31/" +
       "protoc-plugin/proto/defaults.proto\032\037prot" +
       "o/types/model/cluster.proto\032*proto/types" +
-      "/model/flink/flink_config.proto\"b\n\027Descr" +
-      "ibeFlinkClusterAPI\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncluster_id\030\002 \001(\tB\014\342" +
-      "\337\037\010\022\006\302\001\003\360\001\024\"\304\002\n\021ListFlinkClusters\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limi" +
-      "t\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offs" +
-      "et\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB\'" +
-      "\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updatedJ\004name\022" +
-      "\025\n\007reverse\030\005 \001(\010B\004\342\337\037\000\022\024\n\006search\030\006 \001(\tB\004" +
-      "\342\337\037\000\0227\n\006status\030\007 \001(\0162\032.model.FlinkCluste" +
-      "r.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\022\n\004name\030\010 \001(\tB\004\342\337\037" +
-      "\000\022\017\n\007verbose\030\t \001(\005\"l\n\023DeleteFlinkCluster" +
-      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022.\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001" +
-      "\007\312\002\004cfi-\"k\n\022StartFlinkClusters\022%\n\010space_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster" +
-      "_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"j\n" +
-      "\021StopFlinkClusters\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "/model/flink/flink_config.proto\"\256\001\n\032List" +
+      "AvailableFlinkVersions\022P\n\013source_kind\030\001 " +
+      "\001(\0162..request.ListAvailableFlinkVersions" +
+      ".SourceKindB\013\342\337\037\007\022\005\332\001\002X\001\">\n\nSourceKind\022\024" +
+      "\n\020_SourceKindUnset\020\000\022\r\n\tStreamJob\020\001\022\013\n\007S" +
+      "yncJob\020\002\"b\n\027DescribeFlinkClusterAPI\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\ncl" +
+      "uster_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\304\002\n\021ListFli" +
+      "nkClusters\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t" +
+      "\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228" +
+      "\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007create" +
+      "dJ\007updatedJ\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337\037\000\022" +
+      "\024\n\006search\030\006 \001(\tB\004\342\337\037\000\0227\n\006status\030\007 \001(\0162\032." +
+      "model.FlinkCluster.StatusB\013\342\337\037\007\022\005\332\001\002X\001\022\022" +
+      "\n\004name\030\010 \001(\tB\004\342\337\037\000\022\017\n\007verbose\030\t \001(\005\"l\n\023D" +
+      "eleteFlinkClusters\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
       "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030\002 \003(\tB\031" +
-      "\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\354\003\n\022CreateFlin" +
-      "kCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
-      "\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036" +
-      "\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022j\n\007versio" +
-      "n\030\005 \001(\tBY\342\337\037U\022S\302\001PJ\027flink-1.12.3-scala_2" +
-      ".11J\034flink-1.12.3-scala_2.11-q0.9J\027flink" +
-      "-1.14.4-scala_2.11\022\037\n\010task_num\030\006 \001(\005B\r\342\337" +
-      "\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000" +
-      "\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022" +
-      "\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwork_id\030\t \001" +
-      "(\t\022(\n\014host_aliases\030\n \001(\0132\022.model.HostAli" +
-      "ases\022\"\n\006config\030\013 \001(\0132\022.flink.FlinkConfig" +
-      "\"\204\003\n\022UpdateFlinkCluster\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013space_owner\030\002 " +
-      "\001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302" +
-      "\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030" +
-      "@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000" +
-      "\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000" +
-      "\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwork_id\030\t \001(\t\022(\n\014hos" +
-      "t_aliases\030\n \001(\0132\022.model.HostAliases\022\"\n\006c" +
-      "onfig\030\013 \001(\0132\022.flink.FlinkConfig\"?\n\024Descr" +
-      "ibeFlinkCluster\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004cfi-\"\252\001\n#UpdateFlinkClusterS" +
-      "tatusByScheduler\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\006status\030\002 \001(\0162\032.mode" +
-      "l.FlinkCluster.Status\022.\n\npre_status\030\003 \001(" +
-      "\0162\032.model.FlinkCluster.Status\"m\n\033StopFli" +
-      "nkClusterByScheduler\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bs\n$com.dataomnis.gp" +
-      "roto.types.pbrequestB\024PBRequestFlinkMana" +
-      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
-      "o/types/pbrequestb\006proto3"
+      "\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"k\n\022StartFlinkC" +
+      "lusters\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022.\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000" +
+      "8dZ\n\302\001\007\312\002\004cfi-\"j\n\021StopFlinkClusters\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cl" +
+      "uster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cf" +
+      "i-\"\354\003\n\022CreateFlinkCluster\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001" +
+      "(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
+      "\200\002\001\230\002\200\001\022j\n\007version\030\005 \001(\tBY\342\337\037U\022S\302\001PJ\027fli" +
+      "nk-1.12.3-scala_2.11J\034flink-1.12.3-scala" +
+      "_2.11-q0.9J\027flink-1.14.4-scala_2.11\022\037\n\010t" +
+      "ask_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007" +
+      " \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007tas" +
+      "k_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022" +
+      "\022\n\nnetwork_id\030\t \001(\t\022(\n\014host_aliases\030\n \001(" +
+      "\0132\022.model.HostAliases\022\"\n\006config\030\013 \001(\0132\022." +
+      "flink.FlinkConfig\"\204\003\n\022UpdateFlinkCluster" +
+      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      " \n\013space_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\'\n\nclu" +
+      "ster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004na" +
+      "me\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\006" +
+      " \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037" +
+      "\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(" +
+      "\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwor" +
+      "k_id\030\t \001(\t\022(\n\014host_aliases\030\n \001(\0132\022.model" +
+      ".HostAliases\022\"\n\006config\030\013 \001(\0132\022.flink.Fli" +
+      "nkConfig\"?\n\024DescribeFlinkCluster\022\'\n\nclus" +
+      "ter_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\"\252\001\n#Up" +
+      "dateFlinkClusterStatusByScheduler\022\'\n\nclu" +
+      "ster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\006st" +
+      "atus\030\002 \001(\0162\032.model.FlinkCluster.Status\022." +
+      "\n\npre_status\030\003 \001(\0162\032.model.FlinkCluster." +
+      "Status\"m\n\033StopFlinkClusterByScheduler\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\n" +
+      "cluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bs\n" +
+      "$com.dataomnis.gproto.types.pbrequestB\024P" +
+      "BRequestFlinkManageP\000Z3github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -12391,62 +13097,68 @@ public final class PBRequestFlinkManage {
           com.dataomnis.gproto.types.pbmodel.PBModelCluster.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbflink.PBFlinkConfig.getDescriptor(),
         });
-    internal_static_request_DescribeFlinkClusterAPI_descriptor =
+    internal_static_request_ListAvailableFlinkVersions_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_request_ListAvailableFlinkVersions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_ListAvailableFlinkVersions_descriptor,
+        new java.lang.String[] { "SourceKind", });
+    internal_static_request_DescribeFlinkClusterAPI_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_request_DescribeFlinkClusterAPI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeFlinkClusterAPI_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterId", });
     internal_static_request_ListFlinkClusters_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_request_ListFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListFlinkClusters_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Status", "Name", "Verbose", });
     internal_static_request_DeleteFlinkClusters_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_request_DeleteFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteFlinkClusters_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_StartFlinkClusters_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_request_StartFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_StartFlinkClusters_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_StopFlinkClusters_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_request_StopFlinkClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_StopFlinkClusters_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterIds", });
     internal_static_request_CreateFlinkCluster_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_request_CreateFlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateFlinkCluster_descriptor,
         new java.lang.String[] { "SpaceId", "CreatedBy", "SpaceOwner", "Name", "Version", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", });
     internal_static_request_UpdateFlinkCluster_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_request_UpdateFlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateFlinkCluster_descriptor,
         new java.lang.String[] { "SpaceId", "SpaceOwner", "ClusterId", "Name", "TaskNum", "JobCu", "TaskCu", "NetworkId", "HostAliases", "Config", });
     internal_static_request_DescribeFlinkCluster_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_DescribeFlinkCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeFlinkCluster_descriptor,
         new java.lang.String[] { "ClusterId", });
     internal_static_request_UpdateFlinkClusterStatusByScheduler_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_UpdateFlinkClusterStatusByScheduler_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateFlinkClusterStatusByScheduler_descriptor,
         new java.lang.String[] { "ClusterId", "Status", "PreStatus", });
     internal_static_request_StopFlinkClusterByScheduler_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_request_StopFlinkClusterByScheduler_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_StopFlinkClusterByScheduler_descriptor,

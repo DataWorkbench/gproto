@@ -15,27 +15,27 @@ public final class FlinkManageGrpc {
   public static final String SERVICE_NAME = "spacemanager.FlinkManage";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions,
       com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> getListAvailableFlinkVersionsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ListAvailableFlinkVersions",
-      requestType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.class,
       responseType = com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions,
       com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> getListAvailableFlinkVersionsMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> getListAvailableFlinkVersionsMethod;
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> getListAvailableFlinkVersionsMethod;
     if ((getListAvailableFlinkVersionsMethod = FlinkManageGrpc.getListAvailableFlinkVersionsMethod) == null) {
       synchronized (FlinkManageGrpc.class) {
         if ((getListAvailableFlinkVersionsMethod = FlinkManageGrpc.getListAvailableFlinkVersionsMethod) == null) {
           FlinkManageGrpc.getListAvailableFlinkVersionsMethod = getListAvailableFlinkVersionsMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAvailableFlinkVersions"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions.getDefaultInstance()))
               .setSchemaDescriptor(new FlinkManageMethodDescriptorSupplier("ListAvailableFlinkVersions"))
@@ -409,7 +409,7 @@ public final class FlinkManageGrpc {
      * Interface for manage flink cluster
      * </pre>
      */
-    public void listAvailableFlinkVersions(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request,
+    public void listAvailableFlinkVersions(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAvailableFlinkVersionsMethod(), responseObserver);
     }
@@ -500,7 +500,7 @@ public final class FlinkManageGrpc {
             getListAvailableFlinkVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+                com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions,
                 com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions>(
                   this, METHODID_LIST_AVAILABLE_FLINK_VERSIONS)))
           .addMethod(
@@ -596,7 +596,7 @@ public final class FlinkManageGrpc {
      * Interface for manage flink cluster
      * </pre>
      */
-    public void listAvailableFlinkVersions(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request,
+    public void listAvailableFlinkVersions(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAvailableFlinkVersionsMethod(), getCallOptions()), request, responseObserver);
@@ -712,7 +712,7 @@ public final class FlinkManageGrpc {
      * Interface for manage flink cluster
      * </pre>
      */
-    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions listAvailableFlinkVersions(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions listAvailableFlinkVersions(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAvailableFlinkVersionsMethod(), getCallOptions(), request);
     }
@@ -818,7 +818,7 @@ public final class FlinkManageGrpc {
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions> listAvailableFlinkVersions(
-        com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request) {
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAvailableFlinkVersionsMethod(), getCallOptions()), request);
     }
@@ -944,7 +944,7 @@ public final class FlinkManageGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LIST_AVAILABLE_FLINK_VERSIONS:
-          serviceImpl.listAvailableFlinkVersions((com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct) request,
+          serviceImpl.listAvailableFlinkVersions((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.ListAvailableFlinkVersions) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseFlinkManage.ListAvailableFlinkVersions>) responseObserver);
           break;
         case METHODID_DESCRIBE_FLINK_CLUSTER_API:

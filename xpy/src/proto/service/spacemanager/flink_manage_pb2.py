@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\020PBSvcFlinkManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/spacemanager/flink_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/flink_manage.proto\x1a\'proto/types/response/flink_manage.proto2\xaf\x07\n\x0b\x46linkManage\x12X\n\x1aListAvailableFlinkVersions\x12\x12.model.EmptyStruct\x1a$.response.ListAvailableFlinkVersions\"\x00\x12`\n\x17\x44\x65scribeFlinkClusterAPI\x12 .request.DescribeFlinkClusterAPI\x1a!.response.DescribeFlinkClusterAPI\"\x00\x12N\n\x11ListFlinkClusters\x12\x1a.request.ListFlinkClusters\x1a\x1b.response.ListFlinkClusters\"\x00\x12Q\n\x12\x43reateFlinkCluster\x12\x1b.request.CreateFlinkCluster\x1a\x1c.response.CreateFlinkCluster\"\x00\x12W\n\x14\x44\x65scribeFlinkCluster\x12\x1d.request.DescribeFlinkCluster\x1a\x1e.response.DescribeFlinkCluster\"\x00\x12G\n\x12UpdateFlinkCluster\x12\x1b.request.UpdateFlinkCluster\x1a\x12.model.EmptyStruct\"\x00\x12I\n\x13\x44\x65leteFlinkClusters\x12\x1c.request.DeleteFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12G\n\x12StartFlinkClusters\x12\x1b.request.StartFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11StopFlinkClusters\x12\x1a.request.StopFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12i\n#UpdateFlinkClusterStatusByScheduler\x12,.request.UpdateFlinkClusterStatusByScheduler\x1a\x12.model.EmptyStruct\"\x00\x12Y\n\x1bStopFlinkClusterByScheduler\x12$.request.StopFlinkClusterByScheduler\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcFlinkManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n-proto/service/spacemanager/flink_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/flink_manage.proto\x1a\'proto/types/response/flink_manage.proto2\xc0\x07\n\x0b\x46linkManage\x12i\n\x1aListAvailableFlinkVersions\x12#.request.ListAvailableFlinkVersions\x1a$.response.ListAvailableFlinkVersions\"\x00\x12`\n\x17\x44\x65scribeFlinkClusterAPI\x12 .request.DescribeFlinkClusterAPI\x1a!.response.DescribeFlinkClusterAPI\"\x00\x12N\n\x11ListFlinkClusters\x12\x1a.request.ListFlinkClusters\x1a\x1b.response.ListFlinkClusters\"\x00\x12Q\n\x12\x43reateFlinkCluster\x12\x1b.request.CreateFlinkCluster\x1a\x1c.response.CreateFlinkCluster\"\x00\x12W\n\x14\x44\x65scribeFlinkCluster\x12\x1d.request.DescribeFlinkCluster\x1a\x1e.response.DescribeFlinkCluster\"\x00\x12G\n\x12UpdateFlinkCluster\x12\x1b.request.UpdateFlinkCluster\x1a\x12.model.EmptyStruct\"\x00\x12I\n\x13\x44\x65leteFlinkClusters\x12\x1c.request.DeleteFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12G\n\x12StartFlinkClusters\x12\x1b.request.StartFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11StopFlinkClusters\x12\x1a.request.StopFlinkClusters\x1a\x12.model.EmptyStruct\"\x00\x12i\n#UpdateFlinkClusterStatusByScheduler\x12,.request.UpdateFlinkClusterStatusByScheduler\x1a\x12.model.EmptyStruct\"\x00\x12Y\n\x1bStopFlinkClusterByScheduler\x12$.request.StopFlinkClusterByScheduler\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcFlinkManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_flink__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_flink__manage__pb2.DESCRIPTOR,])
 
@@ -41,14 +41,14 @@ _FLINKMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=176,
-  serialized_end=1119,
+  serialized_end=1136,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAvailableFlinkVersions',
     full_name='spacemanager.FlinkManage.ListAvailableFlinkVersions',
     index=0,
     containing_service=None,
-    input_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    input_type=proto_dot_types_dot_request_dot_flink__manage__pb2._LISTAVAILABLEFLINKVERSIONS,
     output_type=proto_dot_types_dot_response_dot_flink__manage__pb2._LISTAVAILABLEFLINKVERSIONS,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
