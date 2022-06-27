@@ -17,6 +17,18 @@ import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 import "proto/types/model/cluster.proto";
 import "proto/types/model/flink/flink_config.proto";
 
+message ListAvailableFlinkVersions {
+  enum SourceKind {
+    _SourceKindUnset = 0;
+    StreamJob = 1;
+    SyncJob = 2;
+  }
+  // The kind of source that will used the flink cluster. Not required.
+  // Optional values: 1 => "StreamJob" 2 => "SyncJob", default return all.
+  // @inject_tag: json:"source_kind" form:"source_kind"
+  SourceKind source_kind = 1 [ (validator.field).tags.enum = { in_enums: true } ];
+}
+
 message DescribeFlinkClusterAPI {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20 } ];

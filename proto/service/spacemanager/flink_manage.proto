@@ -17,7 +17,7 @@ import "proto/types/response/flink_manage.proto";
 
 service FlinkManage {
   // Interface for manage flink cluster
-  rpc ListAvailableFlinkVersions(model.EmptyStruct) returns (response.ListAvailableFlinkVersions) {}
+  rpc ListAvailableFlinkVersions(request.ListAvailableFlinkVersions) returns (response.ListAvailableFlinkVersions) {}
 
   // Describe flink cluster api that job-manager commit job to
   // FIXME: removed it.
