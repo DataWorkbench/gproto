@@ -4188,6 +4188,36 @@ public final class PBRequestDataSourceManage {
      * <code>.model.DataSource.URL url = 6 [(.validator.field) = { ... }</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSource.URLOrBuilder getUrlOrBuilder();
+
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * @return Whether the lastConnection field is set.
+     */
+    boolean hasLastConnection();
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * @return The lastConnection.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection();
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder();
   }
   /**
    * <pre>
@@ -4282,6 +4312,19 @@ public final class PBRequestDataSourceManage {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(url_);
                 url_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder subBuilder = null;
+              if (lastConnection_ != null) {
+                subBuilder = lastConnection_.toBuilder();
+              }
+              lastConnection_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastConnection_);
+                lastConnection_ = subBuilder.buildPartial();
               }
 
               break;
@@ -4580,6 +4623,47 @@ public final class PBRequestDataSourceManage {
       return getUrl();
     }
 
+    public static final int LAST_CONNECTION_FIELD_NUMBER = 7;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection lastConnection_;
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * @return Whether the lastConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasLastConnection() {
+      return lastConnection_ != null;
+    }
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     * @return The lastConnection.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection() {
+      return lastConnection_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : lastConnection_;
+    }
+    /**
+     * <pre>
+     * The last connection record. The value is nil if never tested for usability.
+     * &#64;inject_tag: json:"last_connection"
+     * </pre>
+     *
+     * <code>.model.DataSourceConnection last_connection = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder() {
+      return getLastConnection();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4612,6 +4696,9 @@ public final class PBRequestDataSourceManage {
       if (url_ != null) {
         output.writeMessage(6, getUrl());
       }
+      if (lastConnection_ != null) {
+        output.writeMessage(7, getLastConnection());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4640,6 +4727,10 @@ public final class PBRequestDataSourceManage {
       if (url_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getUrl());
+      }
+      if (lastConnection_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getLastConnection());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4670,6 +4761,11 @@ public final class PBRequestDataSourceManage {
         if (!getUrl()
             .equals(other.getUrl())) return false;
       }
+      if (hasLastConnection() != other.hasLastConnection()) return false;
+      if (hasLastConnection()) {
+        if (!getLastConnection()
+            .equals(other.getLastConnection())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4694,6 +4790,10 @@ public final class PBRequestDataSourceManage {
       if (hasUrl()) {
         hash = (37 * hash) + URL_FIELD_NUMBER;
         hash = (53 * hash) + getUrl().hashCode();
+      }
+      if (hasLastConnection()) {
+        hash = (37 * hash) + LAST_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getLastConnection().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4848,6 +4948,12 @@ public final class PBRequestDataSourceManage {
           url_ = null;
           urlBuilder_ = null;
         }
+        if (lastConnectionBuilder_ == null) {
+          lastConnection_ = null;
+        } else {
+          lastConnection_ = null;
+          lastConnectionBuilder_ = null;
+        }
         return this;
       }
 
@@ -4883,6 +4989,11 @@ public final class PBRequestDataSourceManage {
           result.url_ = url_;
         } else {
           result.url_ = urlBuilder_.build();
+        }
+        if (lastConnectionBuilder_ == null) {
+          result.lastConnection_ = lastConnection_;
+        } else {
+          result.lastConnection_ = lastConnectionBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4953,6 +5064,9 @@ public final class PBRequestDataSourceManage {
         }
         if (other.hasUrl()) {
           mergeUrl(other.getUrl());
+        }
+        if (other.hasLastConnection()) {
+          mergeLastConnection(other.getLastConnection());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5628,6 +5742,170 @@ public final class PBRequestDataSourceManage {
           url_ = null;
         }
         return urlBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection lastConnection_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> lastConnectionBuilder_;
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * @return Whether the lastConnection field is set.
+       */
+      public boolean hasLastConnection() {
+        return lastConnectionBuilder_ != null || lastConnection_ != null;
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       * @return The lastConnection.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection getLastConnection() {
+        if (lastConnectionBuilder_ == null) {
+          return lastConnection_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : lastConnection_;
+        } else {
+          return lastConnectionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public Builder setLastConnection(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
+        if (lastConnectionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          lastConnection_ = value;
+          onChanged();
+        } else {
+          lastConnectionBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public Builder setLastConnection(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder builderForValue) {
+        if (lastConnectionBuilder_ == null) {
+          lastConnection_ = builderForValue.build();
+          onChanged();
+        } else {
+          lastConnectionBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public Builder mergeLastConnection(com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection value) {
+        if (lastConnectionBuilder_ == null) {
+          if (lastConnection_ != null) {
+            lastConnection_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.newBuilder(lastConnection_).mergeFrom(value).buildPartial();
+          } else {
+            lastConnection_ = value;
+          }
+          onChanged();
+        } else {
+          lastConnectionBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public Builder clearLastConnection() {
+        if (lastConnectionBuilder_ == null) {
+          lastConnection_ = null;
+          onChanged();
+        } else {
+          lastConnection_ = null;
+          lastConnectionBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder getLastConnectionBuilder() {
+        
+        onChanged();
+        return getLastConnectionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder getLastConnectionOrBuilder() {
+        if (lastConnectionBuilder_ != null) {
+          return lastConnectionBuilder_.getMessageOrBuilder();
+        } else {
+          return lastConnection_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.getDefaultInstance() : lastConnection_;
+        }
+      }
+      /**
+       * <pre>
+       * The last connection record. The value is nil if never tested for usability.
+       * &#64;inject_tag: json:"last_connection"
+       * </pre>
+       *
+       * <code>.model.DataSourceConnection last_connection = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder> 
+          getLastConnectionFieldBuilder() {
+        if (lastConnectionBuilder_ == null) {
+          lastConnectionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnection.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataSource.DataSourceConnectionOrBuilder>(
+                  getLastConnection(),
+                  getParentForChildren(),
+                  isClean());
+          lastConnection_ = null;
+        }
+        return lastConnectionBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -14092,50 +14370,51 @@ public final class PBRequestDataSourceManage {
       "type\030\006 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t" +
       "\022\007\332\001\0040\000X\001\0221\n\003url\030\007 \001(\0132\025.model.DataSourc" +
       "e.URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0224\n\017last_connection\030" +
-      "\010 \001(\0132\033.model.DataSourceConnection\"\205\002\n\020U" +
+      "\010 \001(\0132\033.model.DataSourceConnection\"\273\002\n\020U" +
       "pdateDataSource\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
       "\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022" +
       "\r\302\001\n\360\001\024\312\002\004som-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
       "\002\000\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\0223\n\004ty" +
       "pe\030\005 \001(\0162\026.model.DataSource.TypeB\r\342\337\037\t\022\007" +
       "\332\001\0040\000X\001\0221\n\003url\030\006 \001(\0132\025.model.DataSource." +
-      "URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\"i\n\021DeleteDataSources\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-" +
-      "\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002" +
-      "\004som-\"<\n\022DescribeDataSource\022&\n\tsource_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"i\n\021EnableDat" +
-      "aSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d" +
-      "@\001Z\n\302\001\007\312\002\004som-\"j\n\022DisableDataSources\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\ns" +
-      "ource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004so" +
-      "m-\"\374\001\n\031ListDataSourceConnections\022%\n\010spac" +
-      "e_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\tsourc" +
-      "e_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&\n\005limit\030\003 \001(\005B" +
-      "\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005" +
-      "B\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005 \001(\tB\037\342\337\037\033\022\031\302\001" +
-      "\026J\000J\tsource_idJ\007created\022\017\n\007reverse\030\006 \001(\010" +
-      "\022\017\n\007verbose\030\007 \001(\005\"\235\003\n\030PingDataSourceConn" +
-      "ection\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004wks-\022\022\n\nnetwork_id\030\002 \001(\t\022E\n\005stage\030\003 \001(\016" +
-      "2\'.request.PingDataSourceConnection.Stag" +
-      "eB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource_id\030\004 \001(\tB \342\337\037" +
-      "\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003\360\001\024\022G\n\004type\030\005 " +
-      "\001(\0162\026.model.DataSource.TypeB!\342\337\037\020\n\016\n\005sta" +
-      "ge\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003url\030\006 \001(\0132\025.mo" +
-      "del.DataSource.URLB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001" +
-      "\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\nPhaseUnset\020\000\022\020" +
-      "\n\014BeforeCreate\020\001\022\017\n\013AfterCreate\020\002\"i\n\030Des" +
-      "cribeDataSourceTables\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035DescribeDataSou" +
-      "rceTableSchema\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030\003 \001(\tB\020\342\337\037\014\022" +
-      "\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.gproto.type" +
-      "s.pbrequestB\031PBRequestDataSourceManageP\000" +
-      "Z3github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbrequestb\006proto3"
+      "URLB\r\342\337\037\t\022\007\342\001\004\020\001\030\001\0224\n\017last_connection\030\007 " +
+      "\001(\0132\033.model.DataSourceConnection\"i\n\021Dele" +
+      "teDataSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023" +
+      "\352\001\0208d@\001Z\n\302\001\007\312\002\004som-\"<\n\022DescribeDataSourc" +
+      "e\022&\n\tsource_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som" +
+      "-\"i\n\021EnableDataSources\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\nsource_ids\030\002 \003(" +
+      "\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004som-\"j\n\022DisableD" +
+      "ataSources\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022-\n\nsource_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\020" +
+      "8d@\001Z\n\302\001\007\312\002\004som-\"\374\001\n\031ListDataSourceConne" +
+      "ctions\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022\037\n\tsource_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022&" +
+      "\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033" +
+      "\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0220\n\007sort_by\030\005" +
+      " \001(\tB\037\342\337\037\033\022\031\302\001\026J\000J\tsource_idJ\007created\022\017\n" +
+      "\007reverse\030\006 \001(\010\022\017\n\007verbose\030\007 \001(\005\"\235\003\n\030Ping" +
+      "DataSourceConnection\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\022\n\nnetwork_id\030\002 \001(\t\022" +
+      "E\n\005stage\030\003 \001(\0162\'.request.PingDataSourceC" +
+      "onnection.StageB\r\342\337\037\t\022\007\332\001\0040\000X\001\0223\n\tsource" +
+      "_id\030\004 \001(\tB \342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\002\342\337\037\010\022\006\302\001\003" +
+      "\360\001\024\022G\n\004type\030\005 \001(\0162\026.model.DataSource.Typ" +
+      "eB!\342\337\037\020\n\016\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\003" +
+      "url\030\006 \001(\0132\025.model.DataSource.URLB!\342\337\037\020\n\016" +
+      "\n\005stage\022\005\332\001\002\030\001\342\337\037\t\022\007\342\001\004\020\001\030\001\":\n\005Stage\022\016\n\n" +
+      "PhaseUnset\020\000\022\020\n\014BeforeCreate\020\001\022\017\n\013AfterC" +
+      "reate\020\002\"i\n\030DescribeDataSourceTables\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tso" +
+      "urce_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\"\224\001\n\035D" +
+      "escribeDataSourceTableSchema\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id" +
+      "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_nam" +
+      "e\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomn" +
+      "is.gproto.types.pbrequestB\031PBRequestData" +
+      "SourceManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14161,7 +14440,7 @@ public final class PBRequestDataSourceManage {
     internal_static_request_UpdateDataSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateDataSource_descriptor,
-        new java.lang.String[] { "SpaceId", "SourceId", "Name", "Desc", "Type", "Url", });
+        new java.lang.String[] { "SpaceId", "SourceId", "Name", "Desc", "Type", "Url", "LastConnection", });
     internal_static_request_DeleteDataSources_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_DeleteDataSources_fieldAccessorTable = new

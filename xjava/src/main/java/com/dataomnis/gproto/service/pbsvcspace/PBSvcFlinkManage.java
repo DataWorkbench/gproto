@@ -27,34 +27,34 @@ public final class PBSvcFlinkManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/flink_" +
       "manage.proto\032\'proto/types/response/flink" +
-      "_manage.proto2\257\007\n\013FlinkManage\022X\n\032ListAva" +
-      "ilableFlinkVersions\022\022.model.EmptyStruct\032" +
-      "$.response.ListAvailableFlinkVersions\"\000\022" +
-      "`\n\027DescribeFlinkClusterAPI\022 .request.Des" +
-      "cribeFlinkClusterAPI\032!.response.Describe" +
-      "FlinkClusterAPI\"\000\022N\n\021ListFlinkClusters\022\032" +
-      ".request.ListFlinkClusters\032\033.response.Li" +
-      "stFlinkClusters\"\000\022Q\n\022CreateFlinkCluster\022" +
-      "\033.request.CreateFlinkCluster\032\034.response." +
-      "CreateFlinkCluster\"\000\022W\n\024DescribeFlinkClu" +
-      "ster\022\035.request.DescribeFlinkCluster\032\036.re" +
-      "sponse.DescribeFlinkCluster\"\000\022G\n\022UpdateF" +
-      "linkCluster\022\033.request.UpdateFlinkCluster" +
-      "\032\022.model.EmptyStruct\"\000\022I\n\023DeleteFlinkClu" +
-      "sters\022\034.request.DeleteFlinkClusters\032\022.mo" +
-      "del.EmptyStruct\"\000\022G\n\022StartFlinkClusters\022" +
-      "\033.request.StartFlinkClusters\032\022.model.Emp" +
-      "tyStruct\"\000\022E\n\021StopFlinkClusters\022\032.reques" +
-      "t.StopFlinkClusters\032\022.model.EmptyStruct\"" +
-      "\000\022i\n#UpdateFlinkClusterStatusByScheduler" +
-      "\022,.request.UpdateFlinkClusterStatusBySch" +
-      "eduler\032\022.model.EmptyStruct\"\000\022Y\n\033StopFlin" +
-      "kClusterByScheduler\022$.request.StopFlinkC" +
-      "lusterByScheduler\032\022.model.EmptyStruct\"\000B" +
-      "u\n\'com.dataomnis.gproto.service.pbsvcspa" +
-      "ceB\020PBSvcFlinkManageP\000Z6github.com/DataW" +
-      "orkbench/gproto/xgo/service/pbsvcspaceb\006" +
-      "proto3"
+      "_manage.proto2\300\007\n\013FlinkManage\022i\n\032ListAva" +
+      "ilableFlinkVersions\022#.request.ListAvaila" +
+      "bleFlinkVersions\032$.response.ListAvailabl" +
+      "eFlinkVersions\"\000\022`\n\027DescribeFlinkCluster" +
+      "API\022 .request.DescribeFlinkClusterAPI\032!." +
+      "response.DescribeFlinkClusterAPI\"\000\022N\n\021Li" +
+      "stFlinkClusters\022\032.request.ListFlinkClust" +
+      "ers\032\033.response.ListFlinkClusters\"\000\022Q\n\022Cr" +
+      "eateFlinkCluster\022\033.request.CreateFlinkCl" +
+      "uster\032\034.response.CreateFlinkCluster\"\000\022W\n" +
+      "\024DescribeFlinkCluster\022\035.request.Describe" +
+      "FlinkCluster\032\036.response.DescribeFlinkClu" +
+      "ster\"\000\022G\n\022UpdateFlinkCluster\022\033.request.U" +
+      "pdateFlinkCluster\032\022.model.EmptyStruct\"\000\022" +
+      "I\n\023DeleteFlinkClusters\022\034.request.DeleteF" +
+      "linkClusters\032\022.model.EmptyStruct\"\000\022G\n\022St" +
+      "artFlinkClusters\022\033.request.StartFlinkClu" +
+      "sters\032\022.model.EmptyStruct\"\000\022E\n\021StopFlink" +
+      "Clusters\022\032.request.StopFlinkClusters\032\022.m" +
+      "odel.EmptyStruct\"\000\022i\n#UpdateFlinkCluster" +
+      "StatusByScheduler\022,.request.UpdateFlinkC" +
+      "lusterStatusByScheduler\032\022.model.EmptyStr" +
+      "uct\"\000\022Y\n\033StopFlinkClusterByScheduler\022$.r" +
+      "equest.StopFlinkClusterByScheduler\032\022.mod" +
+      "el.EmptyStruct\"\000Bu\n\'com.dataomnis.gproto" +
+      ".service.pbsvcspaceB\020PBSvcFlinkManageP\000Z" +
+      "6github.com/DataWorkbench/gproto/xgo/ser" +
+      "vice/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

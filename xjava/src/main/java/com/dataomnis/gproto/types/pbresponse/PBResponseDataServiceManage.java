@@ -4513,94 +4513,6 @@ public final class PBResponseDataServiceManage {
      * <code>.model.ApiConfig api_config = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigOrBuilder getApiConfigOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> 
-        getRequestParamsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    int getRequestParamsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-        getRequestParamsOrBuilderList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> 
-        getResponseParamsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    int getResponseParamsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-        getResponseParamsOrBuilderList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code response.DescribeApiConfig}
@@ -4615,8 +4527,6 @@ public final class PBResponseDataServiceManage {
       super(builder);
     }
     private DescribeApiConfig() {
-      requestParams_ = java.util.Collections.emptyList();
-      responseParams_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -4639,7 +4549,6 @@ public final class PBResponseDataServiceManage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4663,24 +4572,6 @@ public final class PBResponseDataServiceManage {
 
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                requestParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              requestParams_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                responseParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              responseParams_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4696,12 +4587,6 @@ public final class PBResponseDataServiceManage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          requestParams_ = java.util.Collections.unmodifiableList(requestParams_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          responseParams_ = java.util.Collections.unmodifiableList(responseParams_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -4757,126 +4642,6 @@ public final class PBResponseDataServiceManage {
       return getApiConfig();
     }
 
-    public static final int REQUEST_PARAMS_FIELD_NUMBER = 2;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> requestParams_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> getRequestParamsList() {
-      return requestParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-        getRequestParamsOrBuilderList() {
-      return requestParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public int getRequestParamsCount() {
-      return requestParams_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index) {
-      return requestParams_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-        int index) {
-      return requestParams_.get(index);
-    }
-
-    public static final int RESPONSE_PARAMS_FIELD_NUMBER = 3;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> responseParams_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> getResponseParamsList() {
-      return responseParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-        getResponseParamsOrBuilderList() {
-      return responseParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public int getResponseParamsCount() {
-      return responseParams_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index) {
-      return responseParams_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-        int index) {
-      return responseParams_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4894,12 +4659,6 @@ public final class PBResponseDataServiceManage {
       if (apiConfig_ != null) {
         output.writeMessage(1, getApiConfig());
       }
-      for (int i = 0; i < requestParams_.size(); i++) {
-        output.writeMessage(2, requestParams_.get(i));
-      }
-      for (int i = 0; i < responseParams_.size(); i++) {
-        output.writeMessage(3, responseParams_.get(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -4912,14 +4671,6 @@ public final class PBResponseDataServiceManage {
       if (apiConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getApiConfig());
-      }
-      for (int i = 0; i < requestParams_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, requestParams_.get(i));
-      }
-      for (int i = 0; i < responseParams_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, responseParams_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4941,10 +4692,6 @@ public final class PBResponseDataServiceManage {
         if (!getApiConfig()
             .equals(other.getApiConfig())) return false;
       }
-      if (!getRequestParamsList()
-          .equals(other.getRequestParamsList())) return false;
-      if (!getResponseParamsList()
-          .equals(other.getResponseParamsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4959,14 +4706,6 @@ public final class PBResponseDataServiceManage {
       if (hasApiConfig()) {
         hash = (37 * hash) + API_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getApiConfig().hashCode();
-      }
-      if (getRequestParamsCount() > 0) {
-        hash = (37 * hash) + REQUEST_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestParamsList().hashCode();
-      }
-      if (getResponseParamsCount() > 0) {
-        hash = (37 * hash) + RESPONSE_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getResponseParamsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5096,8 +4835,6 @@ public final class PBResponseDataServiceManage {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRequestParamsFieldBuilder();
-          getResponseParamsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -5108,18 +4845,6 @@ public final class PBResponseDataServiceManage {
         } else {
           apiConfig_ = null;
           apiConfigBuilder_ = null;
-        }
-        if (requestParamsBuilder_ == null) {
-          requestParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          requestParamsBuilder_.clear();
-        }
-        if (responseParamsBuilder_ == null) {
-          responseParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          responseParamsBuilder_.clear();
         }
         return this;
       }
@@ -5147,29 +4872,10 @@ public final class PBResponseDataServiceManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig(this);
-        int from_bitField0_ = bitField0_;
         if (apiConfigBuilder_ == null) {
           result.apiConfig_ = apiConfig_;
         } else {
           result.apiConfig_ = apiConfigBuilder_.build();
-        }
-        if (requestParamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            requestParams_ = java.util.Collections.unmodifiableList(requestParams_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.requestParams_ = requestParams_;
-        } else {
-          result.requestParams_ = requestParamsBuilder_.build();
-        }
-        if (responseParamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            responseParams_ = java.util.Collections.unmodifiableList(responseParams_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.responseParams_ = responseParams_;
-        } else {
-          result.responseParams_ = responseParamsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5222,58 +4928,6 @@ public final class PBResponseDataServiceManage {
         if (other.hasApiConfig()) {
           mergeApiConfig(other.getApiConfig());
         }
-        if (requestParamsBuilder_ == null) {
-          if (!other.requestParams_.isEmpty()) {
-            if (requestParams_.isEmpty()) {
-              requestParams_ = other.requestParams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRequestParamsIsMutable();
-              requestParams_.addAll(other.requestParams_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.requestParams_.isEmpty()) {
-            if (requestParamsBuilder_.isEmpty()) {
-              requestParamsBuilder_.dispose();
-              requestParamsBuilder_ = null;
-              requestParams_ = other.requestParams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              requestParamsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRequestParamsFieldBuilder() : null;
-            } else {
-              requestParamsBuilder_.addAllMessages(other.requestParams_);
-            }
-          }
-        }
-        if (responseParamsBuilder_ == null) {
-          if (!other.responseParams_.isEmpty()) {
-            if (responseParams_.isEmpty()) {
-              responseParams_ = other.responseParams_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureResponseParamsIsMutable();
-              responseParams_.addAll(other.responseParams_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.responseParams_.isEmpty()) {
-            if (responseParamsBuilder_.isEmpty()) {
-              responseParamsBuilder_.dispose();
-              responseParamsBuilder_ = null;
-              responseParams_ = other.responseParams_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              responseParamsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getResponseParamsFieldBuilder() : null;
-            } else {
-              responseParamsBuilder_.addAllMessages(other.responseParams_);
-            }
-          }
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5302,7 +4956,6 @@ public final class PBResponseDataServiceManage {
         }
         return this;
       }
-      private int bitField0_;
 
       private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig apiConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5457,630 +5110,6 @@ public final class PBResponseDataServiceManage {
           apiConfig_ = null;
         }
         return apiConfigBuilder_;
-      }
-
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> requestParams_ =
-        java.util.Collections.emptyList();
-      private void ensureRequestParamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          requestParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams>(requestParams_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> requestParamsBuilder_;
-
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> getRequestParamsList() {
-        if (requestParamsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(requestParams_);
-        } else {
-          return requestParamsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public int getRequestParamsCount() {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.size();
-        } else {
-          return requestParamsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index) {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.get(index);
-        } else {
-          return requestParamsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder setRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.set(index, value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder setRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.add(value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.add(index, value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.add(builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addAllRequestParams(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> values) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, requestParams_);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder clearRequestParams() {
-        if (requestParamsBuilder_ == null) {
-          requestParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          requestParamsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder removeRequestParams(int index) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.remove(index);
-          onChanged();
-        } else {
-          requestParamsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder getRequestParamsBuilder(
-          int index) {
-        return getRequestParamsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-          int index) {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.get(index);  } else {
-          return requestParamsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-           getRequestParamsOrBuilderList() {
-        if (requestParamsBuilder_ != null) {
-          return requestParamsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(requestParams_);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder addRequestParamsBuilder() {
-        return getRequestParamsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder addRequestParamsBuilder(
-          int index) {
-        return getRequestParamsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder> 
-           getRequestParamsBuilderList() {
-        return getRequestParamsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-          getRequestParamsFieldBuilder() {
-        if (requestParamsBuilder_ == null) {
-          requestParamsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder>(
-                  requestParams_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          requestParams_ = null;
-        }
-        return requestParamsBuilder_;
-      }
-
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> responseParams_ =
-        java.util.Collections.emptyList();
-      private void ensureResponseParamsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          responseParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams>(responseParams_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> responseParamsBuilder_;
-
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> getResponseParamsList() {
-        if (responseParamsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(responseParams_);
-        } else {
-          return responseParamsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public int getResponseParamsCount() {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.size();
-        } else {
-          return responseParamsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index) {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.get(index);
-        } else {
-          return responseParamsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder setResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.set(index, value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder setResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.add(value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.add(index, value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.add(builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addAllResponseParams(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> values) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, responseParams_);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder clearResponseParams() {
-        if (responseParamsBuilder_ == null) {
-          responseParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          responseParamsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder removeResponseParams(int index) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.remove(index);
-          onChanged();
-        } else {
-          responseParamsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder getResponseParamsBuilder(
-          int index) {
-        return getResponseParamsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-          int index) {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.get(index);  } else {
-          return responseParamsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-           getResponseParamsOrBuilderList() {
-        if (responseParamsBuilder_ != null) {
-          return responseParamsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(responseParams_);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder addResponseParamsBuilder() {
-        return getResponseParamsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder addResponseParamsBuilder(
-          int index) {
-        return getResponseParamsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder> 
-           getResponseParamsBuilderList() {
-        return getResponseParamsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-          getResponseParamsFieldBuilder() {
-        if (responseParamsBuilder_ == null) {
-          responseParamsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder>(
-                  responseParams_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          responseParams_ = null;
-        }
-        return responseParamsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -6769,94 +5798,6 @@ public final class PBResponseDataServiceManage {
      * <code>.model.ApiVersion api_version = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder getApiVersionOrBuilder();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> 
-        getRequestParamsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    int getRequestParamsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-        getRequestParamsOrBuilderList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> 
-        getResponseParamsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    int getResponseParamsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-        getResponseParamsOrBuilderList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code response.DescribeDataServiceApiVersion}
@@ -6871,8 +5812,6 @@ public final class PBResponseDataServiceManage {
       super(builder);
     }
     private DescribeDataServiceApiVersion() {
-      requestParams_ = java.util.Collections.emptyList();
-      responseParams_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -6895,7 +5834,6 @@ public final class PBResponseDataServiceManage {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6919,24 +5857,6 @@ public final class PBResponseDataServiceManage {
 
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                requestParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              requestParams_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                responseParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              responseParams_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.parser(), extensionRegistry));
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -6952,12 +5872,6 @@ public final class PBResponseDataServiceManage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          requestParams_ = java.util.Collections.unmodifiableList(requestParams_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          responseParams_ = java.util.Collections.unmodifiableList(responseParams_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -7013,126 +5927,6 @@ public final class PBResponseDataServiceManage {
       return getApiVersion();
     }
 
-    public static final int REQUEST_PARAMS_FIELD_NUMBER = 2;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> requestParams_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> getRequestParamsList() {
-      return requestParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-        getRequestParamsOrBuilderList() {
-      return requestParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public int getRequestParamsCount() {
-      return requestParams_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index) {
-      return requestParams_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"request_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-        int index) {
-      return requestParams_.get(index);
-    }
-
-    public static final int RESPONSE_PARAMS_FIELD_NUMBER = 3;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> responseParams_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> getResponseParamsList() {
-      return responseParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-        getResponseParamsOrBuilderList() {
-      return responseParams_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public int getResponseParamsCount() {
-      return responseParams_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index) {
-      return responseParams_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"response_params"
-     * </pre>
-     *
-     * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-     */
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-        int index) {
-      return responseParams_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7150,12 +5944,6 @@ public final class PBResponseDataServiceManage {
       if (apiVersion_ != null) {
         output.writeMessage(1, getApiVersion());
       }
-      for (int i = 0; i < requestParams_.size(); i++) {
-        output.writeMessage(2, requestParams_.get(i));
-      }
-      for (int i = 0; i < responseParams_.size(); i++) {
-        output.writeMessage(3, responseParams_.get(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7168,14 +5956,6 @@ public final class PBResponseDataServiceManage {
       if (apiVersion_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getApiVersion());
-      }
-      for (int i = 0; i < requestParams_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, requestParams_.get(i));
-      }
-      for (int i = 0; i < responseParams_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, responseParams_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7197,10 +5977,6 @@ public final class PBResponseDataServiceManage {
         if (!getApiVersion()
             .equals(other.getApiVersion())) return false;
       }
-      if (!getRequestParamsList()
-          .equals(other.getRequestParamsList())) return false;
-      if (!getResponseParamsList()
-          .equals(other.getResponseParamsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7215,14 +5991,6 @@ public final class PBResponseDataServiceManage {
       if (hasApiVersion()) {
         hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getApiVersion().hashCode();
-      }
-      if (getRequestParamsCount() > 0) {
-        hash = (37 * hash) + REQUEST_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestParamsList().hashCode();
-      }
-      if (getResponseParamsCount() > 0) {
-        hash = (37 * hash) + RESPONSE_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getResponseParamsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7352,8 +6120,6 @@ public final class PBResponseDataServiceManage {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRequestParamsFieldBuilder();
-          getResponseParamsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -7364,18 +6130,6 @@ public final class PBResponseDataServiceManage {
         } else {
           apiVersion_ = null;
           apiVersionBuilder_ = null;
-        }
-        if (requestParamsBuilder_ == null) {
-          requestParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          requestParamsBuilder_.clear();
-        }
-        if (responseParamsBuilder_ == null) {
-          responseParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          responseParamsBuilder_.clear();
         }
         return this;
       }
@@ -7403,29 +6157,10 @@ public final class PBResponseDataServiceManage {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion buildPartial() {
         com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion(this);
-        int from_bitField0_ = bitField0_;
         if (apiVersionBuilder_ == null) {
           result.apiVersion_ = apiVersion_;
         } else {
           result.apiVersion_ = apiVersionBuilder_.build();
-        }
-        if (requestParamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            requestParams_ = java.util.Collections.unmodifiableList(requestParams_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.requestParams_ = requestParams_;
-        } else {
-          result.requestParams_ = requestParamsBuilder_.build();
-        }
-        if (responseParamsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            responseParams_ = java.util.Collections.unmodifiableList(responseParams_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.responseParams_ = responseParams_;
-        } else {
-          result.responseParams_ = responseParamsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7478,58 +6213,6 @@ public final class PBResponseDataServiceManage {
         if (other.hasApiVersion()) {
           mergeApiVersion(other.getApiVersion());
         }
-        if (requestParamsBuilder_ == null) {
-          if (!other.requestParams_.isEmpty()) {
-            if (requestParams_.isEmpty()) {
-              requestParams_ = other.requestParams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRequestParamsIsMutable();
-              requestParams_.addAll(other.requestParams_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.requestParams_.isEmpty()) {
-            if (requestParamsBuilder_.isEmpty()) {
-              requestParamsBuilder_.dispose();
-              requestParamsBuilder_ = null;
-              requestParams_ = other.requestParams_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              requestParamsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRequestParamsFieldBuilder() : null;
-            } else {
-              requestParamsBuilder_.addAllMessages(other.requestParams_);
-            }
-          }
-        }
-        if (responseParamsBuilder_ == null) {
-          if (!other.responseParams_.isEmpty()) {
-            if (responseParams_.isEmpty()) {
-              responseParams_ = other.responseParams_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureResponseParamsIsMutable();
-              responseParams_.addAll(other.responseParams_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.responseParams_.isEmpty()) {
-            if (responseParamsBuilder_.isEmpty()) {
-              responseParamsBuilder_.dispose();
-              responseParamsBuilder_ = null;
-              responseParams_ = other.responseParams_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              responseParamsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getResponseParamsFieldBuilder() : null;
-            } else {
-              responseParamsBuilder_.addAllMessages(other.responseParams_);
-            }
-          }
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -7558,7 +6241,6 @@ public final class PBResponseDataServiceManage {
         }
         return this;
       }
-      private int bitField0_;
 
       private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion apiVersion_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -7713,630 +6395,6 @@ public final class PBResponseDataServiceManage {
           apiVersion_ = null;
         }
         return apiVersionBuilder_;
-      }
-
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> requestParams_ =
-        java.util.Collections.emptyList();
-      private void ensureRequestParamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          requestParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams>(requestParams_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> requestParamsBuilder_;
-
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> getRequestParamsList() {
-        if (requestParamsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(requestParams_);
-        } else {
-          return requestParamsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public int getRequestParamsCount() {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.size();
-        } else {
-          return requestParamsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams getRequestParams(int index) {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.get(index);
-        } else {
-          return requestParamsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder setRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.set(index, value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder setRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.add(value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams value) {
-        if (requestParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRequestParamsIsMutable();
-          requestParams_.add(index, value);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.add(builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addRequestParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder builderForValue) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          requestParamsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder addAllRequestParams(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams> values) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, requestParams_);
-          onChanged();
-        } else {
-          requestParamsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder clearRequestParams() {
-        if (requestParamsBuilder_ == null) {
-          requestParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          requestParamsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public Builder removeRequestParams(int index) {
-        if (requestParamsBuilder_ == null) {
-          ensureRequestParamsIsMutable();
-          requestParams_.remove(index);
-          onChanged();
-        } else {
-          requestParamsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder getRequestParamsBuilder(
-          int index) {
-        return getRequestParamsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder getRequestParamsOrBuilder(
-          int index) {
-        if (requestParamsBuilder_ == null) {
-          return requestParams_.get(index);  } else {
-          return requestParamsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-           getRequestParamsOrBuilderList() {
-        if (requestParamsBuilder_ != null) {
-          return requestParamsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(requestParams_);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder addRequestParamsBuilder() {
-        return getRequestParamsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder addRequestParamsBuilder(
-          int index) {
-        return getRequestParamsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"request_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiRequestParams request_params = 2;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder> 
-           getRequestParamsBuilderList() {
-        return getRequestParamsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder> 
-          getRequestParamsFieldBuilder() {
-        if (requestParamsBuilder_ == null) {
-          requestParamsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiRequestParamsOrBuilder>(
-                  requestParams_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          requestParams_ = null;
-        }
-        return requestParamsBuilder_;
-      }
-
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> responseParams_ =
-        java.util.Collections.emptyList();
-      private void ensureResponseParamsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          responseParams_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams>(responseParams_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> responseParamsBuilder_;
-
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> getResponseParamsList() {
-        if (responseParamsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(responseParams_);
-        } else {
-          return responseParamsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public int getResponseParamsCount() {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.size();
-        } else {
-          return responseParamsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams getResponseParams(int index) {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.get(index);
-        } else {
-          return responseParamsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder setResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.set(index, value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder setResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.add(value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams value) {
-        if (responseParamsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureResponseParamsIsMutable();
-          responseParams_.add(index, value);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.add(builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addResponseParams(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder builderForValue) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          responseParamsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder addAllResponseParams(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams> values) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, responseParams_);
-          onChanged();
-        } else {
-          responseParamsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder clearResponseParams() {
-        if (responseParamsBuilder_ == null) {
-          responseParams_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          responseParamsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public Builder removeResponseParams(int index) {
-        if (responseParamsBuilder_ == null) {
-          ensureResponseParamsIsMutable();
-          responseParams_.remove(index);
-          onChanged();
-        } else {
-          responseParamsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder getResponseParamsBuilder(
-          int index) {
-        return getResponseParamsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder getResponseParamsOrBuilder(
-          int index) {
-        if (responseParamsBuilder_ == null) {
-          return responseParams_.get(index);  } else {
-          return responseParamsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-           getResponseParamsOrBuilderList() {
-        if (responseParamsBuilder_ != null) {
-          return responseParamsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(responseParams_);
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder addResponseParamsBuilder() {
-        return getResponseParamsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder addResponseParamsBuilder(
-          int index) {
-        return getResponseParamsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"response_params"
-       * </pre>
-       *
-       * <code>repeated .model.ApiResponseParams response_params = 3;</code>
-       */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder> 
-           getResponseParamsBuilderList() {
-        return getResponseParamsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder> 
-          getResponseParamsFieldBuilder() {
-        if (responseParamsBuilder_ == null) {
-          responseParamsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParams.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiResponseParamsOrBuilder>(
-                  responseParams_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          responseParams_ = null;
-        }
-        return responseParamsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10337,24 +8395,19 @@ public final class PBResponseDataServiceManage {
       "Group\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"\034" +
       "\n\016CreateApiGroup\022\n\n\002id\030\001 \001(\t\"R\n\016ListApiC" +
       "onfigs\022\037\n\005infos\030\001 \003(\0132\020.model.ApiConfig\022" +
-      "\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"\235\001\n\021Des" +
-      "cribeApiConfig\022$\n\napi_config\030\001 \001(\0132\020.mod" +
-      "el.ApiConfig\022/\n\016request_params\030\002 \003(\0132\027.m" +
-      "odel.ApiRequestParams\0221\n\017response_params" +
-      "\030\003 \003(\0132\030.model.ApiResponseParams\"\035\n\017Crea" +
-      "teApiConfig\022\n\n\002id\030\001 \001(\t\"\253\001\n\035DescribeData" +
-      "ServiceApiVersion\022&\n\013api_version\030\001 \001(\0132\021" +
-      ".model.ApiVersion\022/\n\016request_params\030\002 \003(" +
-      "\0132\027.model.ApiRequestParams\0221\n\017response_p" +
-      "arams\030\003 \003(\0132\030.model.ApiResponseParams\"_\n" +
-      "\032ListDataServiceApiVersions\022 \n\005infos\030\001 \003" +
-      "(\0132\021.model.ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010" +
-      "has_more\030\003 \001(\010\"<\n\022TestDataServiceApi\022\014\n\004" +
-      "logs\030\001 \001(\t\022\030\n\020response_content\030\002 \001(\tB|\n%" +
-      "com.dataomnis.gproto.types.pbresponseB\033P" +
-      "BResponseDataServiceManageP\000Z4github.com" +
-      "/DataWorkbench/gproto/xgo/types/pbrespon" +
-      "seb\006proto3"
+      "\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"9\n\021Desc" +
+      "ribeApiConfig\022$\n\napi_config\030\001 \001(\0132\020.mode" +
+      "l.ApiConfig\"\035\n\017CreateApiConfig\022\n\n\002id\030\001 \001" +
+      "(\t\"G\n\035DescribeDataServiceApiVersion\022&\n\013a" +
+      "pi_version\030\001 \001(\0132\021.model.ApiVersion\"_\n\032L" +
+      "istDataServiceApiVersions\022 \n\005infos\030\001 \003(\013" +
+      "2\021.model.ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010ha" +
+      "s_more\030\003 \001(\010\"<\n\022TestDataServiceApi\022\014\n\004lo" +
+      "gs\030\001 \001(\t\022\030\n\020response_content\030\002 \001(\tB|\n%co" +
+      "m.dataomnis.gproto.types.pbresponseB\033PBR" +
+      "esponseDataServiceManageP\000Z4github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbresponse" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10396,7 +8449,7 @@ public final class PBResponseDataServiceManage {
     internal_static_response_DescribeApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeApiConfig_descriptor,
-        new java.lang.String[] { "ApiConfig", "RequestParams", "ResponseParams", });
+        new java.lang.String[] { "ApiConfig", });
     internal_static_response_CreateApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_response_CreateApiConfig_fieldAccessorTable = new
@@ -10408,7 +8461,7 @@ public final class PBResponseDataServiceManage {
     internal_static_response_DescribeDataServiceApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeDataServiceApiVersion_descriptor,
-        new java.lang.String[] { "ApiVersion", "RequestParams", "ResponseParams", });
+        new java.lang.String[] { "ApiVersion", });
     internal_static_response_ListDataServiceApiVersions_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_response_ListDataServiceApiVersions_fieldAccessorTable = new

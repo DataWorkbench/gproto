@@ -26,7 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type FlinkManageClient interface {
 	// Interface for manage flink cluster
-	ListAvailableFlinkVersions(ctx context.Context, in *pbmodel.EmptyStruct, opts ...grpc.CallOption) (*pbresponse.ListAvailableFlinkVersions, error)
+	ListAvailableFlinkVersions(ctx context.Context, in *pbrequest.ListAvailableFlinkVersions, opts ...grpc.CallOption) (*pbresponse.ListAvailableFlinkVersions, error)
 	// Describe flink cluster api that job-manager commit job to
 	// FIXME: removed it.
 	DescribeFlinkClusterAPI(ctx context.Context, in *pbrequest.DescribeFlinkClusterAPI, opts ...grpc.CallOption) (*pbresponse.DescribeFlinkClusterAPI, error)
@@ -51,7 +51,7 @@ func NewFlinkManageClient(cc grpc.ClientConnInterface) FlinkManageClient {
 	return &flinkManageClient{cc}
 }
 
-func (c *flinkManageClient) ListAvailableFlinkVersions(ctx context.Context, in *pbmodel.EmptyStruct, opts ...grpc.CallOption) (*pbresponse.ListAvailableFlinkVersions, error) {
+func (c *flinkManageClient) ListAvailableFlinkVersions(ctx context.Context, in *pbrequest.ListAvailableFlinkVersions, opts ...grpc.CallOption) (*pbresponse.ListAvailableFlinkVersions, error) {
 	out := new(pbresponse.ListAvailableFlinkVersions)
 	err := c.cc.Invoke(ctx, "/spacemanager.FlinkManage/ListAvailableFlinkVersions", in, out, opts...)
 	if err != nil {
@@ -155,7 +155,7 @@ func (c *flinkManageClient) StopFlinkClusterByScheduler(ctx context.Context, in 
 // for forward compatibility
 type FlinkManageServer interface {
 	// Interface for manage flink cluster
-	ListAvailableFlinkVersions(context.Context, *pbmodel.EmptyStruct) (*pbresponse.ListAvailableFlinkVersions, error)
+	ListAvailableFlinkVersions(context.Context, *pbrequest.ListAvailableFlinkVersions) (*pbresponse.ListAvailableFlinkVersions, error)
 	// Describe flink cluster api that job-manager commit job to
 	// FIXME: removed it.
 	DescribeFlinkClusterAPI(context.Context, *pbrequest.DescribeFlinkClusterAPI) (*pbresponse.DescribeFlinkClusterAPI, error)
@@ -177,7 +177,7 @@ type FlinkManageServer interface {
 type UnimplementedFlinkManageServer struct {
 }
 
-func (UnimplementedFlinkManageServer) ListAvailableFlinkVersions(context.Context, *pbmodel.EmptyStruct) (*pbresponse.ListAvailableFlinkVersions, error) {
+func (UnimplementedFlinkManageServer) ListAvailableFlinkVersions(context.Context, *pbrequest.ListAvailableFlinkVersions) (*pbresponse.ListAvailableFlinkVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAvailableFlinkVersions not implemented")
 }
 func (UnimplementedFlinkManageServer) DescribeFlinkClusterAPI(context.Context, *pbrequest.DescribeFlinkClusterAPI) (*pbresponse.DescribeFlinkClusterAPI, error) {
@@ -224,7 +224,7 @@ func RegisterFlinkManageServer(s grpc.ServiceRegistrar, srv FlinkManageServer) {
 }
 
 func _FlinkManage_ListAvailableFlinkVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(pbmodel.EmptyStruct)
+	in := new(pbrequest.ListAvailableFlinkVersions)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -236,7 +236,7 @@ func _FlinkManage_ListAvailableFlinkVersions_Handler(srv interface{}, ctx contex
 		FullMethod: "/spacemanager.FlinkManage/ListAvailableFlinkVersions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(FlinkManageServer).ListAvailableFlinkVersions(ctx, req.(*pbmodel.EmptyStruct))
+		return srv.(FlinkManageServer).ListAvailableFlinkVersions(ctx, req.(*pbrequest.ListAvailableFlinkVersions))
 	}
 	return interceptor(ctx, in, info, handler)
 }
