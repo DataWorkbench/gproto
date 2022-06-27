@@ -9,14 +9,6 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
-// Set default value for message model.Role
-func (this *Role) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
 // Set default value for message model.AdminModule
 func (this *AdminModule) SetDefaults() {
 	if this == nil {
@@ -46,6 +38,14 @@ func (this *AdminAPI_Permission) SetDefaults() {
 	return
 }
 
+// Set default value for message model.Role
+func (this *Role) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.User
 func (this *User) SetDefaults() {
 	if this == nil {
@@ -56,22 +56,6 @@ func (this *User) SetDefaults() {
 
 // Set default value for message model.AccessKey
 func (this *AccessKey) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.NotificationList
-func (this *NotificationList) SetDefaults() {
-	if this == nil {
-		return
-	}
-	return
-}
-
-// Set default value for message model.NotificationList.Item
-func (this *NotificationList_Item) SetDefaults() {
 	if this == nil {
 		return
 	}

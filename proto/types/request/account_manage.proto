@@ -1,0 +1,184 @@
+syntax = "proto3";
+
+package request;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbrequest";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbrequest";
+// File name of class.
+option java_outer_classname = "PBRequestAccount";
+option java_multiple_files = false;
+
+import "github.com/yu31/protoc-plugin/proto/validator.proto";
+import "github.com/yu31/protoc-plugin/proto/defaults.proto";
+
+message ListUsers {
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 2 ;
+
+  // @inject_tag: json:"user_ids" form:"user_ids"
+  repeated string user_ids = 3;
+
+  // Filter by user name.
+  // @inject_tag: json:"name" form:"name"
+  string name = 4;
+}
+
+message DeleteUsers {
+  // @inject_tag: json:"user_ids"
+  repeated string user_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0 } ];
+}
+
+message DescribeUser {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+}
+
+message CreateUser {
+  // @inject_tag: json:"name"
+  string name = 1 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+
+  // @inject_tag: json:"password"
+  string password = 2 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+
+  // @inject_tag: json:"email"
+  string email = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
+}
+
+message UpdateUser {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "usr-" } ];
+
+  // @inject_tag: json:"email"
+  string email = 4;
+}
+
+message ChangeUserPassword {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { ne: "" }];
+
+  // @inject_tag: json:"old_password"
+  string old_password = 2  [ (validator.field).tags.string = { ne: "" }];
+
+  // TODO: confirm the min and max length of password.
+  // @inject_tag: json:"new_password"
+  string new_password = 3  [ (validator.field).tags.string = { ne: "" }];
+}
+
+message ResetUserPassword {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { ne: "" }];
+
+  // TODO: confirm the min and max length of password.
+  // @inject_tag: json:"new_password"
+  string new_password = 3  [ (validator.field).tags.string = { ne: "" }];
+}
+
+message ListAccessKeys {
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 1 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 2 ;
+}
+
+message DeleteAccessKeys {
+  // @inject_tag: json:"access_key_ids"
+  repeated string access_key_ids = 1;
+}
+
+message DescribeAccessKey {
+  // @inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+  string access_key_id = 1;
+}
+
+message CreateAccessKey {
+  // @inject_tag: json:"name"
+  string name = 1;
+
+  // @inject_tag: json:"description"
+  string description = 2;
+}
+
+message UpdatedAccessKey {
+  // @inject_tag: json:"name"
+  string name = 1;
+
+  // @inject_tag: json:"description"
+  string description = 2;
+}
+
+message CheckSession {
+  // The session key.
+  // @inject_tag: json:"session_id"
+  string session_id = 1;
+}
+
+message CreateSession {
+  // @inject_tag: json:"user_name"
+  string user_name = 1 [ (validator.field).tags.string = { char_len_gte: 2, char_len_lte: 128  } ];
+
+  // @inject_tag: json:"password"
+  string password = 2 [ (validator.field).tags.string = { char_len_gte: 0, char_len_lte: 128  } ];
+
+  // @inject_tag: json:"ignore_password"
+  bool ignore_password = 3;
+}
+
+message CreateNotification {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "usr-" } ];
+
+  // The name must be unique for a user.
+  // @inject_tag: json:"name"
+  string name  = 2;
+
+  // @inject_tag: json:"description"
+  string description = 3;
+
+  // @inject_tag: json:"email"
+  string email = 4;
+}
+
+message UpdateNotification {
+  // @inject_tag: json:"nf_id" uri:"nf_id" swaggerignore:"true"
+  string nf_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // The name must be unique for a user.
+  // @inject_tag: json:"name"
+  string name  = 2;
+
+  // @inject_tag: json:"description"
+  string description = 3;
+
+  // @inject_tag: json:"email"
+  string email = 4;
+}
+
+message DeleteNotifications {
+  // @inject_tag: json:"nf_ids"
+  repeated string nf_ids = 1;
+}
+
+message ListNotifications {
+  // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
+  string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 3 ;
+
+  // @inject_tag: json:"nf_ids"
+  repeated string nf_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+}
+
+message DescribeNotification {
+  // @inject_tag: json:"nf_id" uri:"nf_id" swaggerignore:"true"
+  string nf_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+}

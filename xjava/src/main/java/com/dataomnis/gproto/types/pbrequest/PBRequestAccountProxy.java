@@ -19,11 +19,19 @@ public final class PBRequestAccountProxy {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string access_key_id = 1;</code>
      * @return The accessKeyId.
      */
     java.lang.String getAccessKeyId();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string access_key_id = 1;</code>
      * @return The bytes for accessKeyId.
      */
@@ -117,6 +125,10 @@ public final class PBRequestAccountProxy {
     public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object accessKeyId_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string access_key_id = 1;</code>
      * @return The accessKeyId.
      */
@@ -134,6 +146,10 @@ public final class PBRequestAccountProxy {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+     * </pre>
+     *
      * <code>string access_key_id = 1;</code>
      * @return The bytes for accessKeyId.
      */
@@ -456,6 +472,10 @@ public final class PBRequestAccountProxy {
 
       private java.lang.Object accessKeyId_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string access_key_id = 1;</code>
        * @return The accessKeyId.
        */
@@ -472,6 +492,10 @@ public final class PBRequestAccountProxy {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string access_key_id = 1;</code>
        * @return The bytes for accessKeyId.
        */
@@ -489,6 +513,10 @@ public final class PBRequestAccountProxy {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string access_key_id = 1;</code>
        * @param value The accessKeyId to set.
        * @return This builder for chaining.
@@ -504,6 +532,10 @@ public final class PBRequestAccountProxy {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string access_key_id = 1;</code>
        * @return This builder for chaining.
        */
@@ -514,6 +546,10 @@ public final class PBRequestAccountProxy {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"access_key_id" uri:"access_key_id" swaggerignore:"true"
+       * </pre>
+       *
        * <code>string access_key_id = 1;</code>
        * @param value The bytes for accessKeyId to set.
        * @return This builder for chaining.
@@ -587,41 +623,87 @@ public final class PBRequestAccountProxy {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @return A list containing the users.
-     */
-    java.util.List<java.lang.String>
-        getUsersList();
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @return The count of users.
-     */
-    int getUsersCount();
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The users at the given index.
-     */
-    java.lang.String getUsers(int index);
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the users at the given index.
-     */
-    com.google.protobuf.ByteString
-        getUsersBytes(int index);
-
-    /**
-     * <code>int32 limit = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     int getLimit();
 
     /**
-     * <code>int32 offset = 3;</code>
+     * <pre>
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 2;</code>
      * @return The offset.
      */
     int getOffset();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @return A list containing the userIds.
+     */
+    java.util.List<java.lang.String>
+        getUserIdsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @return The count of userIds.
+     */
+    int getUserIdsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The userIds at the given index.
+     */
+    java.lang.String getUserIds(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the userIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getUserIdsBytes(int index);
+
+    /**
+     * <pre>
+     * Filter by user name.
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * Filter by user name.
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
    * Protobuf type {@code request.ListUsersByProxy}
@@ -636,7 +718,8 @@ public final class PBRequestAccountProxy {
       super(builder);
     }
     private ListUsersByProxy() {
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      name_ = "";
     }
 
     @java.lang.Override
@@ -670,23 +753,29 @@ public final class PBRequestAccountProxy {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                users_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              users_.add(s);
-              break;
-            }
-            case 16: {
+            case 8: {
 
               limit_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 16: {
 
               offset_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                userIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              userIds_.add(s);
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             default: {
@@ -705,7 +794,7 @@ public final class PBRequestAccountProxy {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          users_ = users_.getUnmodifiableView();
+          userIds_ = userIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -724,45 +813,14 @@ public final class PBRequestAccountProxy {
               com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy.Builder.class);
     }
 
-    public static final int USERS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList users_;
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @return A list containing the users.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getUsersList() {
-      return users_;
-    }
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @return The count of users.
-     */
-    public int getUsersCount() {
-      return users_.size();
-    }
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @param index The index of the element to return.
-     * @return The users at the given index.
-     */
-    public java.lang.String getUsers(int index) {
-      return users_.get(index);
-    }
-    /**
-     * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the users at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getUsersBytes(int index) {
-      return users_.getByteString(index);
-    }
-
-    public static final int LIMIT_FIELD_NUMBER = 2;
+    public static final int LIMIT_FIELD_NUMBER = 1;
     private int limit_;
     /**
-     * <code>int32 limit = 2;</code>
+     * <pre>
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
      * @return The limit.
      */
     @java.lang.Override
@@ -770,15 +828,118 @@ public final class PBRequestAccountProxy {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 3;
+    public static final int OFFSET_FIELD_NUMBER = 2;
     private int offset_;
     /**
-     * <code>int32 offset = 3;</code>
+     * <pre>
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 2;</code>
      * @return The offset.
      */
     @java.lang.Override
     public int getOffset() {
       return offset_;
+    }
+
+    public static final int USER_IDS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList userIds_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @return A list containing the userIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUserIdsList() {
+      return userIds_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @return The count of userIds.
+     */
+    public int getUserIdsCount() {
+      return userIds_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @param index The index of the element to return.
+     * @return The userIds at the given index.
+     */
+    public java.lang.String getUserIds(int index) {
+      return userIds_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"user_ids" form:"user_ids"
+     * </pre>
+     *
+     * <code>repeated string user_ids = 3;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the userIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getUserIdsBytes(int index) {
+      return userIds_.getByteString(index);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * Filter by user name.
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by user name.
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -795,14 +956,17 @@ public final class PBRequestAccountProxy {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < users_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, users_.getRaw(i));
-      }
       if (limit_ != 0) {
-        output.writeInt32(2, limit_);
+        output.writeInt32(1, limit_);
       }
       if (offset_ != 0) {
-        output.writeInt32(3, offset_);
+        output.writeInt32(2, offset_);
+      }
+      for (int i = 0; i < userIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userIds_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -813,21 +977,24 @@ public final class PBRequestAccountProxy {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < users_.size(); i++) {
-          dataSize += computeStringSizeNoTag(users_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getUsersList().size();
-      }
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, limit_);
+          .computeInt32Size(1, limit_);
       }
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, offset_);
+          .computeInt32Size(2, offset_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < userIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(userIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUserIdsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -844,12 +1011,14 @@ public final class PBRequestAccountProxy {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy other = (com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy) obj;
 
-      if (!getUsersList()
-          .equals(other.getUsersList())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
+      if (!getUserIdsList()
+          .equals(other.getUserIdsList())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -861,14 +1030,16 @@ public final class PBRequestAccountProxy {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getUsersCount() > 0) {
-        hash = (37 * hash) + USERS_FIELD_NUMBER;
-        hash = (53 * hash) + getUsersList().hashCode();
-      }
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
+      if (getUserIdsCount() > 0) {
+        hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUserIdsList().hashCode();
+      }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1002,11 +1173,13 @@ public final class PBRequestAccountProxy {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
         limit_ = 0;
 
         offset_ = 0;
+
+        userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = "";
 
         return this;
       }
@@ -1035,13 +1208,14 @@ public final class PBRequestAccountProxy {
       public com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          users_ = users_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.users_ = users_;
         result.limit_ = limit_;
         result.offset_ = offset_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          userIds_ = userIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.userIds_ = userIds_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -1090,21 +1264,25 @@ public final class PBRequestAccountProxy {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListUsersByProxy.getDefaultInstance()) return this;
-        if (!other.users_.isEmpty()) {
-          if (users_.isEmpty()) {
-            users_ = other.users_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureUsersIsMutable();
-            users_.addAll(other.users_);
-          }
-          onChanged();
-        }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
         }
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
+        }
+        if (!other.userIds_.isEmpty()) {
+          if (userIds_.isEmpty()) {
+            userIds_ = other.userIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureUserIdsIsMutable();
+            userIds_.addAll(other.userIds_);
+          }
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1136,119 +1314,13 @@ public final class PBRequestAccountProxy {
       }
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureUsersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          users_ = new com.google.protobuf.LazyStringArrayList(users_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @return A list containing the users.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getUsersList() {
-        return users_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @return The count of users.
-       */
-      public int getUsersCount() {
-        return users_.size();
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param index The index of the element to return.
-       * @return The users at the given index.
-       */
-      public java.lang.String getUsers(int index) {
-        return users_.get(index);
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the users at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getUsersBytes(int index) {
-        return users_.getByteString(index);
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param index The index to set the value at.
-       * @param value The users to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsers(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureUsersIsMutable();
-        users_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param value The users to add.
-       * @return This builder for chaining.
-       */
-      public Builder addUsers(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureUsersIsMutable();
-        users_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param values The users to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllUsers(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureUsersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, users_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUsers() {
-        users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string users = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the users to add.
-       * @return This builder for chaining.
-       */
-      public Builder addUsersBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureUsersIsMutable();
-        users_.add(value);
-        onChanged();
-        return this;
-      }
-
       private int limit_ ;
       /**
-       * <code>int32 limit = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
        * @return The limit.
        */
       @java.lang.Override
@@ -1256,7 +1328,11 @@ public final class PBRequestAccountProxy {
         return limit_;
       }
       /**
-       * <code>int32 limit = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
        * @param value The limit to set.
        * @return This builder for chaining.
        */
@@ -1267,7 +1343,11 @@ public final class PBRequestAccountProxy {
         return this;
       }
       /**
-       * <code>int32 limit = 2;</code>
+       * <pre>
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 1 [(.defaults.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearLimit() {
@@ -1279,7 +1359,11 @@ public final class PBRequestAccountProxy {
 
       private int offset_ ;
       /**
-       * <code>int32 offset = 3;</code>
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -1287,7 +1371,11 @@ public final class PBRequestAccountProxy {
         return offset_;
       }
       /**
-       * <code>int32 offset = 3;</code>
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -1298,12 +1386,263 @@ public final class PBRequestAccountProxy {
         return this;
       }
       /**
-       * <code>int32 offset = 3;</code>
+       * <pre>
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
         
         offset_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUserIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          userIds_ = new com.google.protobuf.LazyStringArrayList(userIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @return A list containing the userIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUserIdsList() {
+        return userIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @return The count of userIds.
+       */
+      public int getUserIdsCount() {
+        return userIds_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param index The index of the element to return.
+       * @return The userIds at the given index.
+       */
+      public java.lang.String getUserIds(int index) {
+        return userIds_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the userIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdsBytes(int index) {
+        return userIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The userIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUserIdsIsMutable();
+        userIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param value The userIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUserIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUserIdsIsMutable();
+        userIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param values The userIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUserIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUserIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, userIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserIds() {
+        userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"user_ids" form:"user_ids"
+       * </pre>
+       *
+       * <code>repeated string user_ids = 3;</code>
+       * @param value The bytes of the userIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUserIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureUserIdsIsMutable();
+        userIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * Filter by user name.
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by user name.
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by user name.
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by user name.
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by user name.
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
         onChanged();
         return this;
       }
@@ -1366,25 +1705,23 @@ public final class PBRequestAccountProxy {
 
     /**
      * <pre>
-     * The user id.
-     * &#64;inject_tag: json:"owner" swaggerignore:"true"
+     * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string owner = 1;</code>
-     * @return The owner.
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * @return The userId.
      */
-    java.lang.String getOwner();
+    java.lang.String getUserId();
     /**
      * <pre>
-     * The user id.
-     * &#64;inject_tag: json:"owner" swaggerignore:"true"
+     * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string owner = 1;</code>
-     * @return The bytes for owner.
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
-        getOwnerBytes();
+        getUserIdBytes();
 
     /**
      * <pre>
@@ -1401,51 +1738,51 @@ public final class PBRequestAccountProxy {
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 3;</code>
      * @return The offset.
      */
     int getOffset();
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-     * @return A list containing the nfListIds.
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+     * @return A list containing the nfIds.
      */
     java.util.List<java.lang.String>
-        getNfListIdsList();
+        getNfIdsList();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-     * @return The count of nfListIds.
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+     * @return The count of nfIds.
      */
-    int getNfListIdsCount();
+    int getNfIdsCount();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The nfListIds at the given index.
+     * @return The nfIds at the given index.
      */
-    java.lang.String getNfListIds(int index);
+    java.lang.String getNfIds(int index);
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the nfListIds at the given index.
+     * @return The bytes of the nfIds at the given index.
      */
     com.google.protobuf.ByteString
-        getNfListIdsBytes(int index);
+        getNfIdsBytes(int index);
   }
   /**
    * Protobuf type {@code request.ListNotificationsByProxy}
@@ -1460,8 +1797,8 @@ public final class PBRequestAccountProxy {
       super(builder);
     }
     private ListNotificationsByProxy() {
-      owner_ = "";
-      nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      userId_ = "";
+      nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1498,7 +1835,7 @@ public final class PBRequestAccountProxy {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              owner_ = s;
+              userId_ = s;
               break;
             }
             case 16: {
@@ -1514,10 +1851,10 @@ public final class PBRequestAccountProxy {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nfListIds_ = new com.google.protobuf.LazyStringArrayList();
+                nfIds_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              nfListIds_.add(s);
+              nfIds_.add(s);
               break;
             }
             default: {
@@ -1536,7 +1873,7 @@ public final class PBRequestAccountProxy {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          nfListIds_ = nfListIds_.getUnmodifiableView();
+          nfIds_ = nfIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1555,48 +1892,46 @@ public final class PBRequestAccountProxy {
               com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy.class, com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy.Builder.class);
     }
 
-    public static final int OWNER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object owner_;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
     /**
      * <pre>
-     * The user id.
-     * &#64;inject_tag: json:"owner" swaggerignore:"true"
+     * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string owner = 1;</code>
-     * @return The owner.
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * @return The userId.
      */
     @java.lang.Override
-    public java.lang.String getOwner() {
-      java.lang.Object ref = owner_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        owner_ = s;
+        userId_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * The user id.
-     * &#64;inject_tag: json:"owner" swaggerignore:"true"
+     * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string owner = 1;</code>
-     * @return The bytes for owner.
+     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for userId.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOwnerBytes() {
-      java.lang.Object ref = owner_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        owner_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1625,7 +1960,7 @@ public final class PBRequestAccountProxy {
      * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
-     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * <code>int32 offset = 3;</code>
      * @return The offset.
      */
     @java.lang.Override
@@ -1633,55 +1968,55 @@ public final class PBRequestAccountProxy {
       return offset_;
     }
 
-    public static final int NF_LIST_IDS_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList nfListIds_;
+    public static final int NF_IDS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList nfIds_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-     * @return A list containing the nfListIds.
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+     * @return A list containing the nfIds.
      */
     public com.google.protobuf.ProtocolStringList
-        getNfListIdsList() {
-      return nfListIds_;
+        getNfIdsList() {
+      return nfIds_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-     * @return The count of nfListIds.
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+     * @return The count of nfIds.
      */
-    public int getNfListIdsCount() {
-      return nfListIds_.size();
+    public int getNfIdsCount() {
+      return nfIds_.size();
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the element to return.
-     * @return The nfListIds at the given index.
+     * @return The nfIds at the given index.
      */
-    public java.lang.String getNfListIds(int index) {
-      return nfListIds_.get(index);
+    public java.lang.String getNfIds(int index) {
+      return nfIds_.get(index);
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+     * &#64;inject_tag: json:"nf_ids"
      * </pre>
      *
-     * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+     * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
      * @param index The index of the value to return.
-     * @return The bytes of the nfListIds at the given index.
+     * @return The bytes of the nfIds at the given index.
      */
     public com.google.protobuf.ByteString
-        getNfListIdsBytes(int index) {
-      return nfListIds_.getByteString(index);
+        getNfIdsBytes(int index) {
+      return nfIds_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1698,8 +2033,8 @@ public final class PBRequestAccountProxy {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, owner_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       if (limit_ != 0) {
         output.writeInt32(2, limit_);
@@ -1707,8 +2042,8 @@ public final class PBRequestAccountProxy {
       if (offset_ != 0) {
         output.writeInt32(3, offset_);
       }
-      for (int i = 0; i < nfListIds_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nfListIds_.getRaw(i));
+      for (int i = 0; i < nfIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nfIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1719,8 +2054,8 @@ public final class PBRequestAccountProxy {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, owner_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       if (limit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1732,11 +2067,11 @@ public final class PBRequestAccountProxy {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < nfListIds_.size(); i++) {
-          dataSize += computeStringSizeNoTag(nfListIds_.getRaw(i));
+        for (int i = 0; i < nfIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(nfIds_.getRaw(i));
         }
         size += dataSize;
-        size += 1 * getNfListIdsList().size();
+        size += 1 * getNfIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1753,14 +2088,14 @@ public final class PBRequestAccountProxy {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy other = (com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy) obj;
 
-      if (!getOwner()
-          .equals(other.getOwner())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (getLimit()
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (!getNfListIdsList()
-          .equals(other.getNfListIdsList())) return false;
+      if (!getNfIdsList()
+          .equals(other.getNfIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1772,15 +2107,15 @@ public final class PBRequestAccountProxy {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getOwner().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      if (getNfListIdsCount() > 0) {
-        hash = (37 * hash) + NF_LIST_IDS_FIELD_NUMBER;
-        hash = (53 * hash) + getNfListIdsList().hashCode();
+      if (getNfIdsCount() > 0) {
+        hash = (37 * hash) + NF_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getNfIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1915,13 +2250,13 @@ public final class PBRequestAccountProxy {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        owner_ = "";
+        userId_ = "";
 
         limit_ = 0;
 
         offset_ = 0;
 
-        nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -1950,14 +2285,14 @@ public final class PBRequestAccountProxy {
       public com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy(this);
         int from_bitField0_ = bitField0_;
-        result.owner_ = owner_;
+        result.userId_ = userId_;
         result.limit_ = limit_;
         result.offset_ = offset_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          nfListIds_ = nfListIds_.getUnmodifiableView();
+          nfIds_ = nfIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.nfListIds_ = nfListIds_;
+        result.nfIds_ = nfIds_;
         onBuilt();
         return result;
       }
@@ -2006,8 +2341,8 @@ public final class PBRequestAccountProxy {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAccountProxy.ListNotificationsByProxy.getDefaultInstance()) return this;
-        if (!other.getOwner().isEmpty()) {
-          owner_ = other.owner_;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
         if (other.getLimit() != 0) {
@@ -2016,13 +2351,13 @@ public final class PBRequestAccountProxy {
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
         }
-        if (!other.nfListIds_.isEmpty()) {
-          if (nfListIds_.isEmpty()) {
-            nfListIds_ = other.nfListIds_;
+        if (!other.nfIds_.isEmpty()) {
+          if (nfIds_.isEmpty()) {
+            nfIds_ = other.nfIds_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureNfListIdsIsMutable();
-            nfListIds_.addAll(other.nfListIds_);
+            ensureNfIdsIsMutable();
+            nfIds_.addAll(other.nfIds_);
           }
           onChanged();
         }
@@ -2056,23 +2391,22 @@ public final class PBRequestAccountProxy {
       }
       private int bitField0_;
 
-      private java.lang.Object owner_ = "";
+      private java.lang.Object userId_ = "";
       /**
        * <pre>
-       * The user id.
-       * &#64;inject_tag: json:"owner" swaggerignore:"true"
+       * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string owner = 1;</code>
-       * @return The owner.
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * @return The userId.
        */
-      public java.lang.String getOwner() {
-        java.lang.Object ref = owner_;
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          owner_ = s;
+          userId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2080,21 +2414,20 @@ public final class PBRequestAccountProxy {
       }
       /**
        * <pre>
-       * The user id.
-       * &#64;inject_tag: json:"owner" swaggerignore:"true"
+       * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string owner = 1;</code>
-       * @return The bytes for owner.
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
-          getOwnerBytes() {
-        java.lang.Object ref = owner_;
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          owner_ = b;
+          userId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -2102,57 +2435,54 @@ public final class PBRequestAccountProxy {
       }
       /**
        * <pre>
-       * The user id.
-       * &#64;inject_tag: json:"owner" swaggerignore:"true"
+       * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string owner = 1;</code>
-       * @param value The owner to set.
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The userId to set.
        * @return This builder for chaining.
        */
-      public Builder setOwner(
+      public Builder setUserId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        owner_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The user id.
-       * &#64;inject_tag: json:"owner" swaggerignore:"true"
+       * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string owner = 1;</code>
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearOwner() {
+      public Builder clearUserId() {
         
-        owner_ = getDefaultInstance().getOwner();
+        userId_ = getDefaultInstance().getUserId();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The user id.
-       * &#64;inject_tag: json:"owner" swaggerignore:"true"
+       * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string owner = 1;</code>
-       * @param value The bytes for owner to set.
+       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
-      public Builder setOwnerBytes(
+      public Builder setUserIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        owner_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -2206,7 +2536,7 @@ public final class PBRequestAccountProxy {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3;</code>
        * @return The offset.
        */
       @java.lang.Override
@@ -2218,7 +2548,7 @@ public final class PBRequestAccountProxy {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3;</code>
        * @param value The offset to set.
        * @return This builder for chaining.
        */
@@ -2233,7 +2563,7 @@ public final class PBRequestAccountProxy {
        * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
-       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * <code>int32 offset = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
@@ -2243,148 +2573,148 @@ public final class PBRequestAccountProxy {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureNfListIdsIsMutable() {
+      private com.google.protobuf.LazyStringList nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNfIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          nfListIds_ = new com.google.protobuf.LazyStringArrayList(nfListIds_);
+          nfIds_ = new com.google.protobuf.LazyStringArrayList(nfIds_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-       * @return A list containing the nfListIds.
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+       * @return A list containing the nfIds.
        */
       public com.google.protobuf.ProtocolStringList
-          getNfListIdsList() {
-        return nfListIds_.getUnmodifiableView();
+          getNfIdsList() {
+        return nfIds_.getUnmodifiableView();
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-       * @return The count of nfListIds.
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+       * @return The count of nfIds.
        */
-      public int getNfListIdsCount() {
-        return nfListIds_.size();
+      public int getNfIdsCount() {
+        return nfIds_.size();
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index of the element to return.
-       * @return The nfListIds at the given index.
+       * @return The nfIds at the given index.
        */
-      public java.lang.String getNfListIds(int index) {
-        return nfListIds_.get(index);
+      public java.lang.String getNfIds(int index) {
+        return nfIds_.get(index);
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index of the value to return.
-       * @return The bytes of the nfListIds at the given index.
+       * @return The bytes of the nfIds at the given index.
        */
       public com.google.protobuf.ByteString
-          getNfListIdsBytes(int index) {
-        return nfListIds_.getByteString(index);
+          getNfIdsBytes(int index) {
+        return nfIds_.getByteString(index);
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
        * @param index The index to set the value at.
-       * @param value The nfListIds to set.
+       * @param value The nfIds to set.
        * @return This builder for chaining.
        */
-      public Builder setNfListIds(
+      public Builder setNfIds(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureNfListIdsIsMutable();
-        nfListIds_.set(index, value);
+  ensureNfIdsIsMutable();
+        nfIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-       * @param value The nfListIds to add.
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+       * @param value The nfIds to add.
        * @return This builder for chaining.
        */
-      public Builder addNfListIds(
+      public Builder addNfIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureNfListIdsIsMutable();
-        nfListIds_.add(value);
+  ensureNfIdsIsMutable();
+        nfIds_.add(value);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-       * @param values The nfListIds to add.
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+       * @param values The nfIds to add.
        * @return This builder for chaining.
        */
-      public Builder addAllNfListIds(
+      public Builder addAllNfIds(
           java.lang.Iterable<java.lang.String> values) {
-        ensureNfListIdsIsMutable();
+        ensureNfIdsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nfListIds_);
+            values, nfIds_);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearNfListIds() {
-        nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearNfIds() {
+        nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_list_ids" swaggerignore:"true"
+       * &#64;inject_tag: json:"nf_ids"
        * </pre>
        *
-       * <code>repeated string nf_list_ids = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes of the nfListIds to add.
+       * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the nfIds to add.
        * @return This builder for chaining.
        */
-      public Builder addNfListIdsBytes(
+      public Builder addNfIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureNfListIdsIsMutable();
-        nfListIds_.add(value);
+        ensureNfIdsIsMutable();
+        nfIds_.add(value);
         onChanged();
         return this;
       }
@@ -2470,16 +2800,16 @@ public final class PBRequestAccountProxy {
       "n/proto/validator.proto\0322github.com/yu31" +
       "/protoc-plugin/proto/defaults.proto\"1\n\030D" +
       "escribeAccessKeyByProxy\022\025\n\raccess_key_id" +
-      "\030\001 \001(\t\"O\n\020ListUsersByProxy\022\034\n\005users\030\001 \003(" +
-      "\tB\r\342\337\037\t\022\007\352\001\0040\0008d\022\r\n\005limit\030\002 \001(\005\022\016\n\006offse" +
-      "t\030\003 \001(\005\"\222\001\n\030ListNotificationsByProxy\022\r\n\005" +
-      "owner\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337" +
-      "\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000" +
-      "\022\"\n\013nf_list_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000Bt\n$" +
-      "com.dataomnis.gproto.types.pbrequestB\025PB" +
-      "RequestAccountProxyP\000Z3github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
-      "o3"
+      "\030\001 \001(\t\"j\n\020ListUsersByProxy\022&\n\005limit\030\001 \001(" +
+      "\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001" +
+      "(\005\022\020\n\010user_ids\030\003 \003(\t\022\014\n\004name\030\004 \001(\t\"\217\001\n\030L" +
+      "istNotificationsByProxy\022\034\n\007user_id\030\001 \001(\t" +
+      "B\013\342\337\037\007\022\005\302\001\002\"\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
+      "\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\003 \001(\005\022\035\n\006nf_ids\030" +
+      "\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000Bt\n$com.dataomnis.gp" +
+      "roto.types.pbrequestB\025PBRequestAccountPr" +
+      "oxyP\000Z3github.com/DataWorkbench/gproto/x" +
+      "go/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2498,13 +2828,13 @@ public final class PBRequestAccountProxy {
     internal_static_request_ListUsersByProxy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUsersByProxy_descriptor,
-        new java.lang.String[] { "Users", "Limit", "Offset", });
+        new java.lang.String[] { "Limit", "Offset", "UserIds", "Name", });
     internal_static_request_ListNotificationsByProxy_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ListNotificationsByProxy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListNotificationsByProxy_descriptor,
-        new java.lang.String[] { "Owner", "Limit", "Offset", "NfListIds", });
+        new java.lang.String[] { "UserId", "Limit", "Offset", "NfIds", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

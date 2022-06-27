@@ -10,6 +10,17 @@ import (
 	_ "github.com/yu31/protoc-plugin/xgo/pb/pbvalidator"
 )
 
+// Set default value for message request.ListAvailableUsers
+func (this *ListAvailableUsers) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
 // Set default value for message request.ListMembers
 func (this *ListMembers) SetDefaults() {
 	if this == nil {

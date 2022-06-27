@@ -14,6 +14,27 @@ import (
 	utf8 "unicode/utf8"
 )
 
+func (this *ListAvailableUsers) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListAvailableUsers", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListAvailableUsers", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+// Set default value for message request.ListAvailableUsers
+func (this *ListAvailableUsers) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ListMembers) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("ListMembers", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))

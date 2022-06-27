@@ -366,7 +366,7 @@ type QuotaSetFile struct {
 	// Limit is the maximum number of resource for every user. default 500.
 	Limit int64 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit"`
 	// Size is the maximum size of single file. default is 100MB.
-	SizeSingle int64 `protobuf:"varint,2,opt,name=size_single,json=sizeSingle,proto3" json:"size"`
+	SizeSingle int64 `protobuf:"varint,2,opt,name=size_single,json=sizeSingle,proto3" json:"size_single"`
 	// SizeTotal is the maximum size of every user. default 1GB.
 	SizeTotal int64 `protobuf:"varint,3,opt,name=size_total,json=sizeTotal,proto3" json:"size_total"`
 }
@@ -432,7 +432,7 @@ type QuotaSetFlinkCluster struct {
 	// Limit is the maximum number of clusters for every user. default 5.
 	Limit int64 `protobuf:"varint,1,opt,name=limit,proto3" json:"limit"`
 	// Cu is the maximum number of cu for single cluster. default 8.
-	CuSingle float32 `protobuf:"fixed32,2,opt,name=cu_single,json=cuSingle,proto3" json:"cu"`
+	CuSingle float32 `protobuf:"fixed32,2,opt,name=cu_single,json=cuSingle,proto3" json:"cu_single"`
 	// CuTotal is the maximum number of cu for every user. default 12.
 	CuTotal float32 `protobuf:"fixed32,3,opt,name=cu_total,json=cuTotal,proto3" json:"cu_total"`
 }

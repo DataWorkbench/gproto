@@ -25,6 +25,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type MemberManageClient interface {
+	// ListAvailableUsers for get all available users. not work when in IaaS.
+	ListAvailableUsers(ctx context.Context, in *pbrequest.ListAvailableUsers, opts ...grpc.CallOption) (*pbresponse.ListAvailableUsers, error)
 	// ListMembers get a lists of workspace member.
 	ListMembers(ctx context.Context, in *pbrequest.ListMembers, opts ...grpc.CallOption) (*pbresponse.ListMembers, error)
 	DeleteMembers(ctx context.Context, in *pbrequest.DeleteMembers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -39,6 +41,15 @@ type memberManageClient struct {
 
 func NewMemberManageClient(cc grpc.ClientConnInterface) MemberManageClient {
 	return &memberManageClient{cc}
+}
+
+func (c *memberManageClient) ListAvailableUsers(ctx context.Context, in *pbrequest.ListAvailableUsers, opts ...grpc.CallOption) (*pbresponse.ListAvailableUsers, error) {
+	out := new(pbresponse.ListAvailableUsers)
+	err := c.cc.Invoke(ctx, "/spacemanager.MemberManage/ListAvailableUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *memberManageClient) ListMembers(ctx context.Context, in *pbrequest.ListMembers, opts ...grpc.CallOption) (*pbresponse.ListMembers, error) {
@@ -90,6 +101,8 @@ func (c *memberManageClient) DescribeMember(ctx context.Context, in *pbrequest.D
 // All implementations must embed UnimplementedMemberManageServer
 // for forward compatibility
 type MemberManageServer interface {
+	// ListAvailableUsers for get all available users. not work when in IaaS.
+	ListAvailableUsers(context.Context, *pbrequest.ListAvailableUsers) (*pbresponse.ListAvailableUsers, error)
 	// ListMembers get a lists of workspace member.
 	ListMembers(context.Context, *pbrequest.ListMembers) (*pbresponse.ListMembers, error)
 	DeleteMembers(context.Context, *pbrequest.DeleteMembers) (*pbmodel.EmptyStruct, error)
@@ -103,6 +116,9 @@ type MemberManageServer interface {
 type UnimplementedMemberManageServer struct {
 }
 
+func (UnimplementedMemberManageServer) ListAvailableUsers(context.Context, *pbrequest.ListAvailableUsers) (*pbresponse.ListAvailableUsers, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAvailableUsers not implemented")
+}
 func (UnimplementedMemberManageServer) ListMembers(context.Context, *pbrequest.ListMembers) (*pbresponse.ListMembers, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMembers not implemented")
 }
@@ -129,6 +145,24 @@ type UnsafeMemberManageServer interface {
 
 func RegisterMemberManageServer(s grpc.ServiceRegistrar, srv MemberManageServer) {
 	s.RegisterService(&MemberManage_ServiceDesc, srv)
+}
+
+func _MemberManage_ListAvailableUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListAvailableUsers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MemberManageServer).ListAvailableUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.MemberManage/ListAvailableUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MemberManageServer).ListAvailableUsers(ctx, req.(*pbrequest.ListAvailableUsers))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _MemberManage_ListMembers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -228,6 +262,10 @@ var MemberManage_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "spacemanager.MemberManage",
 	HandlerType: (*MemberManageServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListAvailableUsers",
+			Handler:    _MemberManage_ListAvailableUsers_Handler,
+		},
 		{
 			MethodName: "ListMembers",
 			Handler:    _MemberManage_ListMembers_Handler,

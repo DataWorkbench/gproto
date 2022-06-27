@@ -10,20 +10,34 @@ option java_package = "com.dataomnis.gproto.service.pbsvcaccount";
 option java_outer_classname = "PBSvcAccountManage";
 option java_multiple_files = false;
 
-import "proto/types/request/account.proto";
-import "proto/types/response/account.proto";
+import "proto/types/request/account_manage.proto";
+import "proto/types/response/account_manage.proto";
+import "proto/types/model/empty.proto";
 
 service AccountManage {
-//  rpc DescribeUsers(request.DescribeUsers) returns (response.DescribeUsers) {}
-//  rpc DescribeAccessKey(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
-//  rpc CreateUser(request.CreateUser) returns (response.CreateUser) {}
-//  rpc UpdateUser(request.UpdateUser) returns (response.UpdateUser) {}
-//  rpc DeleteUser(request.DeleteUser) returns (response.DeleteUser) {}
-//  rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
-//  rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
-//  rpc CheckUserExists(request.CheckUserExists) returns (response.CheckUserExists) {}
-//  rpc CreateNotification(request.CreateNotification) returns (response.CreateNotification) {}
-//  rpc UpdateNotification(request.UpdateNotification) returns (response.UpdateNotification) {}
-//  rpc DeleteNotification(request.DeleteNotification) returns (response.DeleteNotification) {}
-//  rpc GetNotifications(request.GetNotifications) returns (response.GetNotifications) {}
+  rpc ListUsers(request.ListUsers) returns (response.ListUsers) {}
+  rpc DeleteUsers(request.DeleteUsers) returns (model.EmptyStruct) {}
+  rpc DescribeUser(request.DescribeUser) returns (response.DescribeUser) {}
+  rpc CreateUser(request.CreateUser) returns (response.CreateUser) {}
+  rpc UpdateUser(request.UpdateUser) returns (model.EmptyStruct) {}
+  rpc ChangeUserPassword(request.ChangeUserPassword) returns (model.EmptyStruct) {}
+  // TODO: Only used by admin.
+  rpc ResetUserPassword(request.ResetUserPassword) returns (model.EmptyStruct) {}
+
+  rpc ListAccessKeys(request.ListAccessKeys) returns (response.ListAccessKeys) {}
+  rpc DeleteAccessKeys(request.DeleteAccessKeys) returns (model.EmptyStruct) {}
+  rpc DescribeAccessKey(request.DescribeAccessKey) returns (response.DescribeAccessKey) {}
+  rpc CreateAccessKey(request.CreateAccessKey) returns (response.CreateAccessKey) {}
+  rpc UpdatedAccessKey(request.UpdatedAccessKey) returns (model.EmptyStruct) {}
+
+  // Session API
+  rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
+  rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
+
+  // Notification API
+  rpc ListNotifications(request.ListNotifications) returns (response.ListNotifications) {}
+  rpc DescribeNotification(request.DescribeNotification) returns (response.DescribeNotification) {}
+  rpc CreateNotification(request.CreateNotification) returns (response.CreateNotification) {}
+  rpc UpdateNotification(request.UpdateNotification) returns (model.EmptyStruct) {}
+  rpc DeleteNotifications(request.DeleteNotifications) returns (model.EmptyStruct) {}
 }

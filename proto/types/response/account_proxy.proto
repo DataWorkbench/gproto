@@ -15,19 +15,29 @@ option java_multiple_files = false;
 import "proto/types/model/account.proto";
 
 message DescribeAccessKeyByProxy {
+  // @inject_tag: json:"key_set"
   model.AccessKey key_set = 1;
 }
 
 message ListUsersByProxy {
-  repeated model.User user_set = 1;
-  int64 total_count = 2;
-}
-
-message ListNotificationsByProxy {
-  // @inject_tag: json:"notification_lists"
-  repeated model.NotificationList notification_lists = 1;
+  // @inject_tag: json:"infos"
+  repeated model.User infos = 1;
 
   // @inject_tag: json:"total"
   int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message ListNotificationsByProxy {
+  // @inject_tag: json:"infos"
+  repeated model.Notification infos = 1;
+
+  // @inject_tag: json:"total"
+  int64 total = 2;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
 }
 

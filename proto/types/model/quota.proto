@@ -69,7 +69,7 @@ message QuotaSetFile {
   int64 limit = 1;
 
   // Size is the maximum size of single file. default is 100MB.
-  // @inject_tag: json:"size"
+  // @inject_tag: json:"size_single"
   int64 size_single = 2;
 
   // SizeTotal is the maximum size of every user. default 1GB.
@@ -84,7 +84,7 @@ message QuotaSetFlinkCluster {
   int64 limit = 1;
 
   // Cu is the maximum number of cu for single cluster. default 8.
-  // @inject_tag: json:"cu"
+  // @inject_tag: json:"cu_single"
   float cu_single = 2;
 
   // CuTotal is the maximum number of cu for every user. default 12.

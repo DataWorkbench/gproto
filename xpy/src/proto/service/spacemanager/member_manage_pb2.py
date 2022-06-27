@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\021PBSvcMemberManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.proto/service/spacemanager/member_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/member_manage.proto\x1a(proto/types/response/member_manage.proto2\xc8\x02\n\x0cMemberManage\x12<\n\x0bListMembers\x12\x14.request.ListMembers\x1a\x15.response.ListMembers\"\x00\x12=\n\rDeleteMembers\x12\x16.request.DeleteMembers\x1a\x12.model.EmptyStruct\"\x00\x12\x37\n\nAddMembers\x12\x13.request.AddMembers\x1a\x12.model.EmptyStruct\"\x00\x12;\n\x0cUpdateMember\x12\x15.request.UpdateMember\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0e\x44\x65scribeMember\x12\x17.request.DescribeMember\x1a\x18.response.DescribeMember\"\x00\x42v\n\'com.dataomnis.gproto.service.pbsvcspaceB\x11PBSvcMemberManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n.proto/service/spacemanager/member_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a\'proto/types/request/member_manage.proto\x1a(proto/types/response/member_manage.proto2\x9b\x03\n\x0cMemberManage\x12Q\n\x12ListAvailableUsers\x12\x1b.request.ListAvailableUsers\x1a\x1c.response.ListAvailableUsers\"\x00\x12<\n\x0bListMembers\x12\x14.request.ListMembers\x1a\x15.response.ListMembers\"\x00\x12=\n\rDeleteMembers\x12\x16.request.DeleteMembers\x1a\x12.model.EmptyStruct\"\x00\x12\x37\n\nAddMembers\x12\x13.request.AddMembers\x1a\x12.model.EmptyStruct\"\x00\x12;\n\x0cUpdateMember\x12\x15.request.UpdateMember\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0e\x44\x65scribeMember\x12\x17.request.DescribeMember\x1a\x18.response.DescribeMember\"\x00\x42v\n\'com.dataomnis.gproto.service.pbsvcspaceB\x11PBSvcMemberManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_member__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_member__manage__pb2.DESCRIPTOR,])
 
@@ -41,12 +41,22 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=179,
-  serialized_end=507,
+  serialized_end=590,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='ListAvailableUsers',
+    full_name='spacemanager.MemberManage.ListAvailableUsers',
+    index=0,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_member__manage__pb2._LISTAVAILABLEUSERS,
+    output_type=proto_dot_types_dot_response_dot_member__manage__pb2._LISTAVAILABLEUSERS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='ListMembers',
     full_name='spacemanager.MemberManage.ListMembers',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_member__manage__pb2._LISTMEMBERS,
     output_type=proto_dot_types_dot_response_dot_member__manage__pb2._LISTMEMBERS,
@@ -56,7 +66,7 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteMembers',
     full_name='spacemanager.MemberManage.DeleteMembers',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_member__manage__pb2._DELETEMEMBERS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -66,7 +76,7 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='AddMembers',
     full_name='spacemanager.MemberManage.AddMembers',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_member__manage__pb2._ADDMEMBERS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -76,7 +86,7 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateMember',
     full_name='spacemanager.MemberManage.UpdateMember',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_member__manage__pb2._UPDATEMEMBER,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -86,7 +96,7 @@ _MEMBERMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeMember',
     full_name='spacemanager.MemberManage.DescribeMember',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_member__manage__pb2._DESCRIBEMEMBER,
     output_type=proto_dot_types_dot_response_dot_member__manage__pb2._DESCRIBEMEMBER,

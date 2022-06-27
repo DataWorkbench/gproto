@@ -290,46 +290,51 @@ public final class PBModelAlert {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> 
-        getNotificationListsList();
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> 
+        getNotificationsList();
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getNotificationLists(int index);
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification getNotifications(int index);
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
-    int getNotificationListsCount();
+    int getNotificationsCount();
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder> 
-        getNotificationListsOrBuilderList();
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder> 
+        getNotificationsOrBuilderList();
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder getNotificationListsOrBuilder(
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder getNotificationsOrBuilder(
         int index);
   }
   /**
@@ -359,7 +364,7 @@ public final class PBModelAlert {
       triggerAction_ = 0;
       notificationIds_ = "";
       createdBy_ = "";
-      notificationLists_ = java.util.Collections.emptyList();
+      notifications_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -478,11 +483,11 @@ public final class PBModelAlert {
             }
             case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                notificationLists_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList>();
+                notifications_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              notificationLists_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.parser(), extensionRegistry));
+              notifications_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -501,7 +506,7 @@ public final class PBModelAlert {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          notificationLists_ = java.util.Collections.unmodifiableList(notificationLists_);
+          notifications_ = java.util.Collections.unmodifiableList(notifications_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3822,64 +3827,69 @@ public final class PBModelAlert {
       return updated_;
     }
 
-    public static final int NOTIFICATION_LISTS_FIELD_NUMBER = 14;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> notificationLists_;
+    public static final int NOTIFICATIONS_FIELD_NUMBER = 14;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> notifications_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> getNotificationListsList() {
-      return notificationLists_;
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> getNotificationsList() {
+      return notifications_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder> 
-        getNotificationListsOrBuilderList() {
-      return notificationLists_;
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder> 
+        getNotificationsOrBuilderList() {
+      return notifications_;
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
     @java.lang.Override
-    public int getNotificationListsCount() {
-      return notificationLists_.size();
+    public int getNotificationsCount() {
+      return notifications_.size();
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getNotificationLists(int index) {
-      return notificationLists_.get(index);
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification getNotifications(int index) {
+      return notifications_.get(index);
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"notification_lists" gorm:"-"
+     * The notification information list.
+     * &#64;inject_tag: json:"notifications" gorm:"-"
      * </pre>
      *
-     * <code>repeated .model.NotificationList notification_lists = 14;</code>
+     * <code>repeated .model.Notification notifications = 14;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder getNotificationListsOrBuilder(
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder getNotificationsOrBuilder(
         int index) {
-      return notificationLists_.get(index);
+      return notifications_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3935,8 +3945,8 @@ public final class PBModelAlert {
       if (updated_ != 0L) {
         output.writeInt64(13, updated_);
       }
-      for (int i = 0; i < notificationLists_.size(); i++) {
-        output.writeMessage(14, notificationLists_.get(i));
+      for (int i = 0; i < notifications_.size(); i++) {
+        output.writeMessage(14, notifications_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -3993,9 +4003,9 @@ public final class PBModelAlert {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(13, updated_);
       }
-      for (int i = 0; i < notificationLists_.size(); i++) {
+      for (int i = 0; i < notifications_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, notificationLists_.get(i));
+          .computeMessageSize(14, notifications_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4037,8 +4047,8 @@ public final class PBModelAlert {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
-      if (!getNotificationListsList()
-          .equals(other.getNotificationListsList())) return false;
+      if (!getNotificationsList()
+          .equals(other.getNotificationsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4080,9 +4090,9 @@ public final class PBModelAlert {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
-      if (getNotificationListsCount() > 0) {
-        hash = (37 * hash) + NOTIFICATION_LISTS_FIELD_NUMBER;
-        hash = (53 * hash) + getNotificationListsList().hashCode();
+      if (getNotificationsCount() > 0) {
+        hash = (37 * hash) + NOTIFICATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4216,7 +4226,7 @@ public final class PBModelAlert {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getNotificationListsFieldBuilder();
+          getNotificationsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -4252,11 +4262,11 @@ public final class PBModelAlert {
 
         updated_ = 0L;
 
-        if (notificationListsBuilder_ == null) {
-          notificationLists_ = java.util.Collections.emptyList();
+        if (notificationsBuilder_ == null) {
+          notifications_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          notificationListsBuilder_.clear();
+          notificationsBuilder_.clear();
         }
         return this;
       }
@@ -4302,14 +4312,14 @@ public final class PBModelAlert {
         result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
-        if (notificationListsBuilder_ == null) {
+        if (notificationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            notificationLists_ = java.util.Collections.unmodifiableList(notificationLists_);
+            notifications_ = java.util.Collections.unmodifiableList(notifications_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.notificationLists_ = notificationLists_;
+          result.notifications_ = notifications_;
         } else {
-          result.notificationLists_ = notificationListsBuilder_.build();
+          result.notifications_ = notificationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -4404,29 +4414,29 @@ public final class PBModelAlert {
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
         }
-        if (notificationListsBuilder_ == null) {
-          if (!other.notificationLists_.isEmpty()) {
-            if (notificationLists_.isEmpty()) {
-              notificationLists_ = other.notificationLists_;
+        if (notificationsBuilder_ == null) {
+          if (!other.notifications_.isEmpty()) {
+            if (notifications_.isEmpty()) {
+              notifications_ = other.notifications_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureNotificationListsIsMutable();
-              notificationLists_.addAll(other.notificationLists_);
+              ensureNotificationsIsMutable();
+              notifications_.addAll(other.notifications_);
             }
             onChanged();
           }
         } else {
-          if (!other.notificationLists_.isEmpty()) {
-            if (notificationListsBuilder_.isEmpty()) {
-              notificationListsBuilder_.dispose();
-              notificationListsBuilder_ = null;
-              notificationLists_ = other.notificationLists_;
+          if (!other.notifications_.isEmpty()) {
+            if (notificationsBuilder_.isEmpty()) {
+              notificationsBuilder_.dispose();
+              notificationsBuilder_ = null;
+              notifications_ = other.notifications_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              notificationListsBuilder_ = 
+              notificationsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNotificationListsFieldBuilder() : null;
+                   getNotificationsFieldBuilder() : null;
             } else {
-              notificationListsBuilder_.addAllMessages(other.notificationLists_);
+              notificationsBuilder_.addAllMessages(other.notifications_);
             }
           }
         }
@@ -5643,316 +5653,334 @@ public final class PBModelAlert {
         return this;
       }
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> notificationLists_ =
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> notifications_ =
         java.util.Collections.emptyList();
-      private void ensureNotificationListsIsMutable() {
+      private void ensureNotificationsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          notificationLists_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList>(notificationLists_);
+          notifications_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification>(notifications_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder> notificationListsBuilder_;
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder> notificationsBuilder_;
 
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> getNotificationListsList() {
-        if (notificationListsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(notificationLists_);
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> getNotificationsList() {
+        if (notificationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(notifications_);
         } else {
-          return notificationListsBuilder_.getMessageList();
+          return notificationsBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public int getNotificationListsCount() {
-        if (notificationListsBuilder_ == null) {
-          return notificationLists_.size();
+      public int getNotificationsCount() {
+        if (notificationsBuilder_ == null) {
+          return notifications_.size();
         } else {
-          return notificationListsBuilder_.getCount();
+          return notificationsBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList getNotificationLists(int index) {
-        if (notificationListsBuilder_ == null) {
-          return notificationLists_.get(index);
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification getNotifications(int index) {
+        if (notificationsBuilder_ == null) {
+          return notifications_.get(index);
         } else {
-          return notificationListsBuilder_.getMessage(index);
+          return notificationsBuilder_.getMessage(index);
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder setNotificationLists(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList value) {
-        if (notificationListsBuilder_ == null) {
+      public Builder setNotifications(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification value) {
+        if (notificationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNotificationListsIsMutable();
-          notificationLists_.set(index, value);
+          ensureNotificationsIsMutable();
+          notifications_.set(index, value);
           onChanged();
         } else {
-          notificationListsBuilder_.setMessage(index, value);
+          notificationsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder setNotificationLists(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder builderForValue) {
-        if (notificationListsBuilder_ == null) {
-          ensureNotificationListsIsMutable();
-          notificationLists_.set(index, builderForValue.build());
+      public Builder setNotifications(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder builderForValue) {
+        if (notificationsBuilder_ == null) {
+          ensureNotificationsIsMutable();
+          notifications_.set(index, builderForValue.build());
           onChanged();
         } else {
-          notificationListsBuilder_.setMessage(index, builderForValue.build());
+          notificationsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder addNotificationLists(com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList value) {
-        if (notificationListsBuilder_ == null) {
+      public Builder addNotifications(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification value) {
+        if (notificationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNotificationListsIsMutable();
-          notificationLists_.add(value);
+          ensureNotificationsIsMutable();
+          notifications_.add(value);
           onChanged();
         } else {
-          notificationListsBuilder_.addMessage(value);
+          notificationsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder addNotificationLists(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList value) {
-        if (notificationListsBuilder_ == null) {
+      public Builder addNotifications(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification value) {
+        if (notificationsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureNotificationListsIsMutable();
-          notificationLists_.add(index, value);
+          ensureNotificationsIsMutable();
+          notifications_.add(index, value);
           onChanged();
         } else {
-          notificationListsBuilder_.addMessage(index, value);
+          notificationsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder addNotificationLists(
-          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder builderForValue) {
-        if (notificationListsBuilder_ == null) {
-          ensureNotificationListsIsMutable();
-          notificationLists_.add(builderForValue.build());
+      public Builder addNotifications(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder builderForValue) {
+        if (notificationsBuilder_ == null) {
+          ensureNotificationsIsMutable();
+          notifications_.add(builderForValue.build());
           onChanged();
         } else {
-          notificationListsBuilder_.addMessage(builderForValue.build());
+          notificationsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder addNotificationLists(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder builderForValue) {
-        if (notificationListsBuilder_ == null) {
-          ensureNotificationListsIsMutable();
-          notificationLists_.add(index, builderForValue.build());
+      public Builder addNotifications(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder builderForValue) {
+        if (notificationsBuilder_ == null) {
+          ensureNotificationsIsMutable();
+          notifications_.add(index, builderForValue.build());
           onChanged();
         } else {
-          notificationListsBuilder_.addMessage(index, builderForValue.build());
+          notificationsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder addAllNotificationLists(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList> values) {
-        if (notificationListsBuilder_ == null) {
-          ensureNotificationListsIsMutable();
+      public Builder addAllNotifications(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification> values) {
+        if (notificationsBuilder_ == null) {
+          ensureNotificationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, notificationLists_);
+              values, notifications_);
           onChanged();
         } else {
-          notificationListsBuilder_.addAllMessages(values);
+          notificationsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder clearNotificationLists() {
-        if (notificationListsBuilder_ == null) {
-          notificationLists_ = java.util.Collections.emptyList();
+      public Builder clearNotifications() {
+        if (notificationsBuilder_ == null) {
+          notifications_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          notificationListsBuilder_.clear();
+          notificationsBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public Builder removeNotificationLists(int index) {
-        if (notificationListsBuilder_ == null) {
-          ensureNotificationListsIsMutable();
-          notificationLists_.remove(index);
+      public Builder removeNotifications(int index) {
+        if (notificationsBuilder_ == null) {
+          ensureNotificationsIsMutable();
+          notifications_.remove(index);
           onChanged();
         } else {
-          notificationListsBuilder_.remove(index);
+          notificationsBuilder_.remove(index);
         }
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder getNotificationListsBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder getNotificationsBuilder(
           int index) {
-        return getNotificationListsFieldBuilder().getBuilder(index);
+        return getNotificationsFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder getNotificationListsOrBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder getNotificationsOrBuilder(
           int index) {
-        if (notificationListsBuilder_ == null) {
-          return notificationLists_.get(index);  } else {
-          return notificationListsBuilder_.getMessageOrBuilder(index);
+        if (notificationsBuilder_ == null) {
+          return notifications_.get(index);  } else {
+          return notificationsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder> 
-           getNotificationListsOrBuilderList() {
-        if (notificationListsBuilder_ != null) {
-          return notificationListsBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder> 
+           getNotificationsOrBuilderList() {
+        if (notificationsBuilder_ != null) {
+          return notificationsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(notificationLists_);
+          return java.util.Collections.unmodifiableList(notifications_);
         }
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder addNotificationListsBuilder() {
-        return getNotificationListsFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.getDefaultInstance());
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder addNotificationsBuilder() {
+        return getNotificationsFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.getDefaultInstance());
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder addNotificationListsBuilder(
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder addNotificationsBuilder(
           int index) {
-        return getNotificationListsFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.getDefaultInstance());
+        return getNotificationsFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.getDefaultInstance());
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"notification_lists" gorm:"-"
+       * The notification information list.
+       * &#64;inject_tag: json:"notifications" gorm:"-"
        * </pre>
        *
-       * <code>repeated .model.NotificationList notification_lists = 14;</code>
+       * <code>repeated .model.Notification notifications = 14;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder> 
-           getNotificationListsBuilderList() {
-        return getNotificationListsFieldBuilder().getBuilderList();
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder> 
+           getNotificationsBuilderList() {
+        return getNotificationsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder> 
-          getNotificationListsFieldBuilder() {
-        if (notificationListsBuilder_ == null) {
-          notificationListsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationList.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationListOrBuilder>(
-                  notificationLists_,
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder> 
+          getNotificationsFieldBuilder() {
+        if (notificationsBuilder_ == null) {
+          notificationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification, com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder>(
+                  notifications_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          notificationLists_ = null;
+          notifications_ = null;
         }
-        return notificationListsBuilder_;
+        return notificationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7056,7 +7084,7 @@ public final class PBModelAlert {
       "github.com/yu31/protoc-plugin/proto/vali" +
       "dator.proto\032/github.com/yu31/protoc-plug" +
       "in/proto/gosql.proto\032\037proto/types/model/" +
-      "account.proto\"\203\n\n\013AlertPolicy\022%\n\010space_i" +
+      "account.proto\"\372\t\n\013AlertPolicy\022%\n\010space_i" +
       "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\t" +
       "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
       "\014\022\n\302\001\007\220\002\002\230\002\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001" +
@@ -7071,30 +7099,30 @@ public final class PBModelAlert {
       "rActionB\r\342\337\037\t\022\007\332\001\0040\000X\001\022%\n\020notification_i" +
       "ds\030\n \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022#\n\ncreated_by\030\013 \001(" +
       "\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\014 \001(\003B\013\342\337\037" +
-      "\007\022\005\262\001\0020\000\022\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0223" +
-      "\n\022notification_lists\030\016 \003(\0132\027.model.Notif" +
-      "icationList\032g\n\020MonitorStreamJob\022\033\n\023insta" +
-      "nce_run_failed\030\001 \001(\010\022\034\n\024instance_run_tim" +
-      "eout\030\002 \001(\010\022\030\n\020instance_timeout\030\003 \001(\005\032e\n\016" +
-      "MonitorSyncJob\022\033\n\023instance_run_failed\030\001 " +
-      "\001(\010\022\034\n\024instance_run_timeout\030\002 \001(\010\022\030\n\020ins" +
-      "tance_timeout\030\003 \001(\005\032\203\001\n\013MonitorItem\0227\n\ns" +
-      "tream_job\030\001 \001(\0132#.model.AlertPolicy.Moni" +
-      "torStreamJob\0223\n\010sync_job\030\002 \001(\0132!.model.A" +
-      "lertPolicy.MonitorSyncJob:\006\312\262\004\002\n\000\"A\n\006Sta" +
-      "tus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ena" +
-      "bled\020\002\022\014\n\010Disabled\020\003\";\n\013TriggerRule\022\024\n\020T" +
-      "riggerRuleUnset\020\000\022\026\n\022TriggerRuleAnyItem\020" +
-      "\001\"J\n\rTriggerAction\022\026\n\022TriggerActionUnset" +
-      "\020\000\022!\n\035TriggerActionSendNotification\020\001\"<\n" +
-      "\rMonitorObject\022\017\n\013ObjectUnset\020\000\022\r\n\tStrea" +
-      "mJob\020\001\022\013\n\007SyncJob\020\002\"\200\001\n\022AlertPolicyMappi" +
-      "ng\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-" +
-      "\022\034\n\006job_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bg\n\"com.da" +
-      "taomnis.gproto.types.pbmodelB\014PBModelAle" +
-      "rtP\000Z1github.com/DataWorkbench/gproto/xg" +
-      "o/types/pbmodelb\006proto3"
+      "\007\022\005\262\001\0020\000\022\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022*" +
+      "\n\rnotifications\030\016 \003(\0132\023.model.Notificati" +
+      "on\032g\n\020MonitorStreamJob\022\033\n\023instance_run_f" +
+      "ailed\030\001 \001(\010\022\034\n\024instance_run_timeout\030\002 \001(" +
+      "\010\022\030\n\020instance_timeout\030\003 \001(\005\032e\n\016MonitorSy" +
+      "ncJob\022\033\n\023instance_run_failed\030\001 \001(\010\022\034\n\024in" +
+      "stance_run_timeout\030\002 \001(\010\022\030\n\020instance_tim" +
+      "eout\030\003 \001(\005\032\203\001\n\013MonitorItem\0227\n\nstream_job" +
+      "\030\001 \001(\0132#.model.AlertPolicy.MonitorStream" +
+      "Job\0223\n\010sync_job\030\002 \001(\0132!.model.AlertPolic" +
+      "y.MonitorSyncJob:\006\312\262\004\002\n\000\"A\n\006Status\022\017\n\013St" +
+      "atusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\022\014\n" +
+      "\010Disabled\020\003\";\n\013TriggerRule\022\024\n\020TriggerRul" +
+      "eUnset\020\000\022\026\n\022TriggerRuleAnyItem\020\001\"J\n\rTrig" +
+      "gerAction\022\026\n\022TriggerActionUnset\020\000\022!\n\035Tri" +
+      "ggerActionSendNotification\020\001\"<\n\rMonitorO" +
+      "bject\022\017\n\013ObjectUnset\020\000\022\r\n\tStreamJob\020\001\022\013\n" +
+      "\007SyncJob\020\002\"\200\001\n\022AlertPolicyMapping\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010aler" +
+      "t_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job_i" +
+      "d\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bg\n\"com.dataomnis.g" +
+      "proto.types.pbmodelB\014PBModelAlertP\000Z1git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "bmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7108,7 +7136,7 @@ public final class PBModelAlert {
     internal_static_model_AlertPolicy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AlertPolicy_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Name", "Desc", "Status", "MonitorObject", "MonitorItem", "TriggerRule", "TriggerAction", "NotificationIds", "CreatedBy", "Created", "Updated", "NotificationLists", });
+        new java.lang.String[] { "SpaceId", "Id", "Name", "Desc", "Status", "MonitorObject", "MonitorItem", "TriggerRule", "TriggerAction", "NotificationIds", "CreatedBy", "Created", "Updated", "Notifications", });
     internal_static_model_AlertPolicy_MonitorStreamJob_descriptor =
       internal_static_model_AlertPolicy_descriptor.getNestedTypes().get(0);
     internal_static_model_AlertPolicy_MonitorStreamJob_fieldAccessorTable = new

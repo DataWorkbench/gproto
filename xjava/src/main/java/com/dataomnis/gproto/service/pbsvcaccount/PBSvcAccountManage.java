@@ -24,21 +24,58 @@ public final class PBSvcAccountManage {
   static {
     java.lang.String[] descriptorData = {
       "\n*proto/service/account/account_manage.p" +
-      "roto\022\007account\032!proto/types/request/accou" +
-      "nt.proto\032\"proto/types/response/account.p" +
-      "roto2\017\n\rAccountManageB{\n)com.dataomnis.g" +
-      "proto.service.pbsvcaccountB\022PBSvcAccount" +
-      "ManageP\000Z8github.com/DataWorkbench/gprot" +
-      "o/xgo/service/pbsvcaccountb\006proto3"
+      "roto\022\007account\032(proto/types/request/accou" +
+      "nt_manage.proto\032)proto/types/response/ac" +
+      "count_manage.proto\032\035proto/types/model/em" +
+      "pty.proto2\307\n\n\rAccountManage\0226\n\tListUsers" +
+      "\022\022.request.ListUsers\032\023.response.ListUser" +
+      "s\"\000\0229\n\013DeleteUsers\022\024.request.DeleteUsers" +
+      "\032\022.model.EmptyStruct\"\000\022?\n\014DescribeUser\022\025" +
+      ".request.DescribeUser\032\026.response.Describ" +
+      "eUser\"\000\0229\n\nCreateUser\022\023.request.CreateUs" +
+      "er\032\024.response.CreateUser\"\000\0227\n\nUpdateUser" +
+      "\022\023.request.UpdateUser\032\022.model.EmptyStruc" +
+      "t\"\000\022G\n\022ChangeUserPassword\022\033.request.Chan" +
+      "geUserPassword\032\022.model.EmptyStruct\"\000\022E\n\021" +
+      "ResetUserPassword\022\032.request.ResetUserPas" +
+      "sword\032\022.model.EmptyStruct\"\000\022E\n\016ListAcces" +
+      "sKeys\022\027.request.ListAccessKeys\032\030.respons" +
+      "e.ListAccessKeys\"\000\022C\n\020DeleteAccessKeys\022\031" +
+      ".request.DeleteAccessKeys\032\022.model.EmptyS" +
+      "truct\"\000\022N\n\021DescribeAccessKey\022\032.request.D" +
+      "escribeAccessKey\032\033.response.DescribeAcce" +
+      "ssKey\"\000\022H\n\017CreateAccessKey\022\030.request.Cre" +
+      "ateAccessKey\032\031.response.CreateAccessKey\"" +
+      "\000\022C\n\020UpdatedAccessKey\022\031.request.UpdatedA" +
+      "ccessKey\032\022.model.EmptyStruct\"\000\022B\n\rCreate" +
+      "Session\022\026.request.CreateSession\032\027.respon" +
+      "se.CreateSession\"\000\022?\n\014CheckSession\022\025.req" +
+      "uest.CheckSession\032\026.response.CheckSessio" +
+      "n\"\000\022N\n\021ListNotifications\022\032.request.ListN" +
+      "otifications\032\033.response.ListNotification" +
+      "s\"\000\022W\n\024DescribeNotification\022\035.request.De" +
+      "scribeNotification\032\036.response.DescribeNo" +
+      "tification\"\000\022Q\n\022CreateNotification\022\033.req" +
+      "uest.CreateNotification\032\034.response.Creat" +
+      "eNotification\"\000\022G\n\022UpdateNotification\022\033." +
+      "request.UpdateNotification\032\022.model.Empty" +
+      "Struct\"\000\022I\n\023DeleteNotifications\022\034.reques" +
+      "t.DeleteNotifications\032\022.model.EmptyStruc" +
+      "t\"\000B{\n)com.dataomnis.gproto.service.pbsv" +
+      "caccountB\022PBSvcAccountManageP\000Z8github.c" +
+      "om/DataWorkbench/gproto/xgo/service/pbsv" +
+      "caccountb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbrequest.PBRequestAccount.getDescriptor(),
           com.dataomnis.gproto.types.pbresponse.PBResponseAccount.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor(),
         });
     com.dataomnis.gproto.types.pbrequest.PBRequestAccount.getDescriptor();
     com.dataomnis.gproto.types.pbresponse.PBResponseAccount.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelEmpty.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

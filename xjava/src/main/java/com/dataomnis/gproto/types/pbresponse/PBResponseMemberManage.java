@@ -14,6 +14,1093 @@ public final class PBResponseMemberManage {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface ListAvailableUsersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ListAvailableUsers)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> 
+        getInfosList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getInfos(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    int getInfosCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
+        getInfosOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getInfosOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 2;</code>
+     * @return The total.
+     */
+    long getTotal();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 3;</code>
+     * @return The hasMore.
+     */
+    boolean getHasMore();
+  }
+  /**
+   * Protobuf type {@code response.ListAvailableUsers}
+   */
+  public static final class ListAvailableUsers extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.ListAvailableUsers)
+      ListAvailableUsersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAvailableUsers.newBuilder() to construct.
+    private ListAvailableUsers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAvailableUsers() {
+      infos_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAvailableUsers();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAvailableUsers(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              infos_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              total_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              hasMore_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          infos_ = java.util.Collections.unmodifiableList(infos_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.internal_static_response_ListAvailableUsers_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.internal_static_response_ListAvailableUsers_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.class, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.Builder.class);
+    }
+
+    public static final int INFOS_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> infos_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> getInfosList() {
+      return infos_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
+        getInfosOrBuilderList() {
+      return infos_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    @java.lang.Override
+    public int getInfosCount() {
+      return infos_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getInfos(int index) {
+      return infos_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.User infos = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getInfosOrBuilder(
+        int index) {
+      return infos_.get(index);
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 2;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 2;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
+    public static final int HAS_MORE_FIELD_NUMBER = 3;
+    private boolean hasMore_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 3;</code>
+     * @return The hasMore.
+     */
+    @java.lang.Override
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < infos_.size(); i++) {
+        output.writeMessage(1, infos_.get(i));
+      }
+      if (total_ != 0L) {
+        output.writeInt64(2, total_);
+      }
+      if (hasMore_ != false) {
+        output.writeBool(3, hasMore_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < infos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, infos_.get(i));
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, total_);
+      }
+      if (hasMore_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, hasMore_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers other = (com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers) obj;
+
+      if (!getInfosList()
+          .equals(other.getInfosList())) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (getHasMore()
+          != other.getHasMore()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getInfosCount() > 0) {
+        hash = (37 * hash) + INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getInfosList().hashCode();
+      }
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
+      hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasMore());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.ListAvailableUsers}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.ListAvailableUsers)
+        com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.internal_static_response_ListAvailableUsers_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.internal_static_response_ListAvailableUsers_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.class, com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInfosFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          infosBuilder_.clear();
+        }
+        total_ = 0L;
+
+        hasMore_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.internal_static_response_ListAvailableUsers_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers result = new com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers(this);
+        int from_bitField0_ = bitField0_;
+        if (infosBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            infos_ = java.util.Collections.unmodifiableList(infos_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.infos_ = infos_;
+        } else {
+          result.infos_ = infosBuilder_.build();
+        }
+        result.total_ = total_;
+        result.hasMore_ = hasMore_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers.getDefaultInstance()) return this;
+        if (infosBuilder_ == null) {
+          if (!other.infos_.isEmpty()) {
+            if (infos_.isEmpty()) {
+              infos_ = other.infos_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureInfosIsMutable();
+              infos_.addAll(other.infos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.infos_.isEmpty()) {
+            if (infosBuilder_.isEmpty()) {
+              infosBuilder_.dispose();
+              infosBuilder_ = null;
+              infos_ = other.infos_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              infosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getInfosFieldBuilder() : null;
+            } else {
+              infosBuilder_.addAllMessages(other.infos_);
+            }
+          }
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
+        if (other.getHasMore() != false) {
+          setHasMore(other.getHasMore());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> infos_ =
+        java.util.Collections.emptyList();
+      private void ensureInfosIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User>(infos_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> infosBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> getInfosList() {
+        if (infosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(infos_);
+        } else {
+          return infosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public int getInfosCount() {
+        if (infosBuilder_ == null) {
+          return infos_.size();
+        } else {
+          return infosBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User getInfos(int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);
+        } else {
+          return infosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder setInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.set(index, value);
+          onChanged();
+        } else {
+          infosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder setInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder addInfos(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.add(value);
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder addInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.add(index, value);
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder addInfos(
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder addInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder addAllInfos(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.User> values) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, infos_);
+          onChanged();
+        } else {
+          infosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder clearInfos() {
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          infosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public Builder removeInfos(int index) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.remove(index);
+          onChanged();
+        } else {
+          infosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder getInfosBuilder(
+          int index) {
+        return getInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder getInfosOrBuilder(
+          int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);  } else {
+          return infosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
+           getInfosOrBuilderList() {
+        if (infosBuilder_ != null) {
+          return infosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(infos_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder addInfosBuilder() {
+        return getInfosFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder addInfosBuilder(
+          int index) {
+        return getInfosFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.User infos = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder> 
+           getInfosBuilderList() {
+        return getInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder> 
+          getInfosFieldBuilder() {
+        if (infosBuilder_ == null) {
+          infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAccount.User, com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAccount.UserOrBuilder>(
+                  infos_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          infos_ = null;
+        }
+        return infosBuilder_;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 2;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 2;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @return The hasMore.
+       */
+      @java.lang.Override
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @param value The hasMore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasMore(boolean value) {
+        
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasMore() {
+        
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.ListAvailableUsers)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.ListAvailableUsers)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAvailableUsers>
+        PARSER = new com.google.protobuf.AbstractParser<ListAvailableUsers>() {
+      @java.lang.Override
+      public ListAvailableUsers parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAvailableUsers(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAvailableUsers> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAvailableUsers> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseMemberManage.ListAvailableUsers getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListMembersOrBuilder extends
       // @@protoc_insertion_point(interface_extends:response.ListMembers)
       com.google.protobuf.MessageOrBuilder {
@@ -1739,6 +2826,11 @@ public final class PBResponseMemberManage {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_ListAvailableUsers_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_ListAvailableUsers_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_ListMembers_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1759,32 +2851,43 @@ public final class PBResponseMemberManage {
     java.lang.String[] descriptorData = {
       "\n(proto/types/response/member_manage.pro" +
       "to\022\010response\032\036proto/types/model/member.p" +
-      "roto\"L\n\013ListMembers\022\034\n\005infos\030\001 \003(\0132\r.mod" +
-      "el.Member\022\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 \001" +
-      "(\010\"-\n\016DescribeMember\022\033\n\004info\030\001 \001(\0132\r.mod" +
-      "el.MemberBw\n%com.dataomnis.gproto.types." +
-      "pbresponseB\026PBResponseMemberManageP\000Z4gi" +
-      "thub.com/DataWorkbench/gproto/xgo/types/" +
-      "pbresponseb\006proto3"
+      "roto\032\037proto/types/model/account.proto\"Q\n" +
+      "\022ListAvailableUsers\022\032\n\005infos\030\001 \003(\0132\013.mod" +
+      "el.User\022\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010" +
+      "\"L\n\013ListMembers\022\034\n\005infos\030\001 \003(\0132\r.model.M" +
+      "ember\022\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"-" +
+      "\n\016DescribeMember\022\033\n\004info\030\001 \001(\0132\r.model.M" +
+      "emberBw\n%com.dataomnis.gproto.types.pbre" +
+      "sponseB\026PBResponseMemberManageP\000Z4github" +
+      ".com/DataWorkbench/gproto/xgo/types/pbre" +
+      "sponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbmodel.PBModelMember.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor(),
         });
-    internal_static_response_ListMembers_descriptor =
+    internal_static_response_ListAvailableUsers_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_response_ListAvailableUsers_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_ListAvailableUsers_descriptor,
+        new java.lang.String[] { "Infos", "Total", "HasMore", });
+    internal_static_response_ListMembers_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_response_ListMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ListMembers_descriptor,
         new java.lang.String[] { "Infos", "Total", "HasMore", });
     internal_static_response_DescribeMember_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_response_DescribeMember_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeMember_descriptor,
         new java.lang.String[] { "Info", });
     com.dataomnis.gproto.types.pbmodel.PBModelMember.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

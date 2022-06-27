@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+package iaas;
+
+option go_package = "github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbiaas";
+
+// Package name of class.
+option java_package = "com.dataomnis.gproto.types.pbmodel.pbiaas";
+// File name of class.
+option java_outer_classname = "PBIaasUser";
+option java_multiple_files = false;
+
+message User {
+  enum Status {
+    _StatusUnset = 0;
+    active = 1;
+  }
+
+  // The id of user. Both in Dataomnis and IaaS.
+  // @inject_tag: json:"user_id"
+  string user_id = 1;
+
+  // The name of User. Both in Dataomnis and IaaS.
+  // Cannot be modified in Dataomnis.
+  // @inject_tag: json:"user_name"
+  string user_name = 2;
+
+  // The email. Both in Dataomnis and IaaS.
+  // Cannot be modified in IaaS.
+  // @inject_tag: json:"email"
+  string email = 4;
+
+  // Language "zh-cn" | "en-us"
+  // @inject_tag: json:"lang"
+  string lang = 3;
+
+  // @inject_tag: json:"root_user_id"
+  string root_user_id = 5;
+
+  // @inject_tag: json:"role"
+  string role = 6;
+
+  // @inject_tag: json:"privilege"
+  int32 privilege = 7;
+
+  // @inject_tag: json:"status"
+  string status = 8;
+
+  // @inject_tag: json:"zones"
+  repeated string zones = 9;
+
+  // @inject_tag: json:"regions"
+  repeated string regions = 10;
+
+  // @inject_tag: json:"notify_email"
+  string notify_email = 11;
+
+  // @inject_tag: json:"verify_type"
+  string verify_type = 12;
+
+  // @inject_tag: json:"paid_mode"
+  string paid_mode = 13;
+
+  // @inject_tag: json:"gravatar_email"
+  string gravatar_email = 14;
+
+  // @inject_tag: json:"personal_name"
+  string personal_name = 15;
+
+  // @inject_tag: json:"company_name"
+  string company_name = 16;
+
+  // @inject_tag: json:"company_phone"
+  string company_phone = 17;
+
+  // @inject_tag: json:"company_code"
+  string company_code = 18;
+
+  // @inject_tag: json:"phone"
+  string phone = 19;
+
+  // @inject_tag: json:"console_id"
+  string console_id = 20;
+
+  // @inject_tag: json:"gender"
+  string gender = 21;
+
+  // @inject_tag: json:"remarks"
+  string remarks = 22;
+
+  // @inject_tag: json:"mkt_source"
+  string mkt_source = 23;
+
+  // @inject_tag: json:"create_time"
+  string create_time = 24;
+
+  // @inject_tag: json:"status_time"
+  string status_time = 25;
+
+  // 0: root user, 1: sub user.
+  // @inject_tag: json:"user_type"
+  int32 user_type = 26;
+
+  // Options Values: "CNY" or "USD"
+  // @inject_tag: json:"currency"
+  string currency = 27;
+}
+
+message AccessKey {
+  // @inject_tag: json:"access_key_id"
+  string access_key_id = 1;
+
+  // @inject_tag: json:"secret_access_key"
+  string secret_access_key = 2;
+
+  // @inject_tag: json:"access_key_name"
+  string access_key_name = 12;
+
+  // @inject_tag: json:"owner"
+  string owner = 3;
+
+  // pitrix of self
+  // Optional Values: "pitrix" or "self"
+  // @inject_tag: json:"controller"
+  string controller = 4;
+
+  // @inject_tag: json:"root_user_id"
+  string root_user_id = 5;
+
+  // Optional values: "active" or "inactive"
+  // @inject_tag: json:"status"
+  string status = 6;
+
+  // @inject_tag: json:"description"
+  string description = 7;
+
+  // @inject_tag: json:"ip_white_list"
+  string ip_white_list = 8;
+
+  // @inject_tag: json:"console_id"
+  string console_id = 9;
+
+  // @inject_tag: json:"create_time"
+  string create_time = 10;
+
+  // @inject_tag: json:"status_time"
+  string status_time = 11;
+}
+
+message NotificationList {
+  message Item {
+    enum NotificationItemType {
+      _NotificationItemTypeUnset = 0;
+      email = 1;
+      phone = 2;
+      webhook = 3;
+    }
+
+    // The content of notification item set.
+    // The value is email address if notification_item_type == "email".
+    // The value is phone number is notification_item_type == "phone".
+    // The value is webhook address if notification_item_type == "webhook".
+    // @inject_tag: json:"content"
+    string content = 1;
+
+    // @inject_tag: json:"create_time"
+    string create_time = 2;
+
+    // @inject_tag: json:"notification_item_id"
+    string notification_item_id = 3;
+
+    // The notification type. Optional Values: email|phone|webhook
+    // @inject_tag: json:"notification_item_type"
+    string notification_item_type = 4;
+
+    // The item whether verified. 1 for true, 0 for false.
+    // @inject_tag: json:"verified"
+    int32 verified = 5;
+  }
+
+  // @inject_tag: json:"create_time"
+  string create_time = 1;
+
+  // @inject_tag: json:"notification_list_id"
+  string notification_list_id = 3;
+
+  // @inject_tag: json:"notification_list_name"
+  string notification_list_name = 4;
+
+  // @inject_tag: json:"owner"
+  string owner = 5;
+
+  // @inject_tag: json:"items"
+  repeated Item items = 2;
+}

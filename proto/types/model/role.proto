@@ -116,6 +116,7 @@ message ProjectModule {
     NoticeManage = 117;
     DataService = 118 ;
     ApiGateway = 119;
+    Observable = 120;
   }
 
   // The module id.

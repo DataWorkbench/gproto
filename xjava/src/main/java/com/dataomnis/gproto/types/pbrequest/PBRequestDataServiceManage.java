@@ -5376,6 +5376,1790 @@ public final class PBRequestDataServiceManage {
 
   }
 
+  public interface StartDataServiceClustersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.StartDataServiceClusters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the clusterIds.
+     */
+    java.util.List<java.lang.String>
+        getClusterIdsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of clusterIds.
+     */
+    int getClusterIdsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    java.lang.String getClusterIds(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getClusterIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.StartDataServiceClusters}
+   */
+  public static final class StartDataServiceClusters extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.StartDataServiceClusters)
+      StartDataServiceClustersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StartDataServiceClusters.newBuilder() to construct.
+    private StartDataServiceClusters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StartDataServiceClusters() {
+      spaceId_ = "";
+      clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StartDataServiceClusters();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StartDataServiceClusters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                clusterIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              clusterIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StartDataServiceClusters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StartDataServiceClusters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList clusterIds_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the clusterIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getClusterIdsList() {
+      return clusterIds_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of clusterIds.
+     */
+    public int getClusterIdsCount() {
+      return clusterIds_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    public java.lang.String getClusterIds(int index) {
+      return clusterIds_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getClusterIdsBytes(int index) {
+      return clusterIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      for (int i = 0; i < clusterIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clusterIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(clusterIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClusterIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getClusterIdsList()
+          .equals(other.getClusterIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      if (getClusterIdsCount() > 0) {
+        hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getClusterIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.StartDataServiceClusters}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.StartDataServiceClusters)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClustersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StartDataServiceClusters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StartDataServiceClusters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StartDataServiceClusters_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters(this);
+        int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.clusterIds_ = clusterIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.clusterIds_.isEmpty()) {
+          if (clusterIds_.isEmpty()) {
+            clusterIds_ = other.clusterIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureClusterIdsIsMutable();
+            clusterIds_.addAll(other.clusterIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureClusterIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = new com.google.protobuf.LazyStringArrayList(clusterIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return A list containing the clusterIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getClusterIdsList() {
+        return clusterIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return The count of clusterIds.
+       */
+      public int getClusterIdsCount() {
+        return clusterIds_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The clusterIds at the given index.
+       */
+      public java.lang.String getClusterIds(int index) {
+        return clusterIds_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the clusterIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getClusterIdsBytes(int index) {
+        return clusterIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The clusterIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param values The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClusterIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureClusterIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, clusterIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterIds() {
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.StartDataServiceClusters)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.StartDataServiceClusters)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StartDataServiceClusters>
+        PARSER = new com.google.protobuf.AbstractParser<StartDataServiceClusters>() {
+      @java.lang.Override
+      public StartDataServiceClusters parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StartDataServiceClusters(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StartDataServiceClusters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StartDataServiceClusters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StartDataServiceClusters getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StopDataServiceClustersOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.StopDataServiceClusters)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the clusterIds.
+     */
+    java.util.List<java.lang.String>
+        getClusterIdsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of clusterIds.
+     */
+    int getClusterIdsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    java.lang.String getClusterIds(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getClusterIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.StopDataServiceClusters}
+   */
+  public static final class StopDataServiceClusters extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.StopDataServiceClusters)
+      StopDataServiceClustersOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StopDataServiceClusters.newBuilder() to construct.
+    private StopDataServiceClusters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StopDataServiceClusters() {
+      spaceId_ = "";
+      clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StopDataServiceClusters();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StopDataServiceClusters(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                clusterIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              clusterIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StopDataServiceClusters_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StopDataServiceClusters_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList clusterIds_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return A list containing the clusterIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getClusterIdsList() {
+      return clusterIds_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @return The count of clusterIds.
+     */
+    public int getClusterIdsCount() {
+      return clusterIds_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    public java.lang.String getClusterIds(int index) {
+      return clusterIds_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cluster_ids"
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getClusterIdsBytes(int index) {
+      return clusterIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      for (int i = 0; i < clusterIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clusterIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(clusterIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClusterIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getClusterIdsList()
+          .equals(other.getClusterIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      if (getClusterIdsCount() > 0) {
+        hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getClusterIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.StopDataServiceClusters}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.StopDataServiceClusters)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClustersOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StopDataServiceClusters_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StopDataServiceClusters_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_StopDataServiceClusters_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters(this);
+        int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.clusterIds_ = clusterIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.clusterIds_.isEmpty()) {
+          if (clusterIds_.isEmpty()) {
+            clusterIds_ = other.clusterIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureClusterIdsIsMutable();
+            clusterIds_.addAll(other.clusterIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureClusterIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = new com.google.protobuf.LazyStringArrayList(clusterIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return A list containing the clusterIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getClusterIdsList() {
+        return clusterIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return The count of clusterIds.
+       */
+      public int getClusterIdsCount() {
+        return clusterIds_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The clusterIds at the given index.
+       */
+      public java.lang.String getClusterIds(int index) {
+        return clusterIds_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the clusterIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getClusterIdsBytes(int index) {
+        return clusterIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The clusterIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param values The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClusterIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureClusterIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, clusterIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterIds() {
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cluster_ids"
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.StopDataServiceClusters)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.StopDataServiceClusters)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StopDataServiceClusters>
+        PARSER = new com.google.protobuf.AbstractParser<StopDataServiceClusters>() {
+      @java.lang.Override
+      public StopDataServiceClusters parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StopDataServiceClusters(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StopDataServiceClusters> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StopDataServiceClusters> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListApiGroupsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.ListApiGroups)
       com.google.protobuf.MessageOrBuilder {
@@ -29456,6 +31240,16 @@ public final class PBRequestDataServiceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteDataServiceClusters_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_StartDataServiceClusters_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_StartDataServiceClusters_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_StopDataServiceClusters_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_StopDataServiceClusters_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListApiGroups_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -29582,114 +31376,120 @@ public final class PBRequestDataServiceManage {
       "\t\022\007\332\001\0040\000X\001\"r\n\031DeleteDataServiceClusters\022" +
       "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022." +
       "\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312" +
-      "\002\004dsc-\"\314\001\n\rListApiGroups\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027" +
-      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036" +
-      "J\000J\002idJ\007createdJ\007updatedJ\004name\022\025\n\007revers" +
-      "e\030\005 \001(\010B\004\342\337\037\000\"V\n\016CreateApiGroup\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002" +
-      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\"f\n\017DeleteApiGroups" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      ",\n\tgroup_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002" +
-      "\004dsg-\"^\n\016ListApiConfigs\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\"\365\005\n\017UpdateApiConfi" +
-      "g\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n" +
-      "\010api_name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_" +
-      "path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode" +
-      "\030\005 \001(\0162\030.model.ApiConfig.ApiModeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022&\n\017api_description\030\006 \001(\tB\r\342\337\037\t\022\007" +
-      "\302\001\004\230\002\201\002\022-\n\tprotocols\030\007 \003(\0162\032.model.ApiCo" +
-      "nfig.Protocols\022E\n\016request_method\030\010 \001(\0162\036" +
-      ".model.ApiConfig.RequestMethodB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022C\n\rresponse_type\030\t \001(\0162\035.model.Api" +
-      "Config.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cr" +
-      "oss_domain\030\n \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\013 \001(\003B" +
-      "\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\014 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\r \001(\tB" +
-      "\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\016 \001(\0132" +
-      "\026.request.WizardDetailsB\004\342\337\037\000\022\036\n\006script\030" +
-      "\017 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\020 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\021 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\"8\n\021DescribeApiConf" +
-      "ig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"" +
-      "e\n\020DeleteApiConfigs\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB\031\342\337\037" +
-      "\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\365\005\n\017CreateApiConf" +
-      "ig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n" +
-      "\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api" +
-      "_mode\030\003 \001(\0162\030.model.ApiConfig.ApiModeB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\004 \001(\tB\r\342" +
-      "\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \003(\0162\032.model.A" +
-      "piConfig.Protocols\022E\n\016request_method\030\007 \001" +
-      "(\0162\036.model.ApiConfig.RequestMethodB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001(\0162\035.model" +
-      ".ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032" +
-      "\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\n " +
-      "\001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\013 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\014 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\r " +
-      "\001(\0132\026.request.WizardDetailsB\004\342\337\037\000\022\036\n\006scr" +
-      "ipt\030\016 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\017 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\020" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022#\n\ncreated_by\030" +
-      "\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\205\001\n\rWizardDetails" +
-      "\0228\n\016request_params\030\001 \003(\0132 .request.Wizar" +
-      "dRequestParameters\022:\n\017response_params\030\002 " +
-      "\003(\0132!.request.WizardResponseParameters\"\325" +
-      "\003\n\027WizardRequestParameters\022$\n\013column_nam" +
-      "e\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_valu" +
-      "e\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030" +
-      "\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_required\030\004 \001(" +
-      "\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030.model.Param" +
-      "eterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_des" +
-      "cription\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_n" +
-      "ame\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016param_oper" +
-      "ator\030\010 \001(\0162).model.ApiRequestParams.Para" +
-      "meterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n\016param_po" +
-      "sition\030\t \001(\0162).model.ApiRequestParams.Pa" +
-      "rameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\227\002\n\030Wizar" +
-      "dResponseParameters\022$\n\013column_name\030\001 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\t" +
-      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r" +
-      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001(\0162\030.model" +
-      ".ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021par" +
-      "am_description\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\np" +
-      "aram_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\"\341\001\n\032Lis" +
-      "tDataServiceApiVersions\022%\n\010space_id\030\001 \001(" +
+      "\002\004dsc-\"q\n\030StartDataServiceClusters\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013clu" +
+      "ster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc" +
+      "-\"p\n\027StopDataServiceClusters\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_i" +
+      "ds\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc-\"\314\001\n\r" +
+      "ListApiGroups\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
+      "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
+      "\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cre" +
+      "atedJ\007updatedJ\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337" +
+      "\037\000\"V\n\016CreateApiGroup\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\200\002\000\230\002@\"f\n\017DeleteApiGroups\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022,\n\tgroup_id" +
+      "s\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsg-\"^\n\016Li" +
+      "stApiConfigs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004dsg-\"\365\005\n\017UpdateApiConfig\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n\010api_name\030\003" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\004 \001(\tB" +
+      "\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\005 \001(\0162\030.mo" +
+      "del.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017" +
+      "api_description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022-\n\t" +
+      "protocols\030\007 \003(\0162\032.model.ApiConfig.Protoc" +
+      "ols\022E\n\016request_method\030\010 \001(\0162\036.model.ApiC" +
+      "onfig.RequestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rre" +
+      "sponse_type\030\t \001(\0162\035.model.ApiConfig.Resp" +
+      "onseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030" +
+      "\n \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\013 \001(\003B\016\342\337\037\n\022\010\262\001\0058" +
+      "\264\001@\001\022*\n\rdatasource_id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004som-\022#\n\ntable_name\030\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\000\230\002@\0223\n\rwizardDetails\030\016 \001(\0132\026.request.W" +
+      "izardDetailsB\004\342\337\037\000\022\036\n\006script\030\017 \001(\tB\016\342\337\037\n" +
+      "\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\020 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004dsc-\"8\n\021DescribeApiConfig\022#\n\006api_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"e\n\020DeleteAp" +
+      "iConfigs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z" +
+      "\n\302\001\007\312\002\004dsa-\"\365\005\n\017CreateApiConfig\022!\n\010api_n" +
+      "ame\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\002" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\003 \001(\016" +
+      "2\030.model.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022&\n\017api_description\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201" +
+      "\002\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022-\n\tprotocols\030\006 \003(\0162\032.model.ApiConfig.Pr" +
+      "otocols\022E\n\016request_method\030\007 \001(\0162\036.model." +
+      "ApiConfig.RequestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C" +
+      "\n\rresponse_type\030\010 \001(\0162\035.model.ApiConfig." +
+      "ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_dom" +
+      "ain\030\t \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\n \001(\003B\016\342\337\037\n\022\010" +
+      "\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\013 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\014 \001(\tB\017\342\337\037\013\022\t" +
+      "\302\001\006\200\002\000\230\002@\0223\n\rwizardDetails\030\r \001(\0132\026.reque" +
+      "st.WizardDetailsB\004\342\337\037\000\022\036\n\006script\030\016 \001(\tB\016" +
+      "\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\017 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\020 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004dsc-\022#\n\ncreated_by\030\021 \001(\tB\017\342\337\037\013" +
+      "\022\t\302\001\006\200\002\000\210\002A\"\205\001\n\rWizardDetails\0228\n\016request" +
+      "_params\030\001 \003(\0132 .request.WizardRequestPar" +
+      "ameters\022:\n\017response_params\030\002 \003(\0132!.reque" +
+      "st.WizardResponseParameters\"\325\003\n\027WizardRe" +
+      "questParameters\022$\n\013column_name\030\001 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\tB\r\342\337" +
+      "\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r\342\337\037\t" +
+      "\022\007\302\001\004\230\002\201\002\022\031\n\013is_required\030\004 \001(\010B\004\342\337\037\000\022:\n\t" +
+      "data_type\030\005 \001(\0162\030.model.ParameterDataTyp" +
+      "eB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\006 " +
+      "\001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\007 \001(\tB\017" +
+      "\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016param_operator\030\010 \001(\0162" +
+      ").model.ApiRequestParams.ParameterOperat" +
+      "orB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n\016param_position\030\t \001(" +
+      "\0162).model.ApiRequestParams.ParameterPosi" +
+      "tionB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\227\002\n\030WizardResponsePa" +
+      "rameters\022$\n\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002" +
+      "\201\002\022:\n\tdata_type\030\004 \001(\0162\030.model.ParameterD" +
+      "ataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_descript" +
+      "ion\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\"\341\001\n\032ListDataServic" +
+      "eApiVersions\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
+      "\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0222\n" +
+      "\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002idJ\007created" +
+      "J\007updated\"\350\001\n\021ListPublishedApis\022%\n\010space" +
+      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030" +
+      "\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset" +
+      "\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337" +
+      "\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updatedJ\004name\022\017\n" +
+      "\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022\014\n\004name\030\007" +
+      " \001(\t\"\224\001\n\035DescribeDataServiceApiVersion\022%" +
+      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n" +
+      "\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022\'\n\nve" +
+      "rsion_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-\"\216\001\n\027" +
+      "RepublishDataServiceApi\022%\n\010space_id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006" +
-      "\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037" +
-      "\007\022\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002" +
-      "idJ\007createdJ\007updated\"\350\001\n\021ListPublishedAp" +
-      "is\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
-      "d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_b" +
-      "y\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updat" +
-      "edJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(" +
-      "\t\022\014\n\004name\030\007 \001(\t\"\224\001\n\035DescribeDataServiceA" +
-      "piVersion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004dsa-\022\'\n\nversion_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004dsv-\"\216\001\n\027RepublishDataServiceApi\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api" +
-      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022\'\n\nversio" +
-      "n_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-\"c\n\025Publi" +
-      "shDataServiceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004dsa-\"k\n\026AbolishDataServiceApis\022%" +
-      "\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n" +
-      "\007api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa" +
-      "-\"\214\001\n\022TestDataServiceApi\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022*\n\017request_content\030" +
-      "\003 \001(\tB\021\342\337\037\r\022\013\302\001\010\200\002\000\230\002\240\234\001By\n$com.dataomni" +
-      "s.gproto.types.pbrequestB\032PBRequestDataS" +
-      "erviceManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022\'\n\nversion_id\030\003 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsv-\"c\n\025PublishDataServi" +
+      "ceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa" +
+      "-\"k\n\026AbolishDataServiceApis\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 " +
+      "\003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\214\001\n\022TestD" +
+      "ataServiceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004dsa-\022*\n\017request_content\030\003 \001(\tB\021\342\337\037\r" +
+      "\022\013\302\001\010\200\002\000\230\002\240\234\001By\n$com.dataomnis.gproto.ty" +
+      "pes.pbrequestB\032PBRequestDataServiceManag" +
+      "eP\000Z3github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -29728,110 +31528,122 @@ public final class PBRequestDataServiceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteDataServiceClusters_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterIds", });
-    internal_static_request_ListApiGroups_descriptor =
+    internal_static_request_StartDataServiceClusters_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_request_StartDataServiceClusters_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_StartDataServiceClusters_descriptor,
+        new java.lang.String[] { "SpaceId", "ClusterIds", });
+    internal_static_request_StopDataServiceClusters_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_request_StopDataServiceClusters_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_StopDataServiceClusters_descriptor,
+        new java.lang.String[] { "SpaceId", "ClusterIds", });
+    internal_static_request_ListApiGroups_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_request_ListApiGroups_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiGroups_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", });
     internal_static_request_CreateApiGroup_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_request_CreateApiGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiGroup_descriptor,
         new java.lang.String[] { "SpaceId", "Name", });
     internal_static_request_DeleteApiGroups_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_request_DeleteApiGroups_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiGroups_descriptor,
         new java.lang.String[] { "SpaceId", "GroupIds", });
     internal_static_request_ListApiConfigs_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_request_ListApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "GroupId", });
     internal_static_request_UpdateApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_UpdateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateApiConfig_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "WizardDetails", "Script", "GroupId", "ClusterId", });
     internal_static_request_DescribeApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_DescribeApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeApiConfig_descriptor,
         new java.lang.String[] { "ApiId", });
     internal_static_request_DeleteApiConfigs_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_DeleteApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "ApiIds", });
     internal_static_request_CreateApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_CreateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiConfig_descriptor,
         new java.lang.String[] { "ApiName", "ApiPath", "ApiMode", "ApiDescription", "SpaceId", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "WizardDetails", "Script", "GroupId", "ClusterId", "CreatedBy", });
     internal_static_request_WizardDetails_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_WizardDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_WizardDetails_descriptor,
         new java.lang.String[] { "RequestParams", "ResponseParams", });
     internal_static_request_WizardRequestParameters_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_request_WizardRequestParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_WizardRequestParameters_descriptor,
         new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "IsRequired", "DataType", "ParamDescription", "ParamName", "ParamOperator", "ParamPosition", });
     internal_static_request_WizardResponseParameters_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_WizardResponseParameters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_WizardResponseParameters_descriptor,
         new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "DataType", "ParamDescription", "ParamName", });
     internal_static_request_ListDataServiceApiVersions_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_ListDataServiceApiVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListDataServiceApiVersions_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "Limit", "Offset", "SortBy", });
     internal_static_request_ListPublishedApis_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_request_ListPublishedApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListPublishedApis_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", });
     internal_static_request_DescribeDataServiceApiVersion_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeDataServiceApiVersion_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
     internal_static_request_RepublishDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_request_RepublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_RepublishDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
     internal_static_request_PublishDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_request_PublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_PublishDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", });
     internal_static_request_AbolishDataServiceApis_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_request_AbolishDataServiceApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AbolishDataServiceApis_descriptor,
         new java.lang.String[] { "SpaceId", "ApiIds", });
     internal_static_request_TestDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_request_TestDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_TestDataServiceApi_descriptor,

@@ -17,6 +17,9 @@ import "proto/types/response/member_manage.proto";
 
 // MemberManage declares API for manage member and role of member.
 service MemberManage {
+  // ListAvailableUsers for get all available users. not work when in IaaS.
+  rpc ListAvailableUsers(request.ListAvailableUsers) returns (response.ListAvailableUsers) {}
+
   // ListMembers get a lists of workspace member.
   rpc ListMembers(request.ListMembers)    returns (response.ListMembers)  {}
   rpc DeleteMembers(request.DeleteMembers) returns (model.EmptyStruct) {}

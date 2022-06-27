@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from proto.types.model import member_pb2 as proto_dot_types_dot_model_dot_member__pb2
+from proto.types.model import account_pb2 as proto_dot_types_dot_model_dot_account__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,11 +21,57 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\026PBResponseMemberManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/response/member_manage.proto\x12\x08response\x1a\x1eproto/types/model/member.proto\"L\n\x0bListMembers\x12\x1c\n\x05infos\x18\x01 \x03(\x0b\x32\r.model.Member\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"-\n\x0e\x44\x65scribeMember\x12\x1b\n\x04info\x18\x01 \x01(\x0b\x32\r.model.MemberBw\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseMemberManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n(proto/types/response/member_manage.proto\x12\x08response\x1a\x1eproto/types/model/member.proto\x1a\x1fproto/types/model/account.proto\"Q\n\x12ListAvailableUsers\x12\x1a\n\x05infos\x18\x01 \x03(\x0b\x32\x0b.model.User\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"L\n\x0bListMembers\x12\x1c\n\x05infos\x18\x01 \x03(\x0b\x32\r.model.Member\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"-\n\x0e\x44\x65scribeMember\x12\x1b\n\x04info\x18\x01 \x01(\x0b\x32\r.model.MemberBw\n%com.dataomnis.gproto.types.pbresponseB\x16PBResponseMemberManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_model_dot_member__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_member__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
 
+
+
+_LISTAVAILABLEUSERS = _descriptor.Descriptor(
+  name='ListAvailableUsers',
+  full_name='response.ListAvailableUsers',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='infos', full_name='response.ListAvailableUsers.infos', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='response.ListAvailableUsers.total', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='has_more', full_name='response.ListAvailableUsers.has_more', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=119,
+  serialized_end=200,
+)
 
 
 _LISTMEMBERS = _descriptor.Descriptor(
@@ -68,8 +115,8 @@ _LISTMEMBERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=86,
-  serialized_end=162,
+  serialized_start=202,
+  serialized_end=278,
 )
 
 
@@ -100,15 +147,24 @@ _DESCRIBEMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=164,
-  serialized_end=209,
+  serialized_start=280,
+  serialized_end=325,
 )
 
+_LISTAVAILABLEUSERS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_account__pb2._USER
 _LISTMEMBERS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_member__pb2._MEMBER
 _DESCRIBEMEMBER.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_member__pb2._MEMBER
+DESCRIPTOR.message_types_by_name['ListAvailableUsers'] = _LISTAVAILABLEUSERS
 DESCRIPTOR.message_types_by_name['ListMembers'] = _LISTMEMBERS
 DESCRIPTOR.message_types_by_name['DescribeMember'] = _DESCRIBEMEMBER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+ListAvailableUsers = _reflection.GeneratedProtocolMessageType('ListAvailableUsers', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAVAILABLEUSERS,
+  '__module__' : 'proto.types.response.member_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.ListAvailableUsers)
+  })
+_sym_db.RegisterMessage(ListAvailableUsers)
 
 ListMembers = _reflection.GeneratedProtocolMessageType('ListMembers', (_message.Message,), {
   'DESCRIPTOR' : _LISTMEMBERS,

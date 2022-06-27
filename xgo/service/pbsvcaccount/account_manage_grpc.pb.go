@@ -7,7 +7,13 @@
 package pbsvcaccount
 
 import (
+	context "context"
+	pbmodel "github.com/DataWorkbench/gproto/xgo/types/pbmodel"
+	pbrequest "github.com/DataWorkbench/gproto/xgo/types/pbrequest"
+	pbresponse "github.com/DataWorkbench/gproto/xgo/types/pbresponse"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -19,6 +25,28 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AccountManageClient interface {
+	ListUsers(ctx context.Context, in *pbrequest.ListUsers, opts ...grpc.CallOption) (*pbresponse.ListUsers, error)
+	DeleteUsers(ctx context.Context, in *pbrequest.DeleteUsers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DescribeUser(ctx context.Context, in *pbrequest.DescribeUser, opts ...grpc.CallOption) (*pbresponse.DescribeUser, error)
+	CreateUser(ctx context.Context, in *pbrequest.CreateUser, opts ...grpc.CallOption) (*pbresponse.CreateUser, error)
+	UpdateUser(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	ChangeUserPassword(ctx context.Context, in *pbrequest.ChangeUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// TODO: Only used by admin.
+	ResetUserPassword(ctx context.Context, in *pbrequest.ResetUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	ListAccessKeys(ctx context.Context, in *pbrequest.ListAccessKeys, opts ...grpc.CallOption) (*pbresponse.ListAccessKeys, error)
+	DeleteAccessKeys(ctx context.Context, in *pbrequest.DeleteAccessKeys, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DescribeAccessKey(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error)
+	CreateAccessKey(ctx context.Context, in *pbrequest.CreateAccessKey, opts ...grpc.CallOption) (*pbresponse.CreateAccessKey, error)
+	UpdatedAccessKey(ctx context.Context, in *pbrequest.UpdatedAccessKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	// Session API
+	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
+	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
+	// Notification API
+	ListNotifications(ctx context.Context, in *pbrequest.ListNotifications, opts ...grpc.CallOption) (*pbresponse.ListNotifications, error)
+	DescribeNotification(ctx context.Context, in *pbrequest.DescribeNotification, opts ...grpc.CallOption) (*pbresponse.DescribeNotification, error)
+	CreateNotification(ctx context.Context, in *pbrequest.CreateNotification, opts ...grpc.CallOption) (*pbresponse.CreateNotification, error)
+	UpdateNotification(ctx context.Context, in *pbrequest.UpdateNotification, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DeleteNotifications(ctx context.Context, in *pbrequest.DeleteNotifications, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type accountManageClient struct {
@@ -29,10 +57,203 @@ func NewAccountManageClient(cc grpc.ClientConnInterface) AccountManageClient {
 	return &accountManageClient{cc}
 }
 
+func (c *accountManageClient) ListUsers(ctx context.Context, in *pbrequest.ListUsers, opts ...grpc.CallOption) (*pbresponse.ListUsers, error) {
+	out := new(pbresponse.ListUsers)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/ListUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DeleteUsers(ctx context.Context, in *pbrequest.DeleteUsers, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DeleteUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DescribeUser(ctx context.Context, in *pbrequest.DescribeUser, opts ...grpc.CallOption) (*pbresponse.DescribeUser, error) {
+	out := new(pbresponse.DescribeUser)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DescribeUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) CreateUser(ctx context.Context, in *pbrequest.CreateUser, opts ...grpc.CallOption) (*pbresponse.CreateUser, error) {
+	out := new(pbresponse.CreateUser)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) UpdateUser(ctx context.Context, in *pbrequest.UpdateUser, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) ChangeUserPassword(ctx context.Context, in *pbrequest.ChangeUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/ChangeUserPassword", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) ResetUserPassword(ctx context.Context, in *pbrequest.ResetUserPassword, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/ResetUserPassword", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) ListAccessKeys(ctx context.Context, in *pbrequest.ListAccessKeys, opts ...grpc.CallOption) (*pbresponse.ListAccessKeys, error) {
+	out := new(pbresponse.ListAccessKeys)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/ListAccessKeys", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DeleteAccessKeys(ctx context.Context, in *pbrequest.DeleteAccessKeys, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DeleteAccessKeys", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DescribeAccessKey(ctx context.Context, in *pbrequest.DescribeAccessKey, opts ...grpc.CallOption) (*pbresponse.DescribeAccessKey, error) {
+	out := new(pbresponse.DescribeAccessKey)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DescribeAccessKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) CreateAccessKey(ctx context.Context, in *pbrequest.CreateAccessKey, opts ...grpc.CallOption) (*pbresponse.CreateAccessKey, error) {
+	out := new(pbresponse.CreateAccessKey)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CreateAccessKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) UpdatedAccessKey(ctx context.Context, in *pbrequest.UpdatedAccessKey, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/UpdatedAccessKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error) {
+	out := new(pbresponse.CreateSession)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CreateSession", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error) {
+	out := new(pbresponse.CheckSession)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CheckSession", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) ListNotifications(ctx context.Context, in *pbrequest.ListNotifications, opts ...grpc.CallOption) (*pbresponse.ListNotifications, error) {
+	out := new(pbresponse.ListNotifications)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/ListNotifications", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DescribeNotification(ctx context.Context, in *pbrequest.DescribeNotification, opts ...grpc.CallOption) (*pbresponse.DescribeNotification, error) {
+	out := new(pbresponse.DescribeNotification)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DescribeNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) CreateNotification(ctx context.Context, in *pbrequest.CreateNotification, opts ...grpc.CallOption) (*pbresponse.CreateNotification, error) {
+	out := new(pbresponse.CreateNotification)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CreateNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) UpdateNotification(ctx context.Context, in *pbrequest.UpdateNotification, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/UpdateNotification", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *accountManageClient) DeleteNotifications(ctx context.Context, in *pbrequest.DeleteNotifications, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/DeleteNotifications", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AccountManageServer is the server API for AccountManage service.
 // All implementations must embed UnimplementedAccountManageServer
 // for forward compatibility
 type AccountManageServer interface {
+	ListUsers(context.Context, *pbrequest.ListUsers) (*pbresponse.ListUsers, error)
+	DeleteUsers(context.Context, *pbrequest.DeleteUsers) (*pbmodel.EmptyStruct, error)
+	DescribeUser(context.Context, *pbrequest.DescribeUser) (*pbresponse.DescribeUser, error)
+	CreateUser(context.Context, *pbrequest.CreateUser) (*pbresponse.CreateUser, error)
+	UpdateUser(context.Context, *pbrequest.UpdateUser) (*pbmodel.EmptyStruct, error)
+	ChangeUserPassword(context.Context, *pbrequest.ChangeUserPassword) (*pbmodel.EmptyStruct, error)
+	// TODO: Only used by admin.
+	ResetUserPassword(context.Context, *pbrequest.ResetUserPassword) (*pbmodel.EmptyStruct, error)
+	ListAccessKeys(context.Context, *pbrequest.ListAccessKeys) (*pbresponse.ListAccessKeys, error)
+	DeleteAccessKeys(context.Context, *pbrequest.DeleteAccessKeys) (*pbmodel.EmptyStruct, error)
+	DescribeAccessKey(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error)
+	CreateAccessKey(context.Context, *pbrequest.CreateAccessKey) (*pbresponse.CreateAccessKey, error)
+	UpdatedAccessKey(context.Context, *pbrequest.UpdatedAccessKey) (*pbmodel.EmptyStruct, error)
+	// Session API
+	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
+	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
+	// Notification API
+	ListNotifications(context.Context, *pbrequest.ListNotifications) (*pbresponse.ListNotifications, error)
+	DescribeNotification(context.Context, *pbrequest.DescribeNotification) (*pbresponse.DescribeNotification, error)
+	CreateNotification(context.Context, *pbrequest.CreateNotification) (*pbresponse.CreateNotification, error)
+	UpdateNotification(context.Context, *pbrequest.UpdateNotification) (*pbmodel.EmptyStruct, error)
+	DeleteNotifications(context.Context, *pbrequest.DeleteNotifications) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedAccountManageServer()
 }
 
@@ -40,6 +261,63 @@ type AccountManageServer interface {
 type UnimplementedAccountManageServer struct {
 }
 
+func (UnimplementedAccountManageServer) ListUsers(context.Context, *pbrequest.ListUsers) (*pbresponse.ListUsers, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListUsers not implemented")
+}
+func (UnimplementedAccountManageServer) DeleteUsers(context.Context, *pbrequest.DeleteUsers) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUsers not implemented")
+}
+func (UnimplementedAccountManageServer) DescribeUser(context.Context, *pbrequest.DescribeUser) (*pbresponse.DescribeUser, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeUser not implemented")
+}
+func (UnimplementedAccountManageServer) CreateUser(context.Context, *pbrequest.CreateUser) (*pbresponse.CreateUser, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (UnimplementedAccountManageServer) UpdateUser(context.Context, *pbrequest.UpdateUser) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedAccountManageServer) ChangeUserPassword(context.Context, *pbrequest.ChangeUserPassword) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChangeUserPassword not implemented")
+}
+func (UnimplementedAccountManageServer) ResetUserPassword(context.Context, *pbrequest.ResetUserPassword) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ResetUserPassword not implemented")
+}
+func (UnimplementedAccountManageServer) ListAccessKeys(context.Context, *pbrequest.ListAccessKeys) (*pbresponse.ListAccessKeys, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAccessKeys not implemented")
+}
+func (UnimplementedAccountManageServer) DeleteAccessKeys(context.Context, *pbrequest.DeleteAccessKeys) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAccessKeys not implemented")
+}
+func (UnimplementedAccountManageServer) DescribeAccessKey(context.Context, *pbrequest.DescribeAccessKey) (*pbresponse.DescribeAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeAccessKey not implemented")
+}
+func (UnimplementedAccountManageServer) CreateAccessKey(context.Context, *pbrequest.CreateAccessKey) (*pbresponse.CreateAccessKey, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAccessKey not implemented")
+}
+func (UnimplementedAccountManageServer) UpdatedAccessKey(context.Context, *pbrequest.UpdatedAccessKey) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatedAccessKey not implemented")
+}
+func (UnimplementedAccountManageServer) CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSession not implemented")
+}
+func (UnimplementedAccountManageServer) CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CheckSession not implemented")
+}
+func (UnimplementedAccountManageServer) ListNotifications(context.Context, *pbrequest.ListNotifications) (*pbresponse.ListNotifications, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNotifications not implemented")
+}
+func (UnimplementedAccountManageServer) DescribeNotification(context.Context, *pbrequest.DescribeNotification) (*pbresponse.DescribeNotification, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeNotification not implemented")
+}
+func (UnimplementedAccountManageServer) CreateNotification(context.Context, *pbrequest.CreateNotification) (*pbresponse.CreateNotification, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotification not implemented")
+}
+func (UnimplementedAccountManageServer) UpdateNotification(context.Context, *pbrequest.UpdateNotification) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotification not implemented")
+}
+func (UnimplementedAccountManageServer) DeleteNotifications(context.Context, *pbrequest.DeleteNotifications) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteNotifications not implemented")
+}
 func (UnimplementedAccountManageServer) mustEmbedUnimplementedAccountManageServer() {}
 
 // UnsafeAccountManageServer may be embedded to opt out of forward compatibility for this service.
@@ -53,13 +331,432 @@ func RegisterAccountManageServer(s grpc.ServiceRegistrar, srv AccountManageServe
 	s.RegisterService(&AccountManage_ServiceDesc, srv)
 }
 
+func _AccountManage_ListUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListUsers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).ListUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/ListUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).ListUsers(ctx, req.(*pbrequest.ListUsers))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DeleteUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteUsers)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DeleteUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DeleteUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DeleteUsers(ctx, req.(*pbrequest.DeleteUsers))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DescribeUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeUser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DescribeUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DescribeUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DescribeUser(ctx, req.(*pbrequest.DescribeUser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateUser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CreateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CreateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CreateUser(ctx, req.(*pbrequest.CreateUser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateUser)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/UpdateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).UpdateUser(ctx, req.(*pbrequest.UpdateUser))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_ChangeUserPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ChangeUserPassword)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).ChangeUserPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/ChangeUserPassword",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).ChangeUserPassword(ctx, req.(*pbrequest.ChangeUserPassword))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_ResetUserPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ResetUserPassword)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).ResetUserPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/ResetUserPassword",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).ResetUserPassword(ctx, req.(*pbrequest.ResetUserPassword))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_ListAccessKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListAccessKeys)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).ListAccessKeys(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/ListAccessKeys",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).ListAccessKeys(ctx, req.(*pbrequest.ListAccessKeys))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DeleteAccessKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteAccessKeys)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DeleteAccessKeys(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DeleteAccessKeys",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DeleteAccessKeys(ctx, req.(*pbrequest.DeleteAccessKeys))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DescribeAccessKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DescribeAccessKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DescribeAccessKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DescribeAccessKey(ctx, req.(*pbrequest.DescribeAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_CreateAccessKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CreateAccessKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CreateAccessKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CreateAccessKey(ctx, req.(*pbrequest.CreateAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_UpdatedAccessKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdatedAccessKey)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).UpdatedAccessKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/UpdatedAccessKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).UpdatedAccessKey(ctx, req.(*pbrequest.UpdatedAccessKey))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_CreateSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateSession)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CreateSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CreateSession",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CreateSession(ctx, req.(*pbrequest.CreateSession))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_CheckSession_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CheckSession)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CheckSession(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CheckSession",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CheckSession(ctx, req.(*pbrequest.CheckSession))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_ListNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListNotifications)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).ListNotifications(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/ListNotifications",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).ListNotifications(ctx, req.(*pbrequest.ListNotifications))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DescribeNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DescribeNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DescribeNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DescribeNotification(ctx, req.(*pbrequest.DescribeNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_CreateNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CreateNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CreateNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CreateNotification(ctx, req.(*pbrequest.CreateNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_UpdateNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateNotification)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).UpdateNotification(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/UpdateNotification",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).UpdateNotification(ctx, req.(*pbrequest.UpdateNotification))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AccountManage_DeleteNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DeleteNotifications)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).DeleteNotifications(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/DeleteNotifications",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).DeleteNotifications(ctx, req.(*pbrequest.DeleteNotifications))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AccountManage_ServiceDesc is the grpc.ServiceDesc for AccountManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AccountManage_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "account.AccountManage",
 	HandlerType: (*AccountManageServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams:     []grpc.StreamDesc{},
-	Metadata:    "proto/service/account/account_manage.proto",
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "ListUsers",
+			Handler:    _AccountManage_ListUsers_Handler,
+		},
+		{
+			MethodName: "DeleteUsers",
+			Handler:    _AccountManage_DeleteUsers_Handler,
+		},
+		{
+			MethodName: "DescribeUser",
+			Handler:    _AccountManage_DescribeUser_Handler,
+		},
+		{
+			MethodName: "CreateUser",
+			Handler:    _AccountManage_CreateUser_Handler,
+		},
+		{
+			MethodName: "UpdateUser",
+			Handler:    _AccountManage_UpdateUser_Handler,
+		},
+		{
+			MethodName: "ChangeUserPassword",
+			Handler:    _AccountManage_ChangeUserPassword_Handler,
+		},
+		{
+			MethodName: "ResetUserPassword",
+			Handler:    _AccountManage_ResetUserPassword_Handler,
+		},
+		{
+			MethodName: "ListAccessKeys",
+			Handler:    _AccountManage_ListAccessKeys_Handler,
+		},
+		{
+			MethodName: "DeleteAccessKeys",
+			Handler:    _AccountManage_DeleteAccessKeys_Handler,
+		},
+		{
+			MethodName: "DescribeAccessKey",
+			Handler:    _AccountManage_DescribeAccessKey_Handler,
+		},
+		{
+			MethodName: "CreateAccessKey",
+			Handler:    _AccountManage_CreateAccessKey_Handler,
+		},
+		{
+			MethodName: "UpdatedAccessKey",
+			Handler:    _AccountManage_UpdatedAccessKey_Handler,
+		},
+		{
+			MethodName: "CreateSession",
+			Handler:    _AccountManage_CreateSession_Handler,
+		},
+		{
+			MethodName: "CheckSession",
+			Handler:    _AccountManage_CheckSession_Handler,
+		},
+		{
+			MethodName: "ListNotifications",
+			Handler:    _AccountManage_ListNotifications_Handler,
+		},
+		{
+			MethodName: "DescribeNotification",
+			Handler:    _AccountManage_DescribeNotification_Handler,
+		},
+		{
+			MethodName: "CreateNotification",
+			Handler:    _AccountManage_CreateNotification_Handler,
+		},
+		{
+			MethodName: "UpdateNotification",
+			Handler:    _AccountManage_UpdateNotification_Handler,
+		},
+		{
+			MethodName: "DeleteNotifications",
+			Handler:    _AccountManage_DeleteNotifications_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/service/account/account_manage.proto",
 }
