@@ -122,6 +122,10 @@ message UpdateDataSource {
   // this source connection info
   // @inject_tag: json:"url"
   model.DataSource.URL url = 6 [ (validator.field).tags.message = { not_null: true, skip: true } ];
+
+  // The last connection record. The value is nil if never tested for usability.
+  // @inject_tag: json:"last_connection"
+  model.DataSourceConnection last_connection = 7;
 }
 
 // DeleteDataSources used as request parameters for RPC and HTTP(based on Body)
