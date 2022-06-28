@@ -66,6 +66,15 @@ message DeleteFlinkClusterInK8sV2 {
   ];
 }
 
+message RestartFlinkClusterInK8s {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // @inject_tag: json:"cluster_id"
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "cfi-" } ];
+}
+
 message CreateNetworkBrokerInK8sV2 {
   // Workspace ID it belongs to.
   // @inject_tag: json:"space_id"
