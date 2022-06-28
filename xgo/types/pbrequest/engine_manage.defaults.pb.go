@@ -91,6 +91,14 @@ func (this *DeleteFlinkClusterInK8SV2) SetDefaults() {
 	return
 }
 
+// Set default value for message request.RestartFlinkClusterInK8s
+func (this *RestartFlinkClusterInK8S) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.CreateNetworkBrokerInK8sV2
 func (this *CreateNetworkBrokerInK8SV2) SetDefaults() {
 	if this == nil {
