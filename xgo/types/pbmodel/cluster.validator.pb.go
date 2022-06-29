@@ -94,11 +94,11 @@ func (this *FlinkCluster) _xxx_xxx_Validator_Validate_name() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_FlinkCluster_In_Version = map[string]bool{"flink-1.12.3-scala_2.11": true, "flink-1.12.3-scala_2.11-q0.9": true, "flink-1.14.5-scala_2.11": true}
+var _xxx_xxx_Validator_FlinkCluster_In_Version = map[string]bool{"flink-1.12.3-scala_2.11": true, "flink-1.12.3-scala_2.11-q0.9": true, "flink-1.14.4-scala_2.11": true, "flink-1.14.5-scala_2.11": true}
 
 func (this *FlinkCluster) _xxx_xxx_Validator_Validate_version() error {
 	if !(_xxx_xxx_Validator_FlinkCluster_In_Version[this.Version]) {
-		return protovalidator.FieldError1("FlinkCluster", "the value of field 'version' must be one of '[flink-1.12.3-scala_2.11 flink-1.12.3-scala_2.11-q0.9 flink-1.14.5-scala_2.11]'", this.Version)
+		return protovalidator.FieldError1("FlinkCluster", "the value of field 'version' must be one of '[flink-1.12.3-scala_2.11 flink-1.12.3-scala_2.11-q0.9 flink-1.14.4-scala_2.11 flink-1.14.5-scala_2.11]'", this.Version)
 	}
 	return nil
 }
