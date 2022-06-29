@@ -69,6 +69,12 @@ message ApiGroup{
   string desc = 5 [(validator.field).tags.string = { char_len_lte: 1024 }];
   // @inject_tag: json:"status" gorm:"column:status;"
   Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 7 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 8 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 9 [ (validator.field).tags.int = { gt: 0 } ];
 }
 
 // table api_config
@@ -313,6 +319,12 @@ enum ParameterDataType {
   // JSON  = 8
 }
 
+
+// ServiceDataSourceKind represents the kind of dataservice datasource . eg. { "name": "MySQL"}, { "name": "PostgreSql" } { "name": "ClickHouse" }
+message ServiceDataSourceKind {
+  // @inject_tag: json:"name"
+  string Name = 1;
+}
 
 
 

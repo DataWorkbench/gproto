@@ -24,8 +24,8 @@ message ListDataServiceClusters {
 message DescribeDataServiceCluster {
   // @inject_tag: json:"info"
   model.DataServiceCluster info = 1;
-  // @inject_tag: json:"api_version"
-  model.ApiVersion api_version = 2;
+  // @inject_tag: json:"api_versions"
+  repeated model.ApiVersion api_versions = 2;
 }
 
 message CreateDataServiceCluster {
@@ -85,6 +85,12 @@ message TestDataServiceApi {
   string logs = 1 ;
   // @inject_tag: json:"response_content"
   string response_content = 2  ;
+}
+
+// SourceKind used as reply parameters in RPC or response body in HTTP.
+message DescribeServiceDataSourceKinds {
+  // @inject_tag: json:"kinds"
+  repeated model.ServiceDataSourceKind Kinds = 1;
 }
 
 

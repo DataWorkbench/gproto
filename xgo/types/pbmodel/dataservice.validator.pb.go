@@ -184,6 +184,30 @@ func (this *ApiGroup) _xxx_xxx_Validator_Validate_status() error {
 	return nil
 }
 
+func (this *ApiGroup) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *ApiGroup) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("ApiGroup", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *ApiGroup) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("ApiGroup", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
 // Set default value for message model.ApiGroup
 func (this *ApiGroup) Validate() error {
 	if this == nil {
@@ -205,6 +229,15 @@ func (this *ApiGroup) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
 		return err
 	}
 	return nil
@@ -980,6 +1013,14 @@ func (this *ApiVersion) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_response_params(); err != nil {
 		return err
+	}
+	return nil
+}
+
+// Set default value for message model.ServiceDataSourceKind
+func (this *ServiceDataSourceKind) Validate() error {
+	if this == nil {
+		return nil
 	}
 	return nil
 }

@@ -95,3 +95,11 @@ func (this *ApiVersion) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.ServiceDataSourceKind
+func (this *ServiceDataSourceKind) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

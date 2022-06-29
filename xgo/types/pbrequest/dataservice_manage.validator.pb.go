@@ -452,6 +452,16 @@ func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
+func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 // Set default value for message request.CreateApiGroup
 func (this *CreateApiGroup) Validate() error {
 	if this == nil {
@@ -467,6 +477,9 @@ func (this *CreateApiGroup) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	return nil

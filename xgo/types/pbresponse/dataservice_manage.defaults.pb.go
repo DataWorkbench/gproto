@@ -27,11 +27,6 @@ func (this *DescribeDataServiceCluster) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
-	if this.ApiVersion != nil {
-		if dt, ok := interface{}(this.ApiVersion).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 
@@ -111,6 +106,14 @@ func (this *ListDataServiceApiVersions) SetDefaults() {
 
 // Set default value for message response.TestDataServiceApi
 func (this *TestDataServiceApi) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message response.DescribeServiceDataSourceKinds
+func (this *DescribeServiceDataSourceKinds) SetDefaults() {
 	if this == nil {
 		return
 	}

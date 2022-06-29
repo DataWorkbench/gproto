@@ -104,6 +104,8 @@ message CreateApiGroup {
   string group_path = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
   // @inject_tag: json:"desc"
   string desc = 4 [(validator.field).tags.string = { char_len_lte: 1024 }];
+  // @inject_tag: json:"created_by" swaggerignore:"true"
+  string created_by = 5 [(validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 }];
 }
 
 message DeleteApiGroups {

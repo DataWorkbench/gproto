@@ -41,10 +41,13 @@ func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_info() error
 	return nil
 }
 
-func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_api_version() error {
-	if dt, ok := interface{}(this.ApiVersion).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
+func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_api_versions() error {
+	for _, item := range this.ApiVersions {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
 		}
 	}
 	return nil
@@ -58,7 +61,7 @@ func (this *DescribeDataServiceCluster) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_versions(); err != nil {
 		return err
 	}
 	return nil
@@ -201,6 +204,29 @@ func (this *ListDataServiceApiVersions) Validate() error {
 func (this *TestDataServiceApi) Validate() error {
 	if this == nil {
 		return nil
+	}
+	return nil
+}
+
+func (this *DescribeServiceDataSourceKinds) _xxx_xxx_Validator_Validate_Kinds() error {
+	for _, item := range this.Kinds {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeServiceDataSourceKinds
+func (this *DescribeServiceDataSourceKinds) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_Kinds(); err != nil {
+		return err
 	}
 	return nil
 }

@@ -26,6 +26,8 @@ service DataService {
   rpc StartDataServiceClusters(request.StartDataServiceClusters)   returns (model.EmptyStruct) {}
   rpc StopDataServiceClusters(request.StopDataServiceClusters)   returns (model.EmptyStruct) {}
 
+  rpc DescribeServiceDataSourceKinds(model.EmptyStruct) returns (response.DescribeServiceDataSourceKinds) {}
+
   rpc CreateApiGroup(request.CreateApiGroup) returns (response.CreateApiGroup) {}
   rpc ListApiGroups(request.ListApiGroups) returns (response.ListApiGroups) {}
   rpc DeleteApiGroups(request.DeleteApiGroups)   returns (model.EmptyStruct) {}
