@@ -232,6 +232,37 @@ public final class EngineManageGrpc {
     return getDeleteFlinkClusterInK8sV2Method;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClusterInK8sMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestartFlinkClusterInK8s",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClusterInK8sMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClusterInK8sMethod;
+    if ((getRestartFlinkClusterInK8sMethod = EngineManageGrpc.getRestartFlinkClusterInK8sMethod) == null) {
+      synchronized (EngineManageGrpc.class) {
+        if ((getRestartFlinkClusterInK8sMethod = EngineManageGrpc.getRestartFlinkClusterInK8sMethod) == null) {
+          EngineManageGrpc.getRestartFlinkClusterInK8sMethod = getRestartFlinkClusterInK8sMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestartFlinkClusterInK8s"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new EngineManageMethodDescriptorSupplier("RestartFlinkClusterInK8s"))
+              .build();
+        }
+      }
+    }
+    return getRestartFlinkClusterInK8sMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8sV2,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateNetworkBrokerInK8sV2Method;
 
@@ -343,6 +374,9 @@ public final class EngineManageGrpc {
   public static abstract class EngineManageImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void createFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -350,6 +384,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void deleteFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -357,6 +394,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void createNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -364,6 +404,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void deleteNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -389,6 +432,13 @@ public final class EngineManageGrpc {
     public void deleteFlinkClusterInK8sV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8sV2 request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFlinkClusterInK8sV2Method(), responseObserver);
+    }
+
+    /**
+     */
+    public void restartFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRestartFlinkClusterInK8sMethod(), responseObserver);
     }
 
     /**
@@ -457,6 +507,13 @@ public final class EngineManageGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_FLINK_CLUSTER_IN_K8S_V2)))
           .addMethod(
+            getRestartFlinkClusterInK8sMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_RESTART_FLINK_CLUSTER_IN_K8S)))
+          .addMethod(
             getCreateNetworkBrokerInK8sV2Method(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -489,6 +546,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void createFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -497,6 +557,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void deleteFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -505,6 +568,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void createNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -513,6 +579,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public void deleteNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8s request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
@@ -542,6 +611,14 @@ public final class EngineManageGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteFlinkClusterInK8sV2Method(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void restartFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestartFlinkClusterInK8sMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -576,6 +653,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8s request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -583,6 +663,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8s request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -590,6 +673,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8s request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -597,6 +683,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteNetworkBrokerInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8s request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -622,6 +711,13 @@ public final class EngineManageGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteFlinkClusterInK8sV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8sV2 request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteFlinkClusterInK8sV2Method(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct restartFlinkClusterInK8s(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestartFlinkClusterInK8sMethod(), getCallOptions(), request);
     }
 
     /**
@@ -654,6 +750,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createFlinkClusterInK8s(
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateFlinkClusterInK8s request) {
@@ -662,6 +761,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteFlinkClusterInK8s(
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8s request) {
@@ -670,6 +772,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createNetworkBrokerInK8s(
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8s request) {
@@ -678,6 +783,9 @@ public final class EngineManageGrpc {
     }
 
     /**
+     * <pre>
+     * Deprecated: FIXME: remove it.
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> deleteNetworkBrokerInK8s(
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8s request) {
@@ -711,6 +819,14 @@ public final class EngineManageGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> restartFlinkClusterInK8s(
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestartFlinkClusterInK8sMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createNetworkBrokerInK8sV2(
         com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateNetworkBrokerInK8sV2 request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -733,8 +849,9 @@ public final class EngineManageGrpc {
   private static final int METHODID_DELETE_NAMESPACES_IN_K8S = 4;
   private static final int METHODID_CREATE_FLINK_CLUSTER_IN_K8S_V2 = 5;
   private static final int METHODID_DELETE_FLINK_CLUSTER_IN_K8S_V2 = 6;
-  private static final int METHODID_CREATE_NETWORK_BROKER_IN_K8S_V2 = 7;
-  private static final int METHODID_DELETE_NETWORK_BROKER_IN_K8S_V2 = 8;
+  private static final int METHODID_RESTART_FLINK_CLUSTER_IN_K8S = 7;
+  private static final int METHODID_CREATE_NETWORK_BROKER_IN_K8S_V2 = 8;
+  private static final int METHODID_DELETE_NETWORK_BROKER_IN_K8S_V2 = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -779,6 +896,10 @@ public final class EngineManageGrpc {
           break;
         case METHODID_DELETE_FLINK_CLUSTER_IN_K8S_V2:
           serviceImpl.deleteFlinkClusterInK8sV2((com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteFlinkClusterInK8sV2) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_RESTART_FLINK_CLUSTER_IN_K8S:
+          serviceImpl.restartFlinkClusterInK8s((com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.RestartFlinkClusterInK8s) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_CREATE_NETWORK_BROKER_IN_K8S_V2:
@@ -857,6 +978,7 @@ public final class EngineManageGrpc {
               .addMethod(getDeleteNamespacesInK8sMethod())
               .addMethod(getCreateFlinkClusterInK8sV2Method())
               .addMethod(getDeleteFlinkClusterInK8sV2Method())
+              .addMethod(getRestartFlinkClusterInK8sMethod())
               .addMethod(getCreateNetworkBrokerInK8sV2Method())
               .addMethod(getDeleteNetworkBrokerInK8sV2Method())
               .build();

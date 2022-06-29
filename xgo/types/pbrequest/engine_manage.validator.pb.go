@@ -208,6 +208,40 @@ func (this *DeleteFlinkClusterInK8SV2) Validate() error {
 	return nil
 }
 
+func (this *RestartFlinkClusterInK8S) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("RestartFlinkClusterInK8S", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("RestartFlinkClusterInK8S", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *RestartFlinkClusterInK8S) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("RestartFlinkClusterInK8S", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "cfi-")) {
+		return protovalidator.FieldError1("RestartFlinkClusterInK8S", "the value of field 'cluster_id' must start with string 'cfi-'", this.ClusterId)
+	}
+	return nil
+}
+
+// Set default value for message request.RestartFlinkClusterInK8s
+func (this *RestartFlinkClusterInK8S) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *CreateNetworkBrokerInK8SV2) _xxx_xxx_Validator_Validate_space_id() error {
 	if !(len(this.SpaceId) == 20) {
 		return protovalidator.FieldError1("CreateNetworkBrokerInK8SV2", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))

@@ -374,6 +374,62 @@ func (x *DeleteFlinkClusterInK8SV2) GetVxnetId() string {
 	return ""
 }
 
+type RestartFlinkClusterInK8S struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Workspace ID it belongs to.
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id"`
+}
+
+func (x *RestartFlinkClusterInK8S) Reset() {
+	*x = RestartFlinkClusterInK8S{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_request_engine_manage_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RestartFlinkClusterInK8S) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RestartFlinkClusterInK8S) ProtoMessage() {}
+
+func (x *RestartFlinkClusterInK8S) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_request_engine_manage_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RestartFlinkClusterInK8S.ProtoReflect.Descriptor instead.
+func (*RestartFlinkClusterInK8S) Descriptor() ([]byte, []int) {
+	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *RestartFlinkClusterInK8S) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *RestartFlinkClusterInK8S) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
 type CreateNetworkBrokerInK8SV2 struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -390,7 +446,7 @@ type CreateNetworkBrokerInK8SV2 struct {
 func (x *CreateNetworkBrokerInK8SV2) Reset() {
 	*x = CreateNetworkBrokerInK8SV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_request_engine_manage_proto_msgTypes[7]
+		mi := &file_proto_types_request_engine_manage_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -403,7 +459,7 @@ func (x *CreateNetworkBrokerInK8SV2) String() string {
 func (*CreateNetworkBrokerInK8SV2) ProtoMessage() {}
 
 func (x *CreateNetworkBrokerInK8SV2) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_request_engine_manage_proto_msgTypes[7]
+	mi := &file_proto_types_request_engine_manage_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -416,7 +472,7 @@ func (x *CreateNetworkBrokerInK8SV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateNetworkBrokerInK8SV2.ProtoReflect.Descriptor instead.
 func (*CreateNetworkBrokerInK8SV2) Descriptor() ([]byte, []int) {
-	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{7}
+	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *CreateNetworkBrokerInK8SV2) GetSpaceId() string {
@@ -456,7 +512,7 @@ type DeleteNetworkBrokerInK8SV2 struct {
 func (x *DeleteNetworkBrokerInK8SV2) Reset() {
 	*x = DeleteNetworkBrokerInK8SV2{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_request_engine_manage_proto_msgTypes[8]
+		mi := &file_proto_types_request_engine_manage_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -469,7 +525,7 @@ func (x *DeleteNetworkBrokerInK8SV2) String() string {
 func (*DeleteNetworkBrokerInK8SV2) ProtoMessage() {}
 
 func (x *DeleteNetworkBrokerInK8SV2) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_request_engine_manage_proto_msgTypes[8]
+	mi := &file_proto_types_request_engine_manage_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -482,7 +538,7 @@ func (x *DeleteNetworkBrokerInK8SV2) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteNetworkBrokerInK8SV2.ProtoReflect.Descriptor instead.
 func (*DeleteNetworkBrokerInK8SV2) Descriptor() ([]byte, []int) {
-	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{8}
+	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteNetworkBrokerInK8SV2) GetSpaceId() string {
@@ -562,6 +618,14 @@ var file_proto_types_request_engine_manage_proto_rawDesc = []byte{
 	0xe2, 0xdf, 0x1f, 0x13, 0x0a, 0x11, 0x0a, 0x08, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x5f, 0x69, 0x64,
 	0x12, 0x05, 0xc2, 0x01, 0x02, 0x22, 0x00, 0xe2, 0xdf, 0x1f, 0x0e, 0x12, 0x0c, 0xc2, 0x01, 0x09,
 	0xca, 0x02, 0x06, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x2d, 0x52, 0x07, 0x76, 0x78, 0x6e, 0x65, 0x74,
+	0x49, 0x64, 0x22, 0x7e, 0x0a, 0x18, 0x52, 0x65, 0x73, 0x74, 0x61, 0x72, 0x74, 0x46, 0x6c, 0x69,
+	0x6e, 0x6b, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x4b, 0x38, 0x73, 0x12, 0x2e,
+	0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
+	0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x32,
+	0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
+	0xca, 0x02, 0x04, 0x63, 0x66, 0x69, 0x2d, 0x52, 0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72,
 	0x49, 0x64, 0x22, 0xaa, 0x01, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4e, 0x65, 0x74,
 	0x77, 0x6f, 0x72, 0x6b, 0x42, 0x72, 0x6f, 0x6b, 0x65, 0x72, 0x49, 0x6e, 0x4b, 0x38, 0x73, 0x56,
 	0x32, 0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
@@ -606,7 +670,7 @@ func file_proto_types_request_engine_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_request_engine_manage_proto_rawDescData
 }
 
-var file_proto_types_request_engine_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_types_request_engine_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_proto_types_request_engine_manage_proto_goTypes = []interface{}{
 	(*CreateFlinkClusterInK8S)(nil),    // 0: request.CreateFlinkClusterInK8s
 	(*DeleteFlinkClusterInK8S)(nil),    // 1: request.DeleteFlinkClusterInK8s
@@ -615,17 +679,18 @@ var file_proto_types_request_engine_manage_proto_goTypes = []interface{}{
 	(*DeleteNamespacesInK8S)(nil),      // 4: request.DeleteNamespacesInK8s
 	(*CreateFlinkClusterInK8SV2)(nil),  // 5: request.CreateFlinkClusterInK8sV2
 	(*DeleteFlinkClusterInK8SV2)(nil),  // 6: request.DeleteFlinkClusterInK8sV2
-	(*CreateNetworkBrokerInK8SV2)(nil), // 7: request.CreateNetworkBrokerInK8sV2
-	(*DeleteNetworkBrokerInK8SV2)(nil), // 8: request.DeleteNetworkBrokerInK8sV2
-	(*pbmodel.FlinkCluster)(nil),       // 9: model.FlinkCluster
-	(*pbmodel.Network)(nil),            // 10: model.Network
+	(*RestartFlinkClusterInK8S)(nil),   // 7: request.RestartFlinkClusterInK8s
+	(*CreateNetworkBrokerInK8SV2)(nil), // 8: request.CreateNetworkBrokerInK8sV2
+	(*DeleteNetworkBrokerInK8SV2)(nil), // 9: request.DeleteNetworkBrokerInK8sV2
+	(*pbmodel.FlinkCluster)(nil),       // 10: model.FlinkCluster
+	(*pbmodel.Network)(nil),            // 11: model.Network
 }
 var file_proto_types_request_engine_manage_proto_depIdxs = []int32{
-	9,  // 0: request.CreateFlinkClusterInK8s.info:type_name -> model.FlinkCluster
-	9,  // 1: request.DeleteFlinkClusterInK8s.info:type_name -> model.FlinkCluster
-	10, // 2: request.CreateNetworkBrokerInK8s.info:type_name -> model.Network
-	10, // 3: request.DeleteNetworkBrokerInK8s.info:type_name -> model.Network
-	9,  // 4: request.CreateFlinkClusterInK8sV2.info:type_name -> model.FlinkCluster
+	10, // 0: request.CreateFlinkClusterInK8s.info:type_name -> model.FlinkCluster
+	10, // 1: request.DeleteFlinkClusterInK8s.info:type_name -> model.FlinkCluster
+	11, // 2: request.CreateNetworkBrokerInK8s.info:type_name -> model.Network
+	11, // 3: request.DeleteNetworkBrokerInK8s.info:type_name -> model.Network
+	10, // 4: request.CreateFlinkClusterInK8sV2.info:type_name -> model.FlinkCluster
 	5,  // [5:5] is the sub-list for method output_type
 	5,  // [5:5] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -724,7 +789,7 @@ func file_proto_types_request_engine_manage_proto_init() {
 			}
 		}
 		file_proto_types_request_engine_manage_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateNetworkBrokerInK8SV2); i {
+			switch v := v.(*RestartFlinkClusterInK8S); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -736,6 +801,18 @@ func file_proto_types_request_engine_manage_proto_init() {
 			}
 		}
 		file_proto_types_request_engine_manage_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateNetworkBrokerInK8SV2); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_request_engine_manage_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteNetworkBrokerInK8SV2); i {
 			case 0:
 				return &v.state
@@ -754,7 +831,7 @@ func file_proto_types_request_engine_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_request_engine_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

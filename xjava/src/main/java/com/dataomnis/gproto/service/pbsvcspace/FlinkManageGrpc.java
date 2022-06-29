@@ -294,6 +294,37 @@ public final class FlinkManageGrpc {
     return getStopFlinkClustersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClustersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestartFlinkClusters",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClustersMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getRestartFlinkClustersMethod;
+    if ((getRestartFlinkClustersMethod = FlinkManageGrpc.getRestartFlinkClustersMethod) == null) {
+      synchronized (FlinkManageGrpc.class) {
+        if ((getRestartFlinkClustersMethod = FlinkManageGrpc.getRestartFlinkClustersMethod) == null) {
+          FlinkManageGrpc.getRestartFlinkClustersMethod = getRestartFlinkClustersMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestartFlinkClusters"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new FlinkManageMethodDescriptorSupplier("RestartFlinkClusters"))
+              .build();
+        }
+      }
+    }
+    return getRestartFlinkClustersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.UpdateFlinkClusterStatusByScheduler,
       com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateFlinkClusterStatusBySchedulerMethod;
 
@@ -475,6 +506,13 @@ public final class FlinkManageGrpc {
     }
 
     /**
+     */
+    public void restartFlinkClusters(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRestartFlinkClustersMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
      * </pre>
@@ -559,6 +597,13 @@ public final class FlinkManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.StopFlinkClusters,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_STOP_FLINK_CLUSTERS)))
+          .addMethod(
+            getRestartFlinkClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_RESTART_FLINK_CLUSTERS)))
           .addMethod(
             getUpdateFlinkClusterStatusBySchedulerMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -671,6 +716,14 @@ public final class FlinkManageGrpc {
     }
 
     /**
+     */
+    public void restartFlinkClusters(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestartFlinkClustersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
      * </pre>
@@ -775,6 +828,13 @@ public final class FlinkManageGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopFlinkClusters(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.StopFlinkClusters request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStopFlinkClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct restartFlinkClusters(com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestartFlinkClustersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -892,6 +952,14 @@ public final class FlinkManageGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> restartFlinkClusters(
+        com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestartFlinkClustersMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
      * </pre>
@@ -923,8 +991,9 @@ public final class FlinkManageGrpc {
   private static final int METHODID_DELETE_FLINK_CLUSTERS = 6;
   private static final int METHODID_START_FLINK_CLUSTERS = 7;
   private static final int METHODID_STOP_FLINK_CLUSTERS = 8;
-  private static final int METHODID_UPDATE_FLINK_CLUSTER_STATUS_BY_SCHEDULER = 9;
-  private static final int METHODID_STOP_FLINK_CLUSTER_BY_SCHEDULER = 10;
+  private static final int METHODID_RESTART_FLINK_CLUSTERS = 9;
+  private static final int METHODID_UPDATE_FLINK_CLUSTER_STATUS_BY_SCHEDULER = 10;
+  private static final int METHODID_STOP_FLINK_CLUSTER_BY_SCHEDULER = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -977,6 +1046,10 @@ public final class FlinkManageGrpc {
           break;
         case METHODID_STOP_FLINK_CLUSTERS:
           serviceImpl.stopFlinkClusters((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.StopFlinkClusters) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_RESTART_FLINK_CLUSTERS:
+          serviceImpl.restartFlinkClusters((com.dataomnis.gproto.types.pbrequest.PBRequestFlinkManage.RestartFlinkClusters) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_UPDATE_FLINK_CLUSTER_STATUS_BY_SCHEDULER:
@@ -1057,6 +1130,7 @@ public final class FlinkManageGrpc {
               .addMethod(getDeleteFlinkClustersMethod())
               .addMethod(getStartFlinkClustersMethod())
               .addMethod(getStopFlinkClustersMethod())
+              .addMethod(getRestartFlinkClustersMethod())
               .addMethod(getUpdateFlinkClusterStatusBySchedulerMethod())
               .addMethod(getStopFlinkClusterBySchedulerMethod())
               .build();

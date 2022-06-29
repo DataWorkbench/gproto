@@ -63,6 +63,14 @@ func (this *StopFlinkClusters) SetDefaults() {
 	return
 }
 
+// Set default value for message request.RestartFlinkClusters
+func (this *RestartFlinkClusters) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.CreateFlinkCluster
 func (this *CreateFlinkCluster) SetDefaults() {
 	if this == nil {

@@ -37,6 +37,7 @@ type FlinkManageClient interface {
 	DeleteFlinkClusters(ctx context.Context, in *pbrequest.DeleteFlinkClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	StartFlinkClusters(ctx context.Context, in *pbrequest.StartFlinkClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	StopFlinkClusters(ctx context.Context, in *pbrequest.StopFlinkClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	RestartFlinkClusters(ctx context.Context, in *pbrequest.RestartFlinkClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
 	UpdateFlinkClusterStatusByScheduler(ctx context.Context, in *pbrequest.UpdateFlinkClusterStatusByScheduler, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// StopFlinkClusterByScheduler is an internal interface used by scheduler.
@@ -132,6 +133,15 @@ func (c *flinkManageClient) StopFlinkClusters(ctx context.Context, in *pbrequest
 	return out, nil
 }
 
+func (c *flinkManageClient) RestartFlinkClusters(ctx context.Context, in *pbrequest.RestartFlinkClusters, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.FlinkManage/RestartFlinkClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *flinkManageClient) UpdateFlinkClusterStatusByScheduler(ctx context.Context, in *pbrequest.UpdateFlinkClusterStatusByScheduler, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/spacemanager.FlinkManage/UpdateFlinkClusterStatusByScheduler", in, out, opts...)
@@ -166,6 +176,7 @@ type FlinkManageServer interface {
 	DeleteFlinkClusters(context.Context, *pbrequest.DeleteFlinkClusters) (*pbmodel.EmptyStruct, error)
 	StartFlinkClusters(context.Context, *pbrequest.StartFlinkClusters) (*pbmodel.EmptyStruct, error)
 	StopFlinkClusters(context.Context, *pbrequest.StopFlinkClusters) (*pbmodel.EmptyStruct, error)
+	RestartFlinkClusters(context.Context, *pbrequest.RestartFlinkClusters) (*pbmodel.EmptyStruct, error)
 	// UpdateFlinkClusterStatusByScheduler is an internal interface used by scheduler.
 	UpdateFlinkClusterStatusByScheduler(context.Context, *pbrequest.UpdateFlinkClusterStatusByScheduler) (*pbmodel.EmptyStruct, error)
 	// StopFlinkClusterByScheduler is an internal interface used by scheduler.
@@ -203,6 +214,9 @@ func (UnimplementedFlinkManageServer) StartFlinkClusters(context.Context, *pbreq
 }
 func (UnimplementedFlinkManageServer) StopFlinkClusters(context.Context, *pbrequest.StopFlinkClusters) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StopFlinkClusters not implemented")
+}
+func (UnimplementedFlinkManageServer) RestartFlinkClusters(context.Context, *pbrequest.RestartFlinkClusters) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RestartFlinkClusters not implemented")
 }
 func (UnimplementedFlinkManageServer) UpdateFlinkClusterStatusByScheduler(context.Context, *pbrequest.UpdateFlinkClusterStatusByScheduler) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateFlinkClusterStatusByScheduler not implemented")
@@ -385,6 +399,24 @@ func _FlinkManage_StopFlinkClusters_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _FlinkManage_RestartFlinkClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.RestartFlinkClusters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FlinkManageServer).RestartFlinkClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.FlinkManage/RestartFlinkClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FlinkManageServer).RestartFlinkClusters(ctx, req.(*pbrequest.RestartFlinkClusters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _FlinkManage_UpdateFlinkClusterStatusByScheduler_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.UpdateFlinkClusterStatusByScheduler)
 	if err := dec(in); err != nil {
@@ -463,6 +495,10 @@ var FlinkManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StopFlinkClusters",
 			Handler:    _FlinkManage_StopFlinkClusters_Handler,
+		},
+		{
+			MethodName: "RestartFlinkClusters",
+			Handler:    _FlinkManage_RestartFlinkClusters_Handler,
 		},
 		{
 			MethodName: "UpdateFlinkClusterStatusByScheduler",

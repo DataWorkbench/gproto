@@ -16,10 +16,14 @@ import "proto/types/request/engine_manage.proto";
 //import "proto/types/response/engine_manage.proto";
 
 service EngineManage {
+  // Deprecated: FIXME: remove it.
   rpc CreateFlinkClusterInK8s(request.CreateFlinkClusterInK8s) returns (model.EmptyStruct) {}
+  // Deprecated: FIXME: remove it.
   rpc DeleteFlinkClusterInK8s(request.DeleteFlinkClusterInK8s) returns (model.EmptyStruct) {}
 
+  // Deprecated: FIXME: remove it.
   rpc CreateNetworkBrokerInK8s(request.CreateNetworkBrokerInK8s) returns (model.EmptyStruct) {}
+  // Deprecated: FIXME: remove it.
   rpc DeleteNetworkBrokerInK8s(request.DeleteNetworkBrokerInK8s) returns (model.EmptyStruct) {}
 
   // -----
@@ -28,6 +32,7 @@ service EngineManage {
 
   rpc CreateFlinkClusterInK8sV2(request.CreateFlinkClusterInK8sV2) returns (model.EmptyStruct) {}
   rpc DeleteFlinkClusterInK8sV2(request.DeleteFlinkClusterInK8sV2) returns (model.EmptyStruct) {}
+  rpc RestartFlinkClusterInK8s(request.RestartFlinkClusterInK8s) returns (model.EmptyStruct) {}
 
   rpc CreateNetworkBrokerInK8sV2(request.CreateNetworkBrokerInK8sV2) returns (model.EmptyStruct) {}
   rpc DeleteNetworkBrokerInK8sV2(request.DeleteNetworkBrokerInK8sV2) returns (model.EmptyStruct) {}

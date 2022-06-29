@@ -27,7 +27,7 @@ public final class PBSvcFlinkManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/flink_" +
       "manage.proto\032\'proto/types/response/flink" +
-      "_manage.proto2\300\007\n\013FlinkManage\022i\n\032ListAva" +
+      "_manage.proto2\215\010\n\013FlinkManage\022i\n\032ListAva" +
       "ilableFlinkVersions\022#.request.ListAvaila" +
       "bleFlinkVersions\032$.response.ListAvailabl" +
       "eFlinkVersions\"\000\022`\n\027DescribeFlinkCluster" +
@@ -46,15 +46,17 @@ public final class PBSvcFlinkManage {
       "artFlinkClusters\022\033.request.StartFlinkClu" +
       "sters\032\022.model.EmptyStruct\"\000\022E\n\021StopFlink" +
       "Clusters\022\032.request.StopFlinkClusters\032\022.m" +
-      "odel.EmptyStruct\"\000\022i\n#UpdateFlinkCluster" +
-      "StatusByScheduler\022,.request.UpdateFlinkC" +
-      "lusterStatusByScheduler\032\022.model.EmptyStr" +
-      "uct\"\000\022Y\n\033StopFlinkClusterByScheduler\022$.r" +
-      "equest.StopFlinkClusterByScheduler\032\022.mod" +
-      "el.EmptyStruct\"\000Bu\n\'com.dataomnis.gproto" +
-      ".service.pbsvcspaceB\020PBSvcFlinkManageP\000Z" +
-      "6github.com/DataWorkbench/gproto/xgo/ser" +
-      "vice/pbsvcspaceb\006proto3"
+      "odel.EmptyStruct\"\000\022K\n\024RestartFlinkCluste" +
+      "rs\022\035.request.RestartFlinkClusters\032\022.mode" +
+      "l.EmptyStruct\"\000\022i\n#UpdateFlinkClusterSta" +
+      "tusByScheduler\022,.request.UpdateFlinkClus" +
+      "terStatusByScheduler\032\022.model.EmptyStruct" +
+      "\"\000\022Y\n\033StopFlinkClusterByScheduler\022$.requ" +
+      "est.StopFlinkClusterByScheduler\032\022.model." +
+      "EmptyStruct\"\000Bu\n\'com.dataomnis.gproto.se" +
+      "rvice.pbsvcspaceB\020PBSvcFlinkManageP\000Z6gi" +
+      "thub.com/DataWorkbench/gproto/xgo/servic" +
+      "e/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
