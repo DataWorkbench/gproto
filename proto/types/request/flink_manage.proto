@@ -135,9 +135,9 @@ message CreateFlinkCluster {
   // @inject_tag: json:"name"
   string name = 4 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 } ];
 
-  // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+  // Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
   // @inject_tag: json:"version"
-  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9","flink-1.14.4-scala_2.11"] } ];
+  string version = 5 [ (validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9","flink-1.14.4-scala_2.11","flink-1.14.5-scala_2.11"] } ];
 
   // resource config.
   //
