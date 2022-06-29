@@ -57,9 +57,9 @@ message FlinkCluster {
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gte: 2, byte_len_lte: 128} ];
 
-  // Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+  // Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.5-scala_2.11"
   // @inject_tag: json:"version" gorm:"column:version;"
-  string version = 4 [(validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9","flink-1.14.4-scala_2.11"] }];
+  string version = 4 [(validator.field).tags.string = { in: ["flink-1.12.3-scala_2.11", "flink-1.12.3-scala_2.11-q0.9","flink-1.14.5-scala_2.11"] }];
 
   // Cluster Status. 1 => "deleted" 2 => "running" 3 => "stopped" 4 => "starting" 5 => "exception" 6 => "Arrears"
   // @inject_tag: json:"status" gorm:"column:status;"
