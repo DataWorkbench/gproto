@@ -41,27 +41,12 @@ func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_info() error
 	return nil
 }
 
-func (this *DescribeDataServiceCluster) _xxx_xxx_Validator_Validate_api_versions() error {
-	for _, item := range this.ApiVersions {
-		_ = item // To avoid unused panics.
-		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
-			if err := dt.Validate(); err != nil {
-				return err
-			}
-		}
-	}
-	return nil
-}
-
 // Set default value for message response.DescribeDataServiceCluster
 func (this *DescribeDataServiceCluster) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_api_versions(); err != nil {
 		return err
 	}
 	return nil
@@ -191,6 +176,29 @@ func (this *ListDataServiceApiVersions) _xxx_xxx_Validator_Validate_infos() erro
 
 // Set default value for message response.ListDataServiceApiVersions
 func (this *ListDataServiceApiVersions) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_infos() error {
+	for _, item := range this.Infos {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.ListPublishedApiVersionsByClusterId
+func (this *ListPublishedApiVersionsByClusterId) Validate() error {
 	if this == nil {
 		return nil
 	}

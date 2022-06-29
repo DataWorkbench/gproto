@@ -156,9 +156,6 @@ func (this *ApiGroup) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *ApiGroup) _xxx_xxx_Validator_Validate_group_path() error {
-	if !(len(this.GroupPath) > 0) {
-		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'group_path' must be greater than '0'", protovalidator.StringByteLenToString(this.GroupPath))
-	}
 	if !(len(this.GroupPath) <= 64) {
 		return protovalidator.FieldError1("ApiGroup", "the byte length of field 'group_path' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.GroupPath))
 	}
@@ -322,6 +319,18 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_api_description() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ApiConfig_InEnums_Protocols = map[ApiConfig_Protocols]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *ApiConfig) _xxx_xxx_Validator_Validate_protocols() error {
+	if !(this.Protocols > 0) {
+		return protovalidator.FieldError1("ApiConfig", "the value of field 'protocols' must be greater than '0'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfig_InEnums_Protocols[this.Protocols]) {
+		return protovalidator.FieldError1("ApiConfig", "the value of field 'protocols' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ApiConfig_InEnums_RequestMethod = map[ApiConfig_RequestMethod]bool{0: true, 1: true, 2: true}
 
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_request_method() error {
@@ -464,6 +473,9 @@ func (this *ApiConfig) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_protocols(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_request_method(); err != nil {
@@ -856,6 +868,18 @@ func (this *ApiVersion) _xxx_xxx_Validator_Validate_api_description() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ApiVersion_InEnums_Protocols = map[ApiVersion_Protocols]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *ApiVersion) _xxx_xxx_Validator_Validate_protocols() error {
+	if !(this.Protocols > 0) {
+		return protovalidator.FieldError1("ApiVersion", "the value of field 'protocols' must be greater than '0'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	if !(_xxx_xxx_Validator_ApiVersion_InEnums_Protocols[this.Protocols]) {
+		return protovalidator.FieldError1("ApiVersion", "the value of field 'protocols' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	return nil
+}
+
 var _xxx_xxx_Validator_ApiVersion_InEnums_RequestMethod = map[ApiVersion_RequestMethod]bool{0: true, 1: true, 2: true}
 
 func (this *ApiVersion) _xxx_xxx_Validator_Validate_request_method() error {
@@ -982,6 +1006,9 @@ func (this *ApiVersion) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_protocols(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_request_method(); err != nil {

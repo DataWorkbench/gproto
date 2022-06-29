@@ -64,7 +64,7 @@ message ApiGroup{
   // @inject_tag: json:"name" gorm:"column:name;"
   string name = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
   // @inject_tag: json:"group_path"  gorm:"column:group_path;"
-  string group_path = 4 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  string group_path = 4 [ (validator.field).tags.string = {  byte_len_lte: 64 } ];
   // @inject_tag: json:"desc"  gorm:"column:desc;"
   string desc = 5 [(validator.field).tags.string = { char_len_lte: 1024 }];
   // @inject_tag: json:"status" gorm:"column:status;"
@@ -96,8 +96,9 @@ message ApiConfig {
   }
   enum Protocols{
     ProtocolUnset = 0;
-    HTTP = 1;
-    HTTPS = 2;
+    HTTPOnly = 1;
+    HTTPSOnly = 2;
+    ALL = 3;
   }
   enum Status {
     StatusUnset = 0;
@@ -121,8 +122,8 @@ message ApiConfig {
   ApiMode api_mode = 7  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"api_description" gorm:"column:api_description;"
   string api_description = 8 [ (validator.field).tags.string = { byte_len_lte: 257 }   ];
-//  // @inject_tag: json:"protocols" gorm:"column:protocols;"
-//  repeated Protocols protocols = 9 ;
+  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+  Protocols protocols = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"request_method" gorm:"column:request_method;"
   RequestMethod request_method = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type" gorm:"column:response_type;"
@@ -258,8 +259,9 @@ message ApiVersion{
   }
   enum Protocols{
     ProtocolUnset = 0;
-    HTTP = 1;
-    HTTPS = 2;
+    HTTPOnly = 1;
+    HTTPSOnly = 2;
+    ALL = 3;
   }
   // @inject_tag: json:"version_id" gorm:"column:version_id;primaryKey;"
   string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
@@ -282,8 +284,8 @@ message ApiVersion{
   ApiMode api_mode = 10 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"api_description" gorm:"column:api_description;"
   string api_description = 11 [ (validator.field).tags.string = { byte_len_lte: 257 }   ];
-//  // @inject_tag: json:"protocols" gorm:"column:protocols;"
-//  repeated Protocols protocols = 12 ;
+  // @inject_tag: json:"protocols" gorm:"column:protocols;"
+  Protocols protocols = 12 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"request_method" gorm:"column:request_method;"
   RequestMethod request_method = 13 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type" gorm:"column:response_type;"

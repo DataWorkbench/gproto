@@ -436,9 +436,6 @@ func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *CreateApiGroup) _xxx_xxx_Validator_Validate_group_path() error {
-	if !(len(this.GroupPath) > 0) {
-		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'group_path' must be greater than '0'", protovalidator.StringByteLenToString(this.GroupPath))
-	}
 	if !(len(this.GroupPath) <= 64) {
 		return protovalidator.FieldError1("CreateApiGroup", "the byte length of field 'group_path' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.GroupPath))
 	}
@@ -1030,6 +1027,75 @@ func (this *ListDataServiceApiVersions) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListPublishedApiVersionsByClusterId_In_SortBy = map[string]bool{"": true, "id": true, "created": true, "updated": true}
+
+func (this *ListPublishedApiVersionsByClusterId) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListPublishedApiVersionsByClusterId_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListPublishedApiVersionsByClusterId", "the value of field 'sort_by' must be one of '[ id created updated]'", this.SortBy)
+	}
+	return nil
+}
+
+// Set default value for message request.ListPublishedApiVersionsByClusterId
+func (this *ListPublishedApiVersionsByClusterId) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {

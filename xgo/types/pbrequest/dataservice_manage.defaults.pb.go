@@ -158,6 +158,17 @@ func (this *ListDataServiceApiVersions) SetDefaults() {
 	return
 }
 
+// Set default value for message request.ListPublishedApiVersionsByClusterId
+func (this *ListPublishedApiVersionsByClusterId) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
 // Set default value for message request.ListPublishedApis
 func (this *ListPublishedApis) SetDefaults() {
 	if this == nil {

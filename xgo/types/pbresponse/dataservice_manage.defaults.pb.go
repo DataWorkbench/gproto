@@ -104,6 +104,14 @@ func (this *ListDataServiceApiVersions) SetDefaults() {
 	return
 }
 
+// Set default value for message response.ListPublishedApiVersionsByClusterId
+func (this *ListPublishedApiVersionsByClusterId) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.TestDataServiceApi
 func (this *TestDataServiceApi) SetDefaults() {
 	if this == nil {

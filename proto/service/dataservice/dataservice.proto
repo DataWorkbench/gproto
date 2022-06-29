@@ -46,5 +46,6 @@ service DataService {
   rpc ListDataServiceApiVersions(request.ListDataServiceApiVersions) returns (response.ListDataServiceApiVersions) {}
   rpc DescribeDataServiceApiVersion(request.DescribeDataServiceApiVersion) returns (response.DescribeDataServiceApiVersion) {}
   rpc RepublishDataServiceApi(request.RepublishDataServiceApi) returns (model.EmptyStruct) {}
+  rpc ListPublishedApiVersionsByClusterId(request.ListPublishedApiVersionsByClusterId) returns (response.ListPublishedApiVersionsByClusterId) {}
 
 }

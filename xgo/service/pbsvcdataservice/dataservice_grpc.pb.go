@@ -48,6 +48,7 @@ type DataServiceClient interface {
 	ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListDataServiceApiVersions, opts ...grpc.CallOption) (*pbresponse.ListDataServiceApiVersions, error)
 	DescribeDataServiceApiVersion(ctx context.Context, in *pbrequest.DescribeDataServiceApiVersion, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceApiVersion, error)
 	RepublishDataServiceApi(ctx context.Context, in *pbrequest.RepublishDataServiceApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	ListPublishedApiVersionsByClusterId(ctx context.Context, in *pbrequest.ListPublishedApiVersionsByClusterId, opts ...grpc.CallOption) (*pbresponse.ListPublishedApiVersionsByClusterId, error)
 }
 
 type dataServiceClient struct {
@@ -256,6 +257,15 @@ func (c *dataServiceClient) RepublishDataServiceApi(ctx context.Context, in *pbr
 	return out, nil
 }
 
+func (c *dataServiceClient) ListPublishedApiVersionsByClusterId(ctx context.Context, in *pbrequest.ListPublishedApiVersionsByClusterId, opts ...grpc.CallOption) (*pbresponse.ListPublishedApiVersionsByClusterId, error) {
+	out := new(pbresponse.ListPublishedApiVersionsByClusterId)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListPublishedApiVersionsByClusterId", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -283,6 +293,7 @@ type DataServiceServer interface {
 	ListDataServiceApiVersions(context.Context, *pbrequest.ListDataServiceApiVersions) (*pbresponse.ListDataServiceApiVersions, error)
 	DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeDataServiceApiVersion) (*pbresponse.DescribeDataServiceApiVersion, error)
 	RepublishDataServiceApi(context.Context, *pbrequest.RepublishDataServiceApi) (*pbmodel.EmptyStruct, error)
+	ListPublishedApiVersionsByClusterId(context.Context, *pbrequest.ListPublishedApiVersionsByClusterId) (*pbresponse.ListPublishedApiVersionsByClusterId, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -355,6 +366,9 @@ func (UnimplementedDataServiceServer) DescribeDataServiceApiVersion(context.Cont
 }
 func (UnimplementedDataServiceServer) RepublishDataServiceApi(context.Context, *pbrequest.RepublishDataServiceApi) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RepublishDataServiceApi not implemented")
+}
+func (UnimplementedDataServiceServer) ListPublishedApiVersionsByClusterId(context.Context, *pbrequest.ListPublishedApiVersionsByClusterId) (*pbresponse.ListPublishedApiVersionsByClusterId, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPublishedApiVersionsByClusterId not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -765,6 +779,24 @@ func _DataService_RepublishDataServiceApi_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_ListPublishedApiVersionsByClusterId_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListPublishedApiVersionsByClusterId)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).ListPublishedApiVersionsByClusterId(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/ListPublishedApiVersionsByClusterId",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).ListPublishedApiVersionsByClusterId(ctx, req.(*pbrequest.ListPublishedApiVersionsByClusterId))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -859,6 +891,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RepublishDataServiceApi",
 			Handler:    _DataService_RepublishDataServiceApi_Handler,
+		},
+		{
+			MethodName: "ListPublishedApiVersionsByClusterId",
+			Handler:    _DataService_ListPublishedApiVersionsByClusterId_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -101,7 +101,7 @@ message CreateApiGroup {
   // @inject_tag: json:"name"
   string name = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
   // @inject_tag: json:"group_path"
-  string group_path = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
+  string group_path = 3 [ (validator.field).tags.string = { byte_len_lte: 64 } ];
   // @inject_tag: json:"desc"
   string desc = 4 [(validator.field).tags.string = { char_len_lte: 1024 }];
   // @inject_tag: json:"created_by" swaggerignore:"true"
@@ -136,7 +136,7 @@ message UpdateApiConfig {
   // @inject_tag: json:"api_description"
   string api_description = 6 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
   // @inject_tag: json:"protocols"
-  repeated model.ApiConfig.Protocols protocols = 7 ;
+  model.ApiConfig.Protocols protocols = 7 ;
   // @inject_tag: json:"request_method"
   model.ApiConfig.RequestMethod request_method = 8 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type"
@@ -186,7 +186,7 @@ message CreateApiConfig {
   // @inject_tag: json:"space_id"
   string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"protocols"
-  repeated model.ApiConfig.Protocols protocols = 6 ;
+  model.ApiConfig.Protocols protocols = 6 ;
   // @inject_tag: json:"request_method"
   model.ApiConfig.RequestMethod request_method = 7 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"response_type"
@@ -206,6 +206,19 @@ message ListDataServiceApiVersions {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" }  ];
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 5 [ (validator.field).tags.string = { in: ["", "id", "created", "updated"] } ];
+}
+
+message ListPublishedApiVersionsByClusterId {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"cluster_id" uri:"cluster_id" swaggerignore:"true"
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" }  ];
   // @inject_tag: json:"limit" form:"limit"
   int32 limit = 3 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // @inject_tag: json:"offset" form:"offset"

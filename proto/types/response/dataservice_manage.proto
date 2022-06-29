@@ -24,8 +24,6 @@ message ListDataServiceClusters {
 message DescribeDataServiceCluster {
   // @inject_tag: json:"info"
   model.DataServiceCluster info = 1;
-  // @inject_tag: json:"api_versions"
-  repeated model.ApiVersion api_versions = 2;
 }
 
 message CreateDataServiceCluster {
@@ -72,6 +70,15 @@ message DescribeDataServiceApiVersion {
 }
 
 message ListDataServiceApiVersions {
+  // @inject_tag: json:"infos"
+  repeated model.ApiVersion infos = 1;
+  // @inject_tag: json:"total"
+  int64 total = 2;
+  // @inject_tag: json:"has_more"
+  bool has_more = 3;
+}
+
+message ListPublishedApiVersionsByClusterId {
   // @inject_tag: json:"infos"
   repeated model.ApiVersion infos = 1;
   // @inject_tag: json:"total"

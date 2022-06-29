@@ -38,7 +38,7 @@ var file_proto_service_dataservice_dataservice_proto_rawDesc = []byte{
 	0x79, 0x70, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79,
 	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x23, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x74, 0x79,
 	0x70, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xd1, 0x0e, 0x0a, 0x0b,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xd8, 0x0f, 0x0a, 0x0b,
 	0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x63, 0x0a, 0x18, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x21, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
@@ -155,53 +155,64 @@ var file_proto_service_dataservice_dataservice_proto_rawDesc = []byte{
 	0x76, 0x69, 0x63, 0x65, 0x41, 0x70, 0x69, 0x12, 0x20, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x2e, 0x52, 0x65, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x44, 0x61, 0x74, 0x61, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x41, 0x70, 0x69, 0x1a, 0x12, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x42,
-	0x81, 0x01, 0x0a, 0x2d, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
-	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x2e, 0x70, 0x62, 0x73, 0x76, 0x63, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x42, 0x10, 0x50, 0x42, 0x53, 0x76, 0x63, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x50, 0x00, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x2f, 0x70, 0x62, 0x73, 0x76, 0x63, 0x64, 0x61, 0x74, 0x61, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6c, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x22, 0x00, 0x12,
+	0x84, 0x01, 0x0a, 0x23, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65,
+	0x64, 0x41, 0x70, 0x69, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x43, 0x6c,
+	0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x2c, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x64, 0x41,
+	0x70, 0x69, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x43, 0x6c, 0x75, 0x73,
+	0x74, 0x65, 0x72, 0x49, 0x64, 0x1a, 0x2d, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x2e, 0x4c, 0x69, 0x73, 0x74, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x64, 0x41, 0x70,
+	0x69, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x42, 0x79, 0x43, 0x6c, 0x75, 0x73, 0x74,
+	0x65, 0x72, 0x49, 0x64, 0x22, 0x00, 0x42, 0x81, 0x01, 0x0a, 0x2d, 0x63, 0x6f, 0x6d, 0x2e, 0x64,
+	0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x62, 0x73, 0x76, 0x63, 0x64, 0x61, 0x74,
+	0x61, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x10, 0x50, 0x42, 0x53, 0x76, 0x63, 0x44,
+	0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x00, 0x5a, 0x3c, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72,
+	0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67,
+	0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x62, 0x73, 0x76, 0x63, 0x64,
+	0x61, 0x74, 0x61, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var file_proto_service_dataservice_dataservice_proto_goTypes = []interface{}{
-	(*pbrequest.CreateDataServiceCluster)(nil),        // 0: request.CreateDataServiceCluster
-	(*pbrequest.ListDataServiceClusters)(nil),         // 1: request.ListDataServiceClusters
-	(*pbrequest.UpdateDataServiceCluster)(nil),        // 2: request.UpdateDataServiceCluster
-	(*pbrequest.DescribeDataServiceCluster)(nil),      // 3: request.DescribeDataServiceCluster
-	(*pbrequest.DeleteDataServiceClusters)(nil),       // 4: request.DeleteDataServiceClusters
-	(*pbrequest.StartDataServiceClusters)(nil),        // 5: request.StartDataServiceClusters
-	(*pbrequest.StopDataServiceClusters)(nil),         // 6: request.StopDataServiceClusters
-	(*pbmodel.EmptyStruct)(nil),                       // 7: model.EmptyStruct
-	(*pbrequest.CreateApiGroup)(nil),                  // 8: request.CreateApiGroup
-	(*pbrequest.ListApiGroups)(nil),                   // 9: request.ListApiGroups
-	(*pbrequest.DeleteApiGroups)(nil),                 // 10: request.DeleteApiGroups
-	(*pbrequest.ListApiConfigs)(nil),                  // 11: request.ListApiConfigs
-	(*pbrequest.DescribeApiConfig)(nil),               // 12: request.DescribeApiConfig
-	(*pbrequest.CreateApiConfig)(nil),                 // 13: request.CreateApiConfig
-	(*pbrequest.UpdateApiConfig)(nil),                 // 14: request.UpdateApiConfig
-	(*pbrequest.DeleteApiConfigs)(nil),                // 15: request.DeleteApiConfigs
-	(*pbrequest.TestDataServiceApi)(nil),              // 16: request.TestDataServiceApi
-	(*pbrequest.PublishDataServiceApi)(nil),           // 17: request.PublishDataServiceApi
-	(*pbrequest.AbolishDataServiceApis)(nil),          // 18: request.AbolishDataServiceApis
-	(*pbrequest.ListDataServiceApiVersions)(nil),      // 19: request.ListDataServiceApiVersions
-	(*pbrequest.DescribeDataServiceApiVersion)(nil),   // 20: request.DescribeDataServiceApiVersion
-	(*pbrequest.RepublishDataServiceApi)(nil),         // 21: request.RepublishDataServiceApi
-	(*pbresponse.CreateDataServiceCluster)(nil),       // 22: response.CreateDataServiceCluster
-	(*pbresponse.ListDataServiceClusters)(nil),        // 23: response.ListDataServiceClusters
-	(*pbresponse.DescribeDataServiceCluster)(nil),     // 24: response.DescribeDataServiceCluster
-	(*pbresponse.DescribeServiceDataSourceKinds)(nil), // 25: response.DescribeServiceDataSourceKinds
-	(*pbresponse.CreateApiGroup)(nil),                 // 26: response.CreateApiGroup
-	(*pbresponse.ListApiGroups)(nil),                  // 27: response.ListApiGroups
-	(*pbresponse.ListApiConfigs)(nil),                 // 28: response.ListApiConfigs
-	(*pbresponse.DescribeApiConfig)(nil),              // 29: response.DescribeApiConfig
-	(*pbresponse.CreateApiConfig)(nil),                // 30: response.CreateApiConfig
-	(*pbresponse.TestDataServiceApi)(nil),             // 31: response.TestDataServiceApi
-	(*pbresponse.ListDataServiceApiVersions)(nil),     // 32: response.ListDataServiceApiVersions
-	(*pbresponse.DescribeDataServiceApiVersion)(nil),  // 33: response.DescribeDataServiceApiVersion
+	(*pbrequest.CreateDataServiceCluster)(nil),             // 0: request.CreateDataServiceCluster
+	(*pbrequest.ListDataServiceClusters)(nil),              // 1: request.ListDataServiceClusters
+	(*pbrequest.UpdateDataServiceCluster)(nil),             // 2: request.UpdateDataServiceCluster
+	(*pbrequest.DescribeDataServiceCluster)(nil),           // 3: request.DescribeDataServiceCluster
+	(*pbrequest.DeleteDataServiceClusters)(nil),            // 4: request.DeleteDataServiceClusters
+	(*pbrequest.StartDataServiceClusters)(nil),             // 5: request.StartDataServiceClusters
+	(*pbrequest.StopDataServiceClusters)(nil),              // 6: request.StopDataServiceClusters
+	(*pbmodel.EmptyStruct)(nil),                            // 7: model.EmptyStruct
+	(*pbrequest.CreateApiGroup)(nil),                       // 8: request.CreateApiGroup
+	(*pbrequest.ListApiGroups)(nil),                        // 9: request.ListApiGroups
+	(*pbrequest.DeleteApiGroups)(nil),                      // 10: request.DeleteApiGroups
+	(*pbrequest.ListApiConfigs)(nil),                       // 11: request.ListApiConfigs
+	(*pbrequest.DescribeApiConfig)(nil),                    // 12: request.DescribeApiConfig
+	(*pbrequest.CreateApiConfig)(nil),                      // 13: request.CreateApiConfig
+	(*pbrequest.UpdateApiConfig)(nil),                      // 14: request.UpdateApiConfig
+	(*pbrequest.DeleteApiConfigs)(nil),                     // 15: request.DeleteApiConfigs
+	(*pbrequest.TestDataServiceApi)(nil),                   // 16: request.TestDataServiceApi
+	(*pbrequest.PublishDataServiceApi)(nil),                // 17: request.PublishDataServiceApi
+	(*pbrequest.AbolishDataServiceApis)(nil),               // 18: request.AbolishDataServiceApis
+	(*pbrequest.ListDataServiceApiVersions)(nil),           // 19: request.ListDataServiceApiVersions
+	(*pbrequest.DescribeDataServiceApiVersion)(nil),        // 20: request.DescribeDataServiceApiVersion
+	(*pbrequest.RepublishDataServiceApi)(nil),              // 21: request.RepublishDataServiceApi
+	(*pbrequest.ListPublishedApiVersionsByClusterId)(nil),  // 22: request.ListPublishedApiVersionsByClusterId
+	(*pbresponse.CreateDataServiceCluster)(nil),            // 23: response.CreateDataServiceCluster
+	(*pbresponse.ListDataServiceClusters)(nil),             // 24: response.ListDataServiceClusters
+	(*pbresponse.DescribeDataServiceCluster)(nil),          // 25: response.DescribeDataServiceCluster
+	(*pbresponse.DescribeServiceDataSourceKinds)(nil),      // 26: response.DescribeServiceDataSourceKinds
+	(*pbresponse.CreateApiGroup)(nil),                      // 27: response.CreateApiGroup
+	(*pbresponse.ListApiGroups)(nil),                       // 28: response.ListApiGroups
+	(*pbresponse.ListApiConfigs)(nil),                      // 29: response.ListApiConfigs
+	(*pbresponse.DescribeApiConfig)(nil),                   // 30: response.DescribeApiConfig
+	(*pbresponse.CreateApiConfig)(nil),                     // 31: response.CreateApiConfig
+	(*pbresponse.TestDataServiceApi)(nil),                  // 32: response.TestDataServiceApi
+	(*pbresponse.ListDataServiceApiVersions)(nil),          // 33: response.ListDataServiceApiVersions
+	(*pbresponse.DescribeDataServiceApiVersion)(nil),       // 34: response.DescribeDataServiceApiVersion
+	(*pbresponse.ListPublishedApiVersionsByClusterId)(nil), // 35: response.ListPublishedApiVersionsByClusterId
 }
 var file_proto_service_dataservice_dataservice_proto_depIdxs = []int32{
 	0,  // 0: dataservice.DataService.CreateDataServiceCluster:input_type -> request.CreateDataServiceCluster
@@ -226,30 +237,32 @@ var file_proto_service_dataservice_dataservice_proto_depIdxs = []int32{
 	19, // 19: dataservice.DataService.ListDataServiceApiVersions:input_type -> request.ListDataServiceApiVersions
 	20, // 20: dataservice.DataService.DescribeDataServiceApiVersion:input_type -> request.DescribeDataServiceApiVersion
 	21, // 21: dataservice.DataService.RepublishDataServiceApi:input_type -> request.RepublishDataServiceApi
-	22, // 22: dataservice.DataService.CreateDataServiceCluster:output_type -> response.CreateDataServiceCluster
-	23, // 23: dataservice.DataService.ListDataServiceClusters:output_type -> response.ListDataServiceClusters
-	7,  // 24: dataservice.DataService.UpdateDataServiceCluster:output_type -> model.EmptyStruct
-	24, // 25: dataservice.DataService.DescribeDataServiceCluster:output_type -> response.DescribeDataServiceCluster
-	7,  // 26: dataservice.DataService.DeleteDataServiceClusters:output_type -> model.EmptyStruct
-	7,  // 27: dataservice.DataService.StartDataServiceClusters:output_type -> model.EmptyStruct
-	7,  // 28: dataservice.DataService.StopDataServiceClusters:output_type -> model.EmptyStruct
-	25, // 29: dataservice.DataService.DescribeServiceDataSourceKinds:output_type -> response.DescribeServiceDataSourceKinds
-	26, // 30: dataservice.DataService.CreateApiGroup:output_type -> response.CreateApiGroup
-	27, // 31: dataservice.DataService.ListApiGroups:output_type -> response.ListApiGroups
-	7,  // 32: dataservice.DataService.DeleteApiGroups:output_type -> model.EmptyStruct
-	28, // 33: dataservice.DataService.ListApiConfigs:output_type -> response.ListApiConfigs
-	29, // 34: dataservice.DataService.DescribeApiConfig:output_type -> response.DescribeApiConfig
-	30, // 35: dataservice.DataService.CreateApiConfig:output_type -> response.CreateApiConfig
-	7,  // 36: dataservice.DataService.UpdateApiConfig:output_type -> model.EmptyStruct
-	7,  // 37: dataservice.DataService.DeleteApiConfigs:output_type -> model.EmptyStruct
-	31, // 38: dataservice.DataService.TestDataServiceApi:output_type -> response.TestDataServiceApi
-	7,  // 39: dataservice.DataService.PublishDataServiceApi:output_type -> model.EmptyStruct
-	7,  // 40: dataservice.DataService.AbolishDataServiceApis:output_type -> model.EmptyStruct
-	32, // 41: dataservice.DataService.ListDataServiceApiVersions:output_type -> response.ListDataServiceApiVersions
-	33, // 42: dataservice.DataService.DescribeDataServiceApiVersion:output_type -> response.DescribeDataServiceApiVersion
-	7,  // 43: dataservice.DataService.RepublishDataServiceApi:output_type -> model.EmptyStruct
-	22, // [22:44] is the sub-list for method output_type
-	0,  // [0:22] is the sub-list for method input_type
+	22, // 22: dataservice.DataService.ListPublishedApiVersionsByClusterId:input_type -> request.ListPublishedApiVersionsByClusterId
+	23, // 23: dataservice.DataService.CreateDataServiceCluster:output_type -> response.CreateDataServiceCluster
+	24, // 24: dataservice.DataService.ListDataServiceClusters:output_type -> response.ListDataServiceClusters
+	7,  // 25: dataservice.DataService.UpdateDataServiceCluster:output_type -> model.EmptyStruct
+	25, // 26: dataservice.DataService.DescribeDataServiceCluster:output_type -> response.DescribeDataServiceCluster
+	7,  // 27: dataservice.DataService.DeleteDataServiceClusters:output_type -> model.EmptyStruct
+	7,  // 28: dataservice.DataService.StartDataServiceClusters:output_type -> model.EmptyStruct
+	7,  // 29: dataservice.DataService.StopDataServiceClusters:output_type -> model.EmptyStruct
+	26, // 30: dataservice.DataService.DescribeServiceDataSourceKinds:output_type -> response.DescribeServiceDataSourceKinds
+	27, // 31: dataservice.DataService.CreateApiGroup:output_type -> response.CreateApiGroup
+	28, // 32: dataservice.DataService.ListApiGroups:output_type -> response.ListApiGroups
+	7,  // 33: dataservice.DataService.DeleteApiGroups:output_type -> model.EmptyStruct
+	29, // 34: dataservice.DataService.ListApiConfigs:output_type -> response.ListApiConfigs
+	30, // 35: dataservice.DataService.DescribeApiConfig:output_type -> response.DescribeApiConfig
+	31, // 36: dataservice.DataService.CreateApiConfig:output_type -> response.CreateApiConfig
+	7,  // 37: dataservice.DataService.UpdateApiConfig:output_type -> model.EmptyStruct
+	7,  // 38: dataservice.DataService.DeleteApiConfigs:output_type -> model.EmptyStruct
+	32, // 39: dataservice.DataService.TestDataServiceApi:output_type -> response.TestDataServiceApi
+	7,  // 40: dataservice.DataService.PublishDataServiceApi:output_type -> model.EmptyStruct
+	7,  // 41: dataservice.DataService.AbolishDataServiceApis:output_type -> model.EmptyStruct
+	33, // 42: dataservice.DataService.ListDataServiceApiVersions:output_type -> response.ListDataServiceApiVersions
+	34, // 43: dataservice.DataService.DescribeDataServiceApiVersion:output_type -> response.DescribeDataServiceApiVersion
+	7,  // 44: dataservice.DataService.RepublishDataServiceApi:output_type -> model.EmptyStruct
+	35, // 45: dataservice.DataService.ListPublishedApiVersionsByClusterId:output_type -> response.ListPublishedApiVersionsByClusterId
+	23, // [23:46] is the sub-list for method output_type
+	0,  // [0:23] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
