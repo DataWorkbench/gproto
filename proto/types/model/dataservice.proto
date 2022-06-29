@@ -320,10 +320,12 @@ enum ParameterDataType {
 }
 
 
-// ServiceDataSourceKind represents the kind of dataservice datasource . eg. { "name": "MySQL"}, { "name": "PostgreSql" } { "name": "ClickHouse" }
+// ServiceDataSourceKind represents the kind of dataservice datasource
 message ServiceDataSourceKind {
   // @inject_tag: json:"name"
   string Name = 1;
+  // @inject_tag: json:"type"
+  int64 Type = 2;
 }
 
 
