@@ -71,6 +71,16 @@ func (this *RouteInfo) _xxx_xxx_Validator_Validate_id() error {
 	return nil
 }
 
+func (this *RouteInfo) _xxx_xxx_Validator_Validate_desc() error {
+	if !(len(this.Desc) < 512) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'desc' must be less than '512'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	if !(len(this.Desc) >= 0) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'desc' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	return nil
+}
+
 func (this *RouteInfo) _xxx_xxx_Validator_Validate_host() error {
 	if !(len(this.Host) > 0) {
 		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'host' must be greater than '0'", protovalidator.StringByteLenToString(this.Host))
@@ -147,6 +157,9 @@ func (this *RouteInfo) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
@@ -338,11 +351,11 @@ func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_desc() error {
-	if !(len(this.Desc) > 0) {
-		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'desc' must be greater than '0'", protovalidator.StringByteLenToString(this.Desc))
-	}
 	if !(len(this.Desc) < 512) {
 		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'desc' must be less than '512'", protovalidator.StringByteLenToString(this.Desc))
+	}
+	if !(len(this.Desc) >= 0) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'desc' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Desc))
 	}
 	return nil
 }
