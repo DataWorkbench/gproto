@@ -166,6 +166,19 @@ message CheckPermission {
   map<string, bool> system_roles = 6 [ (validator.field).tags.map = { len_gt: 0  } ];
 }
 
+message DescribeWorkspaceConfig {
+  // The workspace id in HTTP Request-URI
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // The owner of workspace.
+  // @inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+  string space_owner = 2 [ (validator.field).tags.string = { ne: "" } ];
+
+  // @inject_tag: json:"request_user_id" uri:"request_user_id" swaggerignore:"true"
+  string request_user_id = 3;
+}
+
 message DescribeNetworkConfig {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
