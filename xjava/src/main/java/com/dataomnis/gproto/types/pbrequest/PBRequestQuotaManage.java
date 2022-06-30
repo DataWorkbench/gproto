@@ -1528,6 +1528,28 @@ public final class PBRequestQuotaManage {
      */
     com.google.protobuf.ByteString
         getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.DescribeWorkspaceQuota}
@@ -1543,6 +1565,7 @@ public final class PBRequestQuotaManage {
     }
     private DescribeWorkspaceQuota() {
       spaceId_ = "";
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -1579,6 +1602,12 @@ public final class PBRequestQuotaManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -1661,6 +1690,54 @@ public final class PBRequestQuotaManage {
       }
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1678,6 +1755,9 @@ public final class PBRequestQuotaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1689,6 +1769,9 @@ public final class PBRequestQuotaManage {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1707,6 +1790,8 @@ public final class PBRequestQuotaManage {
 
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1720,6 +1805,8 @@ public final class PBRequestQuotaManage {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1855,6 +1942,8 @@ public final class PBRequestQuotaManage {
         super.clear();
         spaceId_ = "";
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -1882,6 +1971,7 @@ public final class PBRequestQuotaManage {
       public com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeWorkspaceQuota buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeWorkspaceQuota result = new com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeWorkspaceQuota(this);
         result.spaceId_ = spaceId_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -1932,6 +2022,10 @@ public final class PBRequestQuotaManage {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeWorkspaceQuota.getDefaultInstance()) return this;
         if (!other.getSpaceId().isEmpty()) {
           spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2060,6 +2154,107 @@ public final class PBRequestQuotaManage {
   checkByteStringIsUtf8(value);
         
         spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -3234,6 +3429,28 @@ public final class PBRequestQuotaManage {
      */
     com.google.protobuf.ByteString
         getUserIdBytes();
+
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.DescribeMemberQuota}
@@ -3250,6 +3467,7 @@ public final class PBRequestQuotaManage {
     private DescribeMemberQuota() {
       spaceId_ = "";
       userId_ = "";
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -3292,6 +3510,12 @@ public final class PBRequestQuotaManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               userId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -3422,6 +3646,54 @@ public final class PBRequestQuotaManage {
       }
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace.
+     * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3442,6 +3714,9 @@ public final class PBRequestQuotaManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3456,6 +3731,9 @@ public final class PBRequestQuotaManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3476,6 +3754,8 @@ public final class PBRequestQuotaManage {
           .equals(other.getSpaceId())) return false;
       if (!getUserId()
           .equals(other.getUserId())) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3491,6 +3771,8 @@ public final class PBRequestQuotaManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3628,6 +3910,8 @@ public final class PBRequestQuotaManage {
 
         userId_ = "";
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -3656,6 +3940,7 @@ public final class PBRequestQuotaManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeMemberQuota result = new com.dataomnis.gproto.types.pbrequest.PBRequestQuotaManage.DescribeMemberQuota(this);
         result.spaceId_ = spaceId_;
         result.userId_ = userId_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -3710,6 +3995,10 @@ public final class PBRequestQuotaManage {
         }
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3939,6 +4228,107 @@ public final class PBRequestQuotaManage {
   checkByteStringIsUtf8(value);
         
         userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace.
+       * &#64;inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -5307,22 +5697,24 @@ public final class PBRequestQuotaManage {
       "er_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"d\n\017UpsertUs" +
       "erQuota\022 \n\007user_id\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002" +
       "A\022/\n\tquota_set\030\002 \001(\0132\017.model.QuotaSetB\013\342" +
-      "\337\037\007\022\005\342\001\002\020\001\"?\n\026DescribeWorkspaceQuota\022%\n\010" +
-      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"\224\001\n\024" +
-      "UpsertWorkspaceQuota\022$\n\013space_owner\030\001 \001(" +
-      "\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022%\n\010space_id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\tquota_set\030\003 \001(\0132\017.m" +
-      "odel.QuotaSetB\013\342\337\037\007\022\005\342\001\002\020\001\"^\n\023DescribeMe" +
-      "mberQuota\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210" +
-      "\002A\"\263\001\n\021UpsertMemberQuota\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022$\n\013space_owner\030\003 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022/\n\tquota_set\030\004 \001(\0132\017.mod" +
-      "el.QuotaSetB\013\342\337\037\007\022\005\342\001\002\020\001Bs\n$com.dataomni" +
-      "s.gproto.types.pbrequestB\024PBRequestQuota" +
-      "ManageP\000Z3github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbrequestb\006proto3"
+      "\337\037\007\022\005\342\001\002\020\001\"a\n\026DescribeWorkspaceQuota\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013s" +
+      "pace_owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\224\001\n\024Upsert" +
+      "WorkspaceQuota\022$\n\013space_owner\030\001 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\200\002\000\210\002A\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022/\n\tquota_set\030\003 \001(\0132\017.model.Q" +
+      "uotaSetB\013\342\337\037\007\022\005\342\001\002\020\001\"\200\001\n\023DescribeMemberQ" +
+      "uota\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n" +
+      "\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"\263\001\n\021Upse" +
+      "rtMemberQuota\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\200\002\000\210\002A\022$\n\013space_owner\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
+      "\000\210\002A\022/\n\tquota_set\030\004 \001(\0132\017.model.QuotaSet" +
+      "B\013\342\337\037\007\022\005\342\001\002\020\001Bs\n$com.dataomnis.gproto.ty" +
+      "pes.pbrequestB\024PBRequestQuotaManageP\000Z3g" +
+      "ithub.com/DataWorkbench/gproto/xgo/types" +
+      "/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5347,7 +5739,7 @@ public final class PBRequestQuotaManage {
     internal_static_request_DescribeWorkspaceQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeWorkspaceQuota_descriptor,
-        new java.lang.String[] { "SpaceId", });
+        new java.lang.String[] { "SpaceId", "SpaceOwner", });
     internal_static_request_UpsertWorkspaceQuota_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_UpsertWorkspaceQuota_fieldAccessorTable = new
@@ -5359,7 +5751,7 @@ public final class PBRequestQuotaManage {
     internal_static_request_DescribeMemberQuota_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeMemberQuota_descriptor,
-        new java.lang.String[] { "SpaceId", "UserId", });
+        new java.lang.String[] { "SpaceId", "UserId", "SpaceOwner", });
     internal_static_request_UpsertMemberQuota_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_request_UpsertMemberQuota_fieldAccessorTable = new
