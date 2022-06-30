@@ -360,22 +360,10 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_timeout() error {
 }
 
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_datasource_id() error {
-	if !(len(this.DatasourceId) == 20) {
-		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'datasource_id' must be equal to '20'", protovalidator.StringByteLenToString(this.DatasourceId))
-	}
-	if !(strings.HasPrefix(this.DatasourceId, "som-")) {
-		return protovalidator.FieldError1("ApiConfig", "the value of field 'datasource_id' must start with string 'som-'", this.DatasourceId)
-	}
 	return nil
 }
 
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_table_name() error {
-	if !(len(this.TableName) > 0) {
-		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'table_name' must be greater than '0'", protovalidator.StringByteLenToString(this.TableName))
-	}
-	if !(len(this.TableName) <= 64) {
-		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'table_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.TableName))
-	}
 	return nil
 }
 

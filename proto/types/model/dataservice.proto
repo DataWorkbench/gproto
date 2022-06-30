@@ -133,9 +133,9 @@ message ApiConfig {
   // @inject_tag: json:"timeout" gorm:"column:timeout;"
   int64 timeout = 13 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
   // @inject_tag: json:"datasource_id" gorm:"column:datasource_id;"
-  string datasource_id = 14 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
+  string datasource_id = 14 [(validator.field).tags.string = { } ];
   // @inject_tag: json:"table_name" gorm:"column:table_name;"
-  string table_name = 15 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];
+  string table_name = 15 [ (validator.field).tags.string = { }  ];
   // @inject_tag: json:"script" gorm:"column:script;"
   string script = 16 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
   // @inject_tag: json:"created_by" gorm:"column:created_by;"
