@@ -1735,16 +1735,28 @@ public final class PBResponseSpaceManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      * @return Whether the info field is set.
      */
     boolean hasInfo();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      * @return The info.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getInfo();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getInfoOrBuilder();
@@ -1846,6 +1858,10 @@ public final class PBResponseSpaceManage {
     public static final int INFO_FIELD_NUMBER = 1;
     private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace info_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      * @return Whether the info field is set.
      */
@@ -1854,6 +1870,10 @@ public final class PBResponseSpaceManage {
       return info_ != null;
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      * @return The info.
      */
@@ -1862,6 +1882,10 @@ public final class PBResponseSpaceManage {
       return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : info_;
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"info"
+     * </pre>
+     *
      * <code>.model.Workspace info = 1;</code>
      */
     @java.lang.Override
@@ -2192,6 +2216,10 @@ public final class PBResponseSpaceManage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder> infoBuilder_;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        * @return Whether the info field is set.
        */
@@ -2199,6 +2227,10 @@ public final class PBResponseSpaceManage {
         return infoBuilder_ != null || info_ != null;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        * @return The info.
        */
@@ -2210,6 +2242,10 @@ public final class PBResponseSpaceManage {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
@@ -2226,6 +2262,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public Builder setInfo(
@@ -2240,6 +2280,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
@@ -2258,6 +2302,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public Builder clearInfo() {
@@ -2272,6 +2320,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder getInfoBuilder() {
@@ -2280,6 +2332,10 @@ public final class PBResponseSpaceManage {
         return getInfoFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getInfoOrBuilder() {
@@ -2291,6 +2347,10 @@ public final class PBResponseSpaceManage {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"info"
+       * </pre>
+       *
        * <code>.model.Workspace info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2364,16 +2424,28 @@ public final class PBResponseSpaceManage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      * @return Whether the workspace field is set.
      */
     boolean hasWorkspace();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      * @return The workspace.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace getWorkspace();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getWorkspaceOrBuilder();
@@ -2471,6 +2543,10 @@ public final class PBResponseSpaceManage {
     public static final int WORKSPACE_FIELD_NUMBER = 1;
     private com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace workspace_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      * @return Whether the workspace field is set.
      */
@@ -2479,6 +2555,10 @@ public final class PBResponseSpaceManage {
       return workspace_ != null;
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      * @return The workspace.
      */
@@ -2487,6 +2567,10 @@ public final class PBResponseSpaceManage {
       return workspace_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.getDefaultInstance() : workspace_;
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"workspace"
+     * </pre>
+     *
      * <code>.model.Workspace workspace = 1;</code>
      */
     @java.lang.Override
@@ -2813,6 +2897,10 @@ public final class PBResponseSpaceManage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder, com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder> workspaceBuilder_;
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        * @return Whether the workspace field is set.
        */
@@ -2820,6 +2908,10 @@ public final class PBResponseSpaceManage {
         return workspaceBuilder_ != null || workspace_ != null;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        * @return The workspace.
        */
@@ -2831,6 +2923,10 @@ public final class PBResponseSpaceManage {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public Builder setWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
@@ -2847,6 +2943,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public Builder setWorkspace(
@@ -2861,6 +2961,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public Builder mergeWorkspace(com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace value) {
@@ -2879,6 +2983,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public Builder clearWorkspace() {
@@ -2893,6 +3001,10 @@ public final class PBResponseSpaceManage {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.Workspace.Builder getWorkspaceBuilder() {
@@ -2901,6 +3013,10 @@ public final class PBResponseSpaceManage {
         return getWorkspaceFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.WorkspaceOrBuilder getWorkspaceOrBuilder() {
@@ -2912,6 +3028,10 @@ public final class PBResponseSpaceManage {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"workspace"
+       * </pre>
+       *
        * <code>.model.Workspace workspace = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2975,6 +3095,702 @@ public final class PBResponseSpaceManage {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DescribeWorkspaceConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.DescribeWorkspaceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     * @return Whether the quotaSet field is set.
+     */
+    boolean hasQuotaSet();
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     * @return The quotaSet.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet();
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder();
+  }
+  /**
+   * Protobuf type {@code response.DescribeWorkspaceConfig}
+   */
+  public static final class DescribeWorkspaceConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.DescribeWorkspaceConfig)
+      DescribeWorkspaceConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeWorkspaceConfig.newBuilder() to construct.
+    private DescribeWorkspaceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeWorkspaceConfig() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeWorkspaceConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeWorkspaceConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder subBuilder = null;
+              if (quotaSet_ != null) {
+                subBuilder = quotaSet_.toBuilder();
+              }
+              quotaSet_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(quotaSet_);
+                quotaSet_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspaceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspaceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.Builder.class);
+    }
+
+    public static final int QUOTA_SET_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     * @return Whether the quotaSet field is set.
+     */
+    @java.lang.Override
+    public boolean hasQuotaSet() {
+      return quotaSet_ != null;
+    }
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     * @return The quotaSet.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+      return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+    }
+    /**
+     * <pre>
+     * The quota set for current login user in specified workspace.
+     * &#64;inject_tag: json:"quota_set"
+     * </pre>
+     *
+     * <code>.model.QuotaSet quota_set = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+      return getQuotaSet();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (quotaSet_ != null) {
+        output.writeMessage(1, getQuotaSet());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (quotaSet_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getQuotaSet());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig other = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig) obj;
+
+      if (hasQuotaSet() != other.hasQuotaSet()) return false;
+      if (hasQuotaSet()) {
+        if (!getQuotaSet()
+            .equals(other.getQuotaSet())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasQuotaSet()) {
+        hash = (37 * hash) + QUOTA_SET_FIELD_NUMBER;
+        hash = (53 * hash) + getQuotaSet().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.DescribeWorkspaceConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.DescribeWorkspaceConfig)
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspaceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspaceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.class, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.internal_static_response_DescribeWorkspaceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig result = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig(this);
+        if (quotaSetBuilder_ == null) {
+          result.quotaSet_ = quotaSet_;
+        } else {
+          result.quotaSet_ = quotaSetBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.getDefaultInstance()) return this;
+        if (other.hasQuotaSet()) {
+          mergeQuotaSet(other.getQuotaSet());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet quotaSet_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> quotaSetBuilder_;
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       * @return Whether the quotaSet field is set.
+       */
+      public boolean hasQuotaSet() {
+        return quotaSetBuilder_ != null || quotaSet_ != null;
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       * @return The quotaSet.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet getQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          return quotaSet_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+        } else {
+          return quotaSetBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public Builder setQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          quotaSet_ = value;
+          onChanged();
+        } else {
+          quotaSetBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public Builder setQuotaSet(
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder builderForValue) {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = builderForValue.build();
+          onChanged();
+        } else {
+          quotaSetBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public Builder mergeQuotaSet(com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet value) {
+        if (quotaSetBuilder_ == null) {
+          if (quotaSet_ != null) {
+            quotaSet_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.newBuilder(quotaSet_).mergeFrom(value).buildPartial();
+          } else {
+            quotaSet_ = value;
+          }
+          onChanged();
+        } else {
+          quotaSetBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public Builder clearQuotaSet() {
+        if (quotaSetBuilder_ == null) {
+          quotaSet_ = null;
+          onChanged();
+        } else {
+          quotaSet_ = null;
+          quotaSetBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder getQuotaSetBuilder() {
+        
+        onChanged();
+        return getQuotaSetFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder getQuotaSetOrBuilder() {
+        if (quotaSetBuilder_ != null) {
+          return quotaSetBuilder_.getMessageOrBuilder();
+        } else {
+          return quotaSet_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.getDefaultInstance() : quotaSet_;
+        }
+      }
+      /**
+       * <pre>
+       * The quota set for current login user in specified workspace.
+       * &#64;inject_tag: json:"quota_set"
+       * </pre>
+       *
+       * <code>.model.QuotaSet quota_set = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder> 
+          getQuotaSetFieldBuilder() {
+        if (quotaSetBuilder_ == null) {
+          quotaSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSet.Builder, com.dataomnis.gproto.types.pbmodel.PBModelQuota.QuotaSetOrBuilder>(
+                  getQuotaSet(),
+                  getParentForChildren(),
+                  isClean());
+          quotaSet_ = null;
+        }
+        return quotaSetBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.DescribeWorkspaceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.DescribeWorkspaceConfig)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeWorkspaceConfig>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeWorkspaceConfig>() {
+      @java.lang.Override
+      public DescribeWorkspaceConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeWorkspaceConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeWorkspaceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeWorkspaceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4355,6 +5171,11 @@ public final class PBResponseSpaceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_CheckPermission_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_DescribeWorkspaceConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_DescribeWorkspaceConfig_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_DescribeNetworkConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4372,19 +5193,21 @@ public final class PBResponseSpaceManage {
       "o\022\010response\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\032!proto/types/mo" +
       "del/workspace.proto\032 proto/types/model/i" +
-      "aas/vpc.proto\"R\n\016ListWorkspaces\022\037\n\005infos" +
-      "\030\001 \003(\0132\020.model.Workspace\022\020\n\010has_more\030\002 \001" +
-      "(\010\022\r\n\005total\030\003 \001(\003\"2\n\017CreateWorkspace\022\037\n\002" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021Describ" +
-      "eWorkspace\022\036\n\004info\030\001 \001(\0132\020.model.Workspa" +
-      "ce\"6\n\017CheckPermission\022#\n\tworkspace\030\001 \001(\013" +
-      "2\020.model.Workspace\"l\n\025DescribeNetworkCon" +
-      "fig\022\034\n\006router\030\001 \001(\0132\014.iaas.Router\022\033\n\006vxn" +
-      "ets\030\002 \003(\0132\013.iaas.VXNet\022\030\n\020default_vxnet_" +
-      "id\030\003 \001(\tBv\n%com.dataomnis.gproto.types.p" +
-      "bresponseB\025PBResponseSpaceManageP\000Z4gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "responseb\006proto3"
+      "aas/vpc.proto\032\035proto/types/model/quota.p" +
+      "roto\"R\n\016ListWorkspaces\022\037\n\005infos\030\001 \003(\0132\020." +
+      "model.Workspace\022\020\n\010has_more\030\002 \001(\010\022\r\n\005tot" +
+      "al\030\003 \001(\003\"2\n\017CreateWorkspace\022\037\n\002id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\"3\n\021DescribeWorkspac" +
+      "e\022\036\n\004info\030\001 \001(\0132\020.model.Workspace\"6\n\017Che" +
+      "ckPermission\022#\n\tworkspace\030\001 \001(\0132\020.model." +
+      "Workspace\"=\n\027DescribeWorkspaceConfig\022\"\n\t" +
+      "quota_set\030\001 \001(\0132\017.model.QuotaSet\"l\n\025Desc" +
+      "ribeNetworkConfig\022\034\n\006router\030\001 \001(\0132\014.iaas" +
+      ".Router\022\033\n\006vxnets\030\002 \003(\0132\013.iaas.VXNet\022\030\n\020" +
+      "default_vxnet_id\030\003 \001(\tBv\n%com.dataomnis." +
+      "gproto.types.pbresponseB\025PBResponseSpace" +
+      "ManageP\000Z4github.com/DataWorkbench/gprot" +
+      "o/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4392,6 +5215,7 @@ public final class PBResponseSpaceManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelQuota.getDescriptor(),
         });
     internal_static_response_ListWorkspaces_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4417,8 +5241,14 @@ public final class PBResponseSpaceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_CheckPermission_descriptor,
         new java.lang.String[] { "Workspace", });
-    internal_static_response_DescribeNetworkConfig_descriptor =
+    internal_static_response_DescribeWorkspaceConfig_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_response_DescribeWorkspaceConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_DescribeWorkspaceConfig_descriptor,
+        new java.lang.String[] { "QuotaSet", });
+    internal_static_response_DescribeNetworkConfig_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_response_DescribeNetworkConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeNetworkConfig_descriptor,
@@ -4431,6 +5261,7 @@ public final class PBResponseSpaceManage {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelWorkspace.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbiaas.PBIaasVPC.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelQuota.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

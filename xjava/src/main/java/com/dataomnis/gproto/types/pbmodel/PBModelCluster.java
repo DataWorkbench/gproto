@@ -1819,7 +1819,7 @@ public final class PBModelCluster {
 
     /**
      * <pre>
-     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version" gorm:"column:version;"
      * </pre>
      *
@@ -1829,7 +1829,7 @@ public final class PBModelCluster {
     java.lang.String getVersion();
     /**
      * <pre>
-     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version" gorm:"column:version;"
      * </pre>
      *
@@ -2638,7 +2638,7 @@ public final class PBModelCluster {
     private volatile java.lang.Object version_;
     /**
      * <pre>
-     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version" gorm:"column:version;"
      * </pre>
      *
@@ -2660,7 +2660,7 @@ public final class PBModelCluster {
     }
     /**
      * <pre>
-     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version" gorm:"column:version;"
      * </pre>
      *
@@ -4109,7 +4109,7 @@ public final class PBModelCluster {
       private java.lang.Object version_ = "";
       /**
        * <pre>
-       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version" gorm:"column:version;"
        * </pre>
        *
@@ -4130,7 +4130,7 @@ public final class PBModelCluster {
       }
       /**
        * <pre>
-       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version" gorm:"column:version;"
        * </pre>
        *
@@ -4152,7 +4152,7 @@ public final class PBModelCluster {
       }
       /**
        * <pre>
-       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version" gorm:"column:version;"
        * </pre>
        *
@@ -4172,7 +4172,7 @@ public final class PBModelCluster {
       }
       /**
        * <pre>
-       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version" gorm:"column:version;"
        * </pre>
        *
@@ -4187,7 +4187,7 @@ public final class PBModelCluster {
       }
       /**
        * <pre>
-       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version" gorm:"column:version;"
        * </pre>
        *
@@ -5610,33 +5610,34 @@ public final class PBModelCluster {
       "/flink_config.proto\"\205\001\n\013HostAliases\022,\n\005i" +
       "tems\030\001 \003(\0132\027.model.HostAliases.ItemB\004\342\337\037" +
       "\000\032@\n\004Item\022\030\n\002ip\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\006\001\022\036\n\010h" +
-      "ostname\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\007\001:\006\312\262\004\002\n\000\"\210\007\n\014" +
+      "ostname\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\260\007\001:\006\312\262\004\002\n\000\"\242\007\n\014" +
       "FlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "cfi-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022j\n\007" +
-      "version\030\004 \001(\tBY\342\337\037U\022S\302\001PJ\027flink-1.12.3-s" +
-      "cala_2.11J\034flink-1.12.3-scala_2.11-q0.9J" +
-      "\027flink-1.14.4-scala_2.11\0229\n\006status\030\005 \001(\016" +
-      "2\032.model.FlinkCluster.StatusB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022\035\n\010task_num\030\006 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022+\n\006jo" +
-      "b_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022" +
-      ",\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000" +
-      "\000\000\000\340?\022\030\n\nnetwork_id\030\t \001(\tB\004\342\337\037\000\022.\n\014host_" +
-      "aliases\030\n \001(\0132\022.model.HostAliasesB\004\342\337\037\000\022" +
-      "(\n\006config\030\013 \001(\0132\022.flink.FlinkConfigB\004\342\337\037" +
-      "\000\022#\n\ncreated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034" +
-      "\n\007created\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030" +
-      "\016 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\016\n\006web_ui\030\017 \001(\t\022$\n\014ne" +
-      "twork_info\030\020 \001(\0132\016.model.Network\022;\n\trout" +
-      "er_id\030\021 \001(\tB(\342\337\037\024\n\022\n\trouter_id\022\005\302\001\002\"\000\342\337\037" +
-      "\014\022\n\302\001\007\312\002\004rtr-\022;\n\010vxnet_id\030\022 \001(\tB)\342\337\037\023\n\021\n" +
-      "\010vxnet_id\022\005\302\001\002\"\000\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"j\n\006St" +
-      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ru" +
-      "nning\020\002\022\013\n\007Stopped\020\003\022\014\n\010Starting\020\004\022\r\n\tEx" +
-      "ception\020\005\022\013\n\007Arrears\020\006Bi\n\"com.dataomnis." +
-      "gproto.types.pbmodelB\016PBModelClusterP\000Z1" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodelb\006proto3"
+      "cfi-\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022\203\001\n" +
+      "\007version\030\004 \001(\tBr\342\337\037n\022l\302\001iJ\027flink-1.12.3-" +
+      "scala_2.11J\034flink-1.12.3-scala_2.11-q0.9" +
+      "J\027flink-1.14.4-scala_2.11J\027flink-1.14.5-" +
+      "scala_2.11\0229\n\006status\030\005 \001(\0162\032.model.Flink" +
+      "Cluster.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\035\n\010task_nu" +
+      "m\030\006 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\022+\n\006job_cu\030\007 \001(\002B\033\342\337" +
+      "\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001" +
+      "(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\030\n\nnetwo" +
+      "rk_id\030\t \001(\tB\004\342\337\037\000\022.\n\014host_aliases\030\n \001(\0132" +
+      "\022.model.HostAliasesB\004\342\337\037\000\022(\n\006config\030\013 \001(" +
+      "\0132\022.flink.FlinkConfigB\004\342\337\037\000\022#\n\ncreated_b" +
+      "y\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\r \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\016 \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\022\016\n\006web_ui\030\017 \001(\t\022$\n\014network_info\030\020 \001" +
+      "(\0132\016.model.Network\022;\n\trouter_id\030\021 \001(\tB(\342" +
+      "\337\037\024\n\022\n\trouter_id\022\005\302\001\002\"\000\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022" +
+      ";\n\010vxnet_id\030\022 \001(\tB)\342\337\037\023\n\021\n\010vxnet_id\022\005\302\001\002" +
+      "\"\000\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"j\n\006Status\022\017\n\013Status" +
+      "Unset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Running\020\002\022\013\n\007Sto" +
+      "pped\020\003\022\014\n\010Starting\020\004\022\r\n\tException\020\005\022\013\n\007A" +
+      "rrears\020\006Bi\n\"com.dataomnis.gproto.types.p" +
+      "bmodelB\016PBModelClusterP\000Z1github.com/Dat" +
+      "aWorkbench/gproto/xgo/types/pbmodelb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

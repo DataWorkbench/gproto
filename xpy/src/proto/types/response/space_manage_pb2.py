@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model import workspace_pb2 as proto_dot_types_dot_model_dot_workspace__pb2
 from proto.types.model.iaas import vpc_pb2 as proto_dot_types_dot_model_dot_iaas_dot_vpc__pb2
+from proto.types.model import quota_pb2 as proto_dot_types_dot_model_dot_quota__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\025PBResponseSpaceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\x1a proto/types/model/iaas/vpc.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"6\n\x0f\x43heckPermission\x12#\n\tworkspace\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"l\n\x15\x44\x65scribeNetworkConfig\x12\x1c\n\x06router\x18\x01 \x01(\x0b\x32\x0c.iaas.Router\x12\x1b\n\x06vxnets\x18\x02 \x03(\x0b\x32\x0b.iaas.VXNet\x12\x18\n\x10\x64\x65\x66\x61ult_vxnet_id\x18\x03 \x01(\tBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n\'proto/types/response/space_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a!proto/types/model/workspace.proto\x1a proto/types/model/iaas/vpc.proto\x1a\x1dproto/types/model/quota.proto\"R\n\x0eListWorkspaces\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.Workspace\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"2\n\x0f\x43reateWorkspace\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\"3\n\x11\x44\x65scribeWorkspace\x12\x1e\n\x04info\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"6\n\x0f\x43heckPermission\x12#\n\tworkspace\x18\x01 \x01(\x0b\x32\x10.model.Workspace\"=\n\x17\x44\x65scribeWorkspaceConfig\x12\"\n\tquota_set\x18\x01 \x01(\x0b\x32\x0f.model.QuotaSet\"l\n\x15\x44\x65scribeNetworkConfig\x12\x1c\n\x06router\x18\x01 \x01(\x0b\x32\x0c.iaas.Router\x12\x1b\n\x06vxnets\x18\x02 \x03(\x0b\x32\x0b.iaas.VXNet\x12\x18\n\x10\x64\x65\x66\x61ult_vxnet_id\x18\x03 \x01(\tBv\n%com.dataomnis.gproto.types.pbresponseB\x15PBResponseSpaceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_iaas_dot_vpc__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_workspace__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_iaas_dot_vpc__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_quota__pb2.DESCRIPTOR,])
 
 
 
@@ -70,8 +71,8 @@ _LISTWORKSPACES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=257,
+  serialized_start=206,
+  serialized_end=288,
 )
 
 
@@ -102,8 +103,8 @@ _CREATEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=259,
-  serialized_end=309,
+  serialized_start=290,
+  serialized_end=340,
 )
 
 
@@ -134,8 +135,8 @@ _DESCRIBEWORKSPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=362,
+  serialized_start=342,
+  serialized_end=393,
 )
 
 
@@ -166,8 +167,40 @@ _CHECKPERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=418,
+  serialized_start=395,
+  serialized_end=449,
+)
+
+
+_DESCRIBEWORKSPACECONFIG = _descriptor.Descriptor(
+  name='DescribeWorkspaceConfig',
+  full_name='response.DescribeWorkspaceConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='quota_set', full_name='response.DescribeWorkspaceConfig.quota_set', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=451,
+  serialized_end=512,
 )
 
 
@@ -212,19 +245,21 @@ _DESCRIBENETWORKCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=528,
+  serialized_start=514,
+  serialized_end=622,
 )
 
 _LISTWORKSPACES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 _DESCRIBEWORKSPACE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
 _CHECKPERMISSION.fields_by_name['workspace'].message_type = proto_dot_types_dot_model_dot_workspace__pb2._WORKSPACE
+_DESCRIBEWORKSPACECONFIG.fields_by_name['quota_set'].message_type = proto_dot_types_dot_model_dot_quota__pb2._QUOTASET
 _DESCRIBENETWORKCONFIG.fields_by_name['router'].message_type = proto_dot_types_dot_model_dot_iaas_dot_vpc__pb2._ROUTER
 _DESCRIBENETWORKCONFIG.fields_by_name['vxnets'].message_type = proto_dot_types_dot_model_dot_iaas_dot_vpc__pb2._VXNET
 DESCRIPTOR.message_types_by_name['ListWorkspaces'] = _LISTWORKSPACES
 DESCRIPTOR.message_types_by_name['CreateWorkspace'] = _CREATEWORKSPACE
 DESCRIPTOR.message_types_by_name['DescribeWorkspace'] = _DESCRIBEWORKSPACE
 DESCRIPTOR.message_types_by_name['CheckPermission'] = _CHECKPERMISSION
+DESCRIPTOR.message_types_by_name['DescribeWorkspaceConfig'] = _DESCRIBEWORKSPACECONFIG
 DESCRIPTOR.message_types_by_name['DescribeNetworkConfig'] = _DESCRIBENETWORKCONFIG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -255,6 +290,13 @@ CheckPermission = _reflection.GeneratedProtocolMessageType('CheckPermission', (_
   # @@protoc_insertion_point(class_scope:response.CheckPermission)
   })
 _sym_db.RegisterMessage(CheckPermission)
+
+DescribeWorkspaceConfig = _reflection.GeneratedProtocolMessageType('DescribeWorkspaceConfig', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBEWORKSPACECONFIG,
+  '__module__' : 'proto.types.response.space_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.DescribeWorkspaceConfig)
+  })
+_sym_db.RegisterMessage(DescribeWorkspaceConfig)
 
 DescribeNetworkConfig = _reflection.GeneratedProtocolMessageType('DescribeNetworkConfig', (_message.Message,), {
   'DESCRIPTOR' : _DESCRIBENETWORKCONFIG,

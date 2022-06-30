@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n-com.dataomnis.gproto.service.pbsvcdataserviceB\020PBSvcDataServiceP\000Z<github.com/DataWorkbench/gproto/xgo/service/pbsvcdataservice',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+proto/service/dataservice/dataservice.proto\x12\x0b\x64\x61taservice\x1a,proto/types/request/dataservice_manage.proto\x1a-proto/types/response/dataservice_manage.proto\x1a\x1dproto/types/model/empty.proto\x1a#proto/types/model/dataservice.proto2\xe4\r\n\x0b\x44\x61taService\x12\x63\n\x18\x43reateDataServiceCluster\x12!.request.CreateDataServiceCluster\x1a\".response.CreateDataServiceCluster\"\x00\x12`\n\x17ListDataServiceClusters\x12 .request.ListDataServiceClusters\x1a!.response.ListDataServiceClusters\"\x00\x12S\n\x18UpdateDataServiceCluster\x12!.request.UpdateDataServiceCluster\x1a\x12.model.EmptyStruct\"\x00\x12^\n\x1a\x44\x65scribeDataServiceCluster\x12#.request.DescribeDataServiceCluster\x1a\x19.model.DataServiceCluster\"\x00\x12U\n\x19\x44\x65leteDataServiceClusters\x12\".request.DeleteDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18StartDataServiceClusters\x12!.request.StartDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17StopDataServiceClusters\x12 .request.StopDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0e\x43reateApiGroup\x12\x17.request.CreateApiGroup\x1a\x18.response.CreateApiGroup\"\x00\x12\x42\n\rListApiGroups\x12\x16.request.ListApiGroups\x1a\x17.response.ListApiGroups\"\x00\x12\x41\n\x0f\x44\x65leteApiGroups\x12\x18.request.DeleteApiGroups\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eListApiConfigs\x12\x17.request.ListApiConfigs\x1a\x18.response.ListApiConfigs\"\x00\x12N\n\x11\x44\x65scribeApiConfig\x12\x1a.request.DescribeApiConfig\x1a\x1b.response.DescribeApiConfig\"\x00\x12H\n\x0f\x43reateApiConfig\x12\x18.request.CreateApiConfig\x1a\x19.response.CreateApiConfig\"\x00\x12\x41\n\x0fUpdateApiConfig\x12\x18.request.UpdateApiConfig\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x44\x65leteApiConfigs\x12\x19.request.DeleteApiConfigs\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x12TestDataServiceApi\x12\x1b.request.TestDataServiceApi\x1a\x1c.response.TestDataServiceApi\"\x00\x12M\n\x15PublishDataServiceApi\x12\x1e.request.PublishDataServiceApi\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x41\x62olishDataServiceApis\x12\x1f.request.AbolishDataServiceApis\x1a\x12.model.EmptyStruct\"\x00\x12i\n\x1aListDataServiceApiVersions\x12#.request.ListDataServiceApiVersions\x1a$.response.ListDataServiceApiVersions\"\x00\x12r\n\x1d\x44\x65scribeDataServiceApiVersion\x12&.request.DescribeDataServiceApiVersion\x1a\'.response.DescribeDataServiceApiVersion\"\x00\x12Q\n\x17RepublishDataServiceApi\x12 .request.RepublishDataServiceApi\x1a\x12.model.EmptyStruct\"\x00\x42\x81\x01\n-com.dataomnis.gproto.service.pbsvcdataserviceB\x10PBSvcDataServiceP\x00Z<github.com/DataWorkbench/gproto/xgo/service/pbsvcdataserviceb\x06proto3'
+  serialized_pb=b'\n+proto/service/dataservice/dataservice.proto\x12\x0b\x64\x61taservice\x1a,proto/types/request/dataservice_manage.proto\x1a-proto/types/response/dataservice_manage.proto\x1a\x1dproto/types/model/empty.proto\x1a#proto/types/model/dataservice.proto2\xd8\x0f\n\x0b\x44\x61taService\x12\x63\n\x18\x43reateDataServiceCluster\x12!.request.CreateDataServiceCluster\x1a\".response.CreateDataServiceCluster\"\x00\x12`\n\x17ListDataServiceClusters\x12 .request.ListDataServiceClusters\x1a!.response.ListDataServiceClusters\"\x00\x12S\n\x18UpdateDataServiceCluster\x12!.request.UpdateDataServiceCluster\x1a\x12.model.EmptyStruct\"\x00\x12i\n\x1a\x44\x65scribeDataServiceCluster\x12#.request.DescribeDataServiceCluster\x1a$.response.DescribeDataServiceCluster\"\x00\x12U\n\x19\x44\x65leteDataServiceClusters\x12\".request.DeleteDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12S\n\x18StartDataServiceClusters\x12!.request.StartDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17StopDataServiceClusters\x12 .request.StopDataServiceClusters\x1a\x12.model.EmptyStruct\"\x00\x12`\n\x1e\x44\x65scribeServiceDataSourceKinds\x12\x12.model.EmptyStruct\x1a(.response.DescribeServiceDataSourceKinds\"\x00\x12\x45\n\x0e\x43reateApiGroup\x12\x17.request.CreateApiGroup\x1a\x18.response.CreateApiGroup\"\x00\x12\x42\n\rListApiGroups\x12\x16.request.ListApiGroups\x1a\x17.response.ListApiGroups\"\x00\x12\x41\n\x0f\x44\x65leteApiGroups\x12\x18.request.DeleteApiGroups\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x0eListApiConfigs\x12\x17.request.ListApiConfigs\x1a\x18.response.ListApiConfigs\"\x00\x12N\n\x11\x44\x65scribeApiConfig\x12\x1a.request.DescribeApiConfig\x1a\x1b.response.DescribeApiConfig\"\x00\x12H\n\x0f\x43reateApiConfig\x12\x18.request.CreateApiConfig\x1a\x19.response.CreateApiConfig\"\x00\x12\x41\n\x0fUpdateApiConfig\x12\x18.request.UpdateApiConfig\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x44\x65leteApiConfigs\x12\x19.request.DeleteApiConfigs\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x12TestDataServiceApi\x12\x1b.request.TestDataServiceApi\x1a\x1c.response.TestDataServiceApi\"\x00\x12M\n\x15PublishDataServiceApi\x12\x1e.request.PublishDataServiceApi\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x41\x62olishDataServiceApis\x12\x1f.request.AbolishDataServiceApis\x1a\x12.model.EmptyStruct\"\x00\x12i\n\x1aListDataServiceApiVersions\x12#.request.ListDataServiceApiVersions\x1a$.response.ListDataServiceApiVersions\"\x00\x12r\n\x1d\x44\x65scribeDataServiceApiVersion\x12&.request.DescribeDataServiceApiVersion\x1a\'.response.DescribeDataServiceApiVersion\"\x00\x12Q\n\x17RepublishDataServiceApi\x12 .request.RepublishDataServiceApi\x1a\x12.model.EmptyStruct\"\x00\x12\x84\x01\n#ListPublishedApiVersionsByClusterId\x12,.request.ListPublishedApiVersionsByClusterId\x1a-.response.ListPublishedApiVersionsByClusterId\"\x00\x42\x81\x01\n-com.dataomnis.gproto.service.pbsvcdataserviceB\x10PBSvcDataServiceP\x00Z<github.com/DataWorkbench/gproto/xgo/service/pbsvcdataserviceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_request_dot_dataservice__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_dataservice__manage__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_dataservice__pb2.DESCRIPTOR,])
 
@@ -42,7 +42,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=222,
-  serialized_end=1986,
+  serialized_end=2230,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateDataServiceCluster',
@@ -80,7 +80,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
     index=3,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._DESCRIBEDATASERVICECLUSTER,
-    output_type=proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER,
+    output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._DESCRIBEDATASERVICECLUSTER,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -115,9 +115,19 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='DescribeServiceDataSourceKinds',
+    full_name='dataservice.DataService.DescribeServiceDataSourceKinds',
+    index=7,
+    containing_service=None,
+    input_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._DESCRIBESERVICEDATASOURCEKINDS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='CreateApiGroup',
     full_name='dataservice.DataService.CreateApiGroup',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._CREATEAPIGROUP,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._CREATEAPIGROUP,
@@ -127,7 +137,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListApiGroups',
     full_name='dataservice.DataService.ListApiGroups',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._LISTAPIGROUPS,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._LISTAPIGROUPS,
@@ -137,7 +147,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteApiGroups',
     full_name='dataservice.DataService.DeleteApiGroups',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._DELETEAPIGROUPS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -147,7 +157,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListApiConfigs',
     full_name='dataservice.DataService.ListApiConfigs',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._LISTAPICONFIGS,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._LISTAPICONFIGS,
@@ -157,7 +167,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeApiConfig',
     full_name='dataservice.DataService.DescribeApiConfig',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._DESCRIBEAPICONFIG,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._DESCRIBEAPICONFIG,
@@ -167,7 +177,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateApiConfig',
     full_name='dataservice.DataService.CreateApiConfig',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._CREATEAPICONFIG,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._CREATEAPICONFIG,
@@ -177,7 +187,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateApiConfig',
     full_name='dataservice.DataService.UpdateApiConfig',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._UPDATEAPICONFIG,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -187,7 +197,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteApiConfigs',
     full_name='dataservice.DataService.DeleteApiConfigs',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._DELETEAPICONFIGS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -197,7 +207,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='TestDataServiceApi',
     full_name='dataservice.DataService.TestDataServiceApi',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._TESTDATASERVICEAPI,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._TESTDATASERVICEAPI,
@@ -207,7 +217,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PublishDataServiceApi',
     full_name='dataservice.DataService.PublishDataServiceApi',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._PUBLISHDATASERVICEAPI,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -217,7 +227,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='AbolishDataServiceApis',
     full_name='dataservice.DataService.AbolishDataServiceApis',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._ABOLISHDATASERVICEAPIS,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -227,7 +237,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListDataServiceApiVersions',
     full_name='dataservice.DataService.ListDataServiceApiVersions',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._LISTDATASERVICEAPIVERSIONS,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._LISTDATASERVICEAPIVERSIONS,
@@ -237,7 +247,7 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DescribeDataServiceApiVersion',
     full_name='dataservice.DataService.DescribeDataServiceApiVersion',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._DESCRIBEDATASERVICEAPIVERSION,
     output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._DESCRIBEDATASERVICEAPIVERSION,
@@ -247,10 +257,20 @@ _DATASERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RepublishDataServiceApi',
     full_name='dataservice.DataService.RepublishDataServiceApi',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._REPUBLISHDATASERVICEAPI,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListPublishedApiVersionsByClusterId',
+    full_name='dataservice.DataService.ListPublishedApiVersionsByClusterId',
+    index=22,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_dataservice__manage__pb2._LISTPUBLISHEDAPIVERSIONSBYCLUSTERID,
+    output_type=proto_dot_types_dot_response_dot_dataservice__manage__pb2._LISTPUBLISHEDAPIVERSIONSBYCLUSTERID,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -40,6 +40,9 @@ service SpaceManage {
   // Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
   rpc CheckPermission(request.CheckPermission) returns (response.CheckPermission) {}
 
+  // Get the config of workspace.
+  rpc DescribeWorkspaceConfig(request.DescribeWorkspaceConfig) returns (response.DescribeWorkspaceConfig) {}
+
   // Network config
   rpc DescribeNetworkConfig(request.DescribeNetworkConfig) returns (response.DescribeNetworkConfig) {}
 

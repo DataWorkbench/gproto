@@ -79,12 +79,22 @@ func (this *DescribeWorkspaceQuota) _xxx_xxx_Validator_Validate_space_id() error
 	return nil
 }
 
+func (this *DescribeWorkspaceQuota) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("DescribeWorkspaceQuota", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.DescribeWorkspaceQuota
 func (this *DescribeWorkspaceQuota) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil
@@ -159,6 +169,13 @@ func (this *DescribeMemberQuota) _xxx_xxx_Validator_Validate_user_id() error {
 	return nil
 }
 
+func (this *DescribeMemberQuota) _xxx_xxx_Validator_Validate_space_owner() error {
+	if !(this.SpaceOwner != "") {
+		return protovalidator.FieldError1("DescribeMemberQuota", "the value of field 'space_owner' must be not equal to ''", this.SpaceOwner)
+	}
+	return nil
+}
+
 // Set default value for message request.DescribeMemberQuota
 func (this *DescribeMemberQuota) Validate() error {
 	if this == nil {
@@ -168,6 +185,9 @@ func (this *DescribeMemberQuota) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_owner(); err != nil {
 		return err
 	}
 	return nil

@@ -6971,7 +6971,7 @@ public final class PBRequestFlinkManage {
 
     /**
      * <pre>
-     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version"
      * </pre>
      *
@@ -6981,7 +6981,7 @@ public final class PBRequestFlinkManage {
     java.lang.String getVersion();
     /**
      * <pre>
-     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version"
      * </pre>
      *
@@ -7465,7 +7465,7 @@ public final class PBRequestFlinkManage {
     private volatile java.lang.Object version_;
     /**
      * <pre>
-     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version"
      * </pre>
      *
@@ -7487,7 +7487,7 @@ public final class PBRequestFlinkManage {
     }
     /**
      * <pre>
-     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+     * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
      * &#64;inject_tag: json:"version"
      * </pre>
      *
@@ -8599,7 +8599,7 @@ public final class PBRequestFlinkManage {
       private java.lang.Object version_ = "";
       /**
        * <pre>
-       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version"
        * </pre>
        *
@@ -8620,7 +8620,7 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
-       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version"
        * </pre>
        *
@@ -8642,7 +8642,7 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
-       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version"
        * </pre>
        *
@@ -8662,7 +8662,7 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
-       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version"
        * </pre>
        *
@@ -8677,7 +8677,7 @@ public final class PBRequestFlinkManage {
       }
       /**
        * <pre>
-       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11"
+       * Flink Version. Is required. Optional value: "flink-1.12.3-scala_2.11" "flink-1.12.3-scala_2.11-q0.9" "flink-1.14.4-scala_2.11" "flink-1.14.5-scala_2.11"
        * &#64;inject_tag: json:"version"
        * </pre>
        *
@@ -13978,41 +13978,42 @@ public final class PBRequestFlinkManage {
       "uster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cf" +
       "i-\"m\n\024RestartFlinkClusters\022%\n\010space_id\030\001" +
       " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids" +
-      "\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\354\003\n\022Cr" +
+      "\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0200\0008dZ\n\302\001\007\312\002\004cfi-\"\206\004\n\022Cr" +
       "eateFlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
       "\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037" +
       "\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022" +
-      "\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022j" +
-      "\n\007version\030\005 \001(\tBY\342\337\037U\022S\302\001PJ\027flink-1.12.3" +
-      "-scala_2.11J\034flink-1.12.3-scala_2.11-q0." +
-      "9J\027flink-1.14.4-scala_2.11\022\037\n\010task_num\030\006" +
-      " \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037" +
-      "\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(" +
-      "\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwor" +
-      "k_id\030\t \001(\t\022(\n\014host_aliases\030\n \001(\0132\022.model" +
-      ".HostAliases\022\"\n\006config\030\013 \001(\0132\022.flink.Fli" +
-      "nkConfig\"\204\003\n\022UpdateFlinkCluster\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013space_" +
-      "owner\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\'\n\ncluster_id\030\003" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022\036\n\004name\030\004 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037" +
-      "\t\022\007\262\001\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000" +
-      "\000\000\000\000 @A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025" +
-      "\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwork_id\030\t \001(" +
-      "\t\022(\n\014host_aliases\030\n \001(\0132\022.model.HostAlia" +
-      "ses\022\"\n\006config\030\013 \001(\0132\022.flink.FlinkConfig\"" +
-      "?\n\024DescribeFlinkCluster\022\'\n\ncluster_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\"\252\001\n#UpdateFlink" +
-      "ClusterStatusByScheduler\022\'\n\ncluster_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022*\n\006status\030\002 \001(" +
-      "\0162\032.model.FlinkCluster.Status\022.\n\npre_sta" +
-      "tus\030\003 \001(\0162\032.model.FlinkCluster.Status\"m\n" +
-      "\033StopFlinkClusterByScheduler\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_i" +
-      "d\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-Bs\n$com.data" +
-      "omnis.gproto.types.pbrequestB\024PBRequestF" +
-      "linkManageP\000Z3github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbrequestb\006proto3"
+      "\005\302\001\002\"\000\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\022\203" +
+      "\001\n\007version\030\005 \001(\tBr\342\337\037n\022l\302\001iJ\027flink-1.12." +
+      "3-scala_2.11J\034flink-1.12.3-scala_2.11-q0" +
+      ".9J\027flink-1.14.4-scala_2.11J\027flink-1.14." +
+      "5-scala_2.11\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001" +
+      "\0048\030@\001\022+\n\006job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 " +
+      "@A\000\000\000\000\000\000\340?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000" +
+      "\000\000\000\000\000 @A\000\000\000\000\000\000\340?\022\022\n\nnetwork_id\030\t \001(\t\022(\n\014" +
+      "host_aliases\030\n \001(\0132\022.model.HostAliases\022\"" +
+      "\n\006config\030\013 \001(\0132\022.flink.FlinkConfig\"\204\003\n\022U" +
+      "pdateFlinkCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\013space_owner\030\002 \001(\tB\013\342" +
+      "\337\037\007\022\005\302\001\002\"\000\022\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004cfi-\022\036\n\004name\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230" +
+      "\002\200\001\022\037\n\010task_num\030\006 \001(\005B\r\342\337\037\t\022\007\262\001\0048\030@\001\022+\n\006" +
+      "job_cu\030\007 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000\000\000\000\000\000\340" +
+      "?\022,\n\007task_cu\030\010 \001(\002B\033\342\337\037\027\022\025\252\001\0229\000\000\000\000\000\000 @A\000" +
+      "\000\000\000\000\000\340?\022\022\n\nnetwork_id\030\t \001(\t\022(\n\014host_alia" +
+      "ses\030\n \001(\0132\022.model.HostAliases\022\"\n\006config\030" +
+      "\013 \001(\0132\022.flink.FlinkConfig\"?\n\024DescribeFli" +
+      "nkCluster\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004cfi-\"\252\001\n#UpdateFlinkClusterStatusB" +
+      "yScheduler\022\'\n\ncluster_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004cfi-\022*\n\006status\030\002 \001(\0162\032.model.Flin" +
+      "kCluster.Status\022.\n\npre_status\030\003 \001(\0162\032.mo" +
+      "del.FlinkCluster.Status\"m\n\033StopFlinkClus" +
+      "terByScheduler\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004cfi-Bs\n$com.dataomnis.gproto.t" +
+      "ypes.pbrequestB\024PBRequestFlinkManageP\000Z3" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

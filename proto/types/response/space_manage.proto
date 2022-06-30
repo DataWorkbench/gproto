@@ -15,6 +15,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/workspace.proto";
 import "proto/types/model/iaas/vpc.proto";
+import "proto/types/model/quota.proto";
 
 
 // ListWorkspaces used as reply parameters in RPC or response body in HTTP.
@@ -38,11 +39,19 @@ message CreateWorkspace {
 
 // DescribeWorkspace used as reply parameters in RPC, And model.Workspace used as response body in HTTP.
 message DescribeWorkspace {
+  // @inject_tag: json:"info"
   model.Workspace info = 1;
 }
 
 message CheckPermission {
+  // @inject_tag: json:"workspace"
   model.Workspace workspace = 1;
+}
+
+message DescribeWorkspaceConfig {
+  // The quota set for current login user in specified workspace.
+  // @inject_tag: json:"quota_set"
+  model.QuotaSet quota_set = 1;
 }
 
 message DescribeNetworkConfig {

@@ -27,7 +27,7 @@ public final class PBSvcSpaceManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/space_" +
       "manage.proto\032\'proto/types/response/space" +
-      "_manage.proto2\223\007\n\013SpaceManage\022E\n\016ListWor" +
+      "_manage.proto2\365\007\n\013SpaceManage\022E\n\016ListWor" +
       "kspaces\022\027.request.ListWorkspaces\032\030.respo" +
       "nse.ListWorkspaces\"\000\022K\n\024ListMemberWorksp" +
       "aces\022\027.request.ListWorkspaces\032\030.response" +
@@ -44,16 +44,18 @@ public final class PBSvcSpaceManage {
       "escribeWorkspace\032\033.response.DescribeWork" +
       "space\"\000\022H\n\017CheckPermission\022\030.request.Che" +
       "ckPermission\032\031.response.CheckPermission\"" +
-      "\000\022Z\n\025DescribeNetworkConfig\022\036.request.Des" +
-      "cribeNetworkConfig\032\037.response.DescribeNe" +
-      "tworkConfig\"\000\022K\n\024AttachVPCToWorkspace\022\035." +
-      "request.AttachVPCToWorkspace\032\022.model.Emp" +
-      "tyStruct\"\000\022O\n\026DetachVPCFromWorkspace\022\037.r" +
-      "equest.DetachVPCFromWorkspace\032\022.model.Em" +
-      "ptyStruct\"\000Bu\n\'com.dataomnis.gproto.serv" +
-      "ice.pbsvcspaceB\020PBSvcSpaceManageP\000Z6gith" +
-      "ub.com/DataWorkbench/gproto/xgo/service/" +
-      "pbsvcspaceb\006proto3"
+      "\000\022`\n\027DescribeWorkspaceConfig\022 .request.D" +
+      "escribeWorkspaceConfig\032!.response.Descri" +
+      "beWorkspaceConfig\"\000\022Z\n\025DescribeNetworkCo" +
+      "nfig\022\036.request.DescribeNetworkConfig\032\037.r" +
+      "esponse.DescribeNetworkConfig\"\000\022K\n\024Attac" +
+      "hVPCToWorkspace\022\035.request.AttachVPCToWor" +
+      "kspace\032\022.model.EmptyStruct\"\000\022O\n\026DetachVP" +
+      "CFromWorkspace\022\037.request.DetachVPCFromWo" +
+      "rkspace\032\022.model.EmptyStruct\"\000Bu\n\'com.dat" +
+      "aomnis.gproto.service.pbsvcspaceB\020PBSvcS" +
+      "paceManageP\000Z6github.com/DataWorkbench/g" +
+      "proto/xgo/service/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

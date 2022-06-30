@@ -32,6 +32,10 @@ message DescribeWorkspaceQuota {
   // The workspace id in HTTP Request-URI
   // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // The owner of workspace.
+  // @inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+  string space_owner = 2 [ (validator.field).tags.string = { ne: "" } ];
 }
 message UpsertWorkspaceQuota {
   // The user-id of workspace owner.
@@ -54,6 +58,10 @@ message DescribeMemberQuota {
   // The user id of workspace member in HTTP Request-URI.
   // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
   string user_id = 2 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 65 } ];
+
+  // The owner of workspace.
+  // @inject_tag: json:"space_owner" uri:"space_owner" swaggerignore:"true"
+  string space_owner = 3 [ (validator.field).tags.string = { ne: "" } ];
 }
 message UpsertMemberQuota {
   // The workspace id in HTTP Request-URI

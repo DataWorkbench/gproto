@@ -97,6 +97,26 @@ func (this *CheckPermission) Validate() error {
 	return nil
 }
 
+func (this *DescribeWorkspaceConfig) _xxx_xxx_Validator_Validate_quota_set() error {
+	if dt, ok := interface{}(this.QuotaSet).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeWorkspaceConfig
+func (this *DescribeWorkspaceConfig) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_quota_set(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *DescribeNetworkConfig) _xxx_xxx_Validator_Validate_router() error {
 	if dt, ok := interface{}(this.Router).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {

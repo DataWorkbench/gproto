@@ -78,6 +78,14 @@ func (this *CheckPermission) SetDefaults() {
 	return
 }
 
+// Set default value for message request.DescribeWorkspaceConfig
+func (this *DescribeWorkspaceConfig) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DescribeNetworkConfig
 func (this *DescribeNetworkConfig) SetDefaults() {
 	if this == nil {

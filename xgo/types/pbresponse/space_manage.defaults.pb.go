@@ -53,6 +53,19 @@ func (this *CheckPermission) SetDefaults() {
 	return
 }
 
+// Set default value for message response.DescribeWorkspaceConfig
+func (this *DescribeWorkspaceConfig) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.QuotaSet != nil {
+		if dt, ok := interface{}(this.QuotaSet).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
 // Set default value for message response.DescribeNetworkConfig
 func (this *DescribeNetworkConfig) SetDefaults() {
 	if this == nil {

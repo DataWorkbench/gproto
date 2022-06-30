@@ -109,28 +109,28 @@ public final class DataServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster,
-      com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> getDescribeDataServiceClusterMethod;
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> getDescribeDataServiceClusterMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DescribeDataServiceCluster",
       requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster.class,
-      responseType = com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster,
-      com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> getDescribeDataServiceClusterMethod() {
-    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> getDescribeDataServiceClusterMethod;
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> getDescribeDataServiceClusterMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> getDescribeDataServiceClusterMethod;
     if ((getDescribeDataServiceClusterMethod = DataServiceGrpc.getDescribeDataServiceClusterMethod) == null) {
       synchronized (DataServiceGrpc.class) {
         if ((getDescribeDataServiceClusterMethod = DataServiceGrpc.getDescribeDataServiceClusterMethod) == null) {
           DataServiceGrpc.getDescribeDataServiceClusterMethod = getDescribeDataServiceClusterMethod =
-              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster>newBuilder()
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeDataServiceCluster"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.getDefaultInstance()))
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster.getDefaultInstance()))
               .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeDataServiceCluster"))
               .build();
         }
@@ -230,6 +230,37 @@ public final class DataServiceGrpc {
       }
     }
     return getStopDataServiceClustersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> getDescribeServiceDataSourceKindsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeServiceDataSourceKinds",
+      requestType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> getDescribeServiceDataSourceKindsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> getDescribeServiceDataSourceKindsMethod;
+    if ((getDescribeServiceDataSourceKindsMethod = DataServiceGrpc.getDescribeServiceDataSourceKindsMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDescribeServiceDataSourceKindsMethod = DataServiceGrpc.getDescribeServiceDataSourceKindsMethod) == null) {
+          DataServiceGrpc.getDescribeServiceDataSourceKindsMethod = getDescribeServiceDataSourceKindsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeServiceDataSourceKinds"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeServiceDataSourceKinds"))
+              .build();
+        }
+      }
+    }
+    return getDescribeServiceDataSourceKindsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiGroup,
@@ -666,6 +697,37 @@ public final class DataServiceGrpc {
     return getRepublishDataServiceApiMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> getListPublishedApiVersionsByClusterIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPublishedApiVersionsByClusterId",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> getListPublishedApiVersionsByClusterIdMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> getListPublishedApiVersionsByClusterIdMethod;
+    if ((getListPublishedApiVersionsByClusterIdMethod = DataServiceGrpc.getListPublishedApiVersionsByClusterIdMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getListPublishedApiVersionsByClusterIdMethod = DataServiceGrpc.getListPublishedApiVersionsByClusterIdMethod) == null) {
+          DataServiceGrpc.getListPublishedApiVersionsByClusterIdMethod = getListPublishedApiVersionsByClusterIdMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPublishedApiVersionsByClusterId"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("ListPublishedApiVersionsByClusterId"))
+              .build();
+        }
+      }
+    }
+    return getListPublishedApiVersionsByClusterIdMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -741,7 +803,7 @@ public final class DataServiceGrpc {
     /**
      */
     public void describeDataServiceCluster(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> responseObserver) {
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataServiceClusterMethod(), responseObserver);
     }
 
@@ -764,6 +826,13 @@ public final class DataServiceGrpc {
     public void stopDataServiceClusters(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopDataServiceClustersMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void describeServiceDataSourceKinds(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeServiceDataSourceKindsMethod(), responseObserver);
     }
 
     /**
@@ -864,6 +933,13 @@ public final class DataServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRepublishDataServiceApiMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listPublishedApiVersionsByClusterId(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPublishedApiVersionsByClusterIdMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -892,7 +968,7 @@ public final class DataServiceGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster,
-                com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster>(
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster>(
                   this, METHODID_DESCRIBE_DATA_SERVICE_CLUSTER)))
           .addMethod(
             getDeleteDataServiceClustersMethod(),
@@ -915,6 +991,13 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_STOP_DATA_SERVICE_CLUSTERS)))
+          .addMethod(
+            getDescribeServiceDataSourceKindsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds>(
+                  this, METHODID_DESCRIBE_SERVICE_DATA_SOURCE_KINDS)))
           .addMethod(
             getCreateApiGroupMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1013,6 +1096,13 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_REPUBLISH_DATA_SERVICE_API)))
+          .addMethod(
+            getListPublishedApiVersionsByClusterIdMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId>(
+                  this, METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID)))
           .build();
     }
   }
@@ -1061,7 +1151,7 @@ public final class DataServiceGrpc {
     /**
      */
     public void describeDataServiceCluster(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster request,
-        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> responseObserver) {
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeDataServiceClusterMethod(), getCallOptions()), request, responseObserver);
     }
@@ -1088,6 +1178,14 @@ public final class DataServiceGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStopDataServiceClustersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void describeServiceDataSourceKinds(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeServiceDataSourceKindsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1201,6 +1299,14 @@ public final class DataServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRepublishDataServiceApiMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listPublishedApiVersionsByClusterId(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPublishedApiVersionsByClusterIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1243,7 +1349,7 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster describeDataServiceCluster(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster request) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster describeDataServiceCluster(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeDataServiceClusterMethod(), getCallOptions(), request);
     }
@@ -1267,6 +1373,13 @@ public final class DataServiceGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct stopDataServiceClusters(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStopDataServiceClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds describeServiceDataSourceKinds(com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeServiceDataSourceKindsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1366,6 +1479,13 @@ public final class DataServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRepublishDataServiceApiMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId listPublishedApiVersionsByClusterId(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPublishedApiVersionsByClusterIdMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1411,7 +1531,7 @@ public final class DataServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster> describeDataServiceCluster(
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster> describeDataServiceCluster(
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeDataServiceClusterMethod(), getCallOptions()), request);
@@ -1439,6 +1559,14 @@ public final class DataServiceGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStopDataServiceClustersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds> describeServiceDataSourceKinds(
+        com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeServiceDataSourceKindsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1552,6 +1680,14 @@ public final class DataServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRepublishDataServiceApiMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId> listPublishedApiVersionsByClusterId(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPublishedApiVersionsByClusterIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DATA_SERVICE_CLUSTER = 0;
@@ -1561,20 +1697,22 @@ public final class DataServiceGrpc {
   private static final int METHODID_DELETE_DATA_SERVICE_CLUSTERS = 4;
   private static final int METHODID_START_DATA_SERVICE_CLUSTERS = 5;
   private static final int METHODID_STOP_DATA_SERVICE_CLUSTERS = 6;
-  private static final int METHODID_CREATE_API_GROUP = 7;
-  private static final int METHODID_LIST_API_GROUPS = 8;
-  private static final int METHODID_DELETE_API_GROUPS = 9;
-  private static final int METHODID_LIST_API_CONFIGS = 10;
-  private static final int METHODID_DESCRIBE_API_CONFIG = 11;
-  private static final int METHODID_CREATE_API_CONFIG = 12;
-  private static final int METHODID_UPDATE_API_CONFIG = 13;
-  private static final int METHODID_DELETE_API_CONFIGS = 14;
-  private static final int METHODID_TEST_DATA_SERVICE_API = 15;
-  private static final int METHODID_PUBLISH_DATA_SERVICE_API = 16;
-  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 17;
-  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 18;
-  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 19;
-  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 20;
+  private static final int METHODID_DESCRIBE_SERVICE_DATA_SOURCE_KINDS = 7;
+  private static final int METHODID_CREATE_API_GROUP = 8;
+  private static final int METHODID_LIST_API_GROUPS = 9;
+  private static final int METHODID_DELETE_API_GROUPS = 10;
+  private static final int METHODID_LIST_API_CONFIGS = 11;
+  private static final int METHODID_DESCRIBE_API_CONFIG = 12;
+  private static final int METHODID_CREATE_API_CONFIG = 13;
+  private static final int METHODID_UPDATE_API_CONFIG = 14;
+  private static final int METHODID_DELETE_API_CONFIGS = 15;
+  private static final int METHODID_TEST_DATA_SERVICE_API = 16;
+  private static final int METHODID_PUBLISH_DATA_SERVICE_API = 17;
+  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 18;
+  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 19;
+  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 20;
+  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 21;
+  private static final int METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID = 22;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1607,7 +1745,7 @@ public final class DataServiceGrpc {
           break;
         case METHODID_DESCRIBE_DATA_SERVICE_CLUSTER:
           serviceImpl.describeDataServiceCluster((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeDataServiceCluster) request,
-              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceCluster>) responseObserver);
           break;
         case METHODID_DELETE_DATA_SERVICE_CLUSTERS:
           serviceImpl.deleteDataServiceClusters((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteDataServiceClusters) request,
@@ -1620,6 +1758,10 @@ public final class DataServiceGrpc {
         case METHODID_STOP_DATA_SERVICE_CLUSTERS:
           serviceImpl.stopDataServiceClusters((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.StopDataServiceClusters) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_SERVICE_DATA_SOURCE_KINDS:
+          serviceImpl.describeServiceDataSourceKinds((com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeServiceDataSourceKinds>) responseObserver);
           break;
         case METHODID_CREATE_API_GROUP:
           serviceImpl.createApiGroup((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.CreateApiGroup) request,
@@ -1676,6 +1818,10 @@ public final class DataServiceGrpc {
         case METHODID_REPUBLISH_DATA_SERVICE_API:
           serviceImpl.republishDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.RepublishDataServiceApi) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID:
+          serviceImpl.listPublishedApiVersionsByClusterId((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListPublishedApiVersionsByClusterId) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1745,6 +1891,7 @@ public final class DataServiceGrpc {
               .addMethod(getDeleteDataServiceClustersMethod())
               .addMethod(getStartDataServiceClustersMethod())
               .addMethod(getStopDataServiceClustersMethod())
+              .addMethod(getDescribeServiceDataSourceKindsMethod())
               .addMethod(getCreateApiGroupMethod())
               .addMethod(getListApiGroupsMethod())
               .addMethod(getDeleteApiGroupsMethod())
@@ -1759,6 +1906,7 @@ public final class DataServiceGrpc {
               .addMethod(getListDataServiceApiVersionsMethod())
               .addMethod(getDescribeDataServiceApiVersionMethod())
               .addMethod(getRepublishDataServiceApiMethod())
+              .addMethod(getListPublishedApiVersionsByClusterIdMethod())
               .build();
         }
       }

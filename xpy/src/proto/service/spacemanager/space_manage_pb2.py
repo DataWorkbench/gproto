@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\020PBSvcSpaceManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/spacemanager/space_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/space_manage.proto\x1a\'proto/types/response/space_manage.proto2\x93\x07\n\x0bSpaceManage\x12\x45\n\x0eListWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12K\n\x14ListMemberWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12\x43\n\x10\x44\x65leteWorkspaces\x12\x19.request.DeleteWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11\x44isableWorkspaces\x12\x1a.request.DisableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x45nableWorkspaces\x12\x19.request.EnableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateWorkspace\x12\x18.request.CreateWorkspace\x1a\x19.response.CreateWorkspace\"\x00\x12\x41\n\x0fUpdateWorkspace\x12\x18.request.UpdateWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeWorkspace\x12\x1a.request.DescribeWorkspace\x1a\x1b.response.DescribeWorkspace\"\x00\x12H\n\x0f\x43heckPermission\x12\x18.request.CheckPermission\x1a\x19.response.CheckPermission\"\x00\x12Z\n\x15\x44\x65scribeNetworkConfig\x12\x1e.request.DescribeNetworkConfig\x1a\x1f.response.DescribeNetworkConfig\"\x00\x12K\n\x14\x41ttachVPCToWorkspace\x12\x1d.request.AttachVPCToWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x44\x65tachVPCFromWorkspace\x12\x1f.request.DetachVPCFromWorkspace\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcSpaceManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n-proto/service/spacemanager/space_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/space_manage.proto\x1a\'proto/types/response/space_manage.proto2\xf5\x07\n\x0bSpaceManage\x12\x45\n\x0eListWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12K\n\x14ListMemberWorkspaces\x12\x17.request.ListWorkspaces\x1a\x18.response.ListWorkspaces\"\x00\x12\x43\n\x10\x44\x65leteWorkspaces\x12\x19.request.DeleteWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x45\n\x11\x44isableWorkspaces\x12\x1a.request.DisableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12\x43\n\x10\x45nableWorkspaces\x12\x19.request.EnableWorkspaces\x1a\x12.model.EmptyStruct\"\x00\x12H\n\x0f\x43reateWorkspace\x12\x18.request.CreateWorkspace\x1a\x19.response.CreateWorkspace\"\x00\x12\x41\n\x0fUpdateWorkspace\x12\x18.request.UpdateWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x44\x65scribeWorkspace\x12\x1a.request.DescribeWorkspace\x1a\x1b.response.DescribeWorkspace\"\x00\x12H\n\x0f\x43heckPermission\x12\x18.request.CheckPermission\x1a\x19.response.CheckPermission\"\x00\x12`\n\x17\x44\x65scribeWorkspaceConfig\x12 .request.DescribeWorkspaceConfig\x1a!.response.DescribeWorkspaceConfig\"\x00\x12Z\n\x15\x44\x65scribeNetworkConfig\x12\x1e.request.DescribeNetworkConfig\x1a\x1f.response.DescribeNetworkConfig\"\x00\x12K\n\x14\x41ttachVPCToWorkspace\x12\x1d.request.AttachVPCToWorkspace\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x44\x65tachVPCFromWorkspace\x12\x1f.request.DetachVPCFromWorkspace\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcSpaceManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_space__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_space__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=176,
-  serialized_end=1091,
+  serialized_end=1189,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListWorkspaces',
@@ -134,9 +134,19 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='DescribeWorkspaceConfig',
+    full_name='spacemanager.SpaceManage.DescribeWorkspaceConfig',
+    index=9,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DESCRIBEWORKSPACECONFIG,
+    output_type=proto_dot_types_dot_response_dot_space__manage__pb2._DESCRIBEWORKSPACECONFIG,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='DescribeNetworkConfig',
     full_name='spacemanager.SpaceManage.DescribeNetworkConfig',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DESCRIBENETWORKCONFIG,
     output_type=proto_dot_types_dot_response_dot_space__manage__pb2._DESCRIBENETWORKCONFIG,
@@ -146,7 +156,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='AttachVPCToWorkspace',
     full_name='spacemanager.SpaceManage.AttachVPCToWorkspace',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._ATTACHVPCTOWORKSPACE,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
@@ -156,7 +166,7 @@ _SPACEMANAGE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DetachVPCFromWorkspace',
     full_name='spacemanager.SpaceManage.DetachVPCFromWorkspace',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_space__manage__pb2._DETACHVPCFROMWORKSPACE,
     output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,

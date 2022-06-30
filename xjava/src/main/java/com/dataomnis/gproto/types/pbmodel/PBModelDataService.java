@@ -2206,6 +2206,46 @@ public final class PBModelDataService {
      * @return The status.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Status getStatus();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    long getCreated();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    long getUpdated();
   }
   /**
    * <pre>
@@ -2230,6 +2270,7 @@ public final class PBModelDataService {
       groupPath_ = "";
       desc_ = "";
       status_ = 0;
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -2296,6 +2337,22 @@ public final class PBModelDataService {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
+              break;
+            }
+            case 64: {
+
+              created_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              updated_ = input.readInt64();
               break;
             }
             default: {
@@ -2704,6 +2761,82 @@ public final class PBModelDataService {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Status.UNRECOGNIZED : result;
     }
 
+    public static final int CREATED_BY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CREATED_FIELD_NUMBER = 8;
+    private long created_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    @java.lang.Override
+    public long getCreated() {
+      return created_;
+    }
+
+    public static final int UPDATED_FIELD_NUMBER = 9;
+    private long updated_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    @java.lang.Override
+    public long getUpdated() {
+      return updated_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2736,6 +2869,15 @@ public final class PBModelDataService {
       if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Status.StatusUnset.getNumber()) {
         output.writeEnum(6, status_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, createdBy_);
+      }
+      if (created_ != 0L) {
+        output.writeInt64(8, created_);
+      }
+      if (updated_ != 0L) {
+        output.writeInt64(9, updated_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2764,6 +2906,17 @@ public final class PBModelDataService {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, status_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, createdBy_);
+      }
+      if (created_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, created_);
+      }
+      if (updated_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, updated_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2790,6 +2943,12 @@ public final class PBModelDataService {
       if (!getDesc()
           .equals(other.getDesc())) return false;
       if (status_ != other.status_) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
+      if (getCreated()
+          != other.getCreated()) return false;
+      if (getUpdated()
+          != other.getUpdated()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2813,6 +2972,14 @@ public final class PBModelDataService {
       hash = (53 * hash) + getDesc().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
+      hash = (37 * hash) + CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreated());
+      hash = (37 * hash) + UPDATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdated());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2962,6 +3129,12 @@ public final class PBModelDataService {
 
         status_ = 0;
 
+        createdBy_ = "";
+
+        created_ = 0L;
+
+        updated_ = 0L;
+
         return this;
       }
 
@@ -2994,6 +3167,9 @@ public final class PBModelDataService {
         result.groupPath_ = groupPath_;
         result.desc_ = desc_;
         result.status_ = status_;
+        result.createdBy_ = createdBy_;
+        result.created_ = created_;
+        result.updated_ = updated_;
         onBuilt();
         return result;
       }
@@ -3064,6 +3240,16 @@ public final class PBModelDataService {
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
+        }
+        if (other.getCreated() != 0L) {
+          setCreated(other.getCreated());
+        }
+        if (other.getUpdated() != 0L) {
+          setUpdated(other.getUpdated());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3647,6 +3833,188 @@ public final class PBModelDataService {
         onChanged();
         return this;
       }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long created_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * @return The created.
+       */
+      @java.lang.Override
+      public long getCreated() {
+        return created_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * @param value The created to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreated(long value) {
+        
+        created_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreated() {
+        
+        created_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updated_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * @return The updated.
+       */
+      @java.lang.Override
+      public long getUpdated() {
+        return updated_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * @param value The updated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdated(long value) {
+        
+        updated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdated() {
+        
+        updated_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3865,8 +4233,25 @@ public final class PBModelDataService {
 
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 9 ;
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    int getProtocolsValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+     * @return The protocols.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -3876,8 +4261,6 @@ public final class PBModelDataService {
     int getRequestMethodValue();
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 9 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -4143,6 +4526,7 @@ public final class PBModelDataService {
       apiPath_ = "";
       apiMode_ = 0;
       apiDescription_ = "";
+      protocols_ = 0;
       requestMethod_ = 0;
       responseType_ = 0;
       datasourceId_ = "";
@@ -4229,6 +4613,12 @@ public final class PBModelDataService {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiDescription_ = s;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              protocols_ = rawValue;
               break;
             }
             case 80: {
@@ -4718,13 +5108,17 @@ public final class PBModelDataService {
        */
       ProtocolUnset(0),
       /**
-       * <code>HTTP = 1;</code>
+       * <code>HTTPOnly = 1;</code>
        */
-      HTTP(1),
+      HTTPOnly(1),
       /**
-       * <code>HTTPS = 2;</code>
+       * <code>HTTPSOnly = 2;</code>
        */
-      HTTPS(2),
+      HTTPSOnly(2),
+      /**
+       * <code>ALL = 3;</code>
+       */
+      ALL(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -4733,13 +5127,17 @@ public final class PBModelDataService {
        */
       public static final int ProtocolUnset_VALUE = 0;
       /**
-       * <code>HTTP = 1;</code>
+       * <code>HTTPOnly = 1;</code>
        */
-      public static final int HTTP_VALUE = 1;
+      public static final int HTTPOnly_VALUE = 1;
       /**
-       * <code>HTTPS = 2;</code>
+       * <code>HTTPSOnly = 2;</code>
        */
-      public static final int HTTPS_VALUE = 2;
+      public static final int HTTPSOnly_VALUE = 2;
+      /**
+       * <code>ALL = 3;</code>
+       */
+      public static final int ALL_VALUE = 3;
 
 
       public final int getNumber() {
@@ -4767,8 +5165,9 @@ public final class PBModelDataService {
       public static Protocols forNumber(int value) {
         switch (value) {
           case 0: return ProtocolUnset;
-          case 1: return HTTP;
-          case 2: return HTTPS;
+          case 1: return HTTPOnly;
+          case 2: return HTTPSOnly;
+          case 3: return ALL;
           default: return null;
         }
       }
@@ -5291,12 +5690,37 @@ public final class PBModelDataService {
       }
     }
 
+    public static final int PROTOCOLS_FIELD_NUMBER = 9;
+    private int protocols_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    @java.lang.Override public int getProtocolsValue() {
+      return protocols_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+     * @return The protocols.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.valueOf(protocols_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.UNRECOGNIZED : result;
+    }
+
     public static final int REQUEST_METHOD_FIELD_NUMBER = 10;
     private int requestMethod_;
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 9 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -5308,8 +5732,6 @@ public final class PBModelDataService {
     }
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 9 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -5780,6 +6202,9 @@ public final class PBModelDataService {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, apiDescription_);
       }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.ProtocolUnset.getNumber()) {
+        output.writeEnum(9, protocols_);
+      }
       if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
         output.writeEnum(10, requestMethod_);
       }
@@ -5855,6 +6280,10 @@ public final class PBModelDataService {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, apiDescription_);
+      }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.ProtocolUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, protocols_);
       }
       if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -5937,6 +6366,7 @@ public final class PBModelDataService {
       if (apiMode_ != other.apiMode_) return false;
       if (!getApiDescription()
           .equals(other.getApiDescription())) return false;
+      if (protocols_ != other.protocols_) return false;
       if (requestMethod_ != other.requestMethod_) return false;
       if (responseType_ != other.responseType_) return false;
       if (getCrossDomain()
@@ -5995,6 +6425,8 @@ public final class PBModelDataService {
       hash = (53 * hash) + apiMode_;
       hash = (37 * hash) + API_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getApiDescription().hashCode();
+      hash = (37 * hash) + PROTOCOLS_FIELD_NUMBER;
+      hash = (53 * hash) + protocols_;
       hash = (37 * hash) + REQUEST_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + requestMethod_;
       hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
@@ -6184,6 +6616,8 @@ public final class PBModelDataService {
 
         apiDescription_ = "";
 
+        protocols_ = 0;
+
         requestMethod_ = 0;
 
         responseType_ = 0;
@@ -6254,6 +6688,7 @@ public final class PBModelDataService {
         result.apiPath_ = apiPath_;
         result.apiMode_ = apiMode_;
         result.apiDescription_ = apiDescription_;
+        result.protocols_ = protocols_;
         result.requestMethod_ = requestMethod_;
         result.responseType_ = responseType_;
         result.crossDomain_ = crossDomain_;
@@ -6354,6 +6789,9 @@ public final class PBModelDataService {
         if (!other.getApiDescription().isEmpty()) {
           apiDescription_ = other.apiDescription_;
           onChanged();
+        }
+        if (other.protocols_ != 0) {
+          setProtocolsValue(other.getProtocolsValue());
         }
         if (other.requestMethod_ != 0) {
           setRequestMethodValue(other.getRequestMethodValue());
@@ -7177,11 +7615,83 @@ public final class PBModelDataService {
         return this;
       }
 
+      private int protocols_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for protocols.
+       */
+      @java.lang.Override public int getProtocolsValue() {
+        return protocols_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocolsValue(int value) {
+        
+        protocols_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+       * @return The protocols.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.valueOf(protocols_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+       * @param value The protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocols(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        protocols_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProtocols() {
+        
+        protocols_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int requestMethod_ = 0;
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 9 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -7193,8 +7703,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 9 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -7210,8 +7718,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 9 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -7226,8 +7732,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 9 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -7246,8 +7750,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 9 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -14446,8 +14948,25 @@ public final class PBModelDataService {
 
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 12 ;
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    int getProtocolsValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+     * @return The protocols.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols getProtocols();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -14457,8 +14976,6 @@ public final class PBModelDataService {
     int getRequestMethodValue();
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 12 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -14667,6 +15184,7 @@ public final class PBModelDataService {
       apiPath_ = "";
       apiMode_ = 0;
       apiDescription_ = "";
+      protocols_ = 0;
       requestMethod_ = 0;
       responseType_ = 0;
       datasourceId_ = "";
@@ -14767,6 +15285,12 @@ public final class PBModelDataService {
               java.lang.String s = input.readStringRequireUtf8();
 
               apiDescription_ = s;
+              break;
+            }
+            case 96: {
+              int rawValue = input.readEnum();
+
+              protocols_ = rawValue;
               break;
             }
             case 104: {
@@ -15350,13 +15874,17 @@ public final class PBModelDataService {
        */
       ProtocolUnset(0),
       /**
-       * <code>HTTP = 1;</code>
+       * <code>HTTPOnly = 1;</code>
        */
-      HTTP(1),
+      HTTPOnly(1),
       /**
-       * <code>HTTPS = 2;</code>
+       * <code>HTTPSOnly = 2;</code>
        */
-      HTTPS(2),
+      HTTPSOnly(2),
+      /**
+       * <code>ALL = 3;</code>
+       */
+      ALL(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -15365,13 +15893,17 @@ public final class PBModelDataService {
        */
       public static final int ProtocolUnset_VALUE = 0;
       /**
-       * <code>HTTP = 1;</code>
+       * <code>HTTPOnly = 1;</code>
        */
-      public static final int HTTP_VALUE = 1;
+      public static final int HTTPOnly_VALUE = 1;
       /**
-       * <code>HTTPS = 2;</code>
+       * <code>HTTPSOnly = 2;</code>
        */
-      public static final int HTTPS_VALUE = 2;
+      public static final int HTTPSOnly_VALUE = 2;
+      /**
+       * <code>ALL = 3;</code>
+       */
+      public static final int ALL_VALUE = 3;
 
 
       public final int getNumber() {
@@ -15399,8 +15931,9 @@ public final class PBModelDataService {
       public static Protocols forNumber(int value) {
         switch (value) {
           case 0: return ProtocolUnset;
-          case 1: return HTTP;
-          case 2: return HTTPS;
+          case 1: return HTTPOnly;
+          case 2: return HTTPSOnly;
+          case 3: return ALL;
           default: return null;
         }
       }
@@ -15881,12 +16414,37 @@ public final class PBModelDataService {
       }
     }
 
+    public static final int PROTOCOLS_FIELD_NUMBER = 12;
+    private int protocols_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    @java.lang.Override public int getProtocolsValue() {
+      return protocols_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+     * </pre>
+     *
+     * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+     * @return The protocols.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols getProtocols() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.valueOf(protocols_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.UNRECOGNIZED : result;
+    }
+
     public static final int REQUEST_METHOD_FIELD_NUMBER = 13;
     private int requestMethod_;
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 12 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -15898,8 +16456,6 @@ public final class PBModelDataService {
     }
     /**
      * <pre>
-     *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-     *  repeated Protocols protocols = 12 ;
      * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
      * </pre>
      *
@@ -16260,6 +16816,9 @@ public final class PBModelDataService {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, apiDescription_);
       }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.ProtocolUnset.getNumber()) {
+        output.writeEnum(12, protocols_);
+      }
       if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.RequestMethod.MethodUnset.getNumber()) {
         output.writeEnum(13, requestMethod_);
       }
@@ -16335,6 +16894,10 @@ public final class PBModelDataService {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, apiDescription_);
       }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.ProtocolUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, protocols_);
+      }
       if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.RequestMethod.MethodUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, requestMethod_);
@@ -16405,6 +16968,7 @@ public final class PBModelDataService {
       if (apiMode_ != other.apiMode_) return false;
       if (!getApiDescription()
           .equals(other.getApiDescription())) return false;
+      if (protocols_ != other.protocols_) return false;
       if (requestMethod_ != other.requestMethod_) return false;
       if (responseType_ != other.responseType_) return false;
       if (getCrossDomain()
@@ -16462,6 +17026,8 @@ public final class PBModelDataService {
       hash = (53 * hash) + apiMode_;
       hash = (37 * hash) + API_DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getApiDescription().hashCode();
+      hash = (37 * hash) + PROTOCOLS_FIELD_NUMBER;
+      hash = (53 * hash) + protocols_;
       hash = (37 * hash) + REQUEST_METHOD_FIELD_NUMBER;
       hash = (53 * hash) + requestMethod_;
       hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
@@ -16649,6 +17215,8 @@ public final class PBModelDataService {
 
         apiDescription_ = "";
 
+        protocols_ = 0;
+
         requestMethod_ = 0;
 
         responseType_ = 0;
@@ -16715,6 +17283,7 @@ public final class PBModelDataService {
         result.apiPath_ = apiPath_;
         result.apiMode_ = apiMode_;
         result.apiDescription_ = apiDescription_;
+        result.protocols_ = protocols_;
         result.requestMethod_ = requestMethod_;
         result.responseType_ = responseType_;
         result.crossDomain_ = crossDomain_;
@@ -16819,6 +17388,9 @@ public final class PBModelDataService {
         if (!other.getApiDescription().isEmpty()) {
           apiDescription_ = other.apiDescription_;
           onChanged();
+        }
+        if (other.protocols_ != 0) {
+          setProtocolsValue(other.getProtocolsValue());
         }
         if (other.requestMethod_ != 0) {
           setRequestMethodValue(other.getRequestMethodValue());
@@ -17806,11 +18378,83 @@ public final class PBModelDataService {
         return this;
       }
 
+      private int protocols_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for protocols.
+       */
+      @java.lang.Override public int getProtocolsValue() {
+        return protocols_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocolsValue(int value) {
+        
+        protocols_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+       * @return The protocols.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols getProtocols() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.valueOf(protocols_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+       * @param value The protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocols(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Protocols value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        protocols_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
+       * </pre>
+       *
+       * <code>.model.ApiVersion.Protocols protocols = 12 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProtocols() {
+        
+        protocols_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int requestMethod_ = 0;
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 12 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -17822,8 +18466,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 12 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -17839,8 +18481,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 12 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -17855,8 +18495,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 12 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -17875,8 +18513,6 @@ public final class PBModelDataService {
       }
       /**
        * <pre>
-       *  // &#64;inject_tag: json:"protocols" gorm:"column:protocols;"
-       *  repeated Protocols protocols = 12 ;
        * &#64;inject_tag: json:"request_method" gorm:"column:request_method;"
        * </pre>
        *
@@ -18786,6 +19422,709 @@ public final class PBModelDataService {
 
   }
 
+  public interface ServiceDataSourceKindOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.ServiceDataSourceKind)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string Name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string Name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>int64 Type = 2;</code>
+     * @return The type.
+     */
+    long getType();
+  }
+  /**
+   * <pre>
+   * ServiceDataSourceKind represents the kind of dataservice datasource
+   * </pre>
+   *
+   * Protobuf type {@code model.ServiceDataSourceKind}
+   */
+  public static final class ServiceDataSourceKind extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.ServiceDataSourceKind)
+      ServiceDataSourceKindOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ServiceDataSourceKind.newBuilder() to construct.
+    private ServiceDataSourceKind(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ServiceDataSourceKind() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ServiceDataSourceKind();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ServiceDataSourceKind(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 16: {
+
+              type_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ServiceDataSourceKind_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ServiceDataSourceKind_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string Name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string Name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private long type_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>int64 Type = 2;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public long getType() {
+      return type_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (type_ != 0L) {
+        output.writeInt64(2, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (type_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind other = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (getType()
+          != other.getType()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getType());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * ServiceDataSourceKind represents the kind of dataservice datasource
+     * </pre>
+     *
+     * Protobuf type {@code model.ServiceDataSourceKind}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.ServiceDataSourceKind)
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKindOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ServiceDataSourceKind_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ServiceDataSourceKind_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        type_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ServiceDataSourceKind_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind result = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind(this);
+        result.name_ = name_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getType() != 0L) {
+          setType(other.getType());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string Name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string Name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string Name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string Name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string Name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long type_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>int64 Type = 2;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public long getType() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>int64 Type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(long value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>int64 Type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.ServiceDataSourceKind)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.ServiceDataSourceKind)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ServiceDataSourceKind>
+        PARSER = new com.google.protobuf.AbstractParser<ServiceDataSourceKind>() {
+      @java.lang.Override
+      public ServiceDataSourceKind parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ServiceDataSourceKind(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ServiceDataSourceKind> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ServiceDataSourceKind> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ServiceDataSourceKind getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_DataServiceCluster_descriptor;
   private static final 
@@ -18826,6 +20165,11 @@ public final class PBModelDataService {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_ApiVersion_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_ServiceDataSourceKind_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_ServiceDataSourceKind_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -18854,111 +20198,119 @@ public final class PBModelDataService {
       "ing\020\002\022\013\n\007Stopped\020\003\022\014\n\010Starting\020\004\022\r\n\tExce" +
       "ption\020\005\022\013\n\007Arrears\020\006\"?\n\014ResourceSpec\022\r\n\t" +
       "SpecUnset\020\000\022\t\n\005Entry\020\001\022\n\n\006Basics\020\002\022\t\n\005Ma" +
-      "jor\020\003\"\237\002\n\010ApiGroup\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "jor\020\003\"\375\002\n\010ApiGroup\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
       "\n\360\001\024\312\002\004dsg-\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
       "\360\001\024\312\002\004wks-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
-      "@\022#\n\ngroup_path\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\033" +
-      "\n\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\0225\n\006status\030\006 " +
-      "\001(\0162\026.model.ApiGroup.StatusB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted" +
-      "\020\001\022\013\n\007Enabled\020\002\"\265\t\n\tApiConfig\022#\n\006api_id\030" +
-      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id\030\002" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030" +
-      "\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id\030\004" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030\005 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\006 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\007 \001(\0162\030.mod" +
-      "el.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017a" +
-      "pi_description\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022E\n\016r" +
-      "equest_method\030\n \001(\0162\036.model.ApiConfig.Re" +
-      "questMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_t" +
-      "ype\030\013 \001(\0162\035.model.ApiConfig.ResponseType" +
-      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\014 \001(\010B\004\342" +
-      "\337\037\000\022\037\n\007timeout\030\r \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\r" +
-      "datasource_id\030\016 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-" +
-      "\022#\n\ntable_name\030\017 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n" +
-      "\006script\030\020 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022#\n\ncreated" +
-      "_by\030\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\022 " +
-      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\023 \001(\003B\013\342\337\037\007\022" +
-      "\005\262\001\0020\000\0226\n\006status\030\024 \001(\0162\027.model.ApiConfig" +
-      ".StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\022accessible_ver" +
-      "sion\030\025 \001(\t\0226\n\016request_params\030\026 \001(\0132\030.mod" +
-      "el.RequestParametersB\004\342\337\037\000\0228\n\017response_p" +
-      "arams\030\027 \001(\0132\031.model.ResponseParametersB\004" +
-      "\342\337\037\000\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizard" +
-      "\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Metho" +
-      "dUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014ResponseT" +
-      "ype\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"3\n" +
-      "\tProtocols\022\021\n\rProtocolUnset\020\000\022\010\n\004HTTP\020\001\022" +
-      "\t\n\005HTTPS\020\002\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n" +
-      "\007Deleted\020\001\022\013\n\007Enabled\020\002\"R\n\021RequestParame" +
-      "ters\0225\n\016request_params\030\026 \003(\0132\027.model.Req" +
-      "uestParameterB\004\342\337\037\000:\006\312\262\004\002\n\000\"\244\005\n\020RequestP" +
-      "arameter\022$\n\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
-      "\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002" +
-      "\201\002\022\031\n\013is_required\030\004 \001(\010B\004\342\337\037\000\022:\n\tdata_ty" +
-      "pe\030\005 \001(\0162\030.model.ParameterDataTypeB\r\342\337\037\t" +
-      "\022\007\332\001\0040\000X\001\022(\n\021param_description\030\006 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\007 \001(\tB\017\342\337\037\013\022\t\302" +
-      "\001\006\200\002\000\230\002@\022P\n\016param_operator\030\010 \001(\0162).model" +
-      ".RequestParameter.ParameterOperatorB\r\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\022P\n\016param_position\030\t \001(\0162).mod" +
-      "el.RequestParameter.ParameterPositionB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\"{\n\021ParameterOperator\022\021\n\rOpe" +
-      "ratorUnset\020\000\022\t\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n" +
-      "\013GreaterThan\020\003\022\014\n\010LessThan\020\004\022\010\n\004Like\020\005\022\t" +
-      "\n\005Const\020\006\022\006\n\002In\020\007\"O\n\021ParameterPosition\022\021" +
-      "\n\rPositionUnset\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010" +
-      "\n\004Path\020\003\022\010\n\004Head\020\004:\006\312\262\004\002\n\000\"U\n\022ResponsePa" +
-      "rameters\0227\n\017response_params\030\026 \003(\0132\030.mode" +
-      "l.ResponseParameterB\004\342\337\037\000:\006\312\262\004\002\n\000\"\254\003\n\021Re" +
-      "sponseParameter\022$\n\013column_name\030\001 \001(\tB\017\342\337" +
-      "\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\tB\r\342\337" +
-      "\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r\342\337\037\t" +
-      "\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001(\0162\030.model.Par" +
-      "ameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_d" +
-      "escription\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam" +
-      "_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\034\n\torder_nu" +
-      "m\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000\022C\n\norder_mode\030\010 \001(\0162\"" +
-      ".model.ResponseParameter.OrderModeB\013\342\337\037\007" +
-      "\022\005\332\001\002X\001\"/\n\tOrderMode\022\017\n\013StatusUnset\020\000\022\007\n" +
-      "\003Ase\020\001\022\010\n\004Desc\020\002:\006\312\262\004\002\n\000\"\247\t\n\nApiVersion\022" +
-      " \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022?\n\016pub" +
-      "lish_status\030\002 \001(\0162\030.model.ApiVersion.Sta" +
-      "tusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022#\n\006api_id\030\004 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id\030\005 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\006 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id\030\007 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030\010 \001(\tB\017\342\337\037\013\022\t" +
-      "\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
-      "\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.model.ApiVersi" +
-      "on.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descrip" +
-      "tion\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022F\n\016request_met" +
-      "hod\030\r \001(\0162\037.model.ApiVersion.RequestMeth" +
-      "odB\r\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\016" +
-      "2\036.model.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007t" +
-      "imeout\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasour" +
-      "ce_id\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntabl" +
-      "e_name\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030" +
-      "\023 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020" +
-      "\000\0226\n\016request_params\030\025 \001(\0132\030.model.Reques" +
-      "tParametersB\004\342\337\037\000\0228\n\017response_params\030\026 \001" +
-      "(\0132\031.model.ResponseParametersB\004\342\337\037\000\"7\n\006S" +
-      "tatus\022\017\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n" +
-      "\tAbolished\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n" +
-      "\n\006Wizard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022" +
-      "\017\n\013MethodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014R" +
-      "esponseType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003" +
-      "XML\020\002\"3\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\010\n" +
-      "\004HTTP\020\001\022\t\n\005HTTPS\020\002*P\n\021ParameterDataType\022" +
-      "\r\n\tTypeUnset\020\000\022\n\n\006String\020\001\022\007\n\003Int\020\002\022\n\n\006D" +
-      "ouble\020\003\022\013\n\007Boolean\020\004Bm\n\"com.dataomnis.gp" +
-      "roto.types.pbmodelB\022PBModelDataServiceP\000" +
-      "Z1github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbmodelb\006proto3"
+      "@\022 \n\ngroup_path\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004d" +
+      "esc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\0225\n\006status\030\006 \001(\016" +
+      "2\026.model.ApiGroup.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "#\n\ncreated_by\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007" +
+      "created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t " +
+      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUnse" +
+      "t\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\204\n\n\tApiCon" +
+      "fig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-" +
+      "\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022" +
+      "\'\n\ncluster_id\030\003 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-" +
+      "\022%\n\010space_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
+      "!\n\010api_name\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010ap" +
+      "i_path\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mo" +
+      "de\030\007 \001(\0162\030.model.ApiConfig.ApiModeB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\022&\n\017api_description\030\010 \001(\tB\r\342\337\037\t" +
+      "\022\007\302\001\004\230\002\201\002\022<\n\tprotocols\030\t \001(\0162\032.model.Api" +
+      "Config.ProtocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\016reque" +
+      "st_method\030\n \001(\0162\036.model.ApiConfig.Reques" +
+      "tMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030" +
+      "\013 \001(\0162\035.model.ApiConfig.ResponseTypeB\r\342\337" +
+      "\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\014 \001(\010B\004\342\337\037\000\022" +
+      "\037\n\007timeout\030\r \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdata" +
+      "source_id\030\016 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\n" +
+      "table_name\030\017 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006scr" +
+      "ipt\030\020 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022#\n\ncreated_by\030" +
+      "\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\022 \001(\003B" +
+      "\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\023 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\0226\n\006status\030\024 \001(\0162\027.model.ApiConfig.Sta" +
+      "tusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\022accessible_version" +
+      "\030\025 \001(\t\0226\n\016request_params\030\026 \001(\0132\030.model.R" +
+      "equestParametersB\004\342\337\037\000\0228\n\017response_param" +
+      "s\030\027 \001(\0132\031.model.ResponseParametersB\004\342\337\037\000" +
+      "\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizard\020\001\022\n" +
+      "\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013MethodUns" +
+      "et\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014ResponseType\022" +
+      "\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D\n\tPro" +
+      "tocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTPOnly\020\001\022" +
+      "\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\006Status\022\017\n\013Sta" +
+      "tusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"R\n\021" +
+      "RequestParameters\0225\n\016request_params\030\026 \003(" +
+      "\0132\027.model.RequestParameterB\004\342\337\037\000:\006\312\262\004\002\n\000" +
+      "\"\244\005\n\020RequestParameter\022$\n\013column_name\030\001 \001" +
+      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001" +
+      "(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_required\030\004 \001(\010B\004\342\337" +
+      "\037\000\022:\n\tdata_type\030\005 \001(\0162\030.model.ParameterD" +
+      "ataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_descript" +
+      "ion\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\007" +
+      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016param_operator\030" +
+      "\010 \001(\0162).model.RequestParameter.Parameter" +
+      "OperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n\016param_positio" +
+      "n\030\t \001(\0162).model.RequestParameter.Paramet" +
+      "erPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\"{\n\021ParameterOp" +
+      "erator\022\021\n\rOperatorUnset\020\000\022\t\n\005Equal\020\001\022\014\n\010" +
+      "NotEqual\020\002\022\017\n\013GreaterThan\020\003\022\014\n\010LessThan\020" +
+      "\004\022\010\n\004Like\020\005\022\t\n\005Const\020\006\022\006\n\002In\020\007\"O\n\021Parame" +
+      "terPosition\022\021\n\rPositionUnset\020\000\022\010\n\004Body\020\001" +
+      "\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010\n\004Head\020\004:\006\312\262\004\002\n\000\"" +
+      "U\n\022ResponseParameters\0227\n\017response_params" +
+      "\030\026 \003(\0132\030.model.ResponseParameterB\004\342\337\037\000:\006" +
+      "\312\262\004\002\n\000\"\254\003\n\021ResponseParameter\022$\n\013column_n" +
+      "ame\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_va" +
+      "lue\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_valu" +
+      "e\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001(" +
+      "\0162\030.model.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022(\n\021param_description\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
+      "@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000\022C\n\norder" +
+      "_mode\030\010 \001(\0162\".model.ResponseParameter.Or" +
+      "derModeB\013\342\337\037\007\022\005\332\001\002X\001\"/\n\tOrderMode\022\017\n\013Sta" +
+      "tusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002:\006\312\262\004\002\n\000\"\367\t" +
+      "\n\nApiVersion\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\360\001\020\022?\n\016publish_status\030\002 \001(\0162\030.model.A" +
+      "piVersion.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022#\n\006api_i" +
+      "d\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id" +
+      "\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_i" +
+      "d\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id" +
+      "\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030" +
+      "\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.m" +
+      "odel.ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&" +
+      "\n\017api_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=" +
+      "\n\tprotocols\030\014 \001(\0162\033.model.ApiVersion.Pro" +
+      "tocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_method\030" +
+      "\r \001(\0162\037.model.ApiVersion.RequestMethodB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036.m" +
+      "odel.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeo" +
+      "ut\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_i" +
+      "d\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_na" +
+      "me\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(" +
+      "\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n" +
+      "\016request_params\030\025 \001(\0132\030.model.RequestPar" +
+      "ametersB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031" +
+      ".model.ResponseParametersB\004\342\337\037\000\"7\n\006Statu" +
+      "s\022\017\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbo" +
+      "lished\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wi" +
+      "zard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013M" +
+      "ethodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014Respo" +
+      "nseType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020" +
+      "\002\"D\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTT" +
+      "POnly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025Servi" +
+      "ceDataSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002" +
+      " \001(\003*P\n\021ParameterDataType\022\r\n\tTypeUnset\020\000" +
+      "\022\n\n\006String\020\001\022\007\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boo" +
+      "lean\020\004Bm\n\"com.dataomnis.gproto.types.pbm" +
+      "odelB\022PBModelDataServiceP\000Z1github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbmodelb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18979,13 +20331,13 @@ public final class PBModelDataService {
     internal_static_model_ApiGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiGroup_descriptor,
-        new java.lang.String[] { "Id", "SpaceId", "Name", "GroupPath", "Desc", "Status", });
+        new java.lang.String[] { "Id", "SpaceId", "Name", "GroupPath", "Desc", "Status", "CreatedBy", "Created", "Updated", });
     internal_static_model_ApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_model_ApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiConfig_descriptor,
-        new java.lang.String[] { "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "CreatedBy", "Created", "Updated", "Status", "AccessibleVersion", "RequestParams", "ResponseParams", });
+        new java.lang.String[] { "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "CreatedBy", "Created", "Updated", "Status", "AccessibleVersion", "RequestParams", "ResponseParams", });
     internal_static_model_RequestParameters_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_model_RequestParameters_fieldAccessorTable = new
@@ -19015,7 +20367,13 @@ public final class PBModelDataService {
     internal_static_model_ApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiVersion_descriptor,
-        new java.lang.String[] { "VersionId", "PublishStatus", "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "Created", "Updated", "RequestParams", "ResponseParams", });
+        new java.lang.String[] { "VersionId", "PublishStatus", "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "Created", "Updated", "RequestParams", "ResponseParams", });
+    internal_static_model_ServiceDataSourceKind_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_model_ServiceDataSourceKind_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_ServiceDataSourceKind_descriptor,
+        new java.lang.String[] { "Name", "Type", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
