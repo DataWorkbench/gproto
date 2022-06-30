@@ -297,6 +297,37 @@ public final class SpaceManageGrpc {
     return getCheckPermissionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> getDescribeWorkspaceConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeWorkspaceConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> getDescribeWorkspaceConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> getDescribeWorkspaceConfigMethod;
+    if ((getDescribeWorkspaceConfigMethod = SpaceManageGrpc.getDescribeWorkspaceConfigMethod) == null) {
+      synchronized (SpaceManageGrpc.class) {
+        if ((getDescribeWorkspaceConfigMethod = SpaceManageGrpc.getDescribeWorkspaceConfigMethod) == null) {
+          SpaceManageGrpc.getDescribeWorkspaceConfigMethod = getDescribeWorkspaceConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig, com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeWorkspaceConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig.getDefaultInstance()))
+              .setSchemaDescriptor(new SpaceManageMethodDescriptorSupplier("DescribeWorkspaceConfig"))
+              .build();
+        }
+      }
+    }
+    return getDescribeWorkspaceConfigMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig,
       com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeNetworkConfig> getDescribeNetworkConfigMethod;
 
@@ -525,6 +556,16 @@ public final class SpaceManageGrpc {
 
     /**
      * <pre>
+     * Get the config of workspace.
+     * </pre>
+     */
+    public void describeWorkspaceConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeWorkspaceConfigMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Network config
      * </pre>
      */
@@ -612,6 +653,13 @@ public final class SpaceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>(
                   this, METHODID_CHECK_PERMISSION)))
+          .addMethod(
+            getDescribeWorkspaceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig>(
+                  this, METHODID_DESCRIBE_WORKSPACE_CONFIG)))
           .addMethod(
             getDescribeNetworkConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -747,6 +795,17 @@ public final class SpaceManageGrpc {
 
     /**
      * <pre>
+     * Get the config of workspace.
+     * </pre>
+     */
+    public void describeWorkspaceConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeWorkspaceConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Network config
      * </pre>
      */
@@ -870,6 +929,16 @@ public final class SpaceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission checkPermission(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckPermissionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get the config of workspace.
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig describeWorkspaceConfig(com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeWorkspaceConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1007,6 +1076,17 @@ public final class SpaceManageGrpc {
 
     /**
      * <pre>
+     * Get the config of workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig> describeWorkspaceConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeWorkspaceConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Network config
      * </pre>
      */
@@ -1042,9 +1122,10 @@ public final class SpaceManageGrpc {
   private static final int METHODID_UPDATE_WORKSPACE = 6;
   private static final int METHODID_DESCRIBE_WORKSPACE = 7;
   private static final int METHODID_CHECK_PERMISSION = 8;
-  private static final int METHODID_DESCRIBE_NETWORK_CONFIG = 9;
-  private static final int METHODID_ATTACH_VPCTO_WORKSPACE = 10;
-  private static final int METHODID_DETACH_VPCFROM_WORKSPACE = 11;
+  private static final int METHODID_DESCRIBE_WORKSPACE_CONFIG = 9;
+  private static final int METHODID_DESCRIBE_NETWORK_CONFIG = 10;
+  private static final int METHODID_ATTACH_VPCTO_WORKSPACE = 11;
+  private static final int METHODID_DETACH_VPCFROM_WORKSPACE = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1098,6 +1179,10 @@ public final class SpaceManageGrpc {
         case METHODID_CHECK_PERMISSION:
           serviceImpl.checkPermission((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.CheckPermission) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.CheckPermission>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_WORKSPACE_CONFIG:
+          serviceImpl.describeWorkspaceConfig((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeWorkspaceConfig) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSpaceManage.DescribeWorkspaceConfig>) responseObserver);
           break;
         case METHODID_DESCRIBE_NETWORK_CONFIG:
           serviceImpl.describeNetworkConfig((com.dataomnis.gproto.types.pbrequest.PBRequestSpaceManage.DescribeNetworkConfig) request,
@@ -1181,6 +1266,7 @@ public final class SpaceManageGrpc {
               .addMethod(getUpdateWorkspaceMethod())
               .addMethod(getDescribeWorkspaceMethod())
               .addMethod(getCheckPermissionMethod())
+              .addMethod(getDescribeWorkspaceConfigMethod())
               .addMethod(getDescribeNetworkConfigMethod())
               .addMethod(getAttachVPCToWorkspaceMethod())
               .addMethod(getDetachVPCFromWorkspaceMethod())

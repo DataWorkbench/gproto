@@ -41,6 +41,8 @@ type SpaceManageClient interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(ctx context.Context, in *pbrequest.CheckPermission, opts ...grpc.CallOption) (*pbresponse.CheckPermission, error)
+	// Get the config of workspace.
+	DescribeWorkspaceConfig(ctx context.Context, in *pbrequest.DescribeWorkspaceConfig, opts ...grpc.CallOption) (*pbresponse.DescribeWorkspaceConfig, error)
 	// Network config
 	DescribeNetworkConfig(ctx context.Context, in *pbrequest.DescribeNetworkConfig, opts ...grpc.CallOption) (*pbresponse.DescribeNetworkConfig, error)
 	AttachVPCToWorkspace(ctx context.Context, in *pbrequest.AttachVPCToWorkspace, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -136,6 +138,15 @@ func (c *spaceManageClient) CheckPermission(ctx context.Context, in *pbrequest.C
 	return out, nil
 }
 
+func (c *spaceManageClient) DescribeWorkspaceConfig(ctx context.Context, in *pbrequest.DescribeWorkspaceConfig, opts ...grpc.CallOption) (*pbresponse.DescribeWorkspaceConfig, error) {
+	out := new(pbresponse.DescribeWorkspaceConfig)
+	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/DescribeWorkspaceConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *spaceManageClient) DescribeNetworkConfig(ctx context.Context, in *pbrequest.DescribeNetworkConfig, opts ...grpc.CallOption) (*pbresponse.DescribeNetworkConfig, error) {
 	out := new(pbresponse.DescribeNetworkConfig)
 	err := c.cc.Invoke(ctx, "/spacemanager.SpaceManage/DescribeNetworkConfig", in, out, opts...)
@@ -183,6 +194,8 @@ type SpaceManageServer interface {
 	// Permission Check.
 	// Notice: cannot check API includes: ListWorkspaces, DeleteWorkspaces, DisableWorkspaces, EnableWorkspaces.
 	CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error)
+	// Get the config of workspace.
+	DescribeWorkspaceConfig(context.Context, *pbrequest.DescribeWorkspaceConfig) (*pbresponse.DescribeWorkspaceConfig, error)
 	// Network config
 	DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error)
 	AttachVPCToWorkspace(context.Context, *pbrequest.AttachVPCToWorkspace) (*pbmodel.EmptyStruct, error)
@@ -220,6 +233,9 @@ func (UnimplementedSpaceManageServer) DescribeWorkspace(context.Context, *pbrequ
 }
 func (UnimplementedSpaceManageServer) CheckPermission(context.Context, *pbrequest.CheckPermission) (*pbresponse.CheckPermission, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPermission not implemented")
+}
+func (UnimplementedSpaceManageServer) DescribeWorkspaceConfig(context.Context, *pbrequest.DescribeWorkspaceConfig) (*pbresponse.DescribeWorkspaceConfig, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeWorkspaceConfig not implemented")
 }
 func (UnimplementedSpaceManageServer) DescribeNetworkConfig(context.Context, *pbrequest.DescribeNetworkConfig) (*pbresponse.DescribeNetworkConfig, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeNetworkConfig not implemented")
@@ -405,6 +421,24 @@ func _SpaceManage_CheckPermission_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SpaceManage_DescribeWorkspaceConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeWorkspaceConfig)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SpaceManageServer).DescribeWorkspaceConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SpaceManage/DescribeWorkspaceConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SpaceManageServer).DescribeWorkspaceConfig(ctx, req.(*pbrequest.DescribeWorkspaceConfig))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _SpaceManage_DescribeNetworkConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.DescribeNetworkConfig)
 	if err := dec(in); err != nil {
@@ -501,6 +535,10 @@ var SpaceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckPermission",
 			Handler:    _SpaceManage_CheckPermission_Handler,
+		},
+		{
+			MethodName: "DescribeWorkspaceConfig",
+			Handler:    _SpaceManage_DescribeWorkspaceConfig_Handler,
 		},
 		{
 			MethodName: "DescribeNetworkConfig",
