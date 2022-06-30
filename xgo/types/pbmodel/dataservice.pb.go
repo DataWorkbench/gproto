@@ -243,254 +243,6 @@ func (ApiGroup_Status) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{1, 0}
 }
 
-type ApiConfigProperty_ApiMode int32
-
-const (
-	ApiConfigProperty_ModeUnset ApiConfigProperty_ApiMode = 0
-	ApiConfigProperty_Wizard    ApiConfigProperty_ApiMode = 1
-	ApiConfigProperty_Script    ApiConfigProperty_ApiMode = 2
-)
-
-// Enum value maps for ApiConfigProperty_ApiMode.
-var (
-	ApiConfigProperty_ApiMode_name = map[int32]string{
-		0: "ModeUnset",
-		1: "Wizard",
-		2: "Script",
-	}
-	ApiConfigProperty_ApiMode_value = map[string]int32{
-		"ModeUnset": 0,
-		"Wizard":    1,
-		"Script":    2,
-	}
-)
-
-func (x ApiConfigProperty_ApiMode) Enum() *ApiConfigProperty_ApiMode {
-	p := new(ApiConfigProperty_ApiMode)
-	*p = x
-	return p
-}
-
-func (x ApiConfigProperty_ApiMode) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ApiConfigProperty_ApiMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[4].Descriptor()
-}
-
-func (ApiConfigProperty_ApiMode) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[4]
-}
-
-func (x ApiConfigProperty_ApiMode) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ApiConfigProperty_ApiMode.Descriptor instead.
-func (ApiConfigProperty_ApiMode) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 0}
-}
-
-type ApiConfigProperty_RequestMethod int32
-
-const (
-	ApiConfigProperty_MethodUnset ApiConfigProperty_RequestMethod = 0
-	ApiConfigProperty_GET         ApiConfigProperty_RequestMethod = 1
-	ApiConfigProperty_POST        ApiConfigProperty_RequestMethod = 2
-)
-
-// Enum value maps for ApiConfigProperty_RequestMethod.
-var (
-	ApiConfigProperty_RequestMethod_name = map[int32]string{
-		0: "MethodUnset",
-		1: "GET",
-		2: "POST",
-	}
-	ApiConfigProperty_RequestMethod_value = map[string]int32{
-		"MethodUnset": 0,
-		"GET":         1,
-		"POST":        2,
-	}
-)
-
-func (x ApiConfigProperty_RequestMethod) Enum() *ApiConfigProperty_RequestMethod {
-	p := new(ApiConfigProperty_RequestMethod)
-	*p = x
-	return p
-}
-
-func (x ApiConfigProperty_RequestMethod) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ApiConfigProperty_RequestMethod) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[5].Descriptor()
-}
-
-func (ApiConfigProperty_RequestMethod) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[5]
-}
-
-func (x ApiConfigProperty_RequestMethod) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ApiConfigProperty_RequestMethod.Descriptor instead.
-func (ApiConfigProperty_RequestMethod) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 1}
-}
-
-type ApiConfigProperty_ResponseType int32
-
-const (
-	ApiConfigProperty_TypeUnset ApiConfigProperty_ResponseType = 0
-	ApiConfigProperty_JSON      ApiConfigProperty_ResponseType = 1
-	ApiConfigProperty_XML       ApiConfigProperty_ResponseType = 2
-)
-
-// Enum value maps for ApiConfigProperty_ResponseType.
-var (
-	ApiConfigProperty_ResponseType_name = map[int32]string{
-		0: "TypeUnset",
-		1: "JSON",
-		2: "XML",
-	}
-	ApiConfigProperty_ResponseType_value = map[string]int32{
-		"TypeUnset": 0,
-		"JSON":      1,
-		"XML":       2,
-	}
-)
-
-func (x ApiConfigProperty_ResponseType) Enum() *ApiConfigProperty_ResponseType {
-	p := new(ApiConfigProperty_ResponseType)
-	*p = x
-	return p
-}
-
-func (x ApiConfigProperty_ResponseType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ApiConfigProperty_ResponseType) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[6].Descriptor()
-}
-
-func (ApiConfigProperty_ResponseType) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[6]
-}
-
-func (x ApiConfigProperty_ResponseType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ApiConfigProperty_ResponseType.Descriptor instead.
-func (ApiConfigProperty_ResponseType) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 2}
-}
-
-type ApiConfigProperty_Protocols int32
-
-const (
-	ApiConfigProperty_ProtocolUnset ApiConfigProperty_Protocols = 0
-	ApiConfigProperty_HTTPOnly      ApiConfigProperty_Protocols = 1
-	ApiConfigProperty_HTTPSOnly     ApiConfigProperty_Protocols = 2
-	ApiConfigProperty_ALL           ApiConfigProperty_Protocols = 3
-)
-
-// Enum value maps for ApiConfigProperty_Protocols.
-var (
-	ApiConfigProperty_Protocols_name = map[int32]string{
-		0: "ProtocolUnset",
-		1: "HTTPOnly",
-		2: "HTTPSOnly",
-		3: "ALL",
-	}
-	ApiConfigProperty_Protocols_value = map[string]int32{
-		"ProtocolUnset": 0,
-		"HTTPOnly":      1,
-		"HTTPSOnly":     2,
-		"ALL":           3,
-	}
-)
-
-func (x ApiConfigProperty_Protocols) Enum() *ApiConfigProperty_Protocols {
-	p := new(ApiConfigProperty_Protocols)
-	*p = x
-	return p
-}
-
-func (x ApiConfigProperty_Protocols) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ApiConfigProperty_Protocols) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[7].Descriptor()
-}
-
-func (ApiConfigProperty_Protocols) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[7]
-}
-
-func (x ApiConfigProperty_Protocols) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ApiConfigProperty_Protocols.Descriptor instead.
-func (ApiConfigProperty_Protocols) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 3}
-}
-
-type ApiConfigProperty_Status int32
-
-const (
-	ApiConfigProperty_StatusUnset ApiConfigProperty_Status = 0
-	ApiConfigProperty_Deleted     ApiConfigProperty_Status = 1
-	ApiConfigProperty_Enabled     ApiConfigProperty_Status = 2
-)
-
-// Enum value maps for ApiConfigProperty_Status.
-var (
-	ApiConfigProperty_Status_name = map[int32]string{
-		0: "StatusUnset",
-		1: "Deleted",
-		2: "Enabled",
-	}
-	ApiConfigProperty_Status_value = map[string]int32{
-		"StatusUnset": 0,
-		"Deleted":     1,
-		"Enabled":     2,
-	}
-)
-
-func (x ApiConfigProperty_Status) Enum() *ApiConfigProperty_Status {
-	p := new(ApiConfigProperty_Status)
-	*p = x
-	return p
-}
-
-func (x ApiConfigProperty_Status) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ApiConfigProperty_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[8].Descriptor()
-}
-
-func (ApiConfigProperty_Status) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[8]
-}
-
-func (x ApiConfigProperty_Status) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ApiConfigProperty_Status.Descriptor instead.
-func (ApiConfigProperty_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 4}
-}
-
 type ApiConfig_ApiMode int32
 
 const (
@@ -524,11 +276,11 @@ func (x ApiConfig_ApiMode) String() string {
 }
 
 func (ApiConfig_ApiMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[9].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[4].Descriptor()
 }
 
 func (ApiConfig_ApiMode) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[9]
+	return &file_proto_types_model_dataservice_proto_enumTypes[4]
 }
 
 func (x ApiConfig_ApiMode) Number() protoreflect.EnumNumber {
@@ -537,7 +289,7 @@ func (x ApiConfig_ApiMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiConfig_ApiMode.Descriptor instead.
 func (ApiConfig_ApiMode) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3, 0}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 0}
 }
 
 type ApiConfig_RequestMethod int32
@@ -573,11 +325,11 @@ func (x ApiConfig_RequestMethod) String() string {
 }
 
 func (ApiConfig_RequestMethod) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[10].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[5].Descriptor()
 }
 
 func (ApiConfig_RequestMethod) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[10]
+	return &file_proto_types_model_dataservice_proto_enumTypes[5]
 }
 
 func (x ApiConfig_RequestMethod) Number() protoreflect.EnumNumber {
@@ -586,7 +338,7 @@ func (x ApiConfig_RequestMethod) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiConfig_RequestMethod.Descriptor instead.
 func (ApiConfig_RequestMethod) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3, 1}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 1}
 }
 
 type ApiConfig_ResponseType int32
@@ -622,11 +374,11 @@ func (x ApiConfig_ResponseType) String() string {
 }
 
 func (ApiConfig_ResponseType) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[11].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[6].Descriptor()
 }
 
 func (ApiConfig_ResponseType) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[11]
+	return &file_proto_types_model_dataservice_proto_enumTypes[6]
 }
 
 func (x ApiConfig_ResponseType) Number() protoreflect.EnumNumber {
@@ -635,7 +387,7 @@ func (x ApiConfig_ResponseType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiConfig_ResponseType.Descriptor instead.
 func (ApiConfig_ResponseType) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3, 2}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 2}
 }
 
 type ApiConfig_Protocols int32
@@ -674,11 +426,11 @@ func (x ApiConfig_Protocols) String() string {
 }
 
 func (ApiConfig_Protocols) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[12].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[7].Descriptor()
 }
 
 func (ApiConfig_Protocols) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[12]
+	return &file_proto_types_model_dataservice_proto_enumTypes[7]
 }
 
 func (x ApiConfig_Protocols) Number() protoreflect.EnumNumber {
@@ -687,7 +439,7 @@ func (x ApiConfig_Protocols) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiConfig_Protocols.Descriptor instead.
 func (ApiConfig_Protocols) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3, 3}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 3}
 }
 
 type ApiConfig_Status int32
@@ -723,11 +475,11 @@ func (x ApiConfig_Status) String() string {
 }
 
 func (ApiConfig_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[13].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[8].Descriptor()
 }
 
 func (ApiConfig_Status) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[13]
+	return &file_proto_types_model_dataservice_proto_enumTypes[8]
 }
 
 func (x ApiConfig_Status) Number() protoreflect.EnumNumber {
@@ -736,7 +488,7 @@ func (x ApiConfig_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiConfig_Status.Descriptor instead.
 func (ApiConfig_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3, 4}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2, 4}
 }
 
 type RequestParameter_ParameterOperator int32
@@ -787,11 +539,11 @@ func (x RequestParameter_ParameterOperator) String() string {
 }
 
 func (RequestParameter_ParameterOperator) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[14].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[9].Descriptor()
 }
 
 func (RequestParameter_ParameterOperator) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[14]
+	return &file_proto_types_model_dataservice_proto_enumTypes[9]
 }
 
 func (x RequestParameter_ParameterOperator) Number() protoreflect.EnumNumber {
@@ -800,7 +552,7 @@ func (x RequestParameter_ParameterOperator) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RequestParameter_ParameterOperator.Descriptor instead.
 func (RequestParameter_ParameterOperator) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{5, 0}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{4, 0}
 }
 
 type RequestParameter_ParameterPosition int32
@@ -842,11 +594,11 @@ func (x RequestParameter_ParameterPosition) String() string {
 }
 
 func (RequestParameter_ParameterPosition) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[15].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[10].Descriptor()
 }
 
 func (RequestParameter_ParameterPosition) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[15]
+	return &file_proto_types_model_dataservice_proto_enumTypes[10]
 }
 
 func (x RequestParameter_ParameterPosition) Number() protoreflect.EnumNumber {
@@ -855,7 +607,7 @@ func (x RequestParameter_ParameterPosition) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use RequestParameter_ParameterPosition.Descriptor instead.
 func (RequestParameter_ParameterPosition) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{5, 1}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{4, 1}
 }
 
 type ResponseParameter_OrderMode int32
@@ -891,11 +643,11 @@ func (x ResponseParameter_OrderMode) String() string {
 }
 
 func (ResponseParameter_OrderMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[16].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[11].Descriptor()
 }
 
 func (ResponseParameter_OrderMode) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[16]
+	return &file_proto_types_model_dataservice_proto_enumTypes[11]
 }
 
 func (x ResponseParameter_OrderMode) Number() protoreflect.EnumNumber {
@@ -904,7 +656,7 @@ func (x ResponseParameter_OrderMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ResponseParameter_OrderMode.Descriptor instead.
 func (ResponseParameter_OrderMode) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 0}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{6, 0}
 }
 
 type ApiVersion_Status int32
@@ -940,11 +692,11 @@ func (x ApiVersion_Status) String() string {
 }
 
 func (ApiVersion_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[17].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[12].Descriptor()
 }
 
 func (ApiVersion_Status) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[17]
+	return &file_proto_types_model_dataservice_proto_enumTypes[12]
 }
 
 func (x ApiVersion_Status) Number() protoreflect.EnumNumber {
@@ -953,7 +705,7 @@ func (x ApiVersion_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiVersion_Status.Descriptor instead.
 func (ApiVersion_Status) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8, 0}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 0}
 }
 
 type ApiVersion_ApiMode int32
@@ -989,11 +741,11 @@ func (x ApiVersion_ApiMode) String() string {
 }
 
 func (ApiVersion_ApiMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[18].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[13].Descriptor()
 }
 
 func (ApiVersion_ApiMode) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[18]
+	return &file_proto_types_model_dataservice_proto_enumTypes[13]
 }
 
 func (x ApiVersion_ApiMode) Number() protoreflect.EnumNumber {
@@ -1002,7 +754,7 @@ func (x ApiVersion_ApiMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiVersion_ApiMode.Descriptor instead.
 func (ApiVersion_ApiMode) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8, 1}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 1}
 }
 
 type ApiVersion_RequestMethod int32
@@ -1038,11 +790,11 @@ func (x ApiVersion_RequestMethod) String() string {
 }
 
 func (ApiVersion_RequestMethod) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[19].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[14].Descriptor()
 }
 
 func (ApiVersion_RequestMethod) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[19]
+	return &file_proto_types_model_dataservice_proto_enumTypes[14]
 }
 
 func (x ApiVersion_RequestMethod) Number() protoreflect.EnumNumber {
@@ -1051,7 +803,7 @@ func (x ApiVersion_RequestMethod) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiVersion_RequestMethod.Descriptor instead.
 func (ApiVersion_RequestMethod) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8, 2}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 2}
 }
 
 type ApiVersion_ResponseType int32
@@ -1087,11 +839,11 @@ func (x ApiVersion_ResponseType) String() string {
 }
 
 func (ApiVersion_ResponseType) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[20].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[15].Descriptor()
 }
 
 func (ApiVersion_ResponseType) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[20]
+	return &file_proto_types_model_dataservice_proto_enumTypes[15]
 }
 
 func (x ApiVersion_ResponseType) Number() protoreflect.EnumNumber {
@@ -1100,7 +852,7 @@ func (x ApiVersion_ResponseType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiVersion_ResponseType.Descriptor instead.
 func (ApiVersion_ResponseType) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8, 3}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 3}
 }
 
 type ApiVersion_Protocols int32
@@ -1139,11 +891,11 @@ func (x ApiVersion_Protocols) String() string {
 }
 
 func (ApiVersion_Protocols) Descriptor() protoreflect.EnumDescriptor {
-	return file_proto_types_model_dataservice_proto_enumTypes[21].Descriptor()
+	return file_proto_types_model_dataservice_proto_enumTypes[16].Descriptor()
 }
 
 func (ApiVersion_Protocols) Type() protoreflect.EnumType {
-	return &file_proto_types_model_dataservice_proto_enumTypes[21]
+	return &file_proto_types_model_dataservice_proto_enumTypes[16]
 }
 
 func (x ApiVersion_Protocols) Number() protoreflect.EnumNumber {
@@ -1152,7 +904,7 @@ func (x ApiVersion_Protocols) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ApiVersion_Protocols.Descriptor instead.
 func (ApiVersion_Protocols) EnumDescriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8, 4}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 4}
 }
 
 // table dataservice_cluster
@@ -1372,174 +1124,6 @@ func (x *ApiGroup) GetUpdated() int64 {
 }
 
 // table api_config
-type ApiConfigProperty struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ApiId          string                          `protobuf:"bytes,1,opt,name=api_id,json=apiId,proto3" json:"api_id" gorm:"column:api_id;primaryKey;"`
-	GroupId        string                          `protobuf:"bytes,2,opt,name=group_id,json=groupId,proto3" json:"group_id" gorm:"column:group_id;"`
-	SpaceId        string                          `protobuf:"bytes,3,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
-	ApiName        string                          `protobuf:"bytes,4,opt,name=api_name,json=apiName,proto3" json:"api_name" gorm:"column:api_name;"`
-	ApiPath        string                          `protobuf:"bytes,5,opt,name=api_path,json=apiPath,proto3" json:"api_path" gorm:"column:api_path;"`
-	ApiMode        ApiConfigProperty_ApiMode       `protobuf:"varint,6,opt,name=api_mode,json=apiMode,proto3,enum=model.ApiConfigProperty_ApiMode" json:"api_mode" gorm:"column:api_mode;"`
-	ApiDescription string                          `protobuf:"bytes,7,opt,name=api_description,json=apiDescription,proto3" json:"api_description" gorm:"column:api_description;"`
-	Protocols      ApiConfigProperty_Protocols     `protobuf:"varint,8,opt,name=protocols,proto3,enum=model.ApiConfigProperty_Protocols" json:"protocols" gorm:"column:protocols;"`
-	RequestMethod  ApiConfigProperty_RequestMethod `protobuf:"varint,9,opt,name=request_method,json=requestMethod,proto3,enum=model.ApiConfigProperty_RequestMethod" json:"request_method" gorm:"column:request_method;"`
-	ResponseType   ApiConfigProperty_ResponseType  `protobuf:"varint,10,opt,name=response_type,json=responseType,proto3,enum=model.ApiConfigProperty_ResponseType" json:"response_type" gorm:"column:response_type;"`
-	CrossDomain    bool                            `protobuf:"varint,11,opt,name=cross_domain,json=crossDomain,proto3" json:"cross_domain" gorm:"column:cross_domain;"`
-	Timeout        int64                           `protobuf:"varint,12,opt,name=timeout,proto3" json:"timeout" gorm:"column:timeout;"`
-	CreatedBy      string                          `protobuf:"bytes,13,opt,name=created_by,json=createdBy,proto3" json:"created_by" gorm:"column:created_by;"`
-	Created        int64                           `protobuf:"varint,14,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
-	Updated        int64                           `protobuf:"varint,15,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
-	Status         ApiConfigProperty_Status        `protobuf:"varint,16,opt,name=status,proto3,enum=model.ApiConfigProperty_Status" json:"status" gorm:"column:status;"`
-}
-
-func (x *ApiConfigProperty) Reset() {
-	*x = ApiConfigProperty{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ApiConfigProperty) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ApiConfigProperty) ProtoMessage() {}
-
-func (x *ApiConfigProperty) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ApiConfigProperty.ProtoReflect.Descriptor instead.
-func (*ApiConfigProperty) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *ApiConfigProperty) GetApiId() string {
-	if x != nil {
-		return x.ApiId
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetGroupId() string {
-	if x != nil {
-		return x.GroupId
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetSpaceId() string {
-	if x != nil {
-		return x.SpaceId
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetApiName() string {
-	if x != nil {
-		return x.ApiName
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetApiPath() string {
-	if x != nil {
-		return x.ApiPath
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetApiMode() ApiConfigProperty_ApiMode {
-	if x != nil {
-		return x.ApiMode
-	}
-	return ApiConfigProperty_ModeUnset
-}
-
-func (x *ApiConfigProperty) GetApiDescription() string {
-	if x != nil {
-		return x.ApiDescription
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetProtocols() ApiConfigProperty_Protocols {
-	if x != nil {
-		return x.Protocols
-	}
-	return ApiConfigProperty_ProtocolUnset
-}
-
-func (x *ApiConfigProperty) GetRequestMethod() ApiConfigProperty_RequestMethod {
-	if x != nil {
-		return x.RequestMethod
-	}
-	return ApiConfigProperty_MethodUnset
-}
-
-func (x *ApiConfigProperty) GetResponseType() ApiConfigProperty_ResponseType {
-	if x != nil {
-		return x.ResponseType
-	}
-	return ApiConfigProperty_TypeUnset
-}
-
-func (x *ApiConfigProperty) GetCrossDomain() bool {
-	if x != nil {
-		return x.CrossDomain
-	}
-	return false
-}
-
-func (x *ApiConfigProperty) GetTimeout() int64 {
-	if x != nil {
-		return x.Timeout
-	}
-	return 0
-}
-
-func (x *ApiConfigProperty) GetCreatedBy() string {
-	if x != nil {
-		return x.CreatedBy
-	}
-	return ""
-}
-
-func (x *ApiConfigProperty) GetCreated() int64 {
-	if x != nil {
-		return x.Created
-	}
-	return 0
-}
-
-func (x *ApiConfigProperty) GetUpdated() int64 {
-	if x != nil {
-		return x.Updated
-	}
-	return 0
-}
-
-func (x *ApiConfigProperty) GetStatus() ApiConfigProperty_Status {
-	if x != nil {
-		return x.Status
-	}
-	return ApiConfigProperty_StatusUnset
-}
-
-// table api_config
 type ApiConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1573,7 +1157,7 @@ type ApiConfig struct {
 func (x *ApiConfig) Reset() {
 	*x = ApiConfig{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[3]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1586,7 +1170,7 @@ func (x *ApiConfig) String() string {
 func (*ApiConfig) ProtoMessage() {}
 
 func (x *ApiConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[3]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1599,7 +1183,7 @@ func (x *ApiConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiConfig.ProtoReflect.Descriptor instead.
 func (*ApiConfig) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ApiConfig) GetApiId() string {
@@ -1774,7 +1358,7 @@ type RequestParameters struct {
 func (x *RequestParameters) Reset() {
 	*x = RequestParameters{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[4]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1787,7 +1371,7 @@ func (x *RequestParameters) String() string {
 func (*RequestParameters) ProtoMessage() {}
 
 func (x *RequestParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[4]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1800,7 +1384,7 @@ func (x *RequestParameters) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestParameters.ProtoReflect.Descriptor instead.
 func (*RequestParameters) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{4}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RequestParameters) GetRequestParams() []*RequestParameter {
@@ -1829,7 +1413,7 @@ type RequestParameter struct {
 func (x *RequestParameter) Reset() {
 	*x = RequestParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[5]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1842,7 +1426,7 @@ func (x *RequestParameter) String() string {
 func (*RequestParameter) ProtoMessage() {}
 
 func (x *RequestParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[5]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1855,7 +1439,7 @@ func (x *RequestParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestParameter.ProtoReflect.Descriptor instead.
 func (*RequestParameter) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{5}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RequestParameter) GetColumnName() string {
@@ -1932,7 +1516,7 @@ type ResponseParameters struct {
 func (x *ResponseParameters) Reset() {
 	*x = ResponseParameters{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[6]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1945,7 +1529,7 @@ func (x *ResponseParameters) String() string {
 func (*ResponseParameters) ProtoMessage() {}
 
 func (x *ResponseParameters) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[6]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1958,7 +1542,7 @@ func (x *ResponseParameters) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResponseParameters.ProtoReflect.Descriptor instead.
 func (*ResponseParameters) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{6}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *ResponseParameters) GetResponseParams() []*ResponseParameter {
@@ -1986,7 +1570,7 @@ type ResponseParameter struct {
 func (x *ResponseParameter) Reset() {
 	*x = ResponseParameter{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[7]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1999,7 +1583,7 @@ func (x *ResponseParameter) String() string {
 func (*ResponseParameter) ProtoMessage() {}
 
 func (x *ResponseParameter) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[7]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2012,7 +1596,7 @@ func (x *ResponseParameter) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResponseParameter.ProtoReflect.Descriptor instead.
 func (*ResponseParameter) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ResponseParameter) GetColumnName() string {
@@ -2105,7 +1689,7 @@ type ApiVersion struct {
 func (x *ApiVersion) Reset() {
 	*x = ApiVersion{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[8]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2118,7 +1702,7 @@ func (x *ApiVersion) String() string {
 func (*ApiVersion) ProtoMessage() {}
 
 func (x *ApiVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[8]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2131,7 +1715,7 @@ func (x *ApiVersion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApiVersion.ProtoReflect.Descriptor instead.
 func (*ApiVersion) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ApiVersion) GetVersionId() string {
@@ -2301,7 +1885,7 @@ type ServiceDataSourceKind struct {
 func (x *ServiceDataSourceKind) Reset() {
 	*x = ServiceDataSourceKind{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_dataservice_proto_msgTypes[9]
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2314,7 +1898,7 @@ func (x *ServiceDataSourceKind) String() string {
 func (*ServiceDataSourceKind) ProtoMessage() {}
 
 func (x *ServiceDataSourceKind) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_dataservice_proto_msgTypes[9]
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2327,7 +1911,7 @@ func (x *ServiceDataSourceKind) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServiceDataSourceKind.ProtoReflect.Descriptor instead.
 func (*ServiceDataSourceKind) Descriptor() ([]byte, []int) {
-	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{9}
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ServiceDataSourceKind) GetName() string {
@@ -2427,92 +2011,16 @@ var file_proto_types_model_dataservice_proto_rawDesc = []byte{
 	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x22, 0x33, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75,
 	0x73, 0x12, 0x0f, 0x0a, 0x0b, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x55, 0x6e, 0x73, 0x65, 0x74,
 	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x01, 0x12,
-	0x0b, 0x0a, 0x07, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x22, 0xb3, 0x09, 0x0a,
-	0x11, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x65, 0x72,
-	0x74, 0x79, 0x12, 0x2a, 0x0a, 0x06, 0x61, 0x70, 0x69, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
-	0xca, 0x02, 0x04, 0x64, 0x73, 0x61, 0x2d, 0x52, 0x05, 0x61, 0x70, 0x69, 0x49, 0x64, 0x12, 0x2e,
-	0x0a, 0x08, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
-	0x04, 0x64, 0x73, 0x67, 0x2d, 0x52, 0x07, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x49, 0x64, 0x12, 0x2e,
-	0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
-	0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2a,
-	0x0a, 0x08, 0x61, 0x70, 0x69, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x0f, 0xe2, 0xdf, 0x1f, 0x0b, 0x12, 0x09, 0xc2, 0x01, 0x06, 0x80, 0x02, 0x00, 0x98, 0x02,
-	0x40, 0x52, 0x07, 0x61, 0x70, 0x69, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x2b, 0x0a, 0x08, 0x61, 0x70,
-	0x69, 0x5f, 0x70, 0x61, 0x74, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x42, 0x10, 0xe2, 0xdf,
-	0x1f, 0x0c, 0x12, 0x0a, 0xc2, 0x01, 0x07, 0x80, 0x02, 0x00, 0x98, 0x02, 0xc8, 0x01, 0x52, 0x07,
-	0x61, 0x70, 0x69, 0x50, 0x61, 0x74, 0x68, 0x12, 0x4a, 0x0a, 0x08, 0x61, 0x70, 0x69, 0x5f, 0x6d,
-	0x6f, 0x64, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x20, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x2e, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x65,
-	0x72, 0x74, 0x79, 0x2e, 0x41, 0x70, 0x69, 0x4d, 0x6f, 0x64, 0x65, 0x42, 0x0d, 0xe2, 0xdf, 0x1f,
-	0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x07, 0x61, 0x70, 0x69, 0x4d,
-	0x6f, 0x64, 0x65, 0x12, 0x36, 0x0a, 0x0f, 0x61, 0x70, 0x69, 0x5f, 0x64, 0x65, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0d, 0xe2, 0xdf,
-	0x1f, 0x09, 0x12, 0x07, 0xc2, 0x01, 0x04, 0x98, 0x02, 0x81, 0x02, 0x52, 0x0e, 0x61, 0x70, 0x69,
-	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x4f, 0x0a, 0x09, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x73, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x22,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67,
-	0x50, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f,
-	0x6c, 0x73, 0x42, 0x0d, 0xe2, 0xdf, 0x1f, 0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58,
-	0x01, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x73, 0x12, 0x5c, 0x0a, 0x0e,
-	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18, 0x09,
-	0x20, 0x01, 0x28, 0x0e, 0x32, 0x26, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x70, 0x69,
-	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x2e, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x42, 0x0d, 0xe2, 0xdf,
-	0x1f, 0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x0d, 0x72, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x12, 0x59, 0x0a, 0x0d, 0x72, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x25, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e,
-	0x66, 0x69, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x54, 0x79, 0x70, 0x65, 0x42, 0x0d, 0xe2, 0xdf, 0x1f, 0x09, 0x12, 0x07,
-	0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x0c, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x27, 0x0a, 0x0c, 0x63, 0x72, 0x6f, 0x73, 0x73, 0x5f, 0x64,
-	0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x08, 0x42, 0x04, 0xe2, 0xdf, 0x1f,
-	0x00, 0x52, 0x0b, 0x63, 0x72, 0x6f, 0x73, 0x73, 0x44, 0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x12, 0x28,
-	0x0a, 0x07, 0x74, 0x69, 0x6d, 0x65, 0x6f, 0x75, 0x74, 0x18, 0x0c, 0x20, 0x01, 0x28, 0x03, 0x42,
-	0x0e, 0xe2, 0xdf, 0x1f, 0x0a, 0x12, 0x08, 0xb2, 0x01, 0x05, 0x38, 0xb4, 0x01, 0x40, 0x01, 0x52,
-	0x07, 0x74, 0x69, 0x6d, 0x65, 0x6f, 0x75, 0x74, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x64, 0x5f, 0x62, 0x79, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0f, 0xe2, 0xdf,
-	0x1f, 0x0b, 0x12, 0x09, 0xc2, 0x01, 0x06, 0x80, 0x02, 0x00, 0x88, 0x02, 0x41, 0x52, 0x09, 0x63,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x42, 0x79, 0x12, 0x25, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x64, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0b, 0xe2, 0xdf, 0x1f, 0x07, 0x12,
-	0x05, 0xb2, 0x01, 0x02, 0x30, 0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12,
-	0x25, 0x0a, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0f, 0x20, 0x01, 0x28, 0x03,
-	0x42, 0x0b, 0xe2, 0xdf, 0x1f, 0x07, 0x12, 0x05, 0xb2, 0x01, 0x02, 0x30, 0x00, 0x52, 0x07, 0x75,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x64, 0x12, 0x46, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x18, 0x10, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41,
-	0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x50, 0x72, 0x6f, 0x70, 0x65, 0x72, 0x74, 0x79,
-	0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x0d, 0xe2, 0xdf, 0x1f, 0x09, 0x12, 0x07, 0xda,
-	0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x30,
-	0x0a, 0x07, 0x41, 0x70, 0x69, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x0d, 0x0a, 0x09, 0x4d, 0x6f, 0x64,
-	0x65, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x57, 0x69, 0x7a, 0x61,
-	0x72, 0x64, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x10, 0x02,
-	0x22, 0x33, 0x0a, 0x0d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4d, 0x65, 0x74, 0x68, 0x6f,
-	0x64, 0x12, 0x0f, 0x0a, 0x0b, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x55, 0x6e, 0x73, 0x65, 0x74,
-	0x10, 0x00, 0x12, 0x07, 0x0a, 0x03, 0x47, 0x45, 0x54, 0x10, 0x01, 0x12, 0x08, 0x0a, 0x04, 0x50,
-	0x4f, 0x53, 0x54, 0x10, 0x02, 0x22, 0x30, 0x0a, 0x0c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0d, 0x0a, 0x09, 0x54, 0x79, 0x70, 0x65, 0x55, 0x6e, 0x73,
-	0x65, 0x74, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x4a, 0x53, 0x4f, 0x4e, 0x10, 0x01, 0x12, 0x07,
-	0x0a, 0x03, 0x58, 0x4d, 0x4c, 0x10, 0x02, 0x22, 0x44, 0x0a, 0x09, 0x50, 0x72, 0x6f, 0x74, 0x6f,
-	0x63, 0x6f, 0x6c, 0x73, 0x12, 0x11, 0x0a, 0x0d, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c,
-	0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0c, 0x0a, 0x08, 0x48, 0x54, 0x54, 0x50, 0x4f,
-	0x6e, 0x6c, 0x79, 0x10, 0x01, 0x12, 0x0d, 0x0a, 0x09, 0x48, 0x54, 0x54, 0x50, 0x53, 0x4f, 0x6e,
-	0x6c, 0x79, 0x10, 0x02, 0x12, 0x07, 0x0a, 0x03, 0x41, 0x4c, 0x4c, 0x10, 0x03, 0x22, 0x33, 0x0a,
-	0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0f, 0x0a, 0x0b, 0x53, 0x74, 0x61, 0x74, 0x75,
-	0x73, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x64, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64,
-	0x10, 0x02, 0x22, 0x89, 0x0c, 0x0a, 0x09, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67,
-	0x12, 0x2a, 0x0a, 0x06, 0x61, 0x70, 0x69, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
-	0x04, 0x64, 0x73, 0x61, 0x2d, 0x52, 0x05, 0x61, 0x70, 0x69, 0x49, 0x64, 0x12, 0x2e, 0x0a, 0x08,
-	0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13,
-	0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x64,
-	0x73, 0x67, 0x2d, 0x52, 0x07, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x49, 0x64, 0x12, 0x32, 0x0a, 0x0a,
-	0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
-	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
-	0x04, 0x64, 0x73, 0x63, 0x2d, 0x52, 0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64,
+	0x0b, 0x0a, 0x07, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x22, 0xff, 0x0b, 0x0a,
+	0x09, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12, 0x2a, 0x0a, 0x06, 0x61, 0x70,
+	0x69, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f,
+	0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x64, 0x73, 0x61, 0x2d, 0x52,
+	0x05, 0x61, 0x70, 0x69, 0x49, 0x64, 0x12, 0x2e, 0x0a, 0x08, 0x67, 0x72, 0x6f, 0x75, 0x70, 0x5f,
+	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d,
+	0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x64, 0x73, 0x67, 0x2d, 0x52, 0x07, 0x67,
+	0x72, 0x6f, 0x75, 0x70, 0x49, 0x64, 0x12, 0x28, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65,
+	0x72, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05,
+	0x12, 0x03, 0xc2, 0x01, 0x00, 0x52, 0x09, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64,
 	0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01,
 	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
 	0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64,
@@ -2822,77 +2330,66 @@ func file_proto_types_model_dataservice_proto_rawDescGZIP() []byte {
 	return file_proto_types_model_dataservice_proto_rawDescData
 }
 
-var file_proto_types_model_dataservice_proto_enumTypes = make([]protoimpl.EnumInfo, 22)
-var file_proto_types_model_dataservice_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_proto_types_model_dataservice_proto_enumTypes = make([]protoimpl.EnumInfo, 17)
+var file_proto_types_model_dataservice_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_proto_types_model_dataservice_proto_goTypes = []interface{}{
 	(ParameterDataType)(0),                  // 0: model.ParameterDataType
 	(DataServiceCluster_Status)(0),          // 1: model.DataServiceCluster.Status
 	(DataServiceCluster_ResourceSpec)(0),    // 2: model.DataServiceCluster.ResourceSpec
 	(ApiGroup_Status)(0),                    // 3: model.ApiGroup.Status
-	(ApiConfigProperty_ApiMode)(0),          // 4: model.ApiConfigProperty.ApiMode
-	(ApiConfigProperty_RequestMethod)(0),    // 5: model.ApiConfigProperty.RequestMethod
-	(ApiConfigProperty_ResponseType)(0),     // 6: model.ApiConfigProperty.ResponseType
-	(ApiConfigProperty_Protocols)(0),        // 7: model.ApiConfigProperty.Protocols
-	(ApiConfigProperty_Status)(0),           // 8: model.ApiConfigProperty.Status
-	(ApiConfig_ApiMode)(0),                  // 9: model.ApiConfig.ApiMode
-	(ApiConfig_RequestMethod)(0),            // 10: model.ApiConfig.RequestMethod
-	(ApiConfig_ResponseType)(0),             // 11: model.ApiConfig.ResponseType
-	(ApiConfig_Protocols)(0),                // 12: model.ApiConfig.Protocols
-	(ApiConfig_Status)(0),                   // 13: model.ApiConfig.Status
-	(RequestParameter_ParameterOperator)(0), // 14: model.RequestParameter.ParameterOperator
-	(RequestParameter_ParameterPosition)(0), // 15: model.RequestParameter.ParameterPosition
-	(ResponseParameter_OrderMode)(0),        // 16: model.ResponseParameter.OrderMode
-	(ApiVersion_Status)(0),                  // 17: model.ApiVersion.Status
-	(ApiVersion_ApiMode)(0),                 // 18: model.ApiVersion.ApiMode
-	(ApiVersion_RequestMethod)(0),           // 19: model.ApiVersion.RequestMethod
-	(ApiVersion_ResponseType)(0),            // 20: model.ApiVersion.ResponseType
-	(ApiVersion_Protocols)(0),               // 21: model.ApiVersion.Protocols
-	(*DataServiceCluster)(nil),              // 22: model.DataServiceCluster
-	(*ApiGroup)(nil),                        // 23: model.ApiGroup
-	(*ApiConfigProperty)(nil),               // 24: model.ApiConfigProperty
-	(*ApiConfig)(nil),                       // 25: model.ApiConfig
-	(*RequestParameters)(nil),               // 26: model.RequestParameters
-	(*RequestParameter)(nil),                // 27: model.RequestParameter
-	(*ResponseParameters)(nil),              // 28: model.ResponseParameters
-	(*ResponseParameter)(nil),               // 29: model.ResponseParameter
-	(*ApiVersion)(nil),                      // 30: model.ApiVersion
-	(*ServiceDataSourceKind)(nil),           // 31: model.ServiceDataSourceKind
+	(ApiConfig_ApiMode)(0),                  // 4: model.ApiConfig.ApiMode
+	(ApiConfig_RequestMethod)(0),            // 5: model.ApiConfig.RequestMethod
+	(ApiConfig_ResponseType)(0),             // 6: model.ApiConfig.ResponseType
+	(ApiConfig_Protocols)(0),                // 7: model.ApiConfig.Protocols
+	(ApiConfig_Status)(0),                   // 8: model.ApiConfig.Status
+	(RequestParameter_ParameterOperator)(0), // 9: model.RequestParameter.ParameterOperator
+	(RequestParameter_ParameterPosition)(0), // 10: model.RequestParameter.ParameterPosition
+	(ResponseParameter_OrderMode)(0),        // 11: model.ResponseParameter.OrderMode
+	(ApiVersion_Status)(0),                  // 12: model.ApiVersion.Status
+	(ApiVersion_ApiMode)(0),                 // 13: model.ApiVersion.ApiMode
+	(ApiVersion_RequestMethod)(0),           // 14: model.ApiVersion.RequestMethod
+	(ApiVersion_ResponseType)(0),            // 15: model.ApiVersion.ResponseType
+	(ApiVersion_Protocols)(0),               // 16: model.ApiVersion.Protocols
+	(*DataServiceCluster)(nil),              // 17: model.DataServiceCluster
+	(*ApiGroup)(nil),                        // 18: model.ApiGroup
+	(*ApiConfig)(nil),                       // 19: model.ApiConfig
+	(*RequestParameters)(nil),               // 20: model.RequestParameters
+	(*RequestParameter)(nil),                // 21: model.RequestParameter
+	(*ResponseParameters)(nil),              // 22: model.ResponseParameters
+	(*ResponseParameter)(nil),               // 23: model.ResponseParameter
+	(*ApiVersion)(nil),                      // 24: model.ApiVersion
+	(*ServiceDataSourceKind)(nil),           // 25: model.ServiceDataSourceKind
 }
 var file_proto_types_model_dataservice_proto_depIdxs = []int32{
 	2,  // 0: model.DataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
 	1,  // 1: model.DataServiceCluster.status:type_name -> model.DataServiceCluster.Status
 	3,  // 2: model.ApiGroup.status:type_name -> model.ApiGroup.Status
-	4,  // 3: model.ApiConfigProperty.api_mode:type_name -> model.ApiConfigProperty.ApiMode
-	7,  // 4: model.ApiConfigProperty.protocols:type_name -> model.ApiConfigProperty.Protocols
-	5,  // 5: model.ApiConfigProperty.request_method:type_name -> model.ApiConfigProperty.RequestMethod
-	6,  // 6: model.ApiConfigProperty.response_type:type_name -> model.ApiConfigProperty.ResponseType
-	8,  // 7: model.ApiConfigProperty.status:type_name -> model.ApiConfigProperty.Status
-	9,  // 8: model.ApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
-	12, // 9: model.ApiConfig.protocols:type_name -> model.ApiConfig.Protocols
-	10, // 10: model.ApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
-	11, // 11: model.ApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
-	13, // 12: model.ApiConfig.status:type_name -> model.ApiConfig.Status
-	26, // 13: model.ApiConfig.request_params:type_name -> model.RequestParameters
-	28, // 14: model.ApiConfig.response_params:type_name -> model.ResponseParameters
-	27, // 15: model.RequestParameters.request_params:type_name -> model.RequestParameter
-	0,  // 16: model.RequestParameter.data_type:type_name -> model.ParameterDataType
-	14, // 17: model.RequestParameter.param_operator:type_name -> model.RequestParameter.ParameterOperator
-	15, // 18: model.RequestParameter.param_position:type_name -> model.RequestParameter.ParameterPosition
-	29, // 19: model.ResponseParameters.response_params:type_name -> model.ResponseParameter
-	0,  // 20: model.ResponseParameter.data_type:type_name -> model.ParameterDataType
-	16, // 21: model.ResponseParameter.order_mode:type_name -> model.ResponseParameter.OrderMode
-	17, // 22: model.ApiVersion.publish_status:type_name -> model.ApiVersion.Status
-	18, // 23: model.ApiVersion.api_mode:type_name -> model.ApiVersion.ApiMode
-	21, // 24: model.ApiVersion.protocols:type_name -> model.ApiVersion.Protocols
-	19, // 25: model.ApiVersion.request_method:type_name -> model.ApiVersion.RequestMethod
-	20, // 26: model.ApiVersion.response_type:type_name -> model.ApiVersion.ResponseType
-	26, // 27: model.ApiVersion.request_params:type_name -> model.RequestParameters
-	28, // 28: model.ApiVersion.response_params:type_name -> model.ResponseParameters
-	29, // [29:29] is the sub-list for method output_type
-	29, // [29:29] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	4,  // 3: model.ApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
+	7,  // 4: model.ApiConfig.protocols:type_name -> model.ApiConfig.Protocols
+	5,  // 5: model.ApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
+	6,  // 6: model.ApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
+	8,  // 7: model.ApiConfig.status:type_name -> model.ApiConfig.Status
+	20, // 8: model.ApiConfig.request_params:type_name -> model.RequestParameters
+	22, // 9: model.ApiConfig.response_params:type_name -> model.ResponseParameters
+	21, // 10: model.RequestParameters.request_params:type_name -> model.RequestParameter
+	0,  // 11: model.RequestParameter.data_type:type_name -> model.ParameterDataType
+	9,  // 12: model.RequestParameter.param_operator:type_name -> model.RequestParameter.ParameterOperator
+	10, // 13: model.RequestParameter.param_position:type_name -> model.RequestParameter.ParameterPosition
+	23, // 14: model.ResponseParameters.response_params:type_name -> model.ResponseParameter
+	0,  // 15: model.ResponseParameter.data_type:type_name -> model.ParameterDataType
+	11, // 16: model.ResponseParameter.order_mode:type_name -> model.ResponseParameter.OrderMode
+	12, // 17: model.ApiVersion.publish_status:type_name -> model.ApiVersion.Status
+	13, // 18: model.ApiVersion.api_mode:type_name -> model.ApiVersion.ApiMode
+	16, // 19: model.ApiVersion.protocols:type_name -> model.ApiVersion.Protocols
+	14, // 20: model.ApiVersion.request_method:type_name -> model.ApiVersion.RequestMethod
+	15, // 21: model.ApiVersion.response_type:type_name -> model.ApiVersion.ResponseType
+	20, // 22: model.ApiVersion.request_params:type_name -> model.RequestParameters
+	22, // 23: model.ApiVersion.response_params:type_name -> model.ResponseParameters
+	24, // [24:24] is the sub-list for method output_type
+	24, // [24:24] is the sub-list for method input_type
+	24, // [24:24] is the sub-list for extension type_name
+	24, // [24:24] is the sub-list for extension extendee
+	0,  // [0:24] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_dataservice_proto_init() }
@@ -2926,18 +2423,6 @@ func file_proto_types_model_dataservice_proto_init() {
 			}
 		}
 		file_proto_types_model_dataservice_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ApiConfigProperty); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_proto_types_model_dataservice_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiConfig); i {
 			case 0:
 				return &v.state
@@ -2949,7 +2434,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestParameters); i {
 			case 0:
 				return &v.state
@@ -2961,7 +2446,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestParameter); i {
 			case 0:
 				return &v.state
@@ -2973,7 +2458,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResponseParameters); i {
 			case 0:
 				return &v.state
@@ -2985,7 +2470,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResponseParameter); i {
 			case 0:
 				return &v.state
@@ -2997,7 +2482,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ApiVersion); i {
 			case 0:
 				return &v.state
@@ -3009,7 +2494,7 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
-		file_proto_types_model_dataservice_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_types_model_dataservice_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServiceDataSourceKind); i {
 			case 0:
 				return &v.state
@@ -3027,8 +2512,8 @@ func file_proto_types_model_dataservice_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_dataservice_proto_rawDesc,
-			NumEnums:      22,
-			NumMessages:   10,
+			NumEnums:      17,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

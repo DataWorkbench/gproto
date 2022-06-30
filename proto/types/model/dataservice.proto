@@ -78,69 +78,6 @@ message ApiGroup{
 }
 
 // table api_config
-message ApiConfigProperty {
-  enum ApiMode{
-    ModeUnset = 0;
-    Wizard = 1;
-    Script = 2;
-  }
-  enum RequestMethod{
-    MethodUnset = 0;
-    GET = 1;
-    POST = 2;
-  }
-  enum ResponseType{
-    TypeUnset = 0;
-    JSON = 1;
-    XML = 2;
-  }
-  enum Protocols{
-    ProtocolUnset = 0;
-    HTTPOnly = 1;
-    HTTPSOnly = 2;
-    ALL = 3;
-  }
-  enum Status {
-    StatusUnset = 0;
-    Deleted = 1;
-    Enabled = 2;
-  }
-
-  // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
-  string api_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
-  // @inject_tag: json:"group_id" gorm:"column:group_id;"
-  string group_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ] ;
-  // @inject_tag: json:"space_id" gorm:"column:space_id;"
-  string space_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
-  // @inject_tag: json:"api_name" gorm:"column:api_name;"
-  string api_name = 4 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
-  // @inject_tag: json:"api_path" gorm:"column:api_path;"
-  string api_path = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 200 } ];
-  // @inject_tag: json:"api_mode" gorm:"column:api_mode;"
-  ApiMode api_mode = 6  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"api_description" gorm:"column:api_description;"
-  string api_description = 7 [ (validator.field).tags.string = { byte_len_lte: 257 }   ];
-  // @inject_tag: json:"protocols" gorm:"column:protocols;"
-  Protocols protocols = 8 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"request_method" gorm:"column:request_method;"
-  RequestMethod request_method = 9 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"response_type" gorm:"column:response_type;"
-  ResponseType response_type = 10  [  (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-  // @inject_tag: json:"cross_domain" gorm:"column:cross_domain;"
-  bool cross_domain = 11 [ (validator.field) = { } ];
-  // @inject_tag: json:"timeout" gorm:"column:timeout;"
-  int64 timeout = 12 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
-  // @inject_tag: json:"created_by" gorm:"column:created_by;"
-  string created_by = 13 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
-  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 14 [ (validator.field).tags.int = { gt: 0 } ];
-  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 15 [ (validator.field).tags.int = { gt: 0 } ];
-  // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 16 [(validator.field).tags.enum = { gt: 0; in_enums: true  }];
-}
-
-// table api_config
 message ApiConfig {
   enum ApiMode{
     ModeUnset = 0;
@@ -174,7 +111,7 @@ message ApiConfig {
   // @inject_tag: json:"group_id" gorm:"column:group_id;"
   string group_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ] ;
   // @inject_tag: json:"cluster_id"  gorm:"column:cluster_id;"
-  string cluster_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+  string cluster_id = 3 [ (validator.field).tags.string = { } ];
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_name" gorm:"column:api_name;"
