@@ -28,6 +28,14 @@ func (this *ApiGroup) SetDefaults() {
 	return
 }
 
+// Set default value for message model.ApiConfigProperty
+func (this *ApiConfigProperty) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message model.ApiConfig
 func (this *ApiConfig) SetDefaults() {
 	if this == nil {

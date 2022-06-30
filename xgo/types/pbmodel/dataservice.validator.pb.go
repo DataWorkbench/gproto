@@ -240,6 +240,210 @@ func (this *ApiGroup) Validate() error {
 	return nil
 }
 
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_api_id() error {
+	if !(len(this.ApiId) == 20) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))
+	}
+	if !(strings.HasPrefix(this.ApiId, "dsa-")) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'api_id' must start with string 'dsa-'", this.ApiId)
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_group_id() error {
+	if !(len(this.GroupId) == 20) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'group_id' must be equal to '20'", protovalidator.StringByteLenToString(this.GroupId))
+	}
+	if !(strings.HasPrefix(this.GroupId, "dsg-")) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'group_id' must start with string 'dsg-'", this.GroupId)
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_api_name() error {
+	if !(len(this.ApiName) > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_name' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiName))
+	}
+	if !(len(this.ApiName) <= 64) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_name' must be less than or equal to '64'", protovalidator.StringByteLenToString(this.ApiName))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_api_path() error {
+	if !(len(this.ApiPath) > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_path' must be greater than '0'", protovalidator.StringByteLenToString(this.ApiPath))
+	}
+	if !(len(this.ApiPath) <= 200) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_path' must be less than or equal to '200'", protovalidator.StringByteLenToString(this.ApiPath))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfigProperty_InEnums_ApiMode = map[ApiConfigProperty_ApiMode]bool{0: true, 1: true, 2: true}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_api_mode() error {
+	if !(this.ApiMode > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'api_mode' must be greater than '0'", protovalidator.Int32ToString(int32(this.ApiMode)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfigProperty_InEnums_ApiMode[this.ApiMode]) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'api_mode' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ApiMode)))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_api_description() error {
+	if !(len(this.ApiDescription) <= 257) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'api_description' must be less than or equal to '257'", protovalidator.StringByteLenToString(this.ApiDescription))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfigProperty_InEnums_Protocols = map[ApiConfigProperty_Protocols]bool{0: true, 1: true, 2: true, 3: true}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_protocols() error {
+	if !(this.Protocols > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'protocols' must be greater than '0'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfigProperty_InEnums_Protocols[this.Protocols]) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'protocols' must in enums of '[0 1 2 3]'", protovalidator.Int32ToString(int32(this.Protocols)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfigProperty_InEnums_RequestMethod = map[ApiConfigProperty_RequestMethod]bool{0: true, 1: true, 2: true}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_request_method() error {
+	if !(this.RequestMethod > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'request_method' must be greater than '0'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfigProperty_InEnums_RequestMethod[this.RequestMethod]) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'request_method' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.RequestMethod)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfigProperty_InEnums_ResponseType = map[ApiConfigProperty_ResponseType]bool{0: true, 1: true, 2: true}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_response_type() error {
+	if !(this.ResponseType > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'response_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.ResponseType)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfigProperty_InEnums_ResponseType[this.ResponseType]) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'response_type' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.ResponseType)))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_timeout() error {
+	if !(this.Timeout >= 1) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
+	}
+	if !(this.Timeout <= 180) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ApiConfigProperty_InEnums_Status = map[ApiConfigProperty_Status]bool{0: true, 1: true, 2: true}
+
+func (this *ApiConfigProperty) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_ApiConfigProperty_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("ApiConfigProperty", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
+// Set default value for message model.ApiConfigProperty
+func (this *ApiConfigProperty) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_group_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_path(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_mode(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_description(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_protocols(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_request_method(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_response_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_timeout(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_api_id() error {
 	if !(len(this.ApiId) == 20) {
 		return protovalidator.FieldError1("ApiConfig", "the byte length of field 'api_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ApiId))

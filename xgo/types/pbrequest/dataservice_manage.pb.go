@@ -1043,7 +1043,7 @@ type CreateApiConfig struct {
 	ApiPath        string                          `protobuf:"bytes,2,opt,name=api_path,json=apiPath,proto3" json:"api_path"`
 	ApiMode        pbmodel.ApiConfig_ApiMode       `protobuf:"varint,3,opt,name=api_mode,json=apiMode,proto3,enum=model.ApiConfig_ApiMode" json:"api_mode"`
 	ApiDescription string                          `protobuf:"bytes,4,opt,name=api_description,json=apiDescription,proto3" json:"api_description"`
-	SpaceId        string                          `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	SpaceId        string                          `protobuf:"bytes,5,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
 	Protocols      pbmodel.ApiConfig_Protocols     `protobuf:"varint,6,opt,name=protocols,proto3,enum=model.ApiConfig_Protocols" json:"protocols"`
 	RequestMethod  pbmodel.ApiConfig_RequestMethod `protobuf:"varint,7,opt,name=request_method,json=requestMethod,proto3,enum=model.ApiConfig_RequestMethod" json:"request_method"`
 	ResponseType   pbmodel.ApiConfig_ResponseType  `protobuf:"varint,8,opt,name=response_type,json=responseType,proto3,enum=model.ApiConfig_ResponseType" json:"response_type"`

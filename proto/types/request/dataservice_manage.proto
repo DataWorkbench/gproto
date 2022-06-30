@@ -183,7 +183,7 @@ message CreateApiConfig {
   model.ApiConfig.ApiMode api_mode = 3 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"api_description"
   string api_description = 4 [ (validator.field).tags.string = { byte_len_lte: 257 }  ];
-  // @inject_tag: json:"space_id"
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"protocols"
   model.ApiConfig.Protocols protocols = 6 ;
