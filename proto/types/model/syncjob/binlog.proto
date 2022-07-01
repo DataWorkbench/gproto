@@ -42,7 +42,7 @@ message BinlogSource {
 
     // parallel_thread_size
     // @inject_tag: json:"parallel_thread_size"
-    string parallel_thread_size = 7;
+    int32 parallel_thread_size = 7;
 
     // is gtid mode
     // @inject_tag: json:"is_gtid_mode" 
