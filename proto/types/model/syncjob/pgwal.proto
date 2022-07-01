@@ -23,7 +23,7 @@ message PgWalSource {
     string slot_name = 2;
     // allow created
     // @inject_tag: json:"allow_created"
-    string allow_created = 3;
+    bool allow_created = 3;
     // status interval
     // @inject_tag: json:"status_interval" 
     int32 status_interval = 4;
@@ -45,5 +45,8 @@ message PgWalSource {
     // column
     // @inject_tag: json:"column"
     repeated Column column = 10;
+    // cat
+    // @inject_tag: json:"cat"
+    string cat = 11;
 
 }
