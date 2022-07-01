@@ -11,35 +11,32 @@ option java_outer_classname = "PBPgwal";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "proto/types/model/syncjob/column.proto";
 
 message PgWalSource {
     option (gosql.serialize) = {json: {}};
-    // database name
-    // @inject_tag: json:"database_name" 
-    string database_name = 1;
     // table list
     // @inject_tag: json:"table_list" 
-    repeated string table_list = 2;
+    repeated string table_list = 1;
     // slot name
     // @inject_tag: json:"slot_name" 
-    string slot_name = 3;
+    string slot_name = 2;
+    // allow created
+    // @inject_tag: json:"allow_created"
+    string allow_created = 3;
     // status interval
     // @inject_tag: json:"status_interval" 
     int32 status_interval = 4;
-    // allow created
-    // @inject_tag: json:"allow_created" 
-    bool allow_created = 5;
     // temporary
     // @inject_tag: json:"temporary" 
-    bool temporary = 6;
-    // paving data
-    // @inject_tag: json:"paving_data" 
-    bool paving_data = 7;
+    bool temporary = 5;
     // lsn
     // @inject_tag: json:"lsn" 
-    int64 lsn = 8;
+    int64 lsn = 6;
     // slot available
     // @inject_tag: json:"slot_available" 
-    bool slot_available = 9;
-
+    bool slot_available = 7;
+    // column
+    // @inject_tag: json:"column"
+    repeated Column column = 8;
 }

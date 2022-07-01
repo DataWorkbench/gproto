@@ -18,12 +18,27 @@ func (this *BinlogSource) _xxx_xxx_Validator_Validate_start() error {
 	return nil
 }
 
+func (this *BinlogSource) _xxx_xxx_Validator_Validate_column() error {
+	for _, item := range this.Column {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
 // Set default value for message model.BinlogSource
 func (this *BinlogSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_start(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
 		return err
 	}
 	return nil
