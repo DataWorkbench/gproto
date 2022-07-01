@@ -15,6 +15,7 @@ import "proto/types/model/syncjob/column.proto";
 import "proto/types/model/syncjob/baseenum.proto";
 
 message BinlogSource {
+
     option (gosql.serialize) = {json: {}};
     // table
     // @inject_tag: json:"table"
@@ -46,9 +47,15 @@ message BinlogSource {
     // is gtid mode
     // @inject_tag: json:"is_gtid_mode" 
     bool is_gtid_mode = 8;
+    // paving_data
+    // @inject_tag: json:"paving_data"
+    bool paving_data = 9;
+    // split
+    // @inject_tag: json:"split"
+    bool split = 10;
     // column
     // @inject_tag: json:"column"
-    repeated Column column = 9;
+    repeated Column column = 11;
 }
 
 message Start {

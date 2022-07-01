@@ -27,7 +27,13 @@ message SqlServerCdcSource {
     // poll interval
     // @inject_tag: json:"poll_interval" 
     int64 poll_interval = 4;
+    // paving_data
+    // @inject_tag: json:"paving_data"
+    bool paving_data = 5;
+    // split
+    // @inject_tag: json:"split"
+    bool split = 6;
     // column
     // @inject_tag: json:"column"
-    repeated Column column = 5;
+    repeated Column column = 7;
 }

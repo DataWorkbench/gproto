@@ -36,7 +36,14 @@ message PgWalSource {
     // slot available
     // @inject_tag: json:"slot_available" 
     bool slot_available = 7;
+    // paving_data
+    // @inject_tag: json:"paving_data"
+    bool paving_data = 8;
+    // split
+    // @inject_tag: json:"split"
+    bool split = 9;
     // column
     // @inject_tag: json:"column"
-    repeated Column column = 8;
+    repeated Column column = 10;
+
 }
