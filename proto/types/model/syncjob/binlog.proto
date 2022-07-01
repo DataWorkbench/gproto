@@ -38,7 +38,7 @@ message BinlogSource {
 
     // buffer_size
     // @inject_tag: json:"buffer_size"
-    string buffer_size = 6;
+    int32 buffer_size = 6;
 
     // parallel_thread_size
     // @inject_tag: json:"parallel_thread_size"
