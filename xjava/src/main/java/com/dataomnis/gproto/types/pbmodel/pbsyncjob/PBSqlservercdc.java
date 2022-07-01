@@ -65,33 +65,11 @@ public final class PBSqlservercdc {
 
     /**
      * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" 
-     * </pre>
-     *
-     * <code>bool split_update = 2;</code>
-     * @return The splitUpdate.
-     */
-    boolean getSplitUpdate();
-
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" 
-     * </pre>
-     *
-     * <code>bool paving_data = 3;</code>
-     * @return The pavingData.
-     */
-    boolean getPavingData();
-
-    /**
-     * <pre>
      * cat
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 4;</code>
+     * <code>string cat = 2;</code>
      * @return The cat.
      */
     java.lang.String getCat();
@@ -101,7 +79,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 4;</code>
+     * <code>string cat = 2;</code>
      * @return The bytes for cat.
      */
     com.google.protobuf.ByteString
@@ -113,7 +91,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"lsn" 
      * </pre>
      *
-     * <code>string lsn = 5;</code>
+     * <code>string lsn = 3;</code>
      * @return The lsn.
      */
     java.lang.String getLsn();
@@ -123,7 +101,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"lsn" 
      * </pre>
      *
-     * <code>string lsn = 5;</code>
+     * <code>string lsn = 3;</code>
      * @return The bytes for lsn.
      */
     com.google.protobuf.ByteString
@@ -135,32 +113,81 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"poll_interval" 
      * </pre>
      *
-     * <code>int64 poll_interval = 6;</code>
+     * <code>int64 poll_interval = 4;</code>
      * @return The pollInterval.
      */
     long getPollInterval();
 
     /**
      * <pre>
-     * database name
-     * &#64;inject_tag: json:"database_name" 
+     * paving_data
+     * &#64;inject_tag: json:"paving_data"
      * </pre>
      *
-     * <code>string database_name = 7;</code>
-     * @return The databaseName.
+     * <code>bool paving_data = 5;</code>
+     * @return The pavingData.
      */
-    java.lang.String getDatabaseName();
+    boolean getPavingData();
+
     /**
      * <pre>
-     * database name
-     * &#64;inject_tag: json:"database_name" 
+     * split
+     * &#64;inject_tag: json:"split"
      * </pre>
      *
-     * <code>string database_name = 7;</code>
-     * @return The bytes for databaseName.
+     * <code>bool split = 6;</code>
+     * @return The split.
      */
-    com.google.protobuf.ByteString
-        getDatabaseNameBytes();
+    boolean getSplit();
+
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> 
+        getColumnList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    int getColumnCount();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+        getColumnOrBuilderList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code model.SqlServerCdcSource}
@@ -178,7 +205,7 @@ public final class PBSqlservercdc {
       tableList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       cat_ = "";
       lsn_ = "";
-      databaseName_ = "";
+      column_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -221,37 +248,40 @@ public final class PBSqlservercdc {
               tableList_.add(s);
               break;
             }
-            case 16: {
-
-              splitUpdate_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              pavingData_ = input.readBool();
-              break;
-            }
-            case 34: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               cat_ = s;
               break;
             }
-            case 42: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               lsn_ = s;
               break;
             }
-            case 48: {
+            case 32: {
 
               pollInterval_ = input.readInt64();
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 40: {
 
-              databaseName_ = s;
+              pavingData_ = input.readBool();
+              break;
+            }
+            case 48: {
+
+              split_ = input.readBool();
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -271,6 +301,9 @@ public final class PBSqlservercdc {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           tableList_ = tableList_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          column_ = java.util.Collections.unmodifiableList(column_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -344,39 +377,7 @@ public final class PBSqlservercdc {
       return tableList_.getByteString(index);
     }
 
-    public static final int SPLIT_UPDATE_FIELD_NUMBER = 2;
-    private boolean splitUpdate_;
-    /**
-     * <pre>
-     * split update
-     * &#64;inject_tag: json:"split_update" 
-     * </pre>
-     *
-     * <code>bool split_update = 2;</code>
-     * @return The splitUpdate.
-     */
-    @java.lang.Override
-    public boolean getSplitUpdate() {
-      return splitUpdate_;
-    }
-
-    public static final int PAVING_DATA_FIELD_NUMBER = 3;
-    private boolean pavingData_;
-    /**
-     * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" 
-     * </pre>
-     *
-     * <code>bool paving_data = 3;</code>
-     * @return The pavingData.
-     */
-    @java.lang.Override
-    public boolean getPavingData() {
-      return pavingData_;
-    }
-
-    public static final int CAT_FIELD_NUMBER = 4;
+    public static final int CAT_FIELD_NUMBER = 2;
     private volatile java.lang.Object cat_;
     /**
      * <pre>
@@ -384,7 +385,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 4;</code>
+     * <code>string cat = 2;</code>
      * @return The cat.
      */
     @java.lang.Override
@@ -406,7 +407,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 4;</code>
+     * <code>string cat = 2;</code>
      * @return The bytes for cat.
      */
     @java.lang.Override
@@ -424,7 +425,7 @@ public final class PBSqlservercdc {
       }
     }
 
-    public static final int LSN_FIELD_NUMBER = 5;
+    public static final int LSN_FIELD_NUMBER = 3;
     private volatile java.lang.Object lsn_;
     /**
      * <pre>
@@ -432,7 +433,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"lsn" 
      * </pre>
      *
-     * <code>string lsn = 5;</code>
+     * <code>string lsn = 3;</code>
      * @return The lsn.
      */
     @java.lang.Override
@@ -454,7 +455,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"lsn" 
      * </pre>
      *
-     * <code>string lsn = 5;</code>
+     * <code>string lsn = 3;</code>
      * @return The bytes for lsn.
      */
     @java.lang.Override
@@ -472,7 +473,7 @@ public final class PBSqlservercdc {
       }
     }
 
-    public static final int POLL_INTERVAL_FIELD_NUMBER = 6;
+    public static final int POLL_INTERVAL_FIELD_NUMBER = 4;
     private long pollInterval_;
     /**
      * <pre>
@@ -480,7 +481,7 @@ public final class PBSqlservercdc {
      * &#64;inject_tag: json:"poll_interval" 
      * </pre>
      *
-     * <code>int64 poll_interval = 6;</code>
+     * <code>int64 poll_interval = 4;</code>
      * @return The pollInterval.
      */
     @java.lang.Override
@@ -488,52 +489,101 @@ public final class PBSqlservercdc {
       return pollInterval_;
     }
 
-    public static final int DATABASE_NAME_FIELD_NUMBER = 7;
-    private volatile java.lang.Object databaseName_;
+    public static final int PAVING_DATA_FIELD_NUMBER = 5;
+    private boolean pavingData_;
     /**
      * <pre>
-     * database name
-     * &#64;inject_tag: json:"database_name" 
+     * paving_data
+     * &#64;inject_tag: json:"paving_data"
      * </pre>
      *
-     * <code>string database_name = 7;</code>
-     * @return The databaseName.
+     * <code>bool paving_data = 5;</code>
+     * @return The pavingData.
      */
     @java.lang.Override
-    public java.lang.String getDatabaseName() {
-      java.lang.Object ref = databaseName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        databaseName_ = s;
-        return s;
-      }
+    public boolean getPavingData() {
+      return pavingData_;
+    }
+
+    public static final int SPLIT_FIELD_NUMBER = 6;
+    private boolean split_;
+    /**
+     * <pre>
+     * split
+     * &#64;inject_tag: json:"split"
+     * </pre>
+     *
+     * <code>bool split = 6;</code>
+     * @return The split.
+     */
+    @java.lang.Override
+    public boolean getSplit() {
+      return split_;
+    }
+
+    public static final int COLUMN_FIELD_NUMBER = 7;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> column_;
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> getColumnList() {
+      return column_;
     }
     /**
      * <pre>
-     * database name
-     * &#64;inject_tag: json:"database_name" 
+     * column
+     * &#64;inject_tag: json:"column"
      * </pre>
      *
-     * <code>string database_name = 7;</code>
-     * @return The bytes for databaseName.
+     * <code>repeated .model.Column column = 7;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDatabaseNameBytes() {
-      java.lang.Object ref = databaseName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        databaseName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    @java.lang.Override
+    public int getColumnCount() {
+      return column_.size();
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index) {
+      return column_.get(index);
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 7;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -553,23 +603,23 @@ public final class PBSqlservercdc {
       for (int i = 0; i < tableList_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableList_.getRaw(i));
       }
-      if (splitUpdate_ != false) {
-        output.writeBool(2, splitUpdate_);
-      }
-      if (pavingData_ != false) {
-        output.writeBool(3, pavingData_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cat_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cat_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, lsn_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lsn_);
       }
       if (pollInterval_ != 0L) {
-        output.writeInt64(6, pollInterval_);
+        output.writeInt64(4, pollInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, databaseName_);
+      if (pavingData_ != false) {
+        output.writeBool(5, pavingData_);
+      }
+      if (split_ != false) {
+        output.writeBool(6, split_);
+      }
+      for (int i = 0; i < column_.size(); i++) {
+        output.writeMessage(7, column_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -588,26 +638,27 @@ public final class PBSqlservercdc {
         size += dataSize;
         size += 1 * getTableListList().size();
       }
-      if (splitUpdate_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, splitUpdate_);
-      }
-      if (pavingData_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, pavingData_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cat_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cat_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lsn_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, lsn_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lsn_);
       }
       if (pollInterval_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, pollInterval_);
+          .computeInt64Size(4, pollInterval_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, databaseName_);
+      if (pavingData_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, pavingData_);
+      }
+      if (split_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, split_);
+      }
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, column_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -626,18 +677,18 @@ public final class PBSqlservercdc {
 
       if (!getTableListList()
           .equals(other.getTableListList())) return false;
-      if (getSplitUpdate()
-          != other.getSplitUpdate()) return false;
-      if (getPavingData()
-          != other.getPavingData()) return false;
       if (!getCat()
           .equals(other.getCat())) return false;
       if (!getLsn()
           .equals(other.getLsn())) return false;
       if (getPollInterval()
           != other.getPollInterval()) return false;
-      if (!getDatabaseName()
-          .equals(other.getDatabaseName())) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
+      if (getSplit()
+          != other.getSplit()) return false;
+      if (!getColumnList()
+          .equals(other.getColumnList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -653,12 +704,6 @@ public final class PBSqlservercdc {
         hash = (37 * hash) + TABLE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTableListList().hashCode();
       }
-      hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSplitUpdate());
-      hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPavingData());
       hash = (37 * hash) + CAT_FIELD_NUMBER;
       hash = (53 * hash) + getCat().hashCode();
       hash = (37 * hash) + LSN_FIELD_NUMBER;
@@ -666,8 +711,16 @@ public final class PBSqlservercdc {
       hash = (37 * hash) + POLL_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPollInterval());
-      hash = (37 * hash) + DATABASE_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getDatabaseName().hashCode();
+      hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
+      hash = (37 * hash) + SPLIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSplit());
+      if (getColumnCount() > 0) {
+        hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -796,6 +849,7 @@ public final class PBSqlservercdc {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
@@ -803,18 +857,22 @@ public final class PBSqlservercdc {
         super.clear();
         tableList_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        splitUpdate_ = false;
-
-        pavingData_ = false;
-
         cat_ = "";
 
         lsn_ = "";
 
         pollInterval_ = 0L;
 
-        databaseName_ = "";
+        pavingData_ = false;
 
+        split_ = false;
+
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
 
@@ -847,12 +905,20 @@ public final class PBSqlservercdc {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tableList_ = tableList_;
-        result.splitUpdate_ = splitUpdate_;
-        result.pavingData_ = pavingData_;
         result.cat_ = cat_;
         result.lsn_ = lsn_;
         result.pollInterval_ = pollInterval_;
-        result.databaseName_ = databaseName_;
+        result.pavingData_ = pavingData_;
+        result.split_ = split_;
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -911,12 +977,6 @@ public final class PBSqlservercdc {
           }
           onChanged();
         }
-        if (other.getSplitUpdate() != false) {
-          setSplitUpdate(other.getSplitUpdate());
-        }
-        if (other.getPavingData() != false) {
-          setPavingData(other.getPavingData());
-        }
         if (!other.getCat().isEmpty()) {
           cat_ = other.cat_;
           onChanged();
@@ -928,9 +988,37 @@ public final class PBSqlservercdc {
         if (other.getPollInterval() != 0L) {
           setPollInterval(other.getPollInterval());
         }
-        if (!other.getDatabaseName().isEmpty()) {
-          databaseName_ = other.databaseName_;
-          onChanged();
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
+        }
+        if (other.getSplit() != false) {
+          setSplit(other.getSplit());
+        }
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1117,98 +1205,6 @@ public final class PBSqlservercdc {
         return this;
       }
 
-      private boolean splitUpdate_ ;
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" 
-       * </pre>
-       *
-       * <code>bool split_update = 2;</code>
-       * @return The splitUpdate.
-       */
-      @java.lang.Override
-      public boolean getSplitUpdate() {
-        return splitUpdate_;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" 
-       * </pre>
-       *
-       * <code>bool split_update = 2;</code>
-       * @param value The splitUpdate to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSplitUpdate(boolean value) {
-        
-        splitUpdate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * split update
-       * &#64;inject_tag: json:"split_update" 
-       * </pre>
-       *
-       * <code>bool split_update = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSplitUpdate() {
-        
-        splitUpdate_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean pavingData_ ;
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
-       * </pre>
-       *
-       * <code>bool paving_data = 3;</code>
-       * @return The pavingData.
-       */
-      @java.lang.Override
-      public boolean getPavingData() {
-        return pavingData_;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
-       * </pre>
-       *
-       * <code>bool paving_data = 3;</code>
-       * @param value The pavingData to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPavingData(boolean value) {
-        
-        pavingData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
-       * </pre>
-       *
-       * <code>bool paving_data = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPavingData() {
-        
-        pavingData_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object cat_ = "";
       /**
        * <pre>
@@ -1216,7 +1212,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 4;</code>
+       * <code>string cat = 2;</code>
        * @return The cat.
        */
       public java.lang.String getCat() {
@@ -1237,7 +1233,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 4;</code>
+       * <code>string cat = 2;</code>
        * @return The bytes for cat.
        */
       public com.google.protobuf.ByteString
@@ -1259,7 +1255,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 4;</code>
+       * <code>string cat = 2;</code>
        * @param value The cat to set.
        * @return This builder for chaining.
        */
@@ -1279,7 +1275,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 4;</code>
+       * <code>string cat = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCat() {
@@ -1294,7 +1290,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 4;</code>
+       * <code>string cat = 2;</code>
        * @param value The bytes for cat to set.
        * @return This builder for chaining.
        */
@@ -1317,7 +1313,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"lsn" 
        * </pre>
        *
-       * <code>string lsn = 5;</code>
+       * <code>string lsn = 3;</code>
        * @return The lsn.
        */
       public java.lang.String getLsn() {
@@ -1338,7 +1334,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"lsn" 
        * </pre>
        *
-       * <code>string lsn = 5;</code>
+       * <code>string lsn = 3;</code>
        * @return The bytes for lsn.
        */
       public com.google.protobuf.ByteString
@@ -1360,7 +1356,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"lsn" 
        * </pre>
        *
-       * <code>string lsn = 5;</code>
+       * <code>string lsn = 3;</code>
        * @param value The lsn to set.
        * @return This builder for chaining.
        */
@@ -1380,7 +1376,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"lsn" 
        * </pre>
        *
-       * <code>string lsn = 5;</code>
+       * <code>string lsn = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLsn() {
@@ -1395,7 +1391,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"lsn" 
        * </pre>
        *
-       * <code>string lsn = 5;</code>
+       * <code>string lsn = 3;</code>
        * @param value The bytes for lsn to set.
        * @return This builder for chaining.
        */
@@ -1418,7 +1414,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"poll_interval" 
        * </pre>
        *
-       * <code>int64 poll_interval = 6;</code>
+       * <code>int64 poll_interval = 4;</code>
        * @return The pollInterval.
        */
       @java.lang.Override
@@ -1431,7 +1427,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"poll_interval" 
        * </pre>
        *
-       * <code>int64 poll_interval = 6;</code>
+       * <code>int64 poll_interval = 4;</code>
        * @param value The pollInterval to set.
        * @return This builder for chaining.
        */
@@ -1447,7 +1443,7 @@ public final class PBSqlservercdc {
        * &#64;inject_tag: json:"poll_interval" 
        * </pre>
        *
-       * <code>int64 poll_interval = 6;</code>
+       * <code>int64 poll_interval = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPollInterval() {
@@ -1457,105 +1453,426 @@ public final class PBSqlservercdc {
         return this;
       }
 
-      private java.lang.Object databaseName_ = "";
+      private boolean pavingData_ ;
       /**
        * <pre>
-       * database name
-       * &#64;inject_tag: json:"database_name" 
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
        * </pre>
        *
-       * <code>string database_name = 7;</code>
-       * @return The databaseName.
+       * <code>bool paving_data = 5;</code>
+       * @return The pavingData.
        */
-      public java.lang.String getDatabaseName() {
-        java.lang.Object ref = databaseName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          databaseName_ = s;
-          return s;
+      @java.lang.Override
+      public boolean getPavingData() {
+        return pavingData_;
+      }
+      /**
+       * <pre>
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
+       * </pre>
+       *
+       * <code>bool paving_data = 5;</code>
+       * @param value The pavingData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPavingData(boolean value) {
+        
+        pavingData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
+       * </pre>
+       *
+       * <code>bool paving_data = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPavingData() {
+        
+        pavingData_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean split_ ;
+      /**
+       * <pre>
+       * split
+       * &#64;inject_tag: json:"split"
+       * </pre>
+       *
+       * <code>bool split = 6;</code>
+       * @return The split.
+       */
+      @java.lang.Override
+      public boolean getSplit() {
+        return split_;
+      }
+      /**
+       * <pre>
+       * split
+       * &#64;inject_tag: json:"split"
+       * </pre>
+       *
+       * <code>bool split = 6;</code>
+       * @param value The split to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSplit(boolean value) {
+        
+        split_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * split
+       * &#64;inject_tag: json:"split"
+       * </pre>
+       *
+       * <code>bool split = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSplit() {
+        
+        split_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> column_ =
+        java.util.Collections.emptyList();
+      private void ensureColumnIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column>(column_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> columnBuilder_;
+
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
         } else {
-          return (java.lang.String) ref;
+          return columnBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * database name
-       * &#64;inject_tag: json:"database_name" 
+       * column
+       * &#64;inject_tag: json:"column"
        * </pre>
        *
-       * <code>string database_name = 7;</code>
-       * @return The bytes for databaseName.
+       * <code>repeated .model.Column column = 7;</code>
        */
-      public com.google.protobuf.ByteString
-          getDatabaseNameBytes() {
-        java.lang.Object ref = databaseName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          databaseName_ = b;
-          return b;
+      public int getColumnCount() {
+        if (columnBuilder_ == null) {
+          return column_.size();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          return columnBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       * database name
-       * &#64;inject_tag: json:"database_name" 
+       * column
+       * &#64;inject_tag: json:"column"
        * </pre>
        *
-       * <code>string database_name = 7;</code>
-       * @param value The databaseName to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 7;</code>
        */
-      public Builder setDatabaseName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        databaseName_ = value;
-        onChanged();
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
        * <pre>
-       * database name
-       * &#64;inject_tag: json:"database_name" 
+       * column
+       * &#64;inject_tag: json:"column"
        * </pre>
        *
-       * <code>string database_name = 7;</code>
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 7;</code>
        */
-      public Builder clearDatabaseName() {
-        
-        databaseName_ = getDefaultInstance().getDatabaseName();
-        onChanged();
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
        * <pre>
-       * database name
-       * &#64;inject_tag: json:"database_name" 
+       * column
+       * &#64;inject_tag: json:"column"
        * </pre>
        *
-       * <code>string database_name = 7;</code>
-       * @param value The bytes for databaseName to set.
-       * @return This builder for chaining.
+       * <code>repeated .model.Column column = 7;</code>
        */
-      public Builder setDatabaseNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        databaseName_ = value;
-        onChanged();
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
         return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder addAllColumn(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder clearColumn() {
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 7;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1626,33 +1943,36 @@ public final class PBSqlservercdc {
     java.lang.String[] descriptorData = {
       "\n,proto/types/model/syncjob/sqlservercdc" +
       ".proto\022\005model\032/github.com/yu31/protoc-pl" +
-      "ugin/proto/gosql.proto\"\243\001\n\022SqlServerCdcS" +
-      "ource\022\022\n\ntable_list\030\001 \003(\t\022\024\n\014split_updat" +
-      "e\030\002 \001(\010\022\023\n\013paving_data\030\003 \001(\010\022\013\n\003cat\030\004 \001(" +
-      "\t\022\013\n\003lsn\030\005 \001(\t\022\025\n\rpoll_interval\030\006 \001(\003\022\025\n" +
-      "\rdatabase_name\030\007 \001(\t:\006\312\262\004\002\n\000B}\n,com.data" +
-      "omnis.gproto.types.pbmodel.pbsyncjobB\016PB" +
-      "SqlservercdcP\000Z;github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbmodel/pbsyncjobb\006pro" +
-      "to3"
+      "ugin/proto/gosql.proto\032&proto/types/mode" +
+      "l/syncjob/column.proto\"\244\001\n\022SqlServerCdcS" +
+      "ource\022\022\n\ntable_list\030\001 \003(\t\022\013\n\003cat\030\002 \001(\t\022\013" +
+      "\n\003lsn\030\003 \001(\t\022\025\n\rpoll_interval\030\004 \001(\003\022\023\n\013pa" +
+      "ving_data\030\005 \001(\010\022\r\n\005split\030\006 \001(\010\022\035\n\006column" +
+      "\030\007 \003(\0132\r.model.Column:\006\312\262\004\002\n\000B}\n,com.dat" +
+      "aomnis.gproto.types.pbmodel.pbsyncjobB\016P" +
+      "BSqlservercdcP\000Z;github.com/DataWorkbenc" +
+      "h/gproto/xgo/types/pbmodel/pbsyncjobb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
         });
     internal_static_model_SqlServerCdcSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_SqlServerCdcSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_SqlServerCdcSource_descriptor,
-        new java.lang.String[] { "TableList", "SplitUpdate", "PavingData", "Cat", "Lsn", "PollInterval", "DatabaseName", });
+        new java.lang.String[] { "TableList", "Cat", "Lsn", "PollInterval", "PavingData", "Split", "Column", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

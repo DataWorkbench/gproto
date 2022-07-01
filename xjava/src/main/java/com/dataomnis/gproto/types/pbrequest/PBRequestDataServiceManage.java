@@ -16390,7 +16390,7 @@ public final class PBRequestDataServiceManage {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -16399,7 +16399,7 @@ public final class PBRequestDataServiceManage {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -16851,7 +16851,7 @@ public final class PBRequestDataServiceManage {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -16872,7 +16872,7 @@ public final class PBRequestDataServiceManage {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -17948,7 +17948,7 @@ public final class PBRequestDataServiceManage {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -17968,7 +17968,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -17989,7 +17989,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -18008,7 +18008,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 5 [(.validator.field) = { ... }</code>
@@ -18022,7 +18022,7 @@ public final class PBRequestDataServiceManage {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 5 [(.validator.field) = { ... }</code>

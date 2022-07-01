@@ -20,25 +20,70 @@ public final class PBBinlog {
 
     /**
      * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
+     * table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string schema = 1;</code>
-     * @return The schema.
+     * <code>repeated string table = 1;</code>
+     * @return A list containing the table.
      */
-    java.lang.String getSchema();
+    java.util.List<java.lang.String>
+        getTableList();
     /**
      * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
+     * table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string schema = 1;</code>
-     * @return The bytes for schema.
+     * <code>repeated string table = 1;</code>
+     * @return The count of table.
+     */
+    int getTableCount();
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>repeated string table = 1;</code>
+     * @param index The index of the element to return.
+     * @return The table at the given index.
+     */
+    java.lang.String getTable(int index);
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>repeated string table = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the table at the given index.
      */
     com.google.protobuf.ByteString
-        getSchemaBytes();
+        getTableBytes(int index);
+
+    /**
+     * <pre>
+     * filter
+     * &#64;inject_tag: json:"filter"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return The filter.
+     */
+    java.lang.String getFilter();
+    /**
+     * <pre>
+     * filter
+     * &#64;inject_tag: json:"filter"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return The bytes for filter.
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes();
 
     /**
      * <pre>
@@ -46,7 +91,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 2;</code>
+     * <code>string cat = 3;</code>
      * @return The cat.
      */
     java.lang.String getCat();
@@ -56,7 +101,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 2;</code>
+     * <code>string cat = 3;</code>
      * @return The bytes for cat.
      */
     com.google.protobuf.ByteString
@@ -68,7 +113,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      * @return Whether the start field is set.
      */
     boolean hasStart();
@@ -78,7 +123,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      * @return The start.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start getStart();
@@ -88,98 +133,52 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.StartOrBuilder getStartOrBuilder();
 
     /**
      * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
+     * connection_charset
+     * &#64;inject_tag: json:"connection_charset"
      * </pre>
      *
-     * <code>repeated string table = 4;</code>
-     * @return A list containing the table.
+     * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+     * @return The enum numeric value on the wire for connectionCharset.
      */
-    java.util.List<java.lang.String>
-        getTableList();
+    int getConnectionCharsetValue();
     /**
      * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
+     * connection_charset
+     * &#64;inject_tag: json:"connection_charset"
      * </pre>
      *
-     * <code>repeated string table = 4;</code>
-     * @return The count of table.
+     * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+     * @return The connectionCharset.
      */
-    int getTableCount();
-    /**
-     * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
-     * </pre>
-     *
-     * <code>repeated string table = 4;</code>
-     * @param index The index of the element to return.
-     * @return The table at the given index.
-     */
-    java.lang.String getTable(int index);
-    /**
-     * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
-     * </pre>
-     *
-     * <code>repeated string table = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the table at the given index.
-     */
-    com.google.protobuf.ByteString
-        getTableBytes(int index);
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getConnectionCharset();
 
     /**
      * <pre>
-     * split  update
-     * &#64;inject_tag: json:"split_update" 
+     * buffer_size
+     * &#64;inject_tag: json:"buffer_size"
      * </pre>
      *
-     * <code>bool split_update = 5;</code>
-     * @return The splitUpdate.
+     * <code>int32 buffer_size = 6;</code>
+     * @return The bufferSize.
      */
-    boolean getSplitUpdate();
+    int getBufferSize();
 
     /**
      * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" 
+     * parallel_thread_size
+     * &#64;inject_tag: json:"parallel_thread_size"
      * </pre>
      *
-     * <code>bool paving_data = 6;</code>
-     * @return The pavingData.
+     * <code>int32 parallel_thread_size = 7;</code>
+     * @return The parallelThreadSize.
      */
-    boolean getPavingData();
-
-    /**
-     * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
-     * </pre>
-     *
-     * <code>string filter = 7;</code>
-     * @return The filter.
-     */
-    java.lang.String getFilter();
-    /**
-     * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
-     * </pre>
-     *
-     * <code>string filter = 7;</code>
-     * @return The bytes for filter.
-     */
-    com.google.protobuf.ByteString
-        getFilterBytes();
+    int getParallelThreadSize();
 
     /**
      * <pre>
@@ -194,25 +193,74 @@ public final class PBBinlog {
 
     /**
      * <pre>
-     * query_timeout
-     * &#64;inject_tag: json:"query_timeout" 
+     * paving_data
+     * &#64;inject_tag: json:"paving_data"
      * </pre>
      *
-     * <code>int32 query_timeout = 9;</code>
-     * @return The queryTimeout.
+     * <code>bool paving_data = 9;</code>
+     * @return The pavingData.
      */
-    int getQueryTimeout();
+    boolean getPavingData();
 
     /**
      * <pre>
-     * connect_timeout
-     * &#64;inject_tag: json:"connect_timeout" 
+     * split
+     * &#64;inject_tag: json:"split"
      * </pre>
      *
-     * <code>int32 connect_timeout = 10;</code>
-     * @return The connectTimeout.
+     * <code>bool split = 10;</code>
+     * @return The split.
      */
-    int getConnectTimeout();
+    boolean getSplit();
+
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> 
+        getColumnList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index);
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    int getColumnCount();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+        getColumnOrBuilderList();
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code model.BinlogSource}
@@ -227,10 +275,11 @@ public final class PBBinlog {
       super(builder);
     }
     private BinlogSource() {
-      schema_ = "";
-      cat_ = "";
       table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       filter_ = "";
+      cat_ = "";
+      connectionCharset_ = 0;
+      column_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -266,17 +315,26 @@ public final class PBBinlog {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              schema_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                table_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              table_.add(s);
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              cat_ = s;
+              filter_ = s;
               break;
             }
             case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cat_ = s;
+              break;
+            }
+            case 34: {
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start.Builder subBuilder = null;
               if (start_ != null) {
                 subBuilder = start_.toBuilder();
@@ -289,29 +347,20 @@ public final class PBBinlog {
 
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                table_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              table_.add(s);
-              break;
-            }
             case 40: {
+              int rawValue = input.readEnum();
 
-              splitUpdate_ = input.readBool();
+              connectionCharset_ = rawValue;
               break;
             }
             case 48: {
 
-              pavingData_ = input.readBool();
+              bufferSize_ = input.readInt32();
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
 
-              filter_ = s;
+              parallelThreadSize_ = input.readInt32();
               break;
             }
             case 64: {
@@ -321,12 +370,21 @@ public final class PBBinlog {
             }
             case 72: {
 
-              queryTimeout_ = input.readInt32();
+              pavingData_ = input.readBool();
               break;
             }
             case 80: {
 
-              connectTimeout_ = input.readInt32();
+              split_ = input.readBool();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              column_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -347,6 +405,9 @@ public final class PBBinlog {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           table_ = table_.getUnmodifiableView();
         }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          column_ = java.util.Collections.unmodifiableList(column_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -364,55 +425,110 @@ public final class PBBinlog {
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.Builder.class);
     }
 
-    public static final int SCHEMA_FIELD_NUMBER = 1;
-    private volatile java.lang.Object schema_;
+    public static final int TABLE_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList table_;
     /**
      * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
+     * table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string schema = 1;</code>
-     * @return The schema.
+     * <code>repeated string table = 1;</code>
+     * @return A list containing the table.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTableList() {
+      return table_;
+    }
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>repeated string table = 1;</code>
+     * @return The count of table.
+     */
+    public int getTableCount() {
+      return table_.size();
+    }
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>repeated string table = 1;</code>
+     * @param index The index of the element to return.
+     * @return The table at the given index.
+     */
+    public java.lang.String getTable(int index) {
+      return table_.get(index);
+    }
+    /**
+     * <pre>
+     * table
+     * &#64;inject_tag: json:"table"
+     * </pre>
+     *
+     * <code>repeated string table = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the table at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTableBytes(int index) {
+      return table_.getByteString(index);
+    }
+
+    public static final int FILTER_FIELD_NUMBER = 2;
+    private volatile java.lang.Object filter_;
+    /**
+     * <pre>
+     * filter
+     * &#64;inject_tag: json:"filter"
+     * </pre>
+     *
+     * <code>string filter = 2;</code>
+     * @return The filter.
      */
     @java.lang.Override
-    public java.lang.String getSchema() {
-      java.lang.Object ref = schema_;
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        schema_ = s;
+        filter_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * schema
-     * &#64;inject_tag: json:"schema" 
+     * filter
+     * &#64;inject_tag: json:"filter"
      * </pre>
      *
-     * <code>string schema = 1;</code>
-     * @return The bytes for schema.
+     * <code>string filter = 2;</code>
+     * @return The bytes for filter.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSchemaBytes() {
-      java.lang.Object ref = schema_;
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        schema_ = b;
+        filter_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int CAT_FIELD_NUMBER = 2;
+    public static final int CAT_FIELD_NUMBER = 3;
     private volatile java.lang.Object cat_;
     /**
      * <pre>
@@ -420,7 +536,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 2;</code>
+     * <code>string cat = 3;</code>
      * @return The cat.
      */
     @java.lang.Override
@@ -442,7 +558,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"cat" 
      * </pre>
      *
-     * <code>string cat = 2;</code>
+     * <code>string cat = 3;</code>
      * @return The bytes for cat.
      */
     @java.lang.Override
@@ -460,7 +576,7 @@ public final class PBBinlog {
       }
     }
 
-    public static final int START_FIELD_NUMBER = 3;
+    public static final int START_FIELD_NUMBER = 4;
     private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start start_;
     /**
      * <pre>
@@ -468,7 +584,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      * @return Whether the start field is set.
      */
     @java.lang.Override
@@ -481,7 +597,7 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      * @return The start.
      */
     @java.lang.Override
@@ -494,146 +610,72 @@ public final class PBBinlog {
      * &#64;inject_tag: json:"start" 
      * </pre>
      *
-     * <code>.model.Start start = 3;</code>
+     * <code>.model.Start start = 4;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.StartOrBuilder getStartOrBuilder() {
       return getStart();
     }
 
-    public static final int TABLE_FIELD_NUMBER = 4;
-    private com.google.protobuf.LazyStringList table_;
+    public static final int CONNECTION_CHARSET_FIELD_NUMBER = 5;
+    private int connectionCharset_;
     /**
      * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
+     * connection_charset
+     * &#64;inject_tag: json:"connection_charset"
      * </pre>
      *
-     * <code>repeated string table = 4;</code>
-     * @return A list containing the table.
+     * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+     * @return The enum numeric value on the wire for connectionCharset.
      */
-    public com.google.protobuf.ProtocolStringList
-        getTableList() {
-      return table_;
+    @java.lang.Override public int getConnectionCharsetValue() {
+      return connectionCharset_;
     }
     /**
      * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
+     * connection_charset
+     * &#64;inject_tag: json:"connection_charset"
      * </pre>
      *
-     * <code>repeated string table = 4;</code>
-     * @return The count of table.
+     * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+     * @return The connectionCharset.
      */
-    public int getTableCount() {
-      return table_.size();
-    }
-    /**
-     * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
-     * </pre>
-     *
-     * <code>repeated string table = 4;</code>
-     * @param index The index of the element to return.
-     * @return The table at the given index.
-     */
-    public java.lang.String getTable(int index) {
-      return table_.get(index);
-    }
-    /**
-     * <pre>
-     * table
-     * &#64;inject_tag: json:"table" 
-     * </pre>
-     *
-     * <code>repeated string table = 4;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the table at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getTableBytes(int index) {
-      return table_.getByteString(index);
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getConnectionCharset() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(connectionCharset_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
-    public static final int SPLIT_UPDATE_FIELD_NUMBER = 5;
-    private boolean splitUpdate_;
+    public static final int BUFFER_SIZE_FIELD_NUMBER = 6;
+    private int bufferSize_;
     /**
      * <pre>
-     * split  update
-     * &#64;inject_tag: json:"split_update" 
+     * buffer_size
+     * &#64;inject_tag: json:"buffer_size"
      * </pre>
      *
-     * <code>bool split_update = 5;</code>
-     * @return The splitUpdate.
+     * <code>int32 buffer_size = 6;</code>
+     * @return The bufferSize.
      */
     @java.lang.Override
-    public boolean getSplitUpdate() {
-      return splitUpdate_;
+    public int getBufferSize() {
+      return bufferSize_;
     }
 
-    public static final int PAVING_DATA_FIELD_NUMBER = 6;
-    private boolean pavingData_;
+    public static final int PARALLEL_THREAD_SIZE_FIELD_NUMBER = 7;
+    private int parallelThreadSize_;
     /**
      * <pre>
-     * paving data
-     * &#64;inject_tag: json:"paving_data" 
+     * parallel_thread_size
+     * &#64;inject_tag: json:"parallel_thread_size"
      * </pre>
      *
-     * <code>bool paving_data = 6;</code>
-     * @return The pavingData.
+     * <code>int32 parallel_thread_size = 7;</code>
+     * @return The parallelThreadSize.
      */
     @java.lang.Override
-    public boolean getPavingData() {
-      return pavingData_;
-    }
-
-    public static final int FILTER_FIELD_NUMBER = 7;
-    private volatile java.lang.Object filter_;
-    /**
-     * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
-     * </pre>
-     *
-     * <code>string filter = 7;</code>
-     * @return The filter.
-     */
-    @java.lang.Override
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
-     * </pre>
-     *
-     * <code>string filter = 7;</code>
-     * @return The bytes for filter.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
-      java.lang.Object ref = filter_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        filter_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getParallelThreadSize() {
+      return parallelThreadSize_;
     }
 
     public static final int IS_GTID_MODE_FIELD_NUMBER = 8;
@@ -652,36 +694,101 @@ public final class PBBinlog {
       return isGtidMode_;
     }
 
-    public static final int QUERY_TIMEOUT_FIELD_NUMBER = 9;
-    private int queryTimeout_;
+    public static final int PAVING_DATA_FIELD_NUMBER = 9;
+    private boolean pavingData_;
     /**
      * <pre>
-     * query_timeout
-     * &#64;inject_tag: json:"query_timeout" 
+     * paving_data
+     * &#64;inject_tag: json:"paving_data"
      * </pre>
      *
-     * <code>int32 query_timeout = 9;</code>
-     * @return The queryTimeout.
+     * <code>bool paving_data = 9;</code>
+     * @return The pavingData.
      */
     @java.lang.Override
-    public int getQueryTimeout() {
-      return queryTimeout_;
+    public boolean getPavingData() {
+      return pavingData_;
     }
 
-    public static final int CONNECT_TIMEOUT_FIELD_NUMBER = 10;
-    private int connectTimeout_;
+    public static final int SPLIT_FIELD_NUMBER = 10;
+    private boolean split_;
     /**
      * <pre>
-     * connect_timeout
-     * &#64;inject_tag: json:"connect_timeout" 
+     * split
+     * &#64;inject_tag: json:"split"
      * </pre>
      *
-     * <code>int32 connect_timeout = 10;</code>
-     * @return The connectTimeout.
+     * <code>bool split = 10;</code>
+     * @return The split.
      */
     @java.lang.Override
-    public int getConnectTimeout() {
-      return connectTimeout_;
+    public boolean getSplit() {
+      return split_;
+    }
+
+    public static final int COLUMN_FIELD_NUMBER = 11;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> column_;
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> getColumnList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+        getColumnOrBuilderList() {
+      return column_;
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    @java.lang.Override
+    public int getColumnCount() {
+      return column_.size();
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index) {
+      return column_.get(index);
+    }
+    /**
+     * <pre>
+     * column
+     * &#64;inject_tag: json:"column"
+     * </pre>
+     *
+     * <code>repeated .model.Column column = 11;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+        int index) {
+      return column_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -698,35 +805,38 @@ public final class PBBinlog {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, schema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cat_);
-      }
-      if (start_ != null) {
-        output.writeMessage(3, getStart());
-      }
       for (int i = 0; i < table_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, table_.getRaw(i));
-      }
-      if (splitUpdate_ != false) {
-        output.writeBool(5, splitUpdate_);
-      }
-      if (pavingData_ != false) {
-        output.writeBool(6, pavingData_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, table_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, filter_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cat_);
+      }
+      if (start_ != null) {
+        output.writeMessage(4, getStart());
+      }
+      if (connectionCharset_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        output.writeEnum(5, connectionCharset_);
+      }
+      if (bufferSize_ != 0) {
+        output.writeInt32(6, bufferSize_);
+      }
+      if (parallelThreadSize_ != 0) {
+        output.writeInt32(7, parallelThreadSize_);
       }
       if (isGtidMode_ != false) {
         output.writeBool(8, isGtidMode_);
       }
-      if (queryTimeout_ != 0) {
-        output.writeInt32(9, queryTimeout_);
+      if (pavingData_ != false) {
+        output.writeBool(9, pavingData_);
       }
-      if (connectTimeout_ != 0) {
-        output.writeInt32(10, connectTimeout_);
+      if (split_ != false) {
+        output.writeBool(10, split_);
+      }
+      for (int i = 0; i < column_.size(); i++) {
+        output.writeMessage(11, column_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -737,16 +847,6 @@ public final class PBBinlog {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, schema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cat_);
-      }
-      if (start_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getStart());
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < table_.size(); i++) {
@@ -755,28 +855,43 @@ public final class PBBinlog {
         size += dataSize;
         size += 1 * getTableList().size();
       }
-      if (splitUpdate_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, splitUpdate_);
-      }
-      if (pavingData_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, pavingData_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filter_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cat_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cat_);
+      }
+      if (start_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getStart());
+      }
+      if (connectionCharset_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, connectionCharset_);
+      }
+      if (bufferSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, bufferSize_);
+      }
+      if (parallelThreadSize_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, parallelThreadSize_);
       }
       if (isGtidMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isGtidMode_);
       }
-      if (queryTimeout_ != 0) {
+      if (pavingData_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, queryTimeout_);
+          .computeBoolSize(9, pavingData_);
       }
-      if (connectTimeout_ != 0) {
+      if (split_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, connectTimeout_);
+          .computeBoolSize(10, split_);
+      }
+      for (int i = 0; i < column_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, column_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -793,8 +908,10 @@ public final class PBBinlog {
       }
       com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource other = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource) obj;
 
-      if (!getSchema()
-          .equals(other.getSchema())) return false;
+      if (!getTableList()
+          .equals(other.getTableList())) return false;
+      if (!getFilter()
+          .equals(other.getFilter())) return false;
       if (!getCat()
           .equals(other.getCat())) return false;
       if (hasStart() != other.hasStart()) return false;
@@ -802,20 +919,19 @@ public final class PBBinlog {
         if (!getStart()
             .equals(other.getStart())) return false;
       }
-      if (!getTableList()
-          .equals(other.getTableList())) return false;
-      if (getSplitUpdate()
-          != other.getSplitUpdate()) return false;
-      if (getPavingData()
-          != other.getPavingData()) return false;
-      if (!getFilter()
-          .equals(other.getFilter())) return false;
+      if (connectionCharset_ != other.connectionCharset_) return false;
+      if (getBufferSize()
+          != other.getBufferSize()) return false;
+      if (getParallelThreadSize()
+          != other.getParallelThreadSize()) return false;
       if (getIsGtidMode()
           != other.getIsGtidMode()) return false;
-      if (getQueryTimeout()
-          != other.getQueryTimeout()) return false;
-      if (getConnectTimeout()
-          != other.getConnectTimeout()) return false;
+      if (getPavingData()
+          != other.getPavingData()) return false;
+      if (getSplit()
+          != other.getSplit()) return false;
+      if (!getColumnList()
+          .equals(other.getColumnList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -827,33 +943,37 @@ public final class PBBinlog {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
-      hash = (53 * hash) + getSchema().hashCode();
+      if (getTableCount() > 0) {
+        hash = (37 * hash) + TABLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTableList().hashCode();
+      }
+      hash = (37 * hash) + FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFilter().hashCode();
       hash = (37 * hash) + CAT_FIELD_NUMBER;
       hash = (53 * hash) + getCat().hashCode();
       if (hasStart()) {
         hash = (37 * hash) + START_FIELD_NUMBER;
         hash = (53 * hash) + getStart().hashCode();
       }
-      if (getTableCount() > 0) {
-        hash = (37 * hash) + TABLE_FIELD_NUMBER;
-        hash = (53 * hash) + getTableList().hashCode();
-      }
-      hash = (37 * hash) + SPLIT_UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSplitUpdate());
-      hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPavingData());
-      hash = (37 * hash) + FILTER_FIELD_NUMBER;
-      hash = (53 * hash) + getFilter().hashCode();
+      hash = (37 * hash) + CONNECTION_CHARSET_FIELD_NUMBER;
+      hash = (53 * hash) + connectionCharset_;
+      hash = (37 * hash) + BUFFER_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getBufferSize();
+      hash = (37 * hash) + PARALLEL_THREAD_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getParallelThreadSize();
       hash = (37 * hash) + IS_GTID_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGtidMode());
-      hash = (37 * hash) + QUERY_TIMEOUT_FIELD_NUMBER;
-      hash = (53 * hash) + getQueryTimeout();
-      hash = (37 * hash) + CONNECT_TIMEOUT_FIELD_NUMBER;
-      hash = (53 * hash) + getConnectTimeout();
+      hash = (37 * hash) + PAVING_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPavingData());
+      hash = (37 * hash) + SPLIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSplit());
+      if (getColumnCount() > 0) {
+        hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -982,12 +1102,15 @@ public final class PBBinlog {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getColumnFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        schema_ = "";
+        table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        filter_ = "";
 
         cat_ = "";
 
@@ -997,20 +1120,24 @@ public final class PBBinlog {
           start_ = null;
           startBuilder_ = null;
         }
-        table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        splitUpdate_ = false;
+        connectionCharset_ = 0;
 
-        pavingData_ = false;
+        bufferSize_ = 0;
 
-        filter_ = "";
+        parallelThreadSize_ = 0;
 
         isGtidMode_ = false;
 
-        queryTimeout_ = 0;
+        pavingData_ = false;
 
-        connectTimeout_ = 0;
+        split_ = false;
 
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          columnBuilder_.clear();
+        }
         return this;
       }
 
@@ -1038,24 +1165,33 @@ public final class PBBinlog {
       public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource buildPartial() {
         com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource result = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource(this);
         int from_bitField0_ = bitField0_;
-        result.schema_ = schema_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          table_ = table_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.table_ = table_;
+        result.filter_ = filter_;
         result.cat_ = cat_;
         if (startBuilder_ == null) {
           result.start_ = start_;
         } else {
           result.start_ = startBuilder_.build();
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          table_ = table_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.table_ = table_;
-        result.splitUpdate_ = splitUpdate_;
-        result.pavingData_ = pavingData_;
-        result.filter_ = filter_;
+        result.connectionCharset_ = connectionCharset_;
+        result.bufferSize_ = bufferSize_;
+        result.parallelThreadSize_ = parallelThreadSize_;
         result.isGtidMode_ = isGtidMode_;
-        result.queryTimeout_ = queryTimeout_;
-        result.connectTimeout_ = connectTimeout_;
+        result.pavingData_ = pavingData_;
+        result.split_ = split_;
+        if (columnBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            column_ = java.util.Collections.unmodifiableList(column_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.column_ = column_;
+        } else {
+          result.column_ = columnBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1104,17 +1240,6 @@ public final class PBBinlog {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource other) {
         if (other == com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.BinlogSource.getDefaultInstance()) return this;
-        if (!other.getSchema().isEmpty()) {
-          schema_ = other.schema_;
-          onChanged();
-        }
-        if (!other.getCat().isEmpty()) {
-          cat_ = other.cat_;
-          onChanged();
-        }
-        if (other.hasStart()) {
-          mergeStart(other.getStart());
-        }
         if (!other.table_.isEmpty()) {
           if (table_.isEmpty()) {
             table_ = other.table_;
@@ -1125,24 +1250,60 @@ public final class PBBinlog {
           }
           onChanged();
         }
-        if (other.getSplitUpdate() != false) {
-          setSplitUpdate(other.getSplitUpdate());
-        }
-        if (other.getPavingData() != false) {
-          setPavingData(other.getPavingData());
-        }
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
           onChanged();
         }
+        if (!other.getCat().isEmpty()) {
+          cat_ = other.cat_;
+          onChanged();
+        }
+        if (other.hasStart()) {
+          mergeStart(other.getStart());
+        }
+        if (other.connectionCharset_ != 0) {
+          setConnectionCharsetValue(other.getConnectionCharsetValue());
+        }
+        if (other.getBufferSize() != 0) {
+          setBufferSize(other.getBufferSize());
+        }
+        if (other.getParallelThreadSize() != 0) {
+          setParallelThreadSize(other.getParallelThreadSize());
+        }
         if (other.getIsGtidMode() != false) {
           setIsGtidMode(other.getIsGtidMode());
         }
-        if (other.getQueryTimeout() != 0) {
-          setQueryTimeout(other.getQueryTimeout());
+        if (other.getPavingData() != false) {
+          setPavingData(other.getPavingData());
         }
-        if (other.getConnectTimeout() != 0) {
-          setConnectTimeout(other.getConnectTimeout());
+        if (other.getSplit() != false) {
+          setSplit(other.getSplit());
+        }
+        if (columnBuilder_ == null) {
+          if (!other.column_.isEmpty()) {
+            if (column_.isEmpty()) {
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureColumnIsMutable();
+              column_.addAll(other.column_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.column_.isEmpty()) {
+            if (columnBuilder_.isEmpty()) {
+              columnBuilder_.dispose();
+              columnBuilder_ = null;
+              column_ = other.column_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              columnBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getColumnFieldBuilder() : null;
+            } else {
+              columnBuilder_.addAllMessages(other.column_);
+            }
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1174,23 +1335,178 @@ public final class PBBinlog {
       }
       private int bitField0_;
 
-      private java.lang.Object schema_ = "";
+      private com.google.protobuf.LazyStringList table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTableIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          table_ = new com.google.protobuf.LazyStringArrayList(table_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
        * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
+       * table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string schema = 1;</code>
-       * @return The schema.
+       * <code>repeated string table = 1;</code>
+       * @return A list containing the table.
        */
-      public java.lang.String getSchema() {
-        java.lang.Object ref = schema_;
+      public com.google.protobuf.ProtocolStringList
+          getTableList() {
+        return table_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @return The count of table.
+       */
+      public int getTableCount() {
+        return table_.size();
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param index The index of the element to return.
+       * @return The table at the given index.
+       */
+      public java.lang.String getTable(int index) {
+        return table_.get(index);
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the table at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes(int index) {
+        return table_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTableIsMutable();
+        table_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param value The table to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTableIsMutable();
+        table_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param values The table to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTable(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTableIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, table_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+        table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * table
+       * &#64;inject_tag: json:"table"
+       * </pre>
+       *
+       * <code>repeated string table = 1;</code>
+       * @param value The bytes of the table to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTableIsMutable();
+        table_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filter_ = "";
+      /**
+       * <pre>
+       * filter
+       * &#64;inject_tag: json:"filter"
+       * </pre>
+       *
+       * <code>string filter = 2;</code>
+       * @return The filter.
+       */
+      public java.lang.String getFilter() {
+        java.lang.Object ref = filter_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          schema_ = s;
+          filter_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1198,21 +1514,21 @@ public final class PBBinlog {
       }
       /**
        * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
+       * filter
+       * &#64;inject_tag: json:"filter"
        * </pre>
        *
-       * <code>string schema = 1;</code>
-       * @return The bytes for schema.
+       * <code>string filter = 2;</code>
+       * @return The bytes for filter.
        */
       public com.google.protobuf.ByteString
-          getSchemaBytes() {
-        java.lang.Object ref = schema_;
+          getFilterBytes() {
+        java.lang.Object ref = filter_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          schema_ = b;
+          filter_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1220,57 +1536,57 @@ public final class PBBinlog {
       }
       /**
        * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
+       * filter
+       * &#64;inject_tag: json:"filter"
        * </pre>
        *
-       * <code>string schema = 1;</code>
-       * @param value The schema to set.
+       * <code>string filter = 2;</code>
+       * @param value The filter to set.
        * @return This builder for chaining.
        */
-      public Builder setSchema(
+      public Builder setFilter(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        schema_ = value;
+        filter_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
+       * filter
+       * &#64;inject_tag: json:"filter"
        * </pre>
        *
-       * <code>string schema = 1;</code>
+       * <code>string filter = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSchema() {
+      public Builder clearFilter() {
         
-        schema_ = getDefaultInstance().getSchema();
+        filter_ = getDefaultInstance().getFilter();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * schema
-       * &#64;inject_tag: json:"schema" 
+       * filter
+       * &#64;inject_tag: json:"filter"
        * </pre>
        *
-       * <code>string schema = 1;</code>
-       * @param value The bytes for schema to set.
+       * <code>string filter = 2;</code>
+       * @param value The bytes for filter to set.
        * @return This builder for chaining.
        */
-      public Builder setSchemaBytes(
+      public Builder setFilterBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        schema_ = value;
+        filter_ = value;
         onChanged();
         return this;
       }
@@ -1282,7 +1598,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 2;</code>
+       * <code>string cat = 3;</code>
        * @return The cat.
        */
       public java.lang.String getCat() {
@@ -1303,7 +1619,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 2;</code>
+       * <code>string cat = 3;</code>
        * @return The bytes for cat.
        */
       public com.google.protobuf.ByteString
@@ -1325,7 +1641,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 2;</code>
+       * <code>string cat = 3;</code>
        * @param value The cat to set.
        * @return This builder for chaining.
        */
@@ -1345,7 +1661,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 2;</code>
+       * <code>string cat = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearCat() {
@@ -1360,7 +1676,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"cat" 
        * </pre>
        *
-       * <code>string cat = 2;</code>
+       * <code>string cat = 3;</code>
        * @param value The bytes for cat to set.
        * @return This builder for chaining.
        */
@@ -1385,7 +1701,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        * @return Whether the start field is set.
        */
       public boolean hasStart() {
@@ -1397,7 +1713,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        * @return The start.
        */
       public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start getStart() {
@@ -1413,7 +1729,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public Builder setStart(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start value) {
         if (startBuilder_ == null) {
@@ -1434,7 +1750,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public Builder setStart(
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start.Builder builderForValue) {
@@ -1453,7 +1769,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public Builder mergeStart(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start value) {
         if (startBuilder_ == null) {
@@ -1476,7 +1792,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public Builder clearStart() {
         if (startBuilder_ == null) {
@@ -1495,7 +1811,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start.Builder getStartBuilder() {
         
@@ -1508,7 +1824,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.StartOrBuilder getStartOrBuilder() {
         if (startBuilder_ != null) {
@@ -1524,7 +1840,7 @@ public final class PBBinlog {
        * &#64;inject_tag: json:"start" 
        * </pre>
        *
-       * <code>.model.Start start = 3;</code>
+       * <code>.model.Start start = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.Start.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBinlog.StartOrBuilder> 
@@ -1540,350 +1856,173 @@ public final class PBBinlog {
         return startBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTableIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          table_ = new com.google.protobuf.LazyStringArrayList(table_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private int connectionCharset_ = 0;
       /**
        * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
+       * connection_charset
+       * &#64;inject_tag: json:"connection_charset"
        * </pre>
        *
-       * <code>repeated string table = 4;</code>
-       * @return A list containing the table.
+       * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+       * @return The enum numeric value on the wire for connectionCharset.
        */
-      public com.google.protobuf.ProtocolStringList
-          getTableList() {
-        return table_.getUnmodifiableView();
+      @java.lang.Override public int getConnectionCharsetValue() {
+        return connectionCharset_;
       }
       /**
        * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
+       * connection_charset
+       * &#64;inject_tag: json:"connection_charset"
        * </pre>
        *
-       * <code>repeated string table = 4;</code>
-       * @return The count of table.
-       */
-      public int getTableCount() {
-        return table_.size();
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @param index The index of the element to return.
-       * @return The table at the given index.
-       */
-      public java.lang.String getTable(int index) {
-        return table_.get(index);
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the table at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getTableBytes(int index) {
-        return table_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The table to set.
+       * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+       * @param value The enum numeric value on the wire for connectionCharset to set.
        * @return This builder for chaining.
        */
-      public Builder setTable(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTableIsMutable();
-        table_.set(index, value);
+      public Builder setConnectionCharsetValue(int value) {
+        
+        connectionCharset_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
+       * connection_charset
+       * &#64;inject_tag: json:"connection_charset"
        * </pre>
        *
-       * <code>repeated string table = 4;</code>
-       * @param value The table to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTableIsMutable();
-        table_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @param values The table to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllTable(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTableIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, table_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTable() {
-        table_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * table
-       * &#64;inject_tag: json:"table" 
-       * </pre>
-       *
-       * <code>repeated string table = 4;</code>
-       * @param value The bytes of the table to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTableIsMutable();
-        table_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private boolean splitUpdate_ ;
-      /**
-       * <pre>
-       * split  update
-       * &#64;inject_tag: json:"split_update" 
-       * </pre>
-       *
-       * <code>bool split_update = 5;</code>
-       * @return The splitUpdate.
+       * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+       * @return The connectionCharset.
        */
       @java.lang.Override
-      public boolean getSplitUpdate() {
-        return splitUpdate_;
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getConnectionCharset() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(connectionCharset_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
       }
       /**
        * <pre>
-       * split  update
-       * &#64;inject_tag: json:"split_update" 
+       * connection_charset
+       * &#64;inject_tag: json:"connection_charset"
        * </pre>
        *
-       * <code>bool split_update = 5;</code>
-       * @param value The splitUpdate to set.
+       * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
+       * @param value The connectionCharset to set.
        * @return This builder for chaining.
        */
-      public Builder setSplitUpdate(boolean value) {
+      public Builder setConnectionCharset(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        splitUpdate_ = value;
+        connectionCharset_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * split  update
-       * &#64;inject_tag: json:"split_update" 
+       * connection_charset
+       * &#64;inject_tag: json:"connection_charset"
        * </pre>
        *
-       * <code>bool split_update = 5;</code>
+       * <code>.model.BaseEnum.Encoding connection_charset = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSplitUpdate() {
+      public Builder clearConnectionCharset() {
         
-        splitUpdate_ = false;
+        connectionCharset_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean pavingData_ ;
+      private int bufferSize_ ;
       /**
        * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
+       * buffer_size
+       * &#64;inject_tag: json:"buffer_size"
        * </pre>
        *
-       * <code>bool paving_data = 6;</code>
-       * @return The pavingData.
+       * <code>int32 buffer_size = 6;</code>
+       * @return The bufferSize.
        */
       @java.lang.Override
-      public boolean getPavingData() {
-        return pavingData_;
+      public int getBufferSize() {
+        return bufferSize_;
       }
       /**
        * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
+       * buffer_size
+       * &#64;inject_tag: json:"buffer_size"
        * </pre>
        *
-       * <code>bool paving_data = 6;</code>
-       * @param value The pavingData to set.
+       * <code>int32 buffer_size = 6;</code>
+       * @param value The bufferSize to set.
        * @return This builder for chaining.
        */
-      public Builder setPavingData(boolean value) {
+      public Builder setBufferSize(int value) {
         
-        pavingData_ = value;
+        bufferSize_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * paving data
-       * &#64;inject_tag: json:"paving_data" 
+       * buffer_size
+       * &#64;inject_tag: json:"buffer_size"
        * </pre>
        *
-       * <code>bool paving_data = 6;</code>
+       * <code>int32 buffer_size = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPavingData() {
+      public Builder clearBufferSize() {
         
-        pavingData_ = false;
+        bufferSize_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object filter_ = "";
+      private int parallelThreadSize_ ;
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * parallel_thread_size
+       * &#64;inject_tag: json:"parallel_thread_size"
        * </pre>
        *
-       * <code>string filter = 7;</code>
-       * @return The filter.
+       * <code>int32 parallel_thread_size = 7;</code>
+       * @return The parallelThreadSize.
        */
-      public java.lang.String getFilter() {
-        java.lang.Object ref = filter_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          filter_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getParallelThreadSize() {
+        return parallelThreadSize_;
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * parallel_thread_size
+       * &#64;inject_tag: json:"parallel_thread_size"
        * </pre>
        *
-       * <code>string filter = 7;</code>
-       * @return The bytes for filter.
-       */
-      public com.google.protobuf.ByteString
-          getFilterBytes() {
-        java.lang.Object ref = filter_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          filter_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
-       * </pre>
-       *
-       * <code>string filter = 7;</code>
-       * @param value The filter to set.
+       * <code>int32 parallel_thread_size = 7;</code>
+       * @param value The parallelThreadSize to set.
        * @return This builder for chaining.
        */
-      public Builder setFilter(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        filter_ = value;
+      public Builder setParallelThreadSize(int value) {
+        
+        parallelThreadSize_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * parallel_thread_size
+       * &#64;inject_tag: json:"parallel_thread_size"
        * </pre>
        *
-       * <code>string filter = 7;</code>
+       * <code>int32 parallel_thread_size = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFilter() {
+      public Builder clearParallelThreadSize() {
         
-        filter_ = getDefaultInstance().getFilter();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
-       * </pre>
-       *
-       * <code>string filter = 7;</code>
-       * @param value The bytes for filter to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFilterBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        filter_ = value;
+        parallelThreadSize_ = 0;
         onChanged();
         return this;
       }
@@ -1934,96 +2073,426 @@ public final class PBBinlog {
         return this;
       }
 
-      private int queryTimeout_ ;
+      private boolean pavingData_ ;
       /**
        * <pre>
-       * query_timeout
-       * &#64;inject_tag: json:"query_timeout" 
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
        * </pre>
        *
-       * <code>int32 query_timeout = 9;</code>
-       * @return The queryTimeout.
+       * <code>bool paving_data = 9;</code>
+       * @return The pavingData.
        */
       @java.lang.Override
-      public int getQueryTimeout() {
-        return queryTimeout_;
+      public boolean getPavingData() {
+        return pavingData_;
       }
       /**
        * <pre>
-       * query_timeout
-       * &#64;inject_tag: json:"query_timeout" 
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
        * </pre>
        *
-       * <code>int32 query_timeout = 9;</code>
-       * @param value The queryTimeout to set.
+       * <code>bool paving_data = 9;</code>
+       * @param value The pavingData to set.
        * @return This builder for chaining.
        */
-      public Builder setQueryTimeout(int value) {
+      public Builder setPavingData(boolean value) {
         
-        queryTimeout_ = value;
+        pavingData_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * query_timeout
-       * &#64;inject_tag: json:"query_timeout" 
+       * paving_data
+       * &#64;inject_tag: json:"paving_data"
        * </pre>
        *
-       * <code>int32 query_timeout = 9;</code>
+       * <code>bool paving_data = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearQueryTimeout() {
+      public Builder clearPavingData() {
         
-        queryTimeout_ = 0;
+        pavingData_ = false;
         onChanged();
         return this;
       }
 
-      private int connectTimeout_ ;
+      private boolean split_ ;
       /**
        * <pre>
-       * connect_timeout
-       * &#64;inject_tag: json:"connect_timeout" 
+       * split
+       * &#64;inject_tag: json:"split"
        * </pre>
        *
-       * <code>int32 connect_timeout = 10;</code>
-       * @return The connectTimeout.
+       * <code>bool split = 10;</code>
+       * @return The split.
        */
       @java.lang.Override
-      public int getConnectTimeout() {
-        return connectTimeout_;
+      public boolean getSplit() {
+        return split_;
       }
       /**
        * <pre>
-       * connect_timeout
-       * &#64;inject_tag: json:"connect_timeout" 
+       * split
+       * &#64;inject_tag: json:"split"
        * </pre>
        *
-       * <code>int32 connect_timeout = 10;</code>
-       * @param value The connectTimeout to set.
+       * <code>bool split = 10;</code>
+       * @param value The split to set.
        * @return This builder for chaining.
        */
-      public Builder setConnectTimeout(int value) {
+      public Builder setSplit(boolean value) {
         
-        connectTimeout_ = value;
+        split_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * connect_timeout
-       * &#64;inject_tag: json:"connect_timeout" 
+       * split
+       * &#64;inject_tag: json:"split"
        * </pre>
        *
-       * <code>int32 connect_timeout = 10;</code>
+       * <code>bool split = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearConnectTimeout() {
+      public Builder clearSplit() {
         
-        connectTimeout_ = 0;
+        split_ = false;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> column_ =
+        java.util.Collections.emptyList();
+      private void ensureColumnIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          column_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column>(column_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> columnBuilder_;
+
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> getColumnList() {
+        if (columnBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(column_);
+        } else {
+          return columnBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public int getColumnCount() {
+        if (columnBuilder_ == null) {
+          return column_.size();
+        } else {
+          return columnBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column getColumn(int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);
+        } else {
+          return columnBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.set(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder setColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder addColumn(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column value) {
+        if (columnBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureColumnIsMutable();
+          column_.add(index, value);
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder addColumn(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder addColumn(
+          int index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder builderForValue) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          columnBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder addAllColumn(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column> values) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, column_);
+          onChanged();
+        } else {
+          columnBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder clearColumn() {
+        if (columnBuilder_ == null) {
+          column_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          columnBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public Builder removeColumn(int index) {
+        if (columnBuilder_ == null) {
+          ensureColumnIsMutable();
+          column_.remove(index);
+          onChanged();
+        } else {
+          columnBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder getColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder getColumnOrBuilder(
+          int index) {
+        if (columnBuilder_ == null) {
+          return column_.get(index);  } else {
+          return columnBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+           getColumnOrBuilderList() {
+        if (columnBuilder_ != null) {
+          return columnBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(column_);
+        }
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder addColumnBuilder() {
+        return getColumnFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder addColumnBuilder(
+          int index) {
+        return getColumnFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * column
+       * &#64;inject_tag: json:"column"
+       * </pre>
+       *
+       * <code>repeated .model.Column column = 11;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder> 
+           getColumnBuilderList() {
+        return getColumnFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder> 
+          getColumnFieldBuilder() {
+        if (columnBuilder_ == null) {
+          columnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.Column.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.ColumnOrBuilder>(
+                  column_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          column_ = null;
+        }
+        return columnBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2085,7 +2554,7 @@ public final class PBBinlog {
     /**
      * <pre>
      * timestamp
-     * &#64;inject_tag: json:"timestamp" 
+     * &#64;inject_tag: json:"timestamp"
      * </pre>
      *
      * <code>int64 timestamp = 1;</code>
@@ -2225,7 +2694,7 @@ public final class PBBinlog {
     /**
      * <pre>
      * timestamp
-     * &#64;inject_tag: json:"timestamp" 
+     * &#64;inject_tag: json:"timestamp"
      * </pre>
      *
      * <code>int64 timestamp = 1;</code>
@@ -2642,7 +3111,7 @@ public final class PBBinlog {
       /**
        * <pre>
        * timestamp
-       * &#64;inject_tag: json:"timestamp" 
+       * &#64;inject_tag: json:"timestamp"
        * </pre>
        *
        * <code>int64 timestamp = 1;</code>
@@ -2655,7 +3124,7 @@ public final class PBBinlog {
       /**
        * <pre>
        * timestamp
-       * &#64;inject_tag: json:"timestamp" 
+       * &#64;inject_tag: json:"timestamp"
        * </pre>
        *
        * <code>int64 timestamp = 1;</code>
@@ -2671,7 +3140,7 @@ public final class PBBinlog {
       /**
        * <pre>
        * timestamp
-       * &#64;inject_tag: json:"timestamp" 
+       * &#64;inject_tag: json:"timestamp"
        * </pre>
        *
        * <code>int64 timestamp = 1;</code>
@@ -2904,29 +3373,35 @@ public final class PBBinlog {
     java.lang.String[] descriptorData = {
       "\n&proto/types/model/syncjob/binlog.proto" +
       "\022\005model\032/github.com/yu31/protoc-plugin/p" +
-      "roto/gosql.proto\"\340\001\n\014BinlogSource\022\016\n\006sch" +
-      "ema\030\001 \001(\t\022\013\n\003cat\030\002 \001(\t\022\033\n\005start\030\003 \001(\0132\014." +
-      "model.Start\022\r\n\005table\030\004 \003(\t\022\024\n\014split_upda" +
-      "te\030\005 \001(\010\022\023\n\013paving_data\030\006 \001(\010\022\016\n\006filter\030" +
-      "\007 \001(\t\022\024\n\014is_gtid_mode\030\010 \001(\010\022\025\n\rquery_tim" +
-      "eout\030\t \001(\005\022\027\n\017connect_timeout\030\n \001(\005:\006\312\262\004" +
-      "\002\n\000\"B\n\005Start\022\021\n\ttimestamp\030\001 \001(\003\022\024\n\014journ" +
-      "al_name\030\002 \001(\t\022\020\n\010position\030\003 \001(\003Bw\n,com.d" +
-      "ataomnis.gproto.types.pbmodel.pbsyncjobB" +
-      "\010PBBinlogP\000Z;github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodel/pbsyncjobb\006proto3"
+      "roto/gosql.proto\032&proto/types/model/sync" +
+      "job/column.proto\032(proto/types/model/sync" +
+      "job/baseenum.proto\"\241\002\n\014BinlogSource\022\r\n\005t" +
+      "able\030\001 \003(\t\022\016\n\006filter\030\002 \001(\t\022\013\n\003cat\030\003 \001(\t\022" +
+      "\033\n\005start\030\004 \001(\0132\014.model.Start\0224\n\022connecti" +
+      "on_charset\030\005 \001(\0162\030.model.BaseEnum.Encodi" +
+      "ng\022\023\n\013buffer_size\030\006 \001(\005\022\034\n\024parallel_thre" +
+      "ad_size\030\007 \001(\005\022\024\n\014is_gtid_mode\030\010 \001(\010\022\023\n\013p" +
+      "aving_data\030\t \001(\010\022\r\n\005split\030\n \001(\010\022\035\n\006colum" +
+      "n\030\013 \003(\0132\r.model.Column:\006\312\262\004\002\n\000\"B\n\005Start\022" +
+      "\021\n\ttimestamp\030\001 \001(\003\022\024\n\014journal_name\030\002 \001(\t" +
+      "\022\020\n\010position\030\003 \001(\003Bw\n,com.dataomnis.gpro" +
+      "to.types.pbmodel.pbsyncjobB\010PBBinlogP\000Z;" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
         });
     internal_static_model_BinlogSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_model_BinlogSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_BinlogSource_descriptor,
-        new java.lang.String[] { "Schema", "Cat", "Start", "Table", "SplitUpdate", "PavingData", "Filter", "IsGtidMode", "QueryTimeout", "ConnectTimeout", });
+        new java.lang.String[] { "Table", "Filter", "Cat", "Start", "ConnectionCharset", "BufferSize", "ParallelThreadSize", "IsGtidMode", "PavingData", "Split", "Column", });
     internal_static_model_Start_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_Start_fieldAccessorTable = new
@@ -2939,6 +3414,8 @@ public final class PBBinlog {
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
