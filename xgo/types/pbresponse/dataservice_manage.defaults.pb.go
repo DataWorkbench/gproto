@@ -72,6 +72,21 @@ func (this *DescribeApiConfig) SetDefaults() {
 			dt.SetDefaults()
 		}
 	}
+	if this.DataSource != nil {
+		if dt, ok := interface{}(this.DataSource).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ApiGroup != nil {
+		if dt, ok := interface{}(this.ApiGroup).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	if this.ServiceCluster != nil {
+		if dt, ok := interface{}(this.ServiceCluster).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
 	return
 }
 

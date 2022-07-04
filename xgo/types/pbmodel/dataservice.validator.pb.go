@@ -599,6 +599,18 @@ func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_position() error
 	return nil
 }
 
+var _xxx_xxx_Validator_RequestParameter_InEnums_FieldCategory = map[RequestParameter_FieldCategory]bool{0: true, 1: true, 2: true}
+
+func (this *RequestParameter) _xxx_xxx_Validator_Validate_field_category() error {
+	if !(this.FieldCategory > 0) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'field_category' must be greater than '0'", protovalidator.Int32ToString(int32(this.FieldCategory)))
+	}
+	if !(_xxx_xxx_Validator_RequestParameter_InEnums_FieldCategory[this.FieldCategory]) {
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'field_category' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.FieldCategory)))
+	}
+	return nil
+}
+
 // Set default value for message model.RequestParameter
 func (this *RequestParameter) Validate() error {
 	if this == nil {
@@ -626,6 +638,9 @@ func (this *RequestParameter) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_param_position(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_field_category(); err != nil {
 		return err
 	}
 	return nil
@@ -720,6 +735,18 @@ func (this *ResponseParameter) _xxx_xxx_Validator_Validate_order_mode() error {
 	return nil
 }
 
+var _xxx_xxx_Validator_ResponseParameter_InEnums_FieldCategory = map[ResponseParameter_FieldCategory]bool{0: true, 1: true, 2: true}
+
+func (this *ResponseParameter) _xxx_xxx_Validator_Validate_field_category() error {
+	if !(this.FieldCategory > 0) {
+		return protovalidator.FieldError1("ResponseParameter", "the value of field 'field_category' must be greater than '0'", protovalidator.Int32ToString(int32(this.FieldCategory)))
+	}
+	if !(_xxx_xxx_Validator_ResponseParameter_InEnums_FieldCategory[this.FieldCategory]) {
+		return protovalidator.FieldError1("ResponseParameter", "the value of field 'field_category' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.FieldCategory)))
+	}
+	return nil
+}
+
 // Set default value for message model.ResponseParameter
 func (this *ResponseParameter) Validate() error {
 	if this == nil {
@@ -747,6 +774,9 @@ func (this *ResponseParameter) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_order_mode(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_field_category(); err != nil {
 		return err
 	}
 	return nil

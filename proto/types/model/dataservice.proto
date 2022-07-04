@@ -182,6 +182,12 @@ message RequestParameter {
     Head = 4;
   }
 
+  enum FieldCategory{
+    CategoryUnset = 0;
+    PageConfig = 1;
+    DataBaseColumn = 2;
+  }
+
   // @inject_tag: json:"column_name"
   string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 } ];
   // @inject_tag: json:"default_value"
@@ -200,7 +206,8 @@ message RequestParameter {
   ParameterOperator param_operator = 8  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
   // @inject_tag: json:"param_position"
   ParameterPosition param_position = 9  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
-
+  // @inject_tag: json:"field_category"
+  FieldCategory field_category = 10  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 message ResponseParameters {
@@ -217,6 +224,13 @@ message ResponseParameter {
     Ase = 1;
     Desc = 2;
   }
+
+  enum FieldCategory{
+    CategoryUnset = 0;
+    PageConfig = 1;
+    DataBaseColumn = 2;
+  }
+
   // @inject_tag: json:"column_name"
   string column_name = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 64 }  ];
   // @inject_tag: json:"default_value"
@@ -233,6 +247,8 @@ message ResponseParameter {
   int64 order_num = 7 [ (validator.field).tags.int = { } ];
   // @inject_tag: json:"order_mode"
   OrderMode order_mode = 8 [ (validator.field).tags.enum = {  in_enums: true }  ];
+  // @inject_tag: json:"field_category"
+  FieldCategory field_category = 9  [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 }
 
 // table api_versions

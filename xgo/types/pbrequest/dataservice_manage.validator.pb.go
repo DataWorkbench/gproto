@@ -687,12 +687,6 @@ func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_group_id() error {
 }
 
 func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_cluster_id() error {
-	if !(len(this.ClusterId) == 20) {
-		return protovalidator.FieldError1("UpdateApiConfig", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
-	}
-	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
-		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
-	}
 	return nil
 }
 
