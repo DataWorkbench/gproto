@@ -11,44 +11,56 @@ option java_outer_classname = "PBBinlog";
 option java_multiple_files = false;
 
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "proto/types/model/syncjob/column.proto";
+import "proto/types/model/syncjob/baseenum.proto";
 
 message BinlogSource {
+
     option (gosql.serialize) = {json: {}};
-    // schema
-    // @inject_tag: json:"schema" 
-    string schema = 1;
+    // table
+    // @inject_tag: json:"table"
+    repeated string table = 1;
+
+    // filter
+    // @inject_tag: json:"filter"
+    string filter = 2;
+
     // cat
     // @inject_tag: json:"cat" 
-    string cat = 2;
+    string cat = 3;
     // start
     // @inject_tag: json:"start" 
-    Start start = 3;
-    // table
-    // @inject_tag: json:"table" 
-    repeated string table = 4;
-    // split  update
-    // @inject_tag: json:"split_update" 
-    bool split_update = 5;
-    // paving data
-    // @inject_tag: json:"paving_data" 
-    bool paving_data = 6;
-    // filter
-    // @inject_tag: json:"filter" 
-    string filter = 7;
+    Start start = 4;
+
+    // connection_charset
+    // @inject_tag: json:"connection_charset"
+    BaseEnum.Encoding connection_charset = 5;
+
+    // buffer_size
+    // @inject_tag: json:"buffer_size"
+    int32 buffer_size = 6;
+
+    // parallel_thread_size
+    // @inject_tag: json:"parallel_thread_size"
+    int32 parallel_thread_size = 7;
+
     // is gtid mode
     // @inject_tag: json:"is_gtid_mode" 
     bool is_gtid_mode = 8;
-    // query_timeout
-    // @inject_tag: json:"query_timeout" 
-    int32 query_timeout = 9;
-    // connect_timeout
-    // @inject_tag: json:"connect_timeout" 
-    int32 connect_timeout = 10;
+    // paving_data
+    // @inject_tag: json:"paving_data"
+    bool paving_data = 9;
+    // split
+    // @inject_tag: json:"split"
+    bool split = 10;
+    // column
+    // @inject_tag: json:"column"
+    repeated Column column = 11;
 }
 
 message Start {
     // timestamp
-    // @inject_tag: json:"timestamp" 
+    // @inject_tag: json:"timestamp"
     int64 timestamp = 1;
     // journal name
     // @inject_tag: json:"journal_name" 

@@ -28,7 +28,10 @@ message RouteInfo {
   // @inject_tag: json:"uri"
   string uri = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"id"
-  string id = 2 [ (validator.field).tags.string = { byte_len_lte: 20 } ];
+  string id = 2 [
+    (validator.field).check_if = { field: "id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20 }
+  ];
   // @inject_tag: json:"desc"
   string desc = 3 [ (validator.field).tags.string = { byte_len_gte: 0,  byte_len_lt: 512} ];
   // @inject_tag: json:"host"
@@ -109,12 +112,18 @@ message UpstreamInfo {
   // @inject_tag: json:"timeout"
   model.Timeout timeout = 7;
   // @inject_tag: json:"id"
-  string id = 8 [ (validator.field).tags.string = { byte_len_gte: 0,  byte_len_lt: 20} ];;
+  string id = 8 [
+    (validator.field).check_if = { field: "id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20 }
+  ];
 }
 
 message DeleteUpstream {
   // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string id = 1 [
+    (validator.field).check_if = { field: "id", tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { byte_len_eq: 20 }
+  ];
 }
 
 message ListUpstreams {
@@ -211,12 +220,12 @@ message CreateApiService {
 
 message DeleteApiService {
   // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 256} ];
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 256 } ];
 }
 
 message UpdateApiService {
   // @inject_tag: json:"id"
-  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lt: 256 } ];
 
   string name = 2;
 

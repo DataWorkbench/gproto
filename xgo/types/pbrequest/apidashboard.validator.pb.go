@@ -64,9 +64,19 @@ func (this *RouteInfo) _xxx_xxx_Validator_Validate_uri() error {
 	return nil
 }
 
+func (this *RouteInfo) _xxx_xxx_Validator_CheckIf_id() bool {
+	if !(this.Id != "") {
+		return false
+	}
+	return true
+}
+
 func (this *RouteInfo) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) <= 20) {
-		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'id' must be less than or equal to '20'", protovalidator.StringByteLenToString(this.Id))
+	if !this._xxx_xxx_Validator_CheckIf_id() {
+		return nil
+	}
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
@@ -387,12 +397,19 @@ func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_timeout() error {
 	return nil
 }
 
-func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) < 20) {
-		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'id' must be less than '20'", protovalidator.StringByteLenToString(this.Id))
+func (this *UpstreamInfo) _xxx_xxx_Validator_CheckIf_id() bool {
+	if !(this.Id != "") {
+		return false
 	}
-	if !(len(this.Id) >= 0) {
-		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'id' must be greater than or equal to '0'", protovalidator.StringByteLenToString(this.Id))
+	return true
+}
+
+func (this *UpstreamInfo) _xxx_xxx_Validator_Validate_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_id() {
+		return nil
+	}
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("UpstreamInfo", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
@@ -429,9 +446,19 @@ func (this *UpstreamInfo) Validate() error {
 	return nil
 }
 
+func (this *DeleteUpstream) _xxx_xxx_Validator_CheckIf_id() bool {
+	if !(this.Id != "") {
+		return false
+	}
+	return true
+}
+
 func (this *DeleteUpstream) _xxx_xxx_Validator_Validate_id() error {
-	if !(len(this.Id) > 0) {
-		return protovalidator.FieldError1("DeleteUpstream", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+	if !this._xxx_xxx_Validator_CheckIf_id() {
+		return nil
+	}
+	if !(len(this.Id) == 20) {
+		return protovalidator.FieldError1("DeleteUpstream", "the byte length of field 'id' must be equal to '20'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
@@ -746,6 +773,9 @@ func (this *DeleteApiService) Validate() error {
 func (this *UpdateApiService) _xxx_xxx_Validator_Validate_id() error {
 	if !(len(this.Id) > 0) {
 		return protovalidator.FieldError1("UpdateApiService", "the byte length of field 'id' must be greater than '0'", protovalidator.StringByteLenToString(this.Id))
+	}
+	if !(len(this.Id) < 256) {
+		return protovalidator.FieldError1("UpdateApiService", "the byte length of field 'id' must be less than '256'", protovalidator.StringByteLenToString(this.Id))
 	}
 	return nil
 }
