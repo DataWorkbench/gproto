@@ -31,13 +31,13 @@ message MongodbSource {
     int32 fetch_size = 4;
     // condition type
     // @inject_tag: json:"condition_type"
-    BaseEnum.ConditionType condition_type = 6;
+    BaseEnum.ConditionType condition_type = 5;
     // visualization condition
     // @inject_tag: json:"visualization"
-    Condition visualization = 7;
+    Condition visualization = 6;
     // express condition
     // @inject_tag: json:"express"
-    string express = 8;
+    string express = 7;
 
 }
 
