@@ -54,4 +54,10 @@ message BaseEnum {
 		Auto = 3;
 	}
 
+	enum ConditionType {
+		ConditionTypeUnset=0;
+		Visualization = 1;
+		Express = 2;
+	}
+
 }
