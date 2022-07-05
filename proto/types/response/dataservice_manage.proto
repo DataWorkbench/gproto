@@ -11,7 +11,6 @@ option java_outer_classname = "PBResponseDataServiceManage";
 option java_multiple_files = false;
 
 import "proto/types/model/dataservice.proto";
-import "proto/types/model/datasource.proto";
 
 message ListDataServiceClusters {
   // @inject_tag: json:"infos"
@@ -58,12 +57,12 @@ message ListApiConfigs {
 message DescribeApiConfig {
   // @inject_tag: json:"api_config"
   model.ApiConfig api_config = 1;
-  // @inject_tag: json:"data_source"
-  model.DataSource data_source = 2;
   // @inject_tag: json:"api_group"
-  model.ApiGroup api_group = 3;
+  model.ApiGroup api_group = 2 ;
+  // @inject_tag: json:"data_source"
+  model.ApiConfigDataSource data_source = 3;
   // @inject_tag: json:"service_cluster"
-  model.DataServiceCluster service_cluster = 4;
+  model.ApiConfigServiceCluster service_cluster = 4;
 }
 
 message CreateApiConfig {

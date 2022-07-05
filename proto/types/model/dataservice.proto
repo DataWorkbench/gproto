@@ -347,4 +347,29 @@ message ServiceDataSourceKind {
 }
 
 
+message ApiConfigDataSource {
+  enum Type {
+    TypeUnset = 0;
+    MySQL = 1;
+    PostgreSQL = 2;
+    ClickHouse = 5;
+  }
+
+  // @inject_tag: json:"id" gorm:"column:id;"
+  string id = 2 [ (validator.field).tags.string = {  } ];
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3  [ (validator.field).tags.string = { } ];
+  // Source Type, 1->MySQL 2->PostgreSQL 5->ClickHouse
+  // @inject_tag: json:"type" gorm:"column:type;"
+  Type type = 5  [ (validator.field).tags.enum = {  } ];
+}
+
+message ApiConfigServiceCluster{
+  // @inject_tag: json:"id" gorm:"column:id;"
+  string id = 1 [ (validator.field).tags.string = { } ];
+  // @inject_tag: json:"name" gorm:"column:name;"
+  string name = 3 [ (validator.field).tags.string = { } ];
+}
+
+
 

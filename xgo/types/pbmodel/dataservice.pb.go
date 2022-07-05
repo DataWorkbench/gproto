@@ -1005,6 +1005,58 @@ func (ApiVersion_Protocols) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{7, 4}
 }
 
+type ApiConfigDataSource_Type int32
+
+const (
+	ApiConfigDataSource_TypeUnset  ApiConfigDataSource_Type = 0
+	ApiConfigDataSource_MySQL      ApiConfigDataSource_Type = 1
+	ApiConfigDataSource_PostgreSQL ApiConfigDataSource_Type = 2
+	ApiConfigDataSource_ClickHouse ApiConfigDataSource_Type = 5
+)
+
+// Enum value maps for ApiConfigDataSource_Type.
+var (
+	ApiConfigDataSource_Type_name = map[int32]string{
+		0: "TypeUnset",
+		1: "MySQL",
+		2: "PostgreSQL",
+		5: "ClickHouse",
+	}
+	ApiConfigDataSource_Type_value = map[string]int32{
+		"TypeUnset":  0,
+		"MySQL":      1,
+		"PostgreSQL": 2,
+		"ClickHouse": 5,
+	}
+)
+
+func (x ApiConfigDataSource_Type) Enum() *ApiConfigDataSource_Type {
+	p := new(ApiConfigDataSource_Type)
+	*p = x
+	return p
+}
+
+func (x ApiConfigDataSource_Type) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ApiConfigDataSource_Type) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_types_model_dataservice_proto_enumTypes[19].Descriptor()
+}
+
+func (ApiConfigDataSource_Type) Type() protoreflect.EnumType {
+	return &file_proto_types_model_dataservice_proto_enumTypes[19]
+}
+
+func (x ApiConfigDataSource_Type) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ApiConfigDataSource_Type.Descriptor instead.
+func (ApiConfigDataSource_Type) EnumDescriptor() ([]byte, []int) {
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{9, 0}
+}
+
 // table dataservice_cluster
 type DataServiceCluster struct {
 	state         protoimpl.MessageState
@@ -2042,6 +2094,125 @@ func (x *ServiceDataSourceKind) GetType() int64 {
 	return 0
 }
 
+type ApiConfigDataSource struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id   string `protobuf:"bytes,2,opt,name=id,proto3" json:"id" gorm:"column:id;"`
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+	// Source Type, 1->MySQL 2->PostgreSQL 5->ClickHouse
+	Type ApiConfigDataSource_Type `protobuf:"varint,5,opt,name=type,proto3,enum=model.ApiConfigDataSource_Type" json:"type" gorm:"column:type;"`
+}
+
+func (x *ApiConfigDataSource) Reset() {
+	*x = ApiConfigDataSource{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ApiConfigDataSource) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApiConfigDataSource) ProtoMessage() {}
+
+func (x *ApiConfigDataSource) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApiConfigDataSource.ProtoReflect.Descriptor instead.
+func (*ApiConfigDataSource) Descriptor() ([]byte, []int) {
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *ApiConfigDataSource) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApiConfigDataSource) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ApiConfigDataSource) GetType() ApiConfigDataSource_Type {
+	if x != nil {
+		return x.Type
+	}
+	return ApiConfigDataSource_TypeUnset
+}
+
+type ApiConfigServiceCluster struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id   string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" gorm:"column:id;"`
+	Name string `protobuf:"bytes,3,opt,name=name,proto3" json:"name" gorm:"column:name;"`
+}
+
+func (x *ApiConfigServiceCluster) Reset() {
+	*x = ApiConfigServiceCluster{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_model_dataservice_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ApiConfigServiceCluster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApiConfigServiceCluster) ProtoMessage() {}
+
+func (x *ApiConfigServiceCluster) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_model_dataservice_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApiConfigServiceCluster.ProtoReflect.Descriptor instead.
+func (*ApiConfigServiceCluster) Descriptor() ([]byte, []int) {
+	return file_proto_types_model_dataservice_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ApiConfigServiceCluster) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ApiConfigServiceCluster) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 var File_proto_types_model_dataservice_proto protoreflect.FileDescriptor
 
 var file_proto_types_model_dataservice_proto_rawDesc = []byte{
@@ -2436,20 +2607,38 @@ var file_proto_types_model_dataservice_proto_rawDesc = []byte{
 	0x76, 0x69, 0x63, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69,
 	0x6e, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x04, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x54, 0x79, 0x70, 0x65, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x54, 0x79, 0x70, 0x65, 0x2a, 0x50, 0x0a, 0x11, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x44, 0x61, 0x74, 0x61, 0x54, 0x79, 0x70, 0x65, 0x12,
-	0x0d, 0x0a, 0x09, 0x54, 0x79, 0x70, 0x65, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0a,
-	0x0a, 0x06, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x49, 0x6e,
-	0x74, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x44, 0x6f, 0x75, 0x62, 0x6c, 0x65, 0x10, 0x03, 0x12,
-	0x0b, 0x0a, 0x07, 0x42, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x10, 0x04, 0x42, 0x6d, 0x0a, 0x22,
-	0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x6d, 0x6f, 0x64,
-	0x65, 0x6c, 0x42, 0x12, 0x50, 0x42, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x00, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
-	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
-	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x20, 0x01, 0x28, 0x03, 0x52, 0x04, 0x54, 0x79, 0x70, 0x65, 0x22, 0xd1, 0x01, 0x0a, 0x13, 0x41,
+	0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x12, 0x19, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09,
+	0xe2, 0xdf, 0x1f, 0x05, 0x12, 0x03, 0xc2, 0x01, 0x00, 0x52, 0x02, 0x69, 0x64, 0x12, 0x1d, 0x0a,
+	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f,
+	0x05, 0x12, 0x03, 0xc2, 0x01, 0x00, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x3e, 0x0a, 0x04,
+	0x74, 0x79, 0x70, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1f, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x2e, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x44, 0x61, 0x74, 0x61,
+	0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x54, 0x79, 0x70, 0x65, 0x42, 0x09, 0xe2, 0xdf, 0x1f,
+	0x05, 0x12, 0x03, 0xda, 0x01, 0x00, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x40, 0x0a, 0x04,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x0d, 0x0a, 0x09, 0x54, 0x79, 0x70, 0x65, 0x55, 0x6e, 0x73, 0x65,
+	0x74, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x4d, 0x79, 0x53, 0x51, 0x4c, 0x10, 0x01, 0x12, 0x0e,
+	0x0a, 0x0a, 0x50, 0x6f, 0x73, 0x74, 0x67, 0x72, 0x65, 0x53, 0x51, 0x4c, 0x10, 0x02, 0x12, 0x0e,
+	0x0a, 0x0a, 0x43, 0x6c, 0x69, 0x63, 0x6b, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x10, 0x05, 0x22, 0x53,
+	0x0a, 0x17, 0x41, 0x70, 0x69, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x12, 0x19, 0x0a, 0x02, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x12, 0x03, 0xc2, 0x01, 0x00,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x1d, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x09, 0xe2, 0xdf, 0x1f, 0x05, 0x12, 0x03, 0xc2, 0x01, 0x00, 0x52, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x2a, 0x50, 0x0a, 0x11, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72,
+	0x44, 0x61, 0x74, 0x61, 0x54, 0x79, 0x70, 0x65, 0x12, 0x0d, 0x0a, 0x09, 0x54, 0x79, 0x70, 0x65,
+	0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x53, 0x74, 0x72, 0x69, 0x6e,
+	0x67, 0x10, 0x01, 0x12, 0x07, 0x0a, 0x03, 0x49, 0x6e, 0x74, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06,
+	0x44, 0x6f, 0x75, 0x62, 0x6c, 0x65, 0x10, 0x03, 0x12, 0x0b, 0x0a, 0x07, 0x42, 0x6f, 0x6f, 0x6c,
+	0x65, 0x61, 0x6e, 0x10, 0x04, 0x42, 0x6d, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74,
+	0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79,
+	0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x42, 0x12, 0x50, 0x42, 0x4d,
+	0x6f, 0x64, 0x65, 0x6c, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50,
+	0x00, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61,
+	0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2464,8 +2653,8 @@ func file_proto_types_model_dataservice_proto_rawDescGZIP() []byte {
 	return file_proto_types_model_dataservice_proto_rawDescData
 }
 
-var file_proto_types_model_dataservice_proto_enumTypes = make([]protoimpl.EnumInfo, 19)
-var file_proto_types_model_dataservice_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_types_model_dataservice_proto_enumTypes = make([]protoimpl.EnumInfo, 20)
+var file_proto_types_model_dataservice_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_proto_types_model_dataservice_proto_goTypes = []interface{}{
 	(ParameterDataType)(0),                  // 0: model.ParameterDataType
 	(DataServiceCluster_Status)(0),          // 1: model.DataServiceCluster.Status
@@ -2486,15 +2675,18 @@ var file_proto_types_model_dataservice_proto_goTypes = []interface{}{
 	(ApiVersion_RequestMethod)(0),           // 16: model.ApiVersion.RequestMethod
 	(ApiVersion_ResponseType)(0),            // 17: model.ApiVersion.ResponseType
 	(ApiVersion_Protocols)(0),               // 18: model.ApiVersion.Protocols
-	(*DataServiceCluster)(nil),              // 19: model.DataServiceCluster
-	(*ApiGroup)(nil),                        // 20: model.ApiGroup
-	(*ApiConfig)(nil),                       // 21: model.ApiConfig
-	(*RequestParameters)(nil),               // 22: model.RequestParameters
-	(*RequestParameter)(nil),                // 23: model.RequestParameter
-	(*ResponseParameters)(nil),              // 24: model.ResponseParameters
-	(*ResponseParameter)(nil),               // 25: model.ResponseParameter
-	(*ApiVersion)(nil),                      // 26: model.ApiVersion
-	(*ServiceDataSourceKind)(nil),           // 27: model.ServiceDataSourceKind
+	(ApiConfigDataSource_Type)(0),           // 19: model.ApiConfigDataSource.Type
+	(*DataServiceCluster)(nil),              // 20: model.DataServiceCluster
+	(*ApiGroup)(nil),                        // 21: model.ApiGroup
+	(*ApiConfig)(nil),                       // 22: model.ApiConfig
+	(*RequestParameters)(nil),               // 23: model.RequestParameters
+	(*RequestParameter)(nil),                // 24: model.RequestParameter
+	(*ResponseParameters)(nil),              // 25: model.ResponseParameters
+	(*ResponseParameter)(nil),               // 26: model.ResponseParameter
+	(*ApiVersion)(nil),                      // 27: model.ApiVersion
+	(*ServiceDataSourceKind)(nil),           // 28: model.ServiceDataSourceKind
+	(*ApiConfigDataSource)(nil),             // 29: model.ApiConfigDataSource
+	(*ApiConfigServiceCluster)(nil),         // 30: model.ApiConfigServiceCluster
 }
 var file_proto_types_model_dataservice_proto_depIdxs = []int32{
 	2,  // 0: model.DataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
@@ -2505,14 +2697,14 @@ var file_proto_types_model_dataservice_proto_depIdxs = []int32{
 	5,  // 5: model.ApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
 	6,  // 6: model.ApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
 	8,  // 7: model.ApiConfig.status:type_name -> model.ApiConfig.Status
-	22, // 8: model.ApiConfig.request_params:type_name -> model.RequestParameters
-	24, // 9: model.ApiConfig.response_params:type_name -> model.ResponseParameters
-	23, // 10: model.RequestParameters.request_params:type_name -> model.RequestParameter
+	23, // 8: model.ApiConfig.request_params:type_name -> model.RequestParameters
+	25, // 9: model.ApiConfig.response_params:type_name -> model.ResponseParameters
+	24, // 10: model.RequestParameters.request_params:type_name -> model.RequestParameter
 	0,  // 11: model.RequestParameter.data_type:type_name -> model.ParameterDataType
 	9,  // 12: model.RequestParameter.param_operator:type_name -> model.RequestParameter.ParameterOperator
 	10, // 13: model.RequestParameter.param_position:type_name -> model.RequestParameter.ParameterPosition
 	11, // 14: model.RequestParameter.field_category:type_name -> model.RequestParameter.FieldCategory
-	25, // 15: model.ResponseParameters.response_params:type_name -> model.ResponseParameter
+	26, // 15: model.ResponseParameters.response_params:type_name -> model.ResponseParameter
 	0,  // 16: model.ResponseParameter.data_type:type_name -> model.ParameterDataType
 	12, // 17: model.ResponseParameter.order_mode:type_name -> model.ResponseParameter.OrderMode
 	13, // 18: model.ResponseParameter.field_category:type_name -> model.ResponseParameter.FieldCategory
@@ -2521,13 +2713,14 @@ var file_proto_types_model_dataservice_proto_depIdxs = []int32{
 	18, // 21: model.ApiVersion.protocols:type_name -> model.ApiVersion.Protocols
 	16, // 22: model.ApiVersion.request_method:type_name -> model.ApiVersion.RequestMethod
 	17, // 23: model.ApiVersion.response_type:type_name -> model.ApiVersion.ResponseType
-	22, // 24: model.ApiVersion.request_params:type_name -> model.RequestParameters
-	24, // 25: model.ApiVersion.response_params:type_name -> model.ResponseParameters
-	26, // [26:26] is the sub-list for method output_type
-	26, // [26:26] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	23, // 24: model.ApiVersion.request_params:type_name -> model.RequestParameters
+	25, // 25: model.ApiVersion.response_params:type_name -> model.ResponseParameters
+	19, // 26: model.ApiConfigDataSource.type:type_name -> model.ApiConfigDataSource.Type
+	27, // [27:27] is the sub-list for method output_type
+	27, // [27:27] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_dataservice_proto_init() }
@@ -2644,14 +2837,38 @@ func file_proto_types_model_dataservice_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_model_dataservice_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ApiConfigDataSource); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_model_dataservice_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ApiConfigServiceCluster); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_dataservice_proto_rawDesc,
-			NumEnums:      19,
-			NumMessages:   9,
+			NumEnums:      20,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

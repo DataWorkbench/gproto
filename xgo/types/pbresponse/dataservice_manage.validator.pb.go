@@ -123,8 +123,8 @@ func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_config() error {
 	return nil
 }
 
-func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_data_source() error {
-	if dt, ok := interface{}(this.DataSource).(interface{ Validate() error }); ok {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_group() error {
+	if dt, ok := interface{}(this.ApiGroup).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -132,8 +132,8 @@ func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_data_source() error {
 	return nil
 }
 
-func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_api_group() error {
-	if dt, ok := interface{}(this.ApiGroup).(interface{ Validate() error }); ok {
+func (this *DescribeApiConfig) _xxx_xxx_Validator_Validate_data_source() error {
+	if dt, ok := interface{}(this.DataSource).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -158,10 +158,10 @@ func (this *DescribeApiConfig) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_api_config(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_data_source(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_group(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_group(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_data_source(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_service_cluster(); err != nil {

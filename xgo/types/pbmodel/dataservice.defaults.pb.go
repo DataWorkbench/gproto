@@ -103,3 +103,19 @@ func (this *ServiceDataSourceKind) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.ApiConfigDataSource
+func (this *ApiConfigDataSource) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message model.ApiConfigServiceCluster
+func (this *ApiConfigServiceCluster) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

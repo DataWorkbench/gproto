@@ -1063,3 +1063,54 @@ func (this *ServiceDataSourceKind) Validate() error {
 	}
 	return nil
 }
+
+func (this *ApiConfigDataSource) _xxx_xxx_Validator_Validate_id() error {
+	return nil
+}
+
+func (this *ApiConfigDataSource) _xxx_xxx_Validator_Validate_name() error {
+	return nil
+}
+
+func (this *ApiConfigDataSource) _xxx_xxx_Validator_Validate_type() error {
+	return nil
+}
+
+// Set default value for message model.ApiConfigDataSource
+func (this *ApiConfigDataSource) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_type(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *ApiConfigServiceCluster) _xxx_xxx_Validator_Validate_id() error {
+	return nil
+}
+
+func (this *ApiConfigServiceCluster) _xxx_xxx_Validator_Validate_name() error {
+	return nil
+}
+
+// Set default value for message model.ApiConfigServiceCluster
+func (this *ApiConfigServiceCluster) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_name(); err != nil {
+		return err
+	}
+	return nil
+}
