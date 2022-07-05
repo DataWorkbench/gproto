@@ -10,7 +10,9 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBMongodb";
 option java_multiple_files = false;
 
+import "proto/types/model/syncjob/baseenum.proto";
 import "proto/types/model/syncjob/column.proto";
+import "proto/types/model/syncjob/db.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
 message MongodbSource {
@@ -27,9 +29,15 @@ message MongodbSource {
     // fetch size
     // @inject_tag: json:"fetch_size" 
     int32 fetch_size = 4;
-    // filter
-    // @inject_tag: json:"filter" 
-    string filter = 5;
+    // condition type
+    // @inject_tag: json:"condition_type"
+    BaseEnum.ConditionType condition_type = 6;
+    // visualization condition
+    // @inject_tag: json:"visualization"
+    Condition visualization = 7;
+    // express condition
+    // @inject_tag: json:"express"
+    string express = 8;
 
 }
 
