@@ -32,9 +32,13 @@ service AlertManage {
   rpc ListAlertPoliciesByJob(request.ListAlertPoliciesByJob)   returns (response.ListAlertPoliciesByJob)  {}
 
   // AlertPolicyBoundJobs bind the jobs(stream or sync) to specified alert policy.
-  rpc AlertPolicyBoundJobs(request.AlertPolicyBoundJobs)       returns (model.EmptyStruct)  {}
+  rpc AlertPolicyBoundJobs(request.AlertPolicyBoundJobs)       returns (model.EmptyStruct) {}
   // AlertPolicyUnboundJobs unbind the jobs(stream or sync) from the specified alert policy.
-  rpc AlertPolicyUnboundJobs(request.AlertPolicyUnboundJobs)   returns (model.EmptyStruct)  {}
+  rpc AlertPolicyUnboundJobs(request.AlertPolicyUnboundJobs)   returns (model.EmptyStruct) {}
   // ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
-  rpc ListJobsByAlertPolicy(request.ListJobsByAlertPolicy)         returns (response.ListJobsByAlertPolicy)  {}
+  rpc ListJobsByAlertPolicy(request.ListJobsByAlertPolicy)     returns (response.ListJobsByAlertPolicy) {}
+
+  rpc ListAlertLogs(request.ListAlertLogs) returns (response.ListAlertLogs) {}
+  // Internal API
+  rpc SendAlert(request.SendAlert) returns (model.EmptyStruct) {}
 }

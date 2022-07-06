@@ -132,7 +132,7 @@ message CreateAlertPolicy {
   // @inject_tag: json:"trigger_action"
   model.AlertPolicy.TriggerAction trigger_action = 9 [ (defaults.field).basic = "1", (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
-  // The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+  // The notification list id of in IaaS.
   // @inject_tag: json:"notification_ids"
   repeated string notification_ids = 10 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 
@@ -282,5 +282,63 @@ message ListJobsByAlertPolicy {
   // The offset position. Not required, default 0.
   // @inject_tag: json:"offset" form:"offset"
   int32 offset = 4 [ (validator.field).tags.int  = { gte: 0 } ];
+}
+
+message ListAlertLogs {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
+  // Limit the maximum number of entries returned this time.
+  // Not required, Max 100, default 100.
+  // @inject_tag: json:"limit" form:"limit"
+  int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
+
+  // The offset position. Not required, default 0.
+  // @inject_tag: json:"offset" form:"offset"
+  int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
+
+  // The field list used to sorted query results.
+  // Optional values: {"created", "updated"}.
+  // Multiple fields are separated by commas(","), eg: sort_by="created".
+  // Not required, default: id.
+  // @inject_tag: json:"sort_by" form:"sort_by"
+  string sort_by = 4 [ (validator.field).tags.string = { in: ["", "created", "updated"] } ];
+
+  // Reverse order results. Not required, default: false.
+  // @inject_tag: json:"reverse" default:"false" form:"reverse"
+  bool reverse = 5;
+}
+
+message SendAlert {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
+  // Alert ID, unique within a region.
+  // @inject_tag: json:"id"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+
+  // The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"job_id"
+  string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"instance_id"
+  string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The monitor object , 1 => "StreamJob" 2 => "SyncJob'
+  // @inject_tag: json:"monitor_object"
+  model.AlertPolicy.MonitorObject monitor_object = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // The alert event type , 1 => "StreamInstanceFailed" 2 => "StreamInstanceTimeout" 3 => "SyncInstanceFailed" 4 => "SyncInstanceTimeout"
+  // @inject_tag: json:"event_type"
+  model.AlertLog.EventType event_type = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // @inject_tag: json:"message"
+  string message = 8 [ (validator.field).tags.string = {  } ];
+
+  // @inject_tag: json:"notification_ids"
+  repeated string notification_ids = 9 [ (validator.field).tags.repeated = { len_lte: 100 } ];
 }
 

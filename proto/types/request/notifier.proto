@@ -14,14 +14,18 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 //import "github.com/yu31/protoc-plugin/proto/defaults.proto";
 
 message SendNotification {
-  // @inject_tag: json:"owner"
-  string owner = 1 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+//  // @inject_tag: json:"owner"
+//  string owner = 1 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+
   // @inject_tag: json:"nf_list_ids"
   repeated string nf_list_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
+
   // @inject_tag: json:"title"
   string title = 3 [ (validator.field).tags.string = { byte_len_gt:0 } ];
-  // @inject_tag: json:"short_content"
-  string short_content = 4 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+
+  // @inject_tag: json:"subject"
+  string subject = 4 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+
   // @inject_tag: json:"content"
   string content = 5 [ (validator.field).tags.string = { byte_len_gt:0 } ];
 }

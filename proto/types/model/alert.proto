@@ -149,7 +149,59 @@ message AlertPolicyMapping {
   // @inject_tag: json:"alert_id" gorm:"column:alert_id"
   string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
-  // The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+  // The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
   // @inject_tag: json:"job_id" gorm:"column:job_id"
   string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+}
+
+message AlertLog {
+  enum Status {
+    StatusUnset = 0;
+    Deleted = 1;
+    Enabled = 2;
+  }
+
+  enum EventType {
+    EventTypeUnset = 0;
+    StreamInstanceFailed = 1;
+    StreamInstanceTimeout = 2;
+    SyncInstanceFailed = 3;
+    SyncInstanceTimeout = 4;
+  }
+
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id" gorm:"column:space_id;"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
+
+  // Alert ID, unique within a region.
+  // @inject_tag: json:"id" gorm:"column:id;"
+  string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
+
+  // The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"job_id" gorm:"column:job_id"
+  string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"instance_id" gorm:"column:instance_id"
+  string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+
+  // Rule status, 1 => "Deleted", 2 => "enabled".
+  // @inject_tag: json:"status" gorm:"column:status;"
+  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+
+  // The monitor object, 1 => "StreamJob" 2 => "SyncJob'
+  // @inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+  AlertPolicy.MonitorObject monitor_object = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // The alert event type, 1 => "StreamInstanceFailed" 2 => "StreamInstanceTimeout" 3 => "SyncInstanceFailed" 4 => "SyncInstanceTimeout"
+  // @inject_tag: json:"event_type" gorm:"column:event_type;"
+  EventType event_type = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+
+  // Timestamp of create time.
+  // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+  int64 created = 12 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // Timestamp of update time.
+  // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+  int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
 }
