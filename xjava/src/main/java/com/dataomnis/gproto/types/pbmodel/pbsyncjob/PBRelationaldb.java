@@ -205,7 +205,7 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+     * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
      * @return The enum numeric value on the wire for conditionType.
      */
     int getConditionTypeValue();
@@ -215,10 +215,10 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+     * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
      * @return The conditionType.
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType getConditionType();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType();
 
     /**
      * <pre>
@@ -429,123 +429,6 @@ public final class PBRelationaldb {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.internal_static_model_DBSource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.Builder.class);
-    }
-
-    /**
-     * Protobuf enum {@code model.DBSource.ConditionType}
-     */
-    public enum ConditionType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>ConditionTypeUnset = 0;</code>
-       */
-      ConditionTypeUnset(0),
-      /**
-       * <code>Visualization = 1;</code>
-       */
-      Visualization(1),
-      /**
-       * <code>Express = 2;</code>
-       */
-      Express(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>ConditionTypeUnset = 0;</code>
-       */
-      public static final int ConditionTypeUnset_VALUE = 0;
-      /**
-       * <code>Visualization = 1;</code>
-       */
-      public static final int Visualization_VALUE = 1;
-      /**
-       * <code>Express = 2;</code>
-       */
-      public static final int Express_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static ConditionType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static ConditionType forNumber(int value) {
-        switch (value) {
-          case 0: return ConditionTypeUnset;
-          case 1: return Visualization;
-          case 2: return Express;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<ConditionType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ConditionType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ConditionType>() {
-              public ConditionType findValueByNumber(int number) {
-                return ConditionType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final ConditionType[] VALUES = values();
-
-      public static ConditionType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private ConditionType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:model.DBSource.ConditionType)
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
@@ -849,7 +732,7 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+     * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
      * @return The enum numeric value on the wire for conditionType.
      */
     @java.lang.Override public int getConditionTypeValue() {
@@ -861,13 +744,13 @@ public final class PBRelationaldb {
      * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+     * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
      * @return The conditionType.
      */
-    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType getConditionType() {
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType() {
       @SuppressWarnings("deprecation")
-      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.valueOf(conditionType_);
-      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.UNRECOGNIZED : result;
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.valueOf(conditionType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.UNRECOGNIZED : result;
     }
 
     public static final int VISUALIZATION_FIELD_NUMBER = 8;
@@ -991,7 +874,7 @@ public final class PBRelationaldb {
       if (mappingType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ColumnMapping.ColumnUnset.getNumber()) {
         output.writeEnum(6, mappingType_);
       }
-      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.ConditionTypeUnset.getNumber()) {
+      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.ConditionTypeUnset.getNumber()) {
         output.writeEnum(7, conditionType_);
       }
       if (visualization_ != null) {
@@ -1034,7 +917,7 @@ public final class PBRelationaldb {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, mappingType_);
       }
-      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.ConditionTypeUnset.getNumber()) {
+      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.ConditionTypeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, conditionType_);
       }
@@ -2339,7 +2222,7 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+       * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
        * @return The enum numeric value on the wire for conditionType.
        */
       @java.lang.Override public int getConditionTypeValue() {
@@ -2351,7 +2234,7 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+       * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
        * @param value The enum numeric value on the wire for conditionType to set.
        * @return This builder for chaining.
        */
@@ -2367,14 +2250,14 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+       * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
        * @return The conditionType.
        */
       @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType getConditionType() {
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType() {
         @SuppressWarnings("deprecation")
-        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.valueOf(conditionType_);
-        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType.UNRECOGNIZED : result;
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.valueOf(conditionType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.UNRECOGNIZED : result;
       }
       /**
        * <pre>
@@ -2382,11 +2265,11 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+       * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
        * @param value The conditionType to set.
        * @return This builder for chaining.
        */
-      public Builder setConditionType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.DBSource.ConditionType value) {
+      public Builder setConditionType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2401,7 +2284,7 @@ public final class PBRelationaldb {
        * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>.model.DBSource.ConditionType condition_type = 7;</code>
+       * <code>.model.BaseEnum.ConditionType condition_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearConditionType() {
@@ -7322,32 +7205,31 @@ public final class PBRelationaldb {
       "del\032&proto/types/model/syncjob/column.pr" +
       "oto\032(proto/types/model/syncjob/baseenum." +
       "proto\032/github.com/yu31/protoc-plugin/pro" +
-      "to/gosql.proto\"\340\002\n\010DBSource\022\035\n\006column\030\001 " +
+      "to/gosql.proto\"\227\002\n\010DBSource\022\035\n\006column\030\001 " +
       "\003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006sch" +
       "ema\030\003 \001(\t\022\r\n\005where\030\004 \001(\t\022\020\n\010split_pk\030\005 \001" +
       "(\t\0223\n\014mapping_type\030\006 \001(\0162\035.model.BaseEnu" +
       "m.ColumnMapping\0225\n\016condition_type\030\007 \001(\0162" +
-      "\035.model.DBSource.ConditionType\022\'\n\rvisual" +
+      "\035.model.BaseEnum.ConditionType\022\'\n\rvisual" +
       "ization\030\010 \001(\0132\020.model.Condition\022\017\n\007expre" +
-      "ss\030\t \001(\t\"G\n\rConditionType\022\026\n\022ConditionTy" +
-      "peUnset\020\000\022\021\n\rVisualization\020\001\022\013\n\007Express\020" +
-      "\002:\006\312\262\004\002\n\000\"{\n\tCondition\022\016\n\006column\030\001 \001(\t\022\027" +
-      "\n\017start_condition\030\002 \001(\t\022\023\n\013start_value\030\003" +
-      " \001(\t\022\025\n\rend_condition\030\004 \001(\t\022\021\n\tend_value" +
-      "\030\005 \001(\t:\006\312\262\004\002\n\000\"\223\003\n\010DBTarget\022\035\n\006column\030\001 " +
-      "\003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t\022\016\n\006sch" +
-      "ema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \003(\t\022\020\n\010post_sql\030\005" +
-      " \003(\t\022-\n\nwrite_mode\030\006 \001(\0162\031.model.DBTarge" +
-      "t.WriteMode\022\022\n\nbatch_size\030\007 \001(\005\022\022\n\nupdat" +
-      "e_key\030\010 \003(\t\022*\n\010semantic\030\t \001(\0162\030.model.DB" +
-      "Target.Semantic\022\024\n\014with_no_lock\030\n \001(\t\"D\n" +
-      "\tWriteMode\022\022\n\016WriteModeUnset\020\000\022\n\n\006insert" +
-      "\020\001\022\013\n\007replace\020\002\022\n\n\006update\020\003\"?\n\010Semantic\022" +
-      "\021\n\rSemanticUnset\020\000\022\017\n\013AtLeastOnce\020\001\022\017\n\013E" +
-      "xactlyOnce\020\002:\006\312\262\004\002\n\000B}\n,com.dataomnis.gp" +
-      "roto.types.pbmodel.pbsyncjobB\016PBRelation" +
-      "aldbP\000Z;github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbmodel/pbsyncjobb\006proto3"
+      "ss\030\t \001(\t:\006\312\262\004\002\n\000\"{\n\tCondition\022\016\n\006column\030" +
+      "\001 \001(\t\022\027\n\017start_condition\030\002 \001(\t\022\023\n\013start_" +
+      "value\030\003 \001(\t\022\025\n\rend_condition\030\004 \001(\t\022\021\n\ten" +
+      "d_value\030\005 \001(\t:\006\312\262\004\002\n\000\"\223\003\n\010DBTarget\022\035\n\006co" +
+      "lumn\030\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \003(\t" +
+      "\022\016\n\006schema\030\003 \001(\t\022\017\n\007pre_sql\030\004 \003(\t\022\020\n\010pos" +
+      "t_sql\030\005 \003(\t\022-\n\nwrite_mode\030\006 \001(\0162\031.model." +
+      "DBTarget.WriteMode\022\022\n\nbatch_size\030\007 \001(\005\022\022" +
+      "\n\nupdate_key\030\010 \003(\t\022*\n\010semantic\030\t \001(\0162\030.m" +
+      "odel.DBTarget.Semantic\022\024\n\014with_no_lock\030\n" +
+      " \001(\t\"D\n\tWriteMode\022\022\n\016WriteModeUnset\020\000\022\n\n" +
+      "\006insert\020\001\022\013\n\007replace\020\002\022\n\n\006update\020\003\"?\n\010Se" +
+      "mantic\022\021\n\rSemanticUnset\020\000\022\017\n\013AtLeastOnce" +
+      "\020\001\022\017\n\013ExactlyOnce\020\002:\006\312\262\004\002\n\000B}\n,com.datao" +
+      "mnis.gproto.types.pbmodel.pbsyncjobB\016PBR" +
+      "elationaldbP\000Z;github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbmodel/pbsyncjobb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

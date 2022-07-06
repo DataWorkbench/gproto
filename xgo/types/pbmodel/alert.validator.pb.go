@@ -294,3 +294,122 @@ func (this *AlertPolicyMapping) Validate() error {
 	}
 	return nil
 }
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("AlertLog", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_alert_id() error {
+	if !(len(this.AlertId) == 20) {
+		return protovalidator.FieldError1("AlertLog", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
+	}
+	if !(strings.HasPrefix(this.AlertId, "alt-")) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
+	}
+	return nil
+}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("AlertLog", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	return nil
+}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("AlertLog", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_AlertLog_InEnums_Status = map[AlertLog_Status]bool{0: true, 1: true, 2: true}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_status() error {
+	if !(this.Status > 0) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	if !(_xxx_xxx_Validator_AlertLog_InEnums_Status[this.Status]) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_AlertLog_InEnums_MonitorObject = map[AlertPolicy_MonitorObject]bool{0: true, 1: true, 2: true}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_monitor_object() error {
+	if !(this.MonitorObject > 0) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'monitor_object' must be greater than '0'", protovalidator.Int32ToString(int32(this.MonitorObject)))
+	}
+	if !(_xxx_xxx_Validator_AlertLog_InEnums_MonitorObject[this.MonitorObject]) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'monitor_object' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.MonitorObject)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_AlertLog_InEnums_EventType = map[AlertLog_EventType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_event_type() error {
+	if !(this.EventType > 0) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'event_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.EventType)))
+	}
+	if !(_xxx_xxx_Validator_AlertLog_InEnums_EventType[this.EventType]) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'event_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.EventType)))
+	}
+	return nil
+}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_created() error {
+	if !(this.Created > 0) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'created' must be greater than '0'", protovalidator.Int64ToString(this.Created))
+	}
+	return nil
+}
+
+func (this *AlertLog) _xxx_xxx_Validator_Validate_updated() error {
+	if !(this.Updated > 0) {
+		return protovalidator.FieldError1("AlertLog", "the value of field 'updated' must be greater than '0'", protovalidator.Int64ToString(this.Updated))
+	}
+	return nil
+}
+
+// Set default value for message model.AlertLog
+func (this *AlertLog) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_status(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_monitor_object(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_event_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	return nil
+}

@@ -11,13 +11,6 @@ import (
 	strconv "strconv"
 )
 
-func (this *SendNotification) _xxx_xxx_Validator_Validate_owner() error {
-	if !(len(this.Owner) > 0) {
-		return protovalidator.FieldError1("SendNotification", "the byte length of field 'owner' must be greater than '0'", protovalidator.StringByteLenToString(this.Owner))
-	}
-	return nil
-}
-
 func (this *SendNotification) _xxx_xxx_Validator_Validate_nf_list_ids() error {
 	if !(len(this.NfListIds) > 0) {
 		return protovalidator.FieldError1("SendNotification", "the length of field 'nf_list_ids' must be greater than '0'", strconv.Itoa(len(this.NfListIds)))
@@ -35,9 +28,9 @@ func (this *SendNotification) _xxx_xxx_Validator_Validate_title() error {
 	return nil
 }
 
-func (this *SendNotification) _xxx_xxx_Validator_Validate_short_content() error {
-	if !(len(this.ShortContent) > 0) {
-		return protovalidator.FieldError1("SendNotification", "the byte length of field 'short_content' must be greater than '0'", protovalidator.StringByteLenToString(this.ShortContent))
+func (this *SendNotification) _xxx_xxx_Validator_Validate_subject() error {
+	if !(len(this.Subject) > 0) {
+		return protovalidator.FieldError1("SendNotification", "the byte length of field 'subject' must be greater than '0'", protovalidator.StringByteLenToString(this.Subject))
 	}
 	return nil
 }
@@ -54,16 +47,13 @@ func (this *SendNotification) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_owner(); err != nil {
-		return err
-	}
 	if err := this._xxx_xxx_Validator_Validate_nf_list_ids(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_title(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_short_content(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_subject(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_content(); err != nil {

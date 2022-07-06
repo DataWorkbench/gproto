@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\024PBRequestAlertManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/request/alert_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/alert.proto\"\xb3\x02\n\x11ListAlertPolicies\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\x12\x38\n\x0emonitor_object\x18\t \x01(\x0e\x32 .model.AlertPolicy.MonitorObject\"^\n\x13\x44\x65leteAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"^\n\x13\x45nableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"_\n\x14\x44isableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"\xa0\x04\n\x11\x43reateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x07 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x08 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\t \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x0f\n\x07job_ids\x18\x0b \x03(\t\"\x8d\x04\n\x11UpdateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x05 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x06 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x07 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\x08 \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\t \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x1c\n\x07job_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"c\n\x13\x44\x65scribeAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"\x80\x01\n\x15JobBoundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\x82\x01\n\x17JobUnboundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\xa2\x01\n\x16ListAlertPoliciesByJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\"\x82\x01\n\x14\x41lertPolicyBoundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\x84\x01\n\x16\x41lertPolicyUnboundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\xaa\x01\n\x15ListJobsByAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestAlertManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n&proto/types/request/alert_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a\x1dproto/types/model/alert.proto\"\xb3\x02\n\x11ListAlertPolicies\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x02 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12%\n\x08space_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x04nameJ\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0f\n\x07verbose\x18\x08 \x01(\x05\x12\x38\n\x0emonitor_object\x18\t \x01(\x0e\x32 .model.AlertPolicy.MonitorObject\"^\n\x13\x44\x65leteAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"^\n\x13\x45nableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"_\n\x14\x44isableAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\talert_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\"\xa0\x04\n\x11\x43reateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\ncreated_by\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x1e\n\x04name\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x07 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x08 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\t \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x0f\n\x07job_ids\x18\x0b \x03(\t\"\x8d\x04\n\x11UpdateAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12G\n\x0emonitor_object\x18\x05 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x06 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12K\n\x0ctrigger_rule\x18\x07 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12O\n\x0etrigger_action\x18\x08 \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\x15\xa2\xa1\x1f\x04\xaa\x06\x01\x31\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\t \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x12\x1c\n\x07job_ids\x18\n \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"c\n\x13\x44\x65scribeAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\"\x80\x01\n\x15JobBoundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\x82\x01\n\x17JobUnboundAlertPolicies\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\"\n\talert_ids\x18\x03 \x03(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xea\x01\x06\x30\x00\x38\x64P\x01\"\xa2\x01\n\x16ListAlertPoliciesByJob\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\"\x82\x01\n\x14\x41lertPolicyBoundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\x84\x01\n\x16\x41lertPolicyUnboundJobs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x07job_ids\x18\x03 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02P\x01\"\xaa\x01\n\x15ListJobsByAlertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\"\xbc\x01\n\rListAlertLogs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12.\n\x07sort_by\x18\x04 \x01(\tB\x1d\xe2\xdf\x1f\x19\x12\x17\xc2\x01\x14J\x00J\x07\x63reatedJ\x07updated\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\"\xe4\x02\n\tSendAlert\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x06job_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12!\n\x0binstance_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\nevent_type\x18\x07 \x01(\x0e\x32\x19.model.AlertLog.EventTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x07message\x18\x08 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12%\n\x10notification_ids\x18\t \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x38\x64\x42s\n$com.dataomnis.gproto.types.pbrequestB\x14PBRequestAlertManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_alert__pb2.DESCRIPTOR,])
 
@@ -759,6 +759,147 @@ _LISTJOBSBYALERTPOLICY = _descriptor.Descriptor(
   serialized_end=2830,
 )
 
+
+_LISTALERTLOGS = _descriptor.Descriptor(
+  name='ListAlertLogs',
+  full_name='request.ListAlertLogs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.ListAlertLogs.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='request.ListAlertLogs.limit', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='request.ListAlertLogs.offset', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\002@\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sort_by', full_name='request.ListAlertLogs.sort_by', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\031\022\027\302\001\024J\000J\007createdJ\007updated', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reverse', full_name='request.ListAlertLogs.reverse', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2833,
+  serialized_end=3021,
+)
+
+
+_SENDALERT = _descriptor.Descriptor(
+  name='SendAlert',
+  full_name='request.SendAlert',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.SendAlert.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='request.SendAlert.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='request.SendAlert.job_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='request.SendAlert.instance_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitor_object', full_name='request.SendAlert.monitor_object', index=4,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='event_type', full_name='request.SendAlert.event_type', index=5,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='request.SendAlert.message', index=6,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notification_ids', full_name='request.SendAlert.notification_ids', index=7,
+      number=9, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\352\001\0028d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3024,
+  serialized_end=3380,
+)
+
 _LISTALERTPOLICIES.fields_by_name['monitor_object'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITOROBJECT
 _CREATEALERTPOLICY.fields_by_name['monitor_object'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITOROBJECT
 _CREATEALERTPOLICY.fields_by_name['monitor_item'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITORITEM
@@ -768,6 +909,8 @@ _UPDATEALERTPOLICY.fields_by_name['monitor_object'].enum_type = proto_dot_types_
 _UPDATEALERTPOLICY.fields_by_name['monitor_item'].message_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITORITEM
 _UPDATEALERTPOLICY.fields_by_name['trigger_rule'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_TRIGGERRULE
 _UPDATEALERTPOLICY.fields_by_name['trigger_action'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_TRIGGERACTION
+_SENDALERT.fields_by_name['monitor_object'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTPOLICY_MONITOROBJECT
+_SENDALERT.fields_by_name['event_type'].enum_type = proto_dot_types_dot_model_dot_alert__pb2._ALERTLOG_EVENTTYPE
 DESCRIPTOR.message_types_by_name['ListAlertPolicies'] = _LISTALERTPOLICIES
 DESCRIPTOR.message_types_by_name['DeleteAlertPolicies'] = _DELETEALERTPOLICIES
 DESCRIPTOR.message_types_by_name['EnableAlertPolicies'] = _ENABLEALERTPOLICIES
@@ -781,6 +924,8 @@ DESCRIPTOR.message_types_by_name['ListAlertPoliciesByJob'] = _LISTALERTPOLICIESB
 DESCRIPTOR.message_types_by_name['AlertPolicyBoundJobs'] = _ALERTPOLICYBOUNDJOBS
 DESCRIPTOR.message_types_by_name['AlertPolicyUnboundJobs'] = _ALERTPOLICYUNBOUNDJOBS
 DESCRIPTOR.message_types_by_name['ListJobsByAlertPolicy'] = _LISTJOBSBYALERTPOLICY
+DESCRIPTOR.message_types_by_name['ListAlertLogs'] = _LISTALERTLOGS
+DESCRIPTOR.message_types_by_name['SendAlert'] = _SENDALERT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAlertPolicies = _reflection.GeneratedProtocolMessageType('ListAlertPolicies', (_message.Message,), {
@@ -874,6 +1019,20 @@ ListJobsByAlertPolicy = _reflection.GeneratedProtocolMessageType('ListJobsByAler
   })
 _sym_db.RegisterMessage(ListJobsByAlertPolicy)
 
+ListAlertLogs = _reflection.GeneratedProtocolMessageType('ListAlertLogs', (_message.Message,), {
+  'DESCRIPTOR' : _LISTALERTLOGS,
+  '__module__' : 'proto.types.request.alert_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.ListAlertLogs)
+  })
+_sym_db.RegisterMessage(ListAlertLogs)
+
+SendAlert = _reflection.GeneratedProtocolMessageType('SendAlert', (_message.Message,), {
+  'DESCRIPTOR' : _SENDALERT,
+  '__module__' : 'proto.types.request.alert_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.SendAlert)
+  })
+_sym_db.RegisterMessage(SendAlert)
+
 
 DESCRIPTOR._options = None
 _LISTALERTPOLICIES.fields_by_name['limit']._options = None
@@ -928,4 +1087,16 @@ _LISTJOBSBYALERTPOLICY.fields_by_name['space_id']._options = None
 _LISTJOBSBYALERTPOLICY.fields_by_name['alert_id']._options = None
 _LISTJOBSBYALERTPOLICY.fields_by_name['limit']._options = None
 _LISTJOBSBYALERTPOLICY.fields_by_name['offset']._options = None
+_LISTALERTLOGS.fields_by_name['space_id']._options = None
+_LISTALERTLOGS.fields_by_name['limit']._options = None
+_LISTALERTLOGS.fields_by_name['offset']._options = None
+_LISTALERTLOGS.fields_by_name['sort_by']._options = None
+_SENDALERT.fields_by_name['space_id']._options = None
+_SENDALERT.fields_by_name['alert_id']._options = None
+_SENDALERT.fields_by_name['job_id']._options = None
+_SENDALERT.fields_by_name['instance_id']._options = None
+_SENDALERT.fields_by_name['monitor_object']._options = None
+_SENDALERT.fields_by_name['event_type']._options = None
+_SENDALERT.fields_by_name['message']._options = None
+_SENDALERT.fields_by_name['notification_ids']._options = None
 # @@protoc_insertion_point(module_scope)

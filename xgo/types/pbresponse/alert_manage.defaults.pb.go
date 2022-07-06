@@ -54,3 +54,11 @@ func (this *ListJobsByAlertPolicy) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.ListAlertLogs
+func (this *ListAlertLogs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

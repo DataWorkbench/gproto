@@ -860,6 +860,123 @@ public final class PBBaseEnum {
       // @@protoc_insertion_point(enum_scope:model.BaseEnum.ColumnMapping)
     }
 
+    /**
+     * Protobuf enum {@code model.BaseEnum.ConditionType}
+     */
+    public enum ConditionType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ConditionTypeUnset = 0;</code>
+       */
+      ConditionTypeUnset(0),
+      /**
+       * <code>Visualization = 1;</code>
+       */
+      Visualization(1),
+      /**
+       * <code>Express = 2;</code>
+       */
+      Express(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ConditionTypeUnset = 0;</code>
+       */
+      public static final int ConditionTypeUnset_VALUE = 0;
+      /**
+       * <code>Visualization = 1;</code>
+       */
+      public static final int Visualization_VALUE = 1;
+      /**
+       * <code>Express = 2;</code>
+       */
+      public static final int Express_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ConditionType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ConditionType forNumber(int value) {
+        switch (value) {
+          case 0: return ConditionTypeUnset;
+          case 1: return Visualization;
+          case 2: return Express;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ConditionType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ConditionType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConditionType>() {
+              public ConditionType findValueByNumber(int number) {
+                return ConditionType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.getDescriptor().getEnumTypes().get(6);
+      }
+
+      private static final ConditionType[] VALUES = values();
+
+      public static ConditionType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ConditionType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.BaseEnum.ConditionType)
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1212,7 +1329,7 @@ public final class PBBaseEnum {
   static {
     java.lang.String[] descriptorData = {
       "\n(proto/types/model/syncjob/baseenum.pro" +
-      "to\022\005model\"\242\003\n\010BaseEnum\"F\n\rPartitionType\022" +
+      "to\022\005model\"\353\003\n\010BaseEnum\"F\n\rPartitionType\022" +
       "\026\n\022PartitionTypeUnset\020\000\022\007\n\003DAY\020\001\022\010\n\004HOUR" +
       "\020\002\022\n\n\006MINUTE\020\003\":\n\tWriteMode\022\022\n\016WriteMode" +
       "Unset\020\000\022\n\n\006append\020\001\022\r\n\toverwrite\020\002\"=\n\010Fi" +
@@ -1222,11 +1339,12 @@ public final class PBBaseEnum {
       "\006SNAPPY\020\003\022\010\n\004BZIP\020\004\022\007\n\003LZ4\020\005\022\007\n\003LZO\020\006\"0\n" +
       "\010Encoding\022\021\n\rEncodingUnset\020\000\022\010\n\004UTF8\020\001\022\007" +
       "\n\003GBK\020\002\"=\n\rColumnMapping\022\017\n\013ColumnUnset\020" +
-      "\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004Auto\020\003By\n,com.da" +
-      "taomnis.gproto.types.pbmodel.pbsyncjobB\n" +
-      "PBBaseEnumP\000Z;github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbmodel/pbsyncjobb\006proto" +
-      "3"
+      "\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004Auto\020\003\"G\n\rCondit" +
+      "ionType\022\026\n\022ConditionTypeUnset\020\000\022\021\n\rVisua" +
+      "lization\020\001\022\013\n\007Express\020\002By\n,com.dataomnis" +
+      ".gproto.types.pbmodel.pbsyncjobB\nPBBaseE" +
+      "numP\000Z;github.com/DataWorkbench/gproto/x" +
+      "go/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

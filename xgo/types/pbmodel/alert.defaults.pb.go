@@ -64,3 +64,11 @@ func (this *AlertPolicyMapping) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message model.AlertLog
+func (this *AlertLog) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

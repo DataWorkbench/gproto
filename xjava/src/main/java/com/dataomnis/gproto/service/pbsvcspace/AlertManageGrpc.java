@@ -8,8 +8,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.38.0)",
+    value = "by gRPC proto compiler (version 1.43.2)",
     comments = "Source: proto/service/spacemanager/alert_manage.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AlertManageGrpc {
 
   private AlertManageGrpc() {}
@@ -420,6 +421,68 @@ public final class AlertManageGrpc {
     return getListJobsByAlertPolicyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> getListAlertLogsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAlertLogs",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs,
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> getListAlertLogsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> getListAlertLogsMethod;
+    if ((getListAlertLogsMethod = AlertManageGrpc.getListAlertLogsMethod) == null) {
+      synchronized (AlertManageGrpc.class) {
+        if ((getListAlertLogsMethod = AlertManageGrpc.getListAlertLogsMethod) == null) {
+          AlertManageGrpc.getListAlertLogsMethod = getListAlertLogsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAlertLogs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.getDefaultInstance()))
+              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("ListAlertLogs"))
+              .build();
+        }
+      }
+    }
+    return getListAlertLogsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSendAlertMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SendAlert",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSendAlertMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getSendAlertMethod;
+    if ((getSendAlertMethod = AlertManageGrpc.getSendAlertMethod) == null) {
+      synchronized (AlertManageGrpc.class) {
+        if ((getSendAlertMethod = AlertManageGrpc.getSendAlertMethod) == null) {
+          AlertManageGrpc.getSendAlertMethod = getSendAlertMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendAlert"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new AlertManageMethodDescriptorSupplier("SendAlert"))
+              .build();
+        }
+      }
+    }
+    return getSendAlertMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -580,6 +643,23 @@ public final class AlertManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsByAlertPolicyMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void listAlertLogs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAlertLogsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Internal API
+     * </pre>
+     */
+    public void sendAlert(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSendAlertMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -673,6 +753,20 @@ public final class AlertManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy,
                 com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy>(
                   this, METHODID_LIST_JOBS_BY_ALERT_POLICY)))
+          .addMethod(
+            getListAlertLogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs,
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs>(
+                  this, METHODID_LIST_ALERT_LOGS)))
+          .addMethod(
+            getSendAlertMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_SEND_ALERT)))
           .build();
     }
   }
@@ -815,6 +909,25 @@ public final class AlertManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListJobsByAlertPolicyMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void listAlertLogs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAlertLogsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Internal API
+     * </pre>
+     */
+    public void sendAlert(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSendAlertMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -941,6 +1054,23 @@ public final class AlertManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy listJobsByAlertPolicy(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListJobsByAlertPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs listAlertLogs(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAlertLogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Internal API
+     * </pre>
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct sendAlert(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSendAlertMethod(), getCallOptions(), request);
     }
   }
 
@@ -1082,6 +1212,25 @@ public final class AlertManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListJobsByAlertPolicyMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs> listAlertLogs(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAlertLogsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Internal API
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> sendAlert(
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSendAlertMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ALERT_POLICIES = 0;
@@ -1097,6 +1246,8 @@ public final class AlertManageGrpc {
   private static final int METHODID_ALERT_POLICY_BOUND_JOBS = 10;
   private static final int METHODID_ALERT_POLICY_UNBOUND_JOBS = 11;
   private static final int METHODID_LIST_JOBS_BY_ALERT_POLICY = 12;
+  private static final int METHODID_LIST_ALERT_LOGS = 13;
+  private static final int METHODID_SEND_ALERT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1166,6 +1317,14 @@ public final class AlertManageGrpc {
         case METHODID_LIST_JOBS_BY_ALERT_POLICY:
           serviceImpl.listJobsByAlertPolicy((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListJobsByAlertPolicy) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListJobsByAlertPolicy>) responseObserver);
+          break;
+        case METHODID_LIST_ALERT_LOGS:
+          serviceImpl.listAlertLogs((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs>) responseObserver);
+          break;
+        case METHODID_SEND_ALERT:
+          serviceImpl.sendAlert((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1241,6 +1400,8 @@ public final class AlertManageGrpc {
               .addMethod(getAlertPolicyBoundJobsMethod())
               .addMethod(getAlertPolicyUnboundJobsMethod())
               .addMethod(getListJobsByAlertPolicyMethod())
+              .addMethod(getListAlertLogsMethod())
+              .addMethod(getSendAlertMethod())
               .build();
         }
       }

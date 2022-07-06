@@ -27,7 +27,7 @@ public final class PBSvcAlertManage {
       "e.proto\022\014spacemanager\032\035proto/types/model" +
       "/empty.proto\032&proto/types/request/alert_" +
       "manage.proto\032\'proto/types/response/alert" +
-      "_manage.proto2\250\010\n\013AlertManage\022N\n\021ListAle" +
+      "_manage.proto2\243\t\n\013AlertManage\022N\n\021ListAle" +
       "rtPolicies\022\032.request.ListAlertPolicies\032\033" +
       ".response.ListAlertPolicies\"\000\022I\n\023DeleteA" +
       "lertPolicies\022\034.request.DeleteAlertPolici" +
@@ -54,10 +54,13 @@ public final class PBSvcAlertManage {
       "ndJobs\032\022.model.EmptyStruct\"\000\022Z\n\025ListJobs" +
       "ByAlertPolicy\022\036.request.ListJobsByAlertP" +
       "olicy\032\037.response.ListJobsByAlertPolicy\"\000" +
-      "Bu\n\'com.dataomnis.gproto.service.pbsvcsp" +
-      "aceB\020PBSvcAlertManageP\000Z6github.com/Data" +
-      "Workbench/gproto/xgo/service/pbsvcspaceb" +
-      "\006proto3"
+      "\022B\n\rListAlertLogs\022\026.request.ListAlertLog" +
+      "s\032\027.response.ListAlertLogs\"\000\0225\n\tSendAler" +
+      "t\022\022.request.SendAlert\032\022.model.EmptyStruc" +
+      "t\"\000Bu\n\'com.dataomnis.gproto.service.pbsv" +
+      "cspaceB\020PBSvcAlertManageP\000Z6github.com/D" +
+      "ataWorkbench/gproto/xgo/service/pbsvcspa" +
+      "ceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/model/syncjob/baseenum.proto\x12\x05model\"\xa2\x03\n\x08\x42\x61seEnum\"F\n\rPartitionType\x12\x16\n\x12PartitionTypeUnset\x10\x00\x12\x07\n\x03\x44\x41Y\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\n\n\x06MINUTE\x10\x03\":\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06\x61ppend\x10\x01\x12\r\n\toverwrite\x10\x02\"=\n\x08\x46ileType\x12\x11\n\rFileTypeUnset\x10\x00\x12\x08\n\x04text\x10\x01\x12\x07\n\x03orc\x10\x02\x12\x0b\n\x07parquet\x10\x03\"b\n\x0c\x43ompressType\x12\x15\n\x11\x43ompressTypeUnset\x10\x00\x12\x08\n\x04GZIP\x10\x01\x12\t\n\x05\x42ZIP2\x10\x02\x12\n\n\x06SNAPPY\x10\x03\x12\x08\n\x04\x42ZIP\x10\x04\x12\x07\n\x03LZ4\x10\x05\x12\x07\n\x03LZO\x10\x06\"0\n\x08\x45ncoding\x12\x11\n\rEncodingUnset\x10\x00\x12\x08\n\x04UTF8\x10\x01\x12\x07\n\x03GBK\x10\x02\"=\n\rColumnMapping\x12\x0f\n\x0b\x43olumnUnset\x10\x00\x12\x08\n\x04Name\x10\x01\x12\x07\n\x03Row\x10\x02\x12\x08\n\x04\x41uto\x10\x03\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n(proto/types/model/syncjob/baseenum.proto\x12\x05model\"\xeb\x03\n\x08\x42\x61seEnum\"F\n\rPartitionType\x12\x16\n\x12PartitionTypeUnset\x10\x00\x12\x07\n\x03\x44\x41Y\x10\x01\x12\x08\n\x04HOUR\x10\x02\x12\n\n\x06MINUTE\x10\x03\":\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06\x61ppend\x10\x01\x12\r\n\toverwrite\x10\x02\"=\n\x08\x46ileType\x12\x11\n\rFileTypeUnset\x10\x00\x12\x08\n\x04text\x10\x01\x12\x07\n\x03orc\x10\x02\x12\x0b\n\x07parquet\x10\x03\"b\n\x0c\x43ompressType\x12\x15\n\x11\x43ompressTypeUnset\x10\x00\x12\x08\n\x04GZIP\x10\x01\x12\t\n\x05\x42ZIP2\x10\x02\x12\n\n\x06SNAPPY\x10\x03\x12\x08\n\x04\x42ZIP\x10\x04\x12\x07\n\x03LZ4\x10\x05\x12\x07\n\x03LZO\x10\x06\"0\n\x08\x45ncoding\x12\x11\n\rEncodingUnset\x10\x00\x12\x08\n\x04UTF8\x10\x01\x12\x07\n\x03GBK\x10\x02\"=\n\rColumnMapping\x12\x0f\n\x0b\x43olumnUnset\x10\x00\x12\x08\n\x04Name\x10\x01\x12\x07\n\x03Row\x10\x02\x12\x08\n\x04\x41uto\x10\x03\"G\n\rConditionType\x12\x16\n\x12\x43onditionTypeUnset\x10\x00\x12\x11\n\rVisualization\x10\x01\x12\x0b\n\x07\x45xpress\x10\x02\x42y\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\nPBBaseEnumP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
 )
 
 
@@ -239,6 +239,36 @@ _BASEENUM_COLUMNMAPPING = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_BASEENUM_COLUMNMAPPING)
 
+_BASEENUM_CONDITIONTYPE = _descriptor.EnumDescriptor(
+  name='ConditionType',
+  full_name='model.BaseEnum.ConditionType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ConditionTypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Visualization', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Express', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=472,
+  serialized_end=543,
+)
+_sym_db.RegisterEnumDescriptor(_BASEENUM_CONDITIONTYPE)
+
 
 _BASEENUM = _descriptor.Descriptor(
   name='BaseEnum',
@@ -259,6 +289,7 @@ _BASEENUM = _descriptor.Descriptor(
     _BASEENUM_COMPRESSTYPE,
     _BASEENUM_ENCODING,
     _BASEENUM_COLUMNMAPPING,
+    _BASEENUM_CONDITIONTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -267,7 +298,7 @@ _BASEENUM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=52,
-  serialized_end=470,
+  serialized_end=543,
 )
 
 _BASEENUM_PARTITIONTYPE.containing_type = _BASEENUM
@@ -276,6 +307,7 @@ _BASEENUM_FILETYPE.containing_type = _BASEENUM
 _BASEENUM_COMPRESSTYPE.containing_type = _BASEENUM
 _BASEENUM_ENCODING.containing_type = _BASEENUM
 _BASEENUM_COLUMNMAPPING.containing_type = _BASEENUM
+_BASEENUM_CONDITIONTYPE.containing_type = _BASEENUM
 DESCRIPTOR.message_types_by_name['BaseEnum'] = _BASEENUM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

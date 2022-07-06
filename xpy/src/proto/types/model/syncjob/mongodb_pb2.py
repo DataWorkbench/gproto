@@ -11,7 +11,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from proto.types.model.syncjob import baseenum_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2
 from proto.types.model.syncjob import column_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_column__pb2
+from proto.types.model.syncjob import db_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_db__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 
 
@@ -21,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/model/syncjob/mongodb.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\x85\x01\n\rMongodbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x12\n\nfetch_size\x18\x04 \x01(\x05\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xa2\x02\n\rMongodbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x13\n\x0breplace_key\x18\x04 \x01(\t\x12\x32\n\nwrite_mode\x18\x05 \x01(\x0e\x32\x1e.model.MongodbTarget.WriteMode\x12\x12\n\nbatch_size\x18\x06 \x01(\x05\x12\x1c\n\x14\x66lush_interval_mills\x18\x07 \x01(\x05\"D\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06insert\x10\x01\x12\x0b\n\x07replace\x10\x02\x12\n\n\x06update\x10\x03:\x06\xca\xb2\x04\x02\n\x00\x42x\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n\'proto/types/model/syncjob/mongodb.proto\x12\x05model\x1a(proto/types/model/syncjob/baseenum.proto\x1a&proto/types/model/syncjob/column.proto\x1a\"proto/types/model/syncjob/db.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\xe6\x01\n\rMongodbSource\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x12\n\nfetch_size\x18\x04 \x01(\x05\x12\x35\n\x0e\x63ondition_type\x18\x05 \x01(\x0e\x32\x1d.model.BaseEnum.ConditionType\x12\'\n\rvisualization\x18\x06 \x01(\x0b\x32\x10.model.Condition\x12\x0f\n\x07\x65xpress\x18\x07 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\xa2\x02\n\rMongodbTarget\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x17\n\x0f\x63ollection_name\x18\x03 \x01(\t\x12\x13\n\x0breplace_key\x18\x04 \x01(\t\x12\x32\n\nwrite_mode\x18\x05 \x01(\x0e\x32\x1e.model.MongodbTarget.WriteMode\x12\x12\n\nbatch_size\x18\x06 \x01(\x05\x12\x1c\n\x14\x66lush_interval_mills\x18\x07 \x01(\x05\"D\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06insert\x10\x01\x12\x0b\n\x07replace\x10\x02\x12\n\n\x06update\x10\x03:\x06\xca\xb2\x04\x02\n\x00\x42x\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\tPBMongodbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_db__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
@@ -57,8 +59,8 @@ _MONGODBTARGET_WRITEMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=490,
-  serialized_end=558,
+  serialized_start=665,
+  serialized_end=733,
 )
 _sym_db.RegisterEnumDescriptor(_MONGODBTARGET_WRITEMODE)
 
@@ -100,8 +102,22 @@ _MONGODBSOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='filter', full_name='model.MongodbSource.filter', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='condition_type', full_name='model.MongodbSource.condition_type', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='visualization', full_name='model.MongodbSource.visualization', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='express', full_name='model.MongodbSource.express', index=6,
+      number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -118,8 +134,8 @@ _MONGODBSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=140,
-  serialized_end=273,
+  serialized_start=218,
+  serialized_end=448,
 )
 
 
@@ -193,11 +209,13 @@ _MONGODBTARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=566,
+  serialized_start=451,
+  serialized_end=741,
 )
 
 _MONGODBSOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
+_MONGODBSOURCE.fields_by_name['condition_type'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_CONDITIONTYPE
+_MONGODBSOURCE.fields_by_name['visualization'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_db__pb2._CONDITION
 _MONGODBTARGET.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 _MONGODBTARGET.fields_by_name['write_mode'].enum_type = _MONGODBTARGET_WRITEMODE
 _MONGODBTARGET_WRITEMODE.containing_type = _MONGODBTARGET

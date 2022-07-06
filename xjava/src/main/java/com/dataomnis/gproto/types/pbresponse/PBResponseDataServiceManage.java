@@ -5194,6 +5194,87 @@ public final class PBResponseDataServiceManage {
      * <code>.model.ApiConfig api_config = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigOrBuilder getApiConfigOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return Whether the apiGroup field is set.
+     */
+    boolean hasApiGroup();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return The apiGroup.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return Whether the dataSource field is set.
+     */
+    boolean hasDataSource();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return The dataSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return Whether the serviceCluster field is set.
+     */
+    boolean hasServiceCluster();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return The serviceCluster.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder();
   }
   /**
    * Protobuf type {@code response.DescribeApiConfig}
@@ -5249,6 +5330,45 @@ public final class PBResponseDataServiceManage {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(apiConfig_);
                 apiConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder subBuilder = null;
+              if (apiGroup_ != null) {
+                subBuilder = apiGroup_.toBuilder();
+              }
+              apiGroup_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(apiGroup_);
+                apiGroup_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder subBuilder = null;
+              if (dataSource_ != null) {
+                subBuilder = dataSource_.toBuilder();
+              }
+              dataSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dataSource_);
+                dataSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder subBuilder = null;
+              if (serviceCluster_ != null) {
+                subBuilder = serviceCluster_.toBuilder();
+              }
+              serviceCluster_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(serviceCluster_);
+                serviceCluster_ = subBuilder.buildPartial();
               }
 
               break;
@@ -5323,6 +5443,120 @@ public final class PBResponseDataServiceManage {
       return getApiConfig();
     }
 
+    public static final int API_GROUP_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup apiGroup_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return Whether the apiGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiGroup() {
+      return apiGroup_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return The apiGroup.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup() {
+      return apiGroup_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder() {
+      return getApiGroup();
+    }
+
+    public static final int DATA_SOURCE_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource dataSource_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return Whether the dataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataSource() {
+      return dataSource_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return The dataSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource() {
+      return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder() {
+      return getDataSource();
+    }
+
+    public static final int SERVICE_CLUSTER_FIELD_NUMBER = 4;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster serviceCluster_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return Whether the serviceCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceCluster() {
+      return serviceCluster_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return The serviceCluster.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster() {
+      return serviceCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder() {
+      return getServiceCluster();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5340,6 +5574,15 @@ public final class PBResponseDataServiceManage {
       if (apiConfig_ != null) {
         output.writeMessage(1, getApiConfig());
       }
+      if (apiGroup_ != null) {
+        output.writeMessage(2, getApiGroup());
+      }
+      if (dataSource_ != null) {
+        output.writeMessage(3, getDataSource());
+      }
+      if (serviceCluster_ != null) {
+        output.writeMessage(4, getServiceCluster());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5352,6 +5595,18 @@ public final class PBResponseDataServiceManage {
       if (apiConfig_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getApiConfig());
+      }
+      if (apiGroup_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getApiGroup());
+      }
+      if (dataSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDataSource());
+      }
+      if (serviceCluster_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getServiceCluster());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5373,6 +5628,21 @@ public final class PBResponseDataServiceManage {
         if (!getApiConfig()
             .equals(other.getApiConfig())) return false;
       }
+      if (hasApiGroup() != other.hasApiGroup()) return false;
+      if (hasApiGroup()) {
+        if (!getApiGroup()
+            .equals(other.getApiGroup())) return false;
+      }
+      if (hasDataSource() != other.hasDataSource()) return false;
+      if (hasDataSource()) {
+        if (!getDataSource()
+            .equals(other.getDataSource())) return false;
+      }
+      if (hasServiceCluster() != other.hasServiceCluster()) return false;
+      if (hasServiceCluster()) {
+        if (!getServiceCluster()
+            .equals(other.getServiceCluster())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5387,6 +5657,18 @@ public final class PBResponseDataServiceManage {
       if (hasApiConfig()) {
         hash = (37 * hash) + API_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getApiConfig().hashCode();
+      }
+      if (hasApiGroup()) {
+        hash = (37 * hash) + API_GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getApiGroup().hashCode();
+      }
+      if (hasDataSource()) {
+        hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataSource().hashCode();
+      }
+      if (hasServiceCluster()) {
+        hash = (37 * hash) + SERVICE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceCluster().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -5527,6 +5809,24 @@ public final class PBResponseDataServiceManage {
           apiConfig_ = null;
           apiConfigBuilder_ = null;
         }
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = null;
+        } else {
+          apiGroup_ = null;
+          apiGroupBuilder_ = null;
+        }
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = null;
+        } else {
+          serviceCluster_ = null;
+          serviceClusterBuilder_ = null;
+        }
         return this;
       }
 
@@ -5557,6 +5857,21 @@ public final class PBResponseDataServiceManage {
           result.apiConfig_ = apiConfig_;
         } else {
           result.apiConfig_ = apiConfigBuilder_.build();
+        }
+        if (apiGroupBuilder_ == null) {
+          result.apiGroup_ = apiGroup_;
+        } else {
+          result.apiGroup_ = apiGroupBuilder_.build();
+        }
+        if (dataSourceBuilder_ == null) {
+          result.dataSource_ = dataSource_;
+        } else {
+          result.dataSource_ = dataSourceBuilder_.build();
+        }
+        if (serviceClusterBuilder_ == null) {
+          result.serviceCluster_ = serviceCluster_;
+        } else {
+          result.serviceCluster_ = serviceClusterBuilder_.build();
         }
         onBuilt();
         return result;
@@ -5608,6 +5923,15 @@ public final class PBResponseDataServiceManage {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiConfig.getDefaultInstance()) return this;
         if (other.hasApiConfig()) {
           mergeApiConfig(other.getApiConfig());
+        }
+        if (other.hasApiGroup()) {
+          mergeApiGroup(other.getApiGroup());
+        }
+        if (other.hasDataSource()) {
+          mergeDataSource(other.getDataSource());
+        }
+        if (other.hasServiceCluster()) {
+          mergeServiceCluster(other.getServiceCluster());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5791,6 +6115,471 @@ public final class PBResponseDataServiceManage {
           apiConfig_ = null;
         }
         return apiConfigBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup apiGroup_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder> apiGroupBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       * @return Whether the apiGroup field is set.
+       */
+      public boolean hasApiGroup() {
+        return apiGroupBuilder_ != null || apiGroup_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       * @return The apiGroup.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup() {
+        if (apiGroupBuilder_ == null) {
+          return apiGroup_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+        } else {
+          return apiGroupBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder setApiGroup(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup value) {
+        if (apiGroupBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          apiGroup_ = value;
+          onChanged();
+        } else {
+          apiGroupBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder setApiGroup(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder builderForValue) {
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiGroupBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder mergeApiGroup(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup value) {
+        if (apiGroupBuilder_ == null) {
+          if (apiGroup_ != null) {
+            apiGroup_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.newBuilder(apiGroup_).mergeFrom(value).buildPartial();
+          } else {
+            apiGroup_ = value;
+          }
+          onChanged();
+        } else {
+          apiGroupBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder clearApiGroup() {
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = null;
+          onChanged();
+        } else {
+          apiGroup_ = null;
+          apiGroupBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder getApiGroupBuilder() {
+        
+        onChanged();
+        return getApiGroupFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder() {
+        if (apiGroupBuilder_ != null) {
+          return apiGroupBuilder_.getMessageOrBuilder();
+        } else {
+          return apiGroup_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder> 
+          getApiGroupFieldBuilder() {
+        if (apiGroupBuilder_ == null) {
+          apiGroupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder>(
+                  getApiGroup(),
+                  getParentForChildren(),
+                  isClean());
+          apiGroup_ = null;
+        }
+        return apiGroupBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource dataSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder> dataSourceBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       * @return Whether the dataSource field is set.
+       */
+      public boolean hasDataSource() {
+        return dataSourceBuilder_ != null || dataSource_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       * @return The dataSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource() {
+        if (dataSourceBuilder_ == null) {
+          return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+        } else {
+          return dataSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder setDataSource(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSource_ = value;
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder setDataSource(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder builderForValue) {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder mergeDataSource(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (dataSource_ != null) {
+            dataSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.newBuilder(dataSource_).mergeFrom(value).buildPartial();
+          } else {
+            dataSource_ = value;
+          }
+          onChanged();
+        } else {
+          dataSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder clearDataSource() {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+          onChanged();
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder getDataSourceBuilder() {
+        
+        onChanged();
+        return getDataSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder() {
+        if (dataSourceBuilder_ != null) {
+          return dataSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return dataSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder> 
+          getDataSourceFieldBuilder() {
+        if (dataSourceBuilder_ == null) {
+          dataSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder>(
+                  getDataSource(),
+                  getParentForChildren(),
+                  isClean());
+          dataSource_ = null;
+        }
+        return dataSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster serviceCluster_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder> serviceClusterBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       * @return Whether the serviceCluster field is set.
+       */
+      public boolean hasServiceCluster() {
+        return serviceClusterBuilder_ != null || serviceCluster_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       * @return The serviceCluster.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster() {
+        if (serviceClusterBuilder_ == null) {
+          return serviceCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+        } else {
+          return serviceClusterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder setServiceCluster(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster value) {
+        if (serviceClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceCluster_ = value;
+          onChanged();
+        } else {
+          serviceClusterBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder setServiceCluster(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder builderForValue) {
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceClusterBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder mergeServiceCluster(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster value) {
+        if (serviceClusterBuilder_ == null) {
+          if (serviceCluster_ != null) {
+            serviceCluster_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.newBuilder(serviceCluster_).mergeFrom(value).buildPartial();
+          } else {
+            serviceCluster_ = value;
+          }
+          onChanged();
+        } else {
+          serviceClusterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder clearServiceCluster() {
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = null;
+          onChanged();
+        } else {
+          serviceCluster_ = null;
+          serviceClusterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder getServiceClusterBuilder() {
+        
+        onChanged();
+        return getServiceClusterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder() {
+        if (serviceClusterBuilder_ != null) {
+          return serviceClusterBuilder_.getMessageOrBuilder();
+        } else {
+          return serviceCluster_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder> 
+          getServiceClusterFieldBuilder() {
+        if (serviceClusterBuilder_ == null) {
+          serviceClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder>(
+                  getServiceCluster(),
+                  getParentForChildren(),
+                  isClean());
+          serviceCluster_ = null;
+        }
+        return serviceClusterBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -11093,23 +11882,27 @@ public final class PBResponseDataServiceManage {
       "has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003\"\034\n\016CreateA" +
       "piGroup\022\n\n\002id\030\001 \001(\t\"R\n\016ListApiConfigs\022\037\n" +
       "\005infos\030\001 \003(\0132\020.model.ApiConfig\022\r\n\005total\030" +
-      "\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"9\n\021DescribeApiCo" +
-      "nfig\022$\n\napi_config\030\001 \001(\0132\020.model.ApiConf" +
-      "ig\"\035\n\017CreateApiConfig\022\n\n\002id\030\001 \001(\t\"G\n\035Des" +
-      "cribeDataServiceApiVersion\022&\n\013api_versio" +
-      "n\030\001 \001(\0132\021.model.ApiVersion\"_\n\032ListDataSe" +
-      "rviceApiVersions\022 \n\005infos\030\001 \003(\0132\021.model." +
-      "ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010has_more\030\003 " +
-      "\001(\010\"h\n#ListPublishedApiVersionsByCluster" +
-      "Id\022 \n\005infos\030\001 \003(\0132\021.model.ApiVersion\022\r\n\005" +
-      "total\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"<\n\022TestDat" +
-      "aServiceApi\022\014\n\004logs\030\001 \001(\t\022\030\n\020response_co" +
-      "ntent\030\002 \001(\t\"M\n\036DescribeServiceDataSource" +
-      "Kinds\022+\n\005Kinds\030\001 \003(\0132\034.model.ServiceData" +
-      "SourceKindB|\n%com.dataomnis.gproto.types" +
-      ".pbresponseB\033PBResponseDataServiceManage" +
-      "P\000Z4github.com/DataWorkbench/gproto/xgo/" +
-      "types/pbresponseb\006proto3"
+      "\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"\307\001\n\021DescribeApiC" +
+      "onfig\022$\n\napi_config\030\001 \001(\0132\020.model.ApiCon" +
+      "fig\022\"\n\tapi_group\030\002 \001(\0132\017.model.ApiGroup\022" +
+      "/\n\013data_source\030\003 \001(\0132\032.model.ApiConfigDa" +
+      "taSource\0227\n\017service_cluster\030\004 \001(\0132\036.mode" +
+      "l.ApiConfigServiceCluster\"\035\n\017CreateApiCo" +
+      "nfig\022\n\n\002id\030\001 \001(\t\"G\n\035DescribeDataServiceA" +
+      "piVersion\022&\n\013api_version\030\001 \001(\0132\021.model.A" +
+      "piVersion\"_\n\032ListDataServiceApiVersions\022" +
+      " \n\005infos\030\001 \003(\0132\021.model.ApiVersion\022\r\n\005tot" +
+      "al\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"h\n#ListPublis" +
+      "hedApiVersionsByClusterId\022 \n\005infos\030\001 \003(\013" +
+      "2\021.model.ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010ha" +
+      "s_more\030\003 \001(\010\"<\n\022TestDataServiceApi\022\014\n\004lo" +
+      "gs\030\001 \001(\t\022\030\n\020response_content\030\002 \001(\t\"M\n\036De" +
+      "scribeServiceDataSourceKinds\022+\n\005Kinds\030\001 " +
+      "\003(\0132\034.model.ServiceDataSourceKindB|\n%com" +
+      ".dataomnis.gproto.types.pbresponseB\033PBRe" +
+      "sponseDataServiceManageP\000Z4github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbresponseb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11157,7 +11950,7 @@ public final class PBResponseDataServiceManage {
     internal_static_response_DescribeApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeApiConfig_descriptor,
-        new java.lang.String[] { "ApiConfig", });
+        new java.lang.String[] { "ApiConfig", "ApiGroup", "DataSource", "ServiceCluster", });
     internal_static_response_CreateApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_response_CreateApiConfig_fieldAccessorTable = new

@@ -44,6 +44,9 @@ type AlertManageClient interface {
 	AlertPolicyUnboundJobs(ctx context.Context, in *pbrequest.AlertPolicyUnboundJobs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	// ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
 	ListJobsByAlertPolicy(ctx context.Context, in *pbrequest.ListJobsByAlertPolicy, opts ...grpc.CallOption) (*pbresponse.ListJobsByAlertPolicy, error)
+	ListAlertLogs(ctx context.Context, in *pbrequest.ListAlertLogs, opts ...grpc.CallOption) (*pbresponse.ListAlertLogs, error)
+	// Internal API
+	SendAlert(ctx context.Context, in *pbrequest.SendAlert, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type alertManageClient struct {
@@ -171,6 +174,24 @@ func (c *alertManageClient) ListJobsByAlertPolicy(ctx context.Context, in *pbreq
 	return out, nil
 }
 
+func (c *alertManageClient) ListAlertLogs(ctx context.Context, in *pbrequest.ListAlertLogs, opts ...grpc.CallOption) (*pbresponse.ListAlertLogs, error) {
+	out := new(pbresponse.ListAlertLogs)
+	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/ListAlertLogs", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *alertManageClient) SendAlert(ctx context.Context, in *pbrequest.SendAlert, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/spacemanager.AlertManage/SendAlert", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AlertManageServer is the server API for AlertManage service.
 // All implementations must embed UnimplementedAlertManageServer
 // for forward compatibility
@@ -194,6 +215,9 @@ type AlertManageServer interface {
 	AlertPolicyUnboundJobs(context.Context, *pbrequest.AlertPolicyUnboundJobs) (*pbmodel.EmptyStruct, error)
 	// ListJobsByAlertPolicy query which jobs are bound to the specified alert policy.
 	ListJobsByAlertPolicy(context.Context, *pbrequest.ListJobsByAlertPolicy) (*pbresponse.ListJobsByAlertPolicy, error)
+	ListAlertLogs(context.Context, *pbrequest.ListAlertLogs) (*pbresponse.ListAlertLogs, error)
+	// Internal API
+	SendAlert(context.Context, *pbrequest.SendAlert) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedAlertManageServer()
 }
 
@@ -239,6 +263,12 @@ func (UnimplementedAlertManageServer) AlertPolicyUnboundJobs(context.Context, *p
 }
 func (UnimplementedAlertManageServer) ListJobsByAlertPolicy(context.Context, *pbrequest.ListJobsByAlertPolicy) (*pbresponse.ListJobsByAlertPolicy, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListJobsByAlertPolicy not implemented")
+}
+func (UnimplementedAlertManageServer) ListAlertLogs(context.Context, *pbrequest.ListAlertLogs) (*pbresponse.ListAlertLogs, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListAlertLogs not implemented")
+}
+func (UnimplementedAlertManageServer) SendAlert(context.Context, *pbrequest.SendAlert) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendAlert not implemented")
 }
 func (UnimplementedAlertManageServer) mustEmbedUnimplementedAlertManageServer() {}
 
@@ -487,6 +517,42 @@ func _AlertManage_ListJobsByAlertPolicy_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AlertManage_ListAlertLogs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.ListAlertLogs)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AlertManageServer).ListAlertLogs(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.AlertManage/ListAlertLogs",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AlertManageServer).ListAlertLogs(ctx, req.(*pbrequest.ListAlertLogs))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AlertManage_SendAlert_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.SendAlert)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AlertManageServer).SendAlert(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.AlertManage/SendAlert",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AlertManageServer).SendAlert(ctx, req.(*pbrequest.SendAlert))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AlertManage_ServiceDesc is the grpc.ServiceDesc for AlertManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -545,6 +611,14 @@ var AlertManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListJobsByAlertPolicy",
 			Handler:    _AlertManage_ListJobsByAlertPolicy_Handler,
+		},
+		{
+			MethodName: "ListAlertLogs",
+			Handler:    _AlertManage_ListAlertLogs_Handler,
+		},
+		{
+			MethodName: "SendAlert",
+			Handler:    _AlertManage_SendAlert_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

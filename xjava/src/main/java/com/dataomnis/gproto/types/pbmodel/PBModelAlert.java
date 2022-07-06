@@ -6085,7 +6085,7 @@ public final class PBModelAlert {
 
     /**
      * <pre>
-     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
      * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
      * </pre>
      *
@@ -6095,7 +6095,7 @@ public final class PBModelAlert {
     java.lang.String getJobId();
     /**
      * <pre>
-     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
      * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
      * </pre>
      *
@@ -6307,7 +6307,7 @@ public final class PBModelAlert {
     private volatile java.lang.Object jobId_;
     /**
      * <pre>
-     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
      * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
      * </pre>
      *
@@ -6329,7 +6329,7 @@ public final class PBModelAlert {
     }
     /**
      * <pre>
-     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
      * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
      * </pre>
      *
@@ -6896,7 +6896,7 @@ public final class PBModelAlert {
       private java.lang.Object jobId_ = "";
       /**
        * <pre>
-       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
        * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
        * </pre>
        *
@@ -6917,7 +6917,7 @@ public final class PBModelAlert {
       }
       /**
        * <pre>
-       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
        * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
        * </pre>
        *
@@ -6939,7 +6939,7 @@ public final class PBModelAlert {
       }
       /**
        * <pre>
-       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
        * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
        * </pre>
        *
@@ -6959,7 +6959,7 @@ public final class PBModelAlert {
       }
       /**
        * <pre>
-       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
        * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
        * </pre>
        *
@@ -6974,7 +6974,7 @@ public final class PBModelAlert {
       }
       /**
        * <pre>
-       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
        * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
        * </pre>
        *
@@ -7046,6 +7046,2104 @@ public final class PBModelAlert {
 
   }
 
+  public interface AlertLogOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.AlertLog)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    java.lang.String getAlertId();
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    com.google.protobuf.ByteString
+        getAlertIdBytes();
+
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    java.lang.String getInstanceId();
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
+
+    /**
+     * <pre>
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+     * @return The status.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status getStatus();
+
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    int getMonitorObjectValue();
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject();
+
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    int getEventTypeValue();
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType();
+
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 12 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    long getCreated();
+
+    /**
+     * <pre>
+     * Timestamp of update time.
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 13 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    long getUpdated();
+  }
+  /**
+   * Protobuf type {@code model.AlertLog}
+   */
+  public static final class AlertLog extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.AlertLog)
+      AlertLogOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AlertLog.newBuilder() to construct.
+    private AlertLog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AlertLog() {
+      spaceId_ = "";
+      alertId_ = "";
+      jobId_ = "";
+      instanceId_ = "";
+      status_ = 0;
+      monitorObject_ = 0;
+      eventType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AlertLog();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AlertLog(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              alertId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              monitorObject_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              eventType_ = rawValue;
+              break;
+            }
+            case 96: {
+
+              created_ = input.readInt64();
+              break;
+            }
+            case 104: {
+
+              updated_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAlert.internal_static_model_AlertLog_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelAlert.internal_static_model_AlertLog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.class, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.AlertLog.Status}
+     */
+    public enum Status
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>StatusUnset = 0;</code>
+       */
+      StatusUnset(0),
+      /**
+       * <code>Deleted = 1;</code>
+       */
+      Deleted(1),
+      /**
+       * <code>Enabled = 2;</code>
+       */
+      Enabled(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>StatusUnset = 0;</code>
+       */
+      public static final int StatusUnset_VALUE = 0;
+      /**
+       * <code>Deleted = 1;</code>
+       */
+      public static final int Deleted_VALUE = 1;
+      /**
+       * <code>Enabled = 2;</code>
+       */
+      public static final int Enabled_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Status valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Status forNumber(int value) {
+        switch (value) {
+          case 0: return StatusUnset;
+          case 1: return Deleted;
+          case 2: return Enabled;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Status>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Status> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+              public Status findValueByNumber(int number) {
+                return Status.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Status[] VALUES = values();
+
+      public static Status valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Status(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AlertLog.Status)
+    }
+
+    /**
+     * Protobuf enum {@code model.AlertLog.EventType}
+     */
+    public enum EventType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>EventTypeUnset = 0;</code>
+       */
+      EventTypeUnset(0),
+      /**
+       * <code>StreamInstanceFailed = 1;</code>
+       */
+      StreamInstanceFailed(1),
+      /**
+       * <code>StreamInstanceTimeout = 2;</code>
+       */
+      StreamInstanceTimeout(2),
+      /**
+       * <code>SyncInstanceFailed = 3;</code>
+       */
+      SyncInstanceFailed(3),
+      /**
+       * <code>SyncInstanceTimeout = 4;</code>
+       */
+      SyncInstanceTimeout(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>EventTypeUnset = 0;</code>
+       */
+      public static final int EventTypeUnset_VALUE = 0;
+      /**
+       * <code>StreamInstanceFailed = 1;</code>
+       */
+      public static final int StreamInstanceFailed_VALUE = 1;
+      /**
+       * <code>StreamInstanceTimeout = 2;</code>
+       */
+      public static final int StreamInstanceTimeout_VALUE = 2;
+      /**
+       * <code>SyncInstanceFailed = 3;</code>
+       */
+      public static final int SyncInstanceFailed_VALUE = 3;
+      /**
+       * <code>SyncInstanceTimeout = 4;</code>
+       */
+      public static final int SyncInstanceTimeout_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EventType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EventType forNumber(int value) {
+        switch (value) {
+          case 0: return EventTypeUnset;
+          case 1: return StreamInstanceFailed;
+          case 2: return StreamInstanceTimeout;
+          case 3: return SyncInstanceFailed;
+          case 4: return SyncInstanceTimeout;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EventType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          EventType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+              public EventType findValueByNumber(int number) {
+                return EventType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final EventType[] VALUES = values();
+
+      public static EventType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EventType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.AlertLog.EventType)
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALERT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object alertId_;
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    @java.lang.Override
+    public java.lang.String getAlertId() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        alertId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAlertIdBytes() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        alertId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INSTANCE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object instanceId_;
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 5;
+    private int status_;
+    /**
+     * <pre>
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+     * &#64;inject_tag: json:"status" gorm:"column:status;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+     * @return The status.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status getStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.valueOf(status_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.UNRECOGNIZED : result;
+    }
+
+    public static final int MONITOR_OBJECT_FIELD_NUMBER = 6;
+    private int monitorObject_;
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    @java.lang.Override public int getMonitorObjectValue() {
+      return monitorObject_;
+    }
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+    }
+
+    public static final int EVENT_TYPE_FIELD_NUMBER = 7;
+    private int eventType_;
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    @java.lang.Override public int getEventTypeValue() {
+      return eventType_;
+    }
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+    }
+
+    public static final int CREATED_FIELD_NUMBER = 12;
+    private long created_;
+    /**
+     * <pre>
+     * Timestamp of create time.
+     * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+     * </pre>
+     *
+     * <code>int64 created = 12 [(.validator.field) = { ... }</code>
+     * @return The created.
+     */
+    @java.lang.Override
+    public long getCreated() {
+      return created_;
+    }
+
+    public static final int UPDATED_FIELD_NUMBER = 13;
+    private long updated_;
+    /**
+     * <pre>
+     * Timestamp of update time.
+     * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+     * </pre>
+     *
+     * <code>int64 updated = 13 [(.validator.field) = { ... }</code>
+     * @return The updated.
+     */
+    @java.lang.Override
+    public long getUpdated() {
+      return updated_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instanceId_);
+      }
+      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.StatusUnset.getNumber()) {
+        output.writeEnum(5, status_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        output.writeEnum(6, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        output.writeEnum(7, eventType_);
+      }
+      if (created_ != 0L) {
+        output.writeInt64(12, created_);
+      }
+      if (updated_ != 0L) {
+        output.writeInt64(13, updated_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instanceId_);
+      }
+      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.StatusUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, status_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, eventType_);
+      }
+      if (created_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(12, created_);
+      }
+      if (updated_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, updated_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog other = (com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getAlertId()
+          .equals(other.getAlertId())) return false;
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
+      if (status_ != other.status_) return false;
+      if (monitorObject_ != other.monitorObject_) return false;
+      if (eventType_ != other.eventType_) return false;
+      if (getCreated()
+          != other.getCreated()) return false;
+      if (getUpdated()
+          != other.getUpdated()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + ALERT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAlertId().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + MONITOR_OBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + monitorObject_;
+      hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + eventType_;
+      hash = (37 * hash) + CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCreated());
+      hash = (37 * hash) + UPDATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUpdated());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.AlertLog}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.AlertLog)
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.internal_static_model_AlertLog_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.internal_static_model_AlertLog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.class, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        alertId_ = "";
+
+        jobId_ = "";
+
+        instanceId_ = "";
+
+        status_ = 0;
+
+        monitorObject_ = 0;
+
+        eventType_ = 0;
+
+        created_ = 0L;
+
+        updated_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.internal_static_model_AlertLog_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog result = new com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog(this);
+        result.spaceId_ = spaceId_;
+        result.alertId_ = alertId_;
+        result.jobId_ = jobId_;
+        result.instanceId_ = instanceId_;
+        result.status_ = status_;
+        result.monitorObject_ = monitorObject_;
+        result.eventType_ = eventType_;
+        result.created_ = created_;
+        result.updated_ = updated_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getAlertId().isEmpty()) {
+          alertId_ = other.alertId_;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        if (other.monitorObject_ != 0) {
+          setMonitorObjectValue(other.getMonitorObjectValue());
+        }
+        if (other.eventType_ != 0) {
+          setEventTypeValue(other.getEventTypeValue());
+        }
+        if (other.getCreated() != 0L) {
+          setCreated(other.getCreated());
+        }
+        if (other.getUpdated() != 0L) {
+          setUpdated(other.getUpdated());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" gorm:"column:space_id;"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object alertId_ = "";
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return The alertId.
+       */
+      public java.lang.String getAlertId() {
+        java.lang.Object ref = alertId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          alertId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for alertId.
+       */
+      public com.google.protobuf.ByteString
+          getAlertIdBytes() {
+        java.lang.Object ref = alertId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alertId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAlertId() {
+        
+        alertId_ = getDefaultInstance().getAlertId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" gorm:"column:job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object instanceId_ = "";
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
+       */
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceId() {
+        
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" gorm:"column:instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status getStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.valueOf(status_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Rule status, 1 =&gt; "Deleted", 2 =&gt; "enabled".
+       * &#64;inject_tag: json:"status" gorm:"column:status;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.Status status = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int monitorObject_ = 0;
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for monitorObject.
+       */
+      @java.lang.Override public int getMonitorObjectValue() {
+        return monitorObject_;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObjectValue(int value) {
+        
+        monitorObject_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return The monitorObject.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @param value The monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObject(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        monitorObject_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonitorObject() {
+        
+        monitorObject_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int eventType_ = 0;
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for eventType.
+       */
+      @java.lang.Override public int getEventTypeValue() {
+        return eventType_;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventTypeValue(int value) {
+        
+        eventType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return The eventType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        eventType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" gorm:"column:event_type;"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        
+        eventType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long created_ ;
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 12 [(.validator.field) = { ... }</code>
+       * @return The created.
+       */
+      @java.lang.Override
+      public long getCreated() {
+        return created_;
+      }
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 12 [(.validator.field) = { ... }</code>
+       * @param value The created to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreated(long value) {
+        
+        created_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of create time.
+       * &#64;inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
+       * </pre>
+       *
+       * <code>int64 created = 12 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreated() {
+        
+        created_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long updated_ ;
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 13 [(.validator.field) = { ... }</code>
+       * @return The updated.
+       */
+      @java.lang.Override
+      public long getUpdated() {
+        return updated_;
+      }
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 13 [(.validator.field) = { ... }</code>
+       * @param value The updated to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdated(long value) {
+        
+        updated_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Timestamp of update time.
+       * &#64;inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
+       * </pre>
+       *
+       * <code>int64 updated = 13 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdated() {
+        
+        updated_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.AlertLog)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.AlertLog)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AlertLog>
+        PARSER = new com.google.protobuf.AbstractParser<AlertLog>() {
+      @java.lang.Override
+      public AlertLog parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AlertLog(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AlertLog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AlertLog> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_AlertPolicy_descriptor;
   private static final 
@@ -7071,6 +9169,11 @@ public final class PBModelAlert {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_AlertPolicyMapping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_AlertLog_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_AlertLog_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7119,10 +9222,25 @@ public final class PBModelAlert {
       "\007SyncJob\020\002\"\200\001\n\022AlertPolicyMapping\022%\n\010spa" +
       "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010aler" +
       "t_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job_i" +
-      "d\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024Bg\n\"com.dataomnis.g" +
-      "proto.types.pbmodelB\014PBModelAlertP\000Z1git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "bmodelb\006proto3"
+      "d\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\320\004\n\010AlertLog\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010ale" +
+      "rt_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job_" +
+      "id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013instance_id\030\004 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0225\n\006status\030\005 \001(\0162\026.mode" +
+      "l.AlertLog.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\016moni" +
+      "tor_object\030\006 \001(\0162 .model.AlertPolicy.Mon" +
+      "itorObjectB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_type\030" +
+      "\007 \001(\0162\031.model.AlertLog.EventTypeB\r\342\337\037\t\022\007" +
+      "\332\001\0040\000X\001\022\034\n\007created\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
+      "\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n" +
+      "\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002" +
+      "\"\205\001\n\tEventType\022\022\n\016EventTypeUnset\020\000\022\030\n\024St" +
+      "reamInstanceFailed\020\001\022\031\n\025StreamInstanceTi" +
+      "meout\020\002\022\026\n\022SyncInstanceFailed\020\003\022\027\n\023SyncI" +
+      "nstanceTimeout\020\004Bg\n\"com.dataomnis.gproto" +
+      ".types.pbmodelB\014PBModelAlertP\000Z1github.c" +
+      "om/DataWorkbench/gproto/xgo/types/pbmode" +
+      "lb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7161,6 +9279,12 @@ public final class PBModelAlert {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AlertPolicyMapping_descriptor,
         new java.lang.String[] { "SpaceId", "AlertId", "JobId", });
+    internal_static_model_AlertLog_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_model_AlertLog_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_AlertLog_descriptor,
+        new java.lang.String[] { "SpaceId", "AlertId", "JobId", "InstanceId", "Status", "MonitorObject", "EventType", "Created", "Updated", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

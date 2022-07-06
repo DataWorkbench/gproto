@@ -22,41 +22,11 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\016PBRelationaldbP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/model/syncjob/db.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a(proto/types/model/syncjob/baseenum.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\xe0\x02\n\x08\x44\x42Source\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\r\n\x05where\x18\x04 \x01(\t\x12\x10\n\x08split_pk\x18\x05 \x01(\t\x12\x33\n\x0cmapping_type\x18\x06 \x01(\x0e\x32\x1d.model.BaseEnum.ColumnMapping\x12\x35\n\x0e\x63ondition_type\x18\x07 \x01(\x0e\x32\x1d.model.DBSource.ConditionType\x12\'\n\rvisualization\x18\x08 \x01(\x0b\x32\x10.model.Condition\x12\x0f\n\x07\x65xpress\x18\t \x01(\t\"G\n\rConditionType\x12\x16\n\x12\x43onditionTypeUnset\x10\x00\x12\x11\n\rVisualization\x10\x01\x12\x0b\n\x07\x45xpress\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"{\n\tCondition\x12\x0e\n\x06\x63olumn\x18\x01 \x01(\t\x12\x17\n\x0fstart_condition\x18\x02 \x01(\t\x12\x13\n\x0bstart_value\x18\x03 \x01(\t\x12\x15\n\rend_condition\x18\x04 \x01(\t\x12\x11\n\tend_value\x18\x05 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\x93\x03\n\x08\x44\x42Target\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x0f\n\x07pre_sql\x18\x04 \x03(\t\x12\x10\n\x08post_sql\x18\x05 \x03(\t\x12-\n\nwrite_mode\x18\x06 \x01(\x0e\x32\x19.model.DBTarget.WriteMode\x12\x12\n\nbatch_size\x18\x07 \x01(\x05\x12\x12\n\nupdate_key\x18\x08 \x03(\t\x12*\n\x08semantic\x18\t \x01(\x0e\x32\x18.model.DBTarget.Semantic\x12\x14\n\x0cwith_no_lock\x18\n \x01(\t\"D\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06insert\x10\x01\x12\x0b\n\x07replace\x10\x02\x12\n\n\x06update\x10\x03\"?\n\x08Semantic\x12\x11\n\rSemanticUnset\x10\x00\x12\x0f\n\x0b\x41tLeastOnce\x10\x01\x12\x0f\n\x0b\x45xactlyOnce\x10\x02:\x06\xca\xb2\x04\x02\n\x00\x42}\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x0ePBRelationaldbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n\"proto/types/model/syncjob/db.proto\x12\x05model\x1a&proto/types/model/syncjob/column.proto\x1a(proto/types/model/syncjob/baseenum.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\x97\x02\n\x08\x44\x42Source\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\r\n\x05where\x18\x04 \x01(\t\x12\x10\n\x08split_pk\x18\x05 \x01(\t\x12\x33\n\x0cmapping_type\x18\x06 \x01(\x0e\x32\x1d.model.BaseEnum.ColumnMapping\x12\x35\n\x0e\x63ondition_type\x18\x07 \x01(\x0e\x32\x1d.model.BaseEnum.ConditionType\x12\'\n\rvisualization\x18\x08 \x01(\x0b\x32\x10.model.Condition\x12\x0f\n\x07\x65xpress\x18\t \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"{\n\tCondition\x12\x0e\n\x06\x63olumn\x18\x01 \x01(\t\x12\x17\n\x0fstart_condition\x18\x02 \x01(\t\x12\x13\n\x0bstart_value\x18\x03 \x01(\t\x12\x15\n\rend_condition\x18\x04 \x01(\t\x12\x11\n\tend_value\x18\x05 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\x93\x03\n\x08\x44\x42Target\x12\x1d\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\r.model.Column\x12\r\n\x05table\x18\x02 \x03(\t\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x0f\n\x07pre_sql\x18\x04 \x03(\t\x12\x10\n\x08post_sql\x18\x05 \x03(\t\x12-\n\nwrite_mode\x18\x06 \x01(\x0e\x32\x19.model.DBTarget.WriteMode\x12\x12\n\nbatch_size\x18\x07 \x01(\x05\x12\x12\n\nupdate_key\x18\x08 \x03(\t\x12*\n\x08semantic\x18\t \x01(\x0e\x32\x18.model.DBTarget.Semantic\x12\x14\n\x0cwith_no_lock\x18\n \x01(\t\"D\n\tWriteMode\x12\x12\n\x0eWriteModeUnset\x10\x00\x12\n\n\x06insert\x10\x01\x12\x0b\n\x07replace\x10\x02\x12\n\n\x06update\x10\x03\"?\n\x08Semantic\x12\x11\n\rSemanticUnset\x10\x00\x12\x0f\n\x0b\x41tLeastOnce\x10\x01\x12\x0f\n\x0b\x45xactlyOnce\x10\x02:\x06\xca\xb2\x04\x02\n\x00\x42}\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x0ePBRelationaldbP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
-
-_DBSOURCE_CONDITIONTYPE = _descriptor.EnumDescriptor(
-  name='ConditionType',
-  full_name='model.DBSource.ConditionType',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='ConditionTypeUnset', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Visualization', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='Express', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=450,
-  serialized_end=521,
-)
-_sym_db.RegisterEnumDescriptor(_DBSOURCE_CONDITIONTYPE)
 
 _DBTARGET_WRITEMODE = _descriptor.EnumDescriptor(
   name='WriteMode',
@@ -88,8 +58,8 @@ _DBTARGET_WRITEMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=919,
-  serialized_end=987,
+  serialized_start=846,
+  serialized_end=914,
 )
 _sym_db.RegisterEnumDescriptor(_DBTARGET_WRITEMODE)
 
@@ -118,8 +88,8 @@ _DBTARGET_SEMANTIC = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=989,
-  serialized_end=1052,
+  serialized_start=916,
+  serialized_end=979,
 )
 _sym_db.RegisterEnumDescriptor(_DBTARGET_SEMANTIC)
 
@@ -200,7 +170,6 @@ _DBSOURCE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _DBSOURCE_CONDITIONTYPE,
   ],
   serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
@@ -209,7 +178,7 @@ _DBSOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=177,
-  serialized_end=529,
+  serialized_end=456,
 )
 
 
@@ -268,8 +237,8 @@ _CONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=654,
+  serialized_start=458,
+  serialized_end=581,
 )
 
 
@@ -365,15 +334,14 @@ _DBTARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=657,
-  serialized_end=1060,
+  serialized_start=584,
+  serialized_end=987,
 )
 
 _DBSOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 _DBSOURCE.fields_by_name['mapping_type'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_COLUMNMAPPING
-_DBSOURCE.fields_by_name['condition_type'].enum_type = _DBSOURCE_CONDITIONTYPE
+_DBSOURCE.fields_by_name['condition_type'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_CONDITIONTYPE
 _DBSOURCE.fields_by_name['visualization'].message_type = _CONDITION
-_DBSOURCE_CONDITIONTYPE.containing_type = _DBSOURCE
 _DBTARGET.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 _DBTARGET.fields_by_name['write_mode'].enum_type = _DBTARGET_WRITEMODE
 _DBTARGET.fields_by_name['semantic'].enum_type = _DBTARGET_SEMANTIC

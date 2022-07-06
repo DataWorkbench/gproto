@@ -773,3 +773,160 @@ func (this *ListJobsByAlertPolicy) Validate() error {
 	}
 	return nil
 }
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("ListAlertLogs", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_limit() error {
+	if !(this.Limit > 0) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
+	}
+	if !(this.Limit <= 100) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'limit' must be less than or equal to '100'", protovalidator.Int32ToString(this.Limit))
+	}
+	return nil
+}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_offset() error {
+	if !(this.Offset >= 0) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'offset' must be greater than or equal to '0'", protovalidator.Int32ToString(this.Offset))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListAlertLogs_In_SortBy = map[string]bool{"": true, "created": true, "updated": true}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_sort_by() error {
+	if !(_xxx_xxx_Validator_ListAlertLogs_In_SortBy[this.SortBy]) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'sort_by' must be one of '[ created updated]'", this.SortBy)
+	}
+	return nil
+}
+
+// Set default value for message request.ListAlertLogs
+func (this *ListAlertLogs) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_offset(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("SendAlert", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_alert_id() error {
+	if !(len(this.AlertId) == 20) {
+		return protovalidator.FieldError1("SendAlert", "the byte length of field 'alert_id' must be equal to '20'", protovalidator.StringByteLenToString(this.AlertId))
+	}
+	if !(strings.HasPrefix(this.AlertId, "alt-")) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'alert_id' must start with string 'alt-'", this.AlertId)
+	}
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("SendAlert", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_instance_id() error {
+	if !(len(this.InstanceId) == 20) {
+		return protovalidator.FieldError1("SendAlert", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_SendAlert_InEnums_MonitorObject = map[pbmodel.AlertPolicy_MonitorObject]bool{0: true, 1: true, 2: true}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_monitor_object() error {
+	if !(this.MonitorObject > 0) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'monitor_object' must be greater than '0'", protovalidator.Int32ToString(int32(this.MonitorObject)))
+	}
+	if !(_xxx_xxx_Validator_SendAlert_InEnums_MonitorObject[this.MonitorObject]) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'monitor_object' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.MonitorObject)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_SendAlert_InEnums_EventType = map[pbmodel.AlertLog_EventType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_event_type() error {
+	if !(this.EventType > 0) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'event_type' must be greater than '0'", protovalidator.Int32ToString(int32(this.EventType)))
+	}
+	if !(_xxx_xxx_Validator_SendAlert_InEnums_EventType[this.EventType]) {
+		return protovalidator.FieldError1("SendAlert", "the value of field 'event_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.EventType)))
+	}
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_message() error {
+	return nil
+}
+
+func (this *SendAlert) _xxx_xxx_Validator_Validate_notification_ids() error {
+	if !(len(this.NotificationIds) <= 100) {
+		return protovalidator.FieldError1("SendAlert", "the length of field 'notification_ids' must be less than or equal to '100'", strconv.Itoa(len(this.NotificationIds)))
+	}
+	return nil
+}
+
+// Set default value for message request.SendAlert
+func (this *SendAlert) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_monitor_object(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_event_type(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_message(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_notification_ids(); err != nil {
+		return err
+	}
+	return nil
+}

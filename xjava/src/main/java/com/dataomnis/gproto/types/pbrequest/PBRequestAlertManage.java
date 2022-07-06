@@ -4777,7 +4777,7 @@ public final class PBRequestAlertManage {
 
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -4788,7 +4788,7 @@ public final class PBRequestAlertManage {
         getNotificationIdsList();
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -4798,7 +4798,7 @@ public final class PBRequestAlertManage {
     int getNotificationIdsCount();
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -4809,7 +4809,7 @@ public final class PBRequestAlertManage {
     java.lang.String getNotificationIds(int index);
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -5414,7 +5414,7 @@ public final class PBRequestAlertManage {
     private com.google.protobuf.LazyStringList notificationIds_;
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -5427,7 +5427,7 @@ public final class PBRequestAlertManage {
     }
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -5439,7 +5439,7 @@ public final class PBRequestAlertManage {
     }
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -5452,7 +5452,7 @@ public final class PBRequestAlertManage {
     }
     /**
      * <pre>
-     * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+     * The notification list id of in IaaS.
      * &#64;inject_tag: json:"notification_ids"
      * </pre>
      *
@@ -6957,7 +6957,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -6970,7 +6970,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -6982,7 +6982,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -6995,7 +6995,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -7009,7 +7009,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -7030,7 +7030,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -7050,7 +7050,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -7068,7 +7068,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -7083,7 +7083,7 @@ public final class PBRequestAlertManage {
       }
       /**
        * <pre>
-       * The notification list id of in IaaS. Multiple ids are separated by commas. e.g: "nl-mj9wzsa9,nl-pix7u2uo"
+       * The notification list id of in IaaS.
        * &#64;inject_tag: json:"notification_ids"
        * </pre>
        *
@@ -17070,6 +17070,3108 @@ public final class PBRequestAlertManage {
 
   }
 
+  public interface ListAlertLogsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.ListAlertLogs)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * Limit the maximum number of entries returned this time.
+     * Not required, Max 100, default 100.
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+     * @return The limit.
+     */
+    int getLimit();
+
+    /**
+     * <pre>
+     * The offset position. Not required, default 0.
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * @return The offset.
+     */
+    int getOffset();
+
+    /**
+     * <pre>
+     * The field list used to sorted query results.
+     * Optional values: {"created", "updated"}.
+     * Multiple fields are separated by commas(","), eg: sort_by="created".
+     * Not required, default: id.
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
+     * </pre>
+     *
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * @return The sortBy.
+     */
+    java.lang.String getSortBy();
+    /**
+     * <pre>
+     * The field list used to sorted query results.
+     * Optional values: {"created", "updated"}.
+     * Multiple fields are separated by commas(","), eg: sort_by="created".
+     * Not required, default: id.
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
+     * </pre>
+     *
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for sortBy.
+     */
+    com.google.protobuf.ByteString
+        getSortByBytes();
+
+    /**
+     * <pre>
+     * Reverse order results. Not required, default: false.
+     * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
+     * </pre>
+     *
+     * <code>bool reverse = 5;</code>
+     * @return The reverse.
+     */
+    boolean getReverse();
+  }
+  /**
+   * Protobuf type {@code request.ListAlertLogs}
+   */
+  public static final class ListAlertLogs extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.ListAlertLogs)
+      ListAlertLogsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAlertLogs.newBuilder() to construct.
+    private ListAlertLogs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAlertLogs() {
+      spaceId_ = "";
+      sortBy_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAlertLogs();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAlertLogs(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 16: {
+
+              limit_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              offset_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sortBy_ = s;
+              break;
+            }
+            case 40: {
+
+              reverse_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_ListAlertLogs_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_ListAlertLogs_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.class, com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 2;
+    private int limit_;
+    /**
+     * <pre>
+     * Limit the maximum number of entries returned this time.
+     * Not required, Max 100, default 100.
+     * &#64;inject_tag: json:"limit" form:"limit"
+     * </pre>
+     *
+     * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+     * @return The limit.
+     */
+    @java.lang.Override
+    public int getLimit() {
+      return limit_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 3;
+    private int offset_;
+    /**
+     * <pre>
+     * The offset position. Not required, default 0.
+     * &#64;inject_tag: json:"offset" form:"offset"
+     * </pre>
+     *
+     * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+     * @return The offset.
+     */
+    @java.lang.Override
+    public int getOffset() {
+      return offset_;
+    }
+
+    public static final int SORT_BY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sortBy_;
+    /**
+     * <pre>
+     * The field list used to sorted query results.
+     * Optional values: {"created", "updated"}.
+     * Multiple fields are separated by commas(","), eg: sort_by="created".
+     * Not required, default: id.
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
+     * </pre>
+     *
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * @return The sortBy.
+     */
+    @java.lang.Override
+    public java.lang.String getSortBy() {
+      java.lang.Object ref = sortBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sortBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The field list used to sorted query results.
+     * Optional values: {"created", "updated"}.
+     * Multiple fields are separated by commas(","), eg: sort_by="created".
+     * Not required, default: id.
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
+     * </pre>
+     *
+     * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for sortBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSortByBytes() {
+      java.lang.Object ref = sortBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sortBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REVERSE_FIELD_NUMBER = 5;
+    private boolean reverse_;
+    /**
+     * <pre>
+     * Reverse order results. Not required, default: false.
+     * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
+     * </pre>
+     *
+     * <code>bool reverse = 5;</code>
+     * @return The reverse.
+     */
+    @java.lang.Override
+    public boolean getReverse() {
+      return reverse_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (limit_ != 0) {
+        output.writeInt32(2, limit_);
+      }
+      if (offset_ != 0) {
+        output.writeInt32(3, offset_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sortBy_);
+      }
+      if (reverse_ != false) {
+        output.writeBool(5, reverse_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (limit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, limit_);
+      }
+      if (offset_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, offset_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sortBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sortBy_);
+      }
+      if (reverse_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, reverse_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs other = (com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (getLimit()
+          != other.getLimit()) return false;
+      if (getOffset()
+          != other.getOffset()) return false;
+      if (!getSortBy()
+          .equals(other.getSortBy())) return false;
+      if (getReverse()
+          != other.getReverse()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + getOffset();
+      hash = (37 * hash) + SORT_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getSortBy().hashCode();
+      hash = (37 * hash) + REVERSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getReverse());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.ListAlertLogs}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.ListAlertLogs)
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_ListAlertLogs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_ListAlertLogs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.class, com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        limit_ = 0;
+
+        offset_ = 0;
+
+        sortBy_ = "";
+
+        reverse_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_ListAlertLogs_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs result = new com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs(this);
+        result.spaceId_ = spaceId_;
+        result.limit_ = limit_;
+        result.offset_ = offset_;
+        result.sortBy_ = sortBy_;
+        result.reverse_ = reverse_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.getLimit() != 0) {
+          setLimit(other.getLimit());
+        }
+        if (other.getOffset() != 0) {
+          setOffset(other.getOffset());
+        }
+        if (!other.getSortBy().isEmpty()) {
+          sortBy_ = other.sortBy_;
+          onChanged();
+        }
+        if (other.getReverse() != false) {
+          setReverse(other.getReverse());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int limit_ ;
+      /**
+       * <pre>
+       * Limit the maximum number of entries returned this time.
+       * Not required, Max 100, default 100.
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * @return The limit.
+       */
+      @java.lang.Override
+      public int getLimit() {
+        return limit_;
+      }
+      /**
+       * <pre>
+       * Limit the maximum number of entries returned this time.
+       * Not required, Max 100, default 100.
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * @param value The limit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLimit(int value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Limit the maximum number of entries returned this time.
+       * Not required, Max 100, default 100.
+       * &#64;inject_tag: json:"limit" form:"limit"
+       * </pre>
+       *
+       * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int offset_ ;
+      /**
+       * <pre>
+       * The offset position. Not required, default 0.
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * @return The offset.
+       */
+      @java.lang.Override
+      public int getOffset() {
+        return offset_;
+      }
+      /**
+       * <pre>
+       * The offset position. Not required, default 0.
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * @param value The offset to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOffset(int value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The offset position. Not required, default 0.
+       * &#64;inject_tag: json:"offset" form:"offset"
+       * </pre>
+       *
+       * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sortBy_ = "";
+      /**
+       * <pre>
+       * The field list used to sorted query results.
+       * Optional values: {"created", "updated"}.
+       * Multiple fields are separated by commas(","), eg: sort_by="created".
+       * Not required, default: id.
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
+       * </pre>
+       *
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * @return The sortBy.
+       */
+      public java.lang.String getSortBy() {
+        java.lang.Object ref = sortBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sortBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The field list used to sorted query results.
+       * Optional values: {"created", "updated"}.
+       * Multiple fields are separated by commas(","), eg: sort_by="created".
+       * Not required, default: id.
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
+       * </pre>
+       *
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for sortBy.
+       */
+      public com.google.protobuf.ByteString
+          getSortByBytes() {
+        java.lang.Object ref = sortBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sortBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The field list used to sorted query results.
+       * Optional values: {"created", "updated"}.
+       * Multiple fields are separated by commas(","), eg: sort_by="created".
+       * Not required, default: id.
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
+       * </pre>
+       *
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * @param value The sortBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSortBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sortBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The field list used to sorted query results.
+       * Optional values: {"created", "updated"}.
+       * Multiple fields are separated by commas(","), eg: sort_by="created".
+       * Not required, default: id.
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
+       * </pre>
+       *
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSortBy() {
+        
+        sortBy_ = getDefaultInstance().getSortBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The field list used to sorted query results.
+       * Optional values: {"created", "updated"}.
+       * Multiple fields are separated by commas(","), eg: sort_by="created".
+       * Not required, default: id.
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
+       * </pre>
+       *
+       * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for sortBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSortByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sortBy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean reverse_ ;
+      /**
+       * <pre>
+       * Reverse order results. Not required, default: false.
+       * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
+       * </pre>
+       *
+       * <code>bool reverse = 5;</code>
+       * @return The reverse.
+       */
+      @java.lang.Override
+      public boolean getReverse() {
+        return reverse_;
+      }
+      /**
+       * <pre>
+       * Reverse order results. Not required, default: false.
+       * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
+       * </pre>
+       *
+       * <code>bool reverse = 5;</code>
+       * @param value The reverse to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReverse(boolean value) {
+        
+        reverse_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Reverse order results. Not required, default: false.
+       * &#64;inject_tag: json:"reverse" default:"false" form:"reverse"
+       * </pre>
+       *
+       * <code>bool reverse = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReverse() {
+        
+        reverse_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.ListAlertLogs)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.ListAlertLogs)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAlertLogs>
+        PARSER = new com.google.protobuf.AbstractParser<ListAlertLogs>() {
+      @java.lang.Override
+      public ListAlertLogs parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAlertLogs(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAlertLogs> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAlertLogs> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.ListAlertLogs getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SendAlertOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.SendAlert)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    java.lang.String getAlertId();
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    com.google.protobuf.ByteString
+        getAlertIdBytes();
+
+    /**
+     * <pre>
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <pre>
+     * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    java.lang.String getInstanceId();
+    /**
+     * <pre>
+     * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
+
+    /**
+     * <pre>
+     * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    int getMonitorObjectValue();
+    /**
+     * <pre>
+     * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject();
+
+    /**
+     * <pre>
+     * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    int getEventTypeValue();
+    /**
+     * <pre>
+     * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>string message = 8 [(.validator.field) = { ... }</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>string message = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @return A list containing the notificationIds.
+     */
+    java.util.List<java.lang.String>
+        getNotificationIdsList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @return The count of notificationIds.
+     */
+    int getNotificationIdsCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The notificationIds at the given index.
+     */
+    java.lang.String getNotificationIds(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notificationIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getNotificationIdsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code request.SendAlert}
+   */
+  public static final class SendAlert extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.SendAlert)
+      SendAlertOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SendAlert.newBuilder() to construct.
+    private SendAlert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SendAlert() {
+      spaceId_ = "";
+      alertId_ = "";
+      jobId_ = "";
+      instanceId_ = "";
+      monitorObject_ = 0;
+      eventType_ = 0;
+      message_ = "";
+      notificationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SendAlert();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SendAlert(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              alertId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobId_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              monitorObject_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              eventType_ = rawValue;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                notificationIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              notificationIds_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          notificationIds_ = notificationIds_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_SendAlert_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_SendAlert_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.class, com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Workspace ID it belongs to.
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALERT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object alertId_;
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    @java.lang.Override
+    public java.lang.String getAlertId() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        alertId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"id"
+     * </pre>
+     *
+     * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAlertIdBytes() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        alertId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INSTANCE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object instanceId_;
+    /**
+     * <pre>
+     * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MONITOR_OBJECT_FIELD_NUMBER = 6;
+    private int monitorObject_;
+    /**
+     * <pre>
+     * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    @java.lang.Override public int getMonitorObjectValue() {
+      return monitorObject_;
+    }
+    /**
+     * <pre>
+     * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+    }
+
+    public static final int EVENT_TYPE_FIELD_NUMBER = 7;
+    private int eventType_;
+    /**
+     * <pre>
+     * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    @java.lang.Override public int getEventTypeValue() {
+      return eventType_;
+    }
+    /**
+     * <pre>
+     * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object message_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>string message = 8 [(.validator.field) = { ... }</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"message"
+     * </pre>
+     *
+     * <code>string message = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFICATION_IDS_FIELD_NUMBER = 9;
+    private com.google.protobuf.LazyStringList notificationIds_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @return A list containing the notificationIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNotificationIdsList() {
+      return notificationIds_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @return The count of notificationIds.
+     */
+    public int getNotificationIdsCount() {
+      return notificationIds_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The notificationIds at the given index.
+     */
+    public java.lang.String getNotificationIds(int index) {
+      return notificationIds_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"notification_ids"
+     * </pre>
+     *
+     * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notificationIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getNotificationIdsBytes(int index) {
+      return notificationIds_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instanceId_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        output.writeEnum(6, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        output.writeEnum(7, eventType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, message_);
+      }
+      for (int i = 0; i < notificationIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, notificationIds_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instanceId_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, eventType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, message_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < notificationIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(notificationIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getNotificationIdsList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert other = (com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getAlertId()
+          .equals(other.getAlertId())) return false;
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
+      if (monitorObject_ != other.monitorObject_) return false;
+      if (eventType_ != other.eventType_) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getNotificationIdsList()
+          .equals(other.getNotificationIdsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + ALERT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAlertId().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (37 * hash) + MONITOR_OBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + monitorObject_;
+      hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + eventType_;
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      if (getNotificationIdsCount() > 0) {
+        hash = (37 * hash) + NOTIFICATION_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationIdsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.SendAlert}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.SendAlert)
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlertOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_SendAlert_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_SendAlert_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.class, com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        alertId_ = "";
+
+        jobId_ = "";
+
+        instanceId_ = "";
+
+        monitorObject_ = 0;
+
+        eventType_ = 0;
+
+        message_ = "";
+
+        notificationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.internal_static_request_SendAlert_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert result = new com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert(this);
+        int from_bitField0_ = bitField0_;
+        result.spaceId_ = spaceId_;
+        result.alertId_ = alertId_;
+        result.jobId_ = jobId_;
+        result.instanceId_ = instanceId_;
+        result.monitorObject_ = monitorObject_;
+        result.eventType_ = eventType_;
+        result.message_ = message_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          notificationIds_ = notificationIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.notificationIds_ = notificationIds_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getAlertId().isEmpty()) {
+          alertId_ = other.alertId_;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
+        }
+        if (other.monitorObject_ != 0) {
+          setMonitorObjectValue(other.getMonitorObjectValue());
+        }
+        if (other.eventType_ != 0) {
+          setEventTypeValue(other.getEventTypeValue());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (!other.notificationIds_.isEmpty()) {
+          if (notificationIds_.isEmpty()) {
+            notificationIds_ = other.notificationIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNotificationIdsIsMutable();
+            notificationIds_.addAll(other.notificationIds_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Workspace ID it belongs to.
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object alertId_ = "";
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return The alertId.
+       */
+      public java.lang.String getAlertId() {
+        java.lang.Object ref = alertId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          alertId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for alertId.
+       */
+      public com.google.protobuf.ByteString
+          getAlertIdBytes() {
+        java.lang.Object ref = alertId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alertId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAlertId() {
+        
+        alertId_ = getDefaultInstance().getAlertId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"id"
+       * </pre>
+       *
+       * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object instanceId_ = "";
+      /**
+       * <pre>
+       * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
+       */
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceId() {
+        
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int monitorObject_ = 0;
+      /**
+       * <pre>
+       * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for monitorObject.
+       */
+      @java.lang.Override public int getMonitorObjectValue() {
+        return monitorObject_;
+      }
+      /**
+       * <pre>
+       * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObjectValue(int value) {
+        
+        monitorObject_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return The monitorObject.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @param value The monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObject(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        monitorObject_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object , 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonitorObject() {
+        
+        monitorObject_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int eventType_ = 0;
+      /**
+       * <pre>
+       * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for eventType.
+       */
+      @java.lang.Override public int getEventTypeValue() {
+        return eventType_;
+      }
+      /**
+       * <pre>
+       * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventTypeValue(int value) {
+        
+        eventType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return The eventType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        eventType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type , 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        
+        eventType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>string message = 8 [(.validator.field) = { ... }</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>string message = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>string message = 8 [(.validator.field) = { ... }</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>string message = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>string message = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList notificationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureNotificationIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          notificationIds_ = new com.google.protobuf.LazyStringArrayList(notificationIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @return A list containing the notificationIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNotificationIdsList() {
+        return notificationIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @return The count of notificationIds.
+       */
+      public int getNotificationIdsCount() {
+        return notificationIds_.size();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param index The index of the element to return.
+       * @return The notificationIds at the given index.
+       */
+      public java.lang.String getNotificationIds(int index) {
+        return notificationIds_.get(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the notificationIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getNotificationIdsBytes(int index) {
+        return notificationIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param index The index to set the value at.
+       * @param value The notificationIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotificationIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotificationIdsIsMutable();
+        notificationIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param value The notificationIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureNotificationIdsIsMutable();
+        notificationIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param values The notificationIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNotificationIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNotificationIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, notificationIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNotificationIds() {
+        notificationIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"notification_ids"
+       * </pre>
+       *
+       * <code>repeated string notification_ids = 9 [(.validator.field) = { ... }</code>
+       * @param value The bytes of the notificationIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotificationIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureNotificationIdsIsMutable();
+        notificationIds_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.SendAlert)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.SendAlert)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SendAlert>
+        PARSER = new com.google.protobuf.AbstractParser<SendAlert>() {
+      @java.lang.Override
+      public SendAlert parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SendAlert(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SendAlert> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SendAlert> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestAlertManage.SendAlert getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListAlertPolicies_descriptor;
   private static final 
@@ -17135,6 +20237,16 @@ public final class PBRequestAlertManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_ListJobsByAlertPolicy_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_ListAlertLogs_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_ListAlertLogs_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_SendAlert_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_SendAlert_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -17214,10 +20326,24 @@ public final class PBRequestAlertManage {
       "icy\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
       "s-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt" +
       "-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
-      "d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000Bs\n$com.da" +
-      "taomnis.gproto.types.pbrequestB\024PBReques" +
-      "tAlertManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\"\274\001\n\rListA" +
+      "lertLogs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007" +
+      "\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022.\n\007" +
+      "sort_by\030\004 \001(\tB\035\342\337\037\031\022\027\302\001\024J\000J\007createdJ\007upd" +
+      "ated\022\017\n\007reverse\030\005 \001(\010\"\344\002\n\tSendAlert\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010al" +
+      "ert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job" +
+      "_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013instance_id\030\004" +
+      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022G\n\016monitor_object\030\006 \001" +
+      "(\0162 .model.AlertPolicy.MonitorObjectB\r\342\337" +
+      "\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_type\030\007 \001(\0162\031.model." +
+      "AlertLog.EventTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007mes" +
+      "sage\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\020notification_id" +
+      "s\030\t \003(\tB\013\342\337\037\007\022\005\352\001\0028dBs\n$com.dataomnis.gp" +
+      "roto.types.pbrequestB\024PBRequestAlertMana" +
+      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
+      "o/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17304,6 +20430,18 @@ public final class PBRequestAlertManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListJobsByAlertPolicy_descriptor,
         new java.lang.String[] { "SpaceId", "AlertId", "Limit", "Offset", });
+    internal_static_request_ListAlertLogs_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_request_ListAlertLogs_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_ListAlertLogs_descriptor,
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", });
+    internal_static_request_SendAlert_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_request_SendAlert_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_SendAlert_descriptor,
+        new java.lang.String[] { "SpaceId", "AlertId", "JobId", "InstanceId", "MonitorObject", "EventType", "Message", "NotificationIds", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

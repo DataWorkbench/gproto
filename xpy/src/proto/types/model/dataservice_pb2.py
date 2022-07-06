@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\022PBModelDataServiceP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#proto/types/model/dataservice.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x19google/protobuf/any.proto\"\x99\x04\n\x12\x44\x61taServiceCluster\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12?\n\x06status\x18\x05 \x01(\x0e\x32 .model.DataServiceCluster.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12#\n\ncreated_by\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"j\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0b\n\x07Stopped\x10\x03\x12\x0c\n\x08Starting\x10\x04\x12\r\n\tException\x10\x05\x12\x0b\n\x07\x41rrears\x10\x06\"?\n\x0cResourceSpec\x12\r\n\tSpecUnset\x10\x00\x12\t\n\x05\x45ntry\x10\x01\x12\n\n\x06\x42\x61sics\x10\x02\x12\t\n\x05Major\x10\x03\"\xfd\x02\n\x08\x41piGroup\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12 \n\ngroup_path\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x35\n\x06status\x18\x06 \x01(\x0e\x32\x16.model.ApiGroup.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12#\n\ncreated_by\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\x84\n\n\tApiConfig\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x03 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12%\n\x08space_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x08\x61pi_name\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x06 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x07 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x08 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12<\n\tprotocols\x18\t \x01(\x0e\x32\x1a.model.ApiConfig.ProtocolsB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x45\n\x0erequest_method\x18\n \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x0b \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\x0c \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\r \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x0e \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\x0f \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1e\n\x06script\x18\x10 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12#\n\ncreated_by\x18\x11 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x12 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x13 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x36\n\x06status\x18\x14 \x01(\x0e\x32\x17.model.ApiConfig.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x12\x61\x63\x63\x65ssible_version\x18\x15 \x01(\t\x12\x36\n\x0erequest_params\x18\x16 \x01(\x0b\x32\x18.model.RequestParametersB\x04\xe2\xdf\x1f\x00\x12\x38\n\x0fresponse_params\x18\x17 \x01(\x0b\x32\x19.model.ResponseParametersB\x04\xe2\xdf\x1f\x00\"0\n\x07\x41piMode\x12\r\n\tModeUnset\x10\x00\x12\n\n\x06Wizard\x10\x01\x12\n\n\x06Script\x10\x02\"3\n\rRequestMethod\x12\x0f\n\x0bMethodUnset\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\"0\n\x0cResponseType\x12\r\n\tTypeUnset\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x07\n\x03XML\x10\x02\"D\n\tProtocols\x12\x11\n\rProtocolUnset\x10\x00\x12\x0c\n\x08HTTPOnly\x10\x01\x12\r\n\tHTTPSOnly\x10\x02\x12\x07\n\x03\x41LL\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"R\n\x11RequestParameters\x12\x35\n\x0erequest_params\x18\x16 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\xa4\x05\n\x10RequestParameter\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12\x19\n\x0bis_required\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12:\n\tdata_type\x18\x05 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12P\n\x0eparam_operator\x18\x08 \x01(\x0e\x32).model.RequestParameter.ParameterOperatorB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12P\n\x0eparam_position\x18\t \x01(\x0e\x32).model.RequestParameter.ParameterPositionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"{\n\x11ParameterOperator\x12\x11\n\rOperatorUnset\x10\x00\x12\t\n\x05\x45qual\x10\x01\x12\x0c\n\x08NotEqual\x10\x02\x12\x0f\n\x0bGreaterThan\x10\x03\x12\x0c\n\x08LessThan\x10\x04\x12\x08\n\x04Like\x10\x05\x12\t\n\x05\x43onst\x10\x06\x12\x06\n\x02In\x10\x07\"O\n\x11ParameterPosition\x12\x11\n\rPositionUnset\x10\x00\x12\x08\n\x04\x42ody\x10\x01\x12\t\n\x05Query\x10\x02\x12\x08\n\x04Path\x10\x03\x12\x08\n\x04Head\x10\x04:\x06\xca\xb2\x04\x02\n\x00\"U\n\x12ResponseParameters\x12\x37\n\x0fresponse_params\x18\x16 \x03(\x0b\x32\x18.model.ResponseParameterB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\xac\x03\n\x11ResponseParameter\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12:\n\tdata_type\x18\x04 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1c\n\torder_num\x18\x07 \x01(\x03\x42\t\xe2\xdf\x1f\x05\x12\x03\xb2\x01\x00\x12\x43\n\norder_mode\x18\x08 \x01(\x0e\x32\".model.ResponseParameter.OrderModeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\"/\n\tOrderMode\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x07\n\x03\x41se\x10\x01\x12\x08\n\x04\x44\x65sc\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xf7\t\n\nApiVersion\x12 \n\nversion_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12?\n\x0epublish_status\x18\x02 \x01(\x0e\x32\x18.model.ApiVersion.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12#\n\x06\x61pi_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12%\n\x08group_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x06 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12%\n\x08space_id\x18\x07 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x08\x61pi_name\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\t \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12:\n\x08\x61pi_mode\x18\n \x01(\x0e\x32\x19.model.ApiVersion.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x0b \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12=\n\tprotocols\x18\x0c \x01(\x0e\x32\x1b.model.ApiVersion.ProtocolsB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x46\n\x0erequest_method\x18\r \x01(\x0e\x32\x1f.model.ApiVersion.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x44\n\rresponse_type\x18\x0e \x01(\x0e\x32\x1e.model.ApiVersion.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\x0f \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x10 \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x11 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\x12 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1e\n\x06script\x18\x13 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12\x1c\n\x07\x63reated\x18\x03 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x14 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x36\n\x0erequest_params\x18\x15 \x01(\x0b\x32\x18.model.RequestParametersB\x04\xe2\xdf\x1f\x00\x12\x38\n\x0fresponse_params\x18\x16 \x01(\x0b\x32\x19.model.ResponseParametersB\x04\xe2\xdf\x1f\x00\"7\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\r\n\tPublished\x10\x01\x12\r\n\tAbolished\x10\x02\"0\n\x07\x41piMode\x12\r\n\tModeUnset\x10\x00\x12\n\n\x06Wizard\x10\x01\x12\n\n\x06Script\x10\x02\"3\n\rRequestMethod\x12\x0f\n\x0bMethodUnset\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\"0\n\x0cResponseType\x12\r\n\tTypeUnset\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x07\n\x03XML\x10\x02\"D\n\tProtocols\x12\x11\n\rProtocolUnset\x10\x00\x12\x0c\n\x08HTTPOnly\x10\x01\x12\r\n\tHTTPSOnly\x10\x02\x12\x07\n\x03\x41LL\x10\x03\"3\n\x15ServiceDataSourceKind\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0c\n\x04Type\x18\x02 \x01(\x03*P\n\x11ParameterDataType\x12\r\n\tTypeUnset\x10\x00\x12\n\n\x06String\x10\x01\x12\x07\n\x03Int\x10\x02\x12\n\n\x06\x44ouble\x10\x03\x12\x0b\n\x07\x42oolean\x10\x04\x42m\n\"com.dataomnis.gproto.types.pbmodelB\x12PBModelDataServiceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n#proto/types/model/dataservice.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x19google/protobuf/any.proto\"\x99\x04\n\x12\x44\x61taServiceCluster\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12?\n\x06status\x18\x05 \x01(\x0e\x32 .model.DataServiceCluster.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12#\n\ncreated_by\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x07 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"j\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07Running\x10\x02\x12\x0b\n\x07Stopped\x10\x03\x12\x0c\n\x08Starting\x10\x04\x12\r\n\tException\x10\x05\x12\x0b\n\x07\x41rrears\x10\x06\"?\n\x0cResourceSpec\x12\r\n\tSpecUnset\x10\x00\x12\t\n\x05\x45ntry\x10\x01\x12\n\n\x06\x42\x61sics\x10\x02\x12\t\n\x05Major\x10\x03\"\xfd\x02\n\x08\x41piGroup\x12\x1f\n\x02id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12%\n\x08space_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12 \n\ngroup_path\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x35\n\x06status\x18\x06 \x01(\x0e\x32\x16.model.ApiGroup.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12#\n\ncreated_by\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x08 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\t \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\xea\t\n\tApiConfig\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\x1d\n\ncluster_id\x18\x03 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12%\n\x08space_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x08\x61pi_name\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x06 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x07 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x08 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12<\n\tprotocols\x18\t \x01(\x0e\x32\x1a.model.ApiConfig.ProtocolsB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x45\n\x0erequest_method\x18\n \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x0b \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\x0c \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\r \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12 \n\rdatasource_id\x18\x0e \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x1d\n\ntable_name\x18\x0f \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x1e\n\x06script\x18\x10 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12#\n\ncreated_by\x18\x11 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x12 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x13 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x36\n\x06status\x18\x14 \x01(\x0e\x32\x17.model.ApiConfig.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x12\x61\x63\x63\x65ssible_version\x18\x15 \x01(\t\x12\x36\n\x0erequest_params\x18\x16 \x01(\x0b\x32\x18.model.RequestParametersB\x04\xe2\xdf\x1f\x00\x12\x38\n\x0fresponse_params\x18\x17 \x01(\x0b\x32\x19.model.ResponseParametersB\x04\xe2\xdf\x1f\x00\"0\n\x07\x41piMode\x12\r\n\tModeUnset\x10\x00\x12\n\n\x06Wizard\x10\x01\x12\n\n\x06Script\x10\x02\"3\n\rRequestMethod\x12\x0f\n\x0bMethodUnset\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\"0\n\x0cResponseType\x12\r\n\tTypeUnset\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x07\n\x03XML\x10\x02\"D\n\tProtocols\x12\x11\n\rProtocolUnset\x10\x00\x12\x0c\n\x08HTTPOnly\x10\x01\x12\r\n\tHTTPSOnly\x10\x02\x12\x07\n\x03\x41LL\x10\x03\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"R\n\x11RequestParameters\x12\x35\n\x0erequest_params\x18\x16 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\xba\x06\n\x10RequestParameter\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12\x19\n\x0bis_required\x18\x04 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12:\n\tdata_type\x18\x05 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x07 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12P\n\x0eparam_operator\x18\x08 \x01(\x0e\x32).model.RequestParameter.ParameterOperatorB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12P\n\x0eparam_position\x18\t \x01(\x0e\x32).model.RequestParameter.ParameterPositionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12L\n\x0e\x66ield_category\x18\n \x01(\x0e\x32%.model.RequestParameter.FieldCategoryB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"{\n\x11ParameterOperator\x12\x11\n\rOperatorUnset\x10\x00\x12\t\n\x05\x45qual\x10\x01\x12\x0c\n\x08NotEqual\x10\x02\x12\x0f\n\x0bGreaterThan\x10\x03\x12\x0c\n\x08LessThan\x10\x04\x12\x08\n\x04Like\x10\x05\x12\t\n\x05\x43onst\x10\x06\x12\x06\n\x02In\x10\x07\"O\n\x11ParameterPosition\x12\x11\n\rPositionUnset\x10\x00\x12\x08\n\x04\x42ody\x10\x01\x12\t\n\x05Query\x10\x02\x12\x08\n\x04Path\x10\x03\x12\x08\n\x04Head\x10\x04\"F\n\rFieldCategory\x12\x11\n\rCategoryUnset\x10\x00\x12\x0e\n\nPageConfig\x10\x01\x12\x12\n\x0e\x44\x61taBaseColumn\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"U\n\x12ResponseParameters\x12\x37\n\x0fresponse_params\x18\x16 \x03(\x0b\x32\x18.model.ResponseParameterB\x04\xe2\xdf\x1f\x00:\x06\xca\xb2\x04\x02\n\x00\"\xc3\x04\n\x11ResponseParameter\x12$\n\x0b\x63olumn_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12$\n\rdefault_value\x18\x02 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12$\n\rexample_value\x18\x03 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12:\n\tdata_type\x18\x04 \x01(\x0e\x32\x18.model.ParameterDataTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12(\n\x11param_description\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12#\n\nparam_name\x18\x06 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1c\n\torder_num\x18\x07 \x01(\x03\x42\t\xe2\xdf\x1f\x05\x12\x03\xb2\x01\x00\x12\x43\n\norder_mode\x18\x08 \x01(\x0e\x32\".model.ResponseParameter.OrderModeB\x0b\xe2\xdf\x1f\x07\x12\x05\xda\x01\x02X\x01\x12M\n\x0e\x66ield_category\x18\t \x01(\x0e\x32&.model.ResponseParameter.FieldCategoryB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"/\n\tOrderMode\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x07\n\x03\x41se\x10\x01\x12\x08\n\x04\x44\x65sc\x10\x02\"F\n\rFieldCategory\x12\x11\n\rCategoryUnset\x10\x00\x12\x0e\n\nPageConfig\x10\x01\x12\x12\n\x0e\x44\x61taBaseColumn\x10\x02:\x06\xca\xb2\x04\x02\n\x00\"\xf7\t\n\nApiVersion\x12 \n\nversion_id\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12?\n\x0epublish_status\x18\x02 \x01(\x0e\x32\x18.model.ApiVersion.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x01X\x01\x12#\n\x06\x61pi_id\x18\x04 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12%\n\x08group_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\'\n\ncluster_id\x18\x06 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12%\n\x08space_id\x18\x07 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12!\n\x08\x61pi_name\x18\x08 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\t \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12:\n\x08\x61pi_mode\x18\n \x01(\x0e\x32\x19.model.ApiVersion.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x0b \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12=\n\tprotocols\x18\x0c \x01(\x0e\x32\x1b.model.ApiVersion.ProtocolsB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x46\n\x0erequest_method\x18\r \x01(\x0e\x32\x1f.model.ApiVersion.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x44\n\rresponse_type\x18\x0e \x01(\x0e\x32\x1e.model.ApiVersion.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\x0f \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x10 \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12*\n\rdatasource_id\x18\x11 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\x12 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1e\n\x06script\x18\x13 \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12\x1c\n\x07\x63reated\x18\x03 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\x14 \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x36\n\x0erequest_params\x18\x15 \x01(\x0b\x32\x18.model.RequestParametersB\x04\xe2\xdf\x1f\x00\x12\x38\n\x0fresponse_params\x18\x16 \x01(\x0b\x32\x19.model.ResponseParametersB\x04\xe2\xdf\x1f\x00\"7\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\r\n\tPublished\x10\x01\x12\r\n\tAbolished\x10\x02\"0\n\x07\x41piMode\x12\r\n\tModeUnset\x10\x00\x12\n\n\x06Wizard\x10\x01\x12\n\n\x06Script\x10\x02\"3\n\rRequestMethod\x12\x0f\n\x0bMethodUnset\x10\x00\x12\x07\n\x03GET\x10\x01\x12\x08\n\x04POST\x10\x02\"0\n\x0cResponseType\x12\r\n\tTypeUnset\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x07\n\x03XML\x10\x02\"D\n\tProtocols\x12\x11\n\rProtocolUnset\x10\x00\x12\x0c\n\x08HTTPOnly\x10\x01\x12\r\n\tHTTPSOnly\x10\x02\x12\x07\n\x03\x41LL\x10\x03\"3\n\x15ServiceDataSourceKind\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0c\n\x04Type\x18\x02 \x01(\x03\"\xc1\x01\n\x13\x41piConfigDataSource\x12\x15\n\x02id\x18\x02 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x17\n\x04name\x18\x03 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x38\n\x04type\x18\x05 \x01(\x0e\x32\x1f.model.ApiConfigDataSource.TypeB\t\xe2\xdf\x1f\x05\x12\x03\xda\x01\x00\"@\n\x04Type\x12\r\n\tTypeUnset\x10\x00\x12\t\n\x05MySQL\x10\x01\x12\x0e\n\nPostgreSQL\x10\x02\x12\x0e\n\nClickHouse\x10\x05\"I\n\x17\x41piConfigServiceCluster\x12\x15\n\x02id\x18\x01 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x17\n\x04name\x18\x03 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00*P\n\x11ParameterDataType\x12\r\n\tTypeUnset\x10\x00\x12\n\n\x06String\x10\x01\x12\x07\n\x03Int\x10\x02\x12\n\n\x06\x44ouble\x10\x03\x12\x0b\n\x07\x42oolean\x10\x04\x42m\n\"com.dataomnis.gproto.types.pbmodelB\x12PBModelDataServiceP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -63,8 +63,8 @@ _PARAMETERDATATYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5046,
-  serialized_end=5126,
+  serialized_start=5592,
+  serialized_end=5672,
 )
 _sym_db.RegisterEnumDescriptor(_PARAMETERDATATYPE)
 
@@ -216,8 +216,8 @@ _APICONFIG_APIMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2162,
-  serialized_end=2210,
+  serialized_start=2136,
+  serialized_end=2184,
 )
 _sym_db.RegisterEnumDescriptor(_APICONFIG_APIMODE)
 
@@ -246,8 +246,8 @@ _APICONFIG_REQUESTMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2212,
-  serialized_end=2263,
+  serialized_start=2186,
+  serialized_end=2237,
 )
 _sym_db.RegisterEnumDescriptor(_APICONFIG_REQUESTMETHOD)
 
@@ -276,8 +276,8 @@ _APICONFIG_RESPONSETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2265,
-  serialized_end=2313,
+  serialized_start=2239,
+  serialized_end=2287,
 )
 _sym_db.RegisterEnumDescriptor(_APICONFIG_RESPONSETYPE)
 
@@ -311,8 +311,8 @@ _APICONFIG_PROTOCOLS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2315,
-  serialized_end=2383,
+  serialized_start=2289,
+  serialized_end=2357,
 )
 _sym_db.RegisterEnumDescriptor(_APICONFIG_PROTOCOLS)
 
@@ -396,8 +396,8 @@ _REQUESTPARAMETER_PARAMETEROPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2987,
-  serialized_end=3110,
+  serialized_start=3039,
+  serialized_end=3162,
 )
 _sym_db.RegisterEnumDescriptor(_REQUESTPARAMETER_PARAMETEROPERATOR)
 
@@ -436,10 +436,40 @@ _REQUESTPARAMETER_PARAMETERPOSITION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3112,
-  serialized_end=3191,
+  serialized_start=3164,
+  serialized_end=3243,
 )
 _sym_db.RegisterEnumDescriptor(_REQUESTPARAMETER_PARAMETERPOSITION)
+
+_REQUESTPARAMETER_FIELDCATEGORY = _descriptor.EnumDescriptor(
+  name='FieldCategory',
+  full_name='model.RequestParameter.FieldCategory',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CategoryUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PageConfig', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DataBaseColumn', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3245,
+  serialized_end=3315,
+)
+_sym_db.RegisterEnumDescriptor(_REQUESTPARAMETER_FIELDCATEGORY)
 
 _RESPONSEPARAMETER_ORDERMODE = _descriptor.EnumDescriptor(
   name='OrderMode',
@@ -466,10 +496,40 @@ _RESPONSEPARAMETER_ORDERMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3662,
-  serialized_end=3709,
+  serialized_start=3865,
+  serialized_end=3912,
 )
 _sym_db.RegisterEnumDescriptor(_RESPONSEPARAMETER_ORDERMODE)
+
+_RESPONSEPARAMETER_FIELDCATEGORY = _descriptor.EnumDescriptor(
+  name='FieldCategory',
+  full_name='model.ResponseParameter.FieldCategory',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CategoryUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PageConfig', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DataBaseColumn', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3245,
+  serialized_end=3315,
+)
+_sym_db.RegisterEnumDescriptor(_RESPONSEPARAMETER_FIELDCATEGORY)
 
 _APIVERSION_STATUS = _descriptor.EnumDescriptor(
   name='Status',
@@ -496,8 +556,8 @@ _APIVERSION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4713,
-  serialized_end=4768,
+  serialized_start=4988,
+  serialized_end=5043,
 )
 _sym_db.RegisterEnumDescriptor(_APIVERSION_STATUS)
 
@@ -526,8 +586,8 @@ _APIVERSION_APIMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2162,
-  serialized_end=2210,
+  serialized_start=2136,
+  serialized_end=2184,
 )
 _sym_db.RegisterEnumDescriptor(_APIVERSION_APIMODE)
 
@@ -556,8 +616,8 @@ _APIVERSION_REQUESTMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2212,
-  serialized_end=2263,
+  serialized_start=2186,
+  serialized_end=2237,
 )
 _sym_db.RegisterEnumDescriptor(_APIVERSION_REQUESTMETHOD)
 
@@ -586,8 +646,8 @@ _APIVERSION_RESPONSETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2265,
-  serialized_end=2313,
+  serialized_start=2239,
+  serialized_end=2287,
 )
 _sym_db.RegisterEnumDescriptor(_APIVERSION_RESPONSETYPE)
 
@@ -621,10 +681,45 @@ _APIVERSION_PROTOCOLS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2315,
-  serialized_end=2383,
+  serialized_start=2289,
+  serialized_end=2357,
 )
 _sym_db.RegisterEnumDescriptor(_APIVERSION_PROTOCOLS)
+
+_APICONFIGDATASOURCE_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='model.ApiConfigDataSource.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MySQL', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PostgreSQL', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ClickHouse', index=3, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5451,
+  serialized_end=5515,
+)
+_sym_db.RegisterEnumDescriptor(_APICONFIGDATASOURCE_TYPE)
 
 
 _DATASERVICECLUSTER = _descriptor.Descriptor(
@@ -827,7 +922,7 @@ _APICONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='space_id', full_name='model.ApiConfig.space_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -904,14 +999,14 @@ _APICONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='table_name', full_name='model.ApiConfig.table_name', index=14,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='script', full_name='model.ApiConfig.script', index=15,
       number=16, type=9, cpp_type=9, label=1,
@@ -986,7 +1081,7 @@ _APICONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1152,
-  serialized_end=2436,
+  serialized_end=2410,
 )
 
 
@@ -1017,8 +1112,8 @@ _REQUESTPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2438,
-  serialized_end=2520,
+  serialized_start=2412,
+  serialized_end=2494,
 )
 
 
@@ -1093,6 +1188,13 @@ _REQUESTPARAMETER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_category', full_name='model.RequestParameter.field_category', index=9,
+      number=10, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1100,6 +1202,7 @@ _REQUESTPARAMETER = _descriptor.Descriptor(
   enum_types=[
     _REQUESTPARAMETER_PARAMETEROPERATOR,
     _REQUESTPARAMETER_PARAMETERPOSITION,
+    _REQUESTPARAMETER_FIELDCATEGORY,
   ],
   serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
@@ -1107,8 +1210,8 @@ _REQUESTPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2523,
-  serialized_end=3199,
+  serialized_start=2497,
+  serialized_end=3323,
 )
 
 
@@ -1139,8 +1242,8 @@ _RESPONSEPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3201,
-  serialized_end=3286,
+  serialized_start=3325,
+  serialized_end=3410,
 )
 
 
@@ -1208,12 +1311,20 @@ _RESPONSEPARAMETER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\007\022\005\332\001\002X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_category', full_name='model.ResponseParameter.field_category', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
     _RESPONSEPARAMETER_ORDERMODE,
+    _RESPONSEPARAMETER_FIELDCATEGORY,
   ],
   serialized_options=b'\312\262\004\002\n\000',
   is_extendable=False,
@@ -1221,8 +1332,8 @@ _RESPONSEPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3289,
-  serialized_end=3717,
+  serialized_start=3413,
+  serialized_end=3992,
 )
 
 
@@ -1405,8 +1516,8 @@ _APIVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3720,
-  serialized_end=4991,
+  serialized_start=3995,
+  serialized_end=5266,
 )
 
 
@@ -1444,8 +1555,94 @@ _SERVICEDATASOURCEKIND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4993,
-  serialized_end=5044,
+  serialized_start=5268,
+  serialized_end=5319,
+)
+
+
+_APICONFIGDATASOURCE = _descriptor.Descriptor(
+  name='ApiConfigDataSource',
+  full_name='model.ApiConfigDataSource',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.ApiConfigDataSource.id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='model.ApiConfigDataSource.name', index=1,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='model.ApiConfigDataSource.type', index=2,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\332\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _APICONFIGDATASOURCE_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5322,
+  serialized_end=5515,
+)
+
+
+_APICONFIGSERVICECLUSTER = _descriptor.Descriptor(
+  name='ApiConfigServiceCluster',
+  full_name='model.ApiConfigServiceCluster',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='model.ApiConfigServiceCluster.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='model.ApiConfigServiceCluster.name', index=1,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\005\022\003\302\001\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5517,
+  serialized_end=5590,
 )
 
 _DATASERVICECLUSTER.fields_by_name['resource_spec'].enum_type = _DATASERVICECLUSTER_RESOURCESPEC
@@ -1470,12 +1667,16 @@ _REQUESTPARAMETERS.fields_by_name['request_params'].message_type = _REQUESTPARAM
 _REQUESTPARAMETER.fields_by_name['data_type'].enum_type = _PARAMETERDATATYPE
 _REQUESTPARAMETER.fields_by_name['param_operator'].enum_type = _REQUESTPARAMETER_PARAMETEROPERATOR
 _REQUESTPARAMETER.fields_by_name['param_position'].enum_type = _REQUESTPARAMETER_PARAMETERPOSITION
+_REQUESTPARAMETER.fields_by_name['field_category'].enum_type = _REQUESTPARAMETER_FIELDCATEGORY
 _REQUESTPARAMETER_PARAMETEROPERATOR.containing_type = _REQUESTPARAMETER
 _REQUESTPARAMETER_PARAMETERPOSITION.containing_type = _REQUESTPARAMETER
+_REQUESTPARAMETER_FIELDCATEGORY.containing_type = _REQUESTPARAMETER
 _RESPONSEPARAMETERS.fields_by_name['response_params'].message_type = _RESPONSEPARAMETER
 _RESPONSEPARAMETER.fields_by_name['data_type'].enum_type = _PARAMETERDATATYPE
 _RESPONSEPARAMETER.fields_by_name['order_mode'].enum_type = _RESPONSEPARAMETER_ORDERMODE
+_RESPONSEPARAMETER.fields_by_name['field_category'].enum_type = _RESPONSEPARAMETER_FIELDCATEGORY
 _RESPONSEPARAMETER_ORDERMODE.containing_type = _RESPONSEPARAMETER
+_RESPONSEPARAMETER_FIELDCATEGORY.containing_type = _RESPONSEPARAMETER
 _APIVERSION.fields_by_name['publish_status'].enum_type = _APIVERSION_STATUS
 _APIVERSION.fields_by_name['api_mode'].enum_type = _APIVERSION_APIMODE
 _APIVERSION.fields_by_name['protocols'].enum_type = _APIVERSION_PROTOCOLS
@@ -1488,6 +1689,8 @@ _APIVERSION_APIMODE.containing_type = _APIVERSION
 _APIVERSION_REQUESTMETHOD.containing_type = _APIVERSION
 _APIVERSION_RESPONSETYPE.containing_type = _APIVERSION
 _APIVERSION_PROTOCOLS.containing_type = _APIVERSION
+_APICONFIGDATASOURCE.fields_by_name['type'].enum_type = _APICONFIGDATASOURCE_TYPE
+_APICONFIGDATASOURCE_TYPE.containing_type = _APICONFIGDATASOURCE
 DESCRIPTOR.message_types_by_name['DataServiceCluster'] = _DATASERVICECLUSTER
 DESCRIPTOR.message_types_by_name['ApiGroup'] = _APIGROUP
 DESCRIPTOR.message_types_by_name['ApiConfig'] = _APICONFIG
@@ -1497,6 +1700,8 @@ DESCRIPTOR.message_types_by_name['ResponseParameters'] = _RESPONSEPARAMETERS
 DESCRIPTOR.message_types_by_name['ResponseParameter'] = _RESPONSEPARAMETER
 DESCRIPTOR.message_types_by_name['ApiVersion'] = _APIVERSION
 DESCRIPTOR.message_types_by_name['ServiceDataSourceKind'] = _SERVICEDATASOURCEKIND
+DESCRIPTOR.message_types_by_name['ApiConfigDataSource'] = _APICONFIGDATASOURCE
+DESCRIPTOR.message_types_by_name['ApiConfigServiceCluster'] = _APICONFIGSERVICECLUSTER
 DESCRIPTOR.enum_types_by_name['ParameterDataType'] = _PARAMETERDATATYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1563,6 +1768,20 @@ ServiceDataSourceKind = _reflection.GeneratedProtocolMessageType('ServiceDataSou
   })
 _sym_db.RegisterMessage(ServiceDataSourceKind)
 
+ApiConfigDataSource = _reflection.GeneratedProtocolMessageType('ApiConfigDataSource', (_message.Message,), {
+  'DESCRIPTOR' : _APICONFIGDATASOURCE,
+  '__module__' : 'proto.types.model.dataservice_pb2'
+  # @@protoc_insertion_point(class_scope:model.ApiConfigDataSource)
+  })
+_sym_db.RegisterMessage(ApiConfigDataSource)
+
+ApiConfigServiceCluster = _reflection.GeneratedProtocolMessageType('ApiConfigServiceCluster', (_message.Message,), {
+  'DESCRIPTOR' : _APICONFIGSERVICECLUSTER,
+  '__module__' : 'proto.types.model.dataservice_pb2'
+  # @@protoc_insertion_point(class_scope:model.ApiConfigServiceCluster)
+  })
+_sym_db.RegisterMessage(ApiConfigServiceCluster)
+
 
 DESCRIPTOR._options = None
 _DATASERVICECLUSTER.fields_by_name['id']._options = None
@@ -1615,6 +1834,7 @@ _REQUESTPARAMETER.fields_by_name['param_description']._options = None
 _REQUESTPARAMETER.fields_by_name['param_name']._options = None
 _REQUESTPARAMETER.fields_by_name['param_operator']._options = None
 _REQUESTPARAMETER.fields_by_name['param_position']._options = None
+_REQUESTPARAMETER.fields_by_name['field_category']._options = None
 _REQUESTPARAMETER._options = None
 _RESPONSEPARAMETERS.fields_by_name['response_params']._options = None
 _RESPONSEPARAMETERS._options = None
@@ -1626,6 +1846,7 @@ _RESPONSEPARAMETER.fields_by_name['param_description']._options = None
 _RESPONSEPARAMETER.fields_by_name['param_name']._options = None
 _RESPONSEPARAMETER.fields_by_name['order_num']._options = None
 _RESPONSEPARAMETER.fields_by_name['order_mode']._options = None
+_RESPONSEPARAMETER.fields_by_name['field_category']._options = None
 _RESPONSEPARAMETER._options = None
 _APIVERSION.fields_by_name['version_id']._options = None
 _APIVERSION.fields_by_name['publish_status']._options = None
@@ -1649,4 +1870,9 @@ _APIVERSION.fields_by_name['created']._options = None
 _APIVERSION.fields_by_name['updated']._options = None
 _APIVERSION.fields_by_name['request_params']._options = None
 _APIVERSION.fields_by_name['response_params']._options = None
+_APICONFIGDATASOURCE.fields_by_name['id']._options = None
+_APICONFIGDATASOURCE.fields_by_name['name']._options = None
+_APICONFIGDATASOURCE.fields_by_name['type']._options = None
+_APICONFIGSERVICECLUSTER.fields_by_name['id']._options = None
+_APICONFIGSERVICECLUSTER.fields_by_name['name']._options = None
 # @@protoc_insertion_point(module_scope)

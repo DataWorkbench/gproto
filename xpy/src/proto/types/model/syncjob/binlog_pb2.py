@@ -12,6 +12,8 @@ _sym_db = _symbol_database.Default()
 
 
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
+from proto.types.model.syncjob import column_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_column__pb2
+from proto.types.model.syncjob import baseenum_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\010PBBinlogP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&proto/types/model/syncjob/binlog.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"\xe0\x01\n\x0c\x42inlogSource\x12\x0e\n\x06schema\x18\x01 \x01(\t\x12\x0b\n\x03\x63\x61t\x18\x02 \x01(\t\x12\x1b\n\x05start\x18\x03 \x01(\x0b\x32\x0c.model.Start\x12\r\n\x05table\x18\x04 \x03(\t\x12\x14\n\x0csplit_update\x18\x05 \x01(\x08\x12\x13\n\x0bpaving_data\x18\x06 \x01(\x08\x12\x0e\n\x06\x66ilter\x18\x07 \x01(\t\x12\x14\n\x0cis_gtid_mode\x18\x08 \x01(\x08\x12\x15\n\rquery_timeout\x18\t \x01(\x05\x12\x17\n\x0f\x63onnect_timeout\x18\n \x01(\x05:\x06\xca\xb2\x04\x02\n\x00\"B\n\x05Start\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x14\n\x0cjournal_name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x03\x42w\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x08PBBinlogP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n&proto/types/model/syncjob/binlog.proto\x12\x05model\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a&proto/types/model/syncjob/column.proto\x1a(proto/types/model/syncjob/baseenum.proto\"\xa1\x02\n\x0c\x42inlogSource\x12\r\n\x05table\x18\x01 \x03(\t\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\x12\x0b\n\x03\x63\x61t\x18\x03 \x01(\t\x12\x1b\n\x05start\x18\x04 \x01(\x0b\x32\x0c.model.Start\x12\x34\n\x12\x63onnection_charset\x18\x05 \x01(\x0e\x32\x18.model.BaseEnum.Encoding\x12\x13\n\x0b\x62uffer_size\x18\x06 \x01(\x05\x12\x1c\n\x14parallel_thread_size\x18\x07 \x01(\x05\x12\x14\n\x0cis_gtid_mode\x18\x08 \x01(\x08\x12\x13\n\x0bpaving_data\x18\t \x01(\x08\x12\r\n\x05split\x18\n \x01(\x08\x12\x1d\n\x06\x63olumn\x18\x0b \x03(\x0b\x32\r.model.Column:\x06\xca\xb2\x04\x02\n\x00\"B\n\x05Start\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x14\n\x0cjournal_name\x18\x02 \x01(\t\x12\x10\n\x08position\x18\x03 \x01(\x03\x42w\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x08PBBinlogP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
+  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_column__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,])
 
 
 
@@ -36,51 +38,51 @@ _BINLOGSOURCE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='schema', full_name='model.BinlogSource.schema', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='table', full_name='model.BinlogSource.table', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cat', full_name='model.BinlogSource.cat', index=1,
+      name='filter', full_name='model.BinlogSource.filter', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='start', full_name='model.BinlogSource.start', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='cat', full_name='model.BinlogSource.cat', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start', full_name='model.BinlogSource.start', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='table', full_name='model.BinlogSource.table', index=3,
-      number=4, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='connection_charset', full_name='model.BinlogSource.connection_charset', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='split_update', full_name='model.BinlogSource.split_update', index=4,
-      number=5, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='buffer_size', full_name='model.BinlogSource.buffer_size', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='paving_data', full_name='model.BinlogSource.paving_data', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='model.BinlogSource.filter', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='parallel_thread_size', full_name='model.BinlogSource.parallel_thread_size', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -92,16 +94,23 @@ _BINLOGSOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='query_timeout', full_name='model.BinlogSource.query_timeout', index=8,
-      number=9, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='paving_data', full_name='model.BinlogSource.paving_data', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='connect_timeout', full_name='model.BinlogSource.connect_timeout', index=9,
-      number=10, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='split', full_name='model.BinlogSource.split', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='column', full_name='model.BinlogSource.column', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -117,8 +126,8 @@ _BINLOGSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=99,
-  serialized_end=323,
+  serialized_start=181,
+  serialized_end=470,
 )
 
 
@@ -163,11 +172,13 @@ _START = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=325,
-  serialized_end=391,
+  serialized_start=472,
+  serialized_end=538,
 )
 
 _BINLOGSOURCE.fields_by_name['start'].message_type = _START
+_BINLOGSOURCE.fields_by_name['connection_charset'].enum_type = proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2._BASEENUM_ENCODING
+_BINLOGSOURCE.fields_by_name['column'].message_type = proto_dot_types_dot_model_dot_syncjob_dot_column__pb2._COLUMN
 DESCRIPTOR.message_types_by_name['BinlogSource'] = _BINLOGSOURCE
 DESCRIPTOR.message_types_by_name['Start'] = _START
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

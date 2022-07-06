@@ -145,3 +145,22 @@ func (this *ListJobsByAlertPolicy) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.ListAlertLogs
+func (this *ListAlertLogs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Limit == 0 {
+		this.Limit = 100
+	}
+	return
+}
+
+// Set default value for message request.SendAlert
+func (this *SendAlert) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

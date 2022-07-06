@@ -5024,6 +5024,1093 @@ public final class PBResponseAlertManage {
 
   }
 
+  public interface ListAlertLogsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ListAlertLogs)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> 
+        getInfosList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getInfos(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    int getInfosCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder> 
+        getInfosOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder getInfosOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 2;</code>
+     * @return The hasMore.
+     */
+    boolean getHasMore();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    long getTotal();
+  }
+  /**
+   * Protobuf type {@code response.ListAlertLogs}
+   */
+  public static final class ListAlertLogs extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.ListAlertLogs)
+      ListAlertLogsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAlertLogs.newBuilder() to construct.
+    private ListAlertLogs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAlertLogs() {
+      infos_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ListAlertLogs();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAlertLogs(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              infos_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.parser(), extensionRegistry));
+              break;
+            }
+            case 16: {
+
+              hasMore_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              total_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          infos_ = java.util.Collections.unmodifiableList(infos_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertLogs_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertLogs_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.Builder.class);
+    }
+
+    public static final int INFOS_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> infos_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> getInfosList() {
+      return infos_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder> 
+        getInfosOrBuilderList() {
+      return infos_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    @java.lang.Override
+    public int getInfosCount() {
+      return infos_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getInfos(int index) {
+      return infos_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"infos"
+     * </pre>
+     *
+     * <code>repeated .model.AlertLog infos = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder getInfosOrBuilder(
+        int index) {
+      return infos_.get(index);
+    }
+
+    public static final int HAS_MORE_FIELD_NUMBER = 2;
+    private boolean hasMore_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"has_more"
+     * </pre>
+     *
+     * <code>bool has_more = 2;</code>
+     * @return The hasMore.
+     */
+    @java.lang.Override
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    public static final int TOTAL_FIELD_NUMBER = 3;
+    private long total_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"total"
+     * </pre>
+     *
+     * <code>int64 total = 3;</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < infos_.size(); i++) {
+        output.writeMessage(1, infos_.get(i));
+      }
+      if (hasMore_ != false) {
+        output.writeBool(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        output.writeInt64(3, total_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < infos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, infos_.get(i));
+      }
+      if (hasMore_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, hasMore_);
+      }
+      if (total_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, total_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs other = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs) obj;
+
+      if (!getInfosList()
+          .equals(other.getInfosList())) return false;
+      if (getHasMore()
+          != other.getHasMore()) return false;
+      if (getTotal()
+          != other.getTotal()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getInfosCount() > 0) {
+        hash = (37 * hash) + INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getInfosList().hashCode();
+      }
+      hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHasMore());
+      hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotal());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.ListAlertLogs}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.ListAlertLogs)
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertLogs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertLogs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.class, com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInfosFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          infosBuilder_.clear();
+        }
+        hasMore_ = false;
+
+        total_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.internal_static_response_ListAlertLogs_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs result = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs(this);
+        int from_bitField0_ = bitField0_;
+        if (infosBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            infos_ = java.util.Collections.unmodifiableList(infos_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.infos_ = infos_;
+        } else {
+          result.infos_ = infosBuilder_.build();
+        }
+        result.hasMore_ = hasMore_;
+        result.total_ = total_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs.getDefaultInstance()) return this;
+        if (infosBuilder_ == null) {
+          if (!other.infos_.isEmpty()) {
+            if (infos_.isEmpty()) {
+              infos_ = other.infos_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureInfosIsMutable();
+              infos_.addAll(other.infos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.infos_.isEmpty()) {
+            if (infosBuilder_.isEmpty()) {
+              infosBuilder_.dispose();
+              infosBuilder_ = null;
+              infos_ = other.infos_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              infosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getInfosFieldBuilder() : null;
+            } else {
+              infosBuilder_.addAllMessages(other.infos_);
+            }
+          }
+        }
+        if (other.getHasMore() != false) {
+          setHasMore(other.getHasMore());
+        }
+        if (other.getTotal() != 0L) {
+          setTotal(other.getTotal());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> infos_ =
+        java.util.Collections.emptyList();
+      private void ensureInfosIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog>(infos_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder> infosBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> getInfosList() {
+        if (infosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(infos_);
+        } else {
+          return infosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public int getInfosCount() {
+        if (infosBuilder_ == null) {
+          return infos_.size();
+        } else {
+          return infosBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog getInfos(int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);
+        } else {
+          return infosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder setInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.set(index, value);
+          onChanged();
+        } else {
+          infosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder setInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder addInfos(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.add(value);
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder addInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog value) {
+        if (infosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureInfosIsMutable();
+          infos_.add(index, value);
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder addInfos(
+          com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder addInfos(
+          int index, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder builderForValue) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          infosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder addAllInfos(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog> values) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, infos_);
+          onChanged();
+        } else {
+          infosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder clearInfos() {
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          infosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public Builder removeInfos(int index) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.remove(index);
+          onChanged();
+        } else {
+          infosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder getInfosBuilder(
+          int index) {
+        return getInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder getInfosOrBuilder(
+          int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);  } else {
+          return infosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder> 
+           getInfosOrBuilderList() {
+        if (infosBuilder_ != null) {
+          return infosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(infos_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder addInfosBuilder() {
+        return getInfosFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder addInfosBuilder(
+          int index) {
+        return getInfosFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"infos"
+       * </pre>
+       *
+       * <code>repeated .model.AlertLog infos = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder> 
+           getInfosBuilderList() {
+        return getInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder> 
+          getInfosFieldBuilder() {
+        if (infosBuilder_ == null) {
+          infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.Builder, com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLogOrBuilder>(
+                  infos_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          infos_ = null;
+        }
+        return infosBuilder_;
+      }
+
+      private boolean hasMore_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @return The hasMore.
+       */
+      @java.lang.Override
+      public boolean getHasMore() {
+        return hasMore_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @param value The hasMore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHasMore(boolean value) {
+        
+        hasMore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"has_more"
+       * </pre>
+       *
+       * <code>bool has_more = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHasMore() {
+        
+        hasMore_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long total_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return The total.
+       */
+      @java.lang.Override
+      public long getTotal() {
+        return total_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @param value The total to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotal(long value) {
+        
+        total_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"total"
+       * </pre>
+       *
+       * <code>int64 total = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotal() {
+        
+        total_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.ListAlertLogs)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.ListAlertLogs)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAlertLogs>
+        PARSER = new com.google.protobuf.AbstractParser<ListAlertLogs>() {
+      @java.lang.Override
+      public ListAlertLogs parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAlertLogs(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAlertLogs> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAlertLogs> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseAlertManage.ListAlertLogs getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_ListAlertPolicies_descriptor;
   private static final 
@@ -5049,6 +6136,11 @@ public final class PBResponseAlertManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_ListJobsByAlertPolicy_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_ListAlertLogs_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_ListAlertLogs_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5073,10 +6165,13 @@ public final class PBResponseAlertManage {
       " \001(\010\022\r\n\005total\030\003 \001(\003\"\202\001\n\025ListJobsByAlertP" +
       "olicy\022%\n\013stream_jobs\030\001 \003(\0132\020.model.Strea" +
       "mJob\022!\n\tsync_jobs\030\002 \003(\0132\016.model.SyncJob\022" +
-      "\020\n\010has_more\030\003 \001(\010\022\r\n\005total\030\004 \001(\003Bv\n%com." +
-      "dataomnis.gproto.types.pbresponseB\025PBRes" +
-      "ponseAlertManageP\000Z4github.com/DataWorkb" +
-      "ench/gproto/xgo/types/pbresponseb\006proto3"
+      "\020\n\010has_more\030\003 \001(\010\022\r\n\005total\030\004 \001(\003\"P\n\rList" +
+      "AlertLogs\022\036\n\005infos\030\001 \003(\0132\017.model.AlertLo" +
+      "g\022\020\n\010has_more\030\002 \001(\010\022\r\n\005total\030\003 \001(\003Bv\n%co" +
+      "m.dataomnis.gproto.types.pbresponseB\025PBR" +
+      "esponseAlertManageP\000Z4github.com/DataWor" +
+      "kbench/gproto/xgo/types/pbresponseb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5116,6 +6211,12 @@ public final class PBResponseAlertManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ListJobsByAlertPolicy_descriptor,
         new java.lang.String[] { "StreamJobs", "SyncJobs", "HasMore", "Total", });
+    internal_static_response_ListAlertLogs_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_response_ListAlertLogs_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_ListAlertLogs_descriptor,
+        new java.lang.String[] { "Infos", "HasMore", "Total", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

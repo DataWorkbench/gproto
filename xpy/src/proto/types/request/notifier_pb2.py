@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\021PBRequestNotifierP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"proto/types/request/notifier.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\xb4\x01\n\x10SendNotification\x12\x1b\n\x05owner\x18\x01 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\"\n\x0bnf_list_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12#\n\rshort_content\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1d\n\x07\x63ontent\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x42p\n$com.dataomnis.gproto.types.pbrequestB\x11PBRequestNotifierP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\"proto/types/request/notifier.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\"\x91\x01\n\x10SendNotification\x12\"\n\x0bnf_list_ids\x18\x02 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x30\x00\x38\x64\x12\x1b\n\x05title\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1d\n\x07subject\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x12\x1d\n\x07\x63ontent\x18\x05 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x80\x02\x00\x42p\n$com.dataomnis.gproto.types.pbrequestB\x11PBRequestNotifierP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,])
 
@@ -36,35 +36,28 @@ _SENDNOTIFICATION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='owner', full_name='request.SendNotification.owner', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='nf_list_ids', full_name='request.SendNotification.nf_list_ids', index=1,
+      name='nf_list_ids', full_name='request.SendNotification.nf_list_ids', index=0,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\t\022\007\352\001\0040\0008d', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='title', full_name='request.SendNotification.title', index=2,
+      name='title', full_name='request.SendNotification.title', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='short_content', full_name='request.SendNotification.short_content', index=3,
+      name='subject', full_name='request.SendNotification.subject', index=2,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\342\337\037\010\022\006\302\001\003\200\002\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='content', full_name='request.SendNotification.content', index=4,
+      name='content', full_name='request.SendNotification.content', index=3,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -83,7 +76,7 @@ _SENDNOTIFICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=281,
+  serialized_end=246,
 )
 
 DESCRIPTOR.message_types_by_name['SendNotification'] = _SENDNOTIFICATION
@@ -98,9 +91,8 @@ _sym_db.RegisterMessage(SendNotification)
 
 
 DESCRIPTOR._options = None
-_SENDNOTIFICATION.fields_by_name['owner']._options = None
 _SENDNOTIFICATION.fields_by_name['nf_list_ids']._options = None
 _SENDNOTIFICATION.fields_by_name['title']._options = None
-_SENDNOTIFICATION.fields_by_name['short_content']._options = None
+_SENDNOTIFICATION.fields_by_name['subject']._options = None
 _SENDNOTIFICATION.fields_by_name['content']._options = None
 # @@protoc_insertion_point(module_scope)
