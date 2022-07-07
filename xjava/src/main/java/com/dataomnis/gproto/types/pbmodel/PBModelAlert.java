@@ -7075,7 +7075,7 @@ public final class PBModelAlert {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -7085,7 +7085,7 @@ public final class PBModelAlert {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -7664,7 +7664,7 @@ public final class PBModelAlert {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -7686,7 +7686,7 @@ public final class PBModelAlert {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -8464,7 +8464,7 @@ public final class PBModelAlert {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -8485,7 +8485,7 @@ public final class PBModelAlert {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -8507,7 +8507,7 @@ public final class PBModelAlert {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -8527,7 +8527,7 @@ public final class PBModelAlert {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -8542,7 +8542,7 @@ public final class PBModelAlert {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * &#64;inject_tag: json:"alert_id" gorm:"column:alert_id;"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>

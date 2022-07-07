@@ -810,6 +810,36 @@ func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_sort_by() error {
 	return nil
 }
 
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_alert_id() error {
+	return nil
+}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_job_id() error {
+	return nil
+}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_instance_id() error {
+	return nil
+}
+
+var _xxx_xxx_Validator_ListAlertLogs_InEnums_MonitorObject = map[pbmodel.AlertPolicy_MonitorObject]bool{0: true, 1: true, 2: true}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_monitor_object() error {
+	if !(_xxx_xxx_Validator_ListAlertLogs_InEnums_MonitorObject[this.MonitorObject]) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'monitor_object' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.MonitorObject)))
+	}
+	return nil
+}
+
+var _xxx_xxx_Validator_ListAlertLogs_InEnums_EventType = map[pbmodel.AlertLog_EventType]bool{0: true, 1: true, 2: true, 3: true, 4: true}
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_event_type() error {
+	if !(_xxx_xxx_Validator_ListAlertLogs_InEnums_EventType[this.EventType]) {
+		return protovalidator.FieldError1("ListAlertLogs", "the value of field 'event_type' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.EventType)))
+	}
+	return nil
+}
+
 // Set default value for message request.ListAlertLogs
 func (this *ListAlertLogs) Validate() error {
 	if this == nil {
@@ -825,6 +855,21 @@ func (this *ListAlertLogs) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_sort_by(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_alert_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_monitor_object(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_event_type(); err != nil {
 		return err
 	}
 	return nil

@@ -17157,6 +17157,114 @@ public final class PBRequestAlertManage {
      * @return The reverse.
      */
     boolean getReverse();
+
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"alert_id" form:"alert_id"
+     * </pre>
+     *
+     * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    java.lang.String getAlertId();
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"alert_id" form:"alert_id"
+     * </pre>
+     *
+     * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    com.google.protobuf.ByteString
+        getAlertIdBytes();
+
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" form:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    java.lang.String getJobId();
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" form:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    com.google.protobuf.ByteString
+        getJobIdBytes();
+
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    java.lang.String getInstanceId();
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    com.google.protobuf.ByteString
+        getInstanceIdBytes();
+
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    int getMonitorObjectValue();
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject();
+
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" form:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    int getEventTypeValue();
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" form:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType();
   }
   /**
    * Protobuf type {@code request.ListAlertLogs}
@@ -17173,6 +17281,11 @@ public final class PBRequestAlertManage {
     private ListAlertLogs() {
       spaceId_ = "";
       sortBy_ = "";
+      alertId_ = "";
+      jobId_ = "";
+      instanceId_ = "";
+      monitorObject_ = 0;
+      eventType_ = 0;
     }
 
     @java.lang.Override
@@ -17230,6 +17343,36 @@ public final class PBRequestAlertManage {
             case 40: {
 
               reverse_ = input.readBool();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              alertId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceId_ = s;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              monitorObject_ = rawValue;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              eventType_ = rawValue;
               break;
             }
             default: {
@@ -17415,6 +17558,208 @@ public final class PBRequestAlertManage {
       return reverse_;
     }
 
+    public static final int ALERT_ID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object alertId_;
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"alert_id" form:"alert_id"
+     * </pre>
+     *
+     * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+     * @return The alertId.
+     */
+    @java.lang.Override
+    public java.lang.String getAlertId() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        alertId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Alert ID, unique within a region.
+     * &#64;inject_tag: json:"alert_id" form:"alert_id"
+     * </pre>
+     *
+     * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+     * @return The bytes for alertId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAlertIdBytes() {
+      java.lang.Object ref = alertId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        alertId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JOB_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object jobId_;
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" form:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+     * @return The jobId.
+     */
+    @java.lang.Override
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"job_id" form:"job_id"
+     * </pre>
+     *
+     * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+     * @return The bytes for jobId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INSTANCE_ID_FIELD_NUMBER = 8;
+    private volatile java.lang.Object instanceId_;
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+     * @return The instanceId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+     * &#64;inject_tag: json:"instance_id" form:"instance_id"
+     * </pre>
+     *
+     * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+     * @return The bytes for instanceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MONITOR_OBJECT_FIELD_NUMBER = 9;
+    private int monitorObject_;
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for monitorObject.
+     */
+    @java.lang.Override public int getMonitorObjectValue() {
+      return monitorObject_;
+    }
+    /**
+     * <pre>
+     * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+     * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+     * </pre>
+     *
+     * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+     * @return The monitorObject.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+    }
+
+    public static final int EVENT_TYPE_FIELD_NUMBER = 10;
+    private int eventType_;
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" form:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for eventType.
+     */
+    @java.lang.Override public int getEventTypeValue() {
+      return eventType_;
+    }
+    /**
+     * <pre>
+     * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+     * &#64;inject_tag: json:"event_type" form:"event_type"
+     * </pre>
+     *
+     * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+     * @return The eventType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17444,6 +17789,21 @@ public final class PBRequestAlertManage {
       if (reverse_ != false) {
         output.writeBool(5, reverse_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, instanceId_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        output.writeEnum(9, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        output.writeEnum(10, eventType_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17471,6 +17831,23 @@ public final class PBRequestAlertManage {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, reverse_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(alertId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, alertId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, instanceId_);
+      }
+      if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, monitorObject_);
+      }
+      if (eventType_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.EventTypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, eventType_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17496,6 +17873,14 @@ public final class PBRequestAlertManage {
           .equals(other.getSortBy())) return false;
       if (getReverse()
           != other.getReverse()) return false;
+      if (!getAlertId()
+          .equals(other.getAlertId())) return false;
+      if (!getJobId()
+          .equals(other.getJobId())) return false;
+      if (!getInstanceId()
+          .equals(other.getInstanceId())) return false;
+      if (monitorObject_ != other.monitorObject_) return false;
+      if (eventType_ != other.eventType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17518,6 +17903,16 @@ public final class PBRequestAlertManage {
       hash = (37 * hash) + REVERSE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getReverse());
+      hash = (37 * hash) + ALERT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAlertId().hashCode();
+      hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceId().hashCode();
+      hash = (37 * hash) + MONITOR_OBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + monitorObject_;
+      hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + eventType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17661,6 +18056,16 @@ public final class PBRequestAlertManage {
 
         reverse_ = false;
 
+        alertId_ = "";
+
+        jobId_ = "";
+
+        instanceId_ = "";
+
+        monitorObject_ = 0;
+
+        eventType_ = 0;
+
         return this;
       }
 
@@ -17692,6 +18097,11 @@ public final class PBRequestAlertManage {
         result.offset_ = offset_;
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
+        result.alertId_ = alertId_;
+        result.jobId_ = jobId_;
+        result.instanceId_ = instanceId_;
+        result.monitorObject_ = monitorObject_;
+        result.eventType_ = eventType_;
         onBuilt();
         return result;
       }
@@ -17756,6 +18166,24 @@ public final class PBRequestAlertManage {
         }
         if (other.getReverse() != false) {
           setReverse(other.getReverse());
+        }
+        if (!other.getAlertId().isEmpty()) {
+          alertId_ = other.alertId_;
+          onChanged();
+        }
+        if (!other.getJobId().isEmpty()) {
+          jobId_ = other.jobId_;
+          onChanged();
+        }
+        if (!other.getInstanceId().isEmpty()) {
+          instanceId_ = other.instanceId_;
+          onChanged();
+        }
+        if (other.monitorObject_ != 0) {
+          setMonitorObjectValue(other.getMonitorObjectValue());
+        }
+        if (other.eventType_ != 0) {
+          setEventTypeValue(other.getEventTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18143,6 +18571,467 @@ public final class PBRequestAlertManage {
         onChanged();
         return this;
       }
+
+      private java.lang.Object alertId_ = "";
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"alert_id" form:"alert_id"
+       * </pre>
+       *
+       * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+       * @return The alertId.
+       */
+      public java.lang.String getAlertId() {
+        java.lang.Object ref = alertId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          alertId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"alert_id" form:"alert_id"
+       * </pre>
+       *
+       * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+       * @return The bytes for alertId.
+       */
+      public com.google.protobuf.ByteString
+          getAlertIdBytes() {
+        java.lang.Object ref = alertId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          alertId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"alert_id" form:"alert_id"
+       * </pre>
+       *
+       * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"alert_id" form:"alert_id"
+       * </pre>
+       *
+       * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAlertId() {
+        
+        alertId_ = getDefaultInstance().getAlertId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Alert ID, unique within a region.
+       * &#64;inject_tag: json:"alert_id" form:"alert_id"
+       * </pre>
+       *
+       * <code>string alert_id = 6 [(.validator.field) = { ... }</code>
+       * @param value The bytes for alertId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAlertIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        alertId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object jobId_ = "";
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" form:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+       * @return The jobId.
+       */
+      public java.lang.String getJobId() {
+        java.lang.Object ref = jobId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          jobId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" form:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+       * @return The bytes for jobId.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdBytes() {
+        java.lang.Object ref = jobId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jobId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" form:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" form:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobId() {
+        
+        jobId_ = getDefaultInstance().getJobId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"job_id" form:"job_id"
+       * </pre>
+       *
+       * <code>string job_id = 7 [(.validator.field) = { ... }</code>
+       * @param value The bytes for jobId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        jobId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object instanceId_ = "";
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+       * @return The instanceId.
+       */
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+       * @return The bytes for instanceId.
+       */
+      public com.google.protobuf.ByteString
+          getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+       * @param value The instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInstanceId() {
+        
+        instanceId_ = getDefaultInstance().getInstanceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+       * &#64;inject_tag: json:"instance_id" form:"instance_id"
+       * </pre>
+       *
+       * <code>string instance_id = 8 [(.validator.field) = { ... }</code>
+       * @param value The bytes for instanceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstanceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        instanceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int monitorObject_ = 0;
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for monitorObject.
+       */
+      @java.lang.Override public int getMonitorObjectValue() {
+        return monitorObject_;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObjectValue(int value) {
+        
+        monitorObject_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+       * @return The monitorObject.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject getMonitorObject() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.valueOf(monitorObject_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+       * @param value The monitorObject to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitorObject(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        monitorObject_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The monitor object, 1 =&gt; "StreamJob" 2 =&gt; "SyncJob'
+       * &#64;inject_tag: json:"monitor_object" form:"monitor_object"
+       * </pre>
+       *
+       * <code>.model.AlertPolicy.MonitorObject monitor_object = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonitorObject() {
+        
+        monitorObject_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int eventType_ = 0;
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" form:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for eventType.
+       */
+      @java.lang.Override public int getEventTypeValue() {
+        return eventType_;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" form:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventTypeValue(int value) {
+        
+        eventType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" form:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+       * @return The eventType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType getEventType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType result = com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.valueOf(eventType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" form:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+       * @param value The eventType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEventType(com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertLog.EventType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        eventType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alert event type, 1 =&gt; "StreamInstanceFailed" 2 =&gt; "StreamInstanceTimeout" 3 =&gt; "SyncInstanceFailed" 4 =&gt; "SyncInstanceTimeout"
+       * &#64;inject_tag: json:"event_type" form:"event_type"
+       * </pre>
+       *
+       * <code>.model.AlertLog.EventType event_type = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEventType() {
+        
+        eventType_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -18225,7 +19114,7 @@ public final class PBRequestAlertManage {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"alert_id"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -18235,7 +19124,7 @@ public final class PBRequestAlertManage {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"alert_id"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -18584,7 +19473,7 @@ public final class PBRequestAlertManage {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"alert_id"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -18606,7 +19495,7 @@ public final class PBRequestAlertManage {
     /**
      * <pre>
      * Alert ID, unique within a region.
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"alert_id"
      * </pre>
      *
      * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -19421,7 +20310,7 @@ public final class PBRequestAlertManage {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"alert_id"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -19442,7 +20331,7 @@ public final class PBRequestAlertManage {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"alert_id"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -19464,7 +20353,7 @@ public final class PBRequestAlertManage {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"alert_id"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -19484,7 +20373,7 @@ public final class PBRequestAlertManage {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"alert_id"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -19499,7 +20388,7 @@ public final class PBRequestAlertManage {
       /**
        * <pre>
        * Alert ID, unique within a region.
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"alert_id"
        * </pre>
        *
        * <code>string alert_id = 2 [(.validator.field) = { ... }</code>
@@ -20326,24 +21215,30 @@ public final class PBRequestAlertManage {
       "icy\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
       "s-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt" +
       "-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008" +
-      "d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\"\274\001\n\rListA" +
+      "d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\"\227\003\n\rListA" +
       "lertLogs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
       "\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007" +
       "\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022.\n\007" +
       "sort_by\030\004 \001(\tB\035\342\337\037\031\022\027\302\001\024J\000J\007createdJ\007upd" +
-      "ated\022\017\n\007reverse\030\005 \001(\010\"\344\002\n\tSendAlert\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010al" +
-      "ert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job" +
-      "_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013instance_id\030\004" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022G\n\016monitor_object\030\006 \001" +
-      "(\0162 .model.AlertPolicy.MonitorObjectB\r\342\337" +
-      "\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_type\030\007 \001(\0162\031.model." +
-      "AlertLog.EventTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007mes" +
-      "sage\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\020notification_id" +
-      "s\030\t \003(\tB\013\342\337\037\007\022\005\352\001\0028dBs\n$com.dataomnis.gp" +
-      "roto.types.pbrequestB\024PBRequestAlertMana" +
-      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
-      "o/types/pbrequestb\006proto3"
+      "ated\022\017\n\007reverse\030\005 \001(\010\022\033\n\010alert_id\030\006 \001(\tB" +
+      "\t\342\337\037\005\022\003\302\001\000\022\031\n\006job_id\030\007 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\036\n" +
+      "\013instance_id\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000\022E\n\016monitor" +
+      "_object\030\t \001(\0162 .model.AlertPolicy.Monito" +
+      "rObjectB\013\342\337\037\007\022\005\332\001\002X\001\022:\n\nevent_type\030\n \001(\016" +
+      "2\031.model.AlertLog.EventTypeB\013\342\337\037\007\022\005\332\001\002X\001" +
+      "\"\344\002\n\tSendAlert\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004alt-\022\034\n\006job_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
+      "\001\024\022!\n\013instance_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022G\n" +
+      "\016monitor_object\030\006 \001(\0162 .model.AlertPolic" +
+      "y.MonitorObjectB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_" +
+      "type\030\007 \001(\0162\031.model.AlertLog.EventTypeB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007message\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000" +
+      "\022%\n\020notification_ids\030\t \003(\tB\013\342\337\037\007\022\005\352\001\0028dB" +
+      "s\n$com.dataomnis.gproto.types.pbrequestB" +
+      "\024PBRequestAlertManageP\000Z3github.com/Data" +
+      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20435,7 +21330,7 @@ public final class PBRequestAlertManage {
     internal_static_request_ListAlertLogs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAlertLogs_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "AlertId", "JobId", "InstanceId", "MonitorObject", "EventType", });
     internal_static_request_SendAlert_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_request_SendAlert_fieldAccessorTable = new

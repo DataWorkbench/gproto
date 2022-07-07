@@ -561,7 +561,7 @@ type AlertLog struct {
 	// Workspace ID it belongs to.
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// Alert ID, unique within a region.
-	AlertId string `protobuf:"bytes,2,opt,name=alert_id,json=alertId,proto3" json:"id" gorm:"column:id;"`
+	AlertId string `protobuf:"bytes,2,opt,name=alert_id,json=alertId,proto3" json:"alert_id" gorm:"column:alert_id;"`
 	// The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
 	JobId string `protobuf:"bytes,3,opt,name=job_id,json=jobId,proto3" json:"job_id" gorm:"column:job_id"`
 	// The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
