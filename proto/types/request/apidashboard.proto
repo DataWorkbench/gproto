@@ -33,21 +33,19 @@ message RouteInfo {
     (validator.field).tags.string = { byte_len_eq: 20 }
   ];
   // @inject_tag: json:"desc"
-  string desc = 3 [ (validator.field).tags.string = { byte_len_gte: 0,  byte_len_lt: 512} ];
-  // @inject_tag: json:"host"
-  string host = 4 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
+  string desc = 3 [ (validator.field).tags.string = { byte_len_gte: 0,  byte_len_lt: 512 } ];
   // @inject_tag: json:"hosts"
-  string upstream_id = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  string upstream_id = 4 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
   // @inject_tag: json:"name"
-  string name = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 128 } ];
+  string name = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 128 } ];
   // @inject_tag: json:"api_service_id"
-  string api_service_id = 7 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  string api_service_id = 6 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
   // @inject_tag: json:"api_version_id"
-  string api_version_id = 8 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
+  string api_version_id = 7 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 20 } ];
   // @inject_tag: json:"proxy_uri"
-  string proxy_uri = 9 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
+  string proxy_uri = 8 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"space_id"
-  string space_id = 10 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  string space_id = 9 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
 }
 
 message DeleteRoute {
