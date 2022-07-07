@@ -308,6 +308,26 @@ message ListAlertLogs {
   // Reverse order results. Not required, default: false.
   // @inject_tag: json:"reverse" default:"false" form:"reverse"
   bool reverse = 5;
+
+  // Alert ID, unique within a region.
+  // @inject_tag: json:"alert_id" form:"alert_id"
+  string alert_id = 6 [ (validator.field).tags.string = { } ];
+
+  // The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"job_id" form:"job_id"
+  string job_id = 7 [ (validator.field).tags.string = { } ];
+
+  // The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+  // @inject_tag: json:"instance_id" form:"instance_id"
+  string instance_id = 8 [ (validator.field).tags.string = { } ];
+
+  // The monitor object, 1 => "StreamJob" 2 => "SyncJob'
+  // @inject_tag: json:"monitor_object" form:"monitor_object"
+  model.AlertPolicy.MonitorObject monitor_object = 9 [ (validator.field).tags.enum = { in_enums: true } ];
+
+  // The alert event type, 1 => "StreamInstanceFailed" 2 => "StreamInstanceTimeout" 3 => "SyncInstanceFailed" 4 => "SyncInstanceTimeout"
+  // @inject_tag: json:"event_type" form:"event_type"
+  model.AlertLog.EventType event_type = 10 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
 message SendAlert {
@@ -316,7 +336,7 @@ message SendAlert {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
 
   // Alert ID, unique within a region.
-  // @inject_tag: json:"id"
+  // @inject_tag: json:"alert_id"
   string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
   // The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).

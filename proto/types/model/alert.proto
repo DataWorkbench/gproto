@@ -174,7 +174,7 @@ message AlertLog {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-" } ];
 
   // Alert ID, unique within a region.
-  // @inject_tag: json:"id" gorm:"column:id;"
+  // @inject_tag: json:"alert_id" gorm:"column:alert_id;"
   string alert_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "alt-" } ];
 
   // The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
