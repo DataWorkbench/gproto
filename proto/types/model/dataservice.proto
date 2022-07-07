@@ -320,6 +320,8 @@ message ApiVersion{
   int64 created = 3 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 20 [ (validator.field).tags.int = { gt: 0 } ];
+  // @inject_tag: json:"created_by" gorm:"column:created_by;"
+  string created_by = 23 [ (validator.field).tags.string = { byte_len_gt:0, byte_len_lt: 65 } ];
   // @inject_tag: json:"request_params" gorm:"column:request_params;type:json"
   RequestParameters request_params = 21 [(validator.field) = {}];
   // @inject_tag: json:"response_params" gorm:"column:response_params;type:json"

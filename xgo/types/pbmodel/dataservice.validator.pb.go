@@ -967,6 +967,16 @@ func (this *ApiVersion) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *ApiVersion) _xxx_xxx_Validator_Validate_created_by() error {
+	if !(len(this.CreatedBy) > 0) {
+		return protovalidator.FieldError1("ApiVersion", "the byte length of field 'created_by' must be greater than '0'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	if !(len(this.CreatedBy) < 65) {
+		return protovalidator.FieldError1("ApiVersion", "the byte length of field 'created_by' must be less than '65'", protovalidator.StringByteLenToString(this.CreatedBy))
+	}
+	return nil
+}
+
 func (this *ApiVersion) _xxx_xxx_Validator_Validate_request_params() error {
 	if dt, ok := interface{}(this.RequestParams).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
@@ -1045,6 +1055,9 @@ func (this *ApiVersion) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_created_by(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
