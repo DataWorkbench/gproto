@@ -136,3 +136,26 @@ func (this *ListJobsByAlertPolicy) Validate() error {
 	}
 	return nil
 }
+
+func (this *ListAlertLogs) _xxx_xxx_Validator_Validate_infos() error {
+	for _, item := range this.Infos {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.ListAlertLogs
+func (this *ListAlertLogs) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
+		return err
+	}
+	return nil
+}

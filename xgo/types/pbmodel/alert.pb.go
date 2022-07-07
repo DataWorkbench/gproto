@@ -215,6 +215,110 @@ func (AlertPolicy_MonitorObject) EnumDescriptor() ([]byte, []int) {
 	return file_proto_types_model_alert_proto_rawDescGZIP(), []int{0, 3}
 }
 
+type AlertLog_Status int32
+
+const (
+	AlertLog_StatusUnset AlertLog_Status = 0
+	AlertLog_Deleted     AlertLog_Status = 1
+	AlertLog_Enabled     AlertLog_Status = 2
+)
+
+// Enum value maps for AlertLog_Status.
+var (
+	AlertLog_Status_name = map[int32]string{
+		0: "StatusUnset",
+		1: "Deleted",
+		2: "Enabled",
+	}
+	AlertLog_Status_value = map[string]int32{
+		"StatusUnset": 0,
+		"Deleted":     1,
+		"Enabled":     2,
+	}
+)
+
+func (x AlertLog_Status) Enum() *AlertLog_Status {
+	p := new(AlertLog_Status)
+	*p = x
+	return p
+}
+
+func (x AlertLog_Status) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AlertLog_Status) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_types_model_alert_proto_enumTypes[4].Descriptor()
+}
+
+func (AlertLog_Status) Type() protoreflect.EnumType {
+	return &file_proto_types_model_alert_proto_enumTypes[4]
+}
+
+func (x AlertLog_Status) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AlertLog_Status.Descriptor instead.
+func (AlertLog_Status) EnumDescriptor() ([]byte, []int) {
+	return file_proto_types_model_alert_proto_rawDescGZIP(), []int{2, 0}
+}
+
+type AlertLog_EventType int32
+
+const (
+	AlertLog_EventTypeUnset        AlertLog_EventType = 0
+	AlertLog_StreamInstanceFailed  AlertLog_EventType = 1
+	AlertLog_StreamInstanceTimeout AlertLog_EventType = 2
+	AlertLog_SyncInstanceFailed    AlertLog_EventType = 3
+	AlertLog_SyncInstanceTimeout   AlertLog_EventType = 4
+)
+
+// Enum value maps for AlertLog_EventType.
+var (
+	AlertLog_EventType_name = map[int32]string{
+		0: "EventTypeUnset",
+		1: "StreamInstanceFailed",
+		2: "StreamInstanceTimeout",
+		3: "SyncInstanceFailed",
+		4: "SyncInstanceTimeout",
+	}
+	AlertLog_EventType_value = map[string]int32{
+		"EventTypeUnset":        0,
+		"StreamInstanceFailed":  1,
+		"StreamInstanceTimeout": 2,
+		"SyncInstanceFailed":    3,
+		"SyncInstanceTimeout":   4,
+	}
+)
+
+func (x AlertLog_EventType) Enum() *AlertLog_EventType {
+	p := new(AlertLog_EventType)
+	*p = x
+	return p
+}
+
+func (x AlertLog_EventType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (AlertLog_EventType) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_types_model_alert_proto_enumTypes[5].Descriptor()
+}
+
+func (AlertLog_EventType) Type() protoreflect.EnumType {
+	return &file_proto_types_model_alert_proto_enumTypes[5]
+}
+
+func (x AlertLog_EventType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use AlertLog_EventType.Descriptor instead.
+func (AlertLog_EventType) EnumDescriptor() ([]byte, []int) {
+	return file_proto_types_model_alert_proto_rawDescGZIP(), []int{2, 1}
+}
+
 // The alert policy info
 type AlertPolicy struct {
 	state         protoimpl.MessageState
@@ -392,7 +496,7 @@ type AlertPolicyMapping struct {
 	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	// The id of alert policy.
 	AlertId string `protobuf:"bytes,2,opt,name=alert_id,json=alertId,proto3" json:"alert_id" gorm:"column:alert_id"`
-	// The id of monitor object. StreamJob(stj-xxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxx).
+	// The id of monitor object. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
 	JobId string `protobuf:"bytes,3,opt,name=job_id,json=jobId,proto3" json:"job_id" gorm:"column:job_id"`
 }
 
@@ -449,6 +553,126 @@ func (x *AlertPolicyMapping) GetJobId() string {
 	return ""
 }
 
+type AlertLog struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Workspace ID it belongs to.
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
+	// Alert ID, unique within a region.
+	AlertId string `protobuf:"bytes,2,opt,name=alert_id,json=alertId,proto3" json:"alert_id" gorm:"column:alert_id;"`
+	// The id of job. StreamJob(stj-xxxxxxxxxxxxxxxx) or SyncJob(syj-xxxxxxxxxxxxxxxx).
+	JobId string `protobuf:"bytes,3,opt,name=job_id,json=jobId,proto3" json:"job_id" gorm:"column:job_id"`
+	// The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
+	InstanceId string `protobuf:"bytes,4,opt,name=instance_id,json=instanceId,proto3" json:"instance_id" gorm:"column:instance_id"`
+	// Rule status, 1 => "Deleted", 2 => "enabled".
+	Status AlertLog_Status `protobuf:"varint,5,opt,name=status,proto3,enum=model.AlertLog_Status" json:"status" gorm:"column:status;"`
+	// The monitor object, 1 => "StreamJob" 2 => "SyncJob'
+	MonitorObject AlertPolicy_MonitorObject `protobuf:"varint,6,opt,name=monitor_object,json=monitorObject,proto3,enum=model.AlertPolicy_MonitorObject" json:"monitor_object" gorm:"column:monitor_object;"`
+	// The alert event type, 1 => "StreamInstanceFailed" 2 => "StreamInstanceTimeout" 3 => "SyncInstanceFailed" 4 => "SyncInstanceTimeout"
+	EventType AlertLog_EventType `protobuf:"varint,7,opt,name=event_type,json=eventType,proto3,enum=model.AlertLog_EventType" json:"event_type" gorm:"column:event_type;"`
+	// Timestamp of create time.
+	Created int64 `protobuf:"varint,12,opt,name=created,proto3" json:"created" gorm:"column:created;autoCreateTime;"`
+	// Timestamp of update time.
+	Updated int64 `protobuf:"varint,13,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
+}
+
+func (x *AlertLog) Reset() {
+	*x = AlertLog{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_model_alert_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AlertLog) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AlertLog) ProtoMessage() {}
+
+func (x *AlertLog) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_model_alert_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AlertLog.ProtoReflect.Descriptor instead.
+func (*AlertLog) Descriptor() ([]byte, []int) {
+	return file_proto_types_model_alert_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *AlertLog) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *AlertLog) GetAlertId() string {
+	if x != nil {
+		return x.AlertId
+	}
+	return ""
+}
+
+func (x *AlertLog) GetJobId() string {
+	if x != nil {
+		return x.JobId
+	}
+	return ""
+}
+
+func (x *AlertLog) GetInstanceId() string {
+	if x != nil {
+		return x.InstanceId
+	}
+	return ""
+}
+
+func (x *AlertLog) GetStatus() AlertLog_Status {
+	if x != nil {
+		return x.Status
+	}
+	return AlertLog_StatusUnset
+}
+
+func (x *AlertLog) GetMonitorObject() AlertPolicy_MonitorObject {
+	if x != nil {
+		return x.MonitorObject
+	}
+	return AlertPolicy_ObjectUnset
+}
+
+func (x *AlertLog) GetEventType() AlertLog_EventType {
+	if x != nil {
+		return x.EventType
+	}
+	return AlertLog_EventTypeUnset
+}
+
+func (x *AlertLog) GetCreated() int64 {
+	if x != nil {
+		return x.Created
+	}
+	return 0
+}
+
+func (x *AlertLog) GetUpdated() int64 {
+	if x != nil {
+		return x.Updated
+	}
+	return 0
+}
+
 type AlertPolicy_MonitorStreamJob struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -466,7 +690,7 @@ type AlertPolicy_MonitorStreamJob struct {
 func (x *AlertPolicy_MonitorStreamJob) Reset() {
 	*x = AlertPolicy_MonitorStreamJob{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_alert_proto_msgTypes[2]
+		mi := &file_proto_types_model_alert_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -479,7 +703,7 @@ func (x *AlertPolicy_MonitorStreamJob) String() string {
 func (*AlertPolicy_MonitorStreamJob) ProtoMessage() {}
 
 func (x *AlertPolicy_MonitorStreamJob) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_alert_proto_msgTypes[2]
+	mi := &file_proto_types_model_alert_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -533,7 +757,7 @@ type AlertPolicy_MonitorSyncJob struct {
 func (x *AlertPolicy_MonitorSyncJob) Reset() {
 	*x = AlertPolicy_MonitorSyncJob{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_alert_proto_msgTypes[3]
+		mi := &file_proto_types_model_alert_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -546,7 +770,7 @@ func (x *AlertPolicy_MonitorSyncJob) String() string {
 func (*AlertPolicy_MonitorSyncJob) ProtoMessage() {}
 
 func (x *AlertPolicy_MonitorSyncJob) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_alert_proto_msgTypes[3]
+	mi := &file_proto_types_model_alert_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -595,7 +819,7 @@ type AlertPolicy_MonitorItem struct {
 func (x *AlertPolicy_MonitorItem) Reset() {
 	*x = AlertPolicy_MonitorItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_model_alert_proto_msgTypes[4]
+		mi := &file_proto_types_model_alert_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -608,7 +832,7 @@ func (x *AlertPolicy_MonitorItem) String() string {
 func (*AlertPolicy_MonitorItem) ProtoMessage() {}
 
 func (x *AlertPolicy_MonitorItem) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_model_alert_proto_msgTypes[4]
+	mi := &file_proto_types_model_alert_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -759,14 +983,56 @@ var file_proto_types_model_alert_proto_rawDesc = []byte{
 	0x61, 0x6c, 0x74, 0x2d, 0x52, 0x07, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x49, 0x64, 0x12, 0x23, 0x0a,
 	0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0c, 0xe2,
 	0xdf, 0x1f, 0x08, 0x12, 0x06, 0xc2, 0x01, 0x03, 0xf0, 0x01, 0x14, 0x52, 0x05, 0x6a, 0x6f, 0x62,
-	0x49, 0x64, 0x42, 0x67, 0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d,
-	0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73,
-	0x2e, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x42, 0x0c, 0x50, 0x42, 0x4d, 0x6f, 0x64, 0x65,
-	0x6c, 0x41, 0x6c, 0x65, 0x72, 0x74, 0x50, 0x00, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
-	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
-	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x49, 0x64, 0x22, 0xa9, 0x05, 0x0a, 0x08, 0x41, 0x6c, 0x65, 0x72, 0x74, 0x4c, 0x6f, 0x67, 0x12,
+	0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca,
+	0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12,
+	0x2e, 0x0a, 0x08, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca,
+	0x02, 0x04, 0x61, 0x6c, 0x74, 0x2d, 0x52, 0x07, 0x61, 0x6c, 0x65, 0x72, 0x74, 0x49, 0x64, 0x12,
+	0x23, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42,
+	0x0c, 0xe2, 0xdf, 0x1f, 0x08, 0x12, 0x06, 0xc2, 0x01, 0x03, 0xf0, 0x01, 0x14, 0x52, 0x05, 0x6a,
+	0x6f, 0x62, 0x49, 0x64, 0x12, 0x2d, 0x0a, 0x0b, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0c, 0xe2, 0xdf, 0x1f, 0x08, 0x12,
+	0x06, 0xc2, 0x01, 0x03, 0xf0, 0x01, 0x14, 0x52, 0x0a, 0x69, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63,
+	0x65, 0x49, 0x64, 0x12, 0x3d, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x16, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x6c, 0x65, 0x72,
+	0x74, 0x4c, 0x6f, 0x67, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x42, 0x0d, 0xe2, 0xdf, 0x1f,
+	0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74,
+	0x75, 0x73, 0x12, 0x56, 0x0a, 0x0e, 0x6d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x5f, 0x6f, 0x62,
+	0x6a, 0x65, 0x63, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x20, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x2e, 0x41, 0x6c, 0x65, 0x72, 0x74, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x2e, 0x4d,
+	0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x42, 0x0d, 0xe2, 0xdf,
+	0x1f, 0x09, 0x12, 0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x0d, 0x6d, 0x6f, 0x6e,
+	0x69, 0x74, 0x6f, 0x72, 0x4f, 0x62, 0x6a, 0x65, 0x63, 0x74, 0x12, 0x47, 0x0a, 0x0a, 0x65, 0x76,
+	0x65, 0x6e, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x19,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x6c, 0x65, 0x72, 0x74, 0x4c, 0x6f, 0x67, 0x2e,
+	0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70, 0x65, 0x42, 0x0d, 0xe2, 0xdf, 0x1f, 0x09, 0x12,
+	0x07, 0xda, 0x01, 0x04, 0x30, 0x00, 0x58, 0x01, 0x52, 0x09, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x54,
+	0x79, 0x70, 0x65, 0x12, 0x25, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0c,
+	0x20, 0x01, 0x28, 0x03, 0x42, 0x0b, 0xe2, 0xdf, 0x1f, 0x07, 0x12, 0x05, 0xb2, 0x01, 0x02, 0x30,
+	0x00, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x12, 0x25, 0x0a, 0x07, 0x75, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x03, 0x42, 0x0b, 0xe2, 0xdf, 0x1f,
+	0x07, 0x12, 0x05, 0xb2, 0x01, 0x02, 0x30, 0x00, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x64, 0x22, 0x33, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0f, 0x0a, 0x0b, 0x53,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x64, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x45, 0x6e, 0x61,
+	0x62, 0x6c, 0x65, 0x64, 0x10, 0x02, 0x22, 0x85, 0x01, 0x0a, 0x09, 0x45, 0x76, 0x65, 0x6e, 0x74,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x12, 0x0a, 0x0e, 0x45, 0x76, 0x65, 0x6e, 0x74, 0x54, 0x79, 0x70,
+	0x65, 0x55, 0x6e, 0x73, 0x65, 0x74, 0x10, 0x00, 0x12, 0x18, 0x0a, 0x14, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x46, 0x61, 0x69, 0x6c, 0x65, 0x64,
+	0x10, 0x01, 0x12, 0x19, 0x0a, 0x15, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x49, 0x6e, 0x73, 0x74,
+	0x61, 0x6e, 0x63, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x6f, 0x75, 0x74, 0x10, 0x02, 0x12, 0x16, 0x0a,
+	0x12, 0x53, 0x79, 0x6e, 0x63, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x46, 0x61, 0x69,
+	0x6c, 0x65, 0x64, 0x10, 0x03, 0x12, 0x17, 0x0a, 0x13, 0x53, 0x79, 0x6e, 0x63, 0x49, 0x6e, 0x73,
+	0x74, 0x61, 0x6e, 0x63, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x6f, 0x75, 0x74, 0x10, 0x04, 0x42, 0x67,
+	0x0a, 0x22, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e,
+	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x42, 0x0c, 0x50, 0x42, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x41, 0x6c, 0x65,
+	0x72, 0x74, 0x50, 0x00, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f,
+	0x70, 0x62, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -781,34 +1047,40 @@ func file_proto_types_model_alert_proto_rawDescGZIP() []byte {
 	return file_proto_types_model_alert_proto_rawDescData
 }
 
-var file_proto_types_model_alert_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_proto_types_model_alert_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_proto_types_model_alert_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
+var file_proto_types_model_alert_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_types_model_alert_proto_goTypes = []interface{}{
 	(AlertPolicy_Status)(0),              // 0: model.AlertPolicy.Status
 	(AlertPolicy_TriggerRule)(0),         // 1: model.AlertPolicy.TriggerRule
 	(AlertPolicy_TriggerAction)(0),       // 2: model.AlertPolicy.TriggerAction
 	(AlertPolicy_MonitorObject)(0),       // 3: model.AlertPolicy.MonitorObject
-	(*AlertPolicy)(nil),                  // 4: model.AlertPolicy
-	(*AlertPolicyMapping)(nil),           // 5: model.AlertPolicyMapping
-	(*AlertPolicy_MonitorStreamJob)(nil), // 6: model.AlertPolicy.MonitorStreamJob
-	(*AlertPolicy_MonitorSyncJob)(nil),   // 7: model.AlertPolicy.MonitorSyncJob
-	(*AlertPolicy_MonitorItem)(nil),      // 8: model.AlertPolicy.MonitorItem
-	(*Notification)(nil),                 // 9: model.Notification
+	(AlertLog_Status)(0),                 // 4: model.AlertLog.Status
+	(AlertLog_EventType)(0),              // 5: model.AlertLog.EventType
+	(*AlertPolicy)(nil),                  // 6: model.AlertPolicy
+	(*AlertPolicyMapping)(nil),           // 7: model.AlertPolicyMapping
+	(*AlertLog)(nil),                     // 8: model.AlertLog
+	(*AlertPolicy_MonitorStreamJob)(nil), // 9: model.AlertPolicy.MonitorStreamJob
+	(*AlertPolicy_MonitorSyncJob)(nil),   // 10: model.AlertPolicy.MonitorSyncJob
+	(*AlertPolicy_MonitorItem)(nil),      // 11: model.AlertPolicy.MonitorItem
+	(*Notification)(nil),                 // 12: model.Notification
 }
 var file_proto_types_model_alert_proto_depIdxs = []int32{
-	0, // 0: model.AlertPolicy.status:type_name -> model.AlertPolicy.Status
-	3, // 1: model.AlertPolicy.monitor_object:type_name -> model.AlertPolicy.MonitorObject
-	8, // 2: model.AlertPolicy.monitor_item:type_name -> model.AlertPolicy.MonitorItem
-	1, // 3: model.AlertPolicy.trigger_rule:type_name -> model.AlertPolicy.TriggerRule
-	2, // 4: model.AlertPolicy.trigger_action:type_name -> model.AlertPolicy.TriggerAction
-	9, // 5: model.AlertPolicy.notifications:type_name -> model.Notification
-	6, // 6: model.AlertPolicy.MonitorItem.stream_job:type_name -> model.AlertPolicy.MonitorStreamJob
-	7, // 7: model.AlertPolicy.MonitorItem.sync_job:type_name -> model.AlertPolicy.MonitorSyncJob
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	0,  // 0: model.AlertPolicy.status:type_name -> model.AlertPolicy.Status
+	3,  // 1: model.AlertPolicy.monitor_object:type_name -> model.AlertPolicy.MonitorObject
+	11, // 2: model.AlertPolicy.monitor_item:type_name -> model.AlertPolicy.MonitorItem
+	1,  // 3: model.AlertPolicy.trigger_rule:type_name -> model.AlertPolicy.TriggerRule
+	2,  // 4: model.AlertPolicy.trigger_action:type_name -> model.AlertPolicy.TriggerAction
+	12, // 5: model.AlertPolicy.notifications:type_name -> model.Notification
+	4,  // 6: model.AlertLog.status:type_name -> model.AlertLog.Status
+	3,  // 7: model.AlertLog.monitor_object:type_name -> model.AlertPolicy.MonitorObject
+	5,  // 8: model.AlertLog.event_type:type_name -> model.AlertLog.EventType
+	9,  // 9: model.AlertPolicy.MonitorItem.stream_job:type_name -> model.AlertPolicy.MonitorStreamJob
+	10, // 10: model.AlertPolicy.MonitorItem.sync_job:type_name -> model.AlertPolicy.MonitorSyncJob
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_model_alert_proto_init() }
@@ -843,7 +1115,7 @@ func file_proto_types_model_alert_proto_init() {
 			}
 		}
 		file_proto_types_model_alert_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlertPolicy_MonitorStreamJob); i {
+			switch v := v.(*AlertLog); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -855,7 +1127,7 @@ func file_proto_types_model_alert_proto_init() {
 			}
 		}
 		file_proto_types_model_alert_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AlertPolicy_MonitorSyncJob); i {
+			switch v := v.(*AlertPolicy_MonitorStreamJob); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -867,6 +1139,18 @@ func file_proto_types_model_alert_proto_init() {
 			}
 		}
 		file_proto_types_model_alert_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AlertPolicy_MonitorSyncJob); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_model_alert_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AlertPolicy_MonitorItem); i {
 			case 0:
 				return &v.state
@@ -884,8 +1168,8 @@ func file_proto_types_model_alert_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_model_alert_proto_rawDesc,
-			NumEnums:      4,
-			NumMessages:   5,
+			NumEnums:      6,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

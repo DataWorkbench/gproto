@@ -124,25 +124,76 @@ public final class PBMongodb {
 
     /**
      * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
+     * condition type
+     * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>string filter = 5;</code>
-     * @return The filter.
+     * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+     * @return The enum numeric value on the wire for conditionType.
      */
-    java.lang.String getFilter();
+    int getConditionTypeValue();
     /**
      * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
+     * condition type
+     * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>string filter = 5;</code>
-     * @return The bytes for filter.
+     * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+     * @return The conditionType.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType();
+
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     * @return Whether the visualization field is set.
+     */
+    boolean hasVisualization();
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     * @return The visualization.
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition getVisualization();
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder getVisualizationOrBuilder();
+
+    /**
+     * <pre>
+     * express condition
+     * &#64;inject_tag: json:"express"
+     * </pre>
+     *
+     * <code>string express = 7;</code>
+     * @return The express.
+     */
+    java.lang.String getExpress();
+    /**
+     * <pre>
+     * express condition
+     * &#64;inject_tag: json:"express"
+     * </pre>
+     *
+     * <code>string express = 7;</code>
+     * @return The bytes for express.
      */
     com.google.protobuf.ByteString
-        getFilterBytes();
+        getExpressBytes();
   }
   /**
    * Protobuf type {@code model.MongodbSource}
@@ -160,7 +211,8 @@ public final class PBMongodb {
       column_ = java.util.Collections.emptyList();
       database_ = "";
       collectionName_ = "";
-      filter_ = "";
+      conditionType_ = 0;
+      express_ = "";
     }
 
     @java.lang.Override
@@ -220,10 +272,29 @@ public final class PBMongodb {
               fetchSize_ = input.readInt32();
               break;
             }
-            case 42: {
+            case 40: {
+              int rawValue = input.readEnum();
+
+              conditionType_ = rawValue;
+              break;
+            }
+            case 50: {
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder subBuilder = null;
+              if (visualization_ != null) {
+                subBuilder = visualization_.toBuilder();
+              }
+              visualization_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(visualization_);
+                visualization_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              filter_ = s;
+              express_ = s;
               break;
             }
             default: {
@@ -438,48 +509,118 @@ public final class PBMongodb {
       return fetchSize_;
     }
 
-    public static final int FILTER_FIELD_NUMBER = 5;
-    private volatile java.lang.Object filter_;
+    public static final int CONDITION_TYPE_FIELD_NUMBER = 5;
+    private int conditionType_;
     /**
      * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
+     * condition type
+     * &#64;inject_tag: json:"condition_type"
      * </pre>
      *
-     * <code>string filter = 5;</code>
-     * @return The filter.
+     * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+     * @return The enum numeric value on the wire for conditionType.
+     */
+    @java.lang.Override public int getConditionTypeValue() {
+      return conditionType_;
+    }
+    /**
+     * <pre>
+     * condition type
+     * &#64;inject_tag: json:"condition_type"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+     * @return The conditionType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.valueOf(conditionType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.UNRECOGNIZED : result;
+    }
+
+    public static final int VISUALIZATION_FIELD_NUMBER = 6;
+    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition visualization_;
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     * @return Whether the visualization field is set.
      */
     @java.lang.Override
-    public java.lang.String getFilter() {
-      java.lang.Object ref = filter_;
+    public boolean hasVisualization() {
+      return visualization_ != null;
+    }
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     * @return The visualization.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition getVisualization() {
+      return visualization_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.getDefaultInstance() : visualization_;
+    }
+    /**
+     * <pre>
+     * visualization condition
+     * &#64;inject_tag: json:"visualization"
+     * </pre>
+     *
+     * <code>.model.Condition visualization = 6;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder getVisualizationOrBuilder() {
+      return getVisualization();
+    }
+
+    public static final int EXPRESS_FIELD_NUMBER = 7;
+    private volatile java.lang.Object express_;
+    /**
+     * <pre>
+     * express condition
+     * &#64;inject_tag: json:"express"
+     * </pre>
+     *
+     * <code>string express = 7;</code>
+     * @return The express.
+     */
+    @java.lang.Override
+    public java.lang.String getExpress() {
+      java.lang.Object ref = express_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        filter_ = s;
+        express_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * filter
-     * &#64;inject_tag: json:"filter" 
+     * express condition
+     * &#64;inject_tag: json:"express"
      * </pre>
      *
-     * <code>string filter = 5;</code>
-     * @return The bytes for filter.
+     * <code>string express = 7;</code>
+     * @return The bytes for express.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getFilterBytes() {
-      java.lang.Object ref = filter_;
+        getExpressBytes() {
+      java.lang.Object ref = express_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        filter_ = b;
+        express_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -512,8 +653,14 @@ public final class PBMongodb {
       if (fetchSize_ != 0) {
         output.writeInt32(4, fetchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
+      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.ConditionTypeUnset.getNumber()) {
+        output.writeEnum(5, conditionType_);
+      }
+      if (visualization_ != null) {
+        output.writeMessage(6, getVisualization());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(express_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, express_);
       }
       unknownFields.writeTo(output);
     }
@@ -538,8 +685,16 @@ public final class PBMongodb {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, fetchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+      if (conditionType_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.ConditionTypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, conditionType_);
+      }
+      if (visualization_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getVisualization());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(express_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, express_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -564,8 +719,14 @@ public final class PBMongodb {
           .equals(other.getCollectionName())) return false;
       if (getFetchSize()
           != other.getFetchSize()) return false;
-      if (!getFilter()
-          .equals(other.getFilter())) return false;
+      if (conditionType_ != other.conditionType_) return false;
+      if (hasVisualization() != other.hasVisualization()) return false;
+      if (hasVisualization()) {
+        if (!getVisualization()
+            .equals(other.getVisualization())) return false;
+      }
+      if (!getExpress()
+          .equals(other.getExpress())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -587,8 +748,14 @@ public final class PBMongodb {
       hash = (53 * hash) + getCollectionName().hashCode();
       hash = (37 * hash) + FETCH_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getFetchSize();
-      hash = (37 * hash) + FILTER_FIELD_NUMBER;
-      hash = (53 * hash) + getFilter().hashCode();
+      hash = (37 * hash) + CONDITION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + conditionType_;
+      if (hasVisualization()) {
+        hash = (37 * hash) + VISUALIZATION_FIELD_NUMBER;
+        hash = (53 * hash) + getVisualization().hashCode();
+      }
+      hash = (37 * hash) + EXPRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getExpress().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -735,7 +902,15 @@ public final class PBMongodb {
 
         fetchSize_ = 0;
 
-        filter_ = "";
+        conditionType_ = 0;
+
+        if (visualizationBuilder_ == null) {
+          visualization_ = null;
+        } else {
+          visualization_ = null;
+          visualizationBuilder_ = null;
+        }
+        express_ = "";
 
         return this;
       }
@@ -776,7 +951,13 @@ public final class PBMongodb {
         result.database_ = database_;
         result.collectionName_ = collectionName_;
         result.fetchSize_ = fetchSize_;
-        result.filter_ = filter_;
+        result.conditionType_ = conditionType_;
+        if (visualizationBuilder_ == null) {
+          result.visualization_ = visualization_;
+        } else {
+          result.visualization_ = visualizationBuilder_.build();
+        }
+        result.express_ = express_;
         onBuilt();
         return result;
       }
@@ -862,8 +1043,14 @@ public final class PBMongodb {
         if (other.getFetchSize() != 0) {
           setFetchSize(other.getFetchSize());
         }
-        if (!other.getFilter().isEmpty()) {
-          filter_ = other.filter_;
+        if (other.conditionType_ != 0) {
+          setConditionTypeValue(other.getConditionTypeValue());
+        }
+        if (other.hasVisualization()) {
+          mergeVisualization(other.getVisualization());
+        }
+        if (!other.getExpress().isEmpty()) {
+          express_ = other.express_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1474,23 +1661,266 @@ public final class PBMongodb {
         return this;
       }
 
-      private java.lang.Object filter_ = "";
+      private int conditionType_ = 0;
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * condition type
+       * &#64;inject_tag: json:"condition_type"
        * </pre>
        *
-       * <code>string filter = 5;</code>
-       * @return The filter.
+       * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+       * @return The enum numeric value on the wire for conditionType.
        */
-      public java.lang.String getFilter() {
-        java.lang.Object ref = filter_;
+      @java.lang.Override public int getConditionTypeValue() {
+        return conditionType_;
+      }
+      /**
+       * <pre>
+       * condition type
+       * &#64;inject_tag: json:"condition_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+       * @param value The enum numeric value on the wire for conditionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConditionTypeValue(int value) {
+        
+        conditionType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * condition type
+       * &#64;inject_tag: json:"condition_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+       * @return The conditionType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType getConditionType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.valueOf(conditionType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * condition type
+       * &#64;inject_tag: json:"condition_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+       * @param value The conditionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConditionType(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConditionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        conditionType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * condition type
+       * &#64;inject_tag: json:"condition_type"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConditionType condition_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConditionType() {
+        
+        conditionType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition visualization_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder> visualizationBuilder_;
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       * @return Whether the visualization field is set.
+       */
+      public boolean hasVisualization() {
+        return visualizationBuilder_ != null || visualization_ != null;
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       * @return The visualization.
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition getVisualization() {
+        if (visualizationBuilder_ == null) {
+          return visualization_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.getDefaultInstance() : visualization_;
+        } else {
+          return visualizationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public Builder setVisualization(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition value) {
+        if (visualizationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          visualization_ = value;
+          onChanged();
+        } else {
+          visualizationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public Builder setVisualization(
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder builderForValue) {
+        if (visualizationBuilder_ == null) {
+          visualization_ = builderForValue.build();
+          onChanged();
+        } else {
+          visualizationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public Builder mergeVisualization(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition value) {
+        if (visualizationBuilder_ == null) {
+          if (visualization_ != null) {
+            visualization_ =
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.newBuilder(visualization_).mergeFrom(value).buildPartial();
+          } else {
+            visualization_ = value;
+          }
+          onChanged();
+        } else {
+          visualizationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public Builder clearVisualization() {
+        if (visualizationBuilder_ == null) {
+          visualization_ = null;
+          onChanged();
+        } else {
+          visualization_ = null;
+          visualizationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder getVisualizationBuilder() {
+        
+        onChanged();
+        return getVisualizationFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder getVisualizationOrBuilder() {
+        if (visualizationBuilder_ != null) {
+          return visualizationBuilder_.getMessageOrBuilder();
+        } else {
+          return visualization_ == null ?
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.getDefaultInstance() : visualization_;
+        }
+      }
+      /**
+       * <pre>
+       * visualization condition
+       * &#64;inject_tag: json:"visualization"
+       * </pre>
+       *
+       * <code>.model.Condition visualization = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder> 
+          getVisualizationFieldBuilder() {
+        if (visualizationBuilder_ == null) {
+          visualizationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.Condition.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.ConditionOrBuilder>(
+                  getVisualization(),
+                  getParentForChildren(),
+                  isClean());
+          visualization_ = null;
+        }
+        return visualizationBuilder_;
+      }
+
+      private java.lang.Object express_ = "";
+      /**
+       * <pre>
+       * express condition
+       * &#64;inject_tag: json:"express"
+       * </pre>
+       *
+       * <code>string express = 7;</code>
+       * @return The express.
+       */
+      public java.lang.String getExpress() {
+        java.lang.Object ref = express_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          filter_ = s;
+          express_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1498,21 +1928,21 @@ public final class PBMongodb {
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * express condition
+       * &#64;inject_tag: json:"express"
        * </pre>
        *
-       * <code>string filter = 5;</code>
-       * @return The bytes for filter.
+       * <code>string express = 7;</code>
+       * @return The bytes for express.
        */
       public com.google.protobuf.ByteString
-          getFilterBytes() {
-        java.lang.Object ref = filter_;
+          getExpressBytes() {
+        java.lang.Object ref = express_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          filter_ = b;
+          express_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1520,57 +1950,57 @@ public final class PBMongodb {
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * express condition
+       * &#64;inject_tag: json:"express"
        * </pre>
        *
-       * <code>string filter = 5;</code>
-       * @param value The filter to set.
+       * <code>string express = 7;</code>
+       * @param value The express to set.
        * @return This builder for chaining.
        */
-      public Builder setFilter(
+      public Builder setExpress(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        filter_ = value;
+        express_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * express condition
+       * &#64;inject_tag: json:"express"
        * </pre>
        *
-       * <code>string filter = 5;</code>
+       * <code>string express = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFilter() {
+      public Builder clearExpress() {
         
-        filter_ = getDefaultInstance().getFilter();
+        express_ = getDefaultInstance().getExpress();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * filter
-       * &#64;inject_tag: json:"filter" 
+       * express condition
+       * &#64;inject_tag: json:"express"
        * </pre>
        *
-       * <code>string filter = 5;</code>
-       * @param value The bytes for filter to set.
+       * <code>string express = 7;</code>
+       * @param value The bytes for express to set.
        * @return This builder for chaining.
        */
-      public Builder setFilterBytes(
+      public Builder setExpressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        filter_ = value;
+        express_ = value;
         onChanged();
         return this;
       }
@@ -3633,28 +4063,34 @@ public final class PBMongodb {
   static {
     java.lang.String[] descriptorData = {
       "\n\'proto/types/model/syncjob/mongodb.prot" +
-      "o\022\005model\032&proto/types/model/syncjob/colu" +
-      "mn.proto\032/github.com/yu31/protoc-plugin/" +
-      "proto/gosql.proto\"\205\001\n\rMongodbSource\022\035\n\006c" +
-      "olumn\030\001 \003(\0132\r.model.Column\022\020\n\010database\030\002" +
-      " \001(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_s" +
-      "ize\030\004 \001(\005\022\016\n\006filter\030\005 \001(\t:\006\312\262\004\002\n\000\"\242\002\n\rMo" +
-      "ngodbTarget\022\035\n\006column\030\001 \003(\0132\r.model.Colu" +
-      "mn\022\020\n\010database\030\002 \001(\t\022\027\n\017collection_name\030" +
-      "\003 \001(\t\022\023\n\013replace_key\030\004 \001(\t\0222\n\nwrite_mode" +
-      "\030\005 \001(\0162\036.model.MongodbTarget.WriteMode\022\022" +
-      "\n\nbatch_size\030\006 \001(\005\022\034\n\024flush_interval_mil" +
-      "ls\030\007 \001(\005\"D\n\tWriteMode\022\022\n\016WriteModeUnset\020" +
-      "\000\022\n\n\006insert\020\001\022\013\n\007replace\020\002\022\n\n\006update\020\003:\006" +
-      "\312\262\004\002\n\000Bx\n,com.dataomnis.gproto.types.pbm" +
-      "odel.pbsyncjobB\tPBMongodbP\000Z;github.com/" +
-      "DataWorkbench/gproto/xgo/types/pbmodel/p" +
-      "bsyncjobb\006proto3"
+      "o\022\005model\032(proto/types/model/syncjob/base" +
+      "enum.proto\032&proto/types/model/syncjob/co" +
+      "lumn.proto\032\"proto/types/model/syncjob/db" +
+      ".proto\032/github.com/yu31/protoc-plugin/pr" +
+      "oto/gosql.proto\"\346\001\n\rMongodbSource\022\035\n\006col" +
+      "umn\030\001 \003(\0132\r.model.Column\022\020\n\010database\030\002 \001" +
+      "(\t\022\027\n\017collection_name\030\003 \001(\t\022\022\n\nfetch_siz" +
+      "e\030\004 \001(\005\0225\n\016condition_type\030\005 \001(\0162\035.model." +
+      "BaseEnum.ConditionType\022\'\n\rvisualization\030" +
+      "\006 \001(\0132\020.model.Condition\022\017\n\007express\030\007 \001(\t" +
+      ":\006\312\262\004\002\n\000\"\242\002\n\rMongodbTarget\022\035\n\006column\030\001 \003" +
+      "(\0132\r.model.Column\022\020\n\010database\030\002 \001(\t\022\027\n\017c" +
+      "ollection_name\030\003 \001(\t\022\023\n\013replace_key\030\004 \001(" +
+      "\t\0222\n\nwrite_mode\030\005 \001(\0162\036.model.MongodbTar" +
+      "get.WriteMode\022\022\n\nbatch_size\030\006 \001(\005\022\034\n\024flu" +
+      "sh_interval_mills\030\007 \001(\005\"D\n\tWriteMode\022\022\n\016" +
+      "WriteModeUnset\020\000\022\n\n\006insert\020\001\022\013\n\007replace\020" +
+      "\002\022\n\n\006update\020\003:\006\312\262\004\002\n\000Bx\n,com.dataomnis.g" +
+      "proto.types.pbmodel.pbsyncjobB\tPBMongodb" +
+      "P\000Z;github.com/DataWorkbench/gproto/xgo/" +
+      "types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
     internal_static_model_MongodbSource_descriptor =
@@ -3662,7 +4098,7 @@ public final class PBMongodb {
     internal_static_model_MongodbSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_MongodbSource_descriptor,
-        new java.lang.String[] { "Column", "Database", "CollectionName", "FetchSize", "Filter", });
+        new java.lang.String[] { "Column", "Database", "CollectionName", "FetchSize", "ConditionType", "Visualization", "Express", });
     internal_static_model_MongodbTarget_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_MongodbTarget_fieldAccessorTable = new
@@ -3674,7 +4110,9 @@ public final class PBMongodb {
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBRelationaldb.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }
 

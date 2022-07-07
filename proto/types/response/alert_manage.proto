@@ -64,3 +64,14 @@ message ListJobsByAlertPolicy {
   // @inject_tag: json:"total"
   int64 total = 4;
 }
+
+message ListAlertLogs {
+  // @inject_tag: json:"infos"
+  repeated model.AlertLog infos = 1;
+
+  // @inject_tag: json:"has_more"
+  bool has_more = 2;
+
+  // @inject_tag: json:"total"
+  int64 total = 3;
+}

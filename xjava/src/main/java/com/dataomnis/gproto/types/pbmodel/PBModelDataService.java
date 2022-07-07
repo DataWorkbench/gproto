@@ -10000,6 +10000,25 @@ public final class PBModelDataService {
      * @return The paramPosition.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.ParameterPosition getParamPosition();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fieldCategory.
+     */
+    int getFieldCategoryValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+     * @return The fieldCategory.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory getFieldCategory();
   }
   /**
    * Protobuf type {@code model.RequestParameter}
@@ -10022,6 +10041,7 @@ public final class PBModelDataService {
       paramName_ = "";
       paramOperator_ = 0;
       paramPosition_ = 0;
+      fieldCategory_ = 0;
     }
 
     @java.lang.Override
@@ -10105,6 +10125,12 @@ public final class PBModelDataService {
               int rawValue = input.readEnum();
 
               paramPosition_ = rawValue;
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              fieldCategory_ = rawValue;
               break;
             }
             default: {
@@ -10436,6 +10462,123 @@ public final class PBModelDataService {
       // @@protoc_insertion_point(enum_scope:model.RequestParameter.ParameterPosition)
     }
 
+    /**
+     * Protobuf enum {@code model.RequestParameter.FieldCategory}
+     */
+    public enum FieldCategory
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CategoryUnset = 0;</code>
+       */
+      CategoryUnset(0),
+      /**
+       * <code>PageConfig = 1;</code>
+       */
+      PageConfig(1),
+      /**
+       * <code>DataBaseColumn = 2;</code>
+       */
+      DataBaseColumn(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CategoryUnset = 0;</code>
+       */
+      public static final int CategoryUnset_VALUE = 0;
+      /**
+       * <code>PageConfig = 1;</code>
+       */
+      public static final int PageConfig_VALUE = 1;
+      /**
+       * <code>DataBaseColumn = 2;</code>
+       */
+      public static final int DataBaseColumn_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FieldCategory valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FieldCategory forNumber(int value) {
+        switch (value) {
+          case 0: return CategoryUnset;
+          case 1: return PageConfig;
+          case 2: return DataBaseColumn;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FieldCategory>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          FieldCategory> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FieldCategory>() {
+              public FieldCategory findValueByNumber(int number) {
+                return FieldCategory.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final FieldCategory[] VALUES = values();
+
+      public static FieldCategory valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FieldCategory(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.RequestParameter.FieldCategory)
+    }
+
     public static final int COLUMN_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object columnName_;
     /**
@@ -10762,6 +10905,33 @@ public final class PBModelDataService {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.ParameterPosition.UNRECOGNIZED : result;
     }
 
+    public static final int FIELD_CATEGORY_FIELD_NUMBER = 10;
+    private int fieldCategory_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fieldCategory.
+     */
+    @java.lang.Override public int getFieldCategoryValue() {
+      return fieldCategory_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+     * @return The fieldCategory.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory getFieldCategory() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.valueOf(fieldCategory_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10803,6 +10973,9 @@ public final class PBModelDataService {
       if (paramPosition_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.ParameterPosition.PositionUnset.getNumber()) {
         output.writeEnum(9, paramPosition_);
       }
+      if (fieldCategory_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.CategoryUnset.getNumber()) {
+        output.writeEnum(10, fieldCategory_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10843,6 +11016,10 @@ public final class PBModelDataService {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, paramPosition_);
       }
+      if (fieldCategory_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.CategoryUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, fieldCategory_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10873,6 +11050,7 @@ public final class PBModelDataService {
           .equals(other.getParamName())) return false;
       if (paramOperator_ != other.paramOperator_) return false;
       if (paramPosition_ != other.paramPosition_) return false;
+      if (fieldCategory_ != other.fieldCategory_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10903,6 +11081,8 @@ public final class PBModelDataService {
       hash = (53 * hash) + paramOperator_;
       hash = (37 * hash) + PARAM_POSITION_FIELD_NUMBER;
       hash = (53 * hash) + paramPosition_;
+      hash = (37 * hash) + FIELD_CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + fieldCategory_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11054,6 +11234,8 @@ public final class PBModelDataService {
 
         paramPosition_ = 0;
 
+        fieldCategory_ = 0;
+
         return this;
       }
 
@@ -11089,6 +11271,7 @@ public final class PBModelDataService {
         result.paramName_ = paramName_;
         result.paramOperator_ = paramOperator_;
         result.paramPosition_ = paramPosition_;
+        result.fieldCategory_ = fieldCategory_;
         onBuilt();
         return result;
       }
@@ -11168,6 +11351,9 @@ public final class PBModelDataService {
         }
         if (other.paramPosition_ != 0) {
           setParamPositionValue(other.getParamPositionValue());
+        }
+        if (other.fieldCategory_ != 0) {
+          setFieldCategoryValue(other.getFieldCategoryValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11939,6 +12125,80 @@ public final class PBModelDataService {
       public Builder clearParamPosition() {
         
         paramPosition_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fieldCategory_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for fieldCategory.
+       */
+      @java.lang.Override public int getFieldCategoryValue() {
+        return fieldCategory_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for fieldCategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldCategoryValue(int value) {
+        
+        fieldCategory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+       * @return The fieldCategory.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory getFieldCategory() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.valueOf(fieldCategory_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+       * @param value The fieldCategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldCategory(com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameter.FieldCategory value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        fieldCategory_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.RequestParameter.FieldCategory field_category = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldCategory() {
+        
+        fieldCategory_ = 0;
         onChanged();
         return this;
       }
@@ -13051,6 +13311,25 @@ public final class PBModelDataService {
      * @return The orderMode.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.OrderMode getOrderMode();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fieldCategory.
+     */
+    int getFieldCategoryValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+     * @return The fieldCategory.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory getFieldCategory();
   }
   /**
    * Protobuf type {@code model.ResponseParameter}
@@ -13072,6 +13351,7 @@ public final class PBModelDataService {
       paramDescription_ = "";
       paramName_ = "";
       orderMode_ = 0;
+      fieldCategory_ = 0;
     }
 
     @java.lang.Override
@@ -13149,6 +13429,12 @@ public final class PBModelDataService {
               int rawValue = input.readEnum();
 
               orderMode_ = rawValue;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              fieldCategory_ = rawValue;
               break;
             }
             default: {
@@ -13298,6 +13584,123 @@ public final class PBModelDataService {
       }
 
       // @@protoc_insertion_point(enum_scope:model.ResponseParameter.OrderMode)
+    }
+
+    /**
+     * Protobuf enum {@code model.ResponseParameter.FieldCategory}
+     */
+    public enum FieldCategory
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CategoryUnset = 0;</code>
+       */
+      CategoryUnset(0),
+      /**
+       * <code>PageConfig = 1;</code>
+       */
+      PageConfig(1),
+      /**
+       * <code>DataBaseColumn = 2;</code>
+       */
+      DataBaseColumn(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CategoryUnset = 0;</code>
+       */
+      public static final int CategoryUnset_VALUE = 0;
+      /**
+       * <code>PageConfig = 1;</code>
+       */
+      public static final int PageConfig_VALUE = 1;
+      /**
+       * <code>DataBaseColumn = 2;</code>
+       */
+      public static final int DataBaseColumn_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FieldCategory valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FieldCategory forNumber(int value) {
+        switch (value) {
+          case 0: return CategoryUnset;
+          case 1: return PageConfig;
+          case 2: return DataBaseColumn;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FieldCategory>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          FieldCategory> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FieldCategory>() {
+              public FieldCategory findValueByNumber(int number) {
+                return FieldCategory.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final FieldCategory[] VALUES = values();
+
+      public static FieldCategory valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FieldCategory(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.ResponseParameter.FieldCategory)
     }
 
     public static final int COLUMN_NAME_FIELD_NUMBER = 1;
@@ -13599,6 +14002,33 @@ public final class PBModelDataService {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.OrderMode.UNRECOGNIZED : result;
     }
 
+    public static final int FIELD_CATEGORY_FIELD_NUMBER = 9;
+    private int fieldCategory_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for fieldCategory.
+     */
+    @java.lang.Override public int getFieldCategoryValue() {
+      return fieldCategory_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"field_category"
+     * </pre>
+     *
+     * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+     * @return The fieldCategory.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory getFieldCategory() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.valueOf(fieldCategory_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13637,6 +14067,9 @@ public final class PBModelDataService {
       if (orderMode_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.OrderMode.StatusUnset.getNumber()) {
         output.writeEnum(8, orderMode_);
       }
+      if (fieldCategory_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.CategoryUnset.getNumber()) {
+        output.writeEnum(9, fieldCategory_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -13673,6 +14106,10 @@ public final class PBModelDataService {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, orderMode_);
       }
+      if (fieldCategory_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.CategoryUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, fieldCategory_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -13702,6 +14139,7 @@ public final class PBModelDataService {
       if (getOrderNum()
           != other.getOrderNum()) return false;
       if (orderMode_ != other.orderMode_) return false;
+      if (fieldCategory_ != other.fieldCategory_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13730,6 +14168,8 @@ public final class PBModelDataService {
           getOrderNum());
       hash = (37 * hash) + ORDER_MODE_FIELD_NUMBER;
       hash = (53 * hash) + orderMode_;
+      hash = (37 * hash) + FIELD_CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + fieldCategory_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13879,6 +14319,8 @@ public final class PBModelDataService {
 
         orderMode_ = 0;
 
+        fieldCategory_ = 0;
+
         return this;
       }
 
@@ -13913,6 +14355,7 @@ public final class PBModelDataService {
         result.paramName_ = paramName_;
         result.orderNum_ = orderNum_;
         result.orderMode_ = orderMode_;
+        result.fieldCategory_ = fieldCategory_;
         onBuilt();
         return result;
       }
@@ -13989,6 +14432,9 @@ public final class PBModelDataService {
         }
         if (other.orderMode_ != 0) {
           setOrderModeValue(other.getOrderModeValue());
+        }
+        if (other.fieldCategory_ != 0) {
+          setFieldCategoryValue(other.getFieldCategoryValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14686,6 +15132,80 @@ public final class PBModelDataService {
       public Builder clearOrderMode() {
         
         orderMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fieldCategory_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for fieldCategory.
+       */
+      @java.lang.Override public int getFieldCategoryValue() {
+        return fieldCategory_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for fieldCategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldCategoryValue(int value) {
+        
+        fieldCategory_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+       * @return The fieldCategory.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory getFieldCategory() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.valueOf(fieldCategory_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+       * @param value The fieldCategory to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFieldCategory(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ResponseParameter.FieldCategory value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        fieldCategory_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"field_category"
+       * </pre>
+       *
+       * <code>.model.ResponseParameter.FieldCategory field_category = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFieldCategory() {
+        
+        fieldCategory_ = 0;
         onChanged();
         return this;
       }
@@ -20125,6 +20645,1864 @@ public final class PBModelDataService {
 
   }
 
+  public interface ApiConfigDataSourceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.ApiConfigDataSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type getType();
+  }
+  /**
+   * Protobuf type {@code model.ApiConfigDataSource}
+   */
+  public static final class ApiConfigDataSource extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.ApiConfigDataSource)
+      ApiConfigDataSourceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ApiConfigDataSource.newBuilder() to construct.
+    private ApiConfigDataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ApiConfigDataSource() {
+      id_ = "";
+      name_ = "";
+      type_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ApiConfigDataSource();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ApiConfigDataSource(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigDataSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigDataSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code model.ApiConfigDataSource.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>MySQL = 1;</code>
+       */
+      MySQL(1),
+      /**
+       * <code>PostgreSQL = 2;</code>
+       */
+      PostgreSQL(2),
+      /**
+       * <code>ClickHouse = 5;</code>
+       */
+      ClickHouse(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>MySQL = 1;</code>
+       */
+      public static final int MySQL_VALUE = 1;
+      /**
+       * <code>PostgreSQL = 2;</code>
+       */
+      public static final int PostgreSQL_VALUE = 2;
+      /**
+       * <code>ClickHouse = 5;</code>
+       */
+      public static final int ClickHouse_VALUE = 5;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return MySQL;
+          case 2: return PostgreSQL;
+          case 5: return ClickHouse;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.ApiConfigDataSource.Type)
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private int type_;
+    /**
+     * <pre>
+     * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+     * &#64;inject_tag: json:"type" gorm:"column:type;"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.TypeUnset.getNumber()) {
+        output.writeEnum(5, type_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (type_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, type_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource other = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (type_ != other.type_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.ApiConfigDataSource}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.ApiConfigDataSource)
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigDataSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigDataSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        name_ = "";
+
+        type_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigDataSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource result = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource(this);
+        result.id_ = id_;
+        result.name_ = name_;
+        result.type_ = type_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Source Type, 1-&gt;MySQL 2-&gt;PostgreSQL 5-&gt;ClickHouse
+       * &#64;inject_tag: json:"type" gorm:"column:type;"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource.Type type = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.ApiConfigDataSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.ApiConfigDataSource)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApiConfigDataSource>
+        PARSER = new com.google.protobuf.AbstractParser<ApiConfigDataSource>() {
+      @java.lang.Override
+      public ApiConfigDataSource parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ApiConfigDataSource(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApiConfigDataSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApiConfigDataSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ApiConfigServiceClusterOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.ApiConfigServiceCluster)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+  }
+  /**
+   * Protobuf type {@code model.ApiConfigServiceCluster}
+   */
+  public static final class ApiConfigServiceCluster extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.ApiConfigServiceCluster)
+      ApiConfigServiceClusterOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ApiConfigServiceCluster.newBuilder() to construct.
+    private ApiConfigServiceCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ApiConfigServiceCluster() {
+      id_ = "";
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ApiConfigServiceCluster();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ApiConfigServiceCluster(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigServiceCluster_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigServiceCluster_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"id" gorm:"column:id;"
+     * </pre>
+     *
+     * <code>string id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster other = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.ApiConfigServiceCluster}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.ApiConfigServiceCluster)
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigServiceCluster_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigServiceCluster_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.class, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        name_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.internal_static_model_ApiConfigServiceCluster_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster build() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster result = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster(this);
+        result.id_ = id_;
+        result.name_ = name_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"id" gorm:"column:id;"
+       * </pre>
+       *
+       * <code>string id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.ApiConfigServiceCluster)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.ApiConfigServiceCluster)
+    private static final com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApiConfigServiceCluster>
+        PARSER = new com.google.protobuf.AbstractParser<ApiConfigServiceCluster>() {
+      @java.lang.Override
+      public ApiConfigServiceCluster parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ApiConfigServiceCluster(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApiConfigServiceCluster> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApiConfigServiceCluster> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_DataServiceCluster_descriptor;
   private static final 
@@ -20170,6 +22548,16 @@ public final class PBModelDataService {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_ServiceDataSourceKind_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_ApiConfigDataSource_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_ApiConfigDataSource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_ApiConfigServiceCluster_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_ApiConfigServiceCluster_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20241,7 +22629,7 @@ public final class PBModelDataService {
       "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n" +
       "\007Enabled\020\002\"R\n\021RequestParameters\0225\n\016reque" +
       "st_params\030\026 \003(\0132\027.model.RequestParameter" +
-      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\244\005\n\020RequestParameter\022$\n\013c" +
+      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\272\006\n\020RequestParameter\022$\n\013c" +
       "olumn_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdef" +
       "ault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexamp" +
       "le_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_requ" +
@@ -20252,64 +22640,78 @@ public final class PBModelDataService {
       "aram_operator\030\010 \001(\0162).model.RequestParam" +
       "eter.ParameterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n" +
       "\016param_position\030\t \001(\0162).model.RequestPar" +
-      "ameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\"" +
-      "{\n\021ParameterOperator\022\021\n\rOperatorUnset\020\000\022" +
-      "\t\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan\020" +
-      "\003\022\014\n\010LessThan\020\004\022\010\n\004Like\020\005\022\t\n\005Const\020\006\022\006\n\002" +
-      "In\020\007\"O\n\021ParameterPosition\022\021\n\rPositionUns" +
-      "et\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010\n\004H" +
-      "ead\020\004:\006\312\262\004\002\n\000\"U\n\022ResponseParameters\0227\n\017r" +
-      "esponse_params\030\026 \003(\0132\030.model.ResponsePar" +
-      "ameterB\004\342\337\037\000:\006\312\262\004\002\n\000\"\254\003\n\021ResponseParamet" +
-      "er\022$\n\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@" +
-      "\022$\n\rdefault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$" +
-      "\n\rexample_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\t" +
-      "data_type\030\004 \001(\0162\030.model.ParameterDataTyp" +
-      "eB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\005 " +
-      "\001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017" +
-      "\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005" +
-      "\022\003\262\001\000\022C\n\norder_mode\030\010 \001(\0162\".model.Respon" +
-      "seParameter.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\"/\n\tOr" +
-      "derMode\022\017\n\013StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Des" +
-      "c\020\002:\006\312\262\004\002\n\000\"\367\t\n\nApiVersion\022 \n\nversion_id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022?\n\016publish_status\030\002" +
-      " \001(\0162\030.model.ApiVersion.StatusB\r\342\337\037\t\022\007\332\001" +
-      "\0040\001X\001\022#\n\006api_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ds" +
-      "a-\022%\n\010group_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg" +
-      "-\022\'\n\ncluster_id\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ds" +
-      "c-\022%\n\010space_id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022!\n\010api_name\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010" +
-      "api_path\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_" +
-      "mode\030\n \001(\0162\031.model.ApiVersion.ApiModeB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\013 \001(\tB\r\342" +
-      "\337\037\t\022\007\302\001\004\230\002\201\002\022=\n\tprotocols\030\014 \001(\0162\033.model." +
-      "ApiVersion.ProtocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016r" +
-      "equest_method\030\r \001(\0162\037.model.ApiVersion.R" +
-      "equestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_" +
-      "type\030\016 \001(\0162\036.model.ApiVersion.ResponseTy" +
-      "peB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\017 \001(\010B" +
-      "\004\342\337\037\000\022\037\n\007timeout\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*" +
-      "\n\rdatasource_id\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004so" +
-      "m-\022#\n\ntable_name\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022" +
-      "\036\n\006script\030\023 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007creat" +
-      "ed\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\0020\000\0226\n\016request_params\030\025 \001(\0132\030.mo" +
-      "del.RequestParametersB\004\342\337\037\000\0228\n\017response_" +
-      "params\030\026 \001(\0132\031.model.ResponseParametersB" +
-      "\004\342\337\037\000\"7\n\006Status\022\017\n\013StatusUnset\020\000\022\r\n\tPubl" +
-      "ished\020\001\022\r\n\tAbolished\020\002\"0\n\007ApiMode\022\r\n\tMod" +
-      "eUnset\020\000\022\n\n\006Wizard\020\001\022\n\n\006Script\020\002\"3\n\rRequ" +
-      "estMethod\022\017\n\013MethodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004P" +
-      "OST\020\002\"0\n\014ResponseType\022\r\n\tTypeUnset\020\000\022\010\n\004" +
-      "JSON\020\001\022\007\n\003XML\020\002\"D\n\tProtocols\022\021\n\rProtocol" +
-      "Unset\020\000\022\014\n\010HTTPOnly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003" +
-      "ALL\020\003\"3\n\025ServiceDataSourceKind\022\014\n\004Name\030\001" +
-      " \001(\t\022\014\n\004Type\030\002 \001(\003*P\n\021ParameterDataType\022" +
-      "\r\n\tTypeUnset\020\000\022\n\n\006String\020\001\022\007\n\003Int\020\002\022\n\n\006D" +
-      "ouble\020\003\022\013\n\007Boolean\020\004Bm\n\"com.dataomnis.gp" +
-      "roto.types.pbmodelB\022PBModelDataServiceP\000" +
-      "Z1github.com/DataWorkbench/gproto/xgo/ty" +
-      "pes/pbmodelb\006proto3"
+      "ameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "L\n\016field_category\030\n \001(\0162%.model.RequestP" +
+      "arameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"{\n" +
+      "\021ParameterOperator\022\021\n\rOperatorUnset\020\000\022\t\n" +
+      "\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan\020\003\022" +
+      "\014\n\010LessThan\020\004\022\010\n\004Like\020\005\022\t\n\005Const\020\006\022\006\n\002In" +
+      "\020\007\"O\n\021ParameterPosition\022\021\n\rPositionUnset" +
+      "\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010\n\004Hea" +
+      "d\020\004\"F\n\rFieldCategory\022\021\n\rCategoryUnset\020\000\022" +
+      "\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004" +
+      "\002\n\000\"U\n\022ResponseParameters\0227\n\017response_pa" +
+      "rams\030\026 \003(\0132\030.model.ResponseParameterB\004\342\337" +
+      "\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022$\n\013colu" +
+      "mn_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefaul" +
+      "t_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_" +
+      "value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030" +
+      "\004 \001(\0162\030.model.ParameterDataTypeB\r\342\337\037\t\022\007\332" +
+      "\001\0040\000X\001\022(\n\021param_description\030\005 \001(\tB\r\342\337\037\t\022" +
+      "\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000\022C\n\no" +
+      "rder_mode\030\010 \001(\0162\".model.ResponseParamete" +
+      "r.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field_catego" +
+      "ry\030\t \001(\0162&.model.ResponseParameter.Field" +
+      "CategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderMode\022\017\n\013" +
+      "StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"F\n\rFiel" +
+      "dCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nPageConf" +
+      "ig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"\367\t\n\nApi" +
+      "Version\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
+      "\020\022?\n\016publish_status\030\002 \001(\0162\030.model.ApiVer" +
+      "sion.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022#\n\006api_id\030\004 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id\030\005 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\006 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id\030\007 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030\010 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\tB\020\342\337\037" +
+      "\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.model." +
+      "ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api" +
+      "_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=\n\tpro" +
+      "tocols\030\014 \001(\0162\033.model.ApiVersion.Protocol" +
+      "sB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_method\030\r \001(\016" +
+      "2\037.model.ApiVersion.RequestMethodB\r\342\337\037\t\022" +
+      "\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036.model." +
+      "ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032" +
+      "\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\020 " +
+      "\001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\021 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\022 " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(\tB\016\342\337" +
+      "\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
+      "0\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\016requ" +
+      "est_params\030\025 \001(\0132\030.model.RequestParamete" +
+      "rsB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031.mode" +
+      "l.ResponseParametersB\004\342\337\037\000\"7\n\006Status\022\017\n\013" +
+      "StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbolishe" +
+      "d\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizard\020" +
+      "\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Method" +
+      "Unset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014ResponseTy" +
+      "pe\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D\n\t" +
+      "Protocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTPOnly" +
+      "\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025ServiceDat" +
+      "aSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 \001(\003\"" +
+      "\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB\t\342\337\037" +
+      "\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004type\030" +
+      "\005 \001(\0162\037.model.ApiConfigDataSource.TypeB\t" +
+      "\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005MySQ" +
+      "L\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"I\n\027A" +
+      "piConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t\342\337\037\005" +
+      "\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Parame" +
+      "terDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String\020\001\022\007" +
+      "\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"com." +
+      "dataomnis.gproto.types.pbmodelB\022PBModelD" +
+      "ataServiceP\000Z1github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20348,7 +22750,7 @@ public final class PBModelDataService {
     internal_static_model_RequestParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_RequestParameter_descriptor,
-        new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "IsRequired", "DataType", "ParamDescription", "ParamName", "ParamOperator", "ParamPosition", });
+        new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "IsRequired", "DataType", "ParamDescription", "ParamName", "ParamOperator", "ParamPosition", "FieldCategory", });
     internal_static_model_ResponseParameters_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_model_ResponseParameters_fieldAccessorTable = new
@@ -20360,7 +22762,7 @@ public final class PBModelDataService {
     internal_static_model_ResponseParameter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ResponseParameter_descriptor,
-        new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "DataType", "ParamDescription", "ParamName", "OrderNum", "OrderMode", });
+        new java.lang.String[] { "ColumnName", "DefaultValue", "ExampleValue", "DataType", "ParamDescription", "ParamName", "OrderNum", "OrderMode", "FieldCategory", });
     internal_static_model_ApiVersion_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_model_ApiVersion_fieldAccessorTable = new
@@ -20373,6 +22775,18 @@ public final class PBModelDataService {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ServiceDataSourceKind_descriptor,
         new java.lang.String[] { "Name", "Type", });
+    internal_static_model_ApiConfigDataSource_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_model_ApiConfigDataSource_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_ApiConfigDataSource_descriptor,
+        new java.lang.String[] { "Id", "Name", "Type", });
+    internal_static_model_ApiConfigServiceCluster_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_model_ApiConfigServiceCluster_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_ApiConfigServiceCluster_descriptor,
+        new java.lang.String[] { "Id", "Name", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

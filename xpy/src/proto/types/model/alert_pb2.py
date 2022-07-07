@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"com.dataomnis.gproto.types.pbmodelB\014PBModelAlertP\000Z1github.com/DataWorkbench/gproto/xgo/types/pbmodel',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dproto/types/model/alert.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/account.proto\"\xfa\t\n\x0b\x41lertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x38\n\x06status\x18\x05 \x01(\x0e\x32\x19.model.AlertPolicy.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x07 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x0ctrigger_rule\x18\x08 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\x0etrigger_action\x18\t \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\n \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12#\n\ncreated_by\x18\x0b \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12*\n\rnotifications\x18\x0e \x03(\x0b\x32\x13.model.Notification\x1ag\n\x10MonitorStreamJob\x12\x1b\n\x13instance_run_failed\x18\x01 \x01(\x08\x12\x1c\n\x14instance_run_timeout\x18\x02 \x01(\x08\x12\x18\n\x10instance_timeout\x18\x03 \x01(\x05\x1a\x65\n\x0eMonitorSyncJob\x12\x1b\n\x13instance_run_failed\x18\x01 \x01(\x08\x12\x1c\n\x14instance_run_timeout\x18\x02 \x01(\x08\x12\x18\n\x10instance_timeout\x18\x03 \x01(\x05\x1a\x83\x01\n\x0bMonitorItem\x12\x37\n\nstream_job\x18\x01 \x01(\x0b\x32#.model.AlertPolicy.MonitorStreamJob\x12\x33\n\x08sync_job\x18\x02 \x01(\x0b\x32!.model.AlertPolicy.MonitorSyncJob:\x06\xca\xb2\x04\x02\n\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x12\x0c\n\x08\x44isabled\x10\x03\";\n\x0bTriggerRule\x12\x14\n\x10TriggerRuleUnset\x10\x00\x12\x16\n\x12TriggerRuleAnyItem\x10\x01\"J\n\rTriggerAction\x12\x16\n\x12TriggerActionUnset\x10\x00\x12!\n\x1dTriggerActionSendNotification\x10\x01\"<\n\rMonitorObject\x12\x0f\n\x0bObjectUnset\x10\x00\x12\r\n\tStreamJob\x10\x01\x12\x0b\n\x07SyncJob\x10\x02\"\x80\x01\n\x12\x41lertPolicyMapping\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x06job_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x42g\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelAlertP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
+  serialized_pb=b'\n\x1dproto/types/model/alert.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\x1a\x1fproto/types/model/account.proto\"\xfa\t\n\x0b\x41lertPolicy\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1f\n\x02id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1e\n\x04name\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x90\x02\x02\x98\x02\x80\x01\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12\x38\n\x06status\x18\x05 \x01(\x0e\x32\x19.model.AlertPolicy.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x41\n\x0cmonitor_item\x18\x07 \x01(\x0b\x32\x1e.model.AlertPolicy.MonitorItemB\x0b\xe2\xdf\x1f\x07\x12\x05\xe2\x01\x02\x10\x01\x12\x43\n\x0ctrigger_rule\x18\x08 \x01(\x0e\x32\x1e.model.AlertPolicy.TriggerRuleB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\x0etrigger_action\x18\t \x01(\x0e\x32 .model.AlertPolicy.TriggerActionB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12%\n\x10notification_ids\x18\n \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12#\n\ncreated_by\x18\x0b \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12\x1c\n\x07\x63reated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12*\n\rnotifications\x18\x0e \x03(\x0b\x32\x13.model.Notification\x1ag\n\x10MonitorStreamJob\x12\x1b\n\x13instance_run_failed\x18\x01 \x01(\x08\x12\x1c\n\x14instance_run_timeout\x18\x02 \x01(\x08\x12\x18\n\x10instance_timeout\x18\x03 \x01(\x05\x1a\x65\n\x0eMonitorSyncJob\x12\x1b\n\x13instance_run_failed\x18\x01 \x01(\x08\x12\x1c\n\x14instance_run_timeout\x18\x02 \x01(\x08\x12\x18\n\x10instance_timeout\x18\x03 \x01(\x05\x1a\x83\x01\n\x0bMonitorItem\x12\x37\n\nstream_job\x18\x01 \x01(\x0b\x32#.model.AlertPolicy.MonitorStreamJob\x12\x33\n\x08sync_job\x18\x02 \x01(\x0b\x32!.model.AlertPolicy.MonitorSyncJob:\x06\xca\xb2\x04\x02\n\x00\"A\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\x12\x0c\n\x08\x44isabled\x10\x03\";\n\x0bTriggerRule\x12\x14\n\x10TriggerRuleUnset\x10\x00\x12\x16\n\x12TriggerRuleAnyItem\x10\x01\"J\n\rTriggerAction\x12\x16\n\x12TriggerActionUnset\x10\x00\x12!\n\x1dTriggerActionSendNotification\x10\x01\"<\n\rMonitorObject\x12\x0f\n\x0bObjectUnset\x10\x00\x12\r\n\tStreamJob\x10\x01\x12\x0b\n\x07SyncJob\x10\x02\"\x80\x01\n\x12\x41lertPolicyMapping\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x06job_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\"\xd0\x04\n\x08\x41lertLog\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08\x61lert_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x61lt-\x12\x1c\n\x06job_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12!\n\x0binstance_id\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x14\x12\x35\n\x06status\x18\x05 \x01(\x0e\x32\x16.model.AlertLog.StatusB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12G\n\x0emonitor_object\x18\x06 \x01(\x0e\x32 .model.AlertPolicy.MonitorObjectB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12<\n\nevent_type\x18\x07 \x01(\x0e\x32\x19.model.AlertLog.EventTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1c\n\x07\x63reated\x18\x0c \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\x12\x1c\n\x07updated\x18\r \x01(\x03\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02\x30\x00\"3\n\x06Status\x12\x0f\n\x0bStatusUnset\x10\x00\x12\x0b\n\x07\x44\x65leted\x10\x01\x12\x0b\n\x07\x45nabled\x10\x02\"\x85\x01\n\tEventType\x12\x12\n\x0e\x45ventTypeUnset\x10\x00\x12\x18\n\x14StreamInstanceFailed\x10\x01\x12\x19\n\x15StreamInstanceTimeout\x10\x02\x12\x16\n\x12SyncInstanceFailed\x10\x03\x12\x17\n\x13SyncInstanceTimeout\x10\x04\x42g\n\"com.dataomnis.gproto.types.pbmodelB\x0cPBModelAlertP\x00Z1github.com/DataWorkbench/gproto/xgo/types/pbmodelb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_account__pb2.DESCRIPTOR,])
 
@@ -142,6 +142,76 @@ _ALERTPOLICY_MONITOROBJECT = _descriptor.EnumDescriptor(
   serialized_end=1450,
 )
 _sym_db.RegisterEnumDescriptor(_ALERTPOLICY_MONITOROBJECT)
+
+_ALERTLOG_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='model.AlertLog.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='StatusUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Deleted', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Enabled', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1186,
+  serialized_end=1237,
+)
+_sym_db.RegisterEnumDescriptor(_ALERTLOG_STATUS)
+
+_ALERTLOG_EVENTTYPE = _descriptor.EnumDescriptor(
+  name='EventType',
+  full_name='model.AlertLog.EventType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='EventTypeUnset', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='StreamInstanceFailed', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='StreamInstanceTimeout', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SyncInstanceFailed', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SyncInstanceTimeout', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2043,
+  serialized_end=2176,
+)
+_sym_db.RegisterEnumDescriptor(_ALERTLOG_EVENTTYPE)
 
 
 _ALERTPOLICY_MONITORSTREAMJOB = _descriptor.Descriptor(
@@ -444,6 +514,96 @@ _ALERTPOLICYMAPPING = _descriptor.Descriptor(
   serialized_end=1581,
 )
 
+
+_ALERTLOG = _descriptor.Descriptor(
+  name='AlertLog',
+  full_name='model.AlertLog',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='model.AlertLog.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alert_id', full_name='model.AlertLog.alert_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='model.AlertLog.job_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='model.AlertLog.instance_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\360\001\024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='model.AlertLog.status', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitor_object', full_name='model.AlertLog.monitor_object', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='event_type', full_name='model.AlertLog.event_type', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created', full_name='model.AlertLog.created', index=7,
+      number=12, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='updated', full_name='model.AlertLog.updated', index=8,
+      number=13, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\007\022\005\262\001\0020\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _ALERTLOG_STATUS,
+    _ALERTLOG_EVENTTYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1584,
+  serialized_end=2176,
+)
+
 _ALERTPOLICY_MONITORSTREAMJOB.containing_type = _ALERTPOLICY
 _ALERTPOLICY_MONITORSYNCJOB.containing_type = _ALERTPOLICY
 _ALERTPOLICY_MONITORITEM.fields_by_name['stream_job'].message_type = _ALERTPOLICY_MONITORSTREAMJOB
@@ -459,8 +619,14 @@ _ALERTPOLICY_STATUS.containing_type = _ALERTPOLICY
 _ALERTPOLICY_TRIGGERRULE.containing_type = _ALERTPOLICY
 _ALERTPOLICY_TRIGGERACTION.containing_type = _ALERTPOLICY
 _ALERTPOLICY_MONITOROBJECT.containing_type = _ALERTPOLICY
+_ALERTLOG.fields_by_name['status'].enum_type = _ALERTLOG_STATUS
+_ALERTLOG.fields_by_name['monitor_object'].enum_type = _ALERTPOLICY_MONITOROBJECT
+_ALERTLOG.fields_by_name['event_type'].enum_type = _ALERTLOG_EVENTTYPE
+_ALERTLOG_STATUS.containing_type = _ALERTLOG
+_ALERTLOG_EVENTTYPE.containing_type = _ALERTLOG
 DESCRIPTOR.message_types_by_name['AlertPolicy'] = _ALERTPOLICY
 DESCRIPTOR.message_types_by_name['AlertPolicyMapping'] = _ALERTPOLICYMAPPING
+DESCRIPTOR.message_types_by_name['AlertLog'] = _ALERTLOG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AlertPolicy = _reflection.GeneratedProtocolMessageType('AlertPolicy', (_message.Message,), {
@@ -501,6 +667,13 @@ AlertPolicyMapping = _reflection.GeneratedProtocolMessageType('AlertPolicyMappin
   })
 _sym_db.RegisterMessage(AlertPolicyMapping)
 
+AlertLog = _reflection.GeneratedProtocolMessageType('AlertLog', (_message.Message,), {
+  'DESCRIPTOR' : _ALERTLOG,
+  '__module__' : 'proto.types.model.alert_pb2'
+  # @@protoc_insertion_point(class_scope:model.AlertLog)
+  })
+_sym_db.RegisterMessage(AlertLog)
+
 
 DESCRIPTOR._options = None
 _ALERTPOLICY_MONITORITEM._options = None
@@ -520,4 +693,13 @@ _ALERTPOLICY.fields_by_name['updated']._options = None
 _ALERTPOLICYMAPPING.fields_by_name['space_id']._options = None
 _ALERTPOLICYMAPPING.fields_by_name['alert_id']._options = None
 _ALERTPOLICYMAPPING.fields_by_name['job_id']._options = None
+_ALERTLOG.fields_by_name['space_id']._options = None
+_ALERTLOG.fields_by_name['alert_id']._options = None
+_ALERTLOG.fields_by_name['job_id']._options = None
+_ALERTLOG.fields_by_name['instance_id']._options = None
+_ALERTLOG.fields_by_name['status']._options = None
+_ALERTLOG.fields_by_name['monitor_object']._options = None
+_ALERTLOG.fields_by_name['event_type']._options = None
+_ALERTLOG.fields_by_name['created']._options = None
+_ALERTLOG.fields_by_name['updated']._options = None
 # @@protoc_insertion_point(module_scope)

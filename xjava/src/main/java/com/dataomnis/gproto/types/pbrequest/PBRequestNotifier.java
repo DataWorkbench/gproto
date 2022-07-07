@@ -20,26 +20,6 @@ public final class PBRequestNotifier {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"owner"
-     * </pre>
-     *
-     * <code>string owner = 1 [(.validator.field) = { ... }</code>
-     * @return The owner.
-     */
-    java.lang.String getOwner();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"owner"
-     * </pre>
-     *
-     * <code>string owner = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for owner.
-     */
-    com.google.protobuf.ByteString
-        getOwnerBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"nf_list_ids"
      * </pre>
      *
@@ -101,23 +81,23 @@ public final class PBRequestNotifier {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"short_content"
+     * &#64;inject_tag: json:"subject"
      * </pre>
      *
-     * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-     * @return The shortContent.
+     * <code>string subject = 4 [(.validator.field) = { ... }</code>
+     * @return The subject.
      */
-    java.lang.String getShortContent();
+    java.lang.String getSubject();
     /**
      * <pre>
-     * &#64;inject_tag: json:"short_content"
+     * &#64;inject_tag: json:"subject"
      * </pre>
      *
-     * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for shortContent.
+     * <code>string subject = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for subject.
      */
     com.google.protobuf.ByteString
-        getShortContentBytes();
+        getSubjectBytes();
 
     /**
      * <pre>
@@ -140,6 +120,11 @@ public final class PBRequestNotifier {
         getContentBytes();
   }
   /**
+   * <pre>
+   *  // &#64;inject_tag: json:"owner"
+   *  string owner = 1 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+   * </pre>
+   *
    * Protobuf type {@code request.SendNotification}
    */
   public static final class SendNotification extends
@@ -152,10 +137,9 @@ public final class PBRequestNotifier {
       super(builder);
     }
     private SendNotification() {
-      owner_ = "";
       nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       title_ = "";
-      shortContent_ = "";
+      subject_ = "";
       content_ = "";
     }
 
@@ -190,12 +174,6 @@ public final class PBRequestNotifier {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              owner_ = s;
-              break;
-            }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -214,7 +192,7 @@ public final class PBRequestNotifier {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              shortContent_ = s;
+              subject_ = s;
               break;
             }
             case 42: {
@@ -256,52 +234,6 @@ public final class PBRequestNotifier {
       return com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.internal_static_request_SendNotification_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification.class, com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification.Builder.class);
-    }
-
-    public static final int OWNER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object owner_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"owner"
-     * </pre>
-     *
-     * <code>string owner = 1 [(.validator.field) = { ... }</code>
-     * @return The owner.
-     */
-    @java.lang.Override
-    public java.lang.String getOwner() {
-      java.lang.Object ref = owner_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        owner_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"owner"
-     * </pre>
-     *
-     * <code>string owner = 1 [(.validator.field) = { ... }</code>
-     * @return The bytes for owner.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOwnerBytes() {
-      java.lang.Object ref = owner_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        owner_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int NF_LIST_IDS_FIELD_NUMBER = 2;
@@ -401,46 +333,46 @@ public final class PBRequestNotifier {
       }
     }
 
-    public static final int SHORT_CONTENT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object shortContent_;
+    public static final int SUBJECT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object subject_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"short_content"
+     * &#64;inject_tag: json:"subject"
      * </pre>
      *
-     * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-     * @return The shortContent.
+     * <code>string subject = 4 [(.validator.field) = { ... }</code>
+     * @return The subject.
      */
     @java.lang.Override
-    public java.lang.String getShortContent() {
-      java.lang.Object ref = shortContent_;
+    public java.lang.String getSubject() {
+      java.lang.Object ref = subject_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        shortContent_ = s;
+        subject_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"short_content"
+     * &#64;inject_tag: json:"subject"
      * </pre>
      *
-     * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for shortContent.
+     * <code>string subject = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for subject.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getShortContentBytes() {
-      java.lang.Object ref = shortContent_;
+        getSubjectBytes() {
+      java.lang.Object ref = subject_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        shortContent_ = b;
+        subject_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -507,17 +439,14 @@ public final class PBRequestNotifier {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, owner_);
-      }
       for (int i = 0; i < nfListIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nfListIds_.getRaw(i));
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, shortContent_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, subject_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, content_);
@@ -531,9 +460,6 @@ public final class PBRequestNotifier {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(owner_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, owner_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < nfListIds_.size(); i++) {
@@ -545,8 +471,8 @@ public final class PBRequestNotifier {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shortContent_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, shortContent_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, subject_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, content_);
@@ -566,14 +492,12 @@ public final class PBRequestNotifier {
       }
       com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification other = (com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification) obj;
 
-      if (!getOwner()
-          .equals(other.getOwner())) return false;
       if (!getNfListIdsList()
           .equals(other.getNfListIdsList())) return false;
       if (!getTitle()
           .equals(other.getTitle())) return false;
-      if (!getShortContent()
-          .equals(other.getShortContent())) return false;
+      if (!getSubject()
+          .equals(other.getSubject())) return false;
       if (!getContent()
           .equals(other.getContent())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -587,16 +511,14 @@ public final class PBRequestNotifier {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OWNER_FIELD_NUMBER;
-      hash = (53 * hash) + getOwner().hashCode();
       if (getNfListIdsCount() > 0) {
         hash = (37 * hash) + NF_LIST_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getNfListIdsList().hashCode();
       }
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
-      hash = (37 * hash) + SHORT_CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getShortContent().hashCode();
+      hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getSubject().hashCode();
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -695,6 +617,11 @@ public final class PBRequestNotifier {
       return builder;
     }
     /**
+     * <pre>
+     *  // &#64;inject_tag: json:"owner"
+     *  string owner = 1 [ (validator.field).tags.string = { byte_len_gt:0 } ];
+     * </pre>
+     *
      * Protobuf type {@code request.SendNotification}
      */
     public static final class Builder extends
@@ -732,13 +659,11 @@ public final class PBRequestNotifier {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        owner_ = "";
-
         nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         title_ = "";
 
-        shortContent_ = "";
+        subject_ = "";
 
         content_ = "";
 
@@ -769,14 +694,13 @@ public final class PBRequestNotifier {
       public com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification result = new com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification(this);
         int from_bitField0_ = bitField0_;
-        result.owner_ = owner_;
         if (((bitField0_ & 0x00000001) != 0)) {
           nfListIds_ = nfListIds_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nfListIds_ = nfListIds_;
         result.title_ = title_;
-        result.shortContent_ = shortContent_;
+        result.subject_ = subject_;
         result.content_ = content_;
         onBuilt();
         return result;
@@ -826,10 +750,6 @@ public final class PBRequestNotifier {
 
       public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification other) {
         if (other == com.dataomnis.gproto.types.pbrequest.PBRequestNotifier.SendNotification.getDefaultInstance()) return this;
-        if (!other.getOwner().isEmpty()) {
-          owner_ = other.owner_;
-          onChanged();
-        }
         if (!other.nfListIds_.isEmpty()) {
           if (nfListIds_.isEmpty()) {
             nfListIds_ = other.nfListIds_;
@@ -844,8 +764,8 @@ public final class PBRequestNotifier {
           title_ = other.title_;
           onChanged();
         }
-        if (!other.getShortContent().isEmpty()) {
-          shortContent_ = other.shortContent_;
+        if (!other.getSubject().isEmpty()) {
+          subject_ = other.subject_;
           onChanged();
         }
         if (!other.getContent().isEmpty()) {
@@ -881,102 +801,6 @@ public final class PBRequestNotifier {
         return this;
       }
       private int bitField0_;
-
-      private java.lang.Object owner_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"owner"
-       * </pre>
-       *
-       * <code>string owner = 1 [(.validator.field) = { ... }</code>
-       * @return The owner.
-       */
-      public java.lang.String getOwner() {
-        java.lang.Object ref = owner_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          owner_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"owner"
-       * </pre>
-       *
-       * <code>string owner = 1 [(.validator.field) = { ... }</code>
-       * @return The bytes for owner.
-       */
-      public com.google.protobuf.ByteString
-          getOwnerBytes() {
-        java.lang.Object ref = owner_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          owner_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"owner"
-       * </pre>
-       *
-       * <code>string owner = 1 [(.validator.field) = { ... }</code>
-       * @param value The owner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOwner(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        owner_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"owner"
-       * </pre>
-       *
-       * <code>string owner = 1 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOwner() {
-        
-        owner_ = getDefaultInstance().getOwner();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"owner"
-       * </pre>
-       *
-       * <code>string owner = 1 [(.validator.field) = { ... }</code>
-       * @param value The bytes for owner to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOwnerBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        owner_ = value;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.LazyStringList nfListIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureNfListIdsIsMutable() {
@@ -1220,22 +1044,22 @@ public final class PBRequestNotifier {
         return this;
       }
 
-      private java.lang.Object shortContent_ = "";
+      private java.lang.Object subject_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"short_content"
+       * &#64;inject_tag: json:"subject"
        * </pre>
        *
-       * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-       * @return The shortContent.
+       * <code>string subject = 4 [(.validator.field) = { ... }</code>
+       * @return The subject.
        */
-      public java.lang.String getShortContent() {
-        java.lang.Object ref = shortContent_;
+      public java.lang.String getSubject() {
+        java.lang.Object ref = subject_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          shortContent_ = s;
+          subject_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1243,20 +1067,20 @@ public final class PBRequestNotifier {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"short_content"
+       * &#64;inject_tag: json:"subject"
        * </pre>
        *
-       * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for shortContent.
+       * <code>string subject = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for subject.
        */
       public com.google.protobuf.ByteString
-          getShortContentBytes() {
-        java.lang.Object ref = shortContent_;
+          getSubjectBytes() {
+        java.lang.Object ref = subject_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          shortContent_ = b;
+          subject_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1264,54 +1088,54 @@ public final class PBRequestNotifier {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"short_content"
+       * &#64;inject_tag: json:"subject"
        * </pre>
        *
-       * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-       * @param value The shortContent to set.
+       * <code>string subject = 4 [(.validator.field) = { ... }</code>
+       * @param value The subject to set.
        * @return This builder for chaining.
        */
-      public Builder setShortContent(
+      public Builder setSubject(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        shortContent_ = value;
+        subject_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"short_content"
+       * &#64;inject_tag: json:"subject"
        * </pre>
        *
-       * <code>string short_content = 4 [(.validator.field) = { ... }</code>
+       * <code>string subject = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
-      public Builder clearShortContent() {
+      public Builder clearSubject() {
         
-        shortContent_ = getDefaultInstance().getShortContent();
+        subject_ = getDefaultInstance().getSubject();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"short_content"
+       * &#64;inject_tag: json:"subject"
        * </pre>
        *
-       * <code>string short_content = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for shortContent to set.
+       * <code>string subject = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for subject to set.
        * @return This builder for chaining.
        */
-      public Builder setShortContentBytes(
+      public Builder setSubjectBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        shortContent_ = value;
+        subject_ = value;
         onChanged();
         return this;
       }
@@ -1480,15 +1304,14 @@ public final class PBRequestNotifier {
     java.lang.String[] descriptorData = {
       "\n\"proto/types/request/notifier.proto\022\007re" +
       "quest\0323github.com/yu31/protoc-plugin/pro" +
-      "to/validator.proto\"\264\001\n\020SendNotification\022" +
-      "\033\n\005owner\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\"\n\013nf_list_" +
-      "ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\022\033\n\005title\030\003 \001(\tB" +
-      "\014\342\337\037\010\022\006\302\001\003\200\002\000\022#\n\rshort_content\030\004 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\200\002\000\022\035\n\007content\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
-      "\000Bp\n$com.dataomnis.gproto.types.pbreques" +
-      "tB\021PBRequestNotifierP\000Z3github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbrequestb\006pro" +
-      "to3"
+      "to/validator.proto\"\221\001\n\020SendNotification\022" +
+      "\"\n\013nf_list_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\022\033\n\005t" +
+      "itle\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\035\n\007subject\030\004 \001(" +
+      "\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\035\n\007content\030\005 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\200\002\000Bp\n$com.dataomnis.gproto.types.pbr" +
+      "equestB\021PBRequestNotifierP\000Z3github.com/" +
+      "DataWorkbench/gproto/xgo/types/pbrequest" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1500,7 +1323,7 @@ public final class PBRequestNotifier {
     internal_static_request_SendNotification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SendNotification_descriptor,
-        new java.lang.String[] { "Owner", "NfListIds", "Title", "ShortContent", "Content", });
+        new java.lang.String[] { "NfListIds", "Title", "Subject", "Content", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);

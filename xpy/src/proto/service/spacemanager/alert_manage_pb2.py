@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'com.dataomnis.gproto.service.pbsvcspaceB\020PBSvcAlertManageP\000Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspace',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/spacemanager/alert_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/alert_manage.proto\x1a\'proto/types/response/alert_manage.proto2\xa8\x08\n\x0b\x41lertManage\x12N\n\x11ListAlertPolicies\x12\x1a.request.ListAlertPolicies\x1a\x1b.response.ListAlertPolicies\"\x00\x12I\n\x13\x44\x65leteAlertPolicies\x12\x1c.request.DeleteAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12I\n\x13\x45nableAlertPolicies\x12\x1c.request.EnableAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x14\x44isableAlertPolicies\x12\x1d.request.DisableAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x43reateAlertPolicy\x12\x1a.request.CreateAlertPolicy\x1a\x1b.response.CreateAlertPolicy\"\x00\x12\x45\n\x11UpdateAlertPolicy\x12\x1a.request.UpdateAlertPolicy\x1a\x12.model.EmptyStruct\"\x00\x12T\n\x13\x44\x65scribeAlertPolicy\x12\x1c.request.DescribeAlertPolicy\x1a\x1d.response.DescribeAlertPolicy\"\x00\x12M\n\x15JobBoundAlertPolicies\x12\x1e.request.JobBoundAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17JobUnboundAlertPolicies\x12 .request.JobUnboundAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12]\n\x16ListAlertPoliciesByJob\x12\x1f.request.ListAlertPoliciesByJob\x1a .response.ListAlertPoliciesByJob\"\x00\x12K\n\x14\x41lertPolicyBoundJobs\x12\x1d.request.AlertPolicyBoundJobs\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x41lertPolicyUnboundJobs\x12\x1f.request.AlertPolicyUnboundJobs\x1a\x12.model.EmptyStruct\"\x00\x12Z\n\x15ListJobsByAlertPolicy\x12\x1e.request.ListJobsByAlertPolicy\x1a\x1f.response.ListJobsByAlertPolicy\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcAlertManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
+  serialized_pb=b'\n-proto/service/spacemanager/alert_manage.proto\x12\x0cspacemanager\x1a\x1dproto/types/model/empty.proto\x1a&proto/types/request/alert_manage.proto\x1a\'proto/types/response/alert_manage.proto2\xa3\t\n\x0b\x41lertManage\x12N\n\x11ListAlertPolicies\x12\x1a.request.ListAlertPolicies\x1a\x1b.response.ListAlertPolicies\"\x00\x12I\n\x13\x44\x65leteAlertPolicies\x12\x1c.request.DeleteAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12I\n\x13\x45nableAlertPolicies\x12\x1c.request.EnableAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12K\n\x14\x44isableAlertPolicies\x12\x1d.request.DisableAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12N\n\x11\x43reateAlertPolicy\x12\x1a.request.CreateAlertPolicy\x1a\x1b.response.CreateAlertPolicy\"\x00\x12\x45\n\x11UpdateAlertPolicy\x12\x1a.request.UpdateAlertPolicy\x1a\x12.model.EmptyStruct\"\x00\x12T\n\x13\x44\x65scribeAlertPolicy\x12\x1c.request.DescribeAlertPolicy\x1a\x1d.response.DescribeAlertPolicy\"\x00\x12M\n\x15JobBoundAlertPolicies\x12\x1e.request.JobBoundAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12Q\n\x17JobUnboundAlertPolicies\x12 .request.JobUnboundAlertPolicies\x1a\x12.model.EmptyStruct\"\x00\x12]\n\x16ListAlertPoliciesByJob\x12\x1f.request.ListAlertPoliciesByJob\x1a .response.ListAlertPoliciesByJob\"\x00\x12K\n\x14\x41lertPolicyBoundJobs\x12\x1d.request.AlertPolicyBoundJobs\x1a\x12.model.EmptyStruct\"\x00\x12O\n\x16\x41lertPolicyUnboundJobs\x12\x1f.request.AlertPolicyUnboundJobs\x1a\x12.model.EmptyStruct\"\x00\x12Z\n\x15ListJobsByAlertPolicy\x12\x1e.request.ListJobsByAlertPolicy\x1a\x1f.response.ListJobsByAlertPolicy\"\x00\x12\x42\n\rListAlertLogs\x12\x16.request.ListAlertLogs\x1a\x17.response.ListAlertLogs\"\x00\x12\x35\n\tSendAlert\x12\x12.request.SendAlert\x1a\x12.model.EmptyStruct\"\x00\x42u\n\'com.dataomnis.gproto.service.pbsvcspaceB\x10PBSvcAlertManageP\x00Z6github.com/DataWorkbench/gproto/xgo/service/pbsvcspaceb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_empty__pb2.DESCRIPTOR,proto_dot_types_dot_request_dot_alert__manage__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_alert__manage__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _ALERTMANAGE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=176,
-  serialized_end=1240,
+  serialized_end=1363,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAlertPolicies',
@@ -170,6 +170,26 @@ _ALERTMANAGE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_alert__manage__pb2._LISTJOBSBYALERTPOLICY,
     output_type=proto_dot_types_dot_response_dot_alert__manage__pb2._LISTJOBSBYALERTPOLICY,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListAlertLogs',
+    full_name='spacemanager.AlertManage.ListAlertLogs',
+    index=13,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_alert__manage__pb2._LISTALERTLOGS,
+    output_type=proto_dot_types_dot_response_dot_alert__manage__pb2._LISTALERTLOGS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendAlert',
+    full_name='spacemanager.AlertManage.SendAlert',
+    index=14,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_alert__manage__pb2._SENDALERT,
+    output_type=proto_dot_types_dot_model_dot_empty__pb2._EMPTYSTRUCT,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
