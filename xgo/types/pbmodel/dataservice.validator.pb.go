@@ -575,14 +575,14 @@ func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_name() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_RequestParameter_InEnums_ParamOperator = map[RequestParameter_ParameterOperator]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true}
+var _xxx_xxx_Validator_RequestParameter_InEnums_ParamOperator = map[RequestParameter_ParameterOperator]bool{0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true}
 
 func (this *RequestParameter) _xxx_xxx_Validator_Validate_param_operator() error {
 	if !(this.ParamOperator > 0) {
 		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_operator' must be greater than '0'", protovalidator.Int32ToString(int32(this.ParamOperator)))
 	}
 	if !(_xxx_xxx_Validator_RequestParameter_InEnums_ParamOperator[this.ParamOperator]) {
-		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_operator' must in enums of '[0 1 2 3 4 5 6 7]'", protovalidator.Int32ToString(int32(this.ParamOperator)))
+		return protovalidator.FieldError1("RequestParameter", "the value of field 'param_operator' must in enums of '[0 1 2 3 4 5 6 7 8 9 10]'", protovalidator.Int32ToString(int32(this.ParamOperator)))
 	}
 	return nil
 }
