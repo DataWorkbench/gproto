@@ -168,10 +168,13 @@ message RequestParameter {
     Equal = 1;
     NotEqual = 2;
     GreaterThan = 3;
-    LessThan = 4;
-    Like = 5;
-    Const = 6;
-    In = 7;
+    GreaterEqual = 4;
+    LessThan = 5;
+    LessEqual = 6;
+    Like = 7;
+    Const = 8;
+    In = 9;
+    NotIn = 10;
   }
 
   enum ParameterPosition{
