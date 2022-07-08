@@ -91,13 +91,6 @@ func (this *RouteInfo) _xxx_xxx_Validator_Validate_desc() error {
 	return nil
 }
 
-func (this *RouteInfo) _xxx_xxx_Validator_Validate_host() error {
-	if !(len(this.Host) > 0) {
-		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'host' must be greater than '0'", protovalidator.StringByteLenToString(this.Host))
-	}
-	return nil
-}
-
 func (this *RouteInfo) _xxx_xxx_Validator_Validate_upstream_id() error {
 	if !(len(this.UpstreamId) > 0) {
 		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'upstream_id' must be greater than '0'", protovalidator.StringByteLenToString(this.UpstreamId))
@@ -170,9 +163,6 @@ func (this *RouteInfo) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_desc(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_host(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_upstream_id(); err != nil {
