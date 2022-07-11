@@ -137,7 +137,7 @@ message AlertPolicy {
   // The notification information list.
   // @inject_tag: json:"notifications" gorm:"-"
   repeated model.Notification notifications = 14;
-  
+
   // The id list of jobs.
   // @inject_tag: json:"job_ids" gorm:"-"
   repeated string job_ids = 15;

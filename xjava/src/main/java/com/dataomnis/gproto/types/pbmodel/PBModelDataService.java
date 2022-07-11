@@ -10187,21 +10187,33 @@ public final class PBModelDataService {
        */
       GreaterThan(3),
       /**
-       * <code>LessThan = 4;</code>
+       * <code>GreaterEqual = 4;</code>
        */
-      LessThan(4),
+      GreaterEqual(4),
       /**
-       * <code>Like = 5;</code>
+       * <code>LessThan = 5;</code>
        */
-      Like(5),
+      LessThan(5),
       /**
-       * <code>Const = 6;</code>
+       * <code>LessEqual = 6;</code>
        */
-      Const(6),
+      LessEqual(6),
       /**
-       * <code>In = 7;</code>
+       * <code>Like = 7;</code>
        */
-      In(7),
+      Like(7),
+      /**
+       * <code>Const = 8;</code>
+       */
+      Const(8),
+      /**
+       * <code>In = 9;</code>
+       */
+      In(9),
+      /**
+       * <code>NotIn = 10;</code>
+       */
+      NotIn(10),
       UNRECOGNIZED(-1),
       ;
 
@@ -10222,21 +10234,33 @@ public final class PBModelDataService {
        */
       public static final int GreaterThan_VALUE = 3;
       /**
-       * <code>LessThan = 4;</code>
+       * <code>GreaterEqual = 4;</code>
        */
-      public static final int LessThan_VALUE = 4;
+      public static final int GreaterEqual_VALUE = 4;
       /**
-       * <code>Like = 5;</code>
+       * <code>LessThan = 5;</code>
        */
-      public static final int Like_VALUE = 5;
+      public static final int LessThan_VALUE = 5;
       /**
-       * <code>Const = 6;</code>
+       * <code>LessEqual = 6;</code>
        */
-      public static final int Const_VALUE = 6;
+      public static final int LessEqual_VALUE = 6;
       /**
-       * <code>In = 7;</code>
+       * <code>Like = 7;</code>
        */
-      public static final int In_VALUE = 7;
+      public static final int Like_VALUE = 7;
+      /**
+       * <code>Const = 8;</code>
+       */
+      public static final int Const_VALUE = 8;
+      /**
+       * <code>In = 9;</code>
+       */
+      public static final int In_VALUE = 9;
+      /**
+       * <code>NotIn = 10;</code>
+       */
+      public static final int NotIn_VALUE = 10;
 
 
       public final int getNumber() {
@@ -10267,10 +10291,13 @@ public final class PBModelDataService {
           case 1: return Equal;
           case 2: return NotEqual;
           case 3: return GreaterThan;
-          case 4: return LessThan;
-          case 5: return Like;
-          case 6: return Const;
-          case 7: return In;
+          case 4: return GreaterEqual;
+          case 5: return LessThan;
+          case 6: return LessEqual;
+          case 7: return Like;
+          case 8: return Const;
+          case 9: return In;
+          case 10: return NotIn;
           default: return null;
         }
       }
@@ -15625,6 +15652,26 @@ public final class PBModelDataService {
 
     /**
      * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    com.google.protobuf.ByteString
+        getCreatedByBytes();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"request_params" gorm:"column:request_params;type:json"
      * </pre>
      *
@@ -15710,6 +15757,7 @@ public final class PBModelDataService {
       datasourceId_ = "";
       tableName_ = "";
       script_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -15882,6 +15930,12 @@ public final class PBModelDataService {
                 responseParams_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 186: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              createdBy_ = s;
               break;
             }
             default: {
@@ -17213,6 +17267,52 @@ public final class PBModelDataService {
       return updated_;
     }
 
+    public static final int CREATED_BY_FIELD_NUMBER = 23;
+    private volatile java.lang.Object createdBy_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+     * </pre>
+     *
+     * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int REQUEST_PARAMS_FIELD_NUMBER = 21;
     private com.dataomnis.gproto.types.pbmodel.PBModelDataService.RequestParameters requestParams_;
     /**
@@ -17369,6 +17469,9 @@ public final class PBModelDataService {
       if (responseParams_ != null) {
         output.writeMessage(22, getResponseParams());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 23, createdBy_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17455,6 +17558,9 @@ public final class PBModelDataService {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, getResponseParams());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, createdBy_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17505,6 +17611,8 @@ public final class PBModelDataService {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (hasRequestParams() != other.hasRequestParams()) return false;
       if (hasRequestParams()) {
         if (!getRequestParams()
@@ -17570,6 +17678,8 @@ public final class PBModelDataService {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       if (hasRequestParams()) {
         hash = (37 * hash) + REQUEST_PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getRequestParams().hashCode();
@@ -17755,6 +17865,8 @@ public final class PBModelDataService {
 
         updated_ = 0L;
 
+        createdBy_ = "";
+
         if (requestParamsBuilder_ == null) {
           requestParams_ = null;
         } else {
@@ -17813,6 +17925,7 @@ public final class PBModelDataService {
         result.script_ = script_;
         result.created_ = created_;
         result.updated_ = updated_;
+        result.createdBy_ = createdBy_;
         if (requestParamsBuilder_ == null) {
           result.requestParams_ = requestParams_;
         } else {
@@ -17941,6 +18054,10 @@ public final class PBModelDataService {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
+        }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          onChanged();
         }
         if (other.hasRequestParams()) {
           mergeRequestParams(other.getRequestParams());
@@ -19576,6 +19693,102 @@ public final class PBModelDataService {
       public Builder clearUpdated() {
         
         updated_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+       * @return The bytes for createdBy.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+       * @param value The createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedBy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        createdBy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedBy() {
+        
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"created_by" gorm:"column:created_by;"
+       * </pre>
+       *
+       * <code>string created_by = 23 [(.validator.field) = { ... }</code>
+       * @param value The bytes for createdBy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedByBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        createdBy_ = value;
         onChanged();
         return this;
       }
@@ -22629,7 +22842,7 @@ public final class PBModelDataService {
       "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n" +
       "\007Enabled\020\002\"R\n\021RequestParameters\0225\n\016reque" +
       "st_params\030\026 \003(\0132\027.model.RequestParameter" +
-      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\272\006\n\020RequestParameter\022$\n\013c" +
+      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\347\006\n\020RequestParameter\022$\n\013c" +
       "olumn_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdef" +
       "ault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexamp" +
       "le_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_requ" +
@@ -22642,76 +22855,78 @@ public final class PBModelDataService {
       "\016param_position\030\t \001(\0162).model.RequestPar" +
       "ameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
       "L\n\016field_category\030\n \001(\0162%.model.RequestP" +
-      "arameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"{\n" +
-      "\021ParameterOperator\022\021\n\rOperatorUnset\020\000\022\t\n" +
-      "\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan\020\003\022" +
-      "\014\n\010LessThan\020\004\022\010\n\004Like\020\005\022\t\n\005Const\020\006\022\006\n\002In" +
-      "\020\007\"O\n\021ParameterPosition\022\021\n\rPositionUnset" +
-      "\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010\n\004Hea" +
-      "d\020\004\"F\n\rFieldCategory\022\021\n\rCategoryUnset\020\000\022" +
-      "\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004" +
-      "\002\n\000\"U\n\022ResponseParameters\0227\n\017response_pa" +
-      "rams\030\026 \003(\0132\030.model.ResponseParameterB\004\342\337" +
-      "\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022$\n\013colu" +
-      "mn_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefaul" +
-      "t_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_" +
-      "value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030" +
-      "\004 \001(\0162\030.model.ParameterDataTypeB\r\342\337\037\t\022\007\332" +
-      "\001\0040\000X\001\022(\n\021param_description\030\005 \001(\tB\r\342\337\037\t\022" +
-      "\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
-      "\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000\022C\n\no" +
-      "rder_mode\030\010 \001(\0162\".model.ResponseParamete" +
-      "r.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field_catego" +
-      "ry\030\t \001(\0162&.model.ResponseParameter.Field" +
-      "CategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderMode\022\017\n\013" +
-      "StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"F\n\rFiel" +
-      "dCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nPageConf" +
-      "ig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"\367\t\n\nApi" +
-      "Version\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001" +
-      "\020\022?\n\016publish_status\030\002 \001(\0162\030.model.ApiVer" +
-      "sion.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022#\n\006api_id\030\004 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id\030\005 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\006 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id\030\007 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030\010 \001(\t" +
-      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\tB\020\342\337\037" +
-      "\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.model." +
-      "ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api" +
-      "_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=\n\tpro" +
-      "tocols\030\014 \001(\0162\033.model.ApiVersion.Protocol" +
-      "sB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_method\030\r \001(\016" +
-      "2\037.model.ApiVersion.RequestMethodB\r\342\337\037\t\022" +
-      "\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036.model." +
-      "ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032" +
-      "\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\020 " +
-      "\001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_id\030\021 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\022 " +
-      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(\tB\016\342\337" +
-      "\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\016requ" +
-      "est_params\030\025 \001(\0132\030.model.RequestParamete" +
-      "rsB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031.mode" +
-      "l.ResponseParametersB\004\342\337\037\000\"7\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbolishe" +
-      "d\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizard\020" +
-      "\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Method" +
-      "Unset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014ResponseTy" +
-      "pe\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D\n\t" +
-      "Protocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTPOnly" +
-      "\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025ServiceDat" +
-      "aSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 \001(\003\"" +
-      "\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB\t\342\337\037" +
-      "\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004type\030" +
-      "\005 \001(\0162\037.model.ApiConfigDataSource.TypeB\t" +
-      "\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005MySQ" +
-      "L\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"I\n\027A" +
-      "piConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t\342\337\037\005" +
-      "\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Parame" +
-      "terDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String\020\001\022\007" +
-      "\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"com." +
-      "dataomnis.gproto.types.pbmodelB\022PBModelD" +
-      "ataServiceP\000Z1github.com/DataWorkbench/g" +
-      "proto/xgo/types/pbmodelb\006proto3"
+      "arameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\247\001" +
+      "\n\021ParameterOperator\022\021\n\rOperatorUnset\020\000\022\t" +
+      "\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan\020\003" +
+      "\022\020\n\014GreaterEqual\020\004\022\014\n\010LessThan\020\005\022\r\n\tLess" +
+      "Equal\020\006\022\010\n\004Like\020\007\022\t\n\005Const\020\010\022\006\n\002In\020\t\022\t\n\005" +
+      "NotIn\020\n\"O\n\021ParameterPosition\022\021\n\rPosition" +
+      "Unset\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010" +
+      "\n\004Head\020\004\"F\n\rFieldCategory\022\021\n\rCategoryUns" +
+      "et\020\000\022\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn\020\002" +
+      ":\006\312\262\004\002\n\000\"U\n\022ResponseParameters\0227\n\017respon" +
+      "se_params\030\026 \003(\0132\030.model.ResponseParamete" +
+      "rB\004\342\337\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022$\n" +
+      "\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rd" +
+      "efault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexa" +
+      "mple_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_" +
+      "type\030\004 \001(\0162\030.model.ParameterDataTypeB\r\342\337" +
+      "\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\005 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\200\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000" +
+      "\022C\n\norder_mode\030\010 \001(\0162\".model.ResponsePar" +
+      "ameter.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field_c" +
+      "ategory\030\t \001(\0162&.model.ResponseParameter." +
+      "FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderMod" +
+      "e\022\017\n\013StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"F\n" +
+      "\rFieldCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nPag" +
+      "eConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"\234\n" +
+      "\n\nApiVersion\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\360\001\020\022?\n\016publish_status\030\002 \001(\0162\030.model.A" +
+      "piVersion.StatusB\r\342\337\037\t\022\007\332\001\0040\001X\001\022#\n\006api_i" +
+      "d\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id" +
+      "\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_i" +
+      "d\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id" +
+      "\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030" +
+      "\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.m" +
+      "odel.ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&" +
+      "\n\017api_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=" +
+      "\n\tprotocols\030\014 \001(\0162\033.model.ApiVersion.Pro" +
+      "tocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_method\030" +
+      "\r \001(\0162\037.model.ApiVersion.RequestMethodB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036.m" +
+      "odel.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeo" +
+      "ut\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_i" +
+      "d\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_na" +
+      "me\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(" +
+      "\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007" +
+      "\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022#\n" +
+      "\ncreated_by\030\027 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0226\n\016re" +
+      "quest_params\030\025 \001(\0132\030.model.RequestParame" +
+      "tersB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031.mo" +
+      "del.ResponseParametersB\004\342\337\037\000\"7\n\006Status\022\017" +
+      "\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbolis" +
+      "hed\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizar" +
+      "d\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Meth" +
+      "odUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014Response" +
+      "Type\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D" +
+      "\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTPOn" +
+      "ly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025ServiceD" +
+      "ataSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 \001(" +
+      "\003\"\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB\t\342" +
+      "\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004typ" +
+      "e\030\005 \001(\0162\037.model.ApiConfigDataSource.Type" +
+      "B\t\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005My" +
+      "SQL\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"I\n" +
+      "\027ApiConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t\342\337" +
+      "\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Para" +
+      "meterDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String\020\001" +
+      "\022\007\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"co" +
+      "m.dataomnis.gproto.types.pbmodelB\022PBMode" +
+      "lDataServiceP\000Z1github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -22768,7 +22983,7 @@ public final class PBModelDataService {
     internal_static_model_ApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_ApiVersion_descriptor,
-        new java.lang.String[] { "VersionId", "PublishStatus", "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "Created", "Updated", "RequestParams", "ResponseParams", });
+        new java.lang.String[] { "VersionId", "PublishStatus", "ApiId", "GroupId", "ClusterId", "SpaceId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "Created", "Updated", "CreatedBy", "RequestParams", "ResponseParams", });
     internal_static_model_ServiceDataSourceKind_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_model_ServiceDataSourceKind_fieldAccessorTable = new

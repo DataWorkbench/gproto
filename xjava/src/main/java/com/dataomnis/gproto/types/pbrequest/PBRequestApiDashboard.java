@@ -1442,30 +1442,10 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
-     * @return The host.
-     */
-    java.lang.String getHost();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for host.
-     */
-    com.google.protobuf.ByteString
-        getHostBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"hosts"
      * </pre>
      *
-     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
      * @return The upstreamId.
      */
     java.lang.String getUpstreamId();
@@ -1474,7 +1454,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"hosts"
      * </pre>
      *
-     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for upstreamId.
      */
     com.google.protobuf.ByteString
@@ -1485,7 +1465,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -1494,7 +1474,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -1505,7 +1485,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     java.lang.String getApiServiceId();
@@ -1514,7 +1494,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     com.google.protobuf.ByteString
@@ -1525,7 +1505,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
      * @return The apiVersionId.
      */
     java.lang.String getApiVersionId();
@@ -1534,7 +1514,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for apiVersionId.
      */
     com.google.protobuf.ByteString
@@ -1545,7 +1525,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"proxy_uri"
      * </pre>
      *
-     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
      * @return The proxyUri.
      */
     java.lang.String getProxyUri();
@@ -1554,7 +1534,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"proxy_uri"
      * </pre>
      *
-     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for proxyUri.
      */
     com.google.protobuf.ByteString
@@ -1565,7 +1545,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 9 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     java.lang.String getSpaceId();
@@ -1574,7 +1554,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     com.google.protobuf.ByteString
@@ -1596,7 +1576,6 @@ public final class PBRequestApiDashboard {
       uri_ = "";
       id_ = "";
       desc_ = "";
-      host_ = "";
       upstreamId_ = "";
       name_ = "";
       apiServiceId_ = "";
@@ -1656,40 +1635,34 @@ public final class PBRequestApiDashboard {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              host_ = s;
+              upstreamId_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              upstreamId_ = s;
+              name_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              apiServiceId_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              apiServiceId_ = s;
+              apiVersionId_ = s;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              apiVersionId_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               proxyUri_ = s;
               break;
             }
-            case 82: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               spaceId_ = s;
@@ -1865,60 +1838,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int HOST_FIELD_NUMBER = 4;
-    private volatile java.lang.Object host_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
-     * @return The host.
-     */
-    @java.lang.Override
-    public java.lang.String getHost() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        host_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"host"
-     * </pre>
-     *
-     * <code>string host = 4 [(.validator.field) = { ... }</code>
-     * @return The bytes for host.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHostBytes() {
-      java.lang.Object ref = host_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        host_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UPSTREAM_ID_FIELD_NUMBER = 5;
+    public static final int UPSTREAM_ID_FIELD_NUMBER = 4;
     private volatile java.lang.Object upstreamId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"hosts"
      * </pre>
      *
-     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
      * @return The upstreamId.
      */
     @java.lang.Override
@@ -1939,7 +1866,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"hosts"
      * </pre>
      *
-     * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+     * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for upstreamId.
      */
     @java.lang.Override
@@ -1957,14 +1884,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 6;
+    public static final int NAME_FIELD_NUMBER = 5;
     private volatile java.lang.Object name_;
     /**
      * <pre>
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     @java.lang.Override
@@ -1985,7 +1912,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"name"
      * </pre>
      *
-     * <code>string name = 6 [(.validator.field) = { ... }</code>
+     * <code>string name = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -2003,14 +1930,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int API_SERVICE_ID_FIELD_NUMBER = 7;
+    public static final int API_SERVICE_ID_FIELD_NUMBER = 6;
     private volatile java.lang.Object apiServiceId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
      * @return The apiServiceId.
      */
     @java.lang.Override
@@ -2031,7 +1958,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_service_id"
      * </pre>
      *
-     * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+     * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
      * @return The bytes for apiServiceId.
      */
     @java.lang.Override
@@ -2049,14 +1976,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int API_VERSION_ID_FIELD_NUMBER = 8;
+    public static final int API_VERSION_ID_FIELD_NUMBER = 7;
     private volatile java.lang.Object apiVersionId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
      * @return The apiVersionId.
      */
     @java.lang.Override
@@ -2077,7 +2004,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"api_version_id"
      * </pre>
      *
-     * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+     * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
      * @return The bytes for apiVersionId.
      */
     @java.lang.Override
@@ -2095,14 +2022,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int PROXY_URI_FIELD_NUMBER = 9;
+    public static final int PROXY_URI_FIELD_NUMBER = 8;
     private volatile java.lang.Object proxyUri_;
     /**
      * <pre>
      * &#64;inject_tag: json:"proxy_uri"
      * </pre>
      *
-     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
      * @return The proxyUri.
      */
     @java.lang.Override
@@ -2123,7 +2050,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"proxy_uri"
      * </pre>
      *
-     * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+     * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
      * @return The bytes for proxyUri.
      */
     @java.lang.Override
@@ -2141,14 +2068,14 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int SPACE_ID_FIELD_NUMBER = 10;
+    public static final int SPACE_ID_FIELD_NUMBER = 9;
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
      * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 9 [(.validator.field) = { ... }</code>
      * @return The spaceId.
      */
     @java.lang.Override
@@ -2169,7 +2096,7 @@ public final class PBRequestApiDashboard {
      * &#64;inject_tag: json:"space_id"
      * </pre>
      *
-     * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+     * <code>string space_id = 9 [(.validator.field) = { ... }</code>
      * @return The bytes for spaceId.
      */
     @java.lang.Override
@@ -2210,26 +2137,23 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, host_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upstreamId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, upstreamId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiServiceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, apiServiceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, apiVersionId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiVersionId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, proxyUri_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, proxyUri_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, spaceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, spaceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -2249,26 +2173,23 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, desc_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, host_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(upstreamId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upstreamId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, upstreamId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiServiceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiServiceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, apiServiceId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiVersionId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, apiVersionId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersionId_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(proxyUri_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, proxyUri_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, proxyUri_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, spaceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, spaceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2291,8 +2212,6 @@ public final class PBRequestApiDashboard {
           .equals(other.getId())) return false;
       if (!getDesc()
           .equals(other.getDesc())) return false;
-      if (!getHost()
-          .equals(other.getHost())) return false;
       if (!getUpstreamId()
           .equals(other.getUpstreamId())) return false;
       if (!getName()
@@ -2322,8 +2241,6 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + DESC_FIELD_NUMBER;
       hash = (53 * hash) + getDesc().hashCode();
-      hash = (37 * hash) + HOST_FIELD_NUMBER;
-      hash = (53 * hash) + getHost().hashCode();
       hash = (37 * hash) + UPSTREAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getUpstreamId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -2475,8 +2392,6 @@ public final class PBRequestApiDashboard {
 
         desc_ = "";
 
-        host_ = "";
-
         upstreamId_ = "";
 
         name_ = "";
@@ -2518,7 +2433,6 @@ public final class PBRequestApiDashboard {
         result.uri_ = uri_;
         result.id_ = id_;
         result.desc_ = desc_;
-        result.host_ = host_;
         result.upstreamId_ = upstreamId_;
         result.name_ = name_;
         result.apiServiceId_ = apiServiceId_;
@@ -2583,10 +2497,6 @@ public final class PBRequestApiDashboard {
         }
         if (!other.getDesc().isEmpty()) {
           desc_ = other.desc_;
-          onChanged();
-        }
-        if (!other.getHost().isEmpty()) {
-          host_ = other.host_;
           onChanged();
         }
         if (!other.getUpstreamId().isEmpty()) {
@@ -2930,109 +2840,13 @@ public final class PBRequestApiDashboard {
         return this;
       }
 
-      private java.lang.Object host_ = "";
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
-       * @return The host.
-       */
-      public java.lang.String getHost() {
-        java.lang.Object ref = host_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          host_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
-       * @return The bytes for host.
-       */
-      public com.google.protobuf.ByteString
-          getHostBytes() {
-        java.lang.Object ref = host_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          host_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
-       * @param value The host to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHost(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        host_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHost() {
-        
-        host_ = getDefaultInstance().getHost();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"host"
-       * </pre>
-       *
-       * <code>string host = 4 [(.validator.field) = { ... }</code>
-       * @param value The bytes for host to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHostBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        host_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object upstreamId_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"hosts"
        * </pre>
        *
-       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
        * @return The upstreamId.
        */
       public java.lang.String getUpstreamId() {
@@ -3052,7 +2866,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"hosts"
        * </pre>
        *
-       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for upstreamId.
        */
       public com.google.protobuf.ByteString
@@ -3073,7 +2887,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"hosts"
        * </pre>
        *
-       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
        * @param value The upstreamId to set.
        * @return This builder for chaining.
        */
@@ -3092,7 +2906,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"hosts"
        * </pre>
        *
-       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearUpstreamId() {
@@ -3106,7 +2920,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"hosts"
        * </pre>
        *
-       * <code>string upstream_id = 5 [(.validator.field) = { ... }</code>
+       * <code>string upstream_id = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for upstreamId to set.
        * @return This builder for chaining.
        */
@@ -3128,7 +2942,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -3148,7 +2962,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -3169,7 +2983,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -3188,7 +3002,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -3202,7 +3016,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"name"
        * </pre>
        *
-       * <code>string name = 6 [(.validator.field) = { ... }</code>
+       * <code>string name = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -3224,7 +3038,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
        * @return The apiServiceId.
        */
       public java.lang.String getApiServiceId() {
@@ -3244,7 +3058,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
        * @return The bytes for apiServiceId.
        */
       public com.google.protobuf.ByteString
@@ -3265,7 +3079,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
        * @param value The apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -3284,7 +3098,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearApiServiceId() {
@@ -3298,7 +3112,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_service_id"
        * </pre>
        *
-       * <code>string api_service_id = 7 [(.validator.field) = { ... }</code>
+       * <code>string api_service_id = 6 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiServiceId to set.
        * @return This builder for chaining.
        */
@@ -3320,7 +3134,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
        * @return The apiVersionId.
        */
       public java.lang.String getApiVersionId() {
@@ -3340,7 +3154,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
        * @return The bytes for apiVersionId.
        */
       public com.google.protobuf.ByteString
@@ -3361,7 +3175,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
        * @param value The apiVersionId to set.
        * @return This builder for chaining.
        */
@@ -3380,7 +3194,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearApiVersionId() {
@@ -3394,7 +3208,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"api_version_id"
        * </pre>
        *
-       * <code>string api_version_id = 8 [(.validator.field) = { ... }</code>
+       * <code>string api_version_id = 7 [(.validator.field) = { ... }</code>
        * @param value The bytes for apiVersionId to set.
        * @return This builder for chaining.
        */
@@ -3416,7 +3230,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"proxy_uri"
        * </pre>
        *
-       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
        * @return The proxyUri.
        */
       public java.lang.String getProxyUri() {
@@ -3436,7 +3250,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"proxy_uri"
        * </pre>
        *
-       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
        * @return The bytes for proxyUri.
        */
       public com.google.protobuf.ByteString
@@ -3457,7 +3271,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"proxy_uri"
        * </pre>
        *
-       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
        * @param value The proxyUri to set.
        * @return This builder for chaining.
        */
@@ -3476,7 +3290,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"proxy_uri"
        * </pre>
        *
-       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearProxyUri() {
@@ -3490,7 +3304,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"proxy_uri"
        * </pre>
        *
-       * <code>string proxy_uri = 9 [(.validator.field) = { ... }</code>
+       * <code>string proxy_uri = 8 [(.validator.field) = { ... }</code>
        * @param value The bytes for proxyUri to set.
        * @return This builder for chaining.
        */
@@ -3512,7 +3326,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 9 [(.validator.field) = { ... }</code>
        * @return The spaceId.
        */
       public java.lang.String getSpaceId() {
@@ -3532,7 +3346,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 9 [(.validator.field) = { ... }</code>
        * @return The bytes for spaceId.
        */
       public com.google.protobuf.ByteString
@@ -3553,7 +3367,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 9 [(.validator.field) = { ... }</code>
        * @param value The spaceId to set.
        * @return This builder for chaining.
        */
@@ -3572,7 +3386,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 9 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearSpaceId() {
@@ -3586,7 +3400,7 @@ public final class PBRequestApiDashboard {
        * &#64;inject_tag: json:"space_id"
        * </pre>
        *
-       * <code>string space_id = 10 [(.validator.field) = { ... }</code>
+       * <code>string space_id = 9 [(.validator.field) = { ... }</code>
        * @param value The bytes for spaceId to set.
        * @return This builder for chaining.
        */
@@ -4366,7 +4180,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4375,7 +4189,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getName();
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4386,7 +4200,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"uri"
+     * &#64;inject_tag: json:"uri" form:"uri"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -4395,7 +4209,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getUri();
     /**
      * <pre>
-     * &#64;inject_tag: json:"uri"
+     * &#64;inject_tag: json:"uri" form:"uri"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -4406,7 +4220,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -4415,7 +4229,7 @@ public final class PBRequestApiDashboard {
     int getCurrStatusValue();
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -4427,7 +4241,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
@@ -4438,7 +4252,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
@@ -4451,7 +4265,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, name, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -4463,7 +4277,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, name, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -4475,7 +4289,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 7;</code>
@@ -4530,7 +4344,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_version_id"
+     * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
      * </pre>
      *
      * <code>string api_version_id = 9;</code>
@@ -4539,7 +4353,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getApiVersionId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_version_id"
+     * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
      * </pre>
      *
      * <code>string api_version_id = 9;</code>
@@ -4550,7 +4364,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
      * </pre>
      *
      * <code>string api_service_id = 10;</code>
@@ -4559,7 +4373,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getApiServiceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
      * </pre>
      *
      * <code>string api_service_id = 10;</code>
@@ -4570,7 +4384,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 11;</code>
@@ -4579,7 +4393,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 11;</code>
@@ -4747,7 +4561,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4768,7 +4582,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4793,7 +4607,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object uri_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"uri"
+     * &#64;inject_tag: json:"uri" form:"uri"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -4814,7 +4628,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"uri"
+     * &#64;inject_tag: json:"uri" form:"uri"
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -4839,7 +4653,7 @@ public final class PBRequestApiDashboard {
     private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -4850,7 +4664,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -4868,7 +4682,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
@@ -4884,7 +4698,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
@@ -4902,7 +4716,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, name, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -4926,7 +4740,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, name, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -4952,7 +4766,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 7;</code>
@@ -5022,7 +4836,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object apiVersionId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_version_id"
+     * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
      * </pre>
      *
      * <code>string api_version_id = 9;</code>
@@ -5043,7 +4857,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_version_id"
+     * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
      * </pre>
      *
      * <code>string api_version_id = 9;</code>
@@ -5068,7 +4882,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object apiServiceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
      * </pre>
      *
      * <code>string api_service_id = 10;</code>
@@ -5089,7 +4903,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_service_id"
+     * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
      * </pre>
      *
      * <code>string api_service_id = 10;</code>
@@ -5114,7 +4928,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 11;</code>
@@ -5135,7 +4949,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 11;</code>
@@ -5650,7 +5464,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -5670,7 +5484,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -5691,7 +5505,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -5710,7 +5524,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -5724,7 +5538,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -5746,7 +5560,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object uri_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"uri"
+       * &#64;inject_tag: json:"uri" form:"uri"
        * </pre>
        *
        * <code>string uri = 2;</code>
@@ -5766,7 +5580,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"uri"
+       * &#64;inject_tag: json:"uri" form:"uri"
        * </pre>
        *
        * <code>string uri = 2;</code>
@@ -5787,7 +5601,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"uri"
+       * &#64;inject_tag: json:"uri" form:"uri"
        * </pre>
        *
        * <code>string uri = 2;</code>
@@ -5806,7 +5620,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"uri"
+       * &#64;inject_tag: json:"uri" form:"uri"
        * </pre>
        *
        * <code>string uri = 2;</code>
@@ -5820,7 +5634,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"uri"
+       * &#64;inject_tag: json:"uri" form:"uri"
        * </pre>
        *
        * <code>string uri = 2;</code>
@@ -5842,7 +5656,7 @@ public final class PBRequestApiDashboard {
       private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -5853,7 +5667,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -5868,7 +5682,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -5882,7 +5696,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -5900,7 +5714,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 3 [(.validator.field) = { ... }</code>
@@ -5918,7 +5732,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
@@ -5932,7 +5746,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
@@ -5949,7 +5763,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 4 [(.defaults.field) = { ... }</code>
@@ -5966,7 +5780,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
@@ -5979,7 +5793,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
@@ -5995,7 +5809,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 5 [(.validator.field) = { ... }</code>
@@ -6014,7 +5828,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, name, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -6037,7 +5851,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, name, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -6061,7 +5875,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, name, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -6083,7 +5897,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, name, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -6100,7 +5914,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, name, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 6 [(.validator.field) = { ... }</code>
@@ -6123,7 +5937,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 7;</code>
@@ -6136,7 +5950,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 7;</code>
@@ -6152,7 +5966,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 7;</code>
@@ -6323,7 +6137,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object apiVersionId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_version_id"
+       * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
        * </pre>
        *
        * <code>string api_version_id = 9;</code>
@@ -6343,7 +6157,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_version_id"
+       * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
        * </pre>
        *
        * <code>string api_version_id = 9;</code>
@@ -6364,7 +6178,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_version_id"
+       * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
        * </pre>
        *
        * <code>string api_version_id = 9;</code>
@@ -6383,7 +6197,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_version_id"
+       * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
        * </pre>
        *
        * <code>string api_version_id = 9;</code>
@@ -6397,7 +6211,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_version_id"
+       * &#64;inject_tag: json:"api_version_id" form:"api_version_id"
        * </pre>
        *
        * <code>string api_version_id = 9;</code>
@@ -6419,7 +6233,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object apiServiceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
        * </pre>
        *
        * <code>string api_service_id = 10;</code>
@@ -6439,7 +6253,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
        * </pre>
        *
        * <code>string api_service_id = 10;</code>
@@ -6460,7 +6274,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
        * </pre>
        *
        * <code>string api_service_id = 10;</code>
@@ -6479,7 +6293,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
        * </pre>
        *
        * <code>string api_service_id = 10;</code>
@@ -6493,7 +6307,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_service_id"
+       * &#64;inject_tag: json:"api_service_id" form:"api_service_id"
        * </pre>
        *
        * <code>string api_service_id = 10;</code>
@@ -6515,7 +6329,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 11;</code>
@@ -6535,7 +6349,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 11;</code>
@@ -6556,7 +6370,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 11;</code>
@@ -6575,7 +6389,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 11;</code>
@@ -6589,7 +6403,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 11;</code>
@@ -16574,7 +16388,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -16583,7 +16397,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -16946,7 +16760,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -16967,7 +16781,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -17871,7 +17685,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -17891,7 +17705,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -17912,7 +17726,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -17931,7 +17745,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -17945,7 +17759,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 5 [(.validator.field) = { ... }</code>
@@ -19723,7 +19537,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -19734,7 +19548,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -19744,7 +19558,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -19755,7 +19569,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -19769,7 +19583,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -19780,7 +19594,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -19793,7 +19607,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -19805,7 +19619,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -19817,7 +19631,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 5;</code>
@@ -19828,7 +19642,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: "".
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 6;</code>
@@ -19838,7 +19652,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: "".
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 6;</code>
@@ -19849,7 +19663,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 7;</code>
@@ -19858,7 +19672,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 7;</code>
@@ -19869,7 +19683,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 8;</code>
@@ -19878,7 +19692,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 8;</code>
@@ -19889,7 +19703,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -19898,7 +19712,7 @@ public final class PBRequestApiDashboard {
     int getCurrStatusValue();
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -20052,7 +19866,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20065,7 +19879,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20077,7 +19891,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20090,7 +19904,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20108,7 +19922,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -20124,7 +19938,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -20142,7 +19956,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -20166,7 +19980,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -20192,7 +20006,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 5;</code>
@@ -20208,7 +20022,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: "".
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 6;</code>
@@ -20230,7 +20044,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: "".
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 6;</code>
@@ -20255,7 +20069,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 7;</code>
@@ -20276,7 +20090,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 7;</code>
@@ -20301,7 +20115,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 8;</code>
@@ -20322,7 +20136,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 8;</code>
@@ -20347,7 +20161,7 @@ public final class PBRequestApiDashboard {
     private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -20358,7 +20172,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -20837,7 +20651,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20850,7 +20664,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20862,7 +20676,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20875,7 +20689,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20889,7 +20703,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20910,7 +20724,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20930,7 +20744,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20948,7 +20762,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20963,7 +20777,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -20987,7 +20801,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -21001,7 +20815,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -21018,7 +20832,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -21035,7 +20849,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -21048,7 +20862,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -21064,7 +20878,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -21083,7 +20897,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -21106,7 +20920,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -21130,7 +20944,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -21152,7 +20966,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -21169,7 +20983,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -21192,7 +21006,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -21205,7 +21019,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -21221,7 +21035,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -21238,7 +21052,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: "".
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 6;</code>
@@ -21259,7 +21073,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: "".
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 6;</code>
@@ -21281,7 +21095,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: "".
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 6;</code>
@@ -21301,7 +21115,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: "".
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 6;</code>
@@ -21316,7 +21130,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: "".
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 6;</code>
@@ -21338,7 +21152,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 7;</code>
@@ -21358,7 +21172,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 7;</code>
@@ -21379,7 +21193,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 7;</code>
@@ -21398,7 +21212,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 7;</code>
@@ -21412,7 +21226,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 7;</code>
@@ -21434,7 +21248,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 8;</code>
@@ -21454,7 +21268,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 8;</code>
@@ -21475,7 +21289,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 8;</code>
@@ -21494,7 +21308,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 8;</code>
@@ -21508,7 +21322,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 8;</code>
@@ -21530,7 +21344,7 @@ public final class PBRequestApiDashboard {
       private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -21541,7 +21355,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -21556,7 +21370,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -21570,7 +21384,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -21588,7 +21402,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 9 [(.validator.field) = { ... }</code>
@@ -24547,7 +24361,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -24556,7 +24370,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getName();
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -24567,7 +24381,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -24576,7 +24390,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -24587,7 +24401,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -24596,7 +24410,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -24707,7 +24521,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -24728,7 +24542,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"name"
+     * &#64;inject_tag: json:"name" form:"name"
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -24753,7 +24567,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -24774,7 +24588,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -24799,7 +24613,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -24820,7 +24634,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" swaggerignore:"true"
      * </pre>
      *
      * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25180,7 +24994,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -25200,7 +25014,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -25221,7 +25035,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -25240,7 +25054,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -25254,7 +25068,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"name"
+       * &#64;inject_tag: json:"name" form:"name"
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -25276,7 +25090,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -25296,7 +25110,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -25317,7 +25131,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -25336,7 +25150,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -25350,7 +25164,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 2 [(.validator.field) = { ... }</code>
@@ -25372,7 +25186,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25392,7 +25206,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25413,7 +25227,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25432,7 +25246,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25446,7 +25260,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" swaggerignore:"true"
        * </pre>
        *
        * <code>string created_by = 3 [(.validator.field) = { ... }</code>
@@ -25523,7 +25337,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -25532,7 +25346,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -25629,7 +25443,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -25650,7 +25464,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -25976,7 +25790,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -25996,7 +25810,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26017,7 +25831,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26036,7 +25850,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26050,7 +25864,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26127,7 +25941,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26136,7 +25950,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26146,11 +25960,19 @@ public final class PBRequestApiDashboard {
         getIdBytes();
 
     /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -26252,7 +26074,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26273,7 +26095,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"id"
+     * &#64;inject_tag: json:"id" form:"id"
      * </pre>
      *
      * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26297,6 +26119,10 @@ public final class PBRequestApiDashboard {
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -26314,6 +26140,10 @@ public final class PBRequestApiDashboard {
       }
     }
     /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
      * <code>string name = 2;</code>
      * @return The bytes for name.
      */
@@ -26654,7 +26484,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26674,7 +26504,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26695,7 +26525,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26714,7 +26544,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26728,7 +26558,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"id"
+       * &#64;inject_tag: json:"id" form:"id"
        * </pre>
        *
        * <code>string id = 1 [(.validator.field) = { ... }</code>
@@ -26749,6 +26579,10 @@ public final class PBRequestApiDashboard {
 
       private java.lang.Object name_ = "";
       /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The name.
        */
@@ -26765,6 +26599,10 @@ public final class PBRequestApiDashboard {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return The bytes for name.
        */
@@ -26782,6 +26620,10 @@ public final class PBRequestApiDashboard {
         }
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The name to set.
        * @return This builder for chaining.
@@ -26797,6 +26639,10 @@ public final class PBRequestApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @return This builder for chaining.
        */
@@ -26807,6 +26653,10 @@ public final class PBRequestApiDashboard {
         return this;
       }
       /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
        * <code>string name = 2;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -26882,7 +26732,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -26893,7 +26743,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -26903,7 +26753,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -26914,7 +26764,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -26928,7 +26778,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -26939,7 +26789,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -26952,7 +26802,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -26964,7 +26814,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -26976,7 +26826,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 5;</code>
@@ -26986,7 +26836,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 6;</code>
@@ -26995,7 +26845,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getSpaceId();
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 6;</code>
@@ -27006,7 +26856,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" form:"created_by"
      * </pre>
      *
      * <code>string created_by = 7;</code>
@@ -27015,7 +26865,7 @@ public final class PBRequestApiDashboard {
     java.lang.String getCreatedBy();
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" form:"created_by"
      * </pre>
      *
      * <code>string created_by = 7;</code>
@@ -27026,7 +26876,7 @@ public final class PBRequestApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -27035,7 +26885,7 @@ public final class PBRequestApiDashboard {
     int getCurrStatusValue();
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -27182,7 +27032,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27195,7 +27045,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27207,7 +27057,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27220,7 +27070,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The id lists of resource query.
-     * &#64;inject_tag: json:"ids"
+     * &#64;inject_tag: json:"ids" form:"ids"
      * </pre>
      *
      * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27238,7 +27088,7 @@ public final class PBRequestApiDashboard {
      * <pre>
      * Limit the maximum number of entries returned this time.
      * Not required, Max 100, default 100.
-     * &#64;inject_tag: json:"limit"
+     * &#64;inject_tag: json:"limit" form:"limit"
      * </pre>
      *
      * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -27254,7 +27104,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * The offset position. Not required, default 0.
-     * &#64;inject_tag: json:"offset"
+     * &#64;inject_tag: json:"offset" form:"offset"
      * </pre>
      *
      * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -27272,7 +27122,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -27296,7 +27146,7 @@ public final class PBRequestApiDashboard {
      * The field list used to sorted query results.
      * Optional values: {id, create_time, create_time}.
      * Not required, default: id.
-     * &#64;inject_tag: json:"sort_by"
+     * &#64;inject_tag: json:"sort_by" form:"sort_by"
      * </pre>
      *
      * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -27322,7 +27172,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * Reverse order results. Not required, default: false.
-     * &#64;inject_tag: json:"reverse"
+     * &#64;inject_tag: json:"reverse" form:"reverse"
      * </pre>
      *
      * <code>bool reverse = 5;</code>
@@ -27337,7 +27187,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object spaceId_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 6;</code>
@@ -27358,7 +27208,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"space_id"
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
      * </pre>
      *
      * <code>string space_id = 6;</code>
@@ -27383,7 +27233,7 @@ public final class PBRequestApiDashboard {
     private volatile java.lang.Object createdBy_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" form:"created_by"
      * </pre>
      *
      * <code>string created_by = 7;</code>
@@ -27404,7 +27254,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"created_by"
+     * &#64;inject_tag: json:"created_by" form:"created_by"
      * </pre>
      *
      * <code>string created_by = 7;</code>
@@ -27429,7 +27279,7 @@ public final class PBRequestApiDashboard {
     private int currStatus_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -27440,7 +27290,7 @@ public final class PBRequestApiDashboard {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"curr_status"
+     * &#64;inject_tag: json:"curr_status" form:"curr_status"
      * </pre>
      *
      * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -27902,7 +27752,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27915,7 +27765,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27927,7 +27777,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27940,7 +27790,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27954,7 +27804,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27975,7 +27825,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -27995,7 +27845,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -28013,7 +27863,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -28028,7 +27878,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The id lists of resource query.
-       * &#64;inject_tag: json:"ids"
+       * &#64;inject_tag: json:"ids" form:"ids"
        * </pre>
        *
        * <code>repeated string ids = 1 [(.validator.field) = { ... }</code>
@@ -28052,7 +27902,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -28066,7 +27916,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -28083,7 +27933,7 @@ public final class PBRequestApiDashboard {
        * <pre>
        * Limit the maximum number of entries returned this time.
        * Not required, Max 100, default 100.
-       * &#64;inject_tag: json:"limit"
+       * &#64;inject_tag: json:"limit" form:"limit"
        * </pre>
        *
        * <code>int32 limit = 2 [(.defaults.field) = { ... }</code>
@@ -28100,7 +27950,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -28113,7 +27963,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -28129,7 +27979,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * The offset position. Not required, default 0.
-       * &#64;inject_tag: json:"offset"
+       * &#64;inject_tag: json:"offset" form:"offset"
        * </pre>
        *
        * <code>int32 offset = 3 [(.validator.field) = { ... }</code>
@@ -28148,7 +27998,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -28171,7 +28021,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -28195,7 +28045,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -28217,7 +28067,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -28234,7 +28084,7 @@ public final class PBRequestApiDashboard {
        * The field list used to sorted query results.
        * Optional values: {id, create_time, create_time}.
        * Not required, default: id.
-       * &#64;inject_tag: json:"sort_by"
+       * &#64;inject_tag: json:"sort_by" form:"sort_by"
        * </pre>
        *
        * <code>string sort_by = 4 [(.validator.field) = { ... }</code>
@@ -28257,7 +28107,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -28270,7 +28120,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -28286,7 +28136,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * Reverse order results. Not required, default: false.
-       * &#64;inject_tag: json:"reverse"
+       * &#64;inject_tag: json:"reverse" form:"reverse"
        * </pre>
        *
        * <code>bool reverse = 5;</code>
@@ -28302,7 +28152,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object spaceId_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 6;</code>
@@ -28322,7 +28172,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 6;</code>
@@ -28343,7 +28193,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 6;</code>
@@ -28362,7 +28212,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 6;</code>
@@ -28376,7 +28226,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"space_id"
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
        * </pre>
        *
        * <code>string space_id = 6;</code>
@@ -28398,7 +28248,7 @@ public final class PBRequestApiDashboard {
       private java.lang.Object createdBy_ = "";
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" form:"created_by"
        * </pre>
        *
        * <code>string created_by = 7;</code>
@@ -28418,7 +28268,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" form:"created_by"
        * </pre>
        *
        * <code>string created_by = 7;</code>
@@ -28439,7 +28289,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" form:"created_by"
        * </pre>
        *
        * <code>string created_by = 7;</code>
@@ -28458,7 +28308,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" form:"created_by"
        * </pre>
        *
        * <code>string created_by = 7;</code>
@@ -28472,7 +28322,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"created_by"
+       * &#64;inject_tag: json:"created_by" form:"created_by"
        * </pre>
        *
        * <code>string created_by = 7;</code>
@@ -28494,7 +28344,7 @@ public final class PBRequestApiDashboard {
       private int currStatus_ = 0;
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -28505,7 +28355,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -28520,7 +28370,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -28534,7 +28384,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -28552,7 +28402,7 @@ public final class PBRequestApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"curr_status"
+       * &#64;inject_tag: json:"curr_status" form:"curr_status"
        * </pre>
        *
        * <code>.model.StatusType curr_status = 8 [(.validator.field) = { ... }</code>
@@ -28624,7 +28474,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * AuthKey ID
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -28634,7 +28484,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * AuthKey ID
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -28646,7 +28496,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28657,7 +28507,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28667,7 +28517,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28678,7 +28528,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28791,7 +28641,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * AuthKey ID
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -28813,7 +28663,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * AuthKey ID
-     * &#64;inject_tag: json:"auth_key_id"
+     * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
      * </pre>
      *
      * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -28839,7 +28689,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28852,7 +28702,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28864,7 +28714,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -28877,7 +28727,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29231,7 +29081,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * AuthKey ID
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -29252,7 +29102,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * AuthKey ID
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -29274,7 +29124,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * AuthKey ID
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -29294,7 +29144,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * AuthKey ID
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -29309,7 +29159,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * AuthKey ID
-       * &#64;inject_tag: json:"auth_key_id"
+       * &#64;inject_tag: json:"auth_key_id" form:"auth_key_id"
        * </pre>
        *
        * <code>string auth_key_id = 1 [(.validator.field) = { ... }</code>
@@ -29338,7 +29188,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29351,7 +29201,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29363,7 +29213,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29376,7 +29226,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29390,7 +29240,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29411,7 +29261,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29431,7 +29281,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29449,7 +29299,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29464,7 +29314,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 2 [(.validator.field) = { ... }</code>
@@ -29542,7 +29392,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29553,7 +29403,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29563,7 +29413,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29574,7 +29424,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29680,7 +29530,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29693,7 +29543,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29705,7 +29555,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -29718,7 +29568,7 @@ public final class PBRequestApiDashboard {
     /**
      * <pre>
      * ApiService ID
-     * &#64;inject_tag: json:"api_service_ids"
+     * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
      * </pre>
      *
      * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30061,7 +29911,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30074,7 +29924,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30086,7 +29936,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30099,7 +29949,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30113,7 +29963,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30134,7 +29984,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30154,7 +30004,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30172,7 +30022,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30187,7 +30037,7 @@ public final class PBRequestApiDashboard {
       /**
        * <pre>
        * ApiService ID
-       * &#64;inject_tag: json:"api_service_ids"
+       * &#64;inject_tag: json:"api_service_ids" form:"api_service_ids"
        * </pre>
        *
        * <code>repeated string api_service_ids = 1 [(.validator.field) = { ... }</code>
@@ -30409,101 +30259,100 @@ public final class PBRequestApiDashboard {
       "o/types/model/apidashboard.proto\"5\n\013Crea" +
       "teRoute\022&\n\nroute_info\030\001 \001(\0132\022.request.Ro" +
       "uteInfo\"5\n\013UpdateRoute\022&\n\nroute_info\030\001 \001" +
-      "(\0132\022.request.RouteInfo\"\365\002\n\tRouteInfo\022\035\n\003" +
+      "(\0132\022.request.RouteInfo\"\331\002\n\tRouteInfo\022\035\n\003" +
       "uri\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022)\n\002id\030\002 \001(\tB" +
       "\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\024\022\036\n\004desc\030\003" +
-      " \001(\tB\020\342\337\037\014\022\n\302\001\007\210\002\200\004\220\002\000\022\032\n\004host\030\004 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\200\002\000\022$\n\013upstream_id\030\005 \001(\tB\017\342\337\037\013\022\t\302" +
-      "\001\006\200\002\000\230\002\024\022\036\n\004name\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\001" +
-      "\022\'\n\016api_service_id\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
-      "\024\022\'\n\016api_version_id\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230" +
-      "\002\024\022#\n\tproxy_uri\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022" +
-      "%\n\010space_id\030\n \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\")" +
-      "\n\013DeleteRoute\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
-      "\000\"\322\002\n\nListRoutes\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 " +
-      "\001(\t\0223\n\013curr_status\030\003 \001(\0162\021.model.StatusT" +
-      "ypeB\013\342\337\037\007\022\005\332\001\002X\001\022&\n\005limit\030\004 \001(\005B\027\242\241\037\006\252\006\003" +
-      "100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\005 \001(\005B\013\342\337\037\007\022\005" +
-      "\262\001\002@\000\022@\n\007sort_by\030\006 \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ" +
-      "\004nameJ\013create_timeJ\013update_time\022\017\n\007rever" +
-      "se\030\007 \001(\010\022\032\n\003ids\030\010 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\026\n\016" +
-      "api_version_id\030\t \001(\t\022\026\n\016api_service_id\030\n" +
-      " \001(\t\022\020\n\010space_id\030\013 \001(\t\">\n\016CreateUpstream" +
-      "\022,\n\rupstream_info\030\001 \001(\0132\025.request.Upstre" +
-      "amInfo\">\n\016UpdateUpstream\022,\n\rupstream_inf" +
-      "o\030\001 \001(\0132\025.request.UpstreamInfo\"\311\002\n\014Upstr" +
-      "eamInfo\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
-      "\002\004wks-\022/\n\005nodes\030\002 \003(\0132\023.model.UpstreamNo" +
-      "deB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
-      "\200\002\000\210\002\200\002\022\036\n\004desc\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\210\002\200\004\220\002\000\022" +
-      ".\n\006schema\030\005 \001(\0162\021.model.SchemaTypeB\013\342\337\037\007" +
-      "\022\005\332\001\002X\001\022%\n\003tls\030\006 \001(\0132\022.model.UpstreamTLS" +
-      "B\004\342\337\037\000\022\037\n\007timeout\030\007 \001(\0132\016.model.Timeout\022" +
-      ")\n\002id\030\010 \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360" +
-      "\001\024\";\n\016DeleteUpstream\022)\n\002id\030\001 \001(\tB\035\342\337\037\r\n\013" +
-      "\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\024\"\230\002\n\rListUpstream" +
-      "s\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\0031" +
-      "00\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262" +
-      "\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ\004" +
-      "nameJ\013create_timeJ\013update_time\022\017\n\007revers" +
-      "e\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\020\n\010s" +
-      "pace_id\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.mod" +
-      "el.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"{\n\tCreateSSL\022" +
-      "\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\t" +
-      "B\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020" +
-      "\000\022\n\n\002id\030\004 \001(\t\022\020\n\010space_id\030\005 \001(\t\"%\n\tDelet" +
-      "eSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\240\002\n\010ListS" +
-      "SLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013\n\003sni\030\002" +
-      " \001(\t\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
-      "0\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sor" +
-      "t_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_time" +
-      "J\013update_time\022\017\n\007reverse\030\006 \001(\010\022\020\n\010space_" +
-      "id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t\0223\n\013curr_sta" +
-      "tus\030\t \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X" +
-      "\001\"\363\001\n\020CreateApiService\022\014\n\004name\030\001 \001(\t\022\036\n\004" +
-      "desc\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\013auth_key" +
-      "_id\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\010space_id\030" +
-      "\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreated_by" +
-      "\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022\034\n\002id\030\006 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022\037\n\010pre_path\030\007 \001(\tB\r\342\337\037\t\022\007" +
-      "\302\001\004\230\002\200\001\"0\n\020DeleteApiService\022\034\n\002id\030\001 \001(\tB" +
-      "\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\"L\n\020UpdateApiService\022\034\n" +
-      "\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\014\n\004name\030\002 \001(" +
-      "\t\022\014\n\004desc\030\003 \001(\t\"\257\002\n\017ListApiServices\022\032\n\003i" +
-      "ds\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027" +
-      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 " +
-      "J\000J\002idJ\013create_timeJ\013update_time\022\017\n\007reve" +
-      "rse\030\005 \001(\010\022\023\n\013auth_key_id\030\006 \001(\t\022\020\n\010space_" +
-      "id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t\0223\n\013curr_sta" +
-      "tus\030\t \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X" +
-      "\001\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016Get" +
-      "SvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"Q\n" +
-      "\023DeleteClusterRoutes\022:\n\005items\030\001 \003(\0132\034.re" +
-      "quest.ApiServiceAndRoutesB\r\342\337\037\t\022\007\352\001\0040\0008d" +
-      "\"N\n\023ApiServiceAndRoutes\022\026\n\016api_service_i" +
-      "d\030\001 \001(\t\022\037\n\010routeIDs\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d" +
-      "\"j\n\rCreateAuthKey\022\014\n\004name\030\001 \001(\t\022%\n\010space" +
-      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreate" +
-      "d_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\")\n\rDeleteAu" +
-      "thKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpdat" +
-      "eAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004na" +
-      "me\030\002 \001(\t\"\227\002\n\014ListAuthKeys\022\032\n\003ids\030\001 \003(\tB\r" +
-      "\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
-      "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
-      "@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013cr" +
-      "eate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022" +
-      "\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated_by\030\007 \001(\t\0223\n" +
-      "\013curr_status\030\010 \001(\0162\021.model.StatusTypeB\013\342" +
-      "\337\037\007\022\005\332\001\002X\001\"X\n\013BindAuthKey\022!\n\013auth_key_id" +
-      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_service_ids\030" +
-      "\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbindAuthKey\022&\n" +
-      "\017api_service_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n" +
-      "$com.dataomnis.gproto.types.pbrequestB\025P" +
-      "BRequestApiDashboardP\000Z3github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbrequestb\006pro" +
-      "to3"
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\210\002\200\004\220\002\000\022$\n\013upstream_id\030\004 " +
+      "\001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024\022\036\n\004name\030\005 \001(\tB\020\342\337\037\014" +
+      "\022\n\302\001\007\200\002\000\230\002\200\001\022\'\n\016api_service_id\030\006 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\230\002\024\022\'\n\016api_version_id\030\007 \001(\tB\017\342" +
+      "\337\037\013\022\t\302\001\006\200\002\000\230\002\024\022#\n\tproxy_uri\030\010 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\200\002\000\230\002\200\002\022%\n\010space_id\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\")\n\013DeleteRoute\022\032\n\003ids\030\001 \003(\tB\r" +
+      "\342\337\037\t\022\007\352\001\0048d@\000\"\322\002\n\nListRoutes\022\014\n\004name\030\001 \001" +
+      "(\t\022\013\n\003uri\030\002 \001(\t\0223\n\013curr_status\030\003 \001(\0162\021.m" +
+      "odel.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022&\n\005limit\030\004 " +
+      "\001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\005" +
+      " \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\006 \001(\tB/\342\337\037+" +
+      "\022)\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_t" +
+      "ime\022\017\n\007reverse\030\007 \001(\010\022\032\n\003ids\030\010 \003(\tB\r\342\337\037\t\022" +
+      "\007\352\001\0048d@\000\022\026\n\016api_version_id\030\t \001(\t\022\026\n\016api_" +
+      "service_id\030\n \001(\t\022\020\n\010space_id\030\013 \001(\t\">\n\016Cr" +
+      "eateUpstream\022,\n\rupstream_info\030\001 \001(\0132\025.re" +
+      "quest.UpstreamInfo\">\n\016UpdateUpstream\022,\n\r" +
+      "upstream_info\030\001 \001(\0132\025.request.UpstreamIn" +
+      "fo\"\311\002\n\014UpstreamInfo\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\005nodes\030\002 \003(\0132\023.mode" +
+      "l.UpstreamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n\004name\030\003 \001(" +
+      "\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n\004desc\030\004 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\210\002\200\004\220\002\000\022.\n\006schema\030\005 \001(\0162\021.model.Sche" +
+      "maTypeB\013\342\337\037\007\022\005\332\001\002X\001\022%\n\003tls\030\006 \001(\0132\022.model" +
+      ".UpstreamTLSB\004\342\337\037\000\022\037\n\007timeout\030\007 \001(\0132\016.mo" +
+      "del.Timeout\022)\n\002id\030\010 \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002" +
+      "\"\000\342\337\037\010\022\006\302\001\003\360\001\024\";\n\016DeleteUpstream\022)\n\002id\030\001" +
+      " \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\024\"\230\002\n\r" +
+      "ListUpstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002 \001" +
+      "(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 " +
+      "\001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037+\022" +
+      ")\302\001&J\000J\002idJ\004nameJ\013create_timeJ\013update_ti" +
+      "me\022\017\n\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t\022\007" +
+      "\352\001\0048d@\000\022\020\n\010space_id\030\007 \001(\t\0223\n\013curr_status" +
+      "\030\010 \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"{" +
+      "\n\tCreateSSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022" +
+      "\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(\t" +
+      "B\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\020\n\010space_id\030\005 " +
+      "\001(\t\"%\n\tDeleteSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200" +
+      "\002\000\"\240\002\n\010ListSSLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048" +
+      "d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003" +
+      "100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005" +
+      "\262\001\002@\000\022:\n\007sort_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ" +
+      "\013create_timeJ\013update_time\022\017\n\007reverse\030\006 \001" +
+      "(\010\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t" +
+      "\0223\n\013curr_status\030\t \001(\0162\021.model.StatusType" +
+      "B\013\342\337\037\007\022\005\332\001\002X\001\"\363\001\n\020CreateApiService\022\014\n\004na" +
+      "me\030\001 \001(\t\022\036\n\004desc\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002" +
+      "\022%\n\013auth_key_id\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022" +
+      "%\n\010space_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$" +
+      "\n\ncreated_by\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022\034\n\002" +
+      "id\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022\037\n\010pre_path\030\007" +
+      " \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\001\"0\n\020DeleteApiService\022" +
+      "\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\"L\n\020UpdateA" +
+      "piService\022\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022" +
+      "\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\257\002\n\017ListApiS" +
+      "ervices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005l" +
+      "imit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
+      "ffset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(" +
+      "\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_" +
+      "time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013auth_key_id\030\006 \001" +
+      "(\t\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t" +
+      "\0223\n\013curr_status\030\t \001(\0162\021.model.StatusType" +
+      "B\013\342\337\037\007\022\005\332\001\002X\001\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005" +
+      "\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\200\002\000\"Q\n\023DeleteClusterRoutes\022:\n\005item" +
+      "s\030\001 \003(\0132\034.request.ApiServiceAndRoutesB\r\342" +
+      "\337\037\t\022\007\352\001\0040\0008d\"N\n\023ApiServiceAndRoutes\022\026\n\016a" +
+      "pi_service_id\030\001 \001(\t\022\037\n\010routeIDs\030\002 \003(\tB\r\342" +
+      "\337\037\t\022\007\352\001\0040\0008d\"j\n\rCreateAuthKey\022\014\n\004name\030\001 " +
+      "\001(\t\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
+      "s-\022$\n\ncreated_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002" +
+      "\")\n\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
+      "\200\002\000\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006" +
+      "\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\"\227\002\n\014ListAuthKeys\022\032\n" +
+      "\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005" +
+      "B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(" +
+      "\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302" +
+      "\001 J\000J\002idJ\013create_timeJ\013update_time\022\017\n\007re" +
+      "verse\030\005 \001(\010\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated" +
+      "_by\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.model.S" +
+      "tatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"X\n\013BindAuthKey\022!\n" +
+      "\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_" +
+      "service_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbi" +
+      "ndAuthKey\022&\n\017api_service_ids\030\001 \003(\tB\r\342\337\037\t" +
+      "\022\007\352\001\0040\0008dBt\n$com.dataomnis.gproto.types." +
+      "pbrequestB\025PBRequestApiDashboardP\000Z3gith" +
+      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
+      "requestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30529,7 +30378,7 @@ public final class PBRequestApiDashboard {
     internal_static_request_RouteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_RouteInfo_descriptor,
-        new java.lang.String[] { "Uri", "Id", "Desc", "Host", "UpstreamId", "Name", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
+        new java.lang.String[] { "Uri", "Id", "Desc", "UpstreamId", "Name", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
     internal_static_request_DeleteRoute_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_request_DeleteRoute_fieldAccessorTable = new
