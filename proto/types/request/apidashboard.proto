@@ -54,35 +54,35 @@ message DeleteRoute {
 }
 
 message ListRoutes {
-  // @inject_tag: json:"name"
+  // @inject_tag: json:"name" form:"name"
   string name = 1;
-  // @inject_tag: json:"uri"
+  // @inject_tag: json:"uri" form:"uri"
   string uri = 2;
-  // @inject_tag: json:"curr_status"
+  // @inject_tag: json:"curr_status" form:"curr_status"
   model.StatusType curr_status = 3 [ (validator.field).tags.enum = { in_enums: true } ];
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit"
+  // @inject_tag: json:"limit" form:"limit"
   int32 limit = 4 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset"
+  // @inject_tag: json:"offset" form:"offset"
   int32 offset = 5 [ (validator.field).tags.int  = { gte: 0 } ];
   // The field list used to sorted query results.
   // Optional values: {id, name, create_time, create_time}.
   // Not required, default: id.
-  // @inject_tag: json:"sort_by"
+  // @inject_tag: json:"sort_by" form:"sort_by"
   string sort_by = 6 [ (validator.field).tags.string = { in: ["", "id", "name", "create_time", "update_time"] } ];
   // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse"
+  // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 7;
   // The id lists of resource query.
   // @inject_tag: json:"ids" form:"ids"
   repeated string ids  = 8 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
-  // @inject_tag: json:"api_version_id"
+  // @inject_tag: json:"api_version_id" form:"api_version_id"
   string api_version_id = 9;
-  // @inject_tag: json:"api_service_id"
+  // @inject_tag: json:"api_service_id" form:"api_service_id"
   string api_service_id = 10;
-  // @inject_tag: json:"space_id"
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 11;
 }
 
@@ -208,7 +208,7 @@ message CreateApiService {
   string auth_key_id = 3 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"space_id"
   string space_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
-  // @inject_tag: json:"created_by"
+  // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 5 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"id"
   string id = 6 [ (validator.field).tags.string = { byte_len_gte: 0, byte_len_lte: 256 } ];
@@ -232,32 +232,32 @@ message UpdateApiService {
 
 message ListApiServices {
   // The id lists of resource query.
-  // @inject_tag: json:"ids"
+  // @inject_tag: json:"ids" form:"ids"
   repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit"
+  // @inject_tag: json:"limit" form:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
   // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset"
+  // @inject_tag: json:"offset" form:"offset"
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
   // The field list used to sorted query results.
   // Optional values: {id, create_time, create_time}.
   // Not required, default: id.
-  // @inject_tag: json:"sort_by"
+  // @inject_tag: json:"sort_by" form:"sort_by"
   string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
   // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse"
+  // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 5;
   // Reverse order results. Not required, default: "".
-  // @inject_tag: json:"auth_key_id"
+  // @inject_tag: json:"auth_key_id" form:"auth_key_id"
   string auth_key_id = 6;
-  // @inject_tag: json:"space_id"
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 7;
-  // @inject_tag: json:"created_by"
+  // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 8;
-  // @inject_tag: json:"curr_status"
+  // @inject_tag: json:"curr_status" form:"curr_status"
   model.StatusType curr_status = 9 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
@@ -284,69 +284,69 @@ message ApiServiceAndRoutes {
 }
 
 message CreateAuthKey {
-  // @inject_tag: json:"name"
+  // @inject_tag: json:"name" form:"name"
   string name = 1;
-  // @inject_tag: json:"space_id"
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
-  // @inject_tag: json:"created_by"
+  // @inject_tag: json:"created_by" swaggerignore:"true"
   string created_by = 3 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
 }
 
 message DeleteAuthKey {
-  // @inject_tag: json:"id"
+  // @inject_tag: json:"id" form:"id"
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
 }
 
 message UpdateAuthKey {
-  // @inject_tag: json:"id"
+  // @inject_tag: json:"id" form:"id"
   string id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
-
+  // @inject_tag: json:"name" form:"name"
   string name = 2;
 }
 
 message ListAuthKeys {
   // The id lists of resource query.
-  // @inject_tag: json:"ids"
+  // @inject_tag: json:"ids" form:"ids"
   repeated string ids  = 1 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 
   // Limit the maximum number of entries returned this time.
   // Not required, Max 100, default 100.
-  // @inject_tag: json:"limit"
+  // @inject_tag: json:"limit" form:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
 
   // The offset position. Not required, default 0.
-  // @inject_tag: json:"offset"
+  // @inject_tag: json:"offset" form:"offset"
   int32 offset = 3 [ (validator.field).tags.int  = { gte: 0 } ];
 
   // The field list used to sorted query results.
   // Optional values: {id, create_time, create_time}.
   // Not required, default: id.
-  // @inject_tag: json:"sort_by"
+  // @inject_tag: json:"sort_by" form:"sort_by"
   string sort_by = 4 [ (validator.field).tags.string = { in: ["", "id", "create_time", "update_time"] } ];
 
   // Reverse order results. Not required, default: false.
-  // @inject_tag: json:"reverse"
+  // @inject_tag: json:"reverse" form:"reverse"
   bool reverse = 5;
 
-  // @inject_tag: json:"space_id"
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
   string space_id = 6;
-  // @inject_tag: json:"created_by"
+  // @inject_tag: json:"created_by" form:"created_by"
   string created_by = 7;
-  // @inject_tag: json:"curr_status"
+  // @inject_tag: json:"curr_status" form:"curr_status"
   model.StatusType curr_status = 8 [ (validator.field).tags.enum = { in_enums: true } ];
 }
 
 message BindAuthKey {
   // AuthKey ID
-  // @inject_tag: json:"auth_key_id"
+  // @inject_tag: json:"auth_key_id" form:"auth_key_id"
   string auth_key_id = 1 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
   // ApiService ID
-  // @inject_tag: json:"api_service_ids"
+  // @inject_tag: json:"api_service_ids" form:"api_service_ids"
   repeated string api_service_ids = 2 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
 
 message UnbindAuthKey {
   // ApiService ID
-  // @inject_tag: json:"api_service_ids"
+  // @inject_tag: json:"api_service_ids" form:"api_service_ids"
   repeated string api_service_ids = 1 [ (validator.field).tags.repeated = { len_gt: 0, len_lte: 100 } ];
 }
