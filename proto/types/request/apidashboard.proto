@@ -259,6 +259,8 @@ message ListApiServices {
   string created_by = 8;
   // @inject_tag: json:"curr_status" form:"curr_status"
   model.StatusType curr_status = 9 [ (validator.field).tags.enum = { in_enums: true } ];
+  // @inject_tag: json:"name" form:"name"
+  string name = 10;
 }
 
 message AddSvcReqCount {
@@ -334,6 +336,8 @@ message ListAuthKeys {
   string created_by = 7;
   // @inject_tag: json:"curr_status" form:"curr_status"
   model.StatusType curr_status = 8 [ (validator.field).tags.enum = { in_enums: true } ];
+  // @inject_tag: json:"name" form:"name"
+  string name = 9;
 }
 
 message BindAuthKey {
