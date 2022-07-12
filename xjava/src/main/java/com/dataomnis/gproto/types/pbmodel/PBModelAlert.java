@@ -336,6 +336,51 @@ public final class PBModelAlert {
      */
     com.dataomnis.gproto.types.pbmodel.PBModelAccount.NotificationOrBuilder getNotificationsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @return A list containing the jobIds.
+     */
+    java.util.List<java.lang.String>
+        getJobIdsList();
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @return The count of jobIds.
+     */
+    int getJobIdsCount();
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @param index The index of the element to return.
+     * @return The jobIds at the given index.
+     */
+    java.lang.String getJobIds(int index);
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jobIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getJobIdsBytes(int index);
   }
   /**
    * <pre>
@@ -365,6 +410,7 @@ public final class PBModelAlert {
       notificationIds_ = "";
       createdBy_ = "";
       notifications_ = java.util.Collections.emptyList();
+      jobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -490,6 +536,15 @@ public final class PBModelAlert {
                   input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelAccount.Notification.parser(), extensionRegistry));
               break;
             }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                jobIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              jobIds_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -507,6 +562,9 @@ public final class PBModelAlert {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           notifications_ = java.util.Collections.unmodifiableList(notifications_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          jobIds_ = jobIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -3892,6 +3950,61 @@ public final class PBModelAlert {
       return notifications_.get(index);
     }
 
+    public static final int JOB_IDS_FIELD_NUMBER = 15;
+    private com.google.protobuf.LazyStringList jobIds_;
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @return A list containing the jobIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getJobIdsList() {
+      return jobIds_;
+    }
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @return The count of jobIds.
+     */
+    public int getJobIdsCount() {
+      return jobIds_.size();
+    }
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @param index The index of the element to return.
+     * @return The jobIds at the given index.
+     */
+    public java.lang.String getJobIds(int index) {
+      return jobIds_.get(index);
+    }
+    /**
+     * <pre>
+     * The id list of jobs.
+     * &#64;inject_tag: json:"job_ids" gorm:"-"
+     * </pre>
+     *
+     * <code>repeated string job_ids = 15;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the jobIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getJobIdsBytes(int index) {
+      return jobIds_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3947,6 +4060,9 @@ public final class PBModelAlert {
       }
       for (int i = 0; i < notifications_.size(); i++) {
         output.writeMessage(14, notifications_.get(i));
+      }
+      for (int i = 0; i < jobIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, jobIds_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -4007,6 +4123,14 @@ public final class PBModelAlert {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, notifications_.get(i));
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < jobIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(jobIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getJobIdsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4049,6 +4173,8 @@ public final class PBModelAlert {
           != other.getUpdated()) return false;
       if (!getNotificationsList()
           .equals(other.getNotificationsList())) return false;
+      if (!getJobIdsList()
+          .equals(other.getJobIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4093,6 +4219,10 @@ public final class PBModelAlert {
       if (getNotificationsCount() > 0) {
         hash = (37 * hash) + NOTIFICATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationsList().hashCode();
+      }
+      if (getJobIdsCount() > 0) {
+        hash = (37 * hash) + JOB_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getJobIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4268,6 +4398,8 @@ public final class PBModelAlert {
         } else {
           notificationsBuilder_.clear();
         }
+        jobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -4321,6 +4453,11 @@ public final class PBModelAlert {
         } else {
           result.notifications_ = notificationsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          jobIds_ = jobIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.jobIds_ = jobIds_;
         onBuilt();
         return result;
       }
@@ -4439,6 +4576,16 @@ public final class PBModelAlert {
               notificationsBuilder_.addAllMessages(other.notifications_);
             }
           }
+        }
+        if (!other.jobIds_.isEmpty()) {
+          if (jobIds_.isEmpty()) {
+            jobIds_ = other.jobIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureJobIdsIsMutable();
+            jobIds_.addAll(other.jobIds_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5981,6 +6128,161 @@ public final class PBModelAlert {
           notifications_ = null;
         }
         return notificationsBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList jobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureJobIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          jobIds_ = new com.google.protobuf.LazyStringArrayList(jobIds_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @return A list containing the jobIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getJobIdsList() {
+        return jobIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @return The count of jobIds.
+       */
+      public int getJobIdsCount() {
+        return jobIds_.size();
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param index The index of the element to return.
+       * @return The jobIds at the given index.
+       */
+      public java.lang.String getJobIds(int index) {
+        return jobIds_.get(index);
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the jobIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getJobIdsBytes(int index) {
+        return jobIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param index The index to set the value at.
+       * @param value The jobIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJobIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureJobIdsIsMutable();
+        jobIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param value The jobIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addJobIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureJobIdsIsMutable();
+        jobIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param values The jobIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllJobIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureJobIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, jobIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJobIds() {
+        jobIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The id list of jobs.
+       * &#64;inject_tag: json:"job_ids" gorm:"-"
+       * </pre>
+       *
+       * <code>repeated string job_ids = 15;</code>
+       * @param value The bytes of the jobIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addJobIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureJobIdsIsMutable();
+        jobIds_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9187,7 +9489,7 @@ public final class PBModelAlert {
       "github.com/yu31/protoc-plugin/proto/vali" +
       "dator.proto\032/github.com/yu31/protoc-plug" +
       "in/proto/gosql.proto\032\037proto/types/model/" +
-      "account.proto\"\372\t\n\013AlertPolicy\022%\n\010space_i" +
+      "account.proto\"\213\n\n\013AlertPolicy\022%\n\010space_i" +
       "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\037\n\002id\030\002 \001(\t" +
       "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\036\n\004name\030\003 \001(\tB\020\342\337\037" +
       "\014\022\n\302\001\007\220\002\002\230\002\200\001\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001" +
@@ -9204,43 +9506,43 @@ public final class PBModelAlert {
       "\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\014 \001(\003B\013\342\337\037" +
       "\007\022\005\262\001\0020\000\022\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022*" +
       "\n\rnotifications\030\016 \003(\0132\023.model.Notificati" +
-      "on\032g\n\020MonitorStreamJob\022\033\n\023instance_run_f" +
+      "on\022\017\n\007job_ids\030\017 \003(\t\032g\n\020MonitorStreamJob\022" +
+      "\033\n\023instance_run_failed\030\001 \001(\010\022\034\n\024instance" +
+      "_run_timeout\030\002 \001(\010\022\030\n\020instance_timeout\030\003" +
+      " \001(\005\032e\n\016MonitorSyncJob\022\033\n\023instance_run_f" +
       "ailed\030\001 \001(\010\022\034\n\024instance_run_timeout\030\002 \001(" +
-      "\010\022\030\n\020instance_timeout\030\003 \001(\005\032e\n\016MonitorSy" +
-      "ncJob\022\033\n\023instance_run_failed\030\001 \001(\010\022\034\n\024in" +
-      "stance_run_timeout\030\002 \001(\010\022\030\n\020instance_tim" +
-      "eout\030\003 \001(\005\032\203\001\n\013MonitorItem\0227\n\nstream_job" +
-      "\030\001 \001(\0132#.model.AlertPolicy.MonitorStream" +
-      "Job\0223\n\010sync_job\030\002 \001(\0132!.model.AlertPolic" +
-      "y.MonitorSyncJob:\006\312\262\004\002\n\000\"A\n\006Status\022\017\n\013St" +
-      "atusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\022\014\n" +
-      "\010Disabled\020\003\";\n\013TriggerRule\022\024\n\020TriggerRul" +
-      "eUnset\020\000\022\026\n\022TriggerRuleAnyItem\020\001\"J\n\rTrig" +
-      "gerAction\022\026\n\022TriggerActionUnset\020\000\022!\n\035Tri" +
-      "ggerActionSendNotification\020\001\"<\n\rMonitorO" +
-      "bject\022\017\n\013ObjectUnset\020\000\022\r\n\tStreamJob\020\001\022\013\n" +
-      "\007SyncJob\020\002\"\200\001\n\022AlertPolicyMapping\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010aler" +
-      "t_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job_i" +
-      "d\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\320\004\n\010AlertLog\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010ale" +
-      "rt_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004alt-\022\034\n\006job_" +
-      "id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022!\n\013instance_id\030\004 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0225\n\006status\030\005 \001(\0162\026.mode" +
-      "l.AlertLog.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022G\n\016moni" +
-      "tor_object\030\006 \001(\0162 .model.AlertPolicy.Mon" +
-      "itorObjectB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_type\030" +
-      "\007 \001(\0162\031.model.AlertLog.EventTypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022\034\n\007created\030\014 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
-      "\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n" +
-      "\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002" +
-      "\"\205\001\n\tEventType\022\022\n\016EventTypeUnset\020\000\022\030\n\024St" +
-      "reamInstanceFailed\020\001\022\031\n\025StreamInstanceTi" +
-      "meout\020\002\022\026\n\022SyncInstanceFailed\020\003\022\027\n\023SyncI" +
-      "nstanceTimeout\020\004Bg\n\"com.dataomnis.gproto" +
-      ".types.pbmodelB\014PBModelAlertP\000Z1github.c" +
-      "om/DataWorkbench/gproto/xgo/types/pbmode" +
-      "lb\006proto3"
+      "\010\022\030\n\020instance_timeout\030\003 \001(\005\032\203\001\n\013MonitorI" +
+      "tem\0227\n\nstream_job\030\001 \001(\0132#.model.AlertPol" +
+      "icy.MonitorStreamJob\0223\n\010sync_job\030\002 \001(\0132!" +
+      ".model.AlertPolicy.MonitorSyncJob:\006\312\262\004\002\n" +
+      "\000\"A\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020" +
+      "\001\022\013\n\007Enabled\020\002\022\014\n\010Disabled\020\003\";\n\013TriggerR" +
+      "ule\022\024\n\020TriggerRuleUnset\020\000\022\026\n\022TriggerRule" +
+      "AnyItem\020\001\"J\n\rTriggerAction\022\026\n\022TriggerAct" +
+      "ionUnset\020\000\022!\n\035TriggerActionSendNotificat" +
+      "ion\020\001\"<\n\rMonitorObject\022\017\n\013ObjectUnset\020\000\022" +
+      "\r\n\tStreamJob\020\001\022\013\n\007SyncJob\020\002\"\200\001\n\022AlertPol" +
+      "icyMapping\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004alt-\022\034\n\006job_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\"\320" +
+      "\004\n\010AlertLog\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004alt-\022\034\n\006job_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022" +
+      "!\n\013instance_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\0225\n\006st" +
+      "atus\030\005 \001(\0162\026.model.AlertLog.StatusB\r\342\337\037\t" +
+      "\022\007\332\001\0040\000X\001\022G\n\016monitor_object\030\006 \001(\0162 .mode" +
+      "l.AlertPolicy.MonitorObjectB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\022<\n\nevent_type\030\007 \001(\0162\031.model.AlertLog." +
+      "EventTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\034\n\007created\030\014 \001(" +
+      "\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\r \001(\003B\013\342\337\037\007\022\005\262" +
+      "\001\0020\000\"3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Delet" +
+      "ed\020\001\022\013\n\007Enabled\020\002\"\205\001\n\tEventType\022\022\n\016Event" +
+      "TypeUnset\020\000\022\030\n\024StreamInstanceFailed\020\001\022\031\n" +
+      "\025StreamInstanceTimeout\020\002\022\026\n\022SyncInstance" +
+      "Failed\020\003\022\027\n\023SyncInstanceTimeout\020\004Bg\n\"com" +
+      ".dataomnis.gproto.types.pbmodelB\014PBModel" +
+      "AlertP\000Z1github.com/DataWorkbench/gproto" +
+      "/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -9254,7 +9556,7 @@ public final class PBModelAlert {
     internal_static_model_AlertPolicy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_AlertPolicy_descriptor,
-        new java.lang.String[] { "SpaceId", "Id", "Name", "Desc", "Status", "MonitorObject", "MonitorItem", "TriggerRule", "TriggerAction", "NotificationIds", "CreatedBy", "Created", "Updated", "Notifications", });
+        new java.lang.String[] { "SpaceId", "Id", "Name", "Desc", "Status", "MonitorObject", "MonitorItem", "TriggerRule", "TriggerAction", "NotificationIds", "CreatedBy", "Created", "Updated", "Notifications", "JobIds", });
     internal_static_model_AlertPolicy_MonitorStreamJob_descriptor =
       internal_static_model_AlertPolicy_descriptor.getNestedTypes().get(0);
     internal_static_model_AlertPolicy_MonitorStreamJob_fieldAccessorTable = new

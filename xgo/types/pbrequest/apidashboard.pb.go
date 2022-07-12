@@ -280,25 +280,25 @@ type ListRoutes struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name       string             `protobuf:"bytes,1,opt,name=name,proto3" json:"name"`
-	Uri        string             `protobuf:"bytes,2,opt,name=uri,proto3" json:"uri"`
-	CurrStatus pbmodel.StatusType `protobuf:"varint,3,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status"`
+	Name       string             `protobuf:"bytes,1,opt,name=name,proto3" json:"name" form:"name"`
+	Uri        string             `protobuf:"bytes,2,opt,name=uri,proto3" json:"uri" form:"uri"`
+	CurrStatus pbmodel.StatusType `protobuf:"varint,3,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status" form:"curr_status"`
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,4,opt,name=limit,proto3" json:"limit"`
+	Limit int32 `protobuf:"varint,4,opt,name=limit,proto3" json:"limit" form:"limit"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,5,opt,name=offset,proto3" json:"offset"`
+	Offset int32 `protobuf:"varint,5,opt,name=offset,proto3" json:"offset" form:"offset"`
 	// The field list used to sorted query results.
 	// Optional values: {id, name, create_time, create_time}.
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,6,opt,name=sort_by,json=sortBy,proto3" json:"sort_by"`
+	SortBy string `protobuf:"bytes,6,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,7,opt,name=reverse,proto3" json:"reverse"`
+	Reverse bool `protobuf:"varint,7,opt,name=reverse,proto3" json:"reverse" form:"reverse"`
 	// The id lists of resource query.
 	Ids          []string `protobuf:"bytes,8,rep,name=ids,proto3" json:"ids" form:"ids"`
-	ApiVersionId string   `protobuf:"bytes,9,opt,name=api_version_id,json=apiVersionId,proto3" json:"api_version_id"`
-	ApiServiceId string   `protobuf:"bytes,10,opt,name=api_service_id,json=apiServiceId,proto3" json:"api_service_id"`
-	SpaceId      string   `protobuf:"bytes,11,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	ApiVersionId string   `protobuf:"bytes,9,opt,name=api_version_id,json=apiVersionId,proto3" json:"api_version_id" form:"api_version_id"`
+	ApiServiceId string   `protobuf:"bytes,10,opt,name=api_service_id,json=apiServiceId,proto3" json:"api_service_id" form:"api_service_id"`
+	SpaceId      string   `protobuf:"bytes,11,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
 }
 
 func (x *ListRoutes) Reset() {
@@ -1019,7 +1019,7 @@ type CreateApiService struct {
 	Desc      string `protobuf:"bytes,2,opt,name=desc,proto3" json:"desc"`
 	AuthKeyId string `protobuf:"bytes,3,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id"`
 	SpaceId   string `protobuf:"bytes,4,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
-	CreatedBy string `protobuf:"bytes,5,opt,name=created_by,json=createdBy,proto3" json:"created_by"`
+	CreatedBy string `protobuf:"bytes,5,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
 	Id        string `protobuf:"bytes,6,opt,name=id,proto3" json:"id"`
 	PrePath   string `protobuf:"bytes,7,opt,name=pre_path,json=prePath,proto3" json:"pre_path"`
 }
@@ -1221,23 +1221,23 @@ type ListApiServices struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The id lists of resource query.
-	Ids []string `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids"`
+	Ids []string `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids" form:"ids"`
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit"`
+	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit" form:"limit"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset"`
+	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset" form:"offset"`
 	// The field list used to sorted query results.
 	// Optional values: {id, create_time, create_time}.
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by"`
+	SortBy string `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by"`
 	// Reverse order results. Not required, default: false.
-	Reverse bool `protobuf:"varint,5,opt,name=reverse,proto3" json:"reverse"`
+	Reverse bool `protobuf:"varint,5,opt,name=reverse,proto3" json:"reverse" form:"reverse"`
 	// Reverse order results. Not required, default: "".
-	AuthKeyId  string             `protobuf:"bytes,6,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id"`
-	SpaceId    string             `protobuf:"bytes,7,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
-	CreatedBy  string             `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by"`
-	CurrStatus pbmodel.StatusType `protobuf:"varint,9,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status"`
+	AuthKeyId  string             `protobuf:"bytes,6,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id" form:"auth_key_id"`
+	SpaceId    string             `protobuf:"bytes,7,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
+	CreatedBy  string             `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
+	CurrStatus pbmodel.StatusType `protobuf:"varint,9,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status" form:"curr_status"`
 }
 
 func (x *ListApiServices) Reset() {
@@ -1545,9 +1545,9 @@ type CreateAuthKey struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name      string `protobuf:"bytes,1,opt,name=name,proto3" json:"name"`
-	SpaceId   string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
-	CreatedBy string `protobuf:"bytes,3,opt,name=created_by,json=createdBy,proto3" json:"created_by"`
+	Name      string `protobuf:"bytes,1,opt,name=name,proto3" json:"name" form:"name"`
+	SpaceId   string `protobuf:"bytes,2,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
+	CreatedBy string `protobuf:"bytes,3,opt,name=created_by,json=createdBy,proto3" json:"created_by" swaggerignore:"true"`
 }
 
 func (x *CreateAuthKey) Reset() {
@@ -1608,7 +1608,7 @@ type DeleteAuthKey struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" form:"id"`
 }
 
 func (x *DeleteAuthKey) Reset() {
@@ -1655,8 +1655,8 @@ type UpdateAuthKey struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   string `protobuf:"bytes,1,opt,name=id,proto3" json:"id"`
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Id   string `protobuf:"bytes,1,opt,name=id,proto3" json:"id" form:"id"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" form:"name"`
 }
 
 func (x *UpdateAuthKey) Reset() {
@@ -1711,21 +1711,21 @@ type ListAuthKeys struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The id lists of resource query.
-	Ids []string `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids"`
+	Ids []string `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids" form:"ids"`
 	// Limit the maximum number of entries returned this time.
 	// Not required, Max 100, default 100.
-	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit"`
+	Limit int32 `protobuf:"varint,2,opt,name=limit,proto3" json:"limit" form:"limit"`
 	// The offset position. Not required, default 0.
-	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset"`
+	Offset int32 `protobuf:"varint,3,opt,name=offset,proto3" json:"offset" form:"offset"`
 	// The field list used to sorted query results.
 	// Optional values: {id, create_time, create_time}.
 	// Not required, default: id.
-	SortBy string `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by"`
+	SortBy string `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by" form:"sort_by"`
 	// Reverse order results. Not required, default: false.
-	Reverse    bool               `protobuf:"varint,5,opt,name=reverse,proto3" json:"reverse"`
-	SpaceId    string             `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
-	CreatedBy  string             `protobuf:"bytes,7,opt,name=created_by,json=createdBy,proto3" json:"created_by"`
-	CurrStatus pbmodel.StatusType `protobuf:"varint,8,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status"`
+	Reverse    bool               `protobuf:"varint,5,opt,name=reverse,proto3" json:"reverse" form:"reverse"`
+	SpaceId    string             `protobuf:"bytes,6,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
+	CreatedBy  string             `protobuf:"bytes,7,opt,name=created_by,json=createdBy,proto3" json:"created_by" form:"created_by"`
+	CurrStatus pbmodel.StatusType `protobuf:"varint,8,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status" form:"curr_status"`
 }
 
 func (x *ListAuthKeys) Reset() {
@@ -1822,9 +1822,9 @@ type BindAuthKey struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AuthKey ID
-	AuthKeyId string `protobuf:"bytes,1,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id"`
+	AuthKeyId string `protobuf:"bytes,1,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id" form:"auth_key_id"`
 	// ApiService ID
-	ApiServiceIds []string `protobuf:"bytes,2,rep,name=api_service_ids,json=apiServiceIds,proto3" json:"api_service_ids"`
+	ApiServiceIds []string `protobuf:"bytes,2,rep,name=api_service_ids,json=apiServiceIds,proto3" json:"api_service_ids" form:"api_service_ids"`
 }
 
 func (x *BindAuthKey) Reset() {
@@ -1879,7 +1879,7 @@ type UnbindAuthKey struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ApiService ID
-	ApiServiceIds []string `protobuf:"bytes,1,rep,name=api_service_ids,json=apiServiceIds,proto3" json:"api_service_ids"`
+	ApiServiceIds []string `protobuf:"bytes,1,rep,name=api_service_ids,json=apiServiceIds,proto3" json:"api_service_ids" form:"api_service_ids"`
 }
 
 func (x *UnbindAuthKey) Reset() {
