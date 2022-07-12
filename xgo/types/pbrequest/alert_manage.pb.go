@@ -51,7 +51,7 @@ type ListAlertPolicies struct {
 	// If the value greater than 1, The details of the associated information will be returned.
 	Verbose int32 `protobuf:"varint,8,opt,name=verbose,proto3" json:"verbose" form:"verbose"`
 	// Filter by monitor object, 1 => "StreamJob" 2 => "SyncJob'; Not required.
-	MonitorObject pbmodel.AlertPolicy_MonitorObject `protobuf:"varint,9,opt,name=monitor_object,json=monitorObject,proto3,enum=model.AlertPolicy_MonitorObject" json:"monitor_object"`
+	MonitorObject pbmodel.AlertPolicy_MonitorObject `protobuf:"varint,9,opt,name=monitor_object,json=monitorObject,proto3,enum=model.AlertPolicy_MonitorObject" json:"monitor_object" form:"monitor_object"`
 }
 
 func (x *ListAlertPolicies) Reset() {
