@@ -57,7 +57,7 @@ message ListAlertPolicies {
   int32 verbose = 8;
 
   // Filter by monitor object, 1 => "StreamJob" 2 => "SyncJob'; Not required.
-  // @inject_tag: json:"monitor_object"
+  // @inject_tag: json:"monitor_object" form:"monitor_object"
   model.AlertPolicy.MonitorObject monitor_object = 9;
 }
 
