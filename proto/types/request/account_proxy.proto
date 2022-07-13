@@ -35,7 +35,10 @@ message ListUsersByProxy {
 
 message ListNotificationsByProxy {
   // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
-  string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+  string user_id = 1 [
+    (validator.field).check_if = { field: "nf_ids", tags: { repeated: { len_eq: 0 } }},
+    (validator.field).tags.string = { ne: "" }
+  ];
 
   // @inject_tag: json:"limit" form:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];

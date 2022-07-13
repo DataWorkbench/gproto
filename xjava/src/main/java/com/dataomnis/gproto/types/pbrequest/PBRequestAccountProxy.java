@@ -2802,14 +2802,15 @@ public final class PBRequestAccountProxy {
       "escribeAccessKeyByProxy\022\025\n\raccess_key_id" +
       "\030\001 \001(\t\"j\n\020ListUsersByProxy\022&\n\005limit\030\001 \001(" +
       "\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001" +
-      "(\005\022\020\n\010user_ids\030\003 \003(\t\022\014\n\004name\030\004 \001(\t\"\217\001\n\030L" +
-      "istNotificationsByProxy\022\034\n\007user_id\030\001 \001(\t" +
-      "B\013\342\337\037\007\022\005\302\001\002\"\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
-      "\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\003 \001(\005\022\035\n\006nf_ids\030" +
-      "\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000Bt\n$com.dataomnis.gp" +
-      "roto.types.pbrequestB\025PBRequestAccountPr" +
-      "oxyP\000Z3github.com/DataWorkbench/gproto/x" +
-      "go/types/pbrequestb\006proto3"
+      "(\005\022\020\n\010user_ids\030\003 \003(\t\022\014\n\004name\030\004 \001(\t\"\244\001\n\030L" +
+      "istNotificationsByProxy\0221\n\007user_id\030\001 \001(\t" +
+      "B \342\337\037\021\n\017\n\006nf_ids\022\005\352\001\002\030\000\342\337\037\007\022\005\302\001\002\"\000\022&\n\005li" +
+      "mit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006of" +
+      "fset\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
+      "\000Bt\n$com.dataomnis.gproto.types.pbreques" +
+      "tB\025PBRequestAccountProxyP\000Z3github.com/D" +
+      "ataWorkbench/gproto/xgo/types/pbrequestb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
