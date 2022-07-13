@@ -285,7 +285,7 @@ message ApiVersion{
   // @inject_tag: json:"version_id" gorm:"column:version_id;primaryKey;"
   string	version_id = 1 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
   // @inject_tag: json:"publish_status" gorm:"column:publish_status;"
-  Status publish_status = 2 [ (validator.field).tags.enum = { gt: 1; in_enums: true  } ];
+  Status publish_status = 2 [ (validator.field).tags.enum = { gt: 0; in_enums: true  } ];
   //int64 publish_time = 3 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"
   string api_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];

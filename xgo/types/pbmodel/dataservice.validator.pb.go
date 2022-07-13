@@ -792,8 +792,8 @@ func (this *ApiVersion) _xxx_xxx_Validator_Validate_version_id() error {
 var _xxx_xxx_Validator_ApiVersion_InEnums_PublishStatus = map[ApiVersion_Status]bool{0: true, 1: true, 2: true}
 
 func (this *ApiVersion) _xxx_xxx_Validator_Validate_publish_status() error {
-	if !(this.PublishStatus > 1) {
-		return protovalidator.FieldError1("ApiVersion", "the value of field 'publish_status' must be greater than '1'", protovalidator.Int32ToString(int32(this.PublishStatus)))
+	if !(this.PublishStatus > 0) {
+		return protovalidator.FieldError1("ApiVersion", "the value of field 'publish_status' must be greater than '0'", protovalidator.Int32ToString(int32(this.PublishStatus)))
 	}
 	if !(_xxx_xxx_Validator_ApiVersion_InEnums_PublishStatus[this.PublishStatus]) {
 		return protovalidator.FieldError1("ApiVersion", "the value of field 'publish_status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.PublishStatus)))
