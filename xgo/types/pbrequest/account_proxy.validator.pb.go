@@ -41,7 +41,17 @@ func (this *ListUsersByProxy) Validate() error {
 	return nil
 }
 
+func (this *ListNotificationsByProxy) _xxx_xxx_Validator_CheckIf_user_id() bool {
+	if !(len(this.NfIds) == 0) {
+		return false
+	}
+	return true
+}
+
 func (this *ListNotificationsByProxy) _xxx_xxx_Validator_Validate_user_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_user_id() {
+		return nil
+	}
 	if !(this.UserId != "") {
 		return protovalidator.FieldError1("ListNotificationsByProxy", "the value of field 'user_id' must be not equal to ''", this.UserId)
 	}

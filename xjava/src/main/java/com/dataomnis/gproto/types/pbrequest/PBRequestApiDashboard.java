@@ -19719,6 +19719,26 @@ public final class PBRequestApiDashboard {
      * @return The currStatus.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
    * Protobuf type {@code request.ListApiServices}
@@ -19739,6 +19759,7 @@ public final class PBRequestApiDashboard {
       spaceId_ = "";
       createdBy_ = "";
       currStatus_ = 0;
+      name_ = "";
     }
 
     @java.lang.Override
@@ -19824,6 +19845,12 @@ public final class PBRequestApiDashboard {
               int rawValue = input.readEnum();
 
               currStatus_ = rawValue;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             default: {
@@ -20184,6 +20211,52 @@ public final class PBRequestApiDashboard {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
+    public static final int NAME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 10;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -20224,6 +20297,9 @@ public final class PBRequestApiDashboard {
       }
       if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         output.writeEnum(9, currStatus_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -20270,6 +20346,9 @@ public final class PBRequestApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, currStatus_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, name_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -20302,6 +20381,8 @@ public final class PBRequestApiDashboard {
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
       if (currStatus_ != other.currStatus_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -20334,6 +20415,8 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + currStatus_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -20485,6 +20568,8 @@ public final class PBRequestApiDashboard {
 
         currStatus_ = 0;
 
+        name_ = "";
+
         return this;
       }
 
@@ -20525,6 +20610,7 @@ public final class PBRequestApiDashboard {
         result.spaceId_ = spaceId_;
         result.createdBy_ = createdBy_;
         result.currStatus_ = currStatus_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -20610,6 +20696,10 @@ public final class PBRequestApiDashboard {
         }
         if (other.currStatus_ != 0) {
           setCurrStatusValue(other.getCurrStatusValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21411,6 +21501,102 @@ public final class PBRequestApiDashboard {
       public Builder clearCurrStatus() {
         
         currStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 10;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 10;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 10;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 10;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
         onChanged();
         return this;
       }
@@ -26892,6 +27078,26 @@ public final class PBRequestApiDashboard {
      * @return The currStatus.
      */
     com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType getCurrStatus();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 9;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 9;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
    * Protobuf type {@code request.ListAuthKeys}
@@ -26911,6 +27117,7 @@ public final class PBRequestApiDashboard {
       spaceId_ = "";
       createdBy_ = "";
       currStatus_ = 0;
+      name_ = "";
     }
 
     @java.lang.Override
@@ -26990,6 +27197,12 @@ public final class PBRequestApiDashboard {
               int rawValue = input.readEnum();
 
               currStatus_ = rawValue;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
               break;
             }
             default: {
@@ -27302,6 +27515,52 @@ public final class PBRequestApiDashboard {
       return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.UNRECOGNIZED : result;
     }
 
+    public static final int NAME_FIELD_NUMBER = 9;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 9;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name" form:"name"
+     * </pre>
+     *
+     * <code>string name = 9;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -27339,6 +27598,9 @@ public final class PBRequestApiDashboard {
       }
       if (currStatus_ != com.dataomnis.gproto.types.pbmodel.PBModelApiDashboard.StatusType.Skip.getNumber()) {
         output.writeEnum(8, currStatus_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, name_);
       }
       unknownFields.writeTo(output);
     }
@@ -27382,6 +27644,9 @@ public final class PBRequestApiDashboard {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, currStatus_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, name_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -27412,6 +27677,8 @@ public final class PBRequestApiDashboard {
       if (!getCreatedBy()
           .equals(other.getCreatedBy())) return false;
       if (currStatus_ != other.currStatus_) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -27442,6 +27709,8 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (37 * hash) + CURR_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + currStatus_;
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -27591,6 +27860,8 @@ public final class PBRequestApiDashboard {
 
         currStatus_ = 0;
 
+        name_ = "";
+
         return this;
       }
 
@@ -27630,6 +27901,7 @@ public final class PBRequestApiDashboard {
         result.spaceId_ = spaceId_;
         result.createdBy_ = createdBy_;
         result.currStatus_ = currStatus_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -27711,6 +27983,10 @@ public final class PBRequestApiDashboard {
         }
         if (other.currStatus_ != 0) {
           setCurrStatusValue(other.getCurrStatusValue());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -28411,6 +28687,102 @@ public final class PBRequestApiDashboard {
       public Builder clearCurrStatus() {
         
         currStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 9;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 9;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 9;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name" form:"name"
+       * </pre>
+       *
+       * <code>string name = 9;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
         onChanged();
         return this;
       }
@@ -30318,7 +30690,7 @@ public final class PBRequestApiDashboard {
       " \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\001\"0\n\020DeleteApiService\022" +
       "\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\"L\n\020UpdateA" +
       "piService\022\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022" +
-      "\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\257\002\n\017ListApiS" +
+      "\014\n\004name\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\275\002\n\017ListApiS" +
       "ervices\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005l" +
       "imit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006o" +
       "ffset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(" +
@@ -30326,33 +30698,34 @@ public final class PBRequestApiDashboard {
       "time\022\017\n\007reverse\030\005 \001(\010\022\023\n\013auth_key_id\030\006 \001" +
       "(\t\022\020\n\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t" +
       "\0223\n\013curr_status\030\t \001(\0162\021.model.StatusType" +
-      "B\013\342\337\037\007\022\005\332\001\002X\001\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 " +
-      "\001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005" +
-      "\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\200\002\000\"Q\n\023DeleteClusterRoutes\022:\n\005item" +
-      "s\030\001 \003(\0132\034.request.ApiServiceAndRoutesB\r\342" +
-      "\337\037\t\022\007\352\001\0040\0008d\"N\n\023ApiServiceAndRoutes\022\026\n\016a" +
-      "pi_service_id\030\001 \001(\t\022\037\n\010routeIDs\030\002 \003(\tB\r\342" +
-      "\337\037\t\022\007\352\001\0040\0008d\"j\n\rCreateAuthKey\022\014\n\004name\030\001 " +
-      "\001(\t\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022$\n\ncreated_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002" +
-      "\")\n\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\200\002\000\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\"\227\002\n\014ListAuthKeys\022\032\n" +
-      "\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005" +
-      "B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(" +
-      "\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302" +
-      "\001 J\000J\002idJ\013create_timeJ\013update_time\022\017\n\007re" +
-      "verse\030\005 \001(\010\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated" +
-      "_by\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162\021.model.S" +
-      "tatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"X\n\013BindAuthKey\022!\n" +
-      "\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_" +
-      "service_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbi" +
-      "ndAuthKey\022&\n\017api_service_ids\030\001 \003(\tB\r\342\337\037\t" +
-      "\022\007\352\001\0040\0008dBt\n$com.dataomnis.gproto.types." +
-      "pbrequestB\025PBRequestApiDashboardP\000Z3gith" +
-      "ub.com/DataWorkbench/gproto/xgo/types/pb" +
-      "requestb\006proto3"
+      "B\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\n \001(\t\"F\n\016AddSvcReq" +
+      "Count\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count" +
+      "\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n" +
+      "\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"Q\n\023DeleteCluster" +
+      "Routes\022:\n\005items\030\001 \003(\0132\034.request.ApiServi" +
+      "ceAndRoutesB\r\342\337\037\t\022\007\352\001\0040\0008d\"N\n\023ApiService" +
+      "AndRoutes\022\026\n\016api_service_id\030\001 \001(\t\022\037\n\010rou" +
+      "teIDs\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"j\n\rCreateAuth" +
+      "Key\022\014\n\004name\030\001 \001(\t\022%\n\010space_id\030\002 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreated_by\030\003 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\200\002\000\230\002\200\002\")\n\rDeleteAuthKey\022\030\n\002id\030\001 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpdateAuthKey\022\030\n\002id" +
+      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\"\245\002\n\014L" +
+      "istAuthKeys\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022" +
+      "&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022" +
+      "\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030" +
+      "\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013upd" +
+      "ate_time\022\017\n\007reverse\030\005 \001(\010\022\020\n\010space_id\030\006 " +
+      "\001(\t\022\022\n\ncreated_by\030\007 \001(\t\0223\n\013curr_status\030\010" +
+      " \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004" +
+      "name\030\t \001(\t\"X\n\013BindAuthKey\022!\n\013auth_key_id" +
+      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_service_ids\030" +
+      "\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbindAuthKey\022&\n" +
+      "\017api_service_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n" +
+      "$com.dataomnis.gproto.types.pbrequestB\025P" +
+      "BRequestApiDashboardP\000Z3github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbrequestb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -30462,7 +30835,7 @@ public final class PBRequestApiDashboard {
     internal_static_request_ListApiServices_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiServices_descriptor,
-        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", "SpaceId", "CreatedBy", "CurrStatus", });
+        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "AuthKeyId", "SpaceId", "CreatedBy", "CurrStatus", "Name", });
     internal_static_request_AddSvcReqCount_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_request_AddSvcReqCount_fieldAccessorTable = new
@@ -30510,7 +30883,7 @@ public final class PBRequestApiDashboard {
     internal_static_request_ListAuthKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAuthKeys_descriptor,
-        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", });
+        new java.lang.String[] { "Ids", "Limit", "Offset", "SortBy", "Reverse", "SpaceId", "CreatedBy", "CurrStatus", "Name", });
     internal_static_request_BindAuthKey_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_request_BindAuthKey_fieldAccessorTable = new
