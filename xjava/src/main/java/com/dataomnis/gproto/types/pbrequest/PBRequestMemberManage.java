@@ -37,6 +37,28 @@ public final class PBRequestMemberManage {
      * @return The offset.
      */
     int getOffset();
+
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3;</code>
+     * @return The spaceOwner.
+     */
+    java.lang.String getSpaceOwner();
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3;</code>
+     * @return The bytes for spaceOwner.
+     */
+    com.google.protobuf.ByteString
+        getSpaceOwnerBytes();
   }
   /**
    * Protobuf type {@code request.ListAvailableUsers}
@@ -51,6 +73,7 @@ public final class PBRequestMemberManage {
       super(builder);
     }
     private ListAvailableUsers() {
+      spaceOwner_ = "";
     }
 
     @java.lang.Override
@@ -91,6 +114,12 @@ public final class PBRequestMemberManage {
             case 16: {
 
               offset_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceOwner_ = s;
               break;
             }
             default: {
@@ -155,6 +184,54 @@ public final class PBRequestMemberManage {
       return offset_;
     }
 
+    public static final int SPACE_OWNER_FIELD_NUMBER = 3;
+    private volatile java.lang.Object spaceOwner_;
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3;</code>
+     * @return The spaceOwner.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceOwner() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceOwner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The owner of workspace, only used to check quota. Set by APIServer.
+     * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_owner = 3;</code>
+     * @return The bytes for spaceOwner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceOwnerBytes() {
+      java.lang.Object ref = spaceOwner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceOwner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -175,6 +252,9 @@ public final class PBRequestMemberManage {
       if (offset_ != 0) {
         output.writeInt32(2, offset_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -191,6 +271,9 @@ public final class PBRequestMemberManage {
       if (offset_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, offset_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -211,6 +294,8 @@ public final class PBRequestMemberManage {
           != other.getLimit()) return false;
       if (getOffset()
           != other.getOffset()) return false;
+      if (!getSpaceOwner()
+          .equals(other.getSpaceOwner())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -226,6 +311,8 @@ public final class PBRequestMemberManage {
       hash = (53 * hash) + getLimit();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
+      hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceOwner().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -363,6 +450,8 @@ public final class PBRequestMemberManage {
 
         offset_ = 0;
 
+        spaceOwner_ = "";
+
         return this;
       }
 
@@ -391,6 +480,7 @@ public final class PBRequestMemberManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers result = new com.dataomnis.gproto.types.pbrequest.PBRequestMemberManage.ListAvailableUsers(this);
         result.limit_ = limit_;
         result.offset_ = offset_;
+        result.spaceOwner_ = spaceOwner_;
         onBuilt();
         return result;
       }
@@ -444,6 +534,10 @@ public final class PBRequestMemberManage {
         }
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
+        }
+        if (!other.getSpaceOwner().isEmpty()) {
+          spaceOwner_ = other.spaceOwner_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -556,6 +650,107 @@ public final class PBRequestMemberManage {
       public Builder clearOffset() {
         
         offset_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceOwner_ = "";
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3;</code>
+       * @return The spaceOwner.
+       */
+      public java.lang.String getSpaceOwner() {
+        java.lang.Object ref = spaceOwner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceOwner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3;</code>
+       * @return The bytes for spaceOwner.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceOwnerBytes() {
+        java.lang.Object ref = spaceOwner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceOwner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3;</code>
+       * @param value The spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwner(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceOwner() {
+        
+        spaceOwner_ = getDefaultInstance().getSpaceOwner();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The owner of workspace, only used to check quota. Set by APIServer.
+       * &#64;inject_tag: json:"space_owner" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_owner = 3;</code>
+       * @param value The bytes for spaceOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceOwner_ = value;
         onChanged();
         return this;
       }
@@ -6659,32 +6854,33 @@ public final class PBRequestMemberManage {
       "\n\'proto/types/request/member_manage.prot" +
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
-      "/protoc-plugin/proto/defaults.proto\"L\n\022L" +
+      "/protoc-plugin/proto/defaults.proto\"a\n\022L" +
       "istAvailableUsers\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
-      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\"\303\001\n\013Li" +
-      "stMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022" +
-      "\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n" +
-      "\007sort_by\030\004 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007user_idJ\007cr" +
-      "eatedJ\007updated\022\017\n\007reverse\030\005 \001(\010\"U\n\rDelet" +
-      "eMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\354" +
-      "\001\n\nAddMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t" +
-      "\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222\n\017" +
-      "system_role_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001" +
-      "\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001" +
-      "\n\014UpdateMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001" +
-      "\006\200\002\000\210\002A\0222\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025\022\023" +
-      "\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022" +
-      "\007\302\001\004\310\001\200\010\"Y\n\016DescribeMember\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001" +
-      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.gpr" +
-      "oto.types.pbrequestB\025PBRequestMemberMana" +
-      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
-      "o/types/pbrequestb\006proto3"
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\022\023\n\013spa" +
+      "ce_owner\030\003 \001(\t\"\303\001\n\013ListMembers\022%\n\010space_" +
+      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002" +
+      " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
+      "\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\004 \001(\tB&\342\337\037" +
+      "\"\022 \302\001\035J\000J\007user_idJ\007createdJ\007updated\022\017\n\007r" +
+      "everse\030\005 \001(\010\"U\n\rDeleteMembers\022%\n\010space_i" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\010user_ids" +
+      "\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\354\001\n\nAddMembers\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncre" +
+      "ated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_" +
+      "owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\010user_ids\030\004 \003" +
+      "(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222\n\017system_role_ids\030\005 \003" +
+      "(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\006 " +
+      "\001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001\n\014UpdateMember\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007us" +
+      "er_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0222\n\017system_r" +
+      "ole_ids\030\003 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-" +
+      "\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"Y\n\016Describ" +
+      "eMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A" +
+      "Bt\n$com.dataomnis.gproto.types.pbrequest" +
+      "B\025PBRequestMemberManageP\000Z3github.com/Da" +
+      "taWorkbench/gproto/xgo/types/pbrequestb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6697,7 +6893,7 @@ public final class PBRequestMemberManage {
     internal_static_request_ListAvailableUsers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAvailableUsers_descriptor,
-        new java.lang.String[] { "Limit", "Offset", });
+        new java.lang.String[] { "Limit", "Offset", "SpaceOwner", });
     internal_static_request_ListMembers_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_ListMembers_fieldAccessorTable = new
