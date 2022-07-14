@@ -31,6 +31,10 @@ message ListUsersByProxy {
   // Filter by user name.
   // @inject_tag: json:"name" form:"name"
   string name = 4;
+
+  // Filter by root user id.
+  // @inject_tag: json:"root_user" form:"root_user"
+  string root_user = 5;
 }
 
 message ListNotificationsByProxy {
