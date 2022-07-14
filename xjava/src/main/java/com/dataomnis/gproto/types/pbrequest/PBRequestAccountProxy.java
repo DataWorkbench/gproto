@@ -704,6 +704,28 @@ public final class PBRequestAccountProxy {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <pre>
+     * Filter by root user id.
+     * &#64;inject_tag: json:"root_user" form:"root_user"
+     * </pre>
+     *
+     * <code>string root_user = 5;</code>
+     * @return The rootUser.
+     */
+    java.lang.String getRootUser();
+    /**
+     * <pre>
+     * Filter by root user id.
+     * &#64;inject_tag: json:"root_user" form:"root_user"
+     * </pre>
+     *
+     * <code>string root_user = 5;</code>
+     * @return The bytes for rootUser.
+     */
+    com.google.protobuf.ByteString
+        getRootUserBytes();
   }
   /**
    * Protobuf type {@code request.ListUsersByProxy}
@@ -720,6 +742,7 @@ public final class PBRequestAccountProxy {
     private ListUsersByProxy() {
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       name_ = "";
+      rootUser_ = "";
     }
 
     @java.lang.Override
@@ -776,6 +799,12 @@ public final class PBRequestAccountProxy {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rootUser_ = s;
               break;
             }
             default: {
@@ -942,6 +971,54 @@ public final class PBRequestAccountProxy {
       }
     }
 
+    public static final int ROOT_USER_FIELD_NUMBER = 5;
+    private volatile java.lang.Object rootUser_;
+    /**
+     * <pre>
+     * Filter by root user id.
+     * &#64;inject_tag: json:"root_user" form:"root_user"
+     * </pre>
+     *
+     * <code>string root_user = 5;</code>
+     * @return The rootUser.
+     */
+    @java.lang.Override
+    public java.lang.String getRootUser() {
+      java.lang.Object ref = rootUser_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rootUser_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Filter by root user id.
+     * &#64;inject_tag: json:"root_user" form:"root_user"
+     * </pre>
+     *
+     * <code>string root_user = 5;</code>
+     * @return The bytes for rootUser.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRootUserBytes() {
+      java.lang.Object ref = rootUser_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rootUser_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -967,6 +1044,9 @@ public final class PBRequestAccountProxy {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUser_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, rootUser_);
       }
       unknownFields.writeTo(output);
     }
@@ -996,6 +1076,9 @@ public final class PBRequestAccountProxy {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rootUser_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, rootUser_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1019,6 +1102,8 @@ public final class PBRequestAccountProxy {
           .equals(other.getUserIdsList())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getRootUser()
+          .equals(other.getRootUser())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1040,6 +1125,8 @@ public final class PBRequestAccountProxy {
       }
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + ROOT_USER_FIELD_NUMBER;
+      hash = (53 * hash) + getRootUser().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1181,6 +1268,8 @@ public final class PBRequestAccountProxy {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = "";
 
+        rootUser_ = "";
+
         return this;
       }
 
@@ -1216,6 +1305,7 @@ public final class PBRequestAccountProxy {
         }
         result.userIds_ = userIds_;
         result.name_ = name_;
+        result.rootUser_ = rootUser_;
         onBuilt();
         return result;
       }
@@ -1282,6 +1372,10 @@ public final class PBRequestAccountProxy {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getRootUser().isEmpty()) {
+          rootUser_ = other.rootUser_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1643,6 +1737,107 @@ public final class PBRequestAccountProxy {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object rootUser_ = "";
+      /**
+       * <pre>
+       * Filter by root user id.
+       * &#64;inject_tag: json:"root_user" form:"root_user"
+       * </pre>
+       *
+       * <code>string root_user = 5;</code>
+       * @return The rootUser.
+       */
+      public java.lang.String getRootUser() {
+        java.lang.Object ref = rootUser_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rootUser_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by root user id.
+       * &#64;inject_tag: json:"root_user" form:"root_user"
+       * </pre>
+       *
+       * <code>string root_user = 5;</code>
+       * @return The bytes for rootUser.
+       */
+      public com.google.protobuf.ByteString
+          getRootUserBytes() {
+        java.lang.Object ref = rootUser_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rootUser_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Filter by root user id.
+       * &#64;inject_tag: json:"root_user" form:"root_user"
+       * </pre>
+       *
+       * <code>string root_user = 5;</code>
+       * @param value The rootUser to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUser(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rootUser_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by root user id.
+       * &#64;inject_tag: json:"root_user" form:"root_user"
+       * </pre>
+       *
+       * <code>string root_user = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRootUser() {
+        
+        rootUser_ = getDefaultInstance().getRootUser();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by root user id.
+       * &#64;inject_tag: json:"root_user" form:"root_user"
+       * </pre>
+       *
+       * <code>string root_user = 5;</code>
+       * @param value The bytes for rootUser to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRootUserBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rootUser_ = value;
         onChanged();
         return this;
       }
@@ -2800,17 +2995,17 @@ public final class PBRequestAccountProxy {
       "n/proto/validator.proto\0322github.com/yu31" +
       "/protoc-plugin/proto/defaults.proto\"1\n\030D" +
       "escribeAccessKeyByProxy\022\025\n\raccess_key_id" +
-      "\030\001 \001(\t\"j\n\020ListUsersByProxy\022&\n\005limit\030\001 \001(" +
+      "\030\001 \001(\t\"}\n\020ListUsersByProxy\022&\n\005limit\030\001 \001(" +
       "\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001" +
-      "(\005\022\020\n\010user_ids\030\003 \003(\t\022\014\n\004name\030\004 \001(\t\"\244\001\n\030L" +
-      "istNotificationsByProxy\0221\n\007user_id\030\001 \001(\t" +
-      "B \342\337\037\021\n\017\n\006nf_ids\022\005\352\001\002\030\000\342\337\037\007\022\005\302\001\002\"\000\022&\n\005li" +
-      "mit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006of" +
-      "fset\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@" +
-      "\000Bt\n$com.dataomnis.gproto.types.pbreques" +
-      "tB\025PBRequestAccountProxyP\000Z3github.com/D" +
-      "ataWorkbench/gproto/xgo/types/pbrequestb" +
-      "\006proto3"
+      "(\005\022\020\n\010user_ids\030\003 \003(\t\022\014\n\004name\030\004 \001(\t\022\021\n\tro" +
+      "ot_user\030\005 \001(\t\"\244\001\n\030ListNotificationsByPro" +
+      "xy\0221\n\007user_id\030\001 \001(\tB \342\337\037\021\n\017\n\006nf_ids\022\005\352\001\002" +
+      "\030\000\342\337\037\007\022\005\302\001\002\"\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
+      "\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\003 \001(\005\022\035\n\006nf_ids\030" +
+      "\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000Bt\n$com.dataomnis.gp" +
+      "roto.types.pbrequestB\025PBRequestAccountPr" +
+      "oxyP\000Z3github.com/DataWorkbench/gproto/x" +
+      "go/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2829,7 +3024,7 @@ public final class PBRequestAccountProxy {
     internal_static_request_ListUsersByProxy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUsersByProxy_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "UserIds", "Name", });
+        new java.lang.String[] { "Limit", "Offset", "UserIds", "Name", "RootUser", });
     internal_static_request_ListNotificationsByProxy_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_ListNotificationsByProxy_fieldAccessorTable = new
