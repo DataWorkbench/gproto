@@ -55,6 +55,9 @@ message UpdateUser {
 
   // @inject_tag: json:"email"
   string email = 4;
+
+  // @inject_tag: json:"session_id"
+  string session_id = 5;
 }
 
 message ChangeUserPassword {
