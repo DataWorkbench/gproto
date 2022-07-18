@@ -131,7 +131,7 @@ message CreateSession {
 
 message CreateNotification {
   // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
-  string user_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "usr-" } ];
+  string user_id = 1;
 
   // The name must be unique for a user.
   // @inject_tag: json:"name"
@@ -166,7 +166,7 @@ message DeleteNotifications {
 
 message ListNotifications {
   // @inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
-  string user_id = 1 [ (validator.field).tags.string = { ne: "" } ];
+  string user_id = 1;
 
   // @inject_tag: json:"limit" form:"limit"
   int32 limit = 2 [ (defaults.field).basic = "100", (validator.field).tags.int = { gt: 0, lte: 100 } ];
