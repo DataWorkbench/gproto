@@ -17,6 +17,14 @@ func (this *CreateRoute) Validate() error {
 	return nil
 }
 
+// Set default value for message response.RepublishRoute
+func (this *RepublishRoute) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 func (this *ListRoutes) _xxx_xxx_Validator_Validate_entities() error {
 	for _, item := range this.Entities {
 		_ = item // To avoid unused panics.

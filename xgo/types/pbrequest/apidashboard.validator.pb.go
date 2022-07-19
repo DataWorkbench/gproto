@@ -54,6 +54,26 @@ func (this *UpdateRoute) Validate() error {
 	return nil
 }
 
+func (this *RepublishRoute) _xxx_xxx_Validator_Validate_route_info() error {
+	if dt, ok := interface{}(this.RouteInfo).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.RepublishRoute
+func (this *RepublishRoute) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_route_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *RouteInfo) _xxx_xxx_Validator_Validate_uri() error {
 	if !(len(this.Uri) > 0) {
 		return protovalidator.FieldError1("RouteInfo", "the byte length of field 'uri' must be greater than '0'", protovalidator.StringByteLenToString(this.Uri))

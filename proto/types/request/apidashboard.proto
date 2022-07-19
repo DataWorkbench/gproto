@@ -24,6 +24,11 @@ message UpdateRoute {
   RouteInfo route_info = 1;
 }
 
+message RepublishRoute {
+  // @inject_tag: json:"route_info"
+  RouteInfo route_info = 1;
+}
+
 message RouteInfo {
   // @inject_tag: json:"uri"
   string uri = 1 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
