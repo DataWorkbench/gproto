@@ -105,7 +105,7 @@ message DeleteNetworkBrokerInK8sV2 {
 }
 
 message CreateDataServiceClusterInK8sV2 {
-  // Cluster is the metadata info of flink cluster.
+  // Cluster is the metadata info of dataservice cluster.
   model.DataServiceCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
 
 }

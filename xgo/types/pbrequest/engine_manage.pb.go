@@ -567,7 +567,7 @@ type CreateDataServiceClusterInK8SV2 struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Cluster is the metadata info of flink cluster.
+	// Cluster is the metadata info of dataservice cluster.
 	Info *pbmodel.DataServiceCluster `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
 }
 

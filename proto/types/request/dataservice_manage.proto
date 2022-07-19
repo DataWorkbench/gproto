@@ -281,17 +281,10 @@ message TestDataServiceApi {
   string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
   // @inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
   string api_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsa-" } ];
-  // @inject_tag: json:"request_content"
-  string request_content = 3  [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 20000}  ];
-  //repeated RequestValue request_values = 2;
+  // @inject_tag: json:"request_params"
+  repeated model.RequestParameter request_params = 3 [(validator.field) = {}];
 }
 
-//message RequestValue {
-//  // @inject_tag: json:"param_id"
-//  string param_id = 1 [ ];
-//  // @inject_tag: json:"value"
-//  string value = 2 ;
-//}
 
 
 

@@ -1342,12 +1342,14 @@ func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_api_id() error {
 	return nil
 }
 
-func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_request_content() error {
-	if !(len(this.RequestContent) > 0) {
-		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'request_content' must be greater than '0'", protovalidator.StringByteLenToString(this.RequestContent))
-	}
-	if !(len(this.RequestContent) <= 20000) {
-		return protovalidator.FieldError1("TestDataServiceApi", "the byte length of field 'request_content' must be less than or equal to '20000'", protovalidator.StringByteLenToString(this.RequestContent))
+func (this *TestDataServiceApi) _xxx_xxx_Validator_Validate_request_params() error {
+	for _, item := range this.RequestParams {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
 	}
 	return nil
 }
@@ -1363,7 +1365,7 @@ func (this *TestDataServiceApi) Validate() error {
 	if err := this._xxx_xxx_Validator_Validate_api_id(); err != nil {
 		return err
 	}
-	if err := this._xxx_xxx_Validator_Validate_request_content(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
 		return err
 	}
 	return nil
