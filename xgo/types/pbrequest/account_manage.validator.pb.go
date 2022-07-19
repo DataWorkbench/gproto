@@ -300,23 +300,10 @@ func (this *CreateSession) Validate() error {
 	return nil
 }
 
-func (this *CreateNotification) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(len(this.UserId) == 20) {
-		return protovalidator.FieldError1("CreateNotification", "the byte length of field 'user_id' must be equal to '20'", protovalidator.StringByteLenToString(this.UserId))
-	}
-	if !(strings.HasPrefix(this.UserId, "usr-")) {
-		return protovalidator.FieldError1("CreateNotification", "the value of field 'user_id' must start with string 'usr-'", this.UserId)
-	}
-	return nil
-}
-
 // Set default value for message request.CreateNotification
 func (this *CreateNotification) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
-		return err
 	}
 	return nil
 }
@@ -347,13 +334,6 @@ func (this *DeleteNotifications) Validate() error {
 	return nil
 }
 
-func (this *ListNotifications) _xxx_xxx_Validator_Validate_user_id() error {
-	if !(this.UserId != "") {
-		return protovalidator.FieldError1("ListNotifications", "the value of field 'user_id' must be not equal to ''", this.UserId)
-	}
-	return nil
-}
-
 func (this *ListNotifications) _xxx_xxx_Validator_Validate_limit() error {
 	if !(this.Limit > 0) {
 		return protovalidator.FieldError1("ListNotifications", "the value of field 'limit' must be greater than '0'", protovalidator.Int32ToString(this.Limit))
@@ -378,9 +358,6 @@ func (this *ListNotifications) _xxx_xxx_Validator_Validate_nf_ids() error {
 func (this *ListNotifications) Validate() error {
 	if this == nil {
 		return nil
-	}
-	if err := this._xxx_xxx_Validator_Validate_user_id(); err != nil {
-		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_limit(); err != nil {
 		return err

@@ -150,7 +150,7 @@ message StreamJobCode {
 
   // @inject_tag: json:"python_file"
   flink.FlinkPythonFile python_file = 6 [
-    (validator.field).check_if = { field: "type", tags: { enum: { eq: 4 } }},
+    (validator.field).check_if = { field: "type", tags: { enum: { eq: 5 } }},
     (validator.field).tags.message = {not_null: true}
   ];
 

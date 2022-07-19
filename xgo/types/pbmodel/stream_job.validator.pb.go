@@ -363,7 +363,7 @@ func (this *StreamJobCode) _xxx_xxx_Validator_Validate_python_code() error {
 }
 
 func (this *StreamJobCode) _xxx_xxx_Validator_CheckIf_python_file() bool {
-	if !(this.Type == 4) {
+	if !(this.Type == 5) {
 		return false
 	}
 	return true
