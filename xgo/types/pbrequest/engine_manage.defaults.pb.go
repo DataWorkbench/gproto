@@ -114,3 +114,16 @@ func (this *DeleteNetworkBrokerInK8SV2) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.CreateDataServiceClusterInK8sV2
+func (this *CreateDataServiceClusterInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}

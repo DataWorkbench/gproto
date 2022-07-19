@@ -93,6 +93,40 @@ func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
+func (this *DataServiceCluster) _xxx_xxx_Validator_CheckIf_router_id() bool {
+	if !(this.RouterId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_router_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_router_id() {
+		return nil
+	}
+	if !(strings.HasPrefix(this.RouterId, "rtr-")) {
+		return protovalidator.FieldError1("DataServiceCluster", "the value of field 'router_id' must start with string 'rtr-'", this.RouterId)
+	}
+	return nil
+}
+
+func (this *DataServiceCluster) _xxx_xxx_Validator_CheckIf_vxnet_id() bool {
+	if !(this.VxnetId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *DataServiceCluster) _xxx_xxx_Validator_Validate_vxnet_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_vxnet_id() {
+		return nil
+	}
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("DataServiceCluster", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
+	}
+	return nil
+}
+
 // Set default value for message model.DataServiceCluster
 func (this *DataServiceCluster) Validate() error {
 	if this == nil {
@@ -120,6 +154,12 @@ func (this *DataServiceCluster) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_updated(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_router_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_vxnet_id(); err != nil {
 		return err
 	}
 	return nil

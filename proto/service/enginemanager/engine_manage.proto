@@ -36,4 +36,6 @@ service EngineManage {
 
   rpc CreateNetworkBrokerInK8sV2(request.CreateNetworkBrokerInK8sV2) returns (model.EmptyStruct) {}
   rpc DeleteNetworkBrokerInK8sV2(request.DeleteNetworkBrokerInK8sV2) returns (model.EmptyStruct) {}
+
+  rpc CreateDataServiceClusterInK8SV2(request.CreateDataServiceClusterInK8sV2) returns (model.EmptyStruct) {}
 }

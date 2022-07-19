@@ -48,6 +48,20 @@ message DataServiceCluster{
   int64 created = 7 [ (validator.field).tags.int = { gt: 0 } ];
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
   int64 updated = 8 [ (validator.field).tags.int = { gt: 0 } ];
+
+  // The VPC that this cluster bounds, Only used when `enable_network`.
+  // @inject_tag: json:"router_id" gorm:"column:router_id;"
+  string router_id = 9 [
+    (validator.field).check_if = { field: "router_id"; tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { prefix: "rtr-" }
+  ];
+
+  // The VXNet that this cluster bounds, Only used when `enable_network`.
+  // @inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+  string vxnet_id = 10 [
+    (validator.field).check_if = { field: "vxnet_id"; tags: { string: { ne: "" } } },
+    (validator.field).tags.string = { prefix: "vxnet-" }
+  ];
 }
 
 // table api_group

@@ -15,6 +15,7 @@ import "github.com/yu31/protoc-plugin/proto/validator.proto";
 
 import "proto/types/model/cluster.proto";
 import "proto/types/model/network.proto";
+import "proto/types/model/dataservice.proto";
 
 message CreateFlinkClusterInK8s {
   // Cluster is the metadata info of flink cluster.
@@ -101,4 +102,10 @@ message DeleteNetworkBrokerInK8sV2 {
   // vxnet id. Is required.
   // @inject_tag: json:"vxnet_id"
   string vxnet_id = 3 [ (validator.field).tags.string = { prefix: "vxnet-" } ];
+}
+
+message CreateDataServiceClusterInK8sV2 {
+  // Cluster is the metadata info of flink cluster.
+  model.DataServiceCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
+
 }

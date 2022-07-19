@@ -38,6 +38,7 @@ type EngineManageClient interface {
 	RestartFlinkClusterInK8S(ctx context.Context, in *pbrequest.RestartFlinkClusterInK8S, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	CreateNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.CreateNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8SV2(ctx context.Context, in *pbrequest.DeleteNetworkBrokerInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	CreateDataServiceClusterInK8SV2(ctx context.Context, in *pbrequest.CreateDataServiceClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 }
 
 type engineManageClient struct {
@@ -138,6 +139,15 @@ func (c *engineManageClient) DeleteNetworkBrokerInK8SV2(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *engineManageClient) CreateDataServiceClusterInK8SV2(ctx context.Context, in *pbrequest.CreateDataServiceClusterInK8SV2, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/enginecenter.EngineManage/CreateDataServiceClusterInK8SV2", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EngineManageServer is the server API for EngineManage service.
 // All implementations must embed UnimplementedEngineManageServer
 // for forward compatibility
@@ -156,6 +166,7 @@ type EngineManageServer interface {
 	RestartFlinkClusterInK8S(context.Context, *pbrequest.RestartFlinkClusterInK8S) (*pbmodel.EmptyStruct, error)
 	CreateNetworkBrokerInK8SV2(context.Context, *pbrequest.CreateNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error)
 	DeleteNetworkBrokerInK8SV2(context.Context, *pbrequest.DeleteNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error)
+	CreateDataServiceClusterInK8SV2(context.Context, *pbrequest.CreateDataServiceClusterInK8SV2) (*pbmodel.EmptyStruct, error)
 	mustEmbedUnimplementedEngineManageServer()
 }
 
@@ -192,6 +203,9 @@ func (UnimplementedEngineManageServer) CreateNetworkBrokerInK8SV2(context.Contex
 }
 func (UnimplementedEngineManageServer) DeleteNetworkBrokerInK8SV2(context.Context, *pbrequest.DeleteNetworkBrokerInK8SV2) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteNetworkBrokerInK8SV2 not implemented")
+}
+func (UnimplementedEngineManageServer) CreateDataServiceClusterInK8SV2(context.Context, *pbrequest.CreateDataServiceClusterInK8SV2) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDataServiceClusterInK8SV2 not implemented")
 }
 func (UnimplementedEngineManageServer) mustEmbedUnimplementedEngineManageServer() {}
 
@@ -386,6 +400,24 @@ func _EngineManage_DeleteNetworkBrokerInK8SV2_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EngineManage_CreateDataServiceClusterInK8SV2_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateDataServiceClusterInK8SV2)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EngineManageServer).CreateDataServiceClusterInK8SV2(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/enginecenter.EngineManage/CreateDataServiceClusterInK8SV2",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EngineManageServer).CreateDataServiceClusterInK8SV2(ctx, req.(*pbrequest.CreateDataServiceClusterInK8SV2))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EngineManage_ServiceDesc is the grpc.ServiceDesc for EngineManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -432,6 +464,10 @@ var EngineManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteNetworkBrokerInK8sV2",
 			Handler:    _EngineManage_DeleteNetworkBrokerInK8SV2_Handler,
+		},
+		{
+			MethodName: "CreateDataServiceClusterInK8SV2",
+			Handler:    _EngineManage_CreateDataServiceClusterInK8SV2_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

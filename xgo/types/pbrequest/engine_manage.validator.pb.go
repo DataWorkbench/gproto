@@ -323,3 +323,26 @@ func (this *DeleteNetworkBrokerInK8SV2) Validate() error {
 	}
 	return nil
 }
+
+func (this *CreateDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_info() error {
+	if !(this.Info != nil) {
+		return protovalidator.FieldError2("CreateDataServiceClusterInK8SV2", "the value of field 'info' cannot be null")
+	}
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.CreateDataServiceClusterInK8sV2
+func (this *CreateDataServiceClusterInK8SV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+		return err
+	}
+	return nil
+}
