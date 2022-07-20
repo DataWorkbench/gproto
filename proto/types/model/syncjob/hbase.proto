@@ -10,6 +10,7 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBHbase";
 option java_multiple_files = false;
 
+import "proto/types/model/syncjob/baseenum.proto";
 import "proto/types/model/syncjob/column.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
@@ -58,7 +59,7 @@ message HbaseTarget {
     string hbase_config = 2;
     // null_mode
     // @inject_tag: json:"null_mode"
-    string null_mode = 3;
+    BaseEnum.NullMode null_mode = 3;
     // wal flag
     // @inject_tag: json:"wal_flag"
     bool wal_flag = 4;

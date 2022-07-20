@@ -60,4 +60,10 @@ message BaseEnum {
 		Express = 2;
 	}
 
+	enum NullMode {
+		NullModeUnset=0;
+		skip = 1;
+		empty = 2;
+	}
+
 }
