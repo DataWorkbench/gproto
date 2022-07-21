@@ -37,6 +37,19 @@ func (this *UpdateRoute) SetDefaults() {
 	return
 }
 
+// Set default value for message request.RepublishRoute
+func (this *RepublishRoute) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.RouteInfo != nil {
+		if dt, ok := interface{}(this.RouteInfo).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
 // Set default value for message request.RouteInfo
 func (this *RouteInfo) SetDefaults() {
 	if this == nil {

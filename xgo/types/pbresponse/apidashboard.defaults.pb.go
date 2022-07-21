@@ -17,6 +17,14 @@ func (this *CreateRoute) SetDefaults() {
 	return
 }
 
+// Set default value for message response.RepublishRoute
+func (this *RepublishRoute) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.ListRoutes
 func (this *ListRoutes) SetDefaults() {
 	if this == nil {

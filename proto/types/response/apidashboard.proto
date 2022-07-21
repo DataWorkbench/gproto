@@ -17,6 +17,11 @@ message CreateRoute {
   string id = 1;
 }
 
+message RepublishRoute {
+  // @inject_tag: json:"id"
+  string id = 1;
+}
+
 message ListRoutes {
   // @inject_tag: json:"entities"
   repeated model.Route entities = 1;

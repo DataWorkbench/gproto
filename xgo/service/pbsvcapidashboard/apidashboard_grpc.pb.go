@@ -29,6 +29,7 @@ type ApiDashboardClient interface {
 	DeleteRoute(ctx context.Context, in *pbrequest.DeleteRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	ListRoutes(ctx context.Context, in *pbrequest.ListRoutes, opts ...grpc.CallOption) (*pbresponse.ListRoutes, error)
 	UpdateRoute(ctx context.Context, in *pbrequest.UpdateRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	RepublishRoute(ctx context.Context, in *pbrequest.RepublishRoute, opts ...grpc.CallOption) (*pbresponse.RepublishRoute, error)
 	CreateUpstream(ctx context.Context, in *pbrequest.CreateUpstream, opts ...grpc.CallOption) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(ctx context.Context, in *pbrequest.DeleteUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	UpdateUpstream(ctx context.Context, in *pbrequest.UpdateUpstream, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -89,6 +90,15 @@ func (c *apiDashboardClient) ListRoutes(ctx context.Context, in *pbrequest.ListR
 func (c *apiDashboardClient) UpdateRoute(ctx context.Context, in *pbrequest.UpdateRoute, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/UpdateRoute", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *apiDashboardClient) RepublishRoute(ctx context.Context, in *pbrequest.RepublishRoute, opts ...grpc.CallOption) (*pbresponse.RepublishRoute, error) {
+	out := new(pbresponse.RepublishRoute)
+	err := c.cc.Invoke(ctx, "/apidashboard.ApiDashboard/RepublishRoute", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -283,6 +293,7 @@ type ApiDashboardServer interface {
 	DeleteRoute(context.Context, *pbrequest.DeleteRoute) (*pbmodel.EmptyStruct, error)
 	ListRoutes(context.Context, *pbrequest.ListRoutes) (*pbresponse.ListRoutes, error)
 	UpdateRoute(context.Context, *pbrequest.UpdateRoute) (*pbmodel.EmptyStruct, error)
+	RepublishRoute(context.Context, *pbrequest.RepublishRoute) (*pbresponse.RepublishRoute, error)
 	CreateUpstream(context.Context, *pbrequest.CreateUpstream) (*pbresponse.CreateUpstream, error)
 	DeleteUpstream(context.Context, *pbrequest.DeleteUpstream) (*pbmodel.EmptyStruct, error)
 	UpdateUpstream(context.Context, *pbrequest.UpdateUpstream) (*pbmodel.EmptyStruct, error)
@@ -321,6 +332,9 @@ func (UnimplementedApiDashboardServer) ListRoutes(context.Context, *pbrequest.Li
 }
 func (UnimplementedApiDashboardServer) UpdateRoute(context.Context, *pbrequest.UpdateRoute) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRoute not implemented")
+}
+func (UnimplementedApiDashboardServer) RepublishRoute(context.Context, *pbrequest.RepublishRoute) (*pbresponse.RepublishRoute, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RepublishRoute not implemented")
 }
 func (UnimplementedApiDashboardServer) CreateUpstream(context.Context, *pbrequest.CreateUpstream) (*pbresponse.CreateUpstream, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUpstream not implemented")
@@ -463,6 +477,24 @@ func _ApiDashboard_UpdateRoute_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ApiDashboardServer).UpdateRoute(ctx, req.(*pbrequest.UpdateRoute))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApiDashboard_RepublishRoute_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.RepublishRoute)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApiDashboardServer).RepublishRoute(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/apidashboard.ApiDashboard/RepublishRoute",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApiDashboardServer).RepublishRoute(ctx, req.(*pbrequest.RepublishRoute))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -849,6 +881,10 @@ var ApiDashboard_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateRoute",
 			Handler:    _ApiDashboard_UpdateRoute_Handler,
+		},
+		{
+			MethodName: "RepublishRoute",
+			Handler:    _ApiDashboard_RepublishRoute_Handler,
 		},
 		{
 			MethodName: "CreateUpstream",
