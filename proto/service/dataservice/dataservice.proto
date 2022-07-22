@@ -42,6 +42,7 @@ service DataService {
   rpc TestDataServiceApi(request.TestDataServiceApi) returns (response.TestDataServiceApi) {}
   rpc PublishDataServiceApi(request.PublishDataServiceApi) returns (model.EmptyStruct) {}
   rpc AbolishDataServiceApis(request.AbolishDataServiceApis) returns (model.EmptyStruct) {}
+  rpc DescribePublishedApiHttpDetails(request.DescribePublishedApiHttpDetails) returns (response.DescribePublishedApiHttpDetails) {}
 
   rpc ListDataServiceApiVersions(request.ListDataServiceApiVersions) returns (response.ListDataServiceApiVersions) {}
   rpc DescribeDataServiceApiVersion(request.DescribeDataServiceApiVersion) returns (response.DescribeDataServiceApiVersion) {}

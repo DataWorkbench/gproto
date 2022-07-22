@@ -816,6 +816,69 @@ func (x *TestDataServiceApi) GetResponseContent() string {
 	return ""
 }
 
+type DescribePublishedApiHttpDetails struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RequestMethod  pbmodel.ApiConfig_RequestMethod `protobuf:"varint,1,opt,name=request_method,json=requestMethod,proto3,enum=model.ApiConfig_RequestMethod" json:"request_method"`
+	RequestContent string                          `protobuf:"bytes,2,opt,name=request_content,json=requestContent,proto3" json:"request_content"`
+	Uri            string                          `protobuf:"bytes,3,opt,name=uri,proto3" json:"uri"`
+}
+
+func (x *DescribePublishedApiHttpDetails) Reset() {
+	*x = DescribePublishedApiHttpDetails{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribePublishedApiHttpDetails) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribePublishedApiHttpDetails) ProtoMessage() {}
+
+func (x *DescribePublishedApiHttpDetails) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribePublishedApiHttpDetails.ProtoReflect.Descriptor instead.
+func (*DescribePublishedApiHttpDetails) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_dataservice_manage_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *DescribePublishedApiHttpDetails) GetRequestMethod() pbmodel.ApiConfig_RequestMethod {
+	if x != nil {
+		return x.RequestMethod
+	}
+	return pbmodel.ApiConfig_RequestMethod(0)
+}
+
+func (x *DescribePublishedApiHttpDetails) GetRequestContent() string {
+	if x != nil {
+		return x.RequestContent
+	}
+	return ""
+}
+
+func (x *DescribePublishedApiHttpDetails) GetUri() string {
+	if x != nil {
+		return x.Uri
+	}
+	return ""
+}
+
 // SourceKind used as reply parameters in RPC or response body in HTTP.
 type DescribeServiceDataSourceKinds struct {
 	state         protoimpl.MessageState
@@ -828,7 +891,7 @@ type DescribeServiceDataSourceKinds struct {
 func (x *DescribeServiceDataSourceKinds) Reset() {
 	*x = DescribeServiceDataSourceKinds{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[13]
+		mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -841,7 +904,7 @@ func (x *DescribeServiceDataSourceKinds) String() string {
 func (*DescribeServiceDataSourceKinds) ProtoMessage() {}
 
 func (x *DescribeServiceDataSourceKinds) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[13]
+	mi := &file_proto_types_response_dataservice_manage_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -854,7 +917,7 @@ func (x *DescribeServiceDataSourceKinds) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DescribeServiceDataSourceKinds.ProtoReflect.Descriptor instead.
 func (*DescribeServiceDataSourceKinds) Descriptor() ([]byte, []int) {
-	return file_proto_types_response_dataservice_manage_proto_rawDescGZIP(), []int{13}
+	return file_proto_types_response_dataservice_manage_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *DescribeServiceDataSourceKinds) GetKinds() []*pbmodel.ServiceDataSourceKind {
@@ -974,21 +1037,31 @@ var file_proto_types_response_dataservice_manage_proto_rawDesc = []byte{
 	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6c, 0x6f, 0x67, 0x73, 0x12, 0x29, 0x0a,
 	0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e,
 	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0x54, 0x0a, 0x1e, 0x44, 0x65, 0x73, 0x63,
-	0x72, 0x69, 0x62, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53,
-	0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x12, 0x32, 0x0a, 0x05, 0x4b, 0x69,
-	0x6e, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75,
-	0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x05, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x42, 0x7c,
-	0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x1b, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68,
-	0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65,
-	0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0xa3, 0x01, 0x0a, 0x1f, 0x44, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x62, 0x65, 0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x64, 0x41, 0x70,
+	0x69, 0x48, 0x74, 0x74, 0x70, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x45, 0x0a, 0x0e,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x6d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x1e, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x41, 0x70, 0x69,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4d, 0x65,
+	0x74, 0x68, 0x6f, 0x64, 0x52, 0x0d, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4d, 0x65, 0x74,
+	0x68, 0x6f, 0x64, 0x12, 0x27, 0x0a, 0x0f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x63,
+	0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x72, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03,
+	0x75, 0x72, 0x69, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x69, 0x22, 0x54,
+	0x0a, 0x1e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x73,
+	0x12, 0x32, 0x0a, 0x05, 0x4b, 0x69, 0x6e, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32,
+	0x1c, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x44,
+	0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x05, 0x4b,
+	0x69, 0x6e, 0x64, 0x73, 0x42, 0x7c, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61,
+	0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70,
+	0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x1b, 0x50,
+	0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69,
+	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72,
+	0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67,
+	0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1003,7 +1076,7 @@ func file_proto_types_response_dataservice_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_response_dataservice_manage_proto_rawDescData
 }
 
-var file_proto_types_response_dataservice_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
+var file_proto_types_response_dataservice_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_proto_types_response_dataservice_manage_proto_goTypes = []interface{}{
 	(*ListDataServiceClusters)(nil),             // 0: response.ListDataServiceClusters
 	(*DescribeDataServiceCluster)(nil),          // 1: response.DescribeDataServiceCluster
@@ -1018,36 +1091,39 @@ var file_proto_types_response_dataservice_manage_proto_goTypes = []interface{}{
 	(*ListPublishedApiVersionsByClusterId)(nil), // 10: response.ListPublishedApiVersionsByClusterId
 	(*ApiVersionGroupInfo)(nil),                 // 11: response.ApiVersionGroupInfo
 	(*TestDataServiceApi)(nil),                  // 12: response.TestDataServiceApi
-	(*DescribeServiceDataSourceKinds)(nil),      // 13: response.DescribeServiceDataSourceKinds
-	(*pbmodel.DataServiceCluster)(nil),          // 14: model.DataServiceCluster
-	(*pbmodel.ApiGroup)(nil),                    // 15: model.ApiGroup
-	(*pbmodel.ApiConfig)(nil),                   // 16: model.ApiConfig
-	(*pbmodel.ApiConfigDataSource)(nil),         // 17: model.ApiConfigDataSource
-	(*pbmodel.ApiConfigServiceCluster)(nil),     // 18: model.ApiConfigServiceCluster
-	(*pbmodel.ApiVersion)(nil),                  // 19: model.ApiVersion
-	(*pbmodel.ServiceDataSourceKind)(nil),       // 20: model.ServiceDataSourceKind
+	(*DescribePublishedApiHttpDetails)(nil),     // 13: response.DescribePublishedApiHttpDetails
+	(*DescribeServiceDataSourceKinds)(nil),      // 14: response.DescribeServiceDataSourceKinds
+	(*pbmodel.DataServiceCluster)(nil),          // 15: model.DataServiceCluster
+	(*pbmodel.ApiGroup)(nil),                    // 16: model.ApiGroup
+	(*pbmodel.ApiConfig)(nil),                   // 17: model.ApiConfig
+	(*pbmodel.ApiConfigDataSource)(nil),         // 18: model.ApiConfigDataSource
+	(*pbmodel.ApiConfigServiceCluster)(nil),     // 19: model.ApiConfigServiceCluster
+	(*pbmodel.ApiVersion)(nil),                  // 20: model.ApiVersion
+	(pbmodel.ApiConfig_RequestMethod)(0),        // 21: model.ApiConfig.RequestMethod
+	(*pbmodel.ServiceDataSourceKind)(nil),       // 22: model.ServiceDataSourceKind
 }
 var file_proto_types_response_dataservice_manage_proto_depIdxs = []int32{
-	14, // 0: response.ListDataServiceClusters.infos:type_name -> model.DataServiceCluster
-	14, // 1: response.DescribeDataServiceCluster.info:type_name -> model.DataServiceCluster
-	15, // 2: response.ListApiGroups.infos:type_name -> model.ApiGroup
-	16, // 3: response.ListApiConfigs.infos:type_name -> model.ApiConfig
-	16, // 4: response.DescribeApiConfig.api_config:type_name -> model.ApiConfig
-	15, // 5: response.DescribeApiConfig.api_group:type_name -> model.ApiGroup
-	17, // 6: response.DescribeApiConfig.data_source:type_name -> model.ApiConfigDataSource
-	18, // 7: response.DescribeApiConfig.service_cluster:type_name -> model.ApiConfigServiceCluster
-	19, // 8: response.DescribeDataServiceApiVersion.api_version:type_name -> model.ApiVersion
-	15, // 9: response.DescribeDataServiceApiVersion.api_group:type_name -> model.ApiGroup
-	17, // 10: response.DescribeDataServiceApiVersion.data_source:type_name -> model.ApiConfigDataSource
-	18, // 11: response.DescribeDataServiceApiVersion.service_cluster:type_name -> model.ApiConfigServiceCluster
-	19, // 12: response.ListDataServiceApiVersions.infos:type_name -> model.ApiVersion
+	15, // 0: response.ListDataServiceClusters.infos:type_name -> model.DataServiceCluster
+	15, // 1: response.DescribeDataServiceCluster.info:type_name -> model.DataServiceCluster
+	16, // 2: response.ListApiGroups.infos:type_name -> model.ApiGroup
+	17, // 3: response.ListApiConfigs.infos:type_name -> model.ApiConfig
+	17, // 4: response.DescribeApiConfig.api_config:type_name -> model.ApiConfig
+	16, // 5: response.DescribeApiConfig.api_group:type_name -> model.ApiGroup
+	18, // 6: response.DescribeApiConfig.data_source:type_name -> model.ApiConfigDataSource
+	19, // 7: response.DescribeApiConfig.service_cluster:type_name -> model.ApiConfigServiceCluster
+	20, // 8: response.DescribeDataServiceApiVersion.api_version:type_name -> model.ApiVersion
+	16, // 9: response.DescribeDataServiceApiVersion.api_group:type_name -> model.ApiGroup
+	18, // 10: response.DescribeDataServiceApiVersion.data_source:type_name -> model.ApiConfigDataSource
+	19, // 11: response.DescribeDataServiceApiVersion.service_cluster:type_name -> model.ApiConfigServiceCluster
+	20, // 12: response.ListDataServiceApiVersions.infos:type_name -> model.ApiVersion
 	11, // 13: response.ListPublishedApiVersionsByClusterId.infos:type_name -> response.ApiVersionGroupInfo
-	20, // 14: response.DescribeServiceDataSourceKinds.Kinds:type_name -> model.ServiceDataSourceKind
-	15, // [15:15] is the sub-list for method output_type
-	15, // [15:15] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	21, // 14: response.DescribePublishedApiHttpDetails.request_method:type_name -> model.ApiConfig.RequestMethod
+	22, // 15: response.DescribeServiceDataSourceKinds.Kinds:type_name -> model.ServiceDataSourceKind
+	16, // [16:16] is the sub-list for method output_type
+	16, // [16:16] is the sub-list for method input_type
+	16, // [16:16] is the sub-list for extension type_name
+	16, // [16:16] is the sub-list for extension extendee
+	0,  // [0:16] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_response_dataservice_manage_proto_init() }
@@ -1213,6 +1289,18 @@ func file_proto_types_response_dataservice_manage_proto_init() {
 			}
 		}
 		file_proto_types_response_dataservice_manage_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribePublishedApiHttpDetails); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_response_dataservice_manage_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DescribeServiceDataSourceKinds); i {
 			case 0:
 				return &v.state
@@ -1231,7 +1319,7 @@ func file_proto_types_response_dataservice_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_response_dataservice_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   14,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

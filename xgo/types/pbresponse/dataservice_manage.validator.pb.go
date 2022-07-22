@@ -296,6 +296,14 @@ func (this *TestDataServiceApi) Validate() error {
 	return nil
 }
 
+// Set default value for message response.DescribePublishedApiHttpDetails
+func (this *DescribePublishedApiHttpDetails) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 func (this *DescribeServiceDataSourceKinds) _xxx_xxx_Validator_Validate_Kinds() error {
 	for _, item := range this.Kinds {
 		_ = item // To avoid unused panics.

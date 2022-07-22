@@ -158,6 +158,14 @@ func (this *TestDataServiceApi) SetDefaults() {
 	return
 }
 
+// Set default value for message response.DescribePublishedApiHttpDetails
+func (this *DescribePublishedApiHttpDetails) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.DescribeServiceDataSourceKinds
 func (this *DescribeServiceDataSourceKinds) SetDefaults() {
 	if this == nil {

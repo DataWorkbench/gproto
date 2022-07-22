@@ -1370,3 +1370,49 @@ func (this *TestDataServiceApi) Validate() error {
 	}
 	return nil
 }
+
+func (this *DescribePublishedApiHttpDetails) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribePublishedApiHttpDetails", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribePublishedApiHttpDetails", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DescribePublishedApiHttpDetails) _xxx_xxx_Validator_Validate_version_id() error {
+	if !(len(this.VersionId) == 16) {
+		return protovalidator.FieldError1("DescribePublishedApiHttpDetails", "the byte length of field 'version_id' must be equal to '16'", protovalidator.StringByteLenToString(this.VersionId))
+	}
+	return nil
+}
+
+func (this *DescribePublishedApiHttpDetails) _xxx_xxx_Validator_Validate_request_params() error {
+	for _, item := range this.RequestParams {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.DescribePublishedApiHttpDetails
+func (this *DescribePublishedApiHttpDetails) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_request_params(); err != nil {
+		return err
+	}
+	return nil
+}

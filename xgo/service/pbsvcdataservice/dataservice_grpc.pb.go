@@ -45,6 +45,7 @@ type DataServiceClient interface {
 	TestDataServiceApi(ctx context.Context, in *pbrequest.TestDataServiceApi, opts ...grpc.CallOption) (*pbresponse.TestDataServiceApi, error)
 	PublishDataServiceApi(ctx context.Context, in *pbrequest.PublishDataServiceApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	AbolishDataServiceApis(ctx context.Context, in *pbrequest.AbolishDataServiceApis, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DescribePublishedApiHttpDetails(ctx context.Context, in *pbrequest.DescribePublishedApiHttpDetails, opts ...grpc.CallOption) (*pbresponse.DescribePublishedApiHttpDetails, error)
 	ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListDataServiceApiVersions, opts ...grpc.CallOption) (*pbresponse.ListDataServiceApiVersions, error)
 	DescribeDataServiceApiVersion(ctx context.Context, in *pbrequest.DescribeDataServiceApiVersion, opts ...grpc.CallOption) (*pbresponse.DescribeDataServiceApiVersion, error)
 	RepublishDataServiceApi(ctx context.Context, in *pbrequest.RepublishDataServiceApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -230,6 +231,15 @@ func (c *dataServiceClient) AbolishDataServiceApis(ctx context.Context, in *pbre
 	return out, nil
 }
 
+func (c *dataServiceClient) DescribePublishedApiHttpDetails(ctx context.Context, in *pbrequest.DescribePublishedApiHttpDetails, opts ...grpc.CallOption) (*pbresponse.DescribePublishedApiHttpDetails, error) {
+	out := new(pbresponse.DescribePublishedApiHttpDetails)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribePublishedApiHttpDetails", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) ListDataServiceApiVersions(ctx context.Context, in *pbrequest.ListDataServiceApiVersions, opts ...grpc.CallOption) (*pbresponse.ListDataServiceApiVersions, error) {
 	out := new(pbresponse.ListDataServiceApiVersions)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListDataServiceApiVersions", in, out, opts...)
@@ -290,6 +300,7 @@ type DataServiceServer interface {
 	TestDataServiceApi(context.Context, *pbrequest.TestDataServiceApi) (*pbresponse.TestDataServiceApi, error)
 	PublishDataServiceApi(context.Context, *pbrequest.PublishDataServiceApi) (*pbmodel.EmptyStruct, error)
 	AbolishDataServiceApis(context.Context, *pbrequest.AbolishDataServiceApis) (*pbmodel.EmptyStruct, error)
+	DescribePublishedApiHttpDetails(context.Context, *pbrequest.DescribePublishedApiHttpDetails) (*pbresponse.DescribePublishedApiHttpDetails, error)
 	ListDataServiceApiVersions(context.Context, *pbrequest.ListDataServiceApiVersions) (*pbresponse.ListDataServiceApiVersions, error)
 	DescribeDataServiceApiVersion(context.Context, *pbrequest.DescribeDataServiceApiVersion) (*pbresponse.DescribeDataServiceApiVersion, error)
 	RepublishDataServiceApi(context.Context, *pbrequest.RepublishDataServiceApi) (*pbmodel.EmptyStruct, error)
@@ -357,6 +368,9 @@ func (UnimplementedDataServiceServer) PublishDataServiceApi(context.Context, *pb
 }
 func (UnimplementedDataServiceServer) AbolishDataServiceApis(context.Context, *pbrequest.AbolishDataServiceApis) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AbolishDataServiceApis not implemented")
+}
+func (UnimplementedDataServiceServer) DescribePublishedApiHttpDetails(context.Context, *pbrequest.DescribePublishedApiHttpDetails) (*pbresponse.DescribePublishedApiHttpDetails, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribePublishedApiHttpDetails not implemented")
 }
 func (UnimplementedDataServiceServer) ListDataServiceApiVersions(context.Context, *pbrequest.ListDataServiceApiVersions) (*pbresponse.ListDataServiceApiVersions, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDataServiceApiVersions not implemented")
@@ -725,6 +739,24 @@ func _DataService_AbolishDataServiceApis_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_DescribePublishedApiHttpDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribePublishedApiHttpDetails)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DescribePublishedApiHttpDetails(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/DescribePublishedApiHttpDetails",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DescribePublishedApiHttpDetails(ctx, req.(*pbrequest.DescribePublishedApiHttpDetails))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_ListDataServiceApiVersions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ListDataServiceApiVersions)
 	if err := dec(in); err != nil {
@@ -879,6 +911,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AbolishDataServiceApis",
 			Handler:    _DataService_AbolishDataServiceApis_Handler,
+		},
+		{
+			MethodName: "DescribePublishedApiHttpDetails",
+			Handler:    _DataService_DescribePublishedApiHttpDetails_Handler,
 		},
 		{
 			MethodName: "ListDataServiceApiVersions",

@@ -285,6 +285,15 @@ message TestDataServiceApi {
   repeated model.RequestParameter request_params = 3 [(validator.field) = {}];
 }
 
+message DescribePublishedApiHttpDetails {
+  // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+  // @inject_tag: json:"version_id" uri:"ver_id" swaggerignore:"true"
+  string version_id = 2 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+  // @inject_tag: json:"request_params"
+  repeated model.RequestParameter request_params = 3 [(validator.field) = {}];
+}
+
 
 
 

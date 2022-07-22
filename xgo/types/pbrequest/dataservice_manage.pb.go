@@ -1721,6 +1721,69 @@ func (x *TestDataServiceApi) GetRequestParams() []*pbmodel.RequestParameter {
 	return nil
 }
 
+type DescribePublishedApiHttpDetails struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SpaceId       string                      `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
+	VersionId     string                      `protobuf:"bytes,2,opt,name=version_id,json=versionId,proto3" json:"version_id" uri:"ver_id" swaggerignore:"true"`
+	RequestParams []*pbmodel.RequestParameter `protobuf:"bytes,3,rep,name=request_params,json=requestParams,proto3" json:"request_params"`
+}
+
+func (x *DescribePublishedApiHttpDetails) Reset() {
+	*x = DescribePublishedApiHttpDetails{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_request_dataservice_manage_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribePublishedApiHttpDetails) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribePublishedApiHttpDetails) ProtoMessage() {}
+
+func (x *DescribePublishedApiHttpDetails) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_request_dataservice_manage_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribePublishedApiHttpDetails.ProtoReflect.Descriptor instead.
+func (*DescribePublishedApiHttpDetails) Descriptor() ([]byte, []int) {
+	return file_proto_types_request_dataservice_manage_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *DescribePublishedApiHttpDetails) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *DescribePublishedApiHttpDetails) GetVersionId() string {
+	if x != nil {
+		return x.VersionId
+	}
+	return ""
+}
+
+func (x *DescribePublishedApiHttpDetails) GetRequestParams() []*pbmodel.RequestParameter {
+	if x != nil {
+		return x.RequestParams
+	}
+	return nil
+}
+
 var File_proto_types_request_dataservice_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_request_dataservice_manage_proto_rawDesc = []byte{
@@ -2085,15 +2148,27 @@ var file_proto_types_request_dataservice_manage_proto_rawDesc = []byte{
 	0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x42, 0x04,
 	0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0d, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x50, 0x61, 0x72,
-	0x61, 0x6d, 0x73, 0x42, 0x79, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f,
-	0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65,
-	0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42, 0x1a, 0x50, 0x42, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65,
-	0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74,
-	0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x6d, 0x73, 0x22, 0xc4, 0x01, 0x0a, 0x1f, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65,
+	0x50, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x65, 0x64, 0x41, 0x70, 0x69, 0x48, 0x74, 0x74, 0x70,
+	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12,
+	0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07,
+	0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64, 0x12, 0x2b, 0x0a, 0x0a, 0x76, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x0c, 0xe2, 0xdf, 0x1f,
+	0x08, 0x12, 0x06, 0xc2, 0x01, 0x03, 0xf0, 0x01, 0x10, 0x52, 0x09, 0x76, 0x65, 0x72, 0x73, 0x69,
+	0x6f, 0x6e, 0x49, 0x64, 0x12, 0x44, 0x0a, 0x0e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f,
+	0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x6d,
+	0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x50, 0x61, 0x72, 0x61,
+	0x6d, 0x65, 0x74, 0x65, 0x72, 0x42, 0x04, 0xe2, 0xdf, 0x1f, 0x00, 0x52, 0x0d, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0x79, 0x0a, 0x24, 0x63, 0x6f,
+	0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x42, 0x1a, 0x50, 0x42, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x61, 0x74,
+	0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00,
+	0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
+	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2108,7 +2183,7 @@ func file_proto_types_request_dataservice_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_request_dataservice_manage_proto_rawDescData
 }
 
-var file_proto_types_request_dataservice_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_proto_types_request_dataservice_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
 var file_proto_types_request_dataservice_manage_proto_goTypes = []interface{}{
 	(*ListDataServiceClusters)(nil),              // 0: request.ListDataServiceClusters
 	(*DescribeDataServiceCluster)(nil),           // 1: request.DescribeDataServiceCluster
@@ -2133,34 +2208,36 @@ var file_proto_types_request_dataservice_manage_proto_goTypes = []interface{}{
 	(*PublishDataServiceApi)(nil),                // 20: request.PublishDataServiceApi
 	(*AbolishDataServiceApis)(nil),               // 21: request.AbolishDataServiceApis
 	(*TestDataServiceApi)(nil),                   // 22: request.TestDataServiceApi
-	(pbmodel.DataServiceCluster_ResourceSpec)(0), // 23: model.DataServiceCluster.ResourceSpec
-	(pbmodel.ApiConfig_ApiMode)(0),               // 24: model.ApiConfig.ApiMode
-	(pbmodel.ApiConfig_Protocols)(0),             // 25: model.ApiConfig.Protocols
-	(pbmodel.ApiConfig_RequestMethod)(0),         // 26: model.ApiConfig.RequestMethod
-	(pbmodel.ApiConfig_ResponseType)(0),          // 27: model.ApiConfig.ResponseType
-	(*pbmodel.RequestParameters)(nil),            // 28: model.RequestParameters
-	(*pbmodel.ResponseParameters)(nil),           // 29: model.ResponseParameters
-	(*pbmodel.RequestParameter)(nil),             // 30: model.RequestParameter
+	(*DescribePublishedApiHttpDetails)(nil),      // 23: request.DescribePublishedApiHttpDetails
+	(pbmodel.DataServiceCluster_ResourceSpec)(0), // 24: model.DataServiceCluster.ResourceSpec
+	(pbmodel.ApiConfig_ApiMode)(0),               // 25: model.ApiConfig.ApiMode
+	(pbmodel.ApiConfig_Protocols)(0),             // 26: model.ApiConfig.Protocols
+	(pbmodel.ApiConfig_RequestMethod)(0),         // 27: model.ApiConfig.RequestMethod
+	(pbmodel.ApiConfig_ResponseType)(0),          // 28: model.ApiConfig.ResponseType
+	(*pbmodel.RequestParameters)(nil),            // 29: model.RequestParameters
+	(*pbmodel.ResponseParameters)(nil),           // 30: model.ResponseParameters
+	(*pbmodel.RequestParameter)(nil),             // 31: model.RequestParameter
 }
 var file_proto_types_request_dataservice_manage_proto_depIdxs = []int32{
-	23, // 0: request.UpdateDataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
-	23, // 1: request.CreateDataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
-	24, // 2: request.UpdateApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
-	25, // 3: request.UpdateApiConfig.protocols:type_name -> model.ApiConfig.Protocols
-	26, // 4: request.UpdateApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
-	27, // 5: request.UpdateApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
-	28, // 6: request.UpdateApiConfig.request_params:type_name -> model.RequestParameters
-	29, // 7: request.UpdateApiConfig.response_params:type_name -> model.ResponseParameters
-	24, // 8: request.CreateApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
-	25, // 9: request.CreateApiConfig.protocols:type_name -> model.ApiConfig.Protocols
-	26, // 10: request.CreateApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
-	27, // 11: request.CreateApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
-	30, // 12: request.TestDataServiceApi.request_params:type_name -> model.RequestParameter
-	13, // [13:13] is the sub-list for method output_type
-	13, // [13:13] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	24, // 0: request.UpdateDataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
+	24, // 1: request.CreateDataServiceCluster.resource_spec:type_name -> model.DataServiceCluster.ResourceSpec
+	25, // 2: request.UpdateApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
+	26, // 3: request.UpdateApiConfig.protocols:type_name -> model.ApiConfig.Protocols
+	27, // 4: request.UpdateApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
+	28, // 5: request.UpdateApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
+	29, // 6: request.UpdateApiConfig.request_params:type_name -> model.RequestParameters
+	30, // 7: request.UpdateApiConfig.response_params:type_name -> model.ResponseParameters
+	25, // 8: request.CreateApiConfig.api_mode:type_name -> model.ApiConfig.ApiMode
+	26, // 9: request.CreateApiConfig.protocols:type_name -> model.ApiConfig.Protocols
+	27, // 10: request.CreateApiConfig.request_method:type_name -> model.ApiConfig.RequestMethod
+	28, // 11: request.CreateApiConfig.response_type:type_name -> model.ApiConfig.ResponseType
+	31, // 12: request.TestDataServiceApi.request_params:type_name -> model.RequestParameter
+	31, // 13: request.DescribePublishedApiHttpDetails.request_params:type_name -> model.RequestParameter
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_request_dataservice_manage_proto_init() }
@@ -2445,6 +2522,18 @@ func file_proto_types_request_dataservice_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_request_dataservice_manage_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribePublishedApiHttpDetails); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -2452,7 +2541,7 @@ func file_proto_types_request_dataservice_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_request_dataservice_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   23,
+			NumMessages:   24,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

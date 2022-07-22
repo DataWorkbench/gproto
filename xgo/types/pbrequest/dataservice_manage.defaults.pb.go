@@ -219,3 +219,11 @@ func (this *TestDataServiceApi) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.DescribePublishedApiHttpDetails
+func (this *DescribePublishedApiHttpDetails) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
