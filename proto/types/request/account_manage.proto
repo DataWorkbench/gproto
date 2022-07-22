@@ -130,6 +130,9 @@ message CreateSession {
 
   // @inject_tag: json:"ignore_password"
   bool ignore_password = 3;
+
+  // @inject_tag: json:"raw_password"
+  string raw_password = 4;
 }
 
 message CreateNotification {
