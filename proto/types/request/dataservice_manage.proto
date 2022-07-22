@@ -144,7 +144,7 @@ message UpdateApiConfig {
   // @inject_tag: json:"cross_domain"
   bool cross_domain = 10 [ (validator.field) = { } ];
   // @inject_tag: json:"timeout"
-  int64 timeout = 11 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
+  int64 timeout = 11 [ (validator.field).tags.int = { gte: 1 , lte: 300 } ];
   // @inject_tag: json:"datasource_id"
   string datasource_id = 12 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
   // @inject_tag: json:"table_name"

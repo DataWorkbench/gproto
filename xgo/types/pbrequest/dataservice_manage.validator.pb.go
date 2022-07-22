@@ -643,8 +643,8 @@ func (this *UpdateApiConfig) _xxx_xxx_Validator_Validate_timeout() error {
 	if !(this.Timeout >= 1) {
 		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'timeout' must be greater than or equal to '1'", protovalidator.Int64ToString(this.Timeout))
 	}
-	if !(this.Timeout <= 180) {
-		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'timeout' must be less than or equal to '180'", protovalidator.Int64ToString(this.Timeout))
+	if !(this.Timeout <= 300) {
+		return protovalidator.FieldError1("UpdateApiConfig", "the value of field 'timeout' must be less than or equal to '300'", protovalidator.Int64ToString(this.Timeout))
 	}
 	return nil
 }

@@ -187,12 +187,48 @@ func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_versi
 	return nil
 }
 
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_group() error {
+	if dt, ok := interface{}(this.ApiGroup).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_data_source() error {
+	if dt, ok := interface{}(this.DataSource).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_service_cluster() error {
+	if dt, ok := interface{}(this.ServiceCluster).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // Set default value for message response.DescribeDataServiceApiVersion
 func (this *DescribeDataServiceApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_version(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_api_group(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_data_source(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_service_cluster(); err != nil {
 		return err
 	}
 	return nil
@@ -240,6 +276,14 @@ func (this *ListPublishedApiVersionsByClusterId) Validate() error {
 	}
 	if err := this._xxx_xxx_Validator_Validate_infos(); err != nil {
 		return err
+	}
+	return nil
+}
+
+// Set default value for message response.ApiVersionGroupInfo
+func (this *ApiVersionGroupInfo) Validate() error {
+	if this == nil {
+		return nil
 	}
 	return nil
 }

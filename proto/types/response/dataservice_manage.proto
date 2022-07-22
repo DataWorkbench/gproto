@@ -73,6 +73,12 @@ message CreateApiConfig {
 message DescribeDataServiceApiVersion {
   // @inject_tag: json:"api_version"
   model.ApiVersion api_version = 1;
+  // @inject_tag: json:"api_group"
+  model.ApiGroup api_group = 2 ;
+  // @inject_tag: json:"data_source"
+  model.ApiConfigDataSource data_source = 3;
+  // @inject_tag: json:"service_cluster"
+  model.ApiConfigServiceCluster service_cluster = 4;
 }
 
 message ListDataServiceApiVersions {
@@ -86,11 +92,28 @@ message ListDataServiceApiVersions {
 
 message ListPublishedApiVersionsByClusterId {
   // @inject_tag: json:"infos"
-  repeated model.ApiVersion infos = 1;
+  repeated ApiVersionGroupInfo infos = 1;
   // @inject_tag: json:"total"
   int64 total = 2;
   // @inject_tag: json:"has_more"
   bool has_more = 3;
+}
+
+message ApiVersionGroupInfo {
+  // @inject_tag: json:"version_id"
+  string	version_id = 1 ;
+  // @inject_tag: json:"api_id"
+  string api_id = 2 ;
+  // @inject_tag: json:"api_name"
+  string api_name = 3 ;
+  // @inject_tag: json:"api_path"
+  string api_path = 4 ;
+  // @inject_tag: json:"group_name"
+  string group_name = 5 ;
+  // @inject_tag: json:"group_path"
+  string group_path = 6 ;
+  // @inject_tag: json:"api_description"
+  string api_description = 7 ;
 }
 
 message TestDataServiceApi {
