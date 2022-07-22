@@ -51,6 +51,8 @@ message RouteInfo {
   string proxy_uri = 8 [ (validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 256 } ];
   // @inject_tag: json:"space_id"
   string space_id = 9 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+  // @inject_tag: json:"methods"
+  repeated string methods = 10 ;
 }
 
 message DeleteRoute {
