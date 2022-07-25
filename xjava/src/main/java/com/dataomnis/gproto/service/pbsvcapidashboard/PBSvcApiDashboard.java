@@ -27,50 +27,51 @@ public final class PBSvcApiDashboard {
       "d.proto\022\014apidashboard\032&proto/types/reque" +
       "st/apidashboard.proto\032\'proto/types/respo" +
       "nse/apidashboard.proto\032\035proto/types/mode" +
-      "l/empty.proto2\237\014\n\014ApiDashboard\022<\n\013Create" +
+      "l/empty.proto2\346\014\n\014ApiDashboard\022<\n\013Create" +
       "Route\022\024.request.CreateRoute\032\025.response.C" +
       "reateRoute\"\000\0229\n\013DeleteRoute\022\024.request.De" +
       "leteRoute\032\022.model.EmptyStruct\"\000\0229\n\nListR" +
       "outes\022\023.request.ListRoutes\032\024.response.Li" +
       "stRoutes\"\000\0229\n\013UpdateRoute\022\024.request.Upda" +
-      "teRoute\032\022.model.EmptyStruct\"\000\022E\n\016CreateU" +
-      "pstream\022\027.request.CreateUpstream\032\030.respo" +
-      "nse.CreateUpstream\"\000\022?\n\016DeleteUpstream\022\027" +
-      ".request.DeleteUpstream\032\022.model.EmptyStr" +
-      "uct\"\000\022?\n\016UpdateUpstream\022\027.request.Update" +
-      "Upstream\032\022.model.EmptyStruct\"\000\022B\n\rListUp" +
-      "streams\022\026.request.ListUpstreams\032\027.respon" +
-      "se.ListUpstreams\"\000\0226\n\tCreateSSL\022\022.reques" +
-      "t.CreateSSL\032\023.response.CreateSSL\"\000\0225\n\tDe" +
-      "leteSSL\022\022.request.DeleteSSL\032\022.model.Empt" +
-      "yStruct\"\000\0223\n\010ListSSLs\022\021.request.ListSSLs" +
-      "\032\022.response.ListSSLs\"\000\022K\n\020CreateApiServi" +
-      "ce\022\031.request.CreateApiService\032\032.response" +
-      ".CreateApiService\"\000\022C\n\020DeleteApiService\022" +
-      "\031.request.DeleteApiService\032\022.model.Empty" +
-      "Struct\"\000\022C\n\020UpdateApiService\022\031.request.U" +
-      "pdateApiService\032\022.model.EmptyStruct\"\000\022H\n" +
-      "\017ListApiServices\022\030.request.ListApiServic" +
-      "es\032\031.response.ListApiServices\"\000\022?\n\016AddSv" +
-      "cReqCount\022\027.request.AddSvcReqCount\032\022.mod" +
-      "el.EmptyStruct\"\000\022E\n\016GetSvcReqCount\022\027.req" +
-      "uest.GetSvcReqCount\032\030.response.GetSvcReq" +
-      "Count\"\000\022I\n\023DeleteClusterRoutes\022\034.request" +
-      ".DeleteClusterRoutes\032\022.model.EmptyStruct" +
-      "\"\000\022B\n\rCreateAuthKey\022\026.request.CreateAuth" +
-      "Key\032\027.response.CreateAuthKey\"\000\022=\n\rDelete" +
-      "AuthKey\022\026.request.DeleteAuthKey\032\022.model." +
-      "EmptyStruct\"\000\022=\n\rUpdateAuthKey\022\026.request" +
-      ".UpdateAuthKey\032\022.model.EmptyStruct\"\000\022?\n\014" +
-      "ListAuthKeys\022\025.request.ListAuthKeys\032\026.re" +
-      "sponse.ListAuthKeys\"\000\0229\n\013BindAuthKey\022\024.r" +
-      "equest.BindAuthKey\032\022.model.EmptyStruct\"\000" +
-      "\022=\n\rUnbindAuthKey\022\026.request.UnbindAuthKe" +
-      "y\032\022.model.EmptyStruct\"\000B\204\001\n.com.dataomni" +
-      "s.gproto.service.pbsvcapidashboardB\021PBSv" +
-      "cApiDashboardP\000Z=github.com/DataWorkbenc" +
-      "h/gproto/xgo/service/pbsvcapidashboardb\006" +
-      "proto3"
+      "teRoute\032\022.model.EmptyStruct\"\000\022E\n\016Republi" +
+      "shRoute\022\027.request.RepublishRoute\032\030.respo" +
+      "nse.RepublishRoute\"\000\022E\n\016CreateUpstream\022\027" +
+      ".request.CreateUpstream\032\030.response.Creat" +
+      "eUpstream\"\000\022?\n\016DeleteUpstream\022\027.request." +
+      "DeleteUpstream\032\022.model.EmptyStruct\"\000\022?\n\016" +
+      "UpdateUpstream\022\027.request.UpdateUpstream\032" +
+      "\022.model.EmptyStruct\"\000\022B\n\rListUpstreams\022\026" +
+      ".request.ListUpstreams\032\027.response.ListUp" +
+      "streams\"\000\0226\n\tCreateSSL\022\022.request.CreateS" +
+      "SL\032\023.response.CreateSSL\"\000\0225\n\tDeleteSSL\022\022" +
+      ".request.DeleteSSL\032\022.model.EmptyStruct\"\000" +
+      "\0223\n\010ListSSLs\022\021.request.ListSSLs\032\022.respon" +
+      "se.ListSSLs\"\000\022K\n\020CreateApiService\022\031.requ" +
+      "est.CreateApiService\032\032.response.CreateAp" +
+      "iService\"\000\022C\n\020DeleteApiService\022\031.request" +
+      ".DeleteApiService\032\022.model.EmptyStruct\"\000\022" +
+      "C\n\020UpdateApiService\022\031.request.UpdateApiS" +
+      "ervice\032\022.model.EmptyStruct\"\000\022H\n\017ListApiS" +
+      "ervices\022\030.request.ListApiServices\032\031.resp" +
+      "onse.ListApiServices\"\000\022?\n\016AddSvcReqCount" +
+      "\022\027.request.AddSvcReqCount\032\022.model.EmptyS" +
+      "truct\"\000\022E\n\016GetSvcReqCount\022\027.request.GetS" +
+      "vcReqCount\032\030.response.GetSvcReqCount\"\000\022I" +
+      "\n\023DeleteClusterRoutes\022\034.request.DeleteCl" +
+      "usterRoutes\032\022.model.EmptyStruct\"\000\022B\n\rCre" +
+      "ateAuthKey\022\026.request.CreateAuthKey\032\027.res" +
+      "ponse.CreateAuthKey\"\000\022=\n\rDeleteAuthKey\022\026" +
+      ".request.DeleteAuthKey\032\022.model.EmptyStru" +
+      "ct\"\000\022=\n\rUpdateAuthKey\022\026.request.UpdateAu" +
+      "thKey\032\022.model.EmptyStruct\"\000\022?\n\014ListAuthK" +
+      "eys\022\025.request.ListAuthKeys\032\026.response.Li" +
+      "stAuthKeys\"\000\0229\n\013BindAuthKey\022\024.request.Bi" +
+      "ndAuthKey\032\022.model.EmptyStruct\"\000\022=\n\rUnbin" +
+      "dAuthKey\022\026.request.UnbindAuthKey\032\022.model" +
+      ".EmptyStruct\"\000B\204\001\n.com.dataomnis.gproto." +
+      "service.pbsvcapidashboardB\021PBSvcApiDashb" +
+      "oardP\000Z=github.com/DataWorkbench/gproto/" +
+      "xgo/service/pbsvcapidashboardb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

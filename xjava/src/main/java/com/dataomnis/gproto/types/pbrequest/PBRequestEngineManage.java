@@ -7924,6 +7924,687 @@ public final class PBRequestEngineManage {
 
   }
 
+  public interface CreateDataServiceClusterInK8sV2OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.CreateDataServiceClusterInK8sV2)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the info field is set.
+     */
+    boolean hasInfo();
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     * @return The info.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster getInfo();
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder getInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code request.CreateDataServiceClusterInK8sV2}
+   */
+  public static final class CreateDataServiceClusterInK8sV2 extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.CreateDataServiceClusterInK8sV2)
+      CreateDataServiceClusterInK8sV2OrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateDataServiceClusterInK8sV2.newBuilder() to construct.
+    private CreateDataServiceClusterInK8sV2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateDataServiceClusterInK8sV2() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CreateDataServiceClusterInK8sV2();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateDataServiceClusterInK8sV2(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.internal_static_request_CreateDataServiceClusterInK8sV2_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.internal_static_request_CreateDataServiceClusterInK8sV2_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.class, com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.Builder.class);
+    }
+
+    public static final int INFO_FIELD_NUMBER = 1;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster info_;
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     * @return Whether the info field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfo() {
+      return info_ != null;
+    }
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster getInfo() {
+      return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.getDefaultInstance() : info_;
+    }
+    /**
+     * <pre>
+     * Cluster is the metadata info of dataservice cluster.
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder getInfoOrBuilder() {
+      return getInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (info_ != null) {
+        output.writeMessage(1, getInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (info_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 other = (com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2) obj;
+
+      if (hasInfo() != other.hasInfo()) return false;
+      if (hasInfo()) {
+        if (!getInfo()
+            .equals(other.getInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.CreateDataServiceClusterInK8sV2}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.CreateDataServiceClusterInK8sV2)
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.internal_static_request_CreateDataServiceClusterInK8sV2_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.internal_static_request_CreateDataServiceClusterInK8sV2_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.class, com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.internal_static_request_CreateDataServiceClusterInK8sV2_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 result = new com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2(this);
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.getDefaultInstance()) return this;
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster info_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder> infoBuilder_;
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       * @return Whether the info field is set.
+       */
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       * @return The info.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setInfo(com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder setInfo(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeInfo(com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <pre>
+       * Cluster is the metadata info of dataservice cluster.
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster info = 1 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceClusterOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.CreateDataServiceClusterInK8sV2)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.CreateDataServiceClusterInK8sV2)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateDataServiceClusterInK8sV2>
+        PARSER = new com.google.protobuf.AbstractParser<CreateDataServiceClusterInK8sV2>() {
+      @java.lang.Override
+      public CreateDataServiceClusterInK8sV2 parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateDataServiceClusterInK8sV2(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateDataServiceClusterInK8sV2> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateDataServiceClusterInK8sV2> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_CreateFlinkClusterInK8s_descriptor;
   private static final 
@@ -7974,6 +8655,11 @@ public final class PBRequestEngineManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteNetworkBrokerInK8sV2_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_CreateDataServiceClusterInK8sV2_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_CreateDataServiceClusterInK8sV2_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7987,35 +8673,38 @@ public final class PBRequestEngineManage {
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\032\037proto/types/mod" +
       "el/cluster.proto\032\037proto/types/model/netw" +
-      "ork.proto\"I\n\027CreateFlinkClusterInK8s\022.\n\004" +
-      "info\030\001 \001(\0132\023.model.FlinkClusterB\013\342\337\037\007\022\005\342" +
-      "\001\002\020\001\"I\n\027DeleteFlinkClusterInK8s\022.\n\004info\030" +
-      "\001 \001(\0132\023.model.FlinkClusterB\013\342\337\037\007\022\005\342\001\002\020\001\"" +
-      "E\n\030CreateNetworkBrokerInK8s\022)\n\004info\030\005 \001(" +
-      "\0132\016.model.NetworkB\013\342\337\037\007\022\005\342\001\002\020\001\"E\n\030Delete" +
-      "NetworkBrokerInK8s\022)\n\004info\030\005 \001(\0132\016.model" +
-      ".NetworkB\013\342\337\037\007\022\005\342\001\002\020\001\"F\n\025DeleteNamespace" +
-      "sInK8s\022-\n\tspace_ids\030\001 \003(\tB\032\342\337\037\026\022\024\352\001\021P\001Z\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\"K\n\031CreateFlinkClusterInK8s" +
-      "V2\022.\n\004info\030\001 \001(\0132\023.model.FlinkClusterB\013\342" +
-      "\337\037\007\022\005\342\001\002\020\001\"\250\001\n\031DeleteFlinkClusterInK8sV2" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-" +
-      "\022;\n\010vxnet_id\030\003 \001(\tB)\342\337\037\023\n\021\n\010vxnet_id\022\005\302\001" +
-      "\002\"\000\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"j\n\030RestartFlinkClu" +
-      "sterInK8s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004cfi-\"\216\001\n\032CreateNetworkBrokerInK8sV2" +
-      "\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022" +
-      "#\n\trouter_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010" +
-      "vxnet_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032D" +
-      "eleteNetworkBrokerInK8sV2\022%\n\010space_id\030\001 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB" +
-      "\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-Bt\n$com.dataomnis.gpr" +
-      "oto.types.pbrequestB\025PBRequestEngineMana" +
-      "geP\000Z3github.com/DataWorkbench/gproto/xg" +
-      "o/types/pbrequestb\006proto3"
+      "ork.proto\032#proto/types/model/dataservice" +
+      ".proto\"I\n\027CreateFlinkClusterInK8s\022.\n\004inf" +
+      "o\030\001 \001(\0132\023.model.FlinkClusterB\013\342\337\037\007\022\005\342\001\002\020" +
+      "\001\"I\n\027DeleteFlinkClusterInK8s\022.\n\004info\030\001 \001" +
+      "(\0132\023.model.FlinkClusterB\013\342\337\037\007\022\005\342\001\002\020\001\"E\n\030" +
+      "CreateNetworkBrokerInK8s\022)\n\004info\030\005 \001(\0132\016" +
+      ".model.NetworkB\013\342\337\037\007\022\005\342\001\002\020\001\"E\n\030DeleteNet" +
+      "workBrokerInK8s\022)\n\004info\030\005 \001(\0132\016.model.Ne" +
+      "tworkB\013\342\337\037\007\022\005\342\001\002\020\001\"F\n\025DeleteNamespacesIn" +
+      "K8s\022-\n\tspace_ids\030\001 \003(\tB\032\342\337\037\026\022\024\352\001\021P\001Z\r\302\001\n" +
+      "\360\001\024\312\002\004wks-\"K\n\031CreateFlinkClusterInK8sV2\022" +
+      ".\n\004info\030\001 \001(\0132\023.model.FlinkClusterB\013\342\337\037\007" +
+      "\022\005\342\001\002\020\001\"\250\001\n\031DeleteFlinkClusterInK8sV2\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\n" +
+      "cluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004cfi-\022;\n" +
+      "\010vxnet_id\030\003 \001(\tB)\342\337\037\023\n\021\n\010vxnet_id\022\005\302\001\002\"\000" +
+      "\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"j\n\030RestartFlinkCluste" +
+      "rInK8s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004cfi-\"\216\001\n\032CreateNetworkBrokerInK8sV2\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\t" +
+      "router_id\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxn" +
+      "et_id\030\003 \001(\tB\022\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"\216\001\n\032Dele" +
+      "teNetworkBrokerInK8sV2\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\trouter_id\030\002 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\312\002\004rtr-\022$\n\010vxnet_id\030\003 \001(\tB\022\342\337" +
+      "\037\016\022\014\302\001\t\312\002\006vxnet-\"W\n\037CreateDataServiceClu" +
+      "sterInK8sV2\0224\n\004info\030\001 \001(\0132\031.model.DataSe" +
+      "rviceClusterB\013\342\337\037\007\022\005\342\001\002\020\001Bt\n$com.dataomn" +
+      "is.gproto.types.pbrequestB\025PBRequestEngi" +
+      "neManageP\000Z3github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8023,6 +8712,7 @@ public final class PBRequestEngineManage {
           io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelCluster.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.PBModelNetwork.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.getDescriptor(),
         });
     internal_static_request_CreateFlinkClusterInK8s_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -8084,6 +8774,12 @@ public final class PBRequestEngineManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteNetworkBrokerInK8sV2_descriptor,
         new java.lang.String[] { "SpaceId", "RouterId", "VxnetId", });
+    internal_static_request_CreateDataServiceClusterInK8sV2_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_request_CreateDataServiceClusterInK8sV2_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_CreateDataServiceClusterInK8sV2_descriptor,
+        new java.lang.String[] { "Info", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
@@ -8092,6 +8788,7 @@ public final class PBRequestEngineManage {
     io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelCluster.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.PBModelNetwork.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

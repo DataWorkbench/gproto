@@ -308,6 +308,50 @@ public final class PBModelDataService {
      * @return The updated.
      */
     long getUpdated();
+
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+     * @return The routerId.
+     */
+    java.lang.String getRouterId();
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for routerId.
+     */
+    com.google.protobuf.ByteString
+        getRouterIdBytes();
+
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+     * @return The vxnetId.
+     */
+    java.lang.String getVxnetId();
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for vxnetId.
+     */
+    com.google.protobuf.ByteString
+        getVxnetIdBytes();
   }
   /**
    * <pre>
@@ -332,6 +376,8 @@ public final class PBModelDataService {
       resourceSpec_ = 0;
       status_ = 0;
       createdBy_ = "";
+      routerId_ = "";
+      vxnetId_ = "";
     }
 
     @java.lang.Override
@@ -408,6 +454,18 @@ public final class PBModelDataService {
             case 64: {
 
               updated_ = input.readInt64();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              routerId_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vxnetId_ = s;
               break;
             }
             default: {
@@ -989,6 +1047,102 @@ public final class PBModelDataService {
       return updated_;
     }
 
+    public static final int ROUTER_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object routerId_;
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+     * @return The routerId.
+     */
+    @java.lang.Override
+    public java.lang.String getRouterId() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The VPC that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+     * </pre>
+     *
+     * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+     * @return The bytes for routerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRouterIdBytes() {
+      java.lang.Object ref = routerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VXNET_ID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object vxnetId_;
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+     * @return The vxnetId.
+     */
+    @java.lang.Override
+    public java.lang.String getVxnetId() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vxnetId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The VXNet that this cluster bounds, Only used when `enable_network`.
+     * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+     * </pre>
+     *
+     * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+     * @return The bytes for vxnetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVxnetIdBytes() {
+      java.lang.Object ref = vxnetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        vxnetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1027,6 +1181,12 @@ public final class PBModelDataService {
       if (updated_ != 0L) {
         output.writeInt64(8, updated_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, vxnetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1064,6 +1224,12 @@ public final class PBModelDataService {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, updated_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, routerId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vxnetId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, vxnetId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1093,6 +1259,10 @@ public final class PBModelDataService {
           != other.getCreated()) return false;
       if (getUpdated()
           != other.getUpdated()) return false;
+      if (!getRouterId()
+          .equals(other.getRouterId())) return false;
+      if (!getVxnetId()
+          .equals(other.getVxnetId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1122,6 +1292,10 @@ public final class PBModelDataService {
       hash = (37 * hash) + UPDATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUpdated());
+      hash = (37 * hash) + ROUTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRouterId().hashCode();
+      hash = (37 * hash) + VXNET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVxnetId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1275,6 +1449,10 @@ public final class PBModelDataService {
 
         updated_ = 0L;
 
+        routerId_ = "";
+
+        vxnetId_ = "";
+
         return this;
       }
 
@@ -1309,6 +1487,8 @@ public final class PBModelDataService {
         result.createdBy_ = createdBy_;
         result.created_ = created_;
         result.updated_ = updated_;
+        result.routerId_ = routerId_;
+        result.vxnetId_ = vxnetId_;
         onBuilt();
         return result;
       }
@@ -1384,6 +1564,14 @@ public final class PBModelDataService {
         }
         if (other.getUpdated() != 0L) {
           setUpdated(other.getUpdated());
+        }
+        if (!other.getRouterId().isEmpty()) {
+          routerId_ = other.routerId_;
+          onChanged();
+        }
+        if (!other.getVxnetId().isEmpty()) {
+          vxnetId_ = other.vxnetId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2028,6 +2216,208 @@ public final class PBModelDataService {
       public Builder clearUpdated() {
         
         updated_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object routerId_ = "";
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+       * @return The routerId.
+       */
+      public java.lang.String getRouterId() {
+        java.lang.Object ref = routerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          routerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+       * @return The bytes for routerId.
+       */
+      public com.google.protobuf.ByteString
+          getRouterIdBytes() {
+        java.lang.Object ref = routerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          routerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+       * @param value The routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRouterId() {
+        
+        routerId_ = getDefaultInstance().getRouterId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VPC that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"router_id" gorm:"column:router_id;"
+       * </pre>
+       *
+       * <code>string router_id = 9 [(.validator.field) = { ... }</code>
+       * @param value The bytes for routerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRouterIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        routerId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vxnetId_ = "";
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+       * @return The vxnetId.
+       */
+      public java.lang.String getVxnetId() {
+        java.lang.Object ref = vxnetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vxnetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+       * @return The bytes for vxnetId.
+       */
+      public com.google.protobuf.ByteString
+          getVxnetIdBytes() {
+        java.lang.Object ref = vxnetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          vxnetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+       * @param value The vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        vxnetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVxnetId() {
+        
+        vxnetId_ = getDefaultInstance().getVxnetId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The VXNet that this cluster bounds, Only used when `enable_network`.
+       * &#64;inject_tag: json:"vxnet_id" gorm:"column:vxnet_id;"
+       * </pre>
+       *
+       * <code>string vxnet_id = 10 [(.validator.field) = { ... }</code>
+       * @param value The bytes for vxnetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVxnetIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        vxnetId_ = value;
         onChanged();
         return this;
       }
@@ -22785,7 +23175,7 @@ public final class PBModelDataService {
       "o/validator.proto\0322github.com/yu31/proto" +
       "c-plugin/proto/defaults.proto\032/github.co" +
       "m/yu31/protoc-plugin/proto/gosql.proto\032\031" +
-      "google/protobuf/any.proto\"\231\004\n\022DataServic" +
+      "google/protobuf/any.proto\"\223\005\n\022DataServic" +
       "eCluster\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc" +
       "-\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
       "\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\002\230\002\200\001\022L\n\rreso" +
@@ -22794,139 +23184,142 @@ public final class PBModelDataService {
       "\030\005 \001(\0162 .model.DataServiceCluster.Status" +
       "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\ncreated_by\030\006 \001(\tB\017\342\337\037" +
       "\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\002" +
-      "0\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"j\n\006Stat" +
-      "us\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Runn" +
-      "ing\020\002\022\013\n\007Stopped\020\003\022\014\n\010Starting\020\004\022\r\n\tExce" +
-      "ption\020\005\022\013\n\007Arrears\020\006\"?\n\014ResourceSpec\022\r\n\t" +
-      "SpecUnset\020\000\022\t\n\005Entry\020\001\022\n\n\006Basics\020\002\022\t\n\005Ma" +
-      "jor\020\003\"\375\002\n\010ApiGroup\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004dsg-\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002" +
-      "@\022 \n\ngroup_path\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004d" +
-      "esc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\0225\n\006status\030\006 \001(\016" +
-      "2\026.model.ApiGroup.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "#\n\ncreated_by\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007" +
-      "created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t " +
-      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUnse" +
-      "t\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\352\t\n\tApiCon" +
-      "fig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-" +
-      "\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022" +
-      "\035\n\ncluster_id\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\010space_" +
-      "id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_nam" +
-      "e\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\006 \001" +
-      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\007 \001(\0162\030" +
-      ".model.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "&\n\017api_description\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022" +
-      "<\n\tprotocols\030\t \001(\0162\032.model.ApiConfig.Pro" +
-      "tocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\016request_method\030" +
-      "\n \001(\0162\036.model.ApiConfig.RequestMethodB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\013 \001(\0162\035.mo" +
-      "del.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\022\032\n\014cross_domain\030\014 \001(\010B\004\342\337\037\000\022\037\n\007timeout" +
-      "\030\r \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022 \n\rdatasource_id\030" +
-      "\016 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\035\n\ntable_name\030\017 \001(\tB\t\342\337" +
-      "\037\005\022\003\302\001\000\022\036\n\006script\030\020 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022" +
-      "#\n\ncreated_by\030\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034\n\007" +
-      "created\030\022 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\023 " +
-      "\001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\006status\030\024 \001(\0162\027.model" +
-      ".ApiConfig.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\022acce" +
-      "ssible_version\030\025 \001(\t\0226\n\016request_params\030\026" +
-      " \001(\0132\030.model.RequestParametersB\004\342\337\037\000\0228\n\017" +
-      "response_params\030\027 \001(\0132\031.model.ResponsePa" +
-      "rametersB\004\342\337\037\000\"0\n\007ApiMode\022\r\n\tModeUnset\020\000" +
-      "\022\n\n\006Wizard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMetho" +
-      "d\022\017\n\013MethodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n" +
-      "\014ResponseType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007" +
-      "\n\003XML\020\002\"D\n\tProtocols\022\021\n\rProtocolUnset\020\000\022" +
-      "\014\n\010HTTPOnly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n" +
-      "\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n" +
-      "\007Enabled\020\002\"R\n\021RequestParameters\0225\n\016reque" +
-      "st_params\030\026 \003(\0132\027.model.RequestParameter" +
-      "B\004\342\337\037\000:\006\312\262\004\002\n\000\"\347\006\n\020RequestParameter\022$\n\013c" +
-      "olumn_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdef" +
-      "ault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexamp" +
-      "le_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_requ" +
-      "ired\030\004 \001(\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030.mo" +
-      "del.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021" +
-      "param_description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#" +
-      "\n\nparam_name\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016p" +
-      "aram_operator\030\010 \001(\0162).model.RequestParam" +
-      "eter.ParameterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n" +
-      "\016param_position\030\t \001(\0162).model.RequestPar" +
-      "ameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "L\n\016field_category\030\n \001(\0162%.model.RequestP" +
-      "arameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\247\001" +
-      "\n\021ParameterOperator\022\021\n\rOperatorUnset\020\000\022\t" +
-      "\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan\020\003" +
-      "\022\020\n\014GreaterEqual\020\004\022\014\n\010LessThan\020\005\022\r\n\tLess" +
-      "Equal\020\006\022\010\n\004Like\020\007\022\t\n\005Const\020\010\022\006\n\002In\020\t\022\t\n\005" +
-      "NotIn\020\n\"O\n\021ParameterPosition\022\021\n\rPosition" +
-      "Unset\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010" +
-      "\n\004Head\020\004\"F\n\rFieldCategory\022\021\n\rCategoryUns" +
-      "et\020\000\022\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn\020\002" +
-      ":\006\312\262\004\002\n\000\"U\n\022ResponseParameters\0227\n\017respon" +
-      "se_params\030\026 \003(\0132\030.model.ResponseParamete" +
-      "rB\004\342\337\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022$\n" +
+      "0\000\022\034\n\007updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022;\n\trout" +
+      "er_id\030\t \001(\tB(\342\337\037\024\n\022\n\trouter_id\022\005\302\001\002\"\000\342\337\037" +
+      "\014\022\n\302\001\007\312\002\004rtr-\022;\n\010vxnet_id\030\n \001(\tB)\342\337\037\023\n\021\n" +
+      "\010vxnet_id\022\005\302\001\002\"\000\342\337\037\016\022\014\302\001\t\312\002\006vxnet-\"j\n\006St" +
+      "atus\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022\013\n\007Ru" +
+      "nning\020\002\022\013\n\007Stopped\020\003\022\014\n\010Starting\020\004\022\r\n\tEx" +
+      "ception\020\005\022\013\n\007Arrears\020\006\"?\n\014ResourceSpec\022\r" +
+      "\n\tSpecUnset\020\000\022\t\n\005Entry\020\001\022\n\n\006Basics\020\002\022\t\n\005" +
+      "Major\020\003\"\375\002\n\010ApiGroup\022\037\n\002id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004dsg-\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000" +
+      "\230\002@\022 \n\ngroup_path\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n" +
+      "\004desc\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\0225\n\006status\030\006 \001" +
+      "(\0162\026.model.ApiGroup.StatusB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022#\n\ncreated_by\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034" +
+      "\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030" +
+      "\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUn" +
+      "set\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\352\t\n\tApiC" +
+      "onfig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ds" +
+      "a-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg" +
+      "-\022\035\n\ncluster_id\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\010spac" +
+      "e_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_n" +
+      "ame\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\006" +
+      " \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\007 \001(\016" +
+      "2\030.model.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022&\n\017api_description\030\010 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201" +
+      "\002\022<\n\tprotocols\030\t \001(\0162\032.model.ApiConfig.P" +
+      "rotocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022E\n\016request_metho" +
+      "d\030\n \001(\0162\036.model.ApiConfig.RequestMethodB" +
+      "\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\013 \001(\0162\035." +
+      "model.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\032\n\014cross_domain\030\014 \001(\010B\004\342\337\037\000\022\037\n\007timeo" +
+      "ut\030\r \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022 \n\rdatasource_i" +
+      "d\030\016 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\035\n\ntable_name\030\017 \001(\tB\t" +
+      "\342\337\037\005\022\003\302\001\000\022\036\n\006script\030\020 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234" +
+      "\001\022#\n\ncreated_by\030\021 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034" +
+      "\n\007created\030\022 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030" +
+      "\023 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\0226\n\006status\030\024 \001(\0162\027.mod" +
+      "el.ApiConfig.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\022ac" +
+      "cessible_version\030\025 \001(\t\0226\n\016request_params" +
+      "\030\026 \001(\0132\030.model.RequestParametersB\004\342\337\037\000\0228" +
+      "\n\017response_params\030\027 \001(\0132\031.model.Response" +
+      "ParametersB\004\342\337\037\000\"0\n\007ApiMode\022\r\n\tModeUnset" +
+      "\020\000\022\n\n\006Wizard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMet" +
+      "hod\022\017\n\013MethodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"" +
+      "0\n\014ResponseType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001" +
+      "\022\007\n\003XML\020\002\"D\n\tProtocols\022\021\n\rProtocolUnset\020" +
+      "\000\022\014\n\010HTTPOnly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"" +
+      "3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022" +
+      "\013\n\007Enabled\020\002\"R\n\021RequestParameters\0225\n\016req" +
+      "uest_params\030\026 \003(\0132\027.model.RequestParamet" +
+      "erB\004\342\337\037\000:\006\312\262\004\002\n\000\"\347\006\n\020RequestParameter\022$\n" +
       "\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rd" +
       "efault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexa" +
-      "mple_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_" +
-      "type\030\004 \001(\0162\030.model.ParameterDataTypeB\r\342\337" +
-      "\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\005 \001(\tB\r" +
-      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037\013\022" +
-      "\t\302\001\006\200\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000" +
-      "\022C\n\norder_mode\030\010 \001(\0162\".model.ResponsePar" +
-      "ameter.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field_c" +
-      "ategory\030\t \001(\0162&.model.ResponseParameter." +
-      "FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderMod" +
-      "e\022\017\n\013StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"F\n" +
-      "\rFieldCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nPag" +
-      "eConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"\234\n" +
-      "\n\nApiVersion\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010\022\006" +
-      "\302\001\003\360\001\020\022?\n\016publish_status\030\002 \001(\0162\030.model.A" +
-      "piVersion.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\006api_i" +
-      "d\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id" +
-      "\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_i" +
-      "d\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id" +
-      "\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_name\030" +
-      "\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\t" +
-      "B\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031.m" +
-      "odel.ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&" +
-      "\n\017api_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=" +
-      "\n\tprotocols\030\014 \001(\0162\033.model.ApiVersion.Pro" +
-      "tocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_method\030" +
-      "\r \001(\0162\037.model.ApiVersion.RequestMethodB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036.m" +
-      "odel.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040" +
-      "\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeo" +
-      "ut\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource_i" +
-      "d\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_na" +
-      "me\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(" +
-      "\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007" +
-      "\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022#\n" +
-      "\ncreated_by\030\027 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0226\n\016re" +
-      "quest_params\030\025 \001(\0132\030.model.RequestParame" +
-      "tersB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031.mo" +
-      "del.ResponseParametersB\004\342\337\037\000\"7\n\006Status\022\017" +
-      "\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbolis" +
-      "hed\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wizar" +
-      "d\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Meth" +
-      "odUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014Response" +
-      "Type\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D" +
-      "\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTPOn" +
-      "ly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025ServiceD" +
-      "ataSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 \001(" +
-      "\003\"\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB\t\342" +
-      "\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004typ" +
-      "e\030\005 \001(\0162\037.model.ApiConfigDataSource.Type" +
-      "B\t\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005My" +
-      "SQL\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"I\n" +
-      "\027ApiConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t\342\337" +
-      "\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Para" +
-      "meterDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String\020\001" +
-      "\022\007\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"co" +
-      "m.dataomnis.gproto.types.pbmodelB\022PBMode" +
-      "lDataServiceP\000Z1github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbmodelb\006proto3"
+      "mple_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_re" +
+      "quired\030\004 \001(\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030." +
+      "model.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(" +
+      "\n\021param_description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002" +
+      "\022#\n\nparam_name\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n" +
+      "\016param_operator\030\010 \001(\0162).model.RequestPar" +
+      "ameter.ParameterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "P\n\016param_position\030\t \001(\0162).model.RequestP" +
+      "arameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X" +
+      "\001\022L\n\016field_category\030\n \001(\0162%.model.Reques" +
+      "tParameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"" +
+      "\247\001\n\021ParameterOperator\022\021\n\rOperatorUnset\020\000" +
+      "\022\t\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan" +
+      "\020\003\022\020\n\014GreaterEqual\020\004\022\014\n\010LessThan\020\005\022\r\n\tLe" +
+      "ssEqual\020\006\022\010\n\004Like\020\007\022\t\n\005Const\020\010\022\006\n\002In\020\t\022\t" +
+      "\n\005NotIn\020\n\"O\n\021ParameterPosition\022\021\n\rPositi" +
+      "onUnset\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003" +
+      "\022\010\n\004Head\020\004\"F\n\rFieldCategory\022\021\n\rCategoryU" +
+      "nset\020\000\022\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn" +
+      "\020\002:\006\312\262\004\002\n\000\"U\n\022ResponseParameters\0227\n\017resp" +
+      "onse_params\030\026 \003(\0132\030.model.ResponseParame" +
+      "terB\004\342\337\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022" +
+      "$\n\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n" +
+      "\rdefault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\re" +
+      "xample_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdat" +
+      "a_type\030\004 \001(\0162\030.model.ParameterDataTypeB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\005 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\200\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262" +
+      "\001\000\022C\n\norder_mode\030\010 \001(\0162\".model.ResponseP" +
+      "arameter.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field" +
+      "_category\030\t \001(\0162&.model.ResponseParamete" +
+      "r.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderM" +
+      "ode\022\017\n\013StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"" +
+      "F\n\rFieldCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nP" +
+      "ageConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"" +
+      "\234\n\n\nApiVersion\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010" +
+      "\022\006\302\001\003\360\001\020\022?\n\016publish_status\030\002 \001(\0162\030.model" +
+      ".ApiVersion.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\006api" +
+      "_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_" +
+      "id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster" +
+      "_id\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_" +
+      "id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_nam" +
+      "e\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001" +
+      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031" +
+      ".model.ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
+      "\022&\n\017api_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002" +
+      "\022=\n\tprotocols\030\014 \001(\0162\033.model.ApiVersion.P" +
+      "rotocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_metho" +
+      "d\030\r \001(\0162\037.model.ApiVersion.RequestMethod" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036" +
+      ".model.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007tim" +
+      "eout\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022*\n\rdatasource" +
+      "_id\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_" +
+      "name\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 " +
+      "\001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337" +
+      "\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022" +
+      "#\n\ncreated_by\030\027 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0226\n\016" +
+      "request_params\030\025 \001(\0132\030.model.RequestPara" +
+      "metersB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031." +
+      "model.ResponseParametersB\004\342\337\037\000\"7\n\006Status" +
+      "\022\017\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbol" +
+      "ished\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wiz" +
+      "ard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Me" +
+      "thodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014Respon" +
+      "seType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002" +
+      "\"D\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTP" +
+      "Only\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025Servic" +
+      "eDataSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 " +
+      "\001(\003\"\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB" +
+      "\t\342\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004t" +
+      "ype\030\005 \001(\0162\037.model.ApiConfigDataSource.Ty" +
+      "peB\t\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005" +
+      "MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"" +
+      "I\n\027ApiConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t" +
+      "\342\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Pa" +
+      "rameterDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String" +
+      "\020\001\022\007\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"" +
+      "com.dataomnis.gproto.types.pbmodelB\022PBMo" +
+      "delDataServiceP\000Z1github.com/DataWorkben" +
+      "ch/gproto/xgo/types/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -22941,7 +23334,7 @@ public final class PBModelDataService {
     internal_static_model_DataServiceCluster_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_DataServiceCluster_descriptor,
-        new java.lang.String[] { "Id", "SpaceId", "Name", "ResourceSpec", "Status", "CreatedBy", "Created", "Updated", });
+        new java.lang.String[] { "Id", "SpaceId", "Name", "ResourceSpec", "Status", "CreatedBy", "Created", "Updated", "RouterId", "VxnetId", });
     internal_static_model_ApiGroup_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_ApiGroup_fieldAccessorTable = new

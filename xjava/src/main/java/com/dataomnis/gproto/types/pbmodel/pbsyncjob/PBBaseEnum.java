@@ -977,6 +977,123 @@ public final class PBBaseEnum {
       // @@protoc_insertion_point(enum_scope:model.BaseEnum.ConditionType)
     }
 
+    /**
+     * Protobuf enum {@code model.BaseEnum.NullMode}
+     */
+    public enum NullMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>NullModeUnset = 0;</code>
+       */
+      NullModeUnset(0),
+      /**
+       * <code>skip = 1;</code>
+       */
+      skip(1),
+      /**
+       * <code>empty = 2;</code>
+       */
+      empty(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>NullModeUnset = 0;</code>
+       */
+      public static final int NullModeUnset_VALUE = 0;
+      /**
+       * <code>skip = 1;</code>
+       */
+      public static final int skip_VALUE = 1;
+      /**
+       * <code>empty = 2;</code>
+       */
+      public static final int empty_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NullMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NullMode forNumber(int value) {
+        switch (value) {
+          case 0: return NullModeUnset;
+          case 1: return skip;
+          case 2: return empty;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NullMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          NullMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<NullMode>() {
+              public NullMode findValueByNumber(int number) {
+                return NullMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.getDescriptor().getEnumTypes().get(7);
+      }
+
+      private static final NullMode[] VALUES = values();
+
+      public static NullMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private NullMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.BaseEnum.NullMode)
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1329,7 +1446,7 @@ public final class PBBaseEnum {
   static {
     java.lang.String[] descriptorData = {
       "\n(proto/types/model/syncjob/baseenum.pro" +
-      "to\022\005model\"\353\003\n\010BaseEnum\"F\n\rPartitionType\022" +
+      "to\022\005model\"\237\004\n\010BaseEnum\"F\n\rPartitionType\022" +
       "\026\n\022PartitionTypeUnset\020\000\022\007\n\003DAY\020\001\022\010\n\004HOUR" +
       "\020\002\022\n\n\006MINUTE\020\003\":\n\tWriteMode\022\022\n\016WriteMode" +
       "Unset\020\000\022\n\n\006append\020\001\022\r\n\toverwrite\020\002\"=\n\010Fi" +
@@ -1341,10 +1458,12 @@ public final class PBBaseEnum {
       "\n\003GBK\020\002\"=\n\rColumnMapping\022\017\n\013ColumnUnset\020" +
       "\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004Auto\020\003\"G\n\rCondit" +
       "ionType\022\026\n\022ConditionTypeUnset\020\000\022\021\n\rVisua" +
-      "lization\020\001\022\013\n\007Express\020\002By\n,com.dataomnis" +
-      ".gproto.types.pbmodel.pbsyncjobB\nPBBaseE" +
-      "numP\000Z;github.com/DataWorkbench/gproto/x" +
-      "go/types/pbmodel/pbsyncjobb\006proto3"
+      "lization\020\001\022\013\n\007Express\020\002\"2\n\010NullMode\022\021\n\rN" +
+      "ullModeUnset\020\000\022\010\n\004skip\020\001\022\t\n\005empty\020\002By\n,c" +
+      "om.dataomnis.gproto.types.pbmodel.pbsync" +
+      "jobB\nPBBaseEnumP\000Z;github.com/DataWorkbe" +
+      "nch/gproto/xgo/types/pbmodel/pbsyncjobb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

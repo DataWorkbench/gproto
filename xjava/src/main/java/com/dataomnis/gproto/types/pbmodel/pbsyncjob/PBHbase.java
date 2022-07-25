@@ -2665,21 +2665,20 @@ public final class PBHbase {
      * &#64;inject_tag: json:"null_mode"
      * </pre>
      *
-     * <code>string null_mode = 3;</code>
-     * @return The nullMode.
+     * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+     * @return The enum numeric value on the wire for nullMode.
      */
-    java.lang.String getNullMode();
+    int getNullModeValue();
     /**
      * <pre>
      * null_mode
      * &#64;inject_tag: json:"null_mode"
      * </pre>
      *
-     * <code>string null_mode = 3;</code>
-     * @return The bytes for nullMode.
+     * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+     * @return The nullMode.
      */
-    com.google.protobuf.ByteString
-        getNullModeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode getNullMode();
 
     /**
      * <pre>
@@ -2839,7 +2838,7 @@ public final class PBHbase {
     private HbaseTarget() {
       column_ = java.util.Collections.emptyList();
       hbaseConfig_ = "";
-      nullMode_ = "";
+      nullMode_ = 0;
       changeLog_ = "";
       rowkeyExpress_ = "";
       versionColumnValue_ = "";
@@ -2892,10 +2891,10 @@ public final class PBHbase {
               hbaseConfig_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              nullMode_ = s;
+              nullMode_ = rawValue;
               break;
             }
             case 32: {
@@ -3091,28 +3090,18 @@ public final class PBHbase {
     }
 
     public static final int NULL_MODE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object nullMode_;
+    private int nullMode_;
     /**
      * <pre>
      * null_mode
      * &#64;inject_tag: json:"null_mode"
      * </pre>
      *
-     * <code>string null_mode = 3;</code>
-     * @return The nullMode.
+     * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+     * @return The enum numeric value on the wire for nullMode.
      */
-    @java.lang.Override
-    public java.lang.String getNullMode() {
-      java.lang.Object ref = nullMode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nullMode_ = s;
-        return s;
-      }
+    @java.lang.Override public int getNullModeValue() {
+      return nullMode_;
     }
     /**
      * <pre>
@@ -3120,22 +3109,13 @@ public final class PBHbase {
      * &#64;inject_tag: json:"null_mode"
      * </pre>
      *
-     * <code>string null_mode = 3;</code>
-     * @return The bytes for nullMode.
+     * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+     * @return The nullMode.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNullModeBytes() {
-      java.lang.Object ref = nullMode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nullMode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode getNullMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.valueOf(nullMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.UNRECOGNIZED : result;
     }
 
     public static final int WAL_FLAG_FIELD_NUMBER = 4;
@@ -3430,8 +3410,8 @@ public final class PBHbase {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hbaseConfig_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullMode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nullMode_);
+      if (nullMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.NullModeUnset.getNumber()) {
+        output.writeEnum(3, nullMode_);
       }
       if (walFlag_ != false) {
         output.writeBool(4, walFlag_);
@@ -3476,8 +3456,9 @@ public final class PBHbase {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hbaseConfig_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nullMode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nullMode_);
+      if (nullMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.NullModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, nullMode_);
       }
       if (walFlag_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -3530,8 +3511,7 @@ public final class PBHbase {
           .equals(other.getColumnList())) return false;
       if (!getHbaseConfig()
           .equals(other.getHbaseConfig())) return false;
-      if (!getNullMode()
-          .equals(other.getNullMode())) return false;
+      if (nullMode_ != other.nullMode_) return false;
       if (getWalFlag()
           != other.getWalFlag()) return false;
       if (getWriteBufferSize()
@@ -3568,7 +3548,7 @@ public final class PBHbase {
       hash = (37 * hash) + HBASE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHbaseConfig().hashCode();
       hash = (37 * hash) + NULL_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getNullMode().hashCode();
+      hash = (53 * hash) + nullMode_;
       hash = (37 * hash) + WAL_FLAG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getWalFlag());
@@ -3730,7 +3710,7 @@ public final class PBHbase {
         }
         hbaseConfig_ = "";
 
-        nullMode_ = "";
+        nullMode_ = 0;
 
         walFlag_ = false;
 
@@ -3875,9 +3855,8 @@ public final class PBHbase {
           hbaseConfig_ = other.hbaseConfig_;
           onChanged();
         }
-        if (!other.getNullMode().isEmpty()) {
-          nullMode_ = other.nullMode_;
-          onChanged();
+        if (other.nullMode_ != 0) {
+          setNullModeValue(other.getNullModeValue());
         }
         if (other.getWalFlag() != false) {
           setWalFlag(other.getWalFlag());
@@ -4353,27 +4332,18 @@ public final class PBHbase {
         return this;
       }
 
-      private java.lang.Object nullMode_ = "";
+      private int nullMode_ = 0;
       /**
        * <pre>
        * null_mode
        * &#64;inject_tag: json:"null_mode"
        * </pre>
        *
-       * <code>string null_mode = 3;</code>
-       * @return The nullMode.
+       * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+       * @return The enum numeric value on the wire for nullMode.
        */
-      public java.lang.String getNullMode() {
-        java.lang.Object ref = nullMode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nullMode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getNullModeValue() {
+        return nullMode_;
       }
       /**
        * <pre>
@@ -4381,38 +4351,12 @@ public final class PBHbase {
        * &#64;inject_tag: json:"null_mode"
        * </pre>
        *
-       * <code>string null_mode = 3;</code>
-       * @return The bytes for nullMode.
-       */
-      public com.google.protobuf.ByteString
-          getNullModeBytes() {
-        java.lang.Object ref = nullMode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nullMode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * null_mode
-       * &#64;inject_tag: json:"null_mode"
-       * </pre>
-       *
-       * <code>string null_mode = 3;</code>
-       * @param value The nullMode to set.
+       * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+       * @param value The enum numeric value on the wire for nullMode to set.
        * @return This builder for chaining.
        */
-      public Builder setNullMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setNullModeValue(int value) {
+        
         nullMode_ = value;
         onChanged();
         return this;
@@ -4423,33 +4367,46 @@ public final class PBHbase {
        * &#64;inject_tag: json:"null_mode"
        * </pre>
        *
-       * <code>string null_mode = 3;</code>
+       * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+       * @return The nullMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode getNullMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.valueOf(nullMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * null_mode
+       * &#64;inject_tag: json:"null_mode"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
+       * @param value The nullMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNullMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        nullMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * null_mode
+       * &#64;inject_tag: json:"null_mode"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.NullMode null_mode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearNullMode() {
         
-        nullMode_ = getDefaultInstance().getNullMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * null_mode
-       * &#64;inject_tag: json:"null_mode"
-       * </pre>
-       *
-       * <code>string null_mode = 3;</code>
-       * @param value The bytes for nullMode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNullModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        nullMode_ = value;
+        nullMode_ = 0;
         onChanged();
         return this;
       }
@@ -5160,31 +5117,33 @@ public final class PBHbase {
   static {
     java.lang.String[] descriptorData = {
       "\n%proto/types/model/syncjob/hbase.proto\022" +
-      "\005model\032&proto/types/model/syncjob/column" +
-      ".proto\032/github.com/yu31/protoc-plugin/pr" +
-      "oto/gosql.proto\"\214\002\n\013HbaseSource\022\035\n\006colum" +
-      "n\030\001 \003(\0132\r.model.Column\022\023\n\013hbaseConfig\030\002 " +
-      "\001(\t\022\022\n\nchange_log\030\003 \001(\t\022\020\n\010encoding\030\004 \001(" +
-      "\t\022\027\n\017scan_cache_size\030\005 \001(\005\022\027\n\017scan_batch" +
-      "_size\030\006 \001(\005\022\024\n\014hadoopConfig\030\007 \001(\t\022\025\n\rsta" +
-      "rt_row_key\030\010 \001(\t\022\023\n\013end_row_key\030\t \001(\t\022\030\n" +
-      "\020is_binary_rowkey\030\n \001(\010\022\r\n\005table\030\013 \001(\t:\006" +
-      "\312\262\004\002\n\000\"\263\002\n\013HbaseTarget\022\035\n\006column\030\001 \003(\0132\r" +
-      ".model.Column\022\024\n\014hbase_config\030\002 \001(\t\022\021\n\tn" +
-      "ull_mode\030\003 \001(\t\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021writ" +
-      "e_buffer_size\030\005 \001(\005\022\022\n\nchange_log\030\006 \001(\t\022" +
-      "\026\n\016rowkey_express\030\007 \001(\t\022\034\n\024version_colum" +
-      "n_index\030\010 \001(\005\022\034\n\024version_column_value\030\t " +
-      "\001(\t\022\027\n\017scan_cache_size\030\n \001(\005\022\027\n\017scan_bat" +
-      "ch_size\030\013 \001(\005\022\r\n\005table\030\014 \001(\t:\006\312\262\004\002\n\000Bv\n," +
-      "com.dataomnis.gproto.types.pbmodel.pbsyn" +
-      "cjobB\007PBHbaseP\000Z;github.com/DataWorkbenc" +
-      "h/gproto/xgo/types/pbmodel/pbsyncjobb\006pr" +
-      "oto3"
+      "\005model\032(proto/types/model/syncjob/baseen" +
+      "um.proto\032&proto/types/model/syncjob/colu" +
+      "mn.proto\032/github.com/yu31/protoc-plugin/" +
+      "proto/gosql.proto\"\214\002\n\013HbaseSource\022\035\n\006col" +
+      "umn\030\001 \003(\0132\r.model.Column\022\023\n\013hbaseConfig\030" +
+      "\002 \001(\t\022\022\n\nchange_log\030\003 \001(\t\022\020\n\010encoding\030\004 " +
+      "\001(\t\022\027\n\017scan_cache_size\030\005 \001(\005\022\027\n\017scan_bat" +
+      "ch_size\030\006 \001(\005\022\024\n\014hadoopConfig\030\007 \001(\t\022\025\n\rs" +
+      "tart_row_key\030\010 \001(\t\022\023\n\013end_row_key\030\t \001(\t\022" +
+      "\030\n\020is_binary_rowkey\030\n \001(\010\022\r\n\005table\030\013 \001(\t" +
+      ":\006\312\262\004\002\n\000\"\315\002\n\013HbaseTarget\022\035\n\006column\030\001 \003(\013" +
+      "2\r.model.Column\022\024\n\014hbase_config\030\002 \001(\t\022+\n" +
+      "\tnull_mode\030\003 \001(\0162\030.model.BaseEnum.NullMo" +
+      "de\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_siz" +
+      "e\030\005 \001(\005\022\022\n\nchange_log\030\006 \001(\t\022\026\n\016rowkey_ex" +
+      "press\030\007 \001(\t\022\034\n\024version_column_index\030\010 \001(" +
+      "\005\022\034\n\024version_column_value\030\t \001(\t\022\027\n\017scan_" +
+      "cache_size\030\n \001(\005\022\027\n\017scan_batch_size\030\013 \001(" +
+      "\005\022\r\n\005table\030\014 \001(\t:\006\312\262\004\002\n\000Bv\n,com.dataomni" +
+      "s.gproto.types.pbmodel.pbsyncjobB\007PBHbas" +
+      "eP\000Z;github.com/DataWorkbench/gproto/xgo" +
+      "/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
@@ -5205,6 +5164,7 @@ public final class PBHbase {
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }

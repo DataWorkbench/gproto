@@ -325,6 +325,37 @@ public final class EngineManageGrpc {
     return getDeleteNetworkBrokerInK8sV2Method;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateDataServiceClusterInK8SV2Method;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDataServiceClusterInK8SV2",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateDataServiceClusterInK8SV2Method() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getCreateDataServiceClusterInK8SV2Method;
+    if ((getCreateDataServiceClusterInK8SV2Method = EngineManageGrpc.getCreateDataServiceClusterInK8SV2Method) == null) {
+      synchronized (EngineManageGrpc.class) {
+        if ((getCreateDataServiceClusterInK8SV2Method = EngineManageGrpc.getCreateDataServiceClusterInK8SV2Method) == null) {
+          EngineManageGrpc.getCreateDataServiceClusterInK8SV2Method = getCreateDataServiceClusterInK8SV2Method =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDataServiceClusterInK8SV2"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new EngineManageMethodDescriptorSupplier("CreateDataServiceClusterInK8SV2"))
+              .build();
+        }
+      }
+    }
+    return getCreateDataServiceClusterInK8SV2Method;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -455,6 +486,13 @@ public final class EngineManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNetworkBrokerInK8sV2Method(), responseObserver);
     }
 
+    /**
+     */
+    public void createDataServiceClusterInK8SV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateDataServiceClusterInK8SV2Method(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -527,6 +565,13 @@ public final class EngineManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8sV2,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_NETWORK_BROKER_IN_K8S_V2)))
+          .addMethod(
+            getCreateDataServiceClusterInK8SV2Method(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_CREATE_DATA_SERVICE_CLUSTER_IN_K8SV2)))
           .build();
     }
   }
@@ -636,6 +681,14 @@ public final class EngineManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNetworkBrokerInK8sV2Method(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createDataServiceClusterInK8SV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDataServiceClusterInK8SV2Method(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -732,6 +785,13 @@ public final class EngineManageGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct deleteNetworkBrokerInK8sV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8sV2 request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNetworkBrokerInK8sV2Method(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct createDataServiceClusterInK8SV2(com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataServiceClusterInK8SV2Method(), getCallOptions(), request);
     }
   }
 
@@ -840,6 +900,14 @@ public final class EngineManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteNetworkBrokerInK8sV2Method(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> createDataServiceClusterInK8SV2(
+        com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2 request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDataServiceClusterInK8SV2Method(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_FLINK_CLUSTER_IN_K8S = 0;
@@ -852,6 +920,7 @@ public final class EngineManageGrpc {
   private static final int METHODID_RESTART_FLINK_CLUSTER_IN_K8S = 7;
   private static final int METHODID_CREATE_NETWORK_BROKER_IN_K8S_V2 = 8;
   private static final int METHODID_DELETE_NETWORK_BROKER_IN_K8S_V2 = 9;
+  private static final int METHODID_CREATE_DATA_SERVICE_CLUSTER_IN_K8SV2 = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -908,6 +977,10 @@ public final class EngineManageGrpc {
           break;
         case METHODID_DELETE_NETWORK_BROKER_IN_K8S_V2:
           serviceImpl.deleteNetworkBrokerInK8sV2((com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.DeleteNetworkBrokerInK8sV2) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_CREATE_DATA_SERVICE_CLUSTER_IN_K8SV2:
+          serviceImpl.createDataServiceClusterInK8SV2((com.dataomnis.gproto.types.pbrequest.PBRequestEngineManage.CreateDataServiceClusterInK8sV2) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         default:
@@ -981,6 +1054,7 @@ public final class EngineManageGrpc {
               .addMethod(getRestartFlinkClusterInK8sMethod())
               .addMethod(getCreateNetworkBrokerInK8sV2Method())
               .addMethod(getDeleteNetworkBrokerInK8sV2Method())
+              .addMethod(getCreateDataServiceClusterInK8SV2Method())
               .build();
         }
       }

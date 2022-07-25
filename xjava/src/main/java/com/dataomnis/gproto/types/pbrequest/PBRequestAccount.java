@@ -3424,6 +3424,26 @@ public final class PBRequestAccount {
      */
     com.google.protobuf.ByteString
         getEmailBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"session_id"
+     * </pre>
+     *
+     * <code>string session_id = 5;</code>
+     * @return The sessionId.
+     */
+    java.lang.String getSessionId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"session_id"
+     * </pre>
+     *
+     * <code>string session_id = 5;</code>
+     * @return The bytes for sessionId.
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
   }
   /**
    * Protobuf type {@code request.UpdateUser}
@@ -3440,6 +3460,7 @@ public final class PBRequestAccount {
     private UpdateUser() {
       userId_ = "";
       email_ = "";
+      sessionId_ = "";
     }
 
     @java.lang.Override
@@ -3482,6 +3503,12 @@ public final class PBRequestAccount {
               java.lang.String s = input.readStringRequireUtf8();
 
               email_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionId_ = s;
               break;
             }
             default: {
@@ -3608,6 +3635,52 @@ public final class PBRequestAccount {
       }
     }
 
+    public static final int SESSION_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object sessionId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"session_id"
+     * </pre>
+     *
+     * <code>string session_id = 5;</code>
+     * @return The sessionId.
+     */
+    @java.lang.Override
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"session_id"
+     * </pre>
+     *
+     * <code>string session_id = 5;</code>
+     * @return The bytes for sessionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3628,6 +3701,9 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, email_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sessionId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3642,6 +3718,9 @@ public final class PBRequestAccount {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sessionId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3662,6 +3741,8 @@ public final class PBRequestAccount {
           .equals(other.getUserId())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
+      if (!getSessionId()
+          .equals(other.getSessionId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3677,6 +3758,8 @@ public final class PBRequestAccount {
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3814,6 +3897,8 @@ public final class PBRequestAccount {
 
         email_ = "";
 
+        sessionId_ = "";
+
         return this;
       }
 
@@ -3842,6 +3927,7 @@ public final class PBRequestAccount {
         com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser result = new com.dataomnis.gproto.types.pbrequest.PBRequestAccount.UpdateUser(this);
         result.userId_ = userId_;
         result.email_ = email_;
+        result.sessionId_ = sessionId_;
         onBuilt();
         return result;
       }
@@ -3896,6 +3982,10 @@ public final class PBRequestAccount {
         }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4115,6 +4205,102 @@ public final class PBRequestAccount {
   checkByteStringIsUtf8(value);
         
         email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"session_id"
+       * </pre>
+       *
+       * <code>string session_id = 5;</code>
+       * @return The sessionId.
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"session_id"
+       * </pre>
+       *
+       * <code>string session_id = 5;</code>
+       * @return The bytes for sessionId.
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"session_id"
+       * </pre>
+       *
+       * <code>string session_id = 5;</code>
+       * @param value The sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"session_id"
+       * </pre>
+       *
+       * <code>string session_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSessionId() {
+        
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"session_id"
+       * </pre>
+       *
+       * <code>string session_id = 5;</code>
+       * @param value The bytes for sessionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionId_ = value;
         onChanged();
         return this;
       }
@@ -10109,6 +10295,26 @@ public final class PBRequestAccount {
      * @return The ignorePassword.
      */
     boolean getIgnorePassword();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"raw_password"
+     * </pre>
+     *
+     * <code>string raw_password = 4;</code>
+     * @return The rawPassword.
+     */
+    java.lang.String getRawPassword();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"raw_password"
+     * </pre>
+     *
+     * <code>string raw_password = 4;</code>
+     * @return The bytes for rawPassword.
+     */
+    com.google.protobuf.ByteString
+        getRawPasswordBytes();
   }
   /**
    * Protobuf type {@code request.CreateSession}
@@ -10125,6 +10331,7 @@ public final class PBRequestAccount {
     private CreateSession() {
       userName_ = "";
       password_ = "";
+      rawPassword_ = "";
     }
 
     @java.lang.Override
@@ -10172,6 +10379,12 @@ public final class PBRequestAccount {
             case 24: {
 
               ignorePassword_ = input.readBool();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rawPassword_ = s;
               break;
             }
             default: {
@@ -10313,6 +10526,52 @@ public final class PBRequestAccount {
       return ignorePassword_;
     }
 
+    public static final int RAW_PASSWORD_FIELD_NUMBER = 4;
+    private volatile java.lang.Object rawPassword_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"raw_password"
+     * </pre>
+     *
+     * <code>string raw_password = 4;</code>
+     * @return The rawPassword.
+     */
+    @java.lang.Override
+    public java.lang.String getRawPassword() {
+      java.lang.Object ref = rawPassword_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rawPassword_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"raw_password"
+     * </pre>
+     *
+     * <code>string raw_password = 4;</code>
+     * @return The bytes for rawPassword.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRawPasswordBytes() {
+      java.lang.Object ref = rawPassword_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rawPassword_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10336,6 +10595,9 @@ public final class PBRequestAccount {
       if (ignorePassword_ != false) {
         output.writeBool(3, ignorePassword_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawPassword_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, rawPassword_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10354,6 +10616,9 @@ public final class PBRequestAccount {
       if (ignorePassword_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, ignorePassword_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rawPassword_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rawPassword_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10376,6 +10641,8 @@ public final class PBRequestAccount {
           .equals(other.getPassword())) return false;
       if (getIgnorePassword()
           != other.getIgnorePassword()) return false;
+      if (!getRawPassword()
+          .equals(other.getRawPassword())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -10394,6 +10661,8 @@ public final class PBRequestAccount {
       hash = (37 * hash) + IGNORE_PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIgnorePassword());
+      hash = (37 * hash) + RAW_PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getRawPassword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10533,6 +10802,8 @@ public final class PBRequestAccount {
 
         ignorePassword_ = false;
 
+        rawPassword_ = "";
+
         return this;
       }
 
@@ -10562,6 +10833,7 @@ public final class PBRequestAccount {
         result.userName_ = userName_;
         result.password_ = password_;
         result.ignorePassword_ = ignorePassword_;
+        result.rawPassword_ = rawPassword_;
         onBuilt();
         return result;
       }
@@ -10620,6 +10892,10 @@ public final class PBRequestAccount {
         }
         if (other.getIgnorePassword() != false) {
           setIgnorePassword(other.getIgnorePassword());
+        }
+        if (!other.getRawPassword().isEmpty()) {
+          rawPassword_ = other.rawPassword_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10884,6 +11160,102 @@ public final class PBRequestAccount {
         onChanged();
         return this;
       }
+
+      private java.lang.Object rawPassword_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"raw_password"
+       * </pre>
+       *
+       * <code>string raw_password = 4;</code>
+       * @return The rawPassword.
+       */
+      public java.lang.String getRawPassword() {
+        java.lang.Object ref = rawPassword_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          rawPassword_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"raw_password"
+       * </pre>
+       *
+       * <code>string raw_password = 4;</code>
+       * @return The bytes for rawPassword.
+       */
+      public com.google.protobuf.ByteString
+          getRawPasswordBytes() {
+        java.lang.Object ref = rawPassword_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rawPassword_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"raw_password"
+       * </pre>
+       *
+       * <code>string raw_password = 4;</code>
+       * @param value The rawPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        rawPassword_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"raw_password"
+       * </pre>
+       *
+       * <code>string raw_password = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRawPassword() {
+        
+        rawPassword_ = getDefaultInstance().getRawPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"raw_password"
+       * </pre>
+       *
+       * <code>string raw_password = 4;</code>
+       * @param value The bytes for rawPassword to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        rawPassword_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -10946,7 +11318,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     java.lang.String getUserId();
@@ -10955,7 +11327,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -11135,7 +11507,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -11156,7 +11528,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -11673,7 +12045,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -11693,7 +12065,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -11714,7 +12086,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -11733,7 +12105,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -11747,7 +12119,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -13994,7 +14366,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     java.lang.String getUserId();
@@ -14003,7 +14375,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     com.google.protobuf.ByteString
@@ -14185,7 +14557,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -14206,7 +14578,7 @@ public final class PBRequestAccount {
      * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
      * </pre>
      *
-     * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+     * <code>string user_id = 1;</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -14683,7 +15055,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return The userId.
        */
       public java.lang.String getUserId() {
@@ -14703,7 +15075,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return The bytes for userId.
        */
       public com.google.protobuf.ByteString
@@ -14724,7 +15096,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -14743,7 +15115,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -14757,7 +15129,7 @@ public final class PBRequestAccount {
        * &#64;inject_tag: json:"user_id" uri:"user_id" swaggerignore:"true"
        * </pre>
        *
-       * <code>string user_id = 1 [(.validator.field) = { ... }</code>
+       * <code>string user_id = 1;</code>
        * @param value The bytes for userId to set.
        * @return This builder for chaining.
        */
@@ -15776,39 +16148,39 @@ public final class PBRequestAccount {
       "\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"q\n\nCreateU" +
       "ser\022\036\n\004name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010p" +
       "assword\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\037\n\005email" +
-      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\"A\n\nUpdateUser\022$" +
+      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\"U\n\nUpdateUser\022$" +
       "\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\r\n\005" +
-      "email\030\004 \001(\t\"x\n\022ChangeUserPassword\022\034\n\007use" +
-      "r_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014old_password\030" +
-      "\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014new_password\030\003 \001(\t" +
-      "B\013\342\337\037\007\022\005\302\001\002\"\000\"T\n\021ResetUserPassword\022\034\n\007us" +
-      "er_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014new_password" +
-      "\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"H\n\016ListAccessKeys\022&\n" +
-      "\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n" +
-      "\006offset\030\002 \001(\005\"*\n\020DeleteAccessKeys\022\026\n\016acc" +
-      "ess_key_ids\030\001 \003(\t\"*\n\021DescribeAccessKey\022\025" +
-      "\n\raccess_key_id\030\001 \001(\t\"4\n\017CreateAccessKey" +
-      "\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"5\n\020U" +
-      "pdatedAccessKey\022\014\n\004name\030\001 \001(\t\022\023\n\013descrip" +
-      "tion\030\002 \001(\t\"\"\n\014CheckSession\022\022\n\nsession_id" +
-      "\030\001 \001(\t\"q\n\rCreateSession\022#\n\tuser_name\030\001 \001" +
-      "(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\tB\020" +
-      "\342\337\037\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n\017ignore_password\030\003 \001(" +
-      "\010\"l\n\022CreateNotification\022$\n\007user_id\030\001 \001(\t" +
-      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\014\n\004name\030\002 \001(\t\022\023\n\013d" +
-      "escription\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"b\n\022Updat" +
-      "eNotification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
-      "\000\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005" +
-      "email\030\004 \001(\t\"%\n\023DeleteNotifications\022\016\n\006nf" +
-      "_ids\030\001 \003(\t\"\210\001\n\021ListNotifications\022\034\n\007user" +
-      "_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022&\n\005limit\030\002 \001(\005B\027\242" +
-      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\003 \001(\005\022\035" +
-      "\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\"2\n\024Describ" +
-      "eNotification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
-      "\000Bo\n$com.dataomnis.gproto.types.pbreques" +
-      "tB\020PBRequestAccountP\000Z3github.com/DataWo" +
-      "rkbench/gproto/xgo/types/pbrequestb\006prot" +
-      "o3"
+      "email\030\004 \001(\t\022\022\n\nsession_id\030\005 \001(\t\"x\n\022Chang" +
+      "eUserPassword\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022!\n\014old_password\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!" +
+      "\n\014new_password\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"T\n\021Res" +
+      "etUserPassword\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302" +
+      "\001\002\"\000\022!\n\014new_password\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
+      "H\n\016ListAccessKeys\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\"*\n\020Del" +
+      "eteAccessKeys\022\026\n\016access_key_ids\030\001 \003(\t\"*\n" +
+      "\021DescribeAccessKey\022\025\n\raccess_key_id\030\001 \001(" +
+      "\t\"4\n\017CreateAccessKey\022\014\n\004name\030\001 \001(\t\022\023\n\013de" +
+      "scription\030\002 \001(\t\"5\n\020UpdatedAccessKey\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\"\n\014CheckS" +
+      "ession\022\022\n\nsession_id\030\001 \001(\t\"\207\001\n\rCreateSes" +
+      "sion\022#\n\tuser_name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200" +
+      "\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n" +
+      "\017ignore_password\030\003 \001(\010\022\024\n\014raw_password\030\004" +
+      " \001(\t\"W\n\022CreateNotification\022\017\n\007user_id\030\001 " +
+      "\001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r" +
+      "\n\005email\030\004 \001(\t\"b\n\022UpdateNotification\022\032\n\005n" +
+      "f_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\014\n\004name\030\002 \001(\t\022\023\n" +
+      "\013description\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"%\n\023Del" +
+      "eteNotifications\022\016\n\006nf_ids\030\001 \003(\t\"{\n\021List" +
+      "Notifications\022\017\n\007user_id\030\001 \001(\t\022&\n\005limit\030" +
+      "\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset" +
+      "\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\"2\n" +
+      "\024DescribeNotification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000Bo\n$com.dataomnis.gproto.types." +
+      "pbrequestB\020PBRequestAccountP\000Z3github.co" +
+      "m/DataWorkbench/gproto/xgo/types/pbreque" +
+      "stb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15845,7 +16217,7 @@ public final class PBRequestAccount {
     internal_static_request_UpdateUser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateUser_descriptor,
-        new java.lang.String[] { "UserId", "Email", });
+        new java.lang.String[] { "UserId", "Email", "SessionId", });
     internal_static_request_ChangeUserPassword_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_request_ChangeUserPassword_fieldAccessorTable = new
@@ -15899,7 +16271,7 @@ public final class PBRequestAccount {
     internal_static_request_CreateSession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateSession_descriptor,
-        new java.lang.String[] { "UserName", "Password", "IgnorePassword", });
+        new java.lang.String[] { "UserName", "Password", "IgnorePassword", "RawPassword", });
     internal_static_request_CreateNotification_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_request_CreateNotification_fieldAccessorTable = new

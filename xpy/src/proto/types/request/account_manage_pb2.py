@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\020PBRequestAccountP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(proto/types/request/account_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"c\n\tListUsers\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\x10\n\x08user_ids\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\",\n\x0b\x44\x65leteUsers\x12\x1d\n\x08user_ids\x18\x01 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\",\n\x0c\x44\x65scribeUser\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"q\n\nCreateUser\x12\x1e\n\x04name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1f\n\x05\x65mail\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\"A\n\nUpdateUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"x\n\x12\x43hangeUserPassword\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cold_password\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cnew_password\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"T\n\x11ResetUserPassword\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cnew_password\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"H\n\x0eListAccessKeys\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\"*\n\x10\x44\x65leteAccessKeys\x12\x16\n\x0e\x61\x63\x63\x65ss_key_ids\x18\x01 \x03(\t\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"4\n\x0f\x43reateAccessKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"5\n\x10UpdatedAccessKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\"\n\x0c\x43heckSession\x12\x12\n\nsession_id\x18\x01 \x01(\t\"q\n\rCreateSession\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x00\xc8\x01\x80\x01\x12\x17\n\x0fignore_password\x18\x03 \x01(\x08\"l\n\x12\x43reateNotification\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"b\n\x12UpdateNotification\x12\x1a\n\x05nf_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"%\n\x13\x44\x65leteNotifications\x12\x0e\n\x06nf_ids\x18\x01 \x03(\t\"\x88\x01\n\x11ListNotifications\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x1d\n\x06nf_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\"2\n\x14\x44\x65scribeNotification\x12\x1a\n\x05nf_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x42o\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n(proto/types/request/account_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"c\n\tListUsers\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\x10\n\x08user_ids\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\",\n\x0b\x44\x65leteUsers\x12\x1d\n\x08user_ids\x18\x01 \x03(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xea\x01\x02\x30\x00\",\n\x0c\x44\x65scribeUser\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"q\n\nCreateUser\x12\x1e\n\x04name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\x1f\n\x05\x65mail\x18\x03 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x01\x98\x02\x80\x01\"U\n\nUpdateUser\x12$\n\x07user_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04usr-\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x12\n\nsession_id\x18\x05 \x01(\t\"x\n\x12\x43hangeUserPassword\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cold_password\x18\x02 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cnew_password\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"T\n\x11ResetUserPassword\x12\x1c\n\x07user_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12!\n\x0cnew_password\x18\x03 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\"H\n\x0eListAccessKeys\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\"*\n\x10\x44\x65leteAccessKeys\x12\x16\n\x0e\x61\x63\x63\x65ss_key_ids\x18\x01 \x03(\t\"*\n\x11\x44\x65scribeAccessKey\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"4\n\x0f\x43reateAccessKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"5\n\x10UpdatedAccessKey\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\"\n\x0c\x43heckSession\x12\x12\n\nsession_id\x18\x01 \x01(\t\"\x87\x01\n\rCreateSession\x12#\n\tuser_name\x18\x01 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x02\xc8\x01\x80\x01\x12\"\n\x08password\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\xc0\x01\x00\xc8\x01\x80\x01\x12\x17\n\x0fignore_password\x18\x03 \x01(\x08\x12\x14\n\x0craw_password\x18\x04 \x01(\t\"W\n\x12\x43reateNotification\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"b\n\x12UpdateNotification\x12\x1a\n\x05nf_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\"%\n\x13\x44\x65leteNotifications\x12\x0e\n\x06nf_ids\x18\x01 \x03(\t\"{\n\x11ListNotifications\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x1d\n\x06nf_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\"2\n\x14\x44\x65scribeNotification\x12\x1a\n\x05nf_id\x18\x01 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x42o\n$com.dataomnis.gproto.types.pbrequestB\x10PBRequestAccountP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -213,6 +213,13 @@ _UPDATEUSER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='session_id', full_name='request.UpdateUser.session_id', index=2,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -226,7 +233,7 @@ _UPDATEUSER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=466,
-  serialized_end=531,
+  serialized_end=551,
 )
 
 
@@ -271,8 +278,8 @@ _CHANGEUSERPASSWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=533,
-  serialized_end=653,
+  serialized_start=553,
+  serialized_end=673,
 )
 
 
@@ -310,8 +317,8 @@ _RESETUSERPASSWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=739,
+  serialized_start=675,
+  serialized_end=759,
 )
 
 
@@ -349,8 +356,8 @@ _LISTACCESSKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=741,
-  serialized_end=813,
+  serialized_start=761,
+  serialized_end=833,
 )
 
 
@@ -381,8 +388,8 @@ _DELETEACCESSKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=857,
+  serialized_start=835,
+  serialized_end=877,
 )
 
 
@@ -413,8 +420,8 @@ _DESCRIBEACCESSKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=859,
-  serialized_end=901,
+  serialized_start=879,
+  serialized_end=921,
 )
 
 
@@ -452,8 +459,8 @@ _CREATEACCESSKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=903,
-  serialized_end=955,
+  serialized_start=923,
+  serialized_end=975,
 )
 
 
@@ -491,8 +498,8 @@ _UPDATEDACCESSKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=957,
-  serialized_end=1010,
+  serialized_start=977,
+  serialized_end=1030,
 )
 
 
@@ -523,8 +530,8 @@ _CHECKSESSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1012,
-  serialized_end=1046,
+  serialized_start=1032,
+  serialized_end=1066,
 )
 
 
@@ -557,6 +564,13 @@ _CREATESESSION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='raw_password', full_name='request.CreateSession.raw_password', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -569,8 +583,8 @@ _CREATESESSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1048,
-  serialized_end=1161,
+  serialized_start=1069,
+  serialized_end=1204,
 )
 
 
@@ -588,7 +602,7 @@ _CREATENOTIFICATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='request.CreateNotification.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -622,8 +636,8 @@ _CREATENOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1163,
-  serialized_end=1271,
+  serialized_start=1206,
+  serialized_end=1293,
 )
 
 
@@ -675,8 +689,8 @@ _UPDATENOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1273,
-  serialized_end=1371,
+  serialized_start=1295,
+  serialized_end=1393,
 )
 
 
@@ -707,8 +721,8 @@ _DELETENOTIFICATIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1373,
-  serialized_end=1410,
+  serialized_start=1395,
+  serialized_end=1432,
 )
 
 
@@ -726,7 +740,7 @@ _LISTNOTIFICATIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\007\022\005\302\001\002\"\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='limit', full_name='request.ListNotifications.limit', index=1,
       number=2, type=5, cpp_type=1, label=1,
@@ -760,8 +774,8 @@ _LISTNOTIFICATIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1413,
-  serialized_end=1549,
+  serialized_start=1434,
+  serialized_end=1557,
 )
 
 
@@ -792,8 +806,8 @@ _DESCRIBENOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1551,
-  serialized_end=1601,
+  serialized_start=1559,
+  serialized_end=1609,
 )
 
 DESCRIPTOR.message_types_by_name['ListUsers'] = _LISTUSERS
@@ -967,9 +981,7 @@ _RESETUSERPASSWORD.fields_by_name['new_password']._options = None
 _LISTACCESSKEYS.fields_by_name['limit']._options = None
 _CREATESESSION.fields_by_name['user_name']._options = None
 _CREATESESSION.fields_by_name['password']._options = None
-_CREATENOTIFICATION.fields_by_name['user_id']._options = None
 _UPDATENOTIFICATION.fields_by_name['nf_id']._options = None
-_LISTNOTIFICATIONS.fields_by_name['user_id']._options = None
 _LISTNOTIFICATIONS.fields_by_name['limit']._options = None
 _LISTNOTIFICATIONS.fields_by_name['nf_ids']._options = None
 _DESCRIBENOTIFICATION.fields_by_name['nf_id']._options = None
