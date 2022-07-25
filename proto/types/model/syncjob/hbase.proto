@@ -19,9 +19,9 @@ message HbaseSource {
     // column
     // @inject_tag: json:"column"
     repeated Column column = 1;
-    // hbaseConfig
-    // @inject_tag: json:"hbaseConfig"
-    string hbaseConfig = 2;
+    // hbase table
+    // @inject_tag: json:"table"
+    string table = 2;
     // change_log
     // @inject_tag: json:"change_log"
     string change_log = 3;
@@ -34,29 +34,24 @@ message HbaseSource {
     // hbase scan batch size
     // @inject_tag: json:"scan_batch_size"
     int32 scan_batch_size = 6;
-    // hbase hadoopConfig
-    // @inject_tag: json:"hadoopConfig"
-    string hadoopConfig = 7;
     // @inject_tag: json:"start_row_key"
-    string start_row_key = 8;
+    string start_row_key = 7;
     // end row key
     // @inject_tag: json:"end_row_key"
-    string end_row_key = 9;
+    string end_row_key = 8;
     // is binary rowkey
     // @inject_tag: json:"is_binary_rowkey"
-    bool is_binary_rowkey = 10;
-    // hbase table
-    // @inject_tag: json:"table"
-    string table = 11;
+    bool is_binary_rowkey = 9;
+
 }
 
 message HbaseTarget {
     option (gosql.serialize) = {json: {}};
     // @inject_tag: json:"column"
     repeated Column column = 1;
-    // hbase Config
-    // @inject_tag: json:"hbase_config"
-    string hbase_config = 2;
+    // hbase table
+    // @inject_tag: json:"table"
+    string table = 2;
     // null_mode
     // @inject_tag: json:"null_mode"
     BaseEnum.NullMode null_mode = 3;
@@ -84,9 +79,6 @@ message HbaseTarget {
     // hbase scan batch size
     // @inject_tag: json:"scan_batch_size"
     int32 scan_batch_size = 11;
-    // hbase table
-    // @inject_tag: json:"table"
-    string table = 12;
 }
 
 
