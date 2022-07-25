@@ -1011,8 +1011,8 @@ type ListNotifications struct {
 	UserId string   `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id" uri:"user_id" swaggerignore:"true"`
 	Limit  int32    `protobuf:"varint,2,opt,name=limit,proto3" json:"limit" form:"limit"`
 	Offset int32    `protobuf:"varint,3,opt,name=offset,proto3" json:"offset" form:"offset"`
-	NfIds  []string `protobuf:"bytes,4,rep,name=nf_ids,json=nfIds,proto3" json:"nf_ids"`
-	Search string   `protobuf:"bytes,5,opt,name=search,proto3" json:"search"`
+	NfIds  []string `protobuf:"bytes,4,rep,name=nf_ids,json=nfIds,proto3" json:"nf_ids" form:"nf_ids"`
+	Search string   `protobuf:"bytes,5,opt,name=search,proto3" json:"search" form:"search"`
 }
 
 func (x *ListNotifications) Reset() {
