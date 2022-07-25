@@ -182,6 +182,9 @@ message ListNotifications {
 
   // @inject_tag: json:"nf_ids"
   repeated string nf_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
+
+  // @inject_tag: json:"search"
+  string search = 5;
 }
 
 message DescribeNotification {
