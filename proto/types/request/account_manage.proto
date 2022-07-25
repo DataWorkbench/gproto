@@ -180,10 +180,10 @@ message ListNotifications {
   // @inject_tag: json:"offset" form:"offset"
   int32 offset = 3 ;
 
-  // @inject_tag: json:"nf_ids form:"nf_ids"
+  // @inject_tag: json:"nf_ids" form:"nf_ids"
   repeated string nf_ids = 4 [ (validator.field).tags.repeated = { len_gte: 0, len_lte: 100 } ];
 
-  // @inject_tag: json:"search form:"search"
+  // @inject_tag: json:"search" form:"search"
   string search = 5;
 }
 
