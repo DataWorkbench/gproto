@@ -961,6 +961,51 @@ public final class PBRequestMemberManage {
      */
     com.google.protobuf.ByteString
         getUserIdsBytes(int index);
+
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @return A list containing the filter.
+     */
+    java.util.List<java.lang.String>
+        getFilterList();
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @return The count of filter.
+     */
+    int getFilterCount();
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @param index The index of the element to return.
+     * @return The filter at the given index.
+     */
+    java.lang.String getFilter(int index);
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the filter at the given index.
+     */
+    com.google.protobuf.ByteString
+        getFilterBytes(int index);
   }
   /**
    * <pre>
@@ -983,6 +1028,7 @@ public final class PBRequestMemberManage {
       sortBy_ = "";
       search_ = "";
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      filter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1058,6 +1104,15 @@ public final class PBRequestMemberManage {
               userIds_.add(s);
               break;
             }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                filter_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              filter_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -1075,6 +1130,9 @@ public final class PBRequestMemberManage {
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           userIds_ = userIds_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          filter_ = filter_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1347,6 +1405,61 @@ public final class PBRequestMemberManage {
       return userIds_.getByteString(index);
     }
 
+    public static final int FILTER_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList filter_;
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @return A list containing the filter.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFilterList() {
+      return filter_;
+    }
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @return The count of filter.
+     */
+    public int getFilterCount() {
+      return filter_.size();
+    }
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @param index The index of the element to return.
+     * @return The filter at the given index.
+     */
+    public java.lang.String getFilter(int index) {
+      return filter_.get(index);
+    }
+    /**
+     * <pre>
+     * Filter by system role ids.
+     * &#64;inject_tag: json:"filter" form:"filter"
+     * </pre>
+     *
+     * <code>repeated string filter = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the filter at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes(int index) {
+      return filter_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1381,6 +1494,9 @@ public final class PBRequestMemberManage {
       }
       for (int i = 0; i < userIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userIds_.getRaw(i));
+      }
+      for (int i = 0; i < filter_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filter_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1420,6 +1536,14 @@ public final class PBRequestMemberManage {
         size += dataSize;
         size += 1 * getUserIdsList().size();
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < filter_.size(); i++) {
+          dataSize += computeStringSizeNoTag(filter_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFilterList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1449,6 +1573,8 @@ public final class PBRequestMemberManage {
           .equals(other.getSearch())) return false;
       if (!getUserIdsList()
           .equals(other.getUserIdsList())) return false;
+      if (!getFilterList()
+          .equals(other.getFilterList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1476,6 +1602,10 @@ public final class PBRequestMemberManage {
       if (getUserIdsCount() > 0) {
         hash = (37 * hash) + USER_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getUserIdsList().hashCode();
+      }
+      if (getFilterCount() > 0) {
+        hash = (37 * hash) + FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1628,6 +1758,8 @@ public final class PBRequestMemberManage {
 
         userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        filter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1666,6 +1798,11 @@ public final class PBRequestMemberManage {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.userIds_ = userIds_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          filter_ = filter_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.filter_ = filter_;
         onBuilt();
         return result;
       }
@@ -1742,6 +1879,16 @@ public final class PBRequestMemberManage {
           } else {
             ensureUserIdsIsMutable();
             userIds_.addAll(other.userIds_);
+          }
+          onChanged();
+        }
+        if (!other.filter_.isEmpty()) {
+          if (filter_.isEmpty()) {
+            filter_ = other.filter_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFilterIsMutable();
+            filter_.addAll(other.filter_);
           }
           onChanged();
         }
@@ -2385,6 +2532,161 @@ public final class PBRequestMemberManage {
   checkByteStringIsUtf8(value);
         ensureUserIdsIsMutable();
         userIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList filter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureFilterIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          filter_ = new com.google.protobuf.LazyStringArrayList(filter_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @return A list containing the filter.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getFilterList() {
+        return filter_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @return The count of filter.
+       */
+      public int getFilterCount() {
+        return filter_.size();
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param index The index of the element to return.
+       * @return The filter at the given index.
+       */
+      public java.lang.String getFilter(int index) {
+        return filter_.get(index);
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the filter at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getFilterBytes(int index) {
+        return filter_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The filter to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilter(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFilterIsMutable();
+        filter_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param value The filter to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFilter(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFilterIsMutable();
+        filter_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param values The filter to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFilter(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureFilterIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, filter_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFilter() {
+        filter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Filter by system role ids.
+       * &#64;inject_tag: json:"filter" form:"filter"
+       * </pre>
+       *
+       * <code>repeated string filter = 8;</code>
+       * @param value The bytes of the filter to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFilterBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureFilterIsMutable();
+        filter_.add(value);
         onChanged();
         return this;
       }
@@ -7357,30 +7659,31 @@ public final class PBRequestMemberManage {
       "/protoc-plugin/proto/defaults.proto\"a\n\022L" +
       "istAvailableUsers\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
       "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\022\023\n\013spa" +
-      "ce_owner\030\003 \001(\t\"\345\001\n\013ListMembers\022%\n\010space_" +
+      "ce_owner\030\003 \001(\t\"\365\001\n\013ListMembers\022%\n\010space_" +
       "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002" +
       " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
       "\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\004 \001(\tB&\342\337\037" +
       "\"\022 \302\001\035J\000J\007user_idJ\007createdJ\007updated\022\017\n\007r" +
       "everse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022\020\n\010user_ids" +
-      "\030\007 \003(\t\"U\n\rDeleteMembers\022%\n\010space_id\030\001 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\t" +
-      "B\013\342\337\037\007\022\005\352\001\0028d\"\354\001\n\nAddMembers\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_b" +
-      "y\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030" +
-      "\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337" +
-      "\037\t\022\007\352\001\0040\0008d\0222\n\017system_role_ids\030\005 \003(\tB\031\342\337" +
-      "\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342" +
-      "\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001\n\014UpdateMember\022%\n\010space_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030" +
-      "\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0222\n\017system_role_id" +
-      "s\030\003 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004de" +
-      "sc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"Y\n\016DescribeMembe" +
-      "r\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$co" +
-      "m.dataomnis.gproto.types.pbrequestB\025PBRe" +
-      "questMemberManageP\000Z3github.com/DataWork" +
-      "bench/gproto/xgo/types/pbrequestb\006proto3"
+      "\030\007 \003(\t\022\016\n\006filter\030\010 \003(\t\"U\n\rDeleteMembers\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035" +
+      "\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\354\001\n\nAddMem" +
+      "bers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A" +
+      "\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\010us" +
+      "er_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222\n\017system_ro" +
+      "le_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022" +
+      "\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001\n\014UpdateM" +
+      "ember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0222" +
+      "\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n" +
+      "\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"" +
+      "Y\n\016DescribeMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022" +
+      "\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.gproto.types" +
+      ".pbrequestB\025PBRequestMemberManageP\000Z3git" +
+      "hub.com/DataWorkbench/gproto/xgo/types/p" +
+      "brequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7399,7 +7702,7 @@ public final class PBRequestMemberManage {
     internal_static_request_ListMembers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListMembers_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "UserIds", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "UserIds", "Filter", });
     internal_static_request_DeleteMembers_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_request_DeleteMembers_fieldAccessorTable = new
