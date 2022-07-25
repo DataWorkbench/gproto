@@ -7268,6 +7268,87 @@ public final class PBResponseDataServiceManage {
      * <code>.model.ApiVersion api_version = 1;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder getApiVersionOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return Whether the apiGroup field is set.
+     */
+    boolean hasApiGroup();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return The apiGroup.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return Whether the dataSource field is set.
+     */
+    boolean hasDataSource();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return The dataSource.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return Whether the serviceCluster field is set.
+     */
+    boolean hasServiceCluster();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return The serviceCluster.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder();
   }
   /**
    * Protobuf type {@code response.DescribeDataServiceApiVersion}
@@ -7323,6 +7404,45 @@ public final class PBResponseDataServiceManage {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(apiVersion_);
                 apiVersion_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder subBuilder = null;
+              if (apiGroup_ != null) {
+                subBuilder = apiGroup_.toBuilder();
+              }
+              apiGroup_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(apiGroup_);
+                apiGroup_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder subBuilder = null;
+              if (dataSource_ != null) {
+                subBuilder = dataSource_.toBuilder();
+              }
+              dataSource_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(dataSource_);
+                dataSource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder subBuilder = null;
+              if (serviceCluster_ != null) {
+                subBuilder = serviceCluster_.toBuilder();
+              }
+              serviceCluster_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(serviceCluster_);
+                serviceCluster_ = subBuilder.buildPartial();
               }
 
               break;
@@ -7397,6 +7517,120 @@ public final class PBResponseDataServiceManage {
       return getApiVersion();
     }
 
+    public static final int API_GROUP_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup apiGroup_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return Whether the apiGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasApiGroup() {
+      return apiGroup_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     * @return The apiGroup.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup() {
+      return apiGroup_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_group"
+     * </pre>
+     *
+     * <code>.model.ApiGroup api_group = 2;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder() {
+      return getApiGroup();
+    }
+
+    public static final int DATA_SOURCE_FIELD_NUMBER = 3;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource dataSource_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return Whether the dataSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataSource() {
+      return dataSource_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     * @return The dataSource.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource() {
+      return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"data_source"
+     * </pre>
+     *
+     * <code>.model.ApiConfigDataSource data_source = 3;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder() {
+      return getDataSource();
+    }
+
+    public static final int SERVICE_CLUSTER_FIELD_NUMBER = 4;
+    private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster serviceCluster_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return Whether the serviceCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceCluster() {
+      return serviceCluster_ != null;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     * @return The serviceCluster.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster() {
+      return serviceCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"service_cluster"
+     * </pre>
+     *
+     * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder() {
+      return getServiceCluster();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7414,6 +7648,15 @@ public final class PBResponseDataServiceManage {
       if (apiVersion_ != null) {
         output.writeMessage(1, getApiVersion());
       }
+      if (apiGroup_ != null) {
+        output.writeMessage(2, getApiGroup());
+      }
+      if (dataSource_ != null) {
+        output.writeMessage(3, getDataSource());
+      }
+      if (serviceCluster_ != null) {
+        output.writeMessage(4, getServiceCluster());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7426,6 +7669,18 @@ public final class PBResponseDataServiceManage {
       if (apiVersion_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getApiVersion());
+      }
+      if (apiGroup_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getApiGroup());
+      }
+      if (dataSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getDataSource());
+      }
+      if (serviceCluster_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getServiceCluster());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7447,6 +7702,21 @@ public final class PBResponseDataServiceManage {
         if (!getApiVersion()
             .equals(other.getApiVersion())) return false;
       }
+      if (hasApiGroup() != other.hasApiGroup()) return false;
+      if (hasApiGroup()) {
+        if (!getApiGroup()
+            .equals(other.getApiGroup())) return false;
+      }
+      if (hasDataSource() != other.hasDataSource()) return false;
+      if (hasDataSource()) {
+        if (!getDataSource()
+            .equals(other.getDataSource())) return false;
+      }
+      if (hasServiceCluster() != other.hasServiceCluster()) return false;
+      if (hasServiceCluster()) {
+        if (!getServiceCluster()
+            .equals(other.getServiceCluster())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7461,6 +7731,18 @@ public final class PBResponseDataServiceManage {
       if (hasApiVersion()) {
         hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getApiVersion().hashCode();
+      }
+      if (hasApiGroup()) {
+        hash = (37 * hash) + API_GROUP_FIELD_NUMBER;
+        hash = (53 * hash) + getApiGroup().hashCode();
+      }
+      if (hasDataSource()) {
+        hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataSource().hashCode();
+      }
+      if (hasServiceCluster()) {
+        hash = (37 * hash) + SERVICE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceCluster().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7601,6 +7883,24 @@ public final class PBResponseDataServiceManage {
           apiVersion_ = null;
           apiVersionBuilder_ = null;
         }
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = null;
+        } else {
+          apiGroup_ = null;
+          apiGroupBuilder_ = null;
+        }
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = null;
+        } else {
+          serviceCluster_ = null;
+          serviceClusterBuilder_ = null;
+        }
         return this;
       }
 
@@ -7631,6 +7931,21 @@ public final class PBResponseDataServiceManage {
           result.apiVersion_ = apiVersion_;
         } else {
           result.apiVersion_ = apiVersionBuilder_.build();
+        }
+        if (apiGroupBuilder_ == null) {
+          result.apiGroup_ = apiGroup_;
+        } else {
+          result.apiGroup_ = apiGroupBuilder_.build();
+        }
+        if (dataSourceBuilder_ == null) {
+          result.dataSource_ = dataSource_;
+        } else {
+          result.dataSource_ = dataSourceBuilder_.build();
+        }
+        if (serviceClusterBuilder_ == null) {
+          result.serviceCluster_ = serviceCluster_;
+        } else {
+          result.serviceCluster_ = serviceClusterBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7682,6 +7997,15 @@ public final class PBResponseDataServiceManage {
         if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeDataServiceApiVersion.getDefaultInstance()) return this;
         if (other.hasApiVersion()) {
           mergeApiVersion(other.getApiVersion());
+        }
+        if (other.hasApiGroup()) {
+          mergeApiGroup(other.getApiGroup());
+        }
+        if (other.hasDataSource()) {
+          mergeDataSource(other.getDataSource());
+        }
+        if (other.hasServiceCluster()) {
+          mergeServiceCluster(other.getServiceCluster());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -7865,6 +8189,471 @@ public final class PBResponseDataServiceManage {
           apiVersion_ = null;
         }
         return apiVersionBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup apiGroup_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder> apiGroupBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       * @return Whether the apiGroup field is set.
+       */
+      public boolean hasApiGroup() {
+        return apiGroupBuilder_ != null || apiGroup_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       * @return The apiGroup.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup getApiGroup() {
+        if (apiGroupBuilder_ == null) {
+          return apiGroup_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+        } else {
+          return apiGroupBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder setApiGroup(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup value) {
+        if (apiGroupBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          apiGroup_ = value;
+          onChanged();
+        } else {
+          apiGroupBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder setApiGroup(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder builderForValue) {
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = builderForValue.build();
+          onChanged();
+        } else {
+          apiGroupBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder mergeApiGroup(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup value) {
+        if (apiGroupBuilder_ == null) {
+          if (apiGroup_ != null) {
+            apiGroup_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.newBuilder(apiGroup_).mergeFrom(value).buildPartial();
+          } else {
+            apiGroup_ = value;
+          }
+          onChanged();
+        } else {
+          apiGroupBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public Builder clearApiGroup() {
+        if (apiGroupBuilder_ == null) {
+          apiGroup_ = null;
+          onChanged();
+        } else {
+          apiGroup_ = null;
+          apiGroupBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder getApiGroupBuilder() {
+        
+        onChanged();
+        return getApiGroupFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder getApiGroupOrBuilder() {
+        if (apiGroupBuilder_ != null) {
+          return apiGroupBuilder_.getMessageOrBuilder();
+        } else {
+          return apiGroup_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.getDefaultInstance() : apiGroup_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_group"
+       * </pre>
+       *
+       * <code>.model.ApiGroup api_group = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder> 
+          getApiGroupFieldBuilder() {
+        if (apiGroupBuilder_ == null) {
+          apiGroupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroup.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiGroupOrBuilder>(
+                  getApiGroup(),
+                  getParentForChildren(),
+                  isClean());
+          apiGroup_ = null;
+        }
+        return apiGroupBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource dataSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder> dataSourceBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       * @return Whether the dataSource field is set.
+       */
+      public boolean hasDataSource() {
+        return dataSourceBuilder_ != null || dataSource_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       * @return The dataSource.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource getDataSource() {
+        if (dataSourceBuilder_ == null) {
+          return dataSource_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+        } else {
+          return dataSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder setDataSource(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataSource_ = value;
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder setDataSource(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder builderForValue) {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataSourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder mergeDataSource(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource value) {
+        if (dataSourceBuilder_ == null) {
+          if (dataSource_ != null) {
+            dataSource_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.newBuilder(dataSource_).mergeFrom(value).buildPartial();
+          } else {
+            dataSource_ = value;
+          }
+          onChanged();
+        } else {
+          dataSourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public Builder clearDataSource() {
+        if (dataSourceBuilder_ == null) {
+          dataSource_ = null;
+          onChanged();
+        } else {
+          dataSource_ = null;
+          dataSourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder getDataSourceBuilder() {
+        
+        onChanged();
+        return getDataSourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder getDataSourceOrBuilder() {
+        if (dataSourceBuilder_ != null) {
+          return dataSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return dataSource_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.getDefaultInstance() : dataSource_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"data_source"
+       * </pre>
+       *
+       * <code>.model.ApiConfigDataSource data_source = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder> 
+          getDataSourceFieldBuilder() {
+        if (dataSourceBuilder_ == null) {
+          dataSourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSource.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigDataSourceOrBuilder>(
+                  getDataSource(),
+                  getParentForChildren(),
+                  isClean());
+          dataSource_ = null;
+        }
+        return dataSourceBuilder_;
+      }
+
+      private com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster serviceCluster_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder> serviceClusterBuilder_;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       * @return Whether the serviceCluster field is set.
+       */
+      public boolean hasServiceCluster() {
+        return serviceClusterBuilder_ != null || serviceCluster_ != null;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       * @return The serviceCluster.
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster getServiceCluster() {
+        if (serviceClusterBuilder_ == null) {
+          return serviceCluster_ == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+        } else {
+          return serviceClusterBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder setServiceCluster(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster value) {
+        if (serviceClusterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceCluster_ = value;
+          onChanged();
+        } else {
+          serviceClusterBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder setServiceCluster(
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder builderForValue) {
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceClusterBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder mergeServiceCluster(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster value) {
+        if (serviceClusterBuilder_ == null) {
+          if (serviceCluster_ != null) {
+            serviceCluster_ =
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.newBuilder(serviceCluster_).mergeFrom(value).buildPartial();
+          } else {
+            serviceCluster_ = value;
+          }
+          onChanged();
+        } else {
+          serviceClusterBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public Builder clearServiceCluster() {
+        if (serviceClusterBuilder_ == null) {
+          serviceCluster_ = null;
+          onChanged();
+        } else {
+          serviceCluster_ = null;
+          serviceClusterBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder getServiceClusterBuilder() {
+        
+        onChanged();
+        return getServiceClusterFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder getServiceClusterOrBuilder() {
+        if (serviceClusterBuilder_ != null) {
+          return serviceClusterBuilder_.getMessageOrBuilder();
+        } else {
+          return serviceCluster_ == null ?
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.getDefaultInstance() : serviceCluster_;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"service_cluster"
+       * </pre>
+       *
+       * <code>.model.ApiConfigServiceCluster service_cluster = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder> 
+          getServiceClusterFieldBuilder() {
+        if (serviceClusterBuilder_ == null) {
+          serviceClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceCluster.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfigServiceClusterOrBuilder>(
+                  getServiceCluster(),
+                  getParentForChildren(),
+                  isClean());
+          serviceCluster_ = null;
+        }
+        return serviceClusterBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9015,24 +9804,24 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
-    java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> 
+    java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> 
         getInfosList();
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion getInfos(int index);
+    com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getInfos(int index);
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     int getInfosCount();
     /**
@@ -9040,18 +9829,18 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
-    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder> 
+    java.util.List<? extends com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder> 
         getInfosOrBuilderList();
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder getInfosOrBuilder(
+    com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder getInfosOrBuilder(
         int index);
 
     /**
@@ -9123,11 +9912,11 @@ public final class PBResponseDataServiceManage {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion>();
+                infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               infos_.add(
-                  input.readMessage(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.parser(), extensionRegistry));
+                  input.readMessage(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.parser(), extensionRegistry));
               break;
             }
             case 16: {
@@ -9176,16 +9965,16 @@ public final class PBResponseDataServiceManage {
     }
 
     public static final int INFOS_FIELD_NUMBER = 1;
-    private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> infos_;
+    private java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> infos_;
     /**
      * <pre>
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> getInfosList() {
+    public java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> getInfosList() {
       return infos_;
     }
     /**
@@ -9193,10 +9982,10 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder> 
+    public java.util.List<? extends com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder> 
         getInfosOrBuilderList() {
       return infos_;
     }
@@ -9205,7 +9994,7 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     @java.lang.Override
     public int getInfosCount() {
@@ -9216,10 +10005,10 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion getInfos(int index) {
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getInfos(int index) {
       return infos_.get(index);
     }
     /**
@@ -9227,10 +10016,10 @@ public final class PBResponseDataServiceManage {
      * &#64;inject_tag: json:"infos"
      * </pre>
      *
-     * <code>repeated .model.ApiVersion infos = 1;</code>
+     * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder getInfosOrBuilder(
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder getInfosOrBuilder(
         int index) {
       return infos_.get(index);
     }
@@ -9643,26 +10432,26 @@ public final class PBResponseDataServiceManage {
       }
       private int bitField0_;
 
-      private java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> infos_ =
+      private java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> infos_ =
         java.util.Collections.emptyList();
       private void ensureInfosIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion>(infos_);
+          infos_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo>(infos_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder> infosBuilder_;
+          com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder> infosBuilder_;
 
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> getInfosList() {
+      public java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> getInfosList() {
         if (infosBuilder_ == null) {
           return java.util.Collections.unmodifiableList(infos_);
         } else {
@@ -9674,7 +10463,7 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public int getInfosCount() {
         if (infosBuilder_ == null) {
@@ -9688,9 +10477,9 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion getInfos(int index) {
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getInfos(int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);
         } else {
@@ -9702,10 +10491,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion value) {
+          int index, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9723,10 +10512,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder setInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.set(index, builderForValue.build());
@@ -9741,9 +10530,9 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public Builder addInfos(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion value) {
+      public Builder addInfos(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9761,10 +10550,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion value) {
+          int index, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo value) {
         if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9782,10 +10571,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder addInfos(
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder builderForValue) {
+          com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(builderForValue.build());
@@ -9800,10 +10589,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder addInfos(
-          int index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder builderForValue) {
+          int index, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder builderForValue) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           infos_.add(index, builderForValue.build());
@@ -9818,10 +10607,10 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder addAllInfos(
-          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion> values) {
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo> values) {
         if (infosBuilder_ == null) {
           ensureInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -9837,7 +10626,7 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder clearInfos() {
         if (infosBuilder_ == null) {
@@ -9854,7 +10643,7 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
       public Builder removeInfos(int index) {
         if (infosBuilder_ == null) {
@@ -9871,9 +10660,9 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder getInfosBuilder(
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder getInfosBuilder(
           int index) {
         return getInfosFieldBuilder().getBuilder(index);
       }
@@ -9882,9 +10671,9 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder getInfosOrBuilder(
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder getInfosOrBuilder(
           int index) {
         if (infosBuilder_ == null) {
           return infos_.get(index);  } else {
@@ -9896,9 +10685,9 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder> 
+      public java.util.List<? extends com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder> 
            getInfosOrBuilderList() {
         if (infosBuilder_ != null) {
           return infosBuilder_.getMessageOrBuilderList();
@@ -9911,41 +10700,41 @@ public final class PBResponseDataServiceManage {
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder addInfosBuilder() {
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder addInfosBuilder() {
         return getInfosFieldBuilder().addBuilder(
-            com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.getDefaultInstance());
+            com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder addInfosBuilder(
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder addInfosBuilder(
           int index) {
         return getInfosFieldBuilder().addBuilder(
-            index, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.getDefaultInstance());
+            index, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.getDefaultInstance());
       }
       /**
        * <pre>
        * &#64;inject_tag: json:"infos"
        * </pre>
        *
-       * <code>repeated .model.ApiVersion infos = 1;</code>
+       * <code>repeated .response.ApiVersionGroupInfo infos = 1;</code>
        */
-      public java.util.List<com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder> 
+      public java.util.List<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder> 
            getInfosBuilderList() {
         return getInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder> 
+          com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder> 
           getInfosFieldBuilder() {
         if (infosBuilder_ == null) {
           infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersion.Builder, com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiVersionOrBuilder>(
+              com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder>(
                   infos_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -10088,6 +10877,1726 @@ public final class PBResponseDataServiceManage {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListPublishedApiVersionsByClusterId getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ApiVersionGroupInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.ApiVersionGroupInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id"
+     * </pre>
+     *
+     * <code>string version_id = 1;</code>
+     * @return The versionId.
+     */
+    java.lang.String getVersionId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id"
+     * </pre>
+     *
+     * <code>string version_id = 1;</code>
+     * @return The bytes for versionId.
+     */
+    com.google.protobuf.ByteString
+        getVersionIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id"
+     * </pre>
+     *
+     * <code>string api_id = 2;</code>
+     * @return The apiId.
+     */
+    java.lang.String getApiId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id"
+     * </pre>
+     *
+     * <code>string api_id = 2;</code>
+     * @return The bytes for apiId.
+     */
+    com.google.protobuf.ByteString
+        getApiIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 3;</code>
+     * @return The apiName.
+     */
+    java.lang.String getApiName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 3;</code>
+     * @return The bytes for apiName.
+     */
+    com.google.protobuf.ByteString
+        getApiNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 4;</code>
+     * @return The apiPath.
+     */
+    java.lang.String getApiPath();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 4;</code>
+     * @return The bytes for apiPath.
+     */
+    com.google.protobuf.ByteString
+        getApiPathBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_name"
+     * </pre>
+     *
+     * <code>string group_name = 5;</code>
+     * @return The groupName.
+     */
+    java.lang.String getGroupName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_name"
+     * </pre>
+     *
+     * <code>string group_name = 5;</code>
+     * @return The bytes for groupName.
+     */
+    com.google.protobuf.ByteString
+        getGroupNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 6;</code>
+     * @return The groupPath.
+     */
+    java.lang.String getGroupPath();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 6;</code>
+     * @return The bytes for groupPath.
+     */
+    com.google.protobuf.ByteString
+        getGroupPathBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 7;</code>
+     * @return The apiDescription.
+     */
+    java.lang.String getApiDescription();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 7;</code>
+     * @return The bytes for apiDescription.
+     */
+    com.google.protobuf.ByteString
+        getApiDescriptionBytes();
+  }
+  /**
+   * Protobuf type {@code response.ApiVersionGroupInfo}
+   */
+  public static final class ApiVersionGroupInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.ApiVersionGroupInfo)
+      ApiVersionGroupInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ApiVersionGroupInfo.newBuilder() to construct.
+    private ApiVersionGroupInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ApiVersionGroupInfo() {
+      versionId_ = "";
+      apiId_ = "";
+      apiName_ = "";
+      apiPath_ = "";
+      groupName_ = "";
+      groupPath_ = "";
+      apiDescription_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ApiVersionGroupInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ApiVersionGroupInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              versionId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiPath_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupName_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupPath_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiDescription_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_ApiVersionGroupInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_ApiVersionGroupInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder.class);
+    }
+
+    public static final int VERSION_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object versionId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id"
+     * </pre>
+     *
+     * <code>string version_id = 1;</code>
+     * @return The versionId.
+     */
+    @java.lang.Override
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"version_id"
+     * </pre>
+     *
+     * <code>string version_id = 1;</code>
+     * @return The bytes for versionId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id"
+     * </pre>
+     *
+     * <code>string api_id = 2;</code>
+     * @return The apiId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiId() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id"
+     * </pre>
+     *
+     * <code>string api_id = 2;</code>
+     * @return The bytes for apiId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiIdBytes() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object apiName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 3;</code>
+     * @return The apiName.
+     */
+    @java.lang.Override
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 3;</code>
+     * @return The bytes for apiName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_PATH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object apiPath_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 4;</code>
+     * @return The apiPath.
+     */
+    @java.lang.Override
+    public java.lang.String getApiPath() {
+      java.lang.Object ref = apiPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 4;</code>
+     * @return The bytes for apiPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiPathBytes() {
+      java.lang.Object ref = apiPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_NAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object groupName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_name"
+     * </pre>
+     *
+     * <code>string group_name = 5;</code>
+     * @return The groupName.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupName() {
+      java.lang.Object ref = groupName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_name"
+     * </pre>
+     *
+     * <code>string group_name = 5;</code>
+     * @return The bytes for groupName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupNameBytes() {
+      java.lang.Object ref = groupName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_PATH_FIELD_NUMBER = 6;
+    private volatile java.lang.Object groupPath_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 6;</code>
+     * @return The groupPath.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupPath() {
+      java.lang.Object ref = groupPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 6;</code>
+     * @return The bytes for groupPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupPathBytes() {
+      java.lang.Object ref = groupPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_DESCRIPTION_FIELD_NUMBER = 7;
+    private volatile java.lang.Object apiDescription_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 7;</code>
+     * @return The apiDescription.
+     */
+    @java.lang.Override
+    public java.lang.String getApiDescription() {
+      java.lang.Object ref = apiDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 7;</code>
+     * @return The bytes for apiDescription.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiDescriptionBytes() {
+      java.lang.Object ref = apiDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, versionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, apiPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, groupName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, groupPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, apiDescription_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, versionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, apiPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, groupName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, groupPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiDescription_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo) obj;
+
+      if (!getVersionId()
+          .equals(other.getVersionId())) return false;
+      if (!getApiId()
+          .equals(other.getApiId())) return false;
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
+      if (!getApiPath()
+          .equals(other.getApiPath())) return false;
+      if (!getGroupName()
+          .equals(other.getGroupName())) return false;
+      if (!getGroupPath()
+          .equals(other.getGroupPath())) return false;
+      if (!getApiDescription()
+          .equals(other.getApiDescription())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionId().hashCode();
+      hash = (37 * hash) + API_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiId().hashCode();
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
+      hash = (37 * hash) + API_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getApiPath().hashCode();
+      hash = (37 * hash) + GROUP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupName().hashCode();
+      hash = (37 * hash) + GROUP_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupPath().hashCode();
+      hash = (37 * hash) + API_DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getApiDescription().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.ApiVersionGroupInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.ApiVersionGroupInfo)
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_ApiVersionGroupInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_ApiVersionGroupInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        versionId_ = "";
+
+        apiId_ = "";
+
+        apiName_ = "";
+
+        apiPath_ = "";
+
+        groupName_ = "";
+
+        groupPath_ = "";
+
+        apiDescription_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_ApiVersionGroupInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo(this);
+        result.versionId_ = versionId_;
+        result.apiId_ = apiId_;
+        result.apiName_ = apiName_;
+        result.apiPath_ = apiPath_;
+        result.groupName_ = groupName_;
+        result.groupPath_ = groupPath_;
+        result.apiDescription_ = apiDescription_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo.getDefaultInstance()) return this;
+        if (!other.getVersionId().isEmpty()) {
+          versionId_ = other.versionId_;
+          onChanged();
+        }
+        if (!other.getApiId().isEmpty()) {
+          apiId_ = other.apiId_;
+          onChanged();
+        }
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
+          onChanged();
+        }
+        if (!other.getApiPath().isEmpty()) {
+          apiPath_ = other.apiPath_;
+          onChanged();
+        }
+        if (!other.getGroupName().isEmpty()) {
+          groupName_ = other.groupName_;
+          onChanged();
+        }
+        if (!other.getGroupPath().isEmpty()) {
+          groupPath_ = other.groupPath_;
+          onChanged();
+        }
+        if (!other.getApiDescription().isEmpty()) {
+          apiDescription_ = other.apiDescription_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object versionId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id"
+       * </pre>
+       *
+       * <code>string version_id = 1;</code>
+       * @return The versionId.
+       */
+      public java.lang.String getVersionId() {
+        java.lang.Object ref = versionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          versionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id"
+       * </pre>
+       *
+       * <code>string version_id = 1;</code>
+       * @return The bytes for versionId.
+       */
+      public com.google.protobuf.ByteString
+          getVersionIdBytes() {
+        java.lang.Object ref = versionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          versionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id"
+       * </pre>
+       *
+       * <code>string version_id = 1;</code>
+       * @param value The versionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id"
+       * </pre>
+       *
+       * <code>string version_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersionId() {
+        
+        versionId_ = getDefaultInstance().getVersionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"version_id"
+       * </pre>
+       *
+       * <code>string version_id = 1;</code>
+       * @param value The bytes for versionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        versionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id"
+       * </pre>
+       *
+       * <code>string api_id = 2;</code>
+       * @return The apiId.
+       */
+      public java.lang.String getApiId() {
+        java.lang.Object ref = apiId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id"
+       * </pre>
+       *
+       * <code>string api_id = 2;</code>
+       * @return The bytes for apiId.
+       */
+      public com.google.protobuf.ByteString
+          getApiIdBytes() {
+        java.lang.Object ref = apiId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id"
+       * </pre>
+       *
+       * <code>string api_id = 2;</code>
+       * @param value The apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id"
+       * </pre>
+       *
+       * <code>string api_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiId() {
+        
+        apiId_ = getDefaultInstance().getApiId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id"
+       * </pre>
+       *
+       * <code>string api_id = 2;</code>
+       * @param value The bytes for apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 3;</code>
+       * @return The apiName.
+       */
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 3;</code>
+       * @return The bytes for apiName.
+       */
+      public com.google.protobuf.ByteString
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 3;</code>
+       * @param value The apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiName() {
+        
+        apiName_ = getDefaultInstance().getApiName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 3;</code>
+       * @param value The bytes for apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiPath_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 4;</code>
+       * @return The apiPath.
+       */
+      public java.lang.String getApiPath() {
+        java.lang.Object ref = apiPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 4;</code>
+       * @return The bytes for apiPath.
+       */
+      public com.google.protobuf.ByteString
+          getApiPathBytes() {
+        java.lang.Object ref = apiPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 4;</code>
+       * @param value The apiPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiPath() {
+        
+        apiPath_ = getDefaultInstance().getApiPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 4;</code>
+       * @param value The bytes for apiPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_name"
+       * </pre>
+       *
+       * <code>string group_name = 5;</code>
+       * @return The groupName.
+       */
+      public java.lang.String getGroupName() {
+        java.lang.Object ref = groupName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_name"
+       * </pre>
+       *
+       * <code>string group_name = 5;</code>
+       * @return The bytes for groupName.
+       */
+      public com.google.protobuf.ByteString
+          getGroupNameBytes() {
+        java.lang.Object ref = groupName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_name"
+       * </pre>
+       *
+       * <code>string group_name = 5;</code>
+       * @param value The groupName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_name"
+       * </pre>
+       *
+       * <code>string group_name = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupName() {
+        
+        groupName_ = getDefaultInstance().getGroupName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_name"
+       * </pre>
+       *
+       * <code>string group_name = 5;</code>
+       * @param value The bytes for groupName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupPath_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 6;</code>
+       * @return The groupPath.
+       */
+      public java.lang.String getGroupPath() {
+        java.lang.Object ref = groupPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 6;</code>
+       * @return The bytes for groupPath.
+       */
+      public com.google.protobuf.ByteString
+          getGroupPathBytes() {
+        java.lang.Object ref = groupPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 6;</code>
+       * @param value The groupPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupPath() {
+        
+        groupPath_ = getDefaultInstance().getGroupPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 6;</code>
+       * @param value The bytes for groupPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiDescription_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 7;</code>
+       * @return The apiDescription.
+       */
+      public java.lang.String getApiDescription() {
+        java.lang.Object ref = apiDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 7;</code>
+       * @return The bytes for apiDescription.
+       */
+      public com.google.protobuf.ByteString
+          getApiDescriptionBytes() {
+        java.lang.Object ref = apiDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 7;</code>
+       * @param value The apiDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiDescription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiDescription() {
+        
+        apiDescription_ = getDefaultInstance().getApiDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 7;</code>
+       * @param value The bytes for apiDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiDescription_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.ApiVersionGroupInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.ApiVersionGroupInfo)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ApiVersionGroupInfo>
+        PARSER = new com.google.protobuf.AbstractParser<ApiVersionGroupInfo>() {
+      @java.lang.Override
+      public ApiVersionGroupInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ApiVersionGroupInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ApiVersionGroupInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ApiVersionGroupInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ApiVersionGroupInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10878,6 +13387,939 @@ public final class PBResponseDataServiceManage {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.TestDataServiceApi getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DescribePublishedApiHttpDetailsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.DescribePublishedApiHttpDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    int getRequestMethodValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+     * @return The requestMethod.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_content"
+     * </pre>
+     *
+     * <code>string request_content = 2;</code>
+     * @return The requestContent.
+     */
+    java.lang.String getRequestContent();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_content"
+     * </pre>
+     *
+     * <code>string request_content = 2;</code>
+     * @return The bytes for requestContent.
+     */
+    com.google.protobuf.ByteString
+        getRequestContentBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString
+        getUriBytes();
+  }
+  /**
+   * Protobuf type {@code response.DescribePublishedApiHttpDetails}
+   */
+  public static final class DescribePublishedApiHttpDetails extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.DescribePublishedApiHttpDetails)
+      DescribePublishedApiHttpDetailsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribePublishedApiHttpDetails.newBuilder() to construct.
+    private DescribePublishedApiHttpDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribePublishedApiHttpDetails() {
+      requestMethod_ = 0;
+      requestContent_ = "";
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribePublishedApiHttpDetails();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribePublishedApiHttpDetails(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              requestMethod_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestContent_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uri_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_DescribePublishedApiHttpDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_DescribePublishedApiHttpDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.Builder.class);
+    }
+
+    public static final int REQUEST_METHOD_FIELD_NUMBER = 1;
+    private int requestMethod_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    @java.lang.Override public int getRequestMethodValue() {
+      return requestMethod_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+     * @return The requestMethod.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.valueOf(requestMethod_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.UNRECOGNIZED : result;
+    }
+
+    public static final int REQUEST_CONTENT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object requestContent_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_content"
+     * </pre>
+     *
+     * <code>string request_content = 2;</code>
+     * @return The requestContent.
+     */
+    @java.lang.Override
+    public java.lang.String getRequestContent() {
+      java.lang.Object ref = requestContent_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestContent_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_content"
+     * </pre>
+     *
+     * <code>string request_content = 2;</code>
+     * @return The bytes for requestContent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRequestContentBytes() {
+      java.lang.Object ref = requestContent_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestContent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URI_FIELD_NUMBER = 3;
+    private volatile java.lang.Object uri_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"uri"
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
+        output.writeEnum(1, requestMethod_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestContent_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestContent_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uri_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, requestMethod_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestContent_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestContent_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uri_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails) obj;
+
+      if (requestMethod_ != other.requestMethod_) return false;
+      if (!getRequestContent()
+          .equals(other.getRequestContent())) return false;
+      if (!getUri()
+          .equals(other.getUri())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUEST_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + requestMethod_;
+      hash = (37 * hash) + REQUEST_CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestContent().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.DescribePublishedApiHttpDetails}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.DescribePublishedApiHttpDetails)
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_DescribePublishedApiHttpDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_DescribePublishedApiHttpDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestMethod_ = 0;
+
+        requestContent_ = "";
+
+        uri_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.internal_static_response_DescribePublishedApiHttpDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails(this);
+        result.requestMethod_ = requestMethod_;
+        result.requestContent_ = requestContent_;
+        result.uri_ = uri_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.getDefaultInstance()) return this;
+        if (other.requestMethod_ != 0) {
+          setRequestMethodValue(other.getRequestMethodValue());
+        }
+        if (!other.getRequestContent().isEmpty()) {
+          requestContent_ = other.requestContent_;
+          onChanged();
+        }
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int requestMethod_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+       * @return The enum numeric value on the wire for requestMethod.
+       */
+      @java.lang.Override public int getRequestMethodValue() {
+        return requestMethod_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+       * @param value The enum numeric value on the wire for requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethodValue(int value) {
+        
+        requestMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+       * @return The requestMethod.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.valueOf(requestMethod_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+       * @param value The requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethod(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        requestMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestMethod() {
+        
+        requestMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object requestContent_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_content"
+       * </pre>
+       *
+       * <code>string request_content = 2;</code>
+       * @return The requestContent.
+       */
+      public java.lang.String getRequestContent() {
+        java.lang.Object ref = requestContent_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestContent_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_content"
+       * </pre>
+       *
+       * <code>string request_content = 2;</code>
+       * @return The bytes for requestContent.
+       */
+      public com.google.protobuf.ByteString
+          getRequestContentBytes() {
+        java.lang.Object ref = requestContent_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestContent_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_content"
+       * </pre>
+       *
+       * <code>string request_content = 2;</code>
+       * @param value The requestContent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestContent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_content"
+       * </pre>
+       *
+       * <code>string request_content = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestContent() {
+        
+        requestContent_ = getDefaultInstance().getRequestContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_content"
+       * </pre>
+       *
+       * <code>string request_content = 2;</code>
+       * @param value The bytes for requestContent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestContent_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object uri_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString
+          getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        
+        uri_ = getDefaultInstance().getUri();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"uri"
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uri_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.DescribePublishedApiHttpDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.DescribePublishedApiHttpDetails)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribePublishedApiHttpDetails>
+        PARSER = new com.google.protobuf.AbstractParser<DescribePublishedApiHttpDetails>() {
+      @java.lang.Override
+      public DescribePublishedApiHttpDetails parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribePublishedApiHttpDetails(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribePublishedApiHttpDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribePublishedApiHttpDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11852,10 +15294,20 @@ public final class PBResponseDataServiceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_ListPublishedApiVersionsByClusterId_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_ApiVersionGroupInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_ApiVersionGroupInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_TestDataServiceApi_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_TestDataServiceApi_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_DescribePublishedApiHttpDetails_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_DescribePublishedApiHttpDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_DescribeServiceDataSourceKinds_descriptor;
   private static final 
@@ -11888,21 +15340,32 @@ public final class PBResponseDataServiceManage {
       "/\n\013data_source\030\003 \001(\0132\032.model.ApiConfigDa" +
       "taSource\0227\n\017service_cluster\030\004 \001(\0132\036.mode" +
       "l.ApiConfigServiceCluster\"\035\n\017CreateApiCo" +
-      "nfig\022\n\n\002id\030\001 \001(\t\"G\n\035DescribeDataServiceA" +
-      "piVersion\022&\n\013api_version\030\001 \001(\0132\021.model.A" +
-      "piVersion\"_\n\032ListDataServiceApiVersions\022" +
-      " \n\005infos\030\001 \003(\0132\021.model.ApiVersion\022\r\n\005tot" +
-      "al\030\002 \001(\003\022\020\n\010has_more\030\003 \001(\010\"h\n#ListPublis" +
-      "hedApiVersionsByClusterId\022 \n\005infos\030\001 \003(\013" +
-      "2\021.model.ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010ha" +
-      "s_more\030\003 \001(\010\"<\n\022TestDataServiceApi\022\014\n\004lo" +
-      "gs\030\001 \001(\t\022\030\n\020response_content\030\002 \001(\t\"M\n\036De" +
-      "scribeServiceDataSourceKinds\022+\n\005Kinds\030\001 " +
-      "\003(\0132\034.model.ServiceDataSourceKindB|\n%com" +
-      ".dataomnis.gproto.types.pbresponseB\033PBRe" +
-      "sponseDataServiceManageP\000Z4github.com/Da" +
-      "taWorkbench/gproto/xgo/types/pbresponseb" +
-      "\006proto3"
+      "nfig\022\n\n\002id\030\001 \001(\t\"\325\001\n\035DescribeDataService" +
+      "ApiVersion\022&\n\013api_version\030\001 \001(\0132\021.model." +
+      "ApiVersion\022\"\n\tapi_group\030\002 \001(\0132\017.model.Ap" +
+      "iGroup\022/\n\013data_source\030\003 \001(\0132\032.model.ApiC" +
+      "onfigDataSource\0227\n\017service_cluster\030\004 \001(\013" +
+      "2\036.model.ApiConfigServiceCluster\"_\n\032List" +
+      "DataServiceApiVersions\022 \n\005infos\030\001 \003(\0132\021." +
+      "model.ApiVersion\022\r\n\005total\030\002 \001(\003\022\020\n\010has_m" +
+      "ore\030\003 \001(\010\"t\n#ListPublishedApiVersionsByC" +
+      "lusterId\022,\n\005infos\030\001 \003(\0132\035.response.ApiVe" +
+      "rsionGroupInfo\022\r\n\005total\030\002 \001(\003\022\020\n\010has_mor" +
+      "e\030\003 \001(\010\"\236\001\n\023ApiVersionGroupInfo\022\022\n\nversi" +
+      "on_id\030\001 \001(\t\022\016\n\006api_id\030\002 \001(\t\022\020\n\010api_name\030" +
+      "\003 \001(\t\022\020\n\010api_path\030\004 \001(\t\022\022\n\ngroup_name\030\005 " +
+      "\001(\t\022\022\n\ngroup_path\030\006 \001(\t\022\027\n\017api_descripti" +
+      "on\030\007 \001(\t\"<\n\022TestDataServiceApi\022\014\n\004logs\030\001" +
+      " \001(\t\022\030\n\020response_content\030\002 \001(\t\"\177\n\037Descri" +
+      "bePublishedApiHttpDetails\0226\n\016request_met" +
+      "hod\030\001 \001(\0162\036.model.ApiConfig.RequestMetho" +
+      "d\022\027\n\017request_content\030\002 \001(\t\022\013\n\003uri\030\003 \001(\t\"" +
+      "M\n\036DescribeServiceDataSourceKinds\022+\n\005Kin" +
+      "ds\030\001 \003(\0132\034.model.ServiceDataSourceKindB|" +
+      "\n%com.dataomnis.gproto.types.pbresponseB" +
+      "\033PBResponseDataServiceManageP\000Z4github.c" +
+      "om/DataWorkbench/gproto/xgo/types/pbresp" +
+      "onseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11962,7 +15425,7 @@ public final class PBResponseDataServiceManage {
     internal_static_response_DescribeDataServiceApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeDataServiceApiVersion_descriptor,
-        new java.lang.String[] { "ApiVersion", });
+        new java.lang.String[] { "ApiVersion", "ApiGroup", "DataSource", "ServiceCluster", });
     internal_static_response_ListDataServiceApiVersions_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_response_ListDataServiceApiVersions_fieldAccessorTable = new
@@ -11975,14 +15438,26 @@ public final class PBResponseDataServiceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ListPublishedApiVersionsByClusterId_descriptor,
         new java.lang.String[] { "Infos", "Total", "HasMore", });
-    internal_static_response_TestDataServiceApi_descriptor =
+    internal_static_response_ApiVersionGroupInfo_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_response_ApiVersionGroupInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_ApiVersionGroupInfo_descriptor,
+        new java.lang.String[] { "VersionId", "ApiId", "ApiName", "ApiPath", "GroupName", "GroupPath", "ApiDescription", });
+    internal_static_response_TestDataServiceApi_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_response_TestDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_TestDataServiceApi_descriptor,
         new java.lang.String[] { "Logs", "ResponseContent", });
+    internal_static_response_DescribePublishedApiHttpDetails_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_response_DescribePublishedApiHttpDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_DescribePublishedApiHttpDetails_descriptor,
+        new java.lang.String[] { "RequestMethod", "RequestContent", "Uri", });
     internal_static_response_DescribeServiceDataSourceKinds_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_response_DescribeServiceDataSourceKinds_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeServiceDataSourceKinds_descriptor,

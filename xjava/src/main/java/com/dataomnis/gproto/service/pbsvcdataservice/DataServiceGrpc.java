@@ -604,6 +604,37 @@ public final class DataServiceGrpc {
     return getAbolishDataServiceApisMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> getDescribePublishedApiHttpDetailsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribePublishedApiHttpDetails",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> getDescribePublishedApiHttpDetailsMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> getDescribePublishedApiHttpDetailsMethod;
+    if ((getDescribePublishedApiHttpDetailsMethod = DataServiceGrpc.getDescribePublishedApiHttpDetailsMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDescribePublishedApiHttpDetailsMethod = DataServiceGrpc.getDescribePublishedApiHttpDetailsMethod) == null) {
+          DataServiceGrpc.getDescribePublishedApiHttpDetailsMethod = getDescribePublishedApiHttpDetailsMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribePublishedApiHttpDetails"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribePublishedApiHttpDetails"))
+              .build();
+        }
+      }
+    }
+    return getDescribePublishedApiHttpDetailsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions,
       com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> getListDataServiceApiVersionsMethod;
 
@@ -914,6 +945,13 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void describePublishedApiHttpDetails(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribePublishedApiHttpDetailsMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDataServiceApiVersionsMethod(), responseObserver);
@@ -1075,6 +1113,13 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_ABOLISH_DATA_SERVICE_APIS)))
+          .addMethod(
+            getDescribePublishedApiHttpDetailsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails>(
+                  this, METHODID_DESCRIBE_PUBLISHED_API_HTTP_DETAILS)))
           .addMethod(
             getListDataServiceApiVersionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1278,6 +1323,14 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void describePublishedApiHttpDetails(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribePublishedApiHttpDetailsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listDataServiceApiVersions(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1457,6 +1510,13 @@ public final class DataServiceGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct abolishDataServiceApis(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getAbolishDataServiceApisMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails describePublishedApiHttpDetails(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribePublishedApiHttpDetailsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1659,6 +1719,14 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails> describePublishedApiHttpDetails(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribePublishedApiHttpDetailsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListDataServiceApiVersions> listDataServiceApiVersions(
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1709,10 +1777,11 @@ public final class DataServiceGrpc {
   private static final int METHODID_TEST_DATA_SERVICE_API = 16;
   private static final int METHODID_PUBLISH_DATA_SERVICE_API = 17;
   private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 18;
-  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 19;
-  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 20;
-  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 21;
-  private static final int METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID = 22;
+  private static final int METHODID_DESCRIBE_PUBLISHED_API_HTTP_DETAILS = 19;
+  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 20;
+  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 21;
+  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 22;
+  private static final int METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1806,6 +1875,10 @@ public final class DataServiceGrpc {
         case METHODID_ABOLISH_DATA_SERVICE_APIS:
           serviceImpl.abolishDataServiceApis((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.AbolishDataServiceApis) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_PUBLISHED_API_HTTP_DETAILS:
+          serviceImpl.describePublishedApiHttpDetails((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribePublishedApiHttpDetails) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribePublishedApiHttpDetails>) responseObserver);
           break;
         case METHODID_LIST_DATA_SERVICE_API_VERSIONS:
           serviceImpl.listDataServiceApiVersions((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListDataServiceApiVersions) request,
@@ -1903,6 +1976,7 @@ public final class DataServiceGrpc {
               .addMethod(getTestDataServiceApiMethod())
               .addMethod(getPublishDataServiceApiMethod())
               .addMethod(getAbolishDataServiceApisMethod())
+              .addMethod(getDescribePublishedApiHttpDetailsMethod())
               .addMethod(getListDataServiceApiVersionsMethod())
               .addMethod(getDescribeDataServiceApiVersionMethod())
               .addMethod(getRepublishDataServiceApiMethod())
