@@ -71,8 +71,8 @@ message CreateApiConfig {
 }
 
 message DescribeDataServiceApiVersion {
-  // @inject_tag: json:"api_version"
-  model.ApiVersion api_version = 1;
+  // @inject_tag: json:"api_config"
+  model.ApiVersion api_config = 1;
   // @inject_tag: json:"api_group"
   model.ApiGroup api_group = 2 ;
   // @inject_tag: json:"data_source"

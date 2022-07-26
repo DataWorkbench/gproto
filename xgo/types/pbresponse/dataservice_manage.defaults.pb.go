@@ -103,8 +103,8 @@ func (this *DescribeDataServiceApiVersion) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.ApiVersion != nil {
-		if dt, ok := interface{}(this.ApiVersion).(interface{ SetDefaults() }); ok {
+	if this.ApiConfig != nil {
+		if dt, ok := interface{}(this.ApiConfig).(interface{ SetDefaults() }); ok {
 			dt.SetDefaults()
 		}
 	}

@@ -178,8 +178,8 @@ func (this *CreateApiConfig) Validate() error {
 	return nil
 }
 
-func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_version() error {
-	if dt, ok := interface{}(this.ApiVersion).(interface{ Validate() error }); ok {
+func (this *DescribeDataServiceApiVersion) _xxx_xxx_Validator_Validate_api_config() error {
+	if dt, ok := interface{}(this.ApiConfig).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err
 		}
@@ -219,7 +219,7 @@ func (this *DescribeDataServiceApiVersion) Validate() error {
 	if this == nil {
 		return nil
 	}
-	if err := this._xxx_xxx_Validator_Validate_api_version(); err != nil {
+	if err := this._xxx_xxx_Validator_Validate_api_config(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_api_group(); err != nil {
