@@ -54,6 +54,19 @@ func (this *CreateApiGroup) SetDefaults() {
 	return
 }
 
+// Set default value for message response.DescribeApiGroup
+func (this *DescribeApiGroup) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Info != nil {
+		if dt, ok := interface{}(this.Info).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
 // Set default value for message response.ListApiConfigs
 func (this *ListApiConfigs) SetDefaults() {
 	if this == nil {

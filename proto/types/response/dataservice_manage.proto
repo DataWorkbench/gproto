@@ -45,6 +45,11 @@ message CreateApiGroup {
   string id = 1;
 }
 
+message DescribeApiGroup {
+  // @inject_tag: json:"info"
+  model.ApiGroup info = 1;
+}
+
 message ListApiConfigs {
   // @inject_tag: json:"infos"
   repeated model.ApiConfig infos = 1;

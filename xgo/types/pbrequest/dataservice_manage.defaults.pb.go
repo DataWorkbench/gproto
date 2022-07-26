@@ -89,6 +89,22 @@ func (this *CreateApiGroup) SetDefaults() {
 	return
 }
 
+// Set default value for message request.UpdateApiGroup
+func (this *UpdateApiGroup) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.DescribeApiGroup
+func (this *DescribeApiGroup) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message request.DeleteApiGroups
 func (this *DeleteApiGroups) SetDefaults() {
 	if this == nil {
@@ -133,6 +149,14 @@ func (this *DescribeApiConfig) SetDefaults() {
 
 // Set default value for message request.DeleteApiConfigs
 func (this *DeleteApiConfigs) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.UpdateApiBaseConfig
+func (this *UpdateApiBaseConfig) SetDefaults() {
 	if this == nil {
 		return
 	}

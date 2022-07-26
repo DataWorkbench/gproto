@@ -91,6 +91,26 @@ func (this *CreateApiGroup) Validate() error {
 	return nil
 }
 
+func (this *DescribeApiGroup) _xxx_xxx_Validator_Validate_info() error {
+	if dt, ok := interface{}(this.Info).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeApiGroup
+func (this *DescribeApiGroup) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_info(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (this *ListApiConfigs) _xxx_xxx_Validator_Validate_infos() error {
 	for _, item := range this.Infos {
 		_ = item // To avoid unused panics.

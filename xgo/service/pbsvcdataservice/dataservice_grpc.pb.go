@@ -37,10 +37,13 @@ type DataServiceClient interface {
 	CreateApiGroup(ctx context.Context, in *pbrequest.CreateApiGroup, opts ...grpc.CallOption) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(ctx context.Context, in *pbrequest.ListApiGroups, opts ...grpc.CallOption) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(ctx context.Context, in *pbrequest.DeleteApiGroups, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	UpdateApiGroup(ctx context.Context, in *pbrequest.UpdateApiGroup, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	DescribeApiGroup(ctx context.Context, in *pbrequest.DescribeApiGroup, opts ...grpc.CallOption) (*pbresponse.DescribeApiGroup, error)
 	ListApiConfigs(ctx context.Context, in *pbrequest.ListApiConfigs, opts ...grpc.CallOption) (*pbresponse.ListApiConfigs, error)
 	DescribeApiConfig(ctx context.Context, in *pbrequest.DescribeApiConfig, opts ...grpc.CallOption) (*pbresponse.DescribeApiConfig, error)
 	CreateApiConfig(ctx context.Context, in *pbrequest.CreateApiConfig, opts ...grpc.CallOption) (*pbresponse.CreateApiConfig, error)
 	UpdateApiConfig(ctx context.Context, in *pbrequest.UpdateApiConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
+	UpdateApiBaseConfig(ctx context.Context, in *pbrequest.UpdateApiBaseConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	DeleteApiConfigs(ctx context.Context, in *pbrequest.DeleteApiConfigs, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(ctx context.Context, in *pbrequest.TestDataServiceApi, opts ...grpc.CallOption) (*pbresponse.TestDataServiceApi, error)
 	PublishDataServiceApi(ctx context.Context, in *pbrequest.PublishDataServiceApi, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error)
@@ -159,6 +162,24 @@ func (c *dataServiceClient) DeleteApiGroups(ctx context.Context, in *pbrequest.D
 	return out, nil
 }
 
+func (c *dataServiceClient) UpdateApiGroup(ctx context.Context, in *pbrequest.UpdateApiGroup, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/UpdateApiGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) DescribeApiGroup(ctx context.Context, in *pbrequest.DescribeApiGroup, opts ...grpc.CallOption) (*pbresponse.DescribeApiGroup, error) {
+	out := new(pbresponse.DescribeApiGroup)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/DescribeApiGroup", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *dataServiceClient) ListApiConfigs(ctx context.Context, in *pbrequest.ListApiConfigs, opts ...grpc.CallOption) (*pbresponse.ListApiConfigs, error) {
 	out := new(pbresponse.ListApiConfigs)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/ListApiConfigs", in, out, opts...)
@@ -189,6 +210,15 @@ func (c *dataServiceClient) CreateApiConfig(ctx context.Context, in *pbrequest.C
 func (c *dataServiceClient) UpdateApiConfig(ctx context.Context, in *pbrequest.UpdateApiConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
 	out := new(pbmodel.EmptyStruct)
 	err := c.cc.Invoke(ctx, "/dataservice.DataService/UpdateApiConfig", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) UpdateApiBaseConfig(ctx context.Context, in *pbrequest.UpdateApiBaseConfig, opts ...grpc.CallOption) (*pbmodel.EmptyStruct, error) {
+	out := new(pbmodel.EmptyStruct)
+	err := c.cc.Invoke(ctx, "/dataservice.DataService/UpdateApiBaseConfig", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -292,10 +322,13 @@ type DataServiceServer interface {
 	CreateApiGroup(context.Context, *pbrequest.CreateApiGroup) (*pbresponse.CreateApiGroup, error)
 	ListApiGroups(context.Context, *pbrequest.ListApiGroups) (*pbresponse.ListApiGroups, error)
 	DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error)
+	UpdateApiGroup(context.Context, *pbrequest.UpdateApiGroup) (*pbmodel.EmptyStruct, error)
+	DescribeApiGroup(context.Context, *pbrequest.DescribeApiGroup) (*pbresponse.DescribeApiGroup, error)
 	ListApiConfigs(context.Context, *pbrequest.ListApiConfigs) (*pbresponse.ListApiConfigs, error)
 	DescribeApiConfig(context.Context, *pbrequest.DescribeApiConfig) (*pbresponse.DescribeApiConfig, error)
 	CreateApiConfig(context.Context, *pbrequest.CreateApiConfig) (*pbresponse.CreateApiConfig, error)
 	UpdateApiConfig(context.Context, *pbrequest.UpdateApiConfig) (*pbmodel.EmptyStruct, error)
+	UpdateApiBaseConfig(context.Context, *pbrequest.UpdateApiBaseConfig) (*pbmodel.EmptyStruct, error)
 	DeleteApiConfigs(context.Context, *pbrequest.DeleteApiConfigs) (*pbmodel.EmptyStruct, error)
 	TestDataServiceApi(context.Context, *pbrequest.TestDataServiceApi) (*pbresponse.TestDataServiceApi, error)
 	PublishDataServiceApi(context.Context, *pbrequest.PublishDataServiceApi) (*pbmodel.EmptyStruct, error)
@@ -345,6 +378,12 @@ func (UnimplementedDataServiceServer) ListApiGroups(context.Context, *pbrequest.
 func (UnimplementedDataServiceServer) DeleteApiGroups(context.Context, *pbrequest.DeleteApiGroups) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiGroups not implemented")
 }
+func (UnimplementedDataServiceServer) UpdateApiGroup(context.Context, *pbrequest.UpdateApiGroup) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiGroup not implemented")
+}
+func (UnimplementedDataServiceServer) DescribeApiGroup(context.Context, *pbrequest.DescribeApiGroup) (*pbresponse.DescribeApiGroup, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeApiGroup not implemented")
+}
 func (UnimplementedDataServiceServer) ListApiConfigs(context.Context, *pbrequest.ListApiConfigs) (*pbresponse.ListApiConfigs, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApiConfigs not implemented")
 }
@@ -356,6 +395,9 @@ func (UnimplementedDataServiceServer) CreateApiConfig(context.Context, *pbreques
 }
 func (UnimplementedDataServiceServer) UpdateApiConfig(context.Context, *pbrequest.UpdateApiConfig) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiConfig not implemented")
+}
+func (UnimplementedDataServiceServer) UpdateApiBaseConfig(context.Context, *pbrequest.UpdateApiBaseConfig) (*pbmodel.EmptyStruct, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateApiBaseConfig not implemented")
 }
 func (UnimplementedDataServiceServer) DeleteApiConfigs(context.Context, *pbrequest.DeleteApiConfigs) (*pbmodel.EmptyStruct, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteApiConfigs not implemented")
@@ -595,6 +637,42 @@ func _DataService_DeleteApiGroups_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_UpdateApiGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateApiGroup)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UpdateApiGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/UpdateApiGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UpdateApiGroup(ctx, req.(*pbrequest.UpdateApiGroup))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_DescribeApiGroup_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeApiGroup)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).DescribeApiGroup(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/DescribeApiGroup",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).DescribeApiGroup(ctx, req.(*pbrequest.DescribeApiGroup))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _DataService_ListApiConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ListApiConfigs)
 	if err := dec(in); err != nil {
@@ -663,6 +741,24 @@ func _DataService_UpdateApiConfig_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DataServiceServer).UpdateApiConfig(ctx, req.(*pbrequest.UpdateApiConfig))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_UpdateApiBaseConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.UpdateApiBaseConfig)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).UpdateApiBaseConfig(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/dataservice.DataService/UpdateApiBaseConfig",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).UpdateApiBaseConfig(ctx, req.(*pbrequest.UpdateApiBaseConfig))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -881,6 +977,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _DataService_DeleteApiGroups_Handler,
 		},
 		{
+			MethodName: "UpdateApiGroup",
+			Handler:    _DataService_UpdateApiGroup_Handler,
+		},
+		{
+			MethodName: "DescribeApiGroup",
+			Handler:    _DataService_DescribeApiGroup_Handler,
+		},
+		{
 			MethodName: "ListApiConfigs",
 			Handler:    _DataService_ListApiConfigs_Handler,
 		},
@@ -895,6 +999,10 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateApiConfig",
 			Handler:    _DataService_UpdateApiConfig_Handler,
+		},
+		{
+			MethodName: "UpdateApiBaseConfig",
+			Handler:    _DataService_UpdateApiBaseConfig_Handler,
 		},
 		{
 			MethodName: "DeleteApiConfigs",

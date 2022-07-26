@@ -31,12 +31,14 @@ service DataService {
   rpc CreateApiGroup(request.CreateApiGroup) returns (response.CreateApiGroup) {}
   rpc ListApiGroups(request.ListApiGroups) returns (response.ListApiGroups) {}
   rpc DeleteApiGroups(request.DeleteApiGroups)   returns (model.EmptyStruct) {}
-  // rpc DescribeApiGroup() returns () {}
+  rpc UpdateApiGroup(request.UpdateApiGroup) returns (model.EmptyStruct) {}
+  rpc DescribeApiGroup(request.DescribeApiGroup) returns (response.DescribeApiGroup) {}
 
   rpc ListApiConfigs(request.ListApiConfigs) returns (response.ListApiConfigs) {}
   rpc DescribeApiConfig(request.DescribeApiConfig) returns (response.DescribeApiConfig) {}
   rpc CreateApiConfig(request.CreateApiConfig) returns (response.CreateApiConfig) {}
   rpc UpdateApiConfig(request.UpdateApiConfig) returns (model.EmptyStruct) {}
+  rpc UpdateApiBaseConfig(request.UpdateApiBaseConfig) returns (model.EmptyStruct) {}
   rpc DeleteApiConfigs(request.DeleteApiConfigs)   returns (model.EmptyStruct) {}
 
   rpc TestDataServiceApi(request.TestDataServiceApi) returns (response.TestDataServiceApi) {}
