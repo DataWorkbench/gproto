@@ -145,7 +145,7 @@ message ApiConfig {
   // @inject_tag: json:"cross_domain" gorm:"column:cross_domain;"
   bool cross_domain = 12 [ (validator.field) = { } ];
   // @inject_tag: json:"timeout" gorm:"column:timeout;"
-  int64 timeout = 13 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
+  int64 timeout = 13 [ (validator.field).tags.int = { gte: 1 , lte: 300 } ];
   // @inject_tag: json:"datasource_id" gorm:"column:datasource_id;"
   string datasource_id = 14 [(validator.field).tags.string = { } ];
   // @inject_tag: json:"table_name" gorm:"column:table_name;"
@@ -326,7 +326,7 @@ message ApiVersion{
   // @inject_tag: json:"cross_domain" gorm:"column:cross_domain;"
   bool cross_domain = 15 [ (validator.field) = { } ];
   // @inject_tag: json:"timeout" gorm:"column:timeout;"
-  int64 timeout = 16 [ (validator.field).tags.int = { gte: 1 , lte: 180 } ];
+  int64 timeout = 16 [ (validator.field).tags.int = { gte: 1 , lte: 300 } ];
   // @inject_tag: json:"datasource_id" gorm:"column:datasource_id;"
   string datasource_id = 17 [(validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
   // @inject_tag: json:"table_name" gorm:"column:table_name;"
