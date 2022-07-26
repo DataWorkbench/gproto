@@ -126,6 +126,10 @@ message TestDataServiceApi {
   string logs = 1 ;
   // @inject_tag: json:"response_content"
   string response_content = 2  ;
+  // @inject_tag: json:"test_status"
+  string test_status = 3  ;
+  // @inject_tag: json:"time_out"
+  int64 time_out = 4  ;
 }
 
 message DescribePublishedApiHttpDetails {
