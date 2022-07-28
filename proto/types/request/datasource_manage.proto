@@ -266,3 +266,14 @@ message DescribeDataSourceTableSchema {
   // @inject_tag: json:"table_name"
   string table_name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 256 } ];
 }
+
+message DescribeTableSchemaDataServiceApi {
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+  // @inject_tag: json:"source_id"
+  string source_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "som-" } ];
+
+  // @inject_tag: json:"table_name"
+  string table_name = 3 [ (validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 256 } ];
+}

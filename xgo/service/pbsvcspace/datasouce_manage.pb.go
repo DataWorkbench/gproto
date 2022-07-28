@@ -36,7 +36,7 @@ var file_proto_service_spacemanager_datasouce_manage_proto_rawDesc = []byte{
 	0x5f, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x2c, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x72, 0x65, 0x73, 0x70, 0x6f,
 	0x6e, 0x73, 0x65, 0x2f, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x6d,
-	0x61, 0x6e, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0x92, 0x08, 0x0a, 0x10,
+	0x61, 0x6e, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0x92, 0x09, 0x0a, 0x10,
 	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65,
 	0x12, 0x48, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72,
 	0x63, 0x65, 0x73, 0x12, 0x18, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x4c, 0x69,
@@ -102,6 +102,14 @@ var file_proto_service_spacemanager_datasouce_manage_proto_rawDesc = []byte{
 	0x63, 0x68, 0x65, 0x6d, 0x61, 0x1a, 0x27, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x2e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75,
 	0x72, 0x63, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x22, 0x00,
+	0x12, 0x7e, 0x0a, 0x21, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x54, 0x61, 0x62, 0x6c,
+	0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x41, 0x70, 0x69, 0x12, 0x2a, 0x2e, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
+	0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68,
+	0x65, 0x6d, 0x61, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x41, 0x70,
+	0x69, 0x1a, 0x2b, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x62, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61,
+	0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x41, 0x70, 0x69, 0x22, 0x00,
 	0x42, 0x7a, 0x0a, 0x27, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
 	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x2e, 0x70, 0x62, 0x73, 0x76, 0x63, 0x73, 0x70, 0x61, 0x63, 0x65, 0x42, 0x15, 0x50, 0x42, 0x53,
@@ -114,26 +122,28 @@ var file_proto_service_spacemanager_datasouce_manage_proto_rawDesc = []byte{
 }
 
 var file_proto_service_spacemanager_datasouce_manage_proto_goTypes = []interface{}{
-	(*pbrequest.ListDataSources)(nil),                // 0: request.ListDataSources
-	(*pbrequest.CreateDataSource)(nil),               // 1: request.CreateDataSource
-	(*pbrequest.UpdateDataSource)(nil),               // 2: request.UpdateDataSource
-	(*pbrequest.DescribeDataSource)(nil),             // 3: request.DescribeDataSource
-	(*pbrequest.DisableDataSources)(nil),             // 4: request.DisableDataSources
-	(*pbrequest.EnableDataSources)(nil),              // 5: request.EnableDataSources
-	(*pbrequest.DeleteDataSources)(nil),              // 6: request.DeleteDataSources
-	(*pbmodel.EmptyStruct)(nil),                      // 7: model.EmptyStruct
-	(*pbrequest.ListDataSourceConnections)(nil),      // 8: request.ListDataSourceConnections
-	(*pbrequest.PingDataSourceConnection)(nil),       // 9: request.PingDataSourceConnection
-	(*pbrequest.DescribeDataSourceTables)(nil),       // 10: request.DescribeDataSourceTables
-	(*pbrequest.DescribeDataSourceTableSchema)(nil),  // 11: request.DescribeDataSourceTableSchema
-	(*pbresponse.ListDataSources)(nil),               // 12: response.ListDataSources
-	(*pbresponse.CreateDataSource)(nil),              // 13: response.CreateDataSource
-	(*pbresponse.DescribeDataSource)(nil),            // 14: response.DescribeDataSource
-	(*pbresponse.DescribeDataSourceKinds)(nil),       // 15: response.DescribeDataSourceKinds
-	(*pbresponse.ListDataSourceConnections)(nil),     // 16: response.ListDataSourceConnections
-	(*pbresponse.PingDataSourceConnection)(nil),      // 17: response.PingDataSourceConnection
-	(*pbresponse.DescribeDataSourceTables)(nil),      // 18: response.DescribeDataSourceTables
-	(*pbresponse.DescribeDataSourceTableSchema)(nil), // 19: response.DescribeDataSourceTableSchema
+	(*pbrequest.ListDataSources)(nil),                    // 0: request.ListDataSources
+	(*pbrequest.CreateDataSource)(nil),                   // 1: request.CreateDataSource
+	(*pbrequest.UpdateDataSource)(nil),                   // 2: request.UpdateDataSource
+	(*pbrequest.DescribeDataSource)(nil),                 // 3: request.DescribeDataSource
+	(*pbrequest.DisableDataSources)(nil),                 // 4: request.DisableDataSources
+	(*pbrequest.EnableDataSources)(nil),                  // 5: request.EnableDataSources
+	(*pbrequest.DeleteDataSources)(nil),                  // 6: request.DeleteDataSources
+	(*pbmodel.EmptyStruct)(nil),                          // 7: model.EmptyStruct
+	(*pbrequest.ListDataSourceConnections)(nil),          // 8: request.ListDataSourceConnections
+	(*pbrequest.PingDataSourceConnection)(nil),           // 9: request.PingDataSourceConnection
+	(*pbrequest.DescribeDataSourceTables)(nil),           // 10: request.DescribeDataSourceTables
+	(*pbrequest.DescribeDataSourceTableSchema)(nil),      // 11: request.DescribeDataSourceTableSchema
+	(*pbrequest.DescribeTableSchemaDataServiceApi)(nil),  // 12: request.DescribeTableSchemaDataServiceApi
+	(*pbresponse.ListDataSources)(nil),                   // 13: response.ListDataSources
+	(*pbresponse.CreateDataSource)(nil),                  // 14: response.CreateDataSource
+	(*pbresponse.DescribeDataSource)(nil),                // 15: response.DescribeDataSource
+	(*pbresponse.DescribeDataSourceKinds)(nil),           // 16: response.DescribeDataSourceKinds
+	(*pbresponse.ListDataSourceConnections)(nil),         // 17: response.ListDataSourceConnections
+	(*pbresponse.PingDataSourceConnection)(nil),          // 18: response.PingDataSourceConnection
+	(*pbresponse.DescribeDataSourceTables)(nil),          // 19: response.DescribeDataSourceTables
+	(*pbresponse.DescribeDataSourceTableSchema)(nil),     // 20: response.DescribeDataSourceTableSchema
+	(*pbresponse.DescribeTableSchemaDataServiceApi)(nil), // 21: response.DescribeTableSchemaDataServiceApi
 }
 var file_proto_service_spacemanager_datasouce_manage_proto_depIdxs = []int32{
 	0,  // 0: spacemanager.DataSourceManage.ListDataSources:input_type -> request.ListDataSources
@@ -148,20 +158,22 @@ var file_proto_service_spacemanager_datasouce_manage_proto_depIdxs = []int32{
 	9,  // 9: spacemanager.DataSourceManage.PingDataSourceConnection:input_type -> request.PingDataSourceConnection
 	10, // 10: spacemanager.DataSourceManage.DescribeDataSourceTables:input_type -> request.DescribeDataSourceTables
 	11, // 11: spacemanager.DataSourceManage.DescribeDataSourceTableSchema:input_type -> request.DescribeDataSourceTableSchema
-	12, // 12: spacemanager.DataSourceManage.ListDataSources:output_type -> response.ListDataSources
-	13, // 13: spacemanager.DataSourceManage.CreateDataSource:output_type -> response.CreateDataSource
-	7,  // 14: spacemanager.DataSourceManage.UpdateDataSource:output_type -> model.EmptyStruct
-	14, // 15: spacemanager.DataSourceManage.DescribeDataSource:output_type -> response.DescribeDataSource
-	7,  // 16: spacemanager.DataSourceManage.DisableDataSources:output_type -> model.EmptyStruct
-	7,  // 17: spacemanager.DataSourceManage.EnableDataSources:output_type -> model.EmptyStruct
-	7,  // 18: spacemanager.DataSourceManage.DeleteDataSources:output_type -> model.EmptyStruct
-	15, // 19: spacemanager.DataSourceManage.DescribeDataSourceKinds:output_type -> response.DescribeDataSourceKinds
-	16, // 20: spacemanager.DataSourceManage.ListDataSourceConnections:output_type -> response.ListDataSourceConnections
-	17, // 21: spacemanager.DataSourceManage.PingDataSourceConnection:output_type -> response.PingDataSourceConnection
-	18, // 22: spacemanager.DataSourceManage.DescribeDataSourceTables:output_type -> response.DescribeDataSourceTables
-	19, // 23: spacemanager.DataSourceManage.DescribeDataSourceTableSchema:output_type -> response.DescribeDataSourceTableSchema
-	12, // [12:24] is the sub-list for method output_type
-	0,  // [0:12] is the sub-list for method input_type
+	12, // 12: spacemanager.DataSourceManage.DescribeTableSchemaDataServiceApi:input_type -> request.DescribeTableSchemaDataServiceApi
+	13, // 13: spacemanager.DataSourceManage.ListDataSources:output_type -> response.ListDataSources
+	14, // 14: spacemanager.DataSourceManage.CreateDataSource:output_type -> response.CreateDataSource
+	7,  // 15: spacemanager.DataSourceManage.UpdateDataSource:output_type -> model.EmptyStruct
+	15, // 16: spacemanager.DataSourceManage.DescribeDataSource:output_type -> response.DescribeDataSource
+	7,  // 17: spacemanager.DataSourceManage.DisableDataSources:output_type -> model.EmptyStruct
+	7,  // 18: spacemanager.DataSourceManage.EnableDataSources:output_type -> model.EmptyStruct
+	7,  // 19: spacemanager.DataSourceManage.DeleteDataSources:output_type -> model.EmptyStruct
+	16, // 20: spacemanager.DataSourceManage.DescribeDataSourceKinds:output_type -> response.DescribeDataSourceKinds
+	17, // 21: spacemanager.DataSourceManage.ListDataSourceConnections:output_type -> response.ListDataSourceConnections
+	18, // 22: spacemanager.DataSourceManage.PingDataSourceConnection:output_type -> response.PingDataSourceConnection
+	19, // 23: spacemanager.DataSourceManage.DescribeDataSourceTables:output_type -> response.DescribeDataSourceTables
+	20, // 24: spacemanager.DataSourceManage.DescribeDataSourceTableSchema:output_type -> response.DescribeDataSourceTableSchema
+	21, // 25: spacemanager.DataSourceManage.DescribeTableSchemaDataServiceApi:output_type -> response.DescribeTableSchemaDataServiceApi
+	13, // [13:26] is the sub-list for method output_type
+	0,  // [0:13] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

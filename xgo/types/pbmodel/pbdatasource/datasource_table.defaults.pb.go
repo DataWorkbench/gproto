@@ -20,3 +20,11 @@ func (this *TableColumn) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message datasource.TableColumnForDataService
+func (this *TableColumnForDataService) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

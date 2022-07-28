@@ -78,3 +78,8 @@ message DescribeDataSourceTableSchema {
   // @inject_tag: json:"schema"
   datasource.TableSchema schema = 1;
 }
+
+message DescribeTableSchemaDataServiceApi {
+  // @inject_tag: json:"schema"
+  repeated datasource.TableColumnForDataService schema = 1;
+}

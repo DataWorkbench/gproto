@@ -657,3 +657,50 @@ func (this *DescribeDataSourceTableSchema) Validate() error {
 	}
 	return nil
 }
+
+func (this *DescribeTableSchemaDataServiceApi) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DescribeTableSchemaDataServiceApi) _xxx_xxx_Validator_Validate_source_id() error {
+	if !(len(this.SourceId) == 20) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the byte length of field 'source_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SourceId))
+	}
+	if !(strings.HasPrefix(this.SourceId, "som-")) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the value of field 'source_id' must start with string 'som-'", this.SourceId)
+	}
+	return nil
+}
+
+func (this *DescribeTableSchemaDataServiceApi) _xxx_xxx_Validator_Validate_table_name() error {
+	if !(len(this.TableName) > 1) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the byte length of field 'table_name' must be greater than '1'", protovalidator.StringByteLenToString(this.TableName))
+	}
+	if !(len(this.TableName) <= 256) {
+		return protovalidator.FieldError1("DescribeTableSchemaDataServiceApi", "the byte length of field 'table_name' must be less than or equal to '256'", protovalidator.StringByteLenToString(this.TableName))
+	}
+	return nil
+}
+
+// Set default value for message request.DescribeTableSchemaDataServiceApi
+func (this *DescribeTableSchemaDataServiceApi) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_source_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_table_name(); err != nil {
+		return err
+	}
+	return nil
+}

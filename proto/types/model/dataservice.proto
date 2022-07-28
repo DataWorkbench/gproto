@@ -118,6 +118,8 @@ message ApiConfig {
     StatusUnset = 0;
     Deleted = 1;
     Enabled = 2;
+    Pass = 3;
+    Failed = 4;
   }
 
   // @inject_tag: json:"api_id" gorm:"column:api_id;primaryKey;"

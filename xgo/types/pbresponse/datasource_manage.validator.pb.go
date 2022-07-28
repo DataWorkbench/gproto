@@ -155,3 +155,26 @@ func (this *DescribeDataSourceTableSchema) Validate() error {
 	}
 	return nil
 }
+
+func (this *DescribeTableSchemaDataServiceApi) _xxx_xxx_Validator_Validate_schema() error {
+	for _, item := range this.Schema {
+		_ = item // To avoid unused panics.
+		if dt, ok := interface{}(item).(interface{ Validate() error }); ok {
+			if err := dt.Validate(); err != nil {
+				return err
+			}
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.DescribeTableSchemaDataServiceApi
+func (this *DescribeTableSchemaDataServiceApi) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_schema(); err != nil {
+		return err
+	}
+	return nil
+}

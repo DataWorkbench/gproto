@@ -441,6 +441,53 @@ func (x *DescribeDataSourceTableSchema) GetSchema() *pbdatasource.TableSchema {
 	return nil
 }
 
+type DescribeTableSchemaDataServiceApi struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Schema []*pbdatasource.TableColumnForDataService `protobuf:"bytes,1,rep,name=schema,proto3" json:"schema"`
+}
+
+func (x *DescribeTableSchemaDataServiceApi) Reset() {
+	*x = DescribeTableSchemaDataServiceApi{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_datasource_manage_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DescribeTableSchemaDataServiceApi) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DescribeTableSchemaDataServiceApi) ProtoMessage() {}
+
+func (x *DescribeTableSchemaDataServiceApi) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_datasource_manage_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DescribeTableSchemaDataServiceApi.ProtoReflect.Descriptor instead.
+func (*DescribeTableSchemaDataServiceApi) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_datasource_manage_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DescribeTableSchemaDataServiceApi) GetSchema() []*pbdatasource.TableColumnForDataService {
+	if x != nil {
+		return x.Schema
+	}
+	return nil
+}
+
 var File_proto_types_response_datasource_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_response_datasource_manage_proto_rawDesc = []byte{
@@ -495,15 +542,21 @@ var file_proto_types_response_datasource_manage_proto_rawDesc = []byte{
 	0x63, 0x68, 0x65, 0x6d, 0x61, 0x12, 0x2f, 0x0a, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72,
 	0x63, 0x65, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x06,
-	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x42, 0x7b, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61,
-	0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74,
-	0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42,
-	0x1a, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53,
-	0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67,
-	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f,
-	0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78,
-	0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x22, 0x62, 0x0a, 0x21, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x62, 0x65, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x44, 0x61, 0x74,
+	0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x41, 0x70, 0x69, 0x12, 0x3d, 0x0a, 0x06, 0x73,
+	0x63, 0x68, 0x65, 0x6d, 0x61, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x64, 0x61,
+	0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x2e, 0x54, 0x61, 0x62, 0x6c, 0x65, 0x43, 0x6f,
+	0x6c, 0x75, 0x6d, 0x6e, 0x46, 0x6f, 0x72, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x52, 0x06, 0x73, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x42, 0x7b, 0x0a, 0x25, 0x63, 0x6f,
+	0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x42, 0x1a, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44,
+	0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50,
+	0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61,
+	0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -518,33 +571,36 @@ func file_proto_types_response_datasource_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_response_datasource_manage_proto_rawDescData
 }
 
-var file_proto_types_response_datasource_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_proto_types_response_datasource_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_proto_types_response_datasource_manage_proto_goTypes = []interface{}{
-	(*CreateDataSource)(nil),              // 0: response.CreateDataSource
-	(*DescribeDataSource)(nil),            // 1: response.DescribeDataSource
-	(*ListDataSources)(nil),               // 2: response.ListDataSources
-	(*DescribeDataSourceKinds)(nil),       // 3: response.DescribeDataSourceKinds
-	(*ListDataSourceConnections)(nil),     // 4: response.ListDataSourceConnections
-	(*PingDataSourceConnection)(nil),      // 5: response.PingDataSourceConnection
-	(*DescribeDataSourceTables)(nil),      // 6: response.DescribeDataSourceTables
-	(*DescribeDataSourceTableSchema)(nil), // 7: response.DescribeDataSourceTableSchema
-	(*pbmodel.DataSource)(nil),            // 8: model.DataSource
-	(*pbmodel.DataSourceKind)(nil),        // 9: model.DataSourceKind
-	(*pbmodel.DataSourceConnection)(nil),  // 10: model.DataSourceConnection
-	(*pbdatasource.TableSchema)(nil),      // 11: datasource.TableSchema
+	(*CreateDataSource)(nil),                       // 0: response.CreateDataSource
+	(*DescribeDataSource)(nil),                     // 1: response.DescribeDataSource
+	(*ListDataSources)(nil),                        // 2: response.ListDataSources
+	(*DescribeDataSourceKinds)(nil),                // 3: response.DescribeDataSourceKinds
+	(*ListDataSourceConnections)(nil),              // 4: response.ListDataSourceConnections
+	(*PingDataSourceConnection)(nil),               // 5: response.PingDataSourceConnection
+	(*DescribeDataSourceTables)(nil),               // 6: response.DescribeDataSourceTables
+	(*DescribeDataSourceTableSchema)(nil),          // 7: response.DescribeDataSourceTableSchema
+	(*DescribeTableSchemaDataServiceApi)(nil),      // 8: response.DescribeTableSchemaDataServiceApi
+	(*pbmodel.DataSource)(nil),                     // 9: model.DataSource
+	(*pbmodel.DataSourceKind)(nil),                 // 10: model.DataSourceKind
+	(*pbmodel.DataSourceConnection)(nil),           // 11: model.DataSourceConnection
+	(*pbdatasource.TableSchema)(nil),               // 12: datasource.TableSchema
+	(*pbdatasource.TableColumnForDataService)(nil), // 13: datasource.TableColumnForDataService
 }
 var file_proto_types_response_datasource_manage_proto_depIdxs = []int32{
-	8,  // 0: response.DescribeDataSource.info:type_name -> model.DataSource
-	8,  // 1: response.ListDataSources.infos:type_name -> model.DataSource
-	9,  // 2: response.DescribeDataSourceKinds.Kinds:type_name -> model.DataSourceKind
-	10, // 3: response.ListDataSourceConnections.infos:type_name -> model.DataSourceConnection
-	10, // 4: response.PingDataSourceConnection.info:type_name -> model.DataSourceConnection
-	11, // 5: response.DescribeDataSourceTableSchema.schema:type_name -> datasource.TableSchema
-	6,  // [6:6] is the sub-list for method output_type
-	6,  // [6:6] is the sub-list for method input_type
-	6,  // [6:6] is the sub-list for extension type_name
-	6,  // [6:6] is the sub-list for extension extendee
-	0,  // [0:6] is the sub-list for field type_name
+	9,  // 0: response.DescribeDataSource.info:type_name -> model.DataSource
+	9,  // 1: response.ListDataSources.infos:type_name -> model.DataSource
+	10, // 2: response.DescribeDataSourceKinds.Kinds:type_name -> model.DataSourceKind
+	11, // 3: response.ListDataSourceConnections.infos:type_name -> model.DataSourceConnection
+	11, // 4: response.PingDataSourceConnection.info:type_name -> model.DataSourceConnection
+	12, // 5: response.DescribeDataSourceTableSchema.schema:type_name -> datasource.TableSchema
+	13, // 6: response.DescribeTableSchemaDataServiceApi.schema:type_name -> datasource.TableColumnForDataService
+	7,  // [7:7] is the sub-list for method output_type
+	7,  // [7:7] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_response_datasource_manage_proto_init() }
@@ -649,6 +705,18 @@ func file_proto_types_response_datasource_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_response_datasource_manage_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DescribeTableSchemaDataServiceApi); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -656,7 +724,7 @@ func file_proto_types_response_datasource_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_response_datasource_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

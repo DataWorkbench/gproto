@@ -40,6 +40,7 @@ type DataSourceManageClient interface {
 	DescribeDataSourceTables(ctx context.Context, in *pbrequest.DescribeDataSourceTables, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTables, error)
 	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
 	DescribeDataSourceTableSchema(ctx context.Context, in *pbrequest.DescribeDataSourceTableSchema, opts ...grpc.CallOption) (*pbresponse.DescribeDataSourceTableSchema, error)
+	DescribeTableSchemaDataServiceApi(ctx context.Context, in *pbrequest.DescribeTableSchemaDataServiceApi, opts ...grpc.CallOption) (*pbresponse.DescribeTableSchemaDataServiceApi, error)
 }
 
 type dataSourceManageClient struct {
@@ -158,6 +159,15 @@ func (c *dataSourceManageClient) DescribeDataSourceTableSchema(ctx context.Conte
 	return out, nil
 }
 
+func (c *dataSourceManageClient) DescribeTableSchemaDataServiceApi(ctx context.Context, in *pbrequest.DescribeTableSchemaDataServiceApi, opts ...grpc.CallOption) (*pbresponse.DescribeTableSchemaDataServiceApi, error) {
+	out := new(pbresponse.DescribeTableSchemaDataServiceApi)
+	err := c.cc.Invoke(ctx, "/spacemanager.DataSourceManage/DescribeTableSchemaDataServiceApi", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataSourceManageServer is the server API for DataSourceManage service.
 // All implementations must embed UnimplementedDataSourceManageServer
 // for forward compatibility
@@ -177,6 +187,7 @@ type DataSourceManageServer interface {
 	DescribeDataSourceTables(context.Context, *pbrequest.DescribeDataSourceTables) (*pbresponse.DescribeDataSourceTables, error)
 	// DescribeDataSourceTableSchema get the table schema of specified table in datasource.
 	DescribeDataSourceTableSchema(context.Context, *pbrequest.DescribeDataSourceTableSchema) (*pbresponse.DescribeDataSourceTableSchema, error)
+	DescribeTableSchemaDataServiceApi(context.Context, *pbrequest.DescribeTableSchemaDataServiceApi) (*pbresponse.DescribeTableSchemaDataServiceApi, error)
 	mustEmbedUnimplementedDataSourceManageServer()
 }
 
@@ -219,6 +230,9 @@ func (UnimplementedDataSourceManageServer) DescribeDataSourceTables(context.Cont
 }
 func (UnimplementedDataSourceManageServer) DescribeDataSourceTableSchema(context.Context, *pbrequest.DescribeDataSourceTableSchema) (*pbresponse.DescribeDataSourceTableSchema, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DescribeDataSourceTableSchema not implemented")
+}
+func (UnimplementedDataSourceManageServer) DescribeTableSchemaDataServiceApi(context.Context, *pbrequest.DescribeTableSchemaDataServiceApi) (*pbresponse.DescribeTableSchemaDataServiceApi, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescribeTableSchemaDataServiceApi not implemented")
 }
 func (UnimplementedDataSourceManageServer) mustEmbedUnimplementedDataSourceManageServer() {}
 
@@ -449,6 +463,24 @@ func _DataSourceManage_DescribeDataSourceTableSchema_Handler(srv interface{}, ct
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataSourceManage_DescribeTableSchemaDataServiceApi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.DescribeTableSchemaDataServiceApi)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataSourceManageServer).DescribeTableSchemaDataServiceApi(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.DataSourceManage/DescribeTableSchemaDataServiceApi",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataSourceManageServer).DescribeTableSchemaDataServiceApi(ctx, req.(*pbrequest.DescribeTableSchemaDataServiceApi))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataSourceManage_ServiceDesc is the grpc.ServiceDesc for DataSourceManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -503,6 +535,10 @@ var DataSourceManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DescribeDataSourceTableSchema",
 			Handler:    _DataSourceManage_DescribeDataSourceTableSchema_Handler,
+		},
+		{
+			MethodName: "DescribeTableSchemaDataServiceApi",
+			Handler:    _DataSourceManage_DescribeTableSchemaDataServiceApi_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

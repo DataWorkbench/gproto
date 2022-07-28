@@ -129,3 +129,11 @@ func (this *DescribeDataSourceTableSchema) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.DescribeTableSchemaDataServiceApi
+func (this *DescribeTableSchemaDataServiceApi) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

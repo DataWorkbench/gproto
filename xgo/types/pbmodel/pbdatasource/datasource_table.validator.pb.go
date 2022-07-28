@@ -35,3 +35,11 @@ func (this *TableColumn) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message datasource.TableColumnForDataService
+func (this *TableColumnForDataService) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

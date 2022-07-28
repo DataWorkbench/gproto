@@ -35,5 +35,7 @@ service DataSourceManage {
 
   // DescribeDataSourceTableSchema get the table schema of specified table in datasource.
   rpc DescribeDataSourceTableSchema(request.DescribeDataSourceTableSchema) returns (response.DescribeDataSourceTableSchema) {}
+
+  rpc DescribeTableSchemaDataServiceApi(request.DescribeTableSchemaDataServiceApi) returns (response.DescribeTableSchemaDataServiceApi) {}
 }
 
