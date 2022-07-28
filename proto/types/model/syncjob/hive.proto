@@ -10,7 +10,6 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBHive";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/baseenum.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
 
@@ -40,27 +39,24 @@ message HiveTarget {
     string partition = 4;
     // partition_type
     // @inject_tag: json:"partition_type" 
-    BaseEnum.PartitionType partition_type = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.PartitionType partition_type = 5;
 
     // tables column
     // @inject_tag: json:"tables_column" 
     string tables_column = 6;
     // write mode
     // @inject_tag: json:"write_mode" 
-    BaseEnum.WriteMode write_mode = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.WriteMode write_mode = 7;
     // file type
     // @inject_tag: json:"file_type" 
-    BaseEnum.FileType file_type = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.FileType file_type = 8;
     // compress type
     // @inject_tag: json:"compress"
-    BaseEnum.CompressType compress = 9 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.CompressType compress = 9;
     // field_delimiter
     // @inject_tag: json:"field_delimiter"
-    string field_delimiter = 10 [
-    (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
-    (validator.field).tags.string = { byte_len_gte: 1 }
-    ];
+    string field_delimiter = 10;
     // encoding
     // @inject_tag: json:"encoding"
-    BaseEnum.Encoding encoding = 11 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.Encoding encoding = 11;
 }

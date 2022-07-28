@@ -79,6 +79,9 @@ message HbaseTarget {
     // hbase scan batch size
     // @inject_tag: json:"scan_batch_size"
     int32 scan_batch_size = 11;
+    // hbase scan batch size
+    // @inject_tag: json:"encoding"
+    BaseEnum.Encoding encoding = 12;
 }
 
 

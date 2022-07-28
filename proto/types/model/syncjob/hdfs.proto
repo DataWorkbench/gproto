@@ -10,7 +10,6 @@ option java_package = "com.dataomnis.gproto.types.pbmodel.pbsyncjob";
 option java_outer_classname = "PBHdfs";
 option java_multiple_files = false;
 
-import "github.com/yu31/protoc-plugin/proto/validator.proto";
 import "proto/types/model/syncjob/column.proto";
 import "proto/types/model/syncjob/baseenum.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
@@ -25,19 +24,16 @@ message HdfsSource {
     string path = 2;
     // file type
     // @inject_tag: json:"file_type"
-    BaseEnum.FileType file_type = 3 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.FileType file_type = 3;
     // filter regex
     // @inject_tag: json:"filter_regex"
     string filter_regex = 4;
     // field_delimiter
     // @inject_tag: json:"field_delimiter"
-    string field_delimiter = 5 [
-    (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
-    (validator.field).tags.string = { byte_len_gte: 1 }
-    ];
+    string field_delimiter = 5;
     // encoding
     // @inject_tag: json:"encoding"
-    BaseEnum.Encoding encoding = 6 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.Encoding encoding = 6;
 
 }
 
@@ -54,20 +50,17 @@ message HdfsTarget {
     string file_name = 3;
     // file type
     // @inject_tag: json:"file_type"
-    BaseEnum.FileType file_type = 4 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.FileType file_type = 4;
     // write mode
     // @inject_tag: json:"write_mode"
-    BaseEnum.WriteMode write_mode = 5 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.WriteMode write_mode = 5 ;
     // field_delimiter
     // @inject_tag: json:"field_delimiter"
-    string field_delimiter = 6 [
-    (validator.field).check_if = { field: "file_type", tags: { enum: { eq: 0 } } },
-    (validator.field).tags.string = { byte_len_gte: 1 }
-    ];
+    string field_delimiter = 6;
     // encoding
     // @inject_tag: json:"encoding"
-    BaseEnum.Encoding encoding = 7 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.Encoding encoding = 7;
     // compress type
     // @inject_tag: json:"compress"
-    BaseEnum.CompressType compress = 8 [ (validator.field).tags.enum = { gte: 0; in_enums: true  } ];
+    BaseEnum.CompressType compress = 8;
 }
