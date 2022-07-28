@@ -438,14 +438,14 @@ func (this *ApiConfig) _xxx_xxx_Validator_Validate_updated() error {
 	return nil
 }
 
-var _xxx_xxx_Validator_ApiConfig_InEnums_Status = map[ApiConfig_Status]bool{0: true, 1: true, 2: true}
+var _xxx_xxx_Validator_ApiConfig_InEnums_Status = map[ApiConfig_Status]bool{0: true, 1: true, 2: true, 3: true, 4: true}
 
 func (this *ApiConfig) _xxx_xxx_Validator_Validate_status() error {
 	if !(this.Status > 0) {
 		return protovalidator.FieldError1("ApiConfig", "the value of field 'status' must be greater than '0'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	if !(_xxx_xxx_Validator_ApiConfig_InEnums_Status[this.Status]) {
-		return protovalidator.FieldError1("ApiConfig", "the value of field 'status' must in enums of '[0 1 2]'", protovalidator.Int32ToString(int32(this.Status)))
+		return protovalidator.FieldError1("ApiConfig", "the value of field 'status' must in enums of '[0 1 2 3 4]'", protovalidator.Int32ToString(int32(this.Status)))
 	}
 	return nil
 }
