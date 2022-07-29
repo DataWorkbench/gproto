@@ -14,19 +14,6 @@ func (this *KafkaSource) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.ConsumerSettings != nil {
-		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
-	return
-}
-
-// Set default value for message model.ConsumerSettings
-func (this *ConsumerSettings) SetDefaults() {
-	if this == nil {
-		return
-	}
 	return
 }
 
@@ -34,11 +21,6 @@ func (this *ConsumerSettings) SetDefaults() {
 func (this *KafkaTarget) SetDefaults() {
 	if this == nil {
 		return
-	}
-	if this.ConsumerSettings != nil {
-		if dt, ok := interface{}(this.ConsumerSettings).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
 	}
 	return
 }

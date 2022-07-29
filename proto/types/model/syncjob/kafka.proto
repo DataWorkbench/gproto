@@ -40,14 +40,7 @@ message KafkaSource {
     string codec = 8;
     // kafka consumer settings
     // @inject_tag: json:"consumer_settings" 
-    ConsumerSettings consumer_settings = 9;
-}
-
-message ConsumerSettings {
-    option (gosql.serialize) = {json: {}};
-    // auto commit position enable
-    // @inject_tag: json:"auto_commit_enable" 
-    string auto_commit_enable = 1;
+    map<string, string> consumer_settings = 9;
 }
 
 message KafkaTarget {
@@ -58,7 +51,7 @@ message KafkaTarget {
     // kafka topic
     // @inject_tag: json:"topic" 
     string topic = 2;
-    // kafka consumer settings
-    // @inject_tag: json:"consumer_settings" 
-    ConsumerSettings consumer_settings = 3;
+    // kafka producer settings
+    // @inject_tag: json:"producer_settings"
+    map<string, string> producer_settings = 3;
 }
