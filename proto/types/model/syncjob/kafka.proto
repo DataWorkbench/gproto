@@ -12,6 +12,7 @@ option java_multiple_files = false;
 
 import "proto/types/model/syncjob/column.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "proto/types/model/syncjob/baseenum.proto";
 
 message KafkaSource {
     option (gosql.serialize) = {json: {}};
@@ -22,7 +23,7 @@ message KafkaSource {
     string topic = 2;
     // mode
     // @inject_tag: json:"mode" 
-    string mode = 3;
+    BaseEnum.ConsumerMode mode = 3;
     // timestamp
     // @inject_tag: json:"timestamp" 
     int64 timestamp = 4;
@@ -33,11 +34,11 @@ message KafkaSource {
     // @inject_tag: json:"group_id" 
     string group_id = 6;
     // encoding
-    // @inject_tag: json:"encoding" 
-    string encoding = 7;
+    // @inject_tag: json:"encoding"
+    BaseEnum.Encoding encoding = 7;
     // codec
     // @inject_tag: json:"codec" 
-    string codec = 8;
+    BaseEnum.CodecMode codec = 8;
     // kafka consumer settings
     // @inject_tag: json:"consumer_settings" 
     map<string, string> consumer_settings = 9;

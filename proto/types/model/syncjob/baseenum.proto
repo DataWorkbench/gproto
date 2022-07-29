@@ -66,4 +66,19 @@ message BaseEnum {
 		empty = 2;
 	}
 
+	enum CodecMode {
+		CodecModeUnset=0;
+		CodecText = 1;
+		CodecJson = 2;
+	}
+
+	enum ConsumerMode {
+		ConsumerModeUnset=0;
+		GroupOffsets = 1;
+		EarliestOffset = 2;
+		LatestOffset = 3;
+		Timestamp = 4;
+		SpecificOffsets = 5;
+	}
+
 }
