@@ -2240,47 +2240,6 @@ public final class PBRequestApiDashboard {
      */
     com.google.protobuf.ByteString
         getSpaceIdBytes();
-
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @return A list containing the methods.
-     */
-    java.util.List<java.lang.String>
-        getMethodsList();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @return The count of methods.
-     */
-    int getMethodsCount();
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @param index The index of the element to return.
-     * @return The methods at the given index.
-     */
-    java.lang.String getMethods(int index);
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the methods at the given index.
-     */
-    com.google.protobuf.ByteString
-        getMethodsBytes(int index);
   }
   /**
    * Protobuf type {@code request.RouteInfo}
@@ -2304,7 +2263,6 @@ public final class PBRequestApiDashboard {
       apiVersionId_ = "";
       proxyUri_ = "";
       spaceId_ = "";
-      methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -2327,7 +2285,6 @@ public final class PBRequestApiDashboard {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2392,15 +2349,6 @@ public final class PBRequestApiDashboard {
               spaceId_ = s;
               break;
             }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                methods_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              methods_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2416,9 +2364,6 @@ public final class PBRequestApiDashboard {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          methods_ = methods_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2850,57 +2795,6 @@ public final class PBRequestApiDashboard {
       }
     }
 
-    public static final int METHODS_FIELD_NUMBER = 10;
-    private com.google.protobuf.LazyStringList methods_;
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @return A list containing the methods.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getMethodsList() {
-      return methods_;
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @return The count of methods.
-     */
-    public int getMethodsCount() {
-      return methods_.size();
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @param index The index of the element to return.
-     * @return The methods at the given index.
-     */
-    public java.lang.String getMethods(int index) {
-      return methods_.get(index);
-    }
-    /**
-     * <pre>
-     * &#64;inject_tag: json:"methods"
-     * </pre>
-     *
-     * <code>repeated string methods = 10;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the methods at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getMethodsBytes(int index) {
-      return methods_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2942,9 +2836,6 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, spaceId_);
       }
-      for (int i = 0; i < methods_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, methods_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -2981,14 +2872,6 @@ public final class PBRequestApiDashboard {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, spaceId_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < methods_.size(); i++) {
-          dataSize += computeStringSizeNoTag(methods_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getMethodsList().size();
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3022,8 +2905,6 @@ public final class PBRequestApiDashboard {
           .equals(other.getProxyUri())) return false;
       if (!getSpaceId()
           .equals(other.getSpaceId())) return false;
-      if (!getMethodsList()
-          .equals(other.getMethodsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3053,10 +2934,6 @@ public final class PBRequestApiDashboard {
       hash = (53 * hash) + getProxyUri().hashCode();
       hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceId().hashCode();
-      if (getMethodsCount() > 0) {
-        hash = (37 * hash) + METHODS_FIELD_NUMBER;
-        hash = (53 * hash) + getMethodsList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3208,8 +3085,6 @@ public final class PBRequestApiDashboard {
 
         spaceId_ = "";
 
-        methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3236,7 +3111,6 @@ public final class PBRequestApiDashboard {
       @java.lang.Override
       public com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo buildPartial() {
         com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo result = new com.dataomnis.gproto.types.pbrequest.PBRequestApiDashboard.RouteInfo(this);
-        int from_bitField0_ = bitField0_;
         result.uri_ = uri_;
         result.id_ = id_;
         result.desc_ = desc_;
@@ -3246,11 +3120,6 @@ public final class PBRequestApiDashboard {
         result.apiVersionId_ = apiVersionId_;
         result.proxyUri_ = proxyUri_;
         result.spaceId_ = spaceId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          methods_ = methods_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.methods_ = methods_;
         onBuilt();
         return result;
       }
@@ -3335,16 +3204,6 @@ public final class PBRequestApiDashboard {
           spaceId_ = other.spaceId_;
           onChanged();
         }
-        if (!other.methods_.isEmpty()) {
-          if (methods_.isEmpty()) {
-            methods_ = other.methods_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureMethodsIsMutable();
-            methods_.addAll(other.methods_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3373,7 +3232,6 @@ public final class PBRequestApiDashboard {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object uri_ = "";
       /**
@@ -4235,152 +4093,6 @@ public final class PBRequestApiDashboard {
   checkByteStringIsUtf8(value);
         
         spaceId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureMethodsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          methods_ = new com.google.protobuf.LazyStringArrayList(methods_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @return A list containing the methods.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getMethodsList() {
-        return methods_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @return The count of methods.
-       */
-      public int getMethodsCount() {
-        return methods_.size();
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param index The index of the element to return.
-       * @return The methods at the given index.
-       */
-      public java.lang.String getMethods(int index) {
-        return methods_.get(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the methods at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getMethodsBytes(int index) {
-        return methods_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param index The index to set the value at.
-       * @param value The methods to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMethods(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMethodsIsMutable();
-        methods_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param value The methods to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMethods(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMethodsIsMutable();
-        methods_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param values The methods to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMethods(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureMethodsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, methods_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMethods() {
-        methods_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * &#64;inject_tag: json:"methods"
-       * </pre>
-       *
-       * <code>repeated string methods = 10;</code>
-       * @param value The bytes of the methods to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMethodsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureMethodsIsMutable();
-        methods_.add(value);
         onChanged();
         return this;
       }
@@ -31607,7 +31319,7 @@ public final class PBRequestApiDashboard {
       "uteInfo\"5\n\013UpdateRoute\022&\n\nroute_info\030\001 \001" +
       "(\0132\022.request.RouteInfo\"8\n\016RepublishRoute" +
       "\022&\n\nroute_info\030\001 \001(\0132\022.request.RouteInfo" +
-      "\"\352\002\n\tRouteInfo\022\035\n\003uri\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
+      "\"\331\002\n\tRouteInfo\022\035\n\003uri\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002" +
       "\000\230\002\200\002\022)\n\002id\030\002 \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010" +
       "\022\006\302\001\003\360\001\024\022\036\n\004desc\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\210\002\200\004\220\002\000" +
       "\022$\n\013upstream_id\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024\022\036" +
@@ -31615,92 +31327,92 @@ public final class PBRequestApiDashboard {
       "rvice_id\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024\022\'\n\016api_v" +
       "ersion_id\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002\024\022#\n\tprox" +
       "y_uri\030\010 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022%\n\010space_i" +
-      "d\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\017\n\007methods\030" +
-      "\n \003(\t\")\n\013DeleteRoute\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022" +
-      "\007\352\001\0048d@\000\"\322\002\n\nListRoutes\022\014\n\004name\030\001 \001(\t\022\013\n" +
-      "\003uri\030\002 \001(\t\0223\n\013curr_status\030\003 \001(\0162\021.model." +
-      "StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022&\n\005limit\030\004 \001(\005B\027" +
-      "\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\005 \001(\005B" +
-      "\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\006 \001(\tB/\342\337\037+\022)\302\001&" +
-      "J\000J\002idJ\004nameJ\013create_timeJ\013update_time\022\017" +
-      "\n\007reverse\030\007 \001(\010\022\032\n\003ids\030\010 \003(\tB\r\342\337\037\t\022\007\352\001\0048" +
-      "d@\000\022\026\n\016api_version_id\030\t \001(\t\022\026\n\016api_servi" +
-      "ce_id\030\n \001(\t\022\020\n\010space_id\030\013 \001(\t\">\n\016CreateU" +
-      "pstream\022,\n\rupstream_info\030\001 \001(\0132\025.request" +
-      ".UpstreamInfo\">\n\016UpdateUpstream\022,\n\rupstr" +
-      "eam_info\030\001 \001(\0132\025.request.UpstreamInfo\"\311\002" +
-      "\n\014UpstreamInfo\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004wks-\022/\n\005nodes\030\002 \003(\0132\023.model.Ups" +
-      "treamNodeB\013\342\337\037\007\022\005\352\001\002@\000\022\036\n\004name\030\003 \001(\tB\020\342\337" +
-      "\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n\004desc\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\210" +
-      "\002\200\004\220\002\000\022.\n\006schema\030\005 \001(\0162\021.model.SchemaTyp" +
-      "eB\013\342\337\037\007\022\005\332\001\002X\001\022%\n\003tls\030\006 \001(\0132\022.model.Upst" +
-      "reamTLSB\004\342\337\037\000\022\037\n\007timeout\030\007 \001(\0132\016.model.T" +
-      "imeout\022)\n\002id\030\010 \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037" +
-      "\010\022\006\302\001\003\360\001\024\";\n\016DeleteUpstream\022)\n\002id\030\001 \001(\tB" +
-      "\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\024\"\230\002\n\rListU" +
-      "pstreams\022\014\n\004name\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242" +
-      "\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013" +
-      "\342\337\037\007\022\005\262\001\002@\000\022@\n\007sort_by\030\004 \001(\tB/\342\337\037+\022)\302\001&J" +
-      "\000J\002idJ\004nameJ\013create_timeJ\013update_time\022\017\n" +
-      "\007reverse\030\005 \001(\010\022\032\n\003ids\030\006 \003(\tB\r\342\337\037\t\022\007\352\001\0048d" +
-      "@\000\022\020\n\010space_id\030\007 \001(\t\0223\n\013curr_status\030\010 \001(" +
-      "\0162\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"{\n\tCre" +
-      "ateSSL\022\032\n\004cert\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003ke" +
-      "y\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037" +
-      "\007\022\005\352\001\0020\000\022\n\n\002id\030\004 \001(\t\022\020\n\010space_id\030\005 \001(\t\"%" +
-      "\n\tDeleteSSL\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\240\002" +
-      "\n\010ListSSLs\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013" +
-      "\n\003sni\030\002 \001(\t\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337" +
-      "\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000" +
-      "\022:\n\007sort_by\030\005 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013crea" +
-      "te_timeJ\013update_time\022\017\n\007reverse\030\006 \001(\010\022\020\n" +
-      "\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t\0223\n\013c" +
-      "urr_status\030\t \001(\0162\021.model.StatusTypeB\013\342\337\037" +
-      "\007\022\005\332\001\002X\001\"\363\001\n\020CreateApiService\022\014\n\004name\030\001 " +
-      "\001(\t\022\036\n\004desc\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\013a" +
-      "uth_key_id\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\010sp" +
-      "ace_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncre" +
-      "ated_by\030\005 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022\034\n\002id\030\006 " +
-      "\001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022\037\n\010pre_path\030\007 \001(\tB" +
-      "\r\342\337\037\t\022\007\302\001\004\230\002\200\001\"0\n\020DeleteApiService\022\034\n\002id" +
-      "\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\"L\n\020UpdateApiSer" +
-      "vice\022\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\014\n\004na" +
-      "me\030\002 \001(\t\022\014\n\004desc\030\003 \001(\t\"\275\002\n\017ListApiServic" +
-      "es\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030" +
-      "\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset" +
-      "\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337" +
-      "\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_time\022" +
-      "\017\n\007reverse\030\005 \001(\010\022\023\n\013auth_key_id\030\006 \001(\t\022\020\n" +
-      "\010space_id\030\007 \001(\t\022\022\n\ncreated_by\030\010 \001(\t\0223\n\013c" +
-      "urr_status\030\t \001(\0162\021.model.StatusTypeB\013\342\337\037" +
-      "\007\022\005\332\001\002X\001\022\014\n\004name\030\n \001(\t\"F\n\016AddSvcReqCount" +
-      "\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(" +
-      "\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n\016GetSvcReqCount\022\030\n\002id\030\001" +
-      " \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"Q\n\023DeleteClusterRoute" +
-      "s\022:\n\005items\030\001 \003(\0132\034.request.ApiServiceAnd" +
-      "RoutesB\r\342\337\037\t\022\007\352\001\0040\0008d\"N\n\023ApiServiceAndRo" +
-      "utes\022\026\n\016api_service_id\030\001 \001(\t\022\037\n\010routeIDs" +
-      "\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"j\n\rCreateAuthKey\022\014" +
-      "\n\004name\030\001 \001(\t\022%\n\010space_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022$\n\ncreated_by\030\003 \001(\tB\020\342\337\037\014\022\n\302" +
-      "\001\007\200\002\000\230\002\200\002\")\n\rDeleteAuthKey\022\030\n\002id\030\001 \001(\tB\014" +
-      "\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rUpdateAuthKey\022\030\n\002id\030\001 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014\n\004name\030\002 \001(\t\"\245\002\n\014ListAu" +
-      "thKeys\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005li" +
-      "mit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006of" +
-      "fset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\t" +
+      "d\030\t \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\")\n\013DeleteRo" +
+      "ute\022\032\n\003ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\"\322\002\n\nList" +
+      "Routes\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\0223\n\013cur" +
+      "r_status\030\003 \001(\0162\021.model.StatusTypeB\013\342\337\037\007\022" +
+      "\005\332\001\002X\001\022&\n\005limit\030\004 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262" +
+      "\001\0040\0008d\022\033\n\006offset\030\005 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007s" +
+      "ort_by\030\006 \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013cre" +
+      "ate_timeJ\013update_time\022\017\n\007reverse\030\007 \001(\010\022\032" +
+      "\n\003ids\030\010 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\026\n\016api_versio" +
+      "n_id\030\t \001(\t\022\026\n\016api_service_id\030\n \001(\t\022\020\n\010sp" +
+      "ace_id\030\013 \001(\t\">\n\016CreateUpstream\022,\n\rupstre" +
+      "am_info\030\001 \001(\0132\025.request.UpstreamInfo\">\n\016" +
+      "UpdateUpstream\022,\n\rupstream_info\030\001 \001(\0132\025." +
+      "request.UpstreamInfo\"\311\002\n\014UpstreamInfo\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022/\n\005" +
+      "nodes\030\002 \003(\0132\023.model.UpstreamNodeB\013\342\337\037\007\022\005" +
+      "\352\001\002@\000\022\036\n\004name\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\036\n" +
+      "\004desc\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\210\002\200\004\220\002\000\022.\n\006schema\030" +
+      "\005 \001(\0162\021.model.SchemaTypeB\013\342\337\037\007\022\005\332\001\002X\001\022%\n" +
+      "\003tls\030\006 \001(\0132\022.model.UpstreamTLSB\004\342\337\037\000\022\037\n\007" +
+      "timeout\030\007 \001(\0132\016.model.Timeout\022)\n\002id\030\010 \001(" +
+      "\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"\000\342\337\037\010\022\006\302\001\003\360\001\024\";\n\016Dele" +
+      "teUpstream\022)\n\002id\030\001 \001(\tB\035\342\337\037\r\n\013\n\002id\022\005\302\001\002\"" +
+      "\000\342\337\037\010\022\006\302\001\003\360\001\024\"\230\002\n\rListUpstreams\022\014\n\004name\030" +
+      "\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001" +
+      "\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022@\n\007so" +
+      "rt_by\030\004 \001(\tB/\342\337\037+\022)\302\001&J\000J\002idJ\004nameJ\013crea" +
+      "te_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022\032\n" +
+      "\003ids\030\006 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\020\n\010space_id\030\007 " +
+      "\001(\t\0223\n\013curr_status\030\010 \001(\0162\021.model.StatusT" +
+      "ypeB\013\342\337\037\007\022\005\332\001\002X\001\"{\n\tCreateSSL\022\032\n\004cert\030\001 " +
+      "\001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\031\n\003key\030\002 \001(\tB\014\342\337\037\010\022\006\302\001" +
+      "\003\200\002\000\022\031\n\004snis\030\003 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\022\n\n\002id\030\004 " +
+      "\001(\t\022\020\n\010space_id\030\005 \001(\t\"%\n\tDeleteSSL\022\030\n\002id" +
+      "\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"\240\002\n\010ListSSLs\022\032\n\003ids" +
+      "\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\013\n\003sni\030\002 \001(\t\022&\n\005li" +
+      "mit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006of" +
+      "fset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\022:\n\007sort_by\030\005 \001(\t" +
       "B)\342\337\037%\022#\302\001 J\000J\002idJ\013create_timeJ\013update_t" +
-      "ime\022\017\n\007reverse\030\005 \001(\010\022\020\n\010space_id\030\006 \001(\t\022\022" +
-      "\n\ncreated_by\030\007 \001(\t\0223\n\013curr_status\030\010 \001(\0162" +
+      "ime\022\017\n\007reverse\030\006 \001(\010\022\020\n\010space_id\030\007 \001(\t\022\022" +
+      "\n\ncreated_by\030\010 \001(\t\0223\n\013curr_status\030\t \001(\0162" +
+      "\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\"\363\001\n\020Crea" +
+      "teApiService\022\014\n\004name\030\001 \001(\t\022\036\n\004desc\030\002 \001(\t" +
+      "B\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\013auth_key_id\030\003 \001(\tB" +
+      "\020\342\337\037\014\022\n\302\001\007\220\002\000\230\002\200\002\022%\n\010space_id\030\004 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncreated_by\030\005 \001(\tB\020\342\337" +
+      "\037\014\022\n\302\001\007\200\002\000\230\002\200\002\022\034\n\002id\030\006 \001(\tB\020\342\337\037\014\022\n\302\001\007\220\002\000" +
+      "\230\002\200\002\022\037\n\010pre_path\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\200\001\"0\n" +
+      "\020DeleteApiService\022\034\n\002id\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
+      "\200\002\000\210\002\200\002\"L\n\020UpdateApiService\022\034\n\002id\030\001 \001(\tB" +
+      "\020\342\337\037\014\022\n\302\001\007\200\002\000\210\002\200\002\022\014\n\004name\030\002 \001(\t\022\014\n\004desc\030" +
+      "\003 \001(\t\"\275\002\n\017ListApiServices\022\032\n\003ids\030\001 \003(\tB\r" +
+      "\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100" +
+      "\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002" +
+      "@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002idJ\013cr" +
+      "eate_timeJ\013update_time\022\017\n\007reverse\030\005 \001(\010\022" +
+      "\023\n\013auth_key_id\030\006 \001(\t\022\020\n\010space_id\030\007 \001(\t\022\022" +
+      "\n\ncreated_by\030\010 \001(\t\0223\n\013curr_status\030\t \001(\0162" +
       "\021.model.StatusTypeB\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030" +
-      "\t \001(\t\"X\n\013BindAuthKey\022!\n\013auth_key_id\030\001 \001(" +
-      "\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&\n\017api_service_ids\030\002 \003(\t" +
-      "B\r\342\337\037\t\022\007\352\001\0040\0008d\"7\n\rUnbindAuthKey\022&\n\017api_" +
-      "service_ids\030\001 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008dBt\n$com." +
-      "dataomnis.gproto.types.pbrequestB\025PBRequ" +
-      "estApiDashboardP\000Z3github.com/DataWorkbe" +
-      "nch/gproto/xgo/types/pbrequestb\006proto3"
+      "\n \001(\t\"F\n\016AddSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\200\002\000\022\032\n\005count\030\002 \001(\005B\013\342\337\037\007\022\005\262\001\0020\000\"*\n" +
+      "\016GetSvcReqCount\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002" +
+      "\000\"Q\n\023DeleteClusterRoutes\022:\n\005items\030\001 \003(\0132" +
+      "\034.request.ApiServiceAndRoutesB\r\342\337\037\t\022\007\352\001\004" +
+      "0\0008d\"N\n\023ApiServiceAndRoutes\022\026\n\016api_servi" +
+      "ce_id\030\001 \001(\t\022\037\n\010routeIDs\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\004" +
+      "0\0008d\"j\n\rCreateAuthKey\022\014\n\004name\030\001 \001(\t\022%\n\010s" +
+      "pace_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022$\n\ncr" +
+      "eated_by\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\200\002\")\n\rDele" +
+      "teAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\"7\n\rU" +
+      "pdateAuthKey\022\030\n\002id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022\014" +
+      "\n\004name\030\002 \001(\t\"\245\002\n\014ListAuthKeys\022\032\n\003ids\030\001 \003" +
+      "(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006" +
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022" +
+      "\005\262\001\002@\000\022:\n\007sort_by\030\004 \001(\tB)\342\337\037%\022#\302\001 J\000J\002id" +
+      "J\013create_timeJ\013update_time\022\017\n\007reverse\030\005 " +
+      "\001(\010\022\020\n\010space_id\030\006 \001(\t\022\022\n\ncreated_by\030\007 \001(" +
+      "\t\0223\n\013curr_status\030\010 \001(\0162\021.model.StatusTyp" +
+      "eB\013\342\337\037\007\022\005\332\001\002X\001\022\014\n\004name\030\t \001(\t\"X\n\013BindAuth" +
+      "Key\022!\n\013auth_key_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\200\002\000\022&" +
+      "\n\017api_service_ids\030\002 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\"7" +
+      "\n\rUnbindAuthKey\022&\n\017api_service_ids\030\001 \003(\t" +
+      "B\r\342\337\037\t\022\007\352\001\0040\0008dBt\n$com.dataomnis.gproto." +
+      "types.pbrequestB\025PBRequestApiDashboardP\000" +
+      "Z3github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -31732,7 +31444,7 @@ public final class PBRequestApiDashboard {
     internal_static_request_RouteInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_RouteInfo_descriptor,
-        new java.lang.String[] { "Uri", "Id", "Desc", "UpstreamId", "Name", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", "Methods", });
+        new java.lang.String[] { "Uri", "Id", "Desc", "UpstreamId", "Name", "ApiServiceId", "ApiVersionId", "ProxyUri", "SpaceId", });
     internal_static_request_DeleteRoute_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_request_DeleteRoute_fieldAccessorTable = new

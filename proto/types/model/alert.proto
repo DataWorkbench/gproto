@@ -185,27 +185,31 @@ message AlertLog {
   // @inject_tag: json:"job_id" gorm:"column:job_id"
   string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
+  // The version if of job.
+  // @inject_tag: json:"version" gorm:"column:version"
+  string version = 4 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+
   // The id of instance. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
   // @inject_tag: json:"instance_id" gorm:"column:instance_id"
-  string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string instance_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // Rule status, 1 => "Deleted", 2 => "enabled".
   // @inject_tag: json:"status" gorm:"column:status;"
-  Status status = 5 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
+  Status status = 6 [ (validator.field).tags.enum = { gt: 0; in_enums: true } ];
 
   // The monitor object, 1 => "StreamJob" 2 => "SyncJob'
   // @inject_tag: json:"monitor_object" gorm:"column:monitor_object;"
-  AlertPolicy.MonitorObject monitor_object = 6 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  AlertPolicy.MonitorObject monitor_object = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // The alert event type, 1 => "StreamInstanceFailed" 2 => "StreamInstanceTimeout" 3 => "SyncInstanceFailed" 4 => "SyncInstanceTimeout"
   // @inject_tag: json:"event_type" gorm:"column:event_type;"
-  EventType event_type = 7 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
+  EventType event_type = 8 [ (validator.field).tags.enum = { gt: 0, in_enums: true } ];
 
   // Timestamp of create time.
   // @inject_tag: json:"created" gorm:"column:created;autoCreateTime;"
-  int64 created = 12 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 created = 9 [ (validator.field).tags.int = { gt: 0 } ];
 
   // Timestamp of update time.
   // @inject_tag: json:"updated" gorm:"column:updated;autoUpdateTime;"
-  int64 updated = 13 [ (validator.field).tags.int = { gt: 0 } ];
+  int64 updated = 10 [ (validator.field).tags.int = { gt: 0 } ];
 }

@@ -343,9 +343,13 @@ message SendAlert {
   // @inject_tag: json:"job_id"
   string job_id = 3 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
+  // The version if of job.
+  // @inject_tag: json:"version"
+  string version = 4 [ (validator.field).tags.string = { byte_len_eq: 16 } ];
+
   // The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
   // @inject_tag: json:"instance_id"
-  string instance_id = 4 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
+  string instance_id = 5 [ (validator.field).tags.string = { byte_len_eq: 20 } ];
 
   // The monitor object , 1 => "StreamJob" 2 => "SyncJob'
   // @inject_tag: json:"monitor_object"

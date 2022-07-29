@@ -14403,7 +14403,7 @@ public final class PBRequestAccount {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14413,7 +14413,7 @@ public final class PBRequestAccount {
         getNfIdsList();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14422,7 +14422,7 @@ public final class PBRequestAccount {
     int getNfIdsCount();
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14432,7 +14432,7 @@ public final class PBRequestAccount {
     java.lang.String getNfIds(int index);
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14441,6 +14441,26 @@ public final class PBRequestAccount {
      */
     com.google.protobuf.ByteString
         getNfIdsBytes(int index);
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    java.lang.String getSearch();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    com.google.protobuf.ByteString
+        getSearchBytes();
   }
   /**
    * Protobuf type {@code request.ListNotifications}
@@ -14457,6 +14477,7 @@ public final class PBRequestAccount {
     private ListNotifications() {
       userId_ = "";
       nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      search_ = "";
     }
 
     @java.lang.Override
@@ -14513,6 +14534,12 @@ public final class PBRequestAccount {
                 mutable_bitField0_ |= 0x00000001;
               }
               nfIds_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              search_ = s;
               break;
             }
             default: {
@@ -14630,7 +14657,7 @@ public final class PBRequestAccount {
     private com.google.protobuf.LazyStringList nfIds_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14642,7 +14669,7 @@ public final class PBRequestAccount {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14653,7 +14680,7 @@ public final class PBRequestAccount {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14665,7 +14692,7 @@ public final class PBRequestAccount {
     }
     /**
      * <pre>
-     * &#64;inject_tag: json:"nf_ids"
+     * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
      * </pre>
      *
      * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -14675,6 +14702,52 @@ public final class PBRequestAccount {
     public com.google.protobuf.ByteString
         getNfIdsBytes(int index) {
       return nfIds_.getByteString(index);
+    }
+
+    public static final int SEARCH_FIELD_NUMBER = 5;
+    private volatile java.lang.Object search_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    @java.lang.Override
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14702,6 +14775,9 @@ public final class PBRequestAccount {
       }
       for (int i = 0; i < nfIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nfIds_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, search_);
       }
       unknownFields.writeTo(output);
     }
@@ -14731,6 +14807,9 @@ public final class PBRequestAccount {
         size += dataSize;
         size += 1 * getNfIdsList().size();
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, search_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14754,6 +14833,8 @@ public final class PBRequestAccount {
           != other.getOffset()) return false;
       if (!getNfIdsList()
           .equals(other.getNfIdsList())) return false;
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14775,6 +14856,8 @@ public final class PBRequestAccount {
         hash = (37 * hash) + NF_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getNfIdsList().hashCode();
       }
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14916,6 +14999,8 @@ public final class PBRequestAccount {
 
         nfIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        search_ = "";
+
         return this;
       }
 
@@ -14951,6 +15036,7 @@ public final class PBRequestAccount {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nfIds_ = nfIds_;
+        result.search_ = search_;
         onBuilt();
         return result;
       }
@@ -15017,6 +15103,10 @@ public final class PBRequestAccount {
             ensureNfIdsIsMutable();
             nfIds_.addAll(other.nfIds_);
           }
+          onChanged();
+        }
+        if (!other.getSearch().isEmpty()) {
+          search_ = other.search_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -15240,7 +15330,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15252,7 +15342,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15263,7 +15353,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15275,7 +15365,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15288,7 +15378,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15308,7 +15398,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15327,7 +15417,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15344,7 +15434,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15358,7 +15448,7 @@ public final class PBRequestAccount {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"nf_ids"
+       * &#64;inject_tag: json:"nf_ids" form:"nf_ids"
        * </pre>
        *
        * <code>repeated string nf_ids = 4 [(.validator.field) = { ... }</code>
@@ -15373,6 +15463,102 @@ public final class PBRequestAccount {
   checkByteStringIsUtf8(value);
         ensureNfIdsIsMutable();
         nfIds_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object search_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The search.
+       */
+      public java.lang.String getSearch() {
+        java.lang.Object ref = search_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          search_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The bytes for search.
+       */
+      public com.google.protobuf.ByteString
+          getSearchBytes() {
+        java.lang.Object ref = search_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          search_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        search_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSearch() {
+        
+        search_ = getDefaultInstance().getSearch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The bytes for search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        search_ = value;
         onChanged();
         return this;
       }
@@ -16172,15 +16358,15 @@ public final class PBRequestAccount {
       "\n\005email\030\004 \001(\t\"b\n\022UpdateNotification\022\032\n\005n" +
       "f_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\014\n\004name\030\002 \001(\t\022\023\n" +
       "\013description\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"%\n\023Del" +
-      "eteNotifications\022\016\n\006nf_ids\030\001 \003(\t\"{\n\021List" +
-      "Notifications\022\017\n\007user_id\030\001 \001(\t\022&\n\005limit\030" +
-      "\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset" +
-      "\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\"2\n" +
-      "\024DescribeNotification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337" +
-      "\037\007\022\005\302\001\002\"\000Bo\n$com.dataomnis.gproto.types." +
-      "pbrequestB\020PBRequestAccountP\000Z3github.co" +
-      "m/DataWorkbench/gproto/xgo/types/pbreque" +
-      "stb\006proto3"
+      "eteNotifications\022\016\n\006nf_ids\030\001 \003(\t\"\213\001\n\021Lis" +
+      "tNotifications\022\017\n\007user_id\030\001 \001(\t\022&\n\005limit" +
+      "\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offse" +
+      "t\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\016" +
+      "\n\006search\030\005 \001(\t\"2\n\024DescribeNotification\022\032" +
+      "\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000Bo\n$com.dataom" +
+      "nis.gproto.types.pbrequestB\020PBRequestAcc" +
+      "ountP\000Z3github.com/DataWorkbench/gproto/" +
+      "xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16295,7 +16481,7 @@ public final class PBRequestAccount {
     internal_static_request_ListNotifications_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListNotifications_descriptor,
-        new java.lang.String[] { "UserId", "Limit", "Offset", "NfIds", });
+        new java.lang.String[] { "UserId", "Limit", "Offset", "NfIds", "Search", });
     internal_static_request_DescribeNotification_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_request_DescribeNotification_fieldAccessorTable = new

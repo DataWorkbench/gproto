@@ -69,25 +69,25 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
-     * @return The hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The table.
      */
-    java.lang.String getHbaseConfig();
+    java.lang.String getTable();
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
-     * @return The bytes for hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getHbaseConfigBytes();
+        getTableBytes();
 
     /**
      * <pre>
@@ -157,32 +157,10 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * hbase hadoopConfig
-     * &#64;inject_tag: json:"hadoopConfig"
-     * </pre>
-     *
-     * <code>string hadoopConfig = 7;</code>
-     * @return The hadoopConfig.
-     */
-    java.lang.String getHadoopConfig();
-    /**
-     * <pre>
-     * hbase hadoopConfig
-     * &#64;inject_tag: json:"hadoopConfig"
-     * </pre>
-     *
-     * <code>string hadoopConfig = 7;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    com.google.protobuf.ByteString
-        getHadoopConfigBytes();
-
-    /**
-     * <pre>
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 8;</code>
+     * <code>string start_row_key = 7;</code>
      * @return The startRowKey.
      */
     java.lang.String getStartRowKey();
@@ -191,7 +169,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 8;</code>
+     * <code>string start_row_key = 7;</code>
      * @return The bytes for startRowKey.
      */
     com.google.protobuf.ByteString
@@ -203,7 +181,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 9;</code>
+     * <code>string end_row_key = 8;</code>
      * @return The endRowKey.
      */
     java.lang.String getEndRowKey();
@@ -213,7 +191,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 9;</code>
+     * <code>string end_row_key = 8;</code>
      * @return The bytes for endRowKey.
      */
     com.google.protobuf.ByteString
@@ -225,32 +203,10 @@ public final class PBHbase {
      * &#64;inject_tag: json:"is_binary_rowkey"
      * </pre>
      *
-     * <code>bool is_binary_rowkey = 10;</code>
+     * <code>bool is_binary_rowkey = 9;</code>
      * @return The isBinaryRowkey.
      */
     boolean getIsBinaryRowkey();
-
-    /**
-     * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
-     * </pre>
-     *
-     * <code>string table = 11;</code>
-     * @return The table.
-     */
-    java.lang.String getTable();
-    /**
-     * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
-     * </pre>
-     *
-     * <code>string table = 11;</code>
-     * @return The bytes for table.
-     */
-    com.google.protobuf.ByteString
-        getTableBytes();
   }
   /**
    * Protobuf type {@code model.HbaseSource}
@@ -266,13 +222,11 @@ public final class PBHbase {
     }
     private HbaseSource() {
       column_ = java.util.Collections.emptyList();
-      hbaseConfig_ = "";
+      table_ = "";
       changeLog_ = "";
       encoding_ = "";
-      hadoopConfig_ = "";
       startRowKey_ = "";
       endRowKey_ = "";
-      table_ = "";
     }
 
     @java.lang.Override
@@ -318,7 +272,7 @@ public final class PBHbase {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hbaseConfig_ = s;
+              table_ = s;
               break;
             }
             case 26: {
@@ -346,30 +300,18 @@ public final class PBHbase {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hadoopConfig_ = s;
+              startRowKey_ = s;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              startRowKey_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               endRowKey_ = s;
               break;
             }
-            case 80: {
+            case 72: {
 
               isBinaryRowkey_ = input.readBool();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              table_ = s;
               break;
             }
             default: {
@@ -472,48 +414,48 @@ public final class PBHbase {
       return column_.get(index);
     }
 
-    public static final int HBASECONFIG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object hbaseConfig_;
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
-     * @return The hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getHbaseConfig() {
-      java.lang.Object ref = hbaseConfig_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hbaseConfig_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * hbaseConfig
-     * &#64;inject_tag: json:"hbaseConfig"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbaseConfig = 2;</code>
-     * @return The bytes for hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHbaseConfigBytes() {
-      java.lang.Object ref = hbaseConfig_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hbaseConfig_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -648,62 +590,14 @@ public final class PBHbase {
       return scanBatchSize_;
     }
 
-    public static final int HADOOPCONFIG_FIELD_NUMBER = 7;
-    private volatile java.lang.Object hadoopConfig_;
-    /**
-     * <pre>
-     * hbase hadoopConfig
-     * &#64;inject_tag: json:"hadoopConfig"
-     * </pre>
-     *
-     * <code>string hadoopConfig = 7;</code>
-     * @return The hadoopConfig.
-     */
-    @java.lang.Override
-    public java.lang.String getHadoopConfig() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        hadoopConfig_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * hbase hadoopConfig
-     * &#64;inject_tag: json:"hadoopConfig"
-     * </pre>
-     *
-     * <code>string hadoopConfig = 7;</code>
-     * @return The bytes for hadoopConfig.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getHadoopConfigBytes() {
-      java.lang.Object ref = hadoopConfig_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hadoopConfig_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int START_ROW_KEY_FIELD_NUMBER = 8;
+    public static final int START_ROW_KEY_FIELD_NUMBER = 7;
     private volatile java.lang.Object startRowKey_;
     /**
      * <pre>
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 8;</code>
+     * <code>string start_row_key = 7;</code>
      * @return The startRowKey.
      */
     @java.lang.Override
@@ -724,7 +618,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 8;</code>
+     * <code>string start_row_key = 7;</code>
      * @return The bytes for startRowKey.
      */
     @java.lang.Override
@@ -742,7 +636,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int END_ROW_KEY_FIELD_NUMBER = 9;
+    public static final int END_ROW_KEY_FIELD_NUMBER = 8;
     private volatile java.lang.Object endRowKey_;
     /**
      * <pre>
@@ -750,7 +644,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 9;</code>
+     * <code>string end_row_key = 8;</code>
      * @return The endRowKey.
      */
     @java.lang.Override
@@ -772,7 +666,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 9;</code>
+     * <code>string end_row_key = 8;</code>
      * @return The bytes for endRowKey.
      */
     @java.lang.Override
@@ -790,7 +684,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int IS_BINARY_ROWKEY_FIELD_NUMBER = 10;
+    public static final int IS_BINARY_ROWKEY_FIELD_NUMBER = 9;
     private boolean isBinaryRowkey_;
     /**
      * <pre>
@@ -798,60 +692,12 @@ public final class PBHbase {
      * &#64;inject_tag: json:"is_binary_rowkey"
      * </pre>
      *
-     * <code>bool is_binary_rowkey = 10;</code>
+     * <code>bool is_binary_rowkey = 9;</code>
      * @return The isBinaryRowkey.
      */
     @java.lang.Override
     public boolean getIsBinaryRowkey() {
       return isBinaryRowkey_;
-    }
-
-    public static final int TABLE_FIELD_NUMBER = 11;
-    private volatile java.lang.Object table_;
-    /**
-     * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
-     * </pre>
-     *
-     * <code>string table = 11;</code>
-     * @return The table.
-     */
-    @java.lang.Override
-    public java.lang.String getTable() {
-      java.lang.Object ref = table_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        table_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
-     * </pre>
-     *
-     * <code>string table = 11;</code>
-     * @return The bytes for table.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableBytes() {
-      java.lang.Object ref = table_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        table_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -871,8 +717,8 @@ public final class PBHbase {
       for (int i = 0; i < column_.size(); i++) {
         output.writeMessage(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hbaseConfig_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, changeLog_);
@@ -886,20 +732,14 @@ public final class PBHbase {
       if (scanBatchSize_ != 0) {
         output.writeInt32(6, scanBatchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, hadoopConfig_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, startRowKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startRowKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, endRowKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endRowKey_);
       }
       if (isBinaryRowkey_ != false) {
-        output.writeBool(10, isBinaryRowkey_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, table_);
+        output.writeBool(9, isBinaryRowkey_);
       }
       unknownFields.writeTo(output);
     }
@@ -914,8 +754,8 @@ public final class PBHbase {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hbaseConfig_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, changeLog_);
@@ -931,21 +771,15 @@ public final class PBHbase {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, scanBatchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hadoopConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, hadoopConfig_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, startRowKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startRowKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, endRowKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endRowKey_);
       }
       if (isBinaryRowkey_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isBinaryRowkey_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, table_);
+          .computeBoolSize(9, isBinaryRowkey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -964,8 +798,8 @@ public final class PBHbase {
 
       if (!getColumnList()
           .equals(other.getColumnList())) return false;
-      if (!getHbaseConfig()
-          .equals(other.getHbaseConfig())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (!getChangeLog()
           .equals(other.getChangeLog())) return false;
       if (!getEncoding()
@@ -974,16 +808,12 @@ public final class PBHbase {
           != other.getScanCacheSize()) return false;
       if (getScanBatchSize()
           != other.getScanBatchSize()) return false;
-      if (!getHadoopConfig()
-          .equals(other.getHadoopConfig())) return false;
       if (!getStartRowKey()
           .equals(other.getStartRowKey())) return false;
       if (!getEndRowKey()
           .equals(other.getEndRowKey())) return false;
       if (getIsBinaryRowkey()
           != other.getIsBinaryRowkey()) return false;
-      if (!getTable()
-          .equals(other.getTable())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -999,8 +829,8 @@ public final class PBHbase {
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
         hash = (53 * hash) + getColumnList().hashCode();
       }
-      hash = (37 * hash) + HBASECONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHbaseConfig().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (37 * hash) + CHANGE_LOG_FIELD_NUMBER;
       hash = (53 * hash) + getChangeLog().hashCode();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
@@ -1009,8 +839,6 @@ public final class PBHbase {
       hash = (53 * hash) + getScanCacheSize();
       hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getScanBatchSize();
-      hash = (37 * hash) + HADOOPCONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHadoopConfig().hashCode();
       hash = (37 * hash) + START_ROW_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getStartRowKey().hashCode();
       hash = (37 * hash) + END_ROW_KEY_FIELD_NUMBER;
@@ -1018,8 +846,6 @@ public final class PBHbase {
       hash = (37 * hash) + IS_BINARY_ROWKEY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBinaryRowkey());
-      hash = (37 * hash) + TABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1160,7 +986,7 @@ public final class PBHbase {
         } else {
           columnBuilder_.clear();
         }
-        hbaseConfig_ = "";
+        table_ = "";
 
         changeLog_ = "";
 
@@ -1170,15 +996,11 @@ public final class PBHbase {
 
         scanBatchSize_ = 0;
 
-        hadoopConfig_ = "";
-
         startRowKey_ = "";
 
         endRowKey_ = "";
 
         isBinaryRowkey_ = false;
-
-        table_ = "";
 
         return this;
       }
@@ -1216,16 +1038,14 @@ public final class PBHbase {
         } else {
           result.column_ = columnBuilder_.build();
         }
-        result.hbaseConfig_ = hbaseConfig_;
+        result.table_ = table_;
         result.changeLog_ = changeLog_;
         result.encoding_ = encoding_;
         result.scanCacheSize_ = scanCacheSize_;
         result.scanBatchSize_ = scanBatchSize_;
-        result.hadoopConfig_ = hadoopConfig_;
         result.startRowKey_ = startRowKey_;
         result.endRowKey_ = endRowKey_;
         result.isBinaryRowkey_ = isBinaryRowkey_;
-        result.table_ = table_;
         onBuilt();
         return result;
       }
@@ -1300,8 +1120,8 @@ public final class PBHbase {
             }
           }
         }
-        if (!other.getHbaseConfig().isEmpty()) {
-          hbaseConfig_ = other.hbaseConfig_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           onChanged();
         }
         if (!other.getChangeLog().isEmpty()) {
@@ -1318,10 +1138,6 @@ public final class PBHbase {
         if (other.getScanBatchSize() != 0) {
           setScanBatchSize(other.getScanBatchSize());
         }
-        if (!other.getHadoopConfig().isEmpty()) {
-          hadoopConfig_ = other.hadoopConfig_;
-          onChanged();
-        }
         if (!other.getStartRowKey().isEmpty()) {
           startRowKey_ = other.startRowKey_;
           onChanged();
@@ -1332,10 +1148,6 @@ public final class PBHbase {
         }
         if (other.getIsBinaryRowkey() != false) {
           setIsBinaryRowkey(other.getIsBinaryRowkey());
-        }
-        if (!other.getTable().isEmpty()) {
-          table_ = other.table_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1697,23 +1509,23 @@ public final class PBHbase {
         return columnBuilder_;
       }
 
-      private java.lang.Object hbaseConfig_ = "";
+      private java.lang.Object table_ = "";
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
-       * @return The hbaseConfig.
+       * <code>string table = 2;</code>
+       * @return The table.
        */
-      public java.lang.String getHbaseConfig() {
-        java.lang.Object ref = hbaseConfig_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hbaseConfig_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1721,21 +1533,21 @@ public final class PBHbase {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
-       * @return The bytes for hbaseConfig.
+       * <code>string table = 2;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getHbaseConfigBytes() {
-        java.lang.Object ref = hbaseConfig_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hbaseConfig_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -1743,57 +1555,57 @@ public final class PBHbase {
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
-       * @param value The hbaseConfig to set.
+       * <code>string table = 2;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setHbaseConfig(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        hbaseConfig_ = value;
+        table_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
+       * <code>string table = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHbaseConfig() {
+      public Builder clearTable() {
         
-        hbaseConfig_ = getDefaultInstance().getHbaseConfig();
+        table_ = getDefaultInstance().getTable();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbaseConfig
-       * &#64;inject_tag: json:"hbaseConfig"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbaseConfig = 2;</code>
-       * @param value The bytes for hbaseConfig to set.
+       * <code>string table = 2;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setHbaseConfigBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        hbaseConfig_ = value;
+        table_ = value;
         onChanged();
         return this;
       }
@@ -2092,114 +1904,13 @@ public final class PBHbase {
         return this;
       }
 
-      private java.lang.Object hadoopConfig_ = "";
-      /**
-       * <pre>
-       * hbase hadoopConfig
-       * &#64;inject_tag: json:"hadoopConfig"
-       * </pre>
-       *
-       * <code>string hadoopConfig = 7;</code>
-       * @return The hadoopConfig.
-       */
-      public java.lang.String getHadoopConfig() {
-        java.lang.Object ref = hadoopConfig_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          hadoopConfig_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hbase hadoopConfig
-       * &#64;inject_tag: json:"hadoopConfig"
-       * </pre>
-       *
-       * <code>string hadoopConfig = 7;</code>
-       * @return The bytes for hadoopConfig.
-       */
-      public com.google.protobuf.ByteString
-          getHadoopConfigBytes() {
-        java.lang.Object ref = hadoopConfig_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          hadoopConfig_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hbase hadoopConfig
-       * &#64;inject_tag: json:"hadoopConfig"
-       * </pre>
-       *
-       * <code>string hadoopConfig = 7;</code>
-       * @param value The hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfig(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        hadoopConfig_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase hadoopConfig
-       * &#64;inject_tag: json:"hadoopConfig"
-       * </pre>
-       *
-       * <code>string hadoopConfig = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHadoopConfig() {
-        
-        hadoopConfig_ = getDefaultInstance().getHadoopConfig();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase hadoopConfig
-       * &#64;inject_tag: json:"hadoopConfig"
-       * </pre>
-       *
-       * <code>string hadoopConfig = 7;</code>
-       * @param value The bytes for hadoopConfig to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHadoopConfigBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        hadoopConfig_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object startRowKey_ = "";
       /**
        * <pre>
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 8;</code>
+       * <code>string start_row_key = 7;</code>
        * @return The startRowKey.
        */
       public java.lang.String getStartRowKey() {
@@ -2219,7 +1930,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 8;</code>
+       * <code>string start_row_key = 7;</code>
        * @return The bytes for startRowKey.
        */
       public com.google.protobuf.ByteString
@@ -2240,7 +1951,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 8;</code>
+       * <code>string start_row_key = 7;</code>
        * @param value The startRowKey to set.
        * @return This builder for chaining.
        */
@@ -2259,7 +1970,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 8;</code>
+       * <code>string start_row_key = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartRowKey() {
@@ -2273,7 +1984,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 8;</code>
+       * <code>string start_row_key = 7;</code>
        * @param value The bytes for startRowKey to set.
        * @return This builder for chaining.
        */
@@ -2296,7 +2007,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 9;</code>
+       * <code>string end_row_key = 8;</code>
        * @return The endRowKey.
        */
       public java.lang.String getEndRowKey() {
@@ -2317,7 +2028,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 9;</code>
+       * <code>string end_row_key = 8;</code>
        * @return The bytes for endRowKey.
        */
       public com.google.protobuf.ByteString
@@ -2339,7 +2050,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 9;</code>
+       * <code>string end_row_key = 8;</code>
        * @param value The endRowKey to set.
        * @return This builder for chaining.
        */
@@ -2359,7 +2070,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 9;</code>
+       * <code>string end_row_key = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndRowKey() {
@@ -2374,7 +2085,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 9;</code>
+       * <code>string end_row_key = 8;</code>
        * @param value The bytes for endRowKey to set.
        * @return This builder for chaining.
        */
@@ -2397,7 +2108,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 10;</code>
+       * <code>bool is_binary_rowkey = 9;</code>
        * @return The isBinaryRowkey.
        */
       @java.lang.Override
@@ -2410,7 +2121,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 10;</code>
+       * <code>bool is_binary_rowkey = 9;</code>
        * @param value The isBinaryRowkey to set.
        * @return This builder for chaining.
        */
@@ -2426,113 +2137,12 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 10;</code>
+       * <code>bool is_binary_rowkey = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsBinaryRowkey() {
         
         isBinaryRowkey_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object table_ = "";
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 11;</code>
-       * @return The table.
-       */
-      public java.lang.String getTable() {
-        java.lang.Object ref = table_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          table_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 11;</code>
-       * @return The bytes for table.
-       */
-      public com.google.protobuf.ByteString
-          getTableBytes() {
-        java.lang.Object ref = table_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          table_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 11;</code>
-       * @param value The table to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        table_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTable() {
-        
-        table_ = getDefaultInstance().getTable();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 11;</code>
-       * @param value The bytes for table to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        table_ = value;
         onChanged();
         return this;
       }
@@ -2639,25 +2249,25 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * hbase Config
-     * &#64;inject_tag: json:"hbase_config"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbase_config = 2;</code>
-     * @return The hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The table.
      */
-    java.lang.String getHbaseConfig();
+    java.lang.String getTable();
     /**
      * <pre>
-     * hbase Config
-     * &#64;inject_tag: json:"hbase_config"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbase_config = 2;</code>
-     * @return The bytes for hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
      */
     com.google.protobuf.ByteString
-        getHbaseConfigBytes();
+        getTableBytes();
 
     /**
      * <pre>
@@ -2803,25 +2413,24 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
+     * hbase scan batch size
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string table = 12;</code>
-     * @return The table.
+     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    java.lang.String getTable();
+    int getEncodingValue();
     /**
      * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
+     * hbase scan batch size
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string table = 12;</code>
-     * @return The bytes for table.
+     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * @return The encoding.
      */
-    com.google.protobuf.ByteString
-        getTableBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
   }
   /**
    * Protobuf type {@code model.HbaseTarget}
@@ -2837,12 +2446,12 @@ public final class PBHbase {
     }
     private HbaseTarget() {
       column_ = java.util.Collections.emptyList();
-      hbaseConfig_ = "";
+      table_ = "";
       nullMode_ = 0;
       changeLog_ = "";
       rowkeyExpress_ = "";
       versionColumnValue_ = "";
-      table_ = "";
+      encoding_ = 0;
     }
 
     @java.lang.Override
@@ -2888,7 +2497,7 @@ public final class PBHbase {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hbaseConfig_ = s;
+              table_ = s;
               break;
             }
             case 24: {
@@ -2940,10 +2549,10 @@ public final class PBHbase {
               scanBatchSize_ = input.readInt32();
               break;
             }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 96: {
+              int rawValue = input.readEnum();
 
-              table_ = s;
+              encoding_ = rawValue;
               break;
             }
             default: {
@@ -3041,48 +2650,48 @@ public final class PBHbase {
       return column_.get(index);
     }
 
-    public static final int HBASE_CONFIG_FIELD_NUMBER = 2;
-    private volatile java.lang.Object hbaseConfig_;
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
     /**
      * <pre>
-     * hbase Config
-     * &#64;inject_tag: json:"hbase_config"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbase_config = 2;</code>
-     * @return The hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The table.
      */
     @java.lang.Override
-    public java.lang.String getHbaseConfig() {
-      java.lang.Object ref = hbaseConfig_;
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hbaseConfig_ = s;
+        table_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * hbase Config
-     * &#64;inject_tag: json:"hbase_config"
+     * hbase table
+     * &#64;inject_tag: json:"table"
      * </pre>
      *
-     * <code>string hbase_config = 2;</code>
-     * @return The bytes for hbaseConfig.
+     * <code>string table = 2;</code>
+     * @return The bytes for table.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHbaseConfigBytes() {
-      java.lang.Object ref = hbaseConfig_;
+        getTableBytes() {
+      java.lang.Object ref = table_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hbaseConfig_ = b;
+        table_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3342,52 +2951,33 @@ public final class PBHbase {
       return scanBatchSize_;
     }
 
-    public static final int TABLE_FIELD_NUMBER = 12;
-    private volatile java.lang.Object table_;
+    public static final int ENCODING_FIELD_NUMBER = 12;
+    private int encoding_;
     /**
      * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
+     * hbase scan batch size
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string table = 12;</code>
-     * @return The table.
+     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    @java.lang.Override
-    public java.lang.String getTable() {
-      java.lang.Object ref = table_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        table_ = s;
-        return s;
-      }
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
     }
     /**
      * <pre>
-     * hbase table
-     * &#64;inject_tag: json:"table"
+     * hbase scan batch size
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string table = 12;</code>
-     * @return The bytes for table.
+     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * @return The encoding.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTableBytes() {
-      java.lang.Object ref = table_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        table_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3407,8 +2997,8 @@ public final class PBHbase {
       for (int i = 0; i < column_.size(); i++) {
         output.writeMessage(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hbaseConfig_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
       }
       if (nullMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.NullModeUnset.getNumber()) {
         output.writeEnum(3, nullMode_);
@@ -3437,8 +3027,8 @@ public final class PBHbase {
       if (scanBatchSize_ != 0) {
         output.writeInt32(11, scanBatchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, table_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        output.writeEnum(12, encoding_);
       }
       unknownFields.writeTo(output);
     }
@@ -3453,8 +3043,8 @@ public final class PBHbase {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, column_.get(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hbaseConfig_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, hbaseConfig_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
       }
       if (nullMode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.NullMode.NullModeUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -3489,8 +3079,9 @@ public final class PBHbase {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, scanBatchSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, table_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(12, encoding_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3509,8 +3100,8 @@ public final class PBHbase {
 
       if (!getColumnList()
           .equals(other.getColumnList())) return false;
-      if (!getHbaseConfig()
-          .equals(other.getHbaseConfig())) return false;
+      if (!getTable()
+          .equals(other.getTable())) return false;
       if (nullMode_ != other.nullMode_) return false;
       if (getWalFlag()
           != other.getWalFlag()) return false;
@@ -3528,8 +3119,7 @@ public final class PBHbase {
           != other.getScanCacheSize()) return false;
       if (getScanBatchSize()
           != other.getScanBatchSize()) return false;
-      if (!getTable()
-          .equals(other.getTable())) return false;
+      if (encoding_ != other.encoding_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3545,8 +3135,8 @@ public final class PBHbase {
         hash = (37 * hash) + COLUMN_FIELD_NUMBER;
         hash = (53 * hash) + getColumnList().hashCode();
       }
-      hash = (37 * hash) + HBASE_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getHbaseConfig().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (37 * hash) + NULL_MODE_FIELD_NUMBER;
       hash = (53 * hash) + nullMode_;
       hash = (37 * hash) + WAL_FLAG_FIELD_NUMBER;
@@ -3566,8 +3156,8 @@ public final class PBHbase {
       hash = (53 * hash) + getScanCacheSize();
       hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getScanBatchSize();
-      hash = (37 * hash) + TABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getTable().hashCode();
+      hash = (37 * hash) + ENCODING_FIELD_NUMBER;
+      hash = (53 * hash) + encoding_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3708,7 +3298,7 @@ public final class PBHbase {
         } else {
           columnBuilder_.clear();
         }
-        hbaseConfig_ = "";
+        table_ = "";
 
         nullMode_ = 0;
 
@@ -3728,7 +3318,7 @@ public final class PBHbase {
 
         scanBatchSize_ = 0;
 
-        table_ = "";
+        encoding_ = 0;
 
         return this;
       }
@@ -3766,7 +3356,7 @@ public final class PBHbase {
         } else {
           result.column_ = columnBuilder_.build();
         }
-        result.hbaseConfig_ = hbaseConfig_;
+        result.table_ = table_;
         result.nullMode_ = nullMode_;
         result.walFlag_ = walFlag_;
         result.writeBufferSize_ = writeBufferSize_;
@@ -3776,7 +3366,7 @@ public final class PBHbase {
         result.versionColumnValue_ = versionColumnValue_;
         result.scanCacheSize_ = scanCacheSize_;
         result.scanBatchSize_ = scanBatchSize_;
-        result.table_ = table_;
+        result.encoding_ = encoding_;
         onBuilt();
         return result;
       }
@@ -3851,8 +3441,8 @@ public final class PBHbase {
             }
           }
         }
-        if (!other.getHbaseConfig().isEmpty()) {
-          hbaseConfig_ = other.hbaseConfig_;
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
           onChanged();
         }
         if (other.nullMode_ != 0) {
@@ -3885,9 +3475,8 @@ public final class PBHbase {
         if (other.getScanBatchSize() != 0) {
           setScanBatchSize(other.getScanBatchSize());
         }
-        if (!other.getTable().isEmpty()) {
-          table_ = other.table_;
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4231,23 +3820,23 @@ public final class PBHbase {
         return columnBuilder_;
       }
 
-      private java.lang.Object hbaseConfig_ = "";
+      private java.lang.Object table_ = "";
       /**
        * <pre>
-       * hbase Config
-       * &#64;inject_tag: json:"hbase_config"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbase_config = 2;</code>
-       * @return The hbaseConfig.
+       * <code>string table = 2;</code>
+       * @return The table.
        */
-      public java.lang.String getHbaseConfig() {
-        java.lang.Object ref = hbaseConfig_;
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hbaseConfig_ = s;
+          table_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4255,21 +3844,21 @@ public final class PBHbase {
       }
       /**
        * <pre>
-       * hbase Config
-       * &#64;inject_tag: json:"hbase_config"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbase_config = 2;</code>
-       * @return The bytes for hbaseConfig.
+       * <code>string table = 2;</code>
+       * @return The bytes for table.
        */
       public com.google.protobuf.ByteString
-          getHbaseConfigBytes() {
-        java.lang.Object ref = hbaseConfig_;
+          getTableBytes() {
+        java.lang.Object ref = table_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hbaseConfig_ = b;
+          table_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4277,57 +3866,57 @@ public final class PBHbase {
       }
       /**
        * <pre>
-       * hbase Config
-       * &#64;inject_tag: json:"hbase_config"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbase_config = 2;</code>
-       * @param value The hbaseConfig to set.
+       * <code>string table = 2;</code>
+       * @param value The table to set.
        * @return This builder for chaining.
        */
-      public Builder setHbaseConfig(
+      public Builder setTable(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        hbaseConfig_ = value;
+        table_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase Config
-       * &#64;inject_tag: json:"hbase_config"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbase_config = 2;</code>
+       * <code>string table = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHbaseConfig() {
+      public Builder clearTable() {
         
-        hbaseConfig_ = getDefaultInstance().getHbaseConfig();
+        table_ = getDefaultInstance().getTable();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase Config
-       * &#64;inject_tag: json:"hbase_config"
+       * hbase table
+       * &#64;inject_tag: json:"table"
        * </pre>
        *
-       * <code>string hbase_config = 2;</code>
-       * @param value The bytes for hbaseConfig to set.
+       * <code>string table = 2;</code>
+       * @param value The bytes for table to set.
        * @return This builder for chaining.
        */
-      public Builder setHbaseConfigBytes(
+      public Builder setTableBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        hbaseConfig_ = value;
+        table_ = value;
         onChanged();
         return this;
       }
@@ -4944,103 +4533,81 @@ public final class PBHbase {
         return this;
       }
 
-      private java.lang.Object table_ = "";
+      private int encoding_ = 0;
       /**
        * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
+       * hbase scan batch size
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string table = 12;</code>
-       * @return The table.
+       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public java.lang.String getTable() {
-        java.lang.Object ref = table_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          table_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
+       * hbase scan batch size
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string table = 12;</code>
-       * @return The bytes for table.
-       */
-      public com.google.protobuf.ByteString
-          getTableBytes() {
-        java.lang.Object ref = table_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          table_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
-       * </pre>
-       *
-       * <code>string table = 12;</code>
-       * @param value The table to set.
+       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setTable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        table_ = value;
+      public Builder setEncodingValue(int value) {
+        
+        encoding_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
+       * hbase scan batch size
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string table = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * hbase scan batch size
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * @param value The encoding to set.
        * @return This builder for chaining.
        */
-      public Builder clearTable() {
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        table_ = getDefaultInstance().getTable();
+        encoding_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * hbase table
-       * &#64;inject_tag: json:"table"
+       * hbase scan batch size
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string table = 12;</code>
-       * @param value The bytes for table to set.
+       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder setTableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder clearEncoding() {
         
-        table_ = value;
+        encoding_ = 0;
         onChanged();
         return this;
       }
@@ -5120,25 +4687,25 @@ public final class PBHbase {
       "\005model\032(proto/types/model/syncjob/baseen" +
       "um.proto\032&proto/types/model/syncjob/colu" +
       "mn.proto\032/github.com/yu31/protoc-plugin/" +
-      "proto/gosql.proto\"\214\002\n\013HbaseSource\022\035\n\006col" +
-      "umn\030\001 \003(\0132\r.model.Column\022\023\n\013hbaseConfig\030" +
-      "\002 \001(\t\022\022\n\nchange_log\030\003 \001(\t\022\020\n\010encoding\030\004 " +
-      "\001(\t\022\027\n\017scan_cache_size\030\005 \001(\005\022\027\n\017scan_bat" +
-      "ch_size\030\006 \001(\005\022\024\n\014hadoopConfig\030\007 \001(\t\022\025\n\rs" +
-      "tart_row_key\030\010 \001(\t\022\023\n\013end_row_key\030\t \001(\t\022" +
-      "\030\n\020is_binary_rowkey\030\n \001(\010\022\r\n\005table\030\013 \001(\t" +
-      ":\006\312\262\004\002\n\000\"\315\002\n\013HbaseTarget\022\035\n\006column\030\001 \003(\013" +
-      "2\r.model.Column\022\024\n\014hbase_config\030\002 \001(\t\022+\n" +
-      "\tnull_mode\030\003 \001(\0162\030.model.BaseEnum.NullMo" +
-      "de\022\020\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_siz" +
-      "e\030\005 \001(\005\022\022\n\nchange_log\030\006 \001(\t\022\026\n\016rowkey_ex" +
-      "press\030\007 \001(\t\022\034\n\024version_column_index\030\010 \001(" +
-      "\005\022\034\n\024version_column_value\030\t \001(\t\022\027\n\017scan_" +
-      "cache_size\030\n \001(\005\022\027\n\017scan_batch_size\030\013 \001(" +
-      "\005\022\r\n\005table\030\014 \001(\t:\006\312\262\004\002\n\000Bv\n,com.dataomni" +
-      "s.gproto.types.pbmodel.pbsyncjobB\007PBHbas" +
-      "eP\000Z;github.com/DataWorkbench/gproto/xgo" +
-      "/types/pbmodel/pbsyncjobb\006proto3"
+      "proto/gosql.proto\"\341\001\n\013HbaseSource\022\035\n\006col" +
+      "umn\030\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \001(\t\022" +
+      "\022\n\nchange_log\030\003 \001(\t\022\020\n\010encoding\030\004 \001(\t\022\027\n" +
+      "\017scan_cache_size\030\005 \001(\005\022\027\n\017scan_batch_siz" +
+      "e\030\006 \001(\005\022\025\n\rstart_row_key\030\007 \001(\t\022\023\n\013end_ro" +
+      "w_key\030\010 \001(\t\022\030\n\020is_binary_rowkey\030\t \001(\010:\006\312" +
+      "\262\004\002\n\000\"\343\002\n\013HbaseTarget\022\035\n\006column\030\001 \003(\0132\r." +
+      "model.Column\022\r\n\005table\030\002 \001(\t\022+\n\tnull_mode" +
+      "\030\003 \001(\0162\030.model.BaseEnum.NullMode\022\020\n\010wal_" +
+      "flag\030\004 \001(\010\022\031\n\021write_buffer_size\030\005 \001(\005\022\022\n" +
+      "\nchange_log\030\006 \001(\t\022\026\n\016rowkey_express\030\007 \001(" +
+      "\t\022\034\n\024version_column_index\030\010 \001(\005\022\034\n\024versi" +
+      "on_column_value\030\t \001(\t\022\027\n\017scan_cache_size" +
+      "\030\n \001(\005\022\027\n\017scan_batch_size\030\013 \001(\005\022*\n\010encod" +
+      "ing\030\014 \001(\0162\030.model.BaseEnum.Encoding:\006\312\262\004" +
+      "\002\n\000Bv\n,com.dataomnis.gproto.types.pbmode" +
+      "l.pbsyncjobB\007PBHbaseP\000Z;github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbmodel/pbsync" +
+      "jobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5152,13 +4719,13 @@ public final class PBHbase {
     internal_static_model_HbaseSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseSource_descriptor,
-        new java.lang.String[] { "Column", "HbaseConfig", "ChangeLog", "Encoding", "ScanCacheSize", "ScanBatchSize", "HadoopConfig", "StartRowKey", "EndRowKey", "IsBinaryRowkey", "Table", });
+        new java.lang.String[] { "Column", "Table", "ChangeLog", "Encoding", "ScanCacheSize", "ScanBatchSize", "StartRowKey", "EndRowKey", "IsBinaryRowkey", });
     internal_static_model_HbaseTarget_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_HbaseTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseTarget_descriptor,
-        new java.lang.String[] { "Column", "HbaseConfig", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "ScanCacheSize", "ScanBatchSize", "Table", });
+        new java.lang.String[] { "Column", "Table", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "ScanCacheSize", "ScanBatchSize", "Encoding", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
