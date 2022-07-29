@@ -936,7 +936,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
      * @return The enum numeric value on the wire for partitionType.
      */
     int getPartitionTypeValue();
@@ -946,7 +946,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
      * @return The partitionType.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType getPartitionType();
@@ -979,7 +979,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
      * @return The enum numeric value on the wire for writeMode.
      */
     int getWriteModeValue();
@@ -989,7 +989,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
      * @return The writeMode.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode();
@@ -1000,7 +1000,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"file_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.FileType file_type = 8;</code>
      * @return The enum numeric value on the wire for fileType.
      */
     int getFileTypeValue();
@@ -1010,7 +1010,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"file_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.FileType file_type = 8;</code>
      * @return The fileType.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType();
@@ -1021,7 +1021,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.CompressType compress = 9;</code>
      * @return The enum numeric value on the wire for compress.
      */
     int getCompressValue();
@@ -1031,7 +1031,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.CompressType compress = 9;</code>
      * @return The compress.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress();
@@ -1042,7 +1042,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * <code>string field_delimiter = 10;</code>
      * @return The fieldDelimiter.
      */
     java.lang.String getFieldDelimiter();
@@ -1052,7 +1052,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * <code>string field_delimiter = 10;</code>
      * @return The bytes for fieldDelimiter.
      */
     com.google.protobuf.ByteString
@@ -1064,7 +1064,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.Encoding encoding = 11;</code>
      * @return The enum numeric value on the wire for encoding.
      */
     int getEncodingValue();
@@ -1074,7 +1074,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.Encoding encoding = 11;</code>
      * @return The encoding.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
@@ -1423,7 +1423,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
      * @return The enum numeric value on the wire for partitionType.
      */
     @java.lang.Override public int getPartitionTypeValue() {
@@ -1435,7 +1435,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"partition_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
      * @return The partitionType.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.PartitionType getPartitionType() {
@@ -1500,7 +1500,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
      * @return The enum numeric value on the wire for writeMode.
      */
     @java.lang.Override public int getWriteModeValue() {
@@ -1512,7 +1512,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"write_mode" 
      * </pre>
      *
-     * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
      * @return The writeMode.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.WriteMode getWriteMode() {
@@ -1529,7 +1529,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"file_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.FileType file_type = 8;</code>
      * @return The enum numeric value on the wire for fileType.
      */
     @java.lang.Override public int getFileTypeValue() {
@@ -1541,7 +1541,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"file_type" 
      * </pre>
      *
-     * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.FileType file_type = 8;</code>
      * @return The fileType.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.FileType getFileType() {
@@ -1558,7 +1558,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.CompressType compress = 9;</code>
      * @return The enum numeric value on the wire for compress.
      */
     @java.lang.Override public int getCompressValue() {
@@ -1570,7 +1570,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"compress"
      * </pre>
      *
-     * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.CompressType compress = 9;</code>
      * @return The compress.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CompressType getCompress() {
@@ -1587,7 +1587,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * <code>string field_delimiter = 10;</code>
      * @return The fieldDelimiter.
      */
     @java.lang.Override
@@ -1609,7 +1609,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"field_delimiter"
      * </pre>
      *
-     * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+     * <code>string field_delimiter = 10;</code>
      * @return The bytes for fieldDelimiter.
      */
     @java.lang.Override
@@ -1635,7 +1635,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.Encoding encoding = 11;</code>
      * @return The enum numeric value on the wire for encoding.
      */
     @java.lang.Override public int getEncodingValue() {
@@ -1647,7 +1647,7 @@ public final class PBHive {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+     * <code>.model.BaseEnum.Encoding encoding = 11;</code>
      * @return The encoding.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
@@ -2749,7 +2749,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
        * @return The enum numeric value on the wire for partitionType.
        */
       @java.lang.Override public int getPartitionTypeValue() {
@@ -2761,7 +2761,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
        * @param value The enum numeric value on the wire for partitionType to set.
        * @return This builder for chaining.
        */
@@ -2777,7 +2777,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
        * @return The partitionType.
        */
       @java.lang.Override
@@ -2792,7 +2792,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
        * @param value The partitionType to set.
        * @return This builder for chaining.
        */
@@ -2811,7 +2811,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"partition_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.PartitionType partition_type = 5 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.PartitionType partition_type = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPartitionType() {
@@ -2929,7 +2929,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
        * @return The enum numeric value on the wire for writeMode.
        */
       @java.lang.Override public int getWriteModeValue() {
@@ -2941,7 +2941,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
        * @param value The enum numeric value on the wire for writeMode to set.
        * @return This builder for chaining.
        */
@@ -2957,7 +2957,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
        * @return The writeMode.
        */
       @java.lang.Override
@@ -2972,7 +2972,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
        * @param value The writeMode to set.
        * @return This builder for chaining.
        */
@@ -2991,7 +2991,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"write_mode" 
        * </pre>
        *
-       * <code>.model.BaseEnum.WriteMode write_mode = 7 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.WriteMode write_mode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteMode() {
@@ -3008,7 +3008,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.FileType file_type = 8;</code>
        * @return The enum numeric value on the wire for fileType.
        */
       @java.lang.Override public int getFileTypeValue() {
@@ -3020,7 +3020,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.FileType file_type = 8;</code>
        * @param value The enum numeric value on the wire for fileType to set.
        * @return This builder for chaining.
        */
@@ -3036,7 +3036,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.FileType file_type = 8;</code>
        * @return The fileType.
        */
       @java.lang.Override
@@ -3051,7 +3051,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.FileType file_type = 8;</code>
        * @param value The fileType to set.
        * @return This builder for chaining.
        */
@@ -3070,7 +3070,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"file_type" 
        * </pre>
        *
-       * <code>.model.BaseEnum.FileType file_type = 8 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.FileType file_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFileType() {
@@ -3087,7 +3087,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.CompressType compress = 9;</code>
        * @return The enum numeric value on the wire for compress.
        */
       @java.lang.Override public int getCompressValue() {
@@ -3099,7 +3099,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.CompressType compress = 9;</code>
        * @param value The enum numeric value on the wire for compress to set.
        * @return This builder for chaining.
        */
@@ -3115,7 +3115,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.CompressType compress = 9;</code>
        * @return The compress.
        */
       @java.lang.Override
@@ -3130,7 +3130,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.CompressType compress = 9;</code>
        * @param value The compress to set.
        * @return This builder for chaining.
        */
@@ -3149,7 +3149,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"compress"
        * </pre>
        *
-       * <code>.model.BaseEnum.CompressType compress = 9 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.CompressType compress = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompress() {
@@ -3166,7 +3166,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+       * <code>string field_delimiter = 10;</code>
        * @return The fieldDelimiter.
        */
       public java.lang.String getFieldDelimiter() {
@@ -3187,7 +3187,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+       * <code>string field_delimiter = 10;</code>
        * @return The bytes for fieldDelimiter.
        */
       public com.google.protobuf.ByteString
@@ -3209,7 +3209,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+       * <code>string field_delimiter = 10;</code>
        * @param value The fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -3229,7 +3229,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+       * <code>string field_delimiter = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldDelimiter() {
@@ -3244,7 +3244,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"field_delimiter"
        * </pre>
        *
-       * <code>string field_delimiter = 10 [(.validator.field) = { ... }</code>
+       * <code>string field_delimiter = 10;</code>
        * @param value The bytes for fieldDelimiter to set.
        * @return This builder for chaining.
        */
@@ -3267,7 +3267,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.Encoding encoding = 11;</code>
        * @return The enum numeric value on the wire for encoding.
        */
       @java.lang.Override public int getEncodingValue() {
@@ -3279,7 +3279,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.Encoding encoding = 11;</code>
        * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
@@ -3295,7 +3295,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.Encoding encoding = 11;</code>
        * @return The encoding.
        */
       @java.lang.Override
@@ -3310,7 +3310,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.Encoding encoding = 11;</code>
        * @param value The encoding to set.
        * @return This builder for chaining.
        */
@@ -3329,7 +3329,7 @@ public final class PBHive {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 11 [(.validator.field) = { ... }</code>
+       * <code>.model.BaseEnum.Encoding encoding = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
@@ -3411,32 +3411,27 @@ public final class PBHive {
   static {
     java.lang.String[] descriptorData = {
       "\n$proto/types/model/syncjob/hive.proto\022\005" +
-      "model\0323github.com/yu31/protoc-plugin/pro" +
-      "to/validator.proto\032(proto/types/model/sy" +
-      "ncjob/baseenum.proto\032/github.com/yu31/pr" +
-      "otoc-plugin/proto/gosql.proto\"/\n\nHiveCol" +
-      "umn\022\013\n\003key\030\001 \001(\t\022\014\n\004type\030\002 \001(\t:\006\312\262\004\002\n\000\"\200" +
-      "\004\n\nHiveTarget\022!\n\006column\030\001 \003(\0132\021.model.Hi" +
-      "veColumn\022\r\n\005table\030\002 \001(\t\022\025\n\ruse_partition" +
-      "\030\003 \001(\010\022\021\n\tpartition\030\004 \001(\t\022D\n\016partition_t" +
-      "ype\030\005 \001(\0162\035.model.BaseEnum.PartitionType" +
-      "B\r\342\337\037\t\022\007\332\001\004@\000X\001\022\025\n\rtables_column\030\006 \001(\t\022<" +
-      "\n\nwrite_mode\030\007 \001(\0162\031.model.BaseEnum.Writ" +
-      "eModeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022:\n\tfile_type\030\010 \001(\0162" +
-      "\030.model.BaseEnum.FileTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001" +
-      "\022=\n\010compress\030\t \001(\0162\034.model.BaseEnum.Comp" +
-      "ressTypeB\r\342\337\037\t\022\007\332\001\004@\000X\001\022=\n\017field_delimit" +
-      "er\030\n \001(\tB$\342\337\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006" +
-      "\302\001\003\220\002\001\0229\n\010encoding\030\013 \001(\0162\030.model.BaseEnu" +
-      "m.EncodingB\r\342\337\037\t\022\007\332\001\004@\000X\001:\006\312\262\004\002\n\000Bu\n,com" +
-      ".dataomnis.gproto.types.pbmodel.pbsyncjo" +
-      "bB\006PBHiveP\000Z;github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbmodel/pbsyncjobb\006proto3"
+      "model\032(proto/types/model/syncjob/baseenu" +
+      "m.proto\032/github.com/yu31/protoc-plugin/p" +
+      "roto/gosql.proto\"/\n\nHiveColumn\022\013\n\003key\030\001 " +
+      "\001(\t\022\014\n\004type\030\002 \001(\t:\006\312\262\004\002\n\000\"\217\003\n\nHiveTarget" +
+      "\022!\n\006column\030\001 \003(\0132\021.model.HiveColumn\022\r\n\005t" +
+      "able\030\002 \001(\t\022\025\n\ruse_partition\030\003 \001(\010\022\021\n\tpar" +
+      "tition\030\004 \001(\t\0225\n\016partition_type\030\005 \001(\0162\035.m" +
+      "odel.BaseEnum.PartitionType\022\025\n\rtables_co" +
+      "lumn\030\006 \001(\t\022-\n\nwrite_mode\030\007 \001(\0162\031.model.B" +
+      "aseEnum.WriteMode\022+\n\tfile_type\030\010 \001(\0162\030.m" +
+      "odel.BaseEnum.FileType\022.\n\010compress\030\t \001(\016" +
+      "2\034.model.BaseEnum.CompressType\022\027\n\017field_" +
+      "delimiter\030\n \001(\t\022*\n\010encoding\030\013 \001(\0162\030.mode" +
+      "l.BaseEnum.Encoding:\006\312\262\004\002\n\000Bu\n,com.datao" +
+      "mnis.gproto.types.pbmodel.pbsyncjobB\006PBH" +
+      "iveP\000Z;github.com/DataWorkbench/gproto/x" +
+      "go/types/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor(),
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
         });
@@ -3455,10 +3450,8 @@ public final class PBHive {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
-    registry.add(io.github.yu31.protoc.pb.pbvalidator.PBValidator.field);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    io.github.yu31.protoc.pb.pbvalidator.PBValidator.getDescriptor();
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
   }

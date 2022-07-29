@@ -19157,11 +19157,33 @@ public final class PBRequestAlertManage {
 
     /**
      * <pre>
+     * The version if of job.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    java.lang.String getVersion();
+    /**
+     * <pre>
+     * The version if of job.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <pre>
      * The id of monitor object. StreamInstance(sti-xxxxxxxxxxxxxxxx) or SyncInstance(syi-xxxxxxxxxxxxxxxx).
      * &#64;inject_tag: json:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
      * @return The instanceId.
      */
     java.lang.String getInstanceId();
@@ -19171,7 +19193,7 @@ public final class PBRequestAlertManage {
      * &#64;inject_tag: json:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for instanceId.
      */
     com.google.protobuf.ByteString
@@ -19296,6 +19318,7 @@ public final class PBRequestAlertManage {
       spaceId_ = "";
       alertId_ = "";
       jobId_ = "";
+      version_ = "";
       instanceId_ = "";
       monitorObject_ = 0;
       eventType_ = 0;
@@ -19353,6 +19376,12 @@ public final class PBRequestAlertManage {
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               instanceId_ = s;
@@ -19564,7 +19593,55 @@ public final class PBRequestAlertManage {
       }
     }
 
-    public static final int INSTANCE_ID_FIELD_NUMBER = 4;
+    public static final int VERSION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object version_;
+    /**
+     * <pre>
+     * The version if of job.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The version if of job.
+     * &#64;inject_tag: json:"version"
+     * </pre>
+     *
+     * <code>string version = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for version.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INSTANCE_ID_FIELD_NUMBER = 5;
     private volatile java.lang.Object instanceId_;
     /**
      * <pre>
@@ -19572,7 +19649,7 @@ public final class PBRequestAlertManage {
      * &#64;inject_tag: json:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
      * @return The instanceId.
      */
     @java.lang.Override
@@ -19594,7 +19671,7 @@ public final class PBRequestAlertManage {
      * &#64;inject_tag: json:"instance_id"
      * </pre>
      *
-     * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+     * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
      * @return The bytes for instanceId.
      */
     @java.lang.Override
@@ -19790,8 +19867,11 @@ public final class PBRequestAlertManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, version_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, instanceId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, instanceId_);
       }
       if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
         output.writeEnum(6, monitorObject_);
@@ -19823,8 +19903,11 @@ public final class PBRequestAlertManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, version_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, instanceId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, instanceId_);
       }
       if (monitorObject_ != com.dataomnis.gproto.types.pbmodel.PBModelAlert.AlertPolicy.MonitorObject.ObjectUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -19866,6 +19949,8 @@ public final class PBRequestAlertManage {
           .equals(other.getAlertId())) return false;
       if (!getJobId()
           .equals(other.getJobId())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
       if (!getInstanceId()
           .equals(other.getInstanceId())) return false;
       if (monitorObject_ != other.monitorObject_) return false;
@@ -19891,6 +19976,8 @@ public final class PBRequestAlertManage {
       hash = (53 * hash) + getAlertId().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
       hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceId().hashCode();
       hash = (37 * hash) + MONITOR_OBJECT_FIELD_NUMBER;
@@ -20042,6 +20129,8 @@ public final class PBRequestAlertManage {
 
         jobId_ = "";
 
+        version_ = "";
+
         instanceId_ = "";
 
         monitorObject_ = 0;
@@ -20082,6 +20171,7 @@ public final class PBRequestAlertManage {
         result.spaceId_ = spaceId_;
         result.alertId_ = alertId_;
         result.jobId_ = jobId_;
+        result.version_ = version_;
         result.instanceId_ = instanceId_;
         result.monitorObject_ = monitorObject_;
         result.eventType_ = eventType_;
@@ -20149,6 +20239,10 @@ public final class PBRequestAlertManage {
         }
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
+          onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
           onChanged();
         }
         if (!other.getInstanceId().isEmpty()) {
@@ -20508,6 +20602,107 @@ public final class PBRequestAlertManage {
         return this;
       }
 
+      private java.lang.Object version_ = "";
+      /**
+       * <pre>
+       * The version if of job.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
+       * @return The version.
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version if of job.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for version.
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The version if of job.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version if of job.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The version if of job.
+       * &#64;inject_tag: json:"version"
+       * </pre>
+       *
+       * <code>string version = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object instanceId_ = "";
       /**
        * <pre>
@@ -20515,7 +20710,7 @@ public final class PBRequestAlertManage {
        * &#64;inject_tag: json:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
        * @return The instanceId.
        */
       public java.lang.String getInstanceId() {
@@ -20536,7 +20731,7 @@ public final class PBRequestAlertManage {
        * &#64;inject_tag: json:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
        * @return The bytes for instanceId.
        */
       public com.google.protobuf.ByteString
@@ -20558,7 +20753,7 @@ public final class PBRequestAlertManage {
        * &#64;inject_tag: json:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
        * @param value The instanceId to set.
        * @return This builder for chaining.
        */
@@ -20578,7 +20773,7 @@ public final class PBRequestAlertManage {
        * &#64;inject_tag: json:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
       public Builder clearInstanceId() {
@@ -20593,7 +20788,7 @@ public final class PBRequestAlertManage {
        * &#64;inject_tag: json:"instance_id"
        * </pre>
        *
-       * <code>string instance_id = 4 [(.validator.field) = { ... }</code>
+       * <code>string instance_id = 5 [(.validator.field) = { ... }</code>
        * @param value The bytes for instanceId to set.
        * @return This builder for chaining.
        */
@@ -21226,19 +21421,19 @@ public final class PBRequestAlertManage {
       "_object\030\t \001(\0162 .model.AlertPolicy.Monito" +
       "rObjectB\013\342\337\037\007\022\005\332\001\002X\001\022:\n\nevent_type\030\n \001(\016" +
       "2\031.model.AlertLog.EventTypeB\013\342\337\037\007\022\005\332\001\002X\001" +
-      "\"\344\002\n\tSendAlert\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\"\203\003\n\tSendAlert\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
       "\302\001\n\360\001\024\312\002\004wks-\022%\n\010alert_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
       "\001\n\360\001\024\312\002\004alt-\022\034\n\006job_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
-      "\001\024\022!\n\013instance_id\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022G\n" +
-      "\016monitor_object\030\006 \001(\0162 .model.AlertPolic" +
-      "y.MonitorObjectB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_" +
-      "type\030\007 \001(\0162\031.model.AlertLog.EventTypeB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\032\n\007message\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000" +
-      "\022%\n\020notification_ids\030\t \003(\tB\013\342\337\037\007\022\005\352\001\0028dB" +
-      "s\n$com.dataomnis.gproto.types.pbrequestB" +
-      "\024PBRequestAlertManageP\000Z3github.com/Data" +
-      "Workbench/gproto/xgo/types/pbrequestb\006pr" +
-      "oto3"
+      "\001\024\022\035\n\007version\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022!\n\013ins" +
+      "tance_id\030\005 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\024\022G\n\016monitor_" +
+      "object\030\006 \001(\0162 .model.AlertPolicy.Monitor" +
+      "ObjectB\r\342\337\037\t\022\007\332\001\0040\000X\001\022<\n\nevent_type\030\007 \001(" +
+      "\0162\031.model.AlertLog.EventTypeB\r\342\337\037\t\022\007\332\001\0040" +
+      "\000X\001\022\032\n\007message\030\010 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\020notif" +
+      "ication_ids\030\t \003(\tB\013\342\337\037\007\022\005\352\001\0028dBs\n$com.da" +
+      "taomnis.gproto.types.pbrequestB\024PBReques" +
+      "tAlertManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21336,7 +21531,7 @@ public final class PBRequestAlertManage {
     internal_static_request_SendAlert_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_SendAlert_descriptor,
-        new java.lang.String[] { "SpaceId", "AlertId", "JobId", "InstanceId", "MonitorObject", "EventType", "Message", "NotificationIds", });
+        new java.lang.String[] { "SpaceId", "AlertId", "JobId", "Version", "InstanceId", "MonitorObject", "EventType", "Message", "NotificationIds", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbdefaults.PBDefaults.field);

@@ -902,6 +902,13 @@ func (this *SendAlert) _xxx_xxx_Validator_Validate_job_id() error {
 	return nil
 }
 
+func (this *SendAlert) _xxx_xxx_Validator_Validate_version() error {
+	if !(len(this.Version) == 16) {
+		return protovalidator.FieldError1("SendAlert", "the byte length of field 'version' must be equal to '16'", protovalidator.StringByteLenToString(this.Version))
+	}
+	return nil
+}
+
 func (this *SendAlert) _xxx_xxx_Validator_Validate_instance_id() error {
 	if !(len(this.InstanceId) == 20) {
 		return protovalidator.FieldError1("SendAlert", "the byte length of field 'instance_id' must be equal to '20'", protovalidator.StringByteLenToString(this.InstanceId))
@@ -956,6 +963,9 @@ func (this *SendAlert) Validate() error {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_version(); err != nil {
 		return err
 	}
 	if err := this._xxx_xxx_Validator_Validate_instance_id(); err != nil {

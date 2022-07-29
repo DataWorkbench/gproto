@@ -9569,6 +9569,2144 @@ public final class PBRequestDataServiceManage {
 
   }
 
+  public interface UpdateApiGroupOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpdateApiGroup)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    java.lang.String getGroupId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    com.google.protobuf.ByteString
+        getGroupIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+     * @return The groupPath.
+     */
+    java.lang.String getGroupPath();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupPath.
+     */
+    com.google.protobuf.ByteString
+        getGroupPathBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    java.lang.String getDesc();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    com.google.protobuf.ByteString
+        getDescBytes();
+  }
+  /**
+   * Protobuf type {@code request.UpdateApiGroup}
+   */
+  public static final class UpdateApiGroup extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.UpdateApiGroup)
+      UpdateApiGroupOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateApiGroup.newBuilder() to construct.
+    private UpdateApiGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateApiGroup() {
+      spaceId_ = "";
+      groupId_ = "";
+      name_ = "";
+      groupPath_ = "";
+      desc_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateApiGroup();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateApiGroup(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupPath_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              desc_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiGroup_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiGroup_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object groupId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupId() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupIdBytes() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_PATH_FIELD_NUMBER = 4;
+    private volatile java.lang.Object groupPath_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+     * @return The groupPath.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupPath() {
+      java.lang.Object ref = groupPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_path"
+     * </pre>
+     *
+     * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupPathBytes() {
+      java.lang.Object ref = groupPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESC_FIELD_NUMBER = 5;
+    private volatile java.lang.Object desc_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public java.lang.String getDesc() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"desc"
+     * </pre>
+     *
+     * <code>string desc = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for desc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDescBytes() {
+      java.lang.Object ref = desc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        desc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, groupPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, desc_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, groupPath_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(desc_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, desc_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getGroupId()
+          .equals(other.getGroupId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getGroupPath()
+          .equals(other.getGroupPath())) return false;
+      if (!getDesc()
+          .equals(other.getDesc())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + GROUP_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupPath().hashCode();
+      hash = (37 * hash) + DESC_FIELD_NUMBER;
+      hash = (53 * hash) + getDesc().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.UpdateApiGroup}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.UpdateApiGroup)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroupOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiGroup_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiGroup_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        groupId_ = "";
+
+        name_ = "";
+
+        groupPath_ = "";
+
+        desc_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiGroup_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup(this);
+        result.spaceId_ = spaceId_;
+        result.groupId_ = groupId_;
+        result.name_ = name_;
+        result.groupPath_ = groupPath_;
+        result.desc_ = desc_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getGroupId().isEmpty()) {
+          groupId_ = other.groupId_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getGroupPath().isEmpty()) {
+          groupPath_ = other.groupPath_;
+          onChanged();
+        }
+        if (!other.getDesc().isEmpty()) {
+          desc_ = other.desc_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return The groupId.
+       */
+      public java.lang.String getGroupId() {
+        java.lang.Object ref = groupId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for groupId.
+       */
+      public com.google.protobuf.ByteString
+          getGroupIdBytes() {
+        java.lang.Object ref = groupId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = getDefaultInstance().getGroupId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupPath_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+       * @return The groupPath.
+       */
+      public java.lang.String getGroupPath() {
+        java.lang.Object ref = groupPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for groupPath.
+       */
+      public com.google.protobuf.ByteString
+          getGroupPathBytes() {
+        java.lang.Object ref = groupPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+       * @param value The groupPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupPath() {
+        
+        groupPath_ = getDefaultInstance().getGroupPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_path"
+       * </pre>
+       *
+       * <code>string group_path = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for groupPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object desc_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The desc.
+       */
+      public java.lang.String getDesc() {
+        java.lang.Object ref = desc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          desc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for desc.
+       */
+      public com.google.protobuf.ByteString
+          getDescBytes() {
+        java.lang.Object ref = desc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          desc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDesc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDesc() {
+        
+        desc_ = getDefaultInstance().getDesc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"desc"
+       * </pre>
+       *
+       * <code>string desc = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        desc_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.UpdateApiGroup)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.UpdateApiGroup)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateApiGroup>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApiGroup>() {
+      @java.lang.Override
+      public UpdateApiGroup parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateApiGroup(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateApiGroup> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateApiGroup> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DescribeApiGroupOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeApiGroup)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    java.lang.String getGroupId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    com.google.protobuf.ByteString
+        getGroupIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.DescribeApiGroup}
+   */
+  public static final class DescribeApiGroup extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DescribeApiGroup)
+      DescribeApiGroupOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeApiGroup.newBuilder() to construct.
+    private DescribeApiGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeApiGroup() {
+      spaceId_ = "";
+      groupId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeApiGroup();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeApiGroup(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiGroup_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiGroup_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object groupId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupId() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupIdBytes() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getGroupId()
+          .equals(other.getGroupId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.DescribeApiGroup}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DescribeApiGroup)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroupOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiGroup_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiGroup_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        groupId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_DescribeApiGroup_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup(this);
+        result.spaceId_ = spaceId_;
+        result.groupId_ = groupId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getGroupId().isEmpty()) {
+          groupId_ = other.groupId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return The groupId.
+       */
+      public java.lang.String getGroupId() {
+        java.lang.Object ref = groupId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for groupId.
+       */
+      public com.google.protobuf.ByteString
+          getGroupIdBytes() {
+        java.lang.Object ref = groupId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = getDefaultInstance().getGroupId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id" uri:"group_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string group_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DescribeApiGroup)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DescribeApiGroup)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeApiGroup>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeApiGroup>() {
+      @java.lang.Override
+      public DescribeApiGroup parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeApiGroup(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeApiGroup> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeApiGroup> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DeleteApiGroupsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:request.DeleteApiGroups)
       com.google.protobuf.MessageOrBuilder {
@@ -16300,6 +18438,2294 @@ public final class PBRequestDataServiceManage {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UpdateApiBaseConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.UpdateApiBaseConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    java.lang.String getApiName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    com.google.protobuf.ByteString
+        getApiNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+     * @return The apiPath.
+     */
+    java.lang.String getApiPath();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiPath.
+     */
+    com.google.protobuf.ByteString
+        getApiPathBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_mode"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for apiMode.
+     */
+    int getApiModeValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_mode"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The apiMode.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode getApiMode();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+     * @return The apiDescription.
+     */
+    java.lang.String getApiDescription();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiDescription.
+     */
+    com.google.protobuf.ByteString
+        getApiDescriptionBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    int getProtocolsValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+     * @return The protocols.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    int getRequestMethodValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+     * @return The requestMethod.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"response_type"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for responseType.
+     */
+    int getResponseTypeValue();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"response_type"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+     * @return The responseType.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType getResponseType();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cross_domain"
+     * </pre>
+     *
+     * <code>bool cross_domain = 9 [(.validator.field) = { ... }</code>
+     * @return The crossDomain.
+     */
+    boolean getCrossDomain();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>int64 timeout = 10 [(.validator.field) = { ... }</code>
+     * @return The timeout.
+     */
+    long getTimeout();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id"
+     * </pre>
+     *
+     * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    java.lang.String getGroupId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id"
+     * </pre>
+     *
+     * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    com.google.protobuf.ByteString
+        getGroupIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    java.lang.String getApiId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    com.google.protobuf.ByteString
+        getApiIdBytes();
+  }
+  /**
+   * Protobuf type {@code request.UpdateApiBaseConfig}
+   */
+  public static final class UpdateApiBaseConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.UpdateApiBaseConfig)
+      UpdateApiBaseConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateApiBaseConfig.newBuilder() to construct.
+    private UpdateApiBaseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateApiBaseConfig() {
+      apiName_ = "";
+      apiPath_ = "";
+      apiMode_ = 0;
+      apiDescription_ = "";
+      spaceId_ = "";
+      protocols_ = 0;
+      requestMethod_ = 0;
+      responseType_ = 0;
+      groupId_ = "";
+      apiId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new UpdateApiBaseConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateApiBaseConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiPath_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              apiMode_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiDescription_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              protocols_ = rawValue;
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              requestMethod_ = rawValue;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              responseType_ = rawValue;
+              break;
+            }
+            case 72: {
+
+              crossDomain_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              timeout_ = input.readInt64();
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              groupId_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiBaseConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiBaseConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.Builder.class);
+    }
+
+    public static final int API_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object apiName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The apiName.
+     */
+    @java.lang.Override
+    public java.lang.String getApiName() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_name"
+     * </pre>
+     *
+     * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiNameBytes() {
+      java.lang.Object ref = apiName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_PATH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object apiPath_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+     * @return The apiPath.
+     */
+    @java.lang.Override
+    public java.lang.String getApiPath() {
+      java.lang.Object ref = apiPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiPath_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_path"
+     * </pre>
+     *
+     * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiPathBytes() {
+      java.lang.Object ref = apiPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_MODE_FIELD_NUMBER = 3;
+    private int apiMode_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_mode"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for apiMode.
+     */
+    @java.lang.Override public int getApiModeValue() {
+      return apiMode_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_mode"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+     * @return The apiMode.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode getApiMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.valueOf(apiMode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.UNRECOGNIZED : result;
+    }
+
+    public static final int API_DESCRIPTION_FIELD_NUMBER = 4;
+    private volatile java.lang.Object apiDescription_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+     * @return The apiDescription.
+     */
+    @java.lang.Override
+    public java.lang.String getApiDescription() {
+      java.lang.Object ref = apiDescription_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiDescription_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_description"
+     * </pre>
+     *
+     * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiDescription.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiDescriptionBytes() {
+      java.lang.Object ref = apiDescription_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROTOCOLS_FIELD_NUMBER = 6;
+    private int protocols_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+     * @return The enum numeric value on the wire for protocols.
+     */
+    @java.lang.Override public int getProtocolsValue() {
+      return protocols_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"protocols"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+     * @return The protocols.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.valueOf(protocols_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.UNRECOGNIZED : result;
+    }
+
+    public static final int REQUEST_METHOD_FIELD_NUMBER = 7;
+    private int requestMethod_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for requestMethod.
+     */
+    @java.lang.Override public int getRequestMethodValue() {
+      return requestMethod_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"request_method"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+     * @return The requestMethod.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.valueOf(requestMethod_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.UNRECOGNIZED : result;
+    }
+
+    public static final int RESPONSE_TYPE_FIELD_NUMBER = 8;
+    private int responseType_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"response_type"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for responseType.
+     */
+    @java.lang.Override public int getResponseTypeValue() {
+      return responseType_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"response_type"
+     * </pre>
+     *
+     * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+     * @return The responseType.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType getResponseType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.valueOf(responseType_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.UNRECOGNIZED : result;
+    }
+
+    public static final int CROSS_DOMAIN_FIELD_NUMBER = 9;
+    private boolean crossDomain_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"cross_domain"
+     * </pre>
+     *
+     * <code>bool cross_domain = 9 [(.validator.field) = { ... }</code>
+     * @return The crossDomain.
+     */
+    @java.lang.Override
+    public boolean getCrossDomain() {
+      return crossDomain_;
+    }
+
+    public static final int TIMEOUT_FIELD_NUMBER = 10;
+    private long timeout_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"timeout"
+     * </pre>
+     *
+     * <code>int64 timeout = 10 [(.validator.field) = { ... }</code>
+     * @return The timeout.
+     */
+    @java.lang.Override
+    public long getTimeout() {
+      return timeout_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 11;
+    private volatile java.lang.Object groupId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id"
+     * </pre>
+     *
+     * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public java.lang.String getGroupId() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"group_id"
+     * </pre>
+     *
+     * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+     * @return The bytes for groupId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGroupIdBytes() {
+      java.lang.Object ref = groupId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int API_ID_FIELD_NUMBER = 12;
+    private volatile java.lang.Object apiId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+     * @return The apiId.
+     */
+    @java.lang.Override
+    public java.lang.String getApiId() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+     * </pre>
+     *
+     * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+     * @return The bytes for apiId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getApiIdBytes() {
+      java.lang.Object ref = apiId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        apiId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, apiPath_);
+      }
+      if (apiMode_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.ModeUnset.getNumber()) {
+        output.writeEnum(3, apiMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, apiDescription_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, spaceId_);
+      }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.ProtocolUnset.getNumber()) {
+        output.writeEnum(6, protocols_);
+      }
+      if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
+        output.writeEnum(7, requestMethod_);
+      }
+      if (responseType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.TypeUnset.getNumber()) {
+        output.writeEnum(8, responseType_);
+      }
+      if (crossDomain_ != false) {
+        output.writeBool(9, crossDomain_);
+      }
+      if (timeout_ != 0L) {
+        output.writeInt64(10, timeout_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, apiId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, apiName_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, apiPath_);
+      }
+      if (apiMode_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.ModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, apiMode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiDescription_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, apiDescription_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, spaceId_);
+      }
+      if (protocols_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.ProtocolUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, protocols_);
+      }
+      if (requestMethod_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.MethodUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, requestMethod_);
+      }
+      if (responseType_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, responseType_);
+      }
+      if (crossDomain_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, crossDomain_);
+      }
+      if (timeout_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, timeout_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(apiId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, apiId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig) obj;
+
+      if (!getApiName()
+          .equals(other.getApiName())) return false;
+      if (!getApiPath()
+          .equals(other.getApiPath())) return false;
+      if (apiMode_ != other.apiMode_) return false;
+      if (!getApiDescription()
+          .equals(other.getApiDescription())) return false;
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (protocols_ != other.protocols_) return false;
+      if (requestMethod_ != other.requestMethod_) return false;
+      if (responseType_ != other.responseType_) return false;
+      if (getCrossDomain()
+          != other.getCrossDomain()) return false;
+      if (getTimeout()
+          != other.getTimeout()) return false;
+      if (!getGroupId()
+          .equals(other.getGroupId())) return false;
+      if (!getApiId()
+          .equals(other.getApiId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getApiName().hashCode();
+      hash = (37 * hash) + API_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getApiPath().hashCode();
+      hash = (37 * hash) + API_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + apiMode_;
+      hash = (37 * hash) + API_DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getApiDescription().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + PROTOCOLS_FIELD_NUMBER;
+      hash = (53 * hash) + protocols_;
+      hash = (37 * hash) + REQUEST_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + requestMethod_;
+      hash = (37 * hash) + RESPONSE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + responseType_;
+      hash = (37 * hash) + CROSS_DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCrossDomain());
+      hash = (37 * hash) + TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimeout());
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId().hashCode();
+      hash = (37 * hash) + API_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getApiId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.UpdateApiBaseConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.UpdateApiBaseConfig)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiBaseConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiBaseConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        apiName_ = "";
+
+        apiPath_ = "";
+
+        apiMode_ = 0;
+
+        apiDescription_ = "";
+
+        spaceId_ = "";
+
+        protocols_ = 0;
+
+        requestMethod_ = 0;
+
+        responseType_ = 0;
+
+        crossDomain_ = false;
+
+        timeout_ = 0L;
+
+        groupId_ = "";
+
+        apiId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.internal_static_request_UpdateApiBaseConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig(this);
+        result.apiName_ = apiName_;
+        result.apiPath_ = apiPath_;
+        result.apiMode_ = apiMode_;
+        result.apiDescription_ = apiDescription_;
+        result.spaceId_ = spaceId_;
+        result.protocols_ = protocols_;
+        result.requestMethod_ = requestMethod_;
+        result.responseType_ = responseType_;
+        result.crossDomain_ = crossDomain_;
+        result.timeout_ = timeout_;
+        result.groupId_ = groupId_;
+        result.apiId_ = apiId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.getDefaultInstance()) return this;
+        if (!other.getApiName().isEmpty()) {
+          apiName_ = other.apiName_;
+          onChanged();
+        }
+        if (!other.getApiPath().isEmpty()) {
+          apiPath_ = other.apiPath_;
+          onChanged();
+        }
+        if (other.apiMode_ != 0) {
+          setApiModeValue(other.getApiModeValue());
+        }
+        if (!other.getApiDescription().isEmpty()) {
+          apiDescription_ = other.apiDescription_;
+          onChanged();
+        }
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (other.protocols_ != 0) {
+          setProtocolsValue(other.getProtocolsValue());
+        }
+        if (other.requestMethod_ != 0) {
+          setRequestMethodValue(other.getRequestMethodValue());
+        }
+        if (other.responseType_ != 0) {
+          setResponseTypeValue(other.getResponseTypeValue());
+        }
+        if (other.getCrossDomain() != false) {
+          setCrossDomain(other.getCrossDomain());
+        }
+        if (other.getTimeout() != 0L) {
+          setTimeout(other.getTimeout());
+        }
+        if (!other.getGroupId().isEmpty()) {
+          groupId_ = other.groupId_;
+          onChanged();
+        }
+        if (!other.getApiId().isEmpty()) {
+          apiId_ = other.apiId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object apiName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return The apiName.
+       */
+      public java.lang.String getApiName() {
+        java.lang.Object ref = apiName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiName.
+       */
+      public com.google.protobuf.ByteString
+          getApiNameBytes() {
+        java.lang.Object ref = apiName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @param value The apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiName() {
+        
+        apiName_ = getDefaultInstance().getApiName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_name"
+       * </pre>
+       *
+       * <code>string api_name = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiPath_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+       * @return The apiPath.
+       */
+      public java.lang.String getApiPath() {
+        java.lang.Object ref = apiPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiPath.
+       */
+      public com.google.protobuf.ByteString
+          getApiPathBytes() {
+        java.lang.Object ref = apiPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The apiPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiPath_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiPath() {
+        
+        apiPath_ = getDefaultInstance().getApiPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_path"
+       * </pre>
+       *
+       * <code>string api_path = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiPath_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int apiMode_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_mode"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for apiMode.
+       */
+      @java.lang.Override public int getApiModeValue() {
+        return apiMode_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_mode"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for apiMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiModeValue(int value) {
+        
+        apiMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_mode"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+       * @return The apiMode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode getApiMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.valueOf(apiMode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_mode"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+       * @param value The apiMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiMode(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ApiMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        apiMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_mode"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ApiMode api_mode = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiMode() {
+        
+        apiMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiDescription_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+       * @return The apiDescription.
+       */
+      public java.lang.String getApiDescription() {
+        java.lang.Object ref = apiDescription_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiDescription_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiDescription.
+       */
+      public com.google.protobuf.ByteString
+          getApiDescriptionBytes() {
+        java.lang.Object ref = apiDescription_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiDescription_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+       * @param value The apiDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiDescription_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiDescription() {
+        
+        apiDescription_ = getDefaultInstance().getApiDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_description"
+       * </pre>
+       *
+       * <code>string api_description = 4 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiDescription to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiDescription_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string space_id = 5 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int protocols_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+       * @return The enum numeric value on the wire for protocols.
+       */
+      @java.lang.Override public int getProtocolsValue() {
+        return protocols_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+       * @param value The enum numeric value on the wire for protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocolsValue(int value) {
+        
+        protocols_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+       * @return The protocols.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols getProtocols() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.valueOf(protocols_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+       * @param value The protocols to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProtocols(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.Protocols value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        protocols_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"protocols"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.Protocols protocols = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProtocols() {
+        
+        protocols_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int requestMethod_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for requestMethod.
+       */
+      @java.lang.Override public int getRequestMethodValue() {
+        return requestMethod_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethodValue(int value) {
+        
+        requestMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+       * @return The requestMethod.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod getRequestMethod() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.valueOf(requestMethod_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+       * @param value The requestMethod to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestMethod(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.RequestMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        requestMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"request_method"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.RequestMethod request_method = 7 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestMethod() {
+        
+        requestMethod_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int responseType_ = 0;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"response_type"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for responseType.
+       */
+      @java.lang.Override public int getResponseTypeValue() {
+        return responseType_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"response_type"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for responseType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseTypeValue(int value) {
+        
+        responseType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"response_type"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+       * @return The responseType.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType getResponseType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.valueOf(responseType_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"response_type"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+       * @param value The responseType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseType(com.dataomnis.gproto.types.pbmodel.PBModelDataService.ApiConfig.ResponseType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        responseType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"response_type"
+       * </pre>
+       *
+       * <code>.model.ApiConfig.ResponseType response_type = 8 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseType() {
+        
+        responseType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean crossDomain_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cross_domain"
+       * </pre>
+       *
+       * <code>bool cross_domain = 9 [(.validator.field) = { ... }</code>
+       * @return The crossDomain.
+       */
+      @java.lang.Override
+      public boolean getCrossDomain() {
+        return crossDomain_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cross_domain"
+       * </pre>
+       *
+       * <code>bool cross_domain = 9 [(.validator.field) = { ... }</code>
+       * @param value The crossDomain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCrossDomain(boolean value) {
+        
+        crossDomain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"cross_domain"
+       * </pre>
+       *
+       * <code>bool cross_domain = 9 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCrossDomain() {
+        
+        crossDomain_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long timeout_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>int64 timeout = 10 [(.validator.field) = { ... }</code>
+       * @return The timeout.
+       */
+      @java.lang.Override
+      public long getTimeout() {
+        return timeout_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>int64 timeout = 10 [(.validator.field) = { ... }</code>
+       * @param value The timeout to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimeout(long value) {
+        
+        timeout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"timeout"
+       * </pre>
+       *
+       * <code>int64 timeout = 10 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimeout() {
+        
+        timeout_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object groupId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id"
+       * </pre>
+       *
+       * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+       * @return The groupId.
+       */
+      public java.lang.String getGroupId() {
+        java.lang.Object ref = groupId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          groupId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id"
+       * </pre>
+       *
+       * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+       * @return The bytes for groupId.
+       */
+      public com.google.protobuf.ByteString
+          getGroupIdBytes() {
+        java.lang.Object ref = groupId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          groupId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id"
+       * </pre>
+       *
+       * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id"
+       * </pre>
+       *
+       * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = getDefaultInstance().getGroupId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"group_id"
+       * </pre>
+       *
+       * <code>string group_id = 11 [(.validator.field) = { ... }</code>
+       * @param value The bytes for groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object apiId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+       * @return The apiId.
+       */
+      public java.lang.String getApiId() {
+        java.lang.Object ref = apiId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+       * @return The bytes for apiId.
+       */
+      public com.google.protobuf.ByteString
+          getApiIdBytes() {
+        java.lang.Object ref = apiId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          apiId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+       * @param value The apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearApiId() {
+        
+        apiId_ = getDefaultInstance().getApiId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"api_id" uri:"api_id" swaggerignore:"true"
+       * </pre>
+       *
+       * <code>string api_id = 12 [(.validator.field) = { ... }</code>
+       * @param value The bytes for apiId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        apiId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.UpdateApiBaseConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.UpdateApiBaseConfig)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateApiBaseConfig>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateApiBaseConfig>() {
+      @java.lang.Override
+      public UpdateApiBaseConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateApiBaseConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateApiBaseConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateApiBaseConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -28572,6 +32998,16 @@ public final class PBRequestDataServiceManage {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_CreateApiGroup_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_UpdateApiGroup_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_UpdateApiGroup_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DescribeApiGroup_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DescribeApiGroup_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_DeleteApiGroups_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -28596,6 +33032,11 @@ public final class PBRequestDataServiceManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DeleteApiConfigs_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_UpdateApiBaseConfig_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_UpdateApiBaseConfig_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_CreateApiConfig_descriptor;
   private static final 
@@ -28698,91 +33139,112 @@ public final class PBRequestDataServiceManage {
       "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB\017\342\337\037\013" +
       "\022\t\302\001\006\200\002\000\230\002@\022 \n\ngroup_path\030\003 \001(\tB\014\342\337\037\010\022\006\302" +
       "\001\003\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022#\n\ncr" +
-      "eated_by\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"f\n\017Delet" +
-      "eApiGroups\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022,\n\tgroup_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208" +
-      "d@\001Z\n\302\001\007\312\002\004dsg-\"^\n\016ListApiConfigs\022%\n\010spa" +
-      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010grou" +
-      "p_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\"\234\006\n\017Upda" +
-      "teApiConfig\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
-      "\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004dsa-\022!\n\010api_name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230" +
-      "\002@\022\"\n\010api_path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229" +
-      "\n\010api_mode\030\005 \001(\0162\030.model.ApiConfig.ApiMo" +
-      "deB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\006 \001" +
-      "(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022-\n\tprotocols\030\007 \001(\0162\032.m" +
-      "odel.ApiConfig.Protocols\022E\n\016request_meth" +
-      "od\030\010 \001(\0162\036.model.ApiConfig.RequestMethod" +
-      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\t \001(\0162\035" +
-      ".model.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\004" +
-      "0\000X\001\022\032\n\014cross_domain\030\n \001(\010B\004\342\337\037\000\022\037\n\007time" +
-      "out\030\013 \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022*\n\rdatasource_" +
-      "id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_n" +
-      "ame\030\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\016 \001" +
-      "(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\017 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\035\n\ncluster_id\030\020 \001(\tB\t\342" +
-      "\337\037\005\022\003\302\001\000\0220\n\016request_params\030\021 \001(\0132\030.model" +
-      ".RequestParameters\0222\n\017response_params\030\022 " +
-      "\001(\0132\031.model.ResponseParameters\"8\n\021Descri" +
-      "beApiConfig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004dsa-\"e\n\020DeleteApiConfigs\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002" +
-      " \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\246\004\n\017Crea" +
-      "teApiConfig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
-      "\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002" +
-      "\310\001\0229\n\010api_mode\030\003 \001(\0162\030.model.ApiConfig.A" +
-      "piModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description" +
-      "\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \001(\0162" +
-      "\032.model.ApiConfig.Protocols\022E\n\016request_m" +
-      "ethod\030\007 \001(\0162\036.model.ApiConfig.RequestMet" +
-      "hodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001(" +
-      "\0162\035.model.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007" +
-      "\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007t" +
-      "imeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\264\001@\001\022%\n\010group_id" +
-      "\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022#\n\ncreated_b" +
-      "y\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\341\001\n\032ListDataSer" +
-      "viceApiVersions\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
-      "\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337" +
-      "\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000" +
-      "\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002idJ\007crea" +
-      "tedJ\007updated\"\356\001\n#ListPublishedApiVersion" +
-      "sByClusterId\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
-      "\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004dsc-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342" +
-      "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
-      "\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002idJ\007cre" +
-      "atedJ\007updated\"\350\001\n\021ListPublishedApis\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005li" +
-      "mit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006of" +
-      "fset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\t" +
-      "B\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updatedJ\004nam" +
-      "e\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022\014\n\004na" +
-      "me\030\007 \001(\t\"\215\001\n\035DescribeDataServiceApiVersi" +
-      "on\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022 " +
-      "\n\nversion_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\207\001\n\027Rep" +
-      "ublishDataServiceApi\022%\n\010space_id\030\001 \001(\tB\023" +
+      "eated_by\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\274\001\n\016Upda" +
+      "teApiGroup\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004dsg-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022" +
+      " \n\ngroup_path\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004des" +
+      "c\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"`\n\020DescribeApiGro" +
+      "up\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
+      "-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
+      "\"f\n\017DeleteApiGroups\022%\n\010space_id\030\001 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022,\n\tgroup_ids\030\002 \003(\tB\031\342" +
+      "\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsg-\"^\n\016ListApiConfi" +
+      "gs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
+      "-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
+      "\"\234\006\n\017UpdateApiConfig\022%\n\010space_id\030\001 \001(\tB\023" +
       "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022 \n\nversion_id\030\003 \001(\tB\014\342\337" +
-      "\037\010\022\006\302\001\003\360\001\020\"c\n\025PublishDataServiceApi\022%\n\010s" +
-      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006ap" +
-      "i_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"k\n\026Aboli" +
-      "shDataServiceApis\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB\031\342\337\037\025\022" +
-      "\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\227\001\n\022TestDataService" +
-      "Api\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wk" +
-      "s-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022" +
-      "5\n\016request_params\030\003 \003(\0132\027.model.RequestP" +
-      "arameterB\004\342\337\037\000\"\241\001\n\037DescribePublishedApiH" +
-      "ttpDetails\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022 \n\nversion_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003" +
-      "\360\001\020\0225\n\016request_params\030\003 \003(\0132\027.model.Requ" +
-      "estParameterB\004\342\337\037\000By\n$com.dataomnis.gpro" +
-      "to.types.pbrequestB\032PBRequestDataService" +
-      "ManageP\000Z3github.com/DataWorkbench/gprot" +
-      "o/xgo/types/pbrequestb\006proto3"
+      "\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n\010api_name\030\003 \001(\tB\017\342\337\037\013" +
+      "\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
+      "\200\002\000\230\002\310\001\0229\n\010api_mode\030\005 \001(\0162\030.model.ApiCon" +
+      "fig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descri" +
+      "ption\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022-\n\tprotocols\030" +
+      "\007 \001(\0162\032.model.ApiConfig.Protocols\022E\n\016req" +
+      "uest_method\030\010 \001(\0162\036.model.ApiConfig.Requ" +
+      "estMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_typ" +
+      "e\030\t \001(\0162\035.model.ApiConfig.ResponseTypeB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\n \001(\010B\004\342\337\037" +
+      "\000\022\037\n\007timeout\030\013 \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022*\n\rda" +
+      "tasource_id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#" +
+      "\n\ntable_name\030\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006s" +
+      "cript\030\016 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030" +
+      "\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\035\n\ncluster_id" +
+      "\030\020 \001(\tB\t\342\337\037\005\022\003\302\001\000\0220\n\016request_params\030\021 \001(" +
+      "\0132\030.model.RequestParameters\0222\n\017response_" +
+      "params\030\022 \001(\0132\031.model.ResponseParameters\"" +
+      "8\n\021DescribeApiConfig\022#\n\006api_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"e\n\020DeleteApiConfigs\022%\n" +
+      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007" +
+      "api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-" +
+      "\"\252\004\n\023UpdateApiBaseConfig\022!\n\010api_name\030\001 \001" +
+      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342" +
+      "\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\003 \001(\0162\030.mode" +
+      "l.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017ap" +
+      "i_description\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010sp" +
+      "ace_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tpro" +
+      "tocols\030\006 \001(\0162\032.model.ApiConfig.Protocols" +
+      "\022E\n\016request_method\030\007 \001(\0162\036.model.ApiConf" +
+      "ig.RequestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rrespo" +
+      "nse_type\030\010 \001(\0162\035.model.ApiConfig.Respons" +
+      "eTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001" +
+      "(\010B\004\342\337\037\000\022\037\n\007timeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@" +
+      "\001\022%\n\010group_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
+      "\022#\n\006api_id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"\246\004" +
+      "\n\017CreateApiConfig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037" +
+      "\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001" +
+      "\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\003 \001(\0162\030.model.ApiCo" +
+      "nfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descr" +
+      "iption\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030" +
+      "\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030" +
+      "\006 \001(\0162\032.model.ApiConfig.Protocols\022E\n\016req" +
+      "uest_method\030\007 \001(\0162\036.model.ApiConfig.Requ" +
+      "estMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_typ" +
+      "e\030\010 \001(\0162\035.model.ApiConfig.ResponseTypeB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001(\010B\004\342\337\037" +
+      "\000\022\037\n\007timeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022%\n\010gr" +
+      "oup_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022#\n\ncre" +
+      "ated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\341\001\n\032ListD" +
+      "ataServiceApiVersions\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006" +
+      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022" +
+      "\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002id" +
+      "J\007createdJ\007updated\"\356\001\n#ListPublishedApiV" +
+      "ersionsByClusterId\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
+      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252" +
+      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007" +
+      "\022\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002i" +
+      "dJ\007createdJ\007updated\"\350\001\n\021ListPublishedApi" +
+      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d" +
+      "\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by" +
+      "\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007update" +
+      "dJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t" +
+      "\022\014\n\004name\030\007 \001(\t\"\215\001\n\035DescribeDataServiceAp" +
+      "iVersion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
+      "\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "dsa-\022 \n\nversion_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\207" +
+      "\001\n\027RepublishDataServiceApi\022%\n\010space_id\030\001" +
+      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022 \n\nversion_id\030\003 \001" +
+      "(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"c\n\025PublishDataServiceAp" +
+      "i\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
+      "\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"k\n" +
+      "\026AbolishDataServiceApis\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB" +
+      "\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\227\001\n\022TestDataS" +
+      "erviceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004dsa-\0225\n\016request_params\030\003 \003(\0132\027.model.Re" +
+      "questParameterB\004\342\337\037\000\"\241\001\n\037DescribePublish" +
+      "edApiHttpDetails\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
+      "\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nversion_id\030\002 \001(\tB\014\342\337\037" +
+      "\010\022\006\302\001\003\360\001\020\0225\n\016request_params\030\003 \003(\0132\027.mode" +
+      "l.RequestParameterB\004\342\337\037\000By\n$com.dataomni" +
+      "s.gproto.types.pbrequestB\032PBRequestDataS" +
+      "erviceManageP\000Z3github.com/DataWorkbench" +
+      "/gproto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28845,92 +33307,110 @@ public final class PBRequestDataServiceManage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiGroup_descriptor,
         new java.lang.String[] { "SpaceId", "Name", "GroupPath", "Desc", "CreatedBy", });
-    internal_static_request_DeleteApiGroups_descriptor =
+    internal_static_request_UpdateApiGroup_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_request_UpdateApiGroup_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_UpdateApiGroup_descriptor,
+        new java.lang.String[] { "SpaceId", "GroupId", "Name", "GroupPath", "Desc", });
+    internal_static_request_DescribeApiGroup_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_request_DescribeApiGroup_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DescribeApiGroup_descriptor,
+        new java.lang.String[] { "SpaceId", "GroupId", });
+    internal_static_request_DeleteApiGroups_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_request_DeleteApiGroups_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiGroups_descriptor,
         new java.lang.String[] { "SpaceId", "GroupIds", });
     internal_static_request_ListApiConfigs_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_request_ListApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "GroupId", });
     internal_static_request_UpdateApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_request_UpdateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_UpdateApiConfig_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "ApiName", "ApiPath", "ApiMode", "ApiDescription", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "DatasourceId", "TableName", "Script", "GroupId", "ClusterId", "RequestParams", "ResponseParams", });
     internal_static_request_DescribeApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_request_DescribeApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeApiConfig_descriptor,
         new java.lang.String[] { "ApiId", });
     internal_static_request_DeleteApiConfigs_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_request_DeleteApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DeleteApiConfigs_descriptor,
         new java.lang.String[] { "SpaceId", "ApiIds", });
+    internal_static_request_UpdateApiBaseConfig_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_request_UpdateApiBaseConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_UpdateApiBaseConfig_descriptor,
+        new java.lang.String[] { "ApiName", "ApiPath", "ApiMode", "ApiDescription", "SpaceId", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "GroupId", "ApiId", });
     internal_static_request_CreateApiConfig_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_request_CreateApiConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_CreateApiConfig_descriptor,
         new java.lang.String[] { "ApiName", "ApiPath", "ApiMode", "ApiDescription", "SpaceId", "Protocols", "RequestMethod", "ResponseType", "CrossDomain", "Timeout", "GroupId", "CreatedBy", });
     internal_static_request_ListDataServiceApiVersions_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_request_ListDataServiceApiVersions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListDataServiceApiVersions_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "Limit", "Offset", "SortBy", });
     internal_static_request_ListPublishedApiVersionsByClusterId_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_request_ListPublishedApiVersionsByClusterId_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListPublishedApiVersionsByClusterId_descriptor,
         new java.lang.String[] { "SpaceId", "ClusterId", "Limit", "Offset", "SortBy", });
     internal_static_request_ListPublishedApis_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_request_ListPublishedApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListPublishedApis_descriptor,
         new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Search", "Name", });
     internal_static_request_DescribeDataServiceApiVersion_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_request_DescribeDataServiceApiVersion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeDataServiceApiVersion_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
     internal_static_request_RepublishDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_request_RepublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_RepublishDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "VersionId", });
     internal_static_request_PublishDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_request_PublishDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_PublishDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", });
     internal_static_request_AbolishDataServiceApis_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_request_AbolishDataServiceApis_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_AbolishDataServiceApis_descriptor,
         new java.lang.String[] { "SpaceId", "ApiIds", });
     internal_static_request_TestDataServiceApi_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_request_TestDataServiceApi_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_TestDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "ApiId", "RequestParams", });
     internal_static_request_DescribePublishedApiHttpDetails_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_request_DescribePublishedApiHttpDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribePublishedApiHttpDetails_descriptor,

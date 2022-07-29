@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from github.com.yu31.protoc_plugin.proto import validator_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2
 from proto.types.model.syncjob import baseenum_pb2 as proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2
 from github.com.yu31.protoc_plugin.proto import gosql_pb2 as github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\006PBHiveP\000Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjob',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$proto/types/model/syncjob/hive.proto\x12\x05model\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a(proto/types/model/syncjob/baseenum.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"/\n\nHiveColumn\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\x80\x04\n\nHiveTarget\x12!\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\x11.model.HiveColumn\x12\r\n\x05table\x18\x02 \x01(\t\x12\x15\n\ruse_partition\x18\x03 \x01(\x08\x12\x11\n\tpartition\x18\x04 \x01(\t\x12\x44\n\x0epartition_type\x18\x05 \x01(\x0e\x32\x1d.model.BaseEnum.PartitionTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12\x15\n\rtables_column\x18\x06 \x01(\t\x12<\n\nwrite_mode\x18\x07 \x01(\x0e\x32\x19.model.BaseEnum.WriteModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12:\n\tfile_type\x18\x08 \x01(\x0e\x32\x18.model.BaseEnum.FileTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12=\n\x08\x63ompress\x18\t \x01(\x0e\x32\x1c.model.BaseEnum.CompressTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01\x12=\n\x0f\x66ield_delimiter\x18\n \x01(\tB$\xe2\xdf\x1f\x14\n\x12\n\tfile_type\x12\x05\xda\x01\x02\x18\x00\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x90\x02\x01\x12\x39\n\x08\x65ncoding\x18\x0b \x01(\x0e\x32\x18.model.BaseEnum.EncodingB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04@\x00X\x01:\x06\xca\xb2\x04\x02\n\x00\x42u\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x06PBHiveP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
+  serialized_pb=b'\n$proto/types/model/syncjob/hive.proto\x12\x05model\x1a(proto/types/model/syncjob/baseenum.proto\x1a/github.com/yu31/protoc-plugin/proto/gosql.proto\"/\n\nHiveColumn\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t:\x06\xca\xb2\x04\x02\n\x00\"\x8f\x03\n\nHiveTarget\x12!\n\x06\x63olumn\x18\x01 \x03(\x0b\x32\x11.model.HiveColumn\x12\r\n\x05table\x18\x02 \x01(\t\x12\x15\n\ruse_partition\x18\x03 \x01(\x08\x12\x11\n\tpartition\x18\x04 \x01(\t\x12\x35\n\x0epartition_type\x18\x05 \x01(\x0e\x32\x1d.model.BaseEnum.PartitionType\x12\x15\n\rtables_column\x18\x06 \x01(\t\x12-\n\nwrite_mode\x18\x07 \x01(\x0e\x32\x19.model.BaseEnum.WriteMode\x12+\n\tfile_type\x18\x08 \x01(\x0e\x32\x18.model.BaseEnum.FileType\x12.\n\x08\x63ompress\x18\t \x01(\x0e\x32\x1c.model.BaseEnum.CompressType\x12\x17\n\x0f\x66ield_delimiter\x18\n \x01(\t\x12*\n\x08\x65ncoding\x18\x0b \x01(\x0e\x32\x18.model.BaseEnum.Encoding:\x06\xca\xb2\x04\x02\n\x00\x42u\n,com.dataomnis.gproto.types.pbmodel.pbsyncjobB\x06PBHiveP\x00Z;github.com/DataWorkbench/gproto/xgo/types/pbmodel/pbsyncjobb\x06proto3'
   ,
-  dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
+  dependencies=[proto_dot_types_dot_model_dot_syncjob_dot_baseenum__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_gosql__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +62,8 @@ _HIVECOLUMN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=191,
-  serialized_end=238,
+  serialized_start=138,
+  serialized_end=185,
 )
 
 
@@ -110,7 +109,7 @@ _HIVETARGET = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='tables_column', full_name='model.HiveTarget.tables_column', index=5,
       number=6, type=9, cpp_type=9, label=1,
@@ -124,35 +123,35 @@ _HIVETARGET = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='file_type', full_name='model.HiveTarget.file_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='compress', full_name='model.HiveTarget.compress', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='field_delimiter', full_name='model.HiveTarget.field_delimiter', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\024\n\022\n\tfile_type\022\005\332\001\002\030\000\342\337\037\010\022\006\302\001\003\220\002\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='encoding', full_name='model.HiveTarget.encoding', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\t\022\007\332\001\004@\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -165,8 +164,8 @@ _HIVETARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=241,
-  serialized_end=753,
+  serialized_start=188,
+  serialized_end=587,
 )
 
 _HIVETARGET.fields_by_name['column'].message_type = _HIVECOLUMN
@@ -196,11 +195,5 @@ _sym_db.RegisterMessage(HiveTarget)
 
 DESCRIPTOR._options = None
 _HIVECOLUMN._options = None
-_HIVETARGET.fields_by_name['partition_type']._options = None
-_HIVETARGET.fields_by_name['write_mode']._options = None
-_HIVETARGET.fields_by_name['file_type']._options = None
-_HIVETARGET.fields_by_name['compress']._options = None
-_HIVETARGET.fields_by_name['field_delimiter']._options = None
-_HIVETARGET.fields_by_name['encoding']._options = None
 _HIVETARGET._options = None
 # @@protoc_insertion_point(module_scope)

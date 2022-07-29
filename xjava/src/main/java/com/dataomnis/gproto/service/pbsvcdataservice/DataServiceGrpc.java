@@ -356,6 +356,68 @@ public final class DataServiceGrpc {
     return getDeleteApiGroupsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateApiGroup",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiGroupMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiGroupMethod;
+    if ((getUpdateApiGroupMethod = DataServiceGrpc.getUpdateApiGroupMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getUpdateApiGroupMethod = DataServiceGrpc.getUpdateApiGroupMethod) == null) {
+          DataServiceGrpc.getUpdateApiGroupMethod = getUpdateApiGroupMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateApiGroup"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("UpdateApiGroup"))
+              .build();
+        }
+      }
+    }
+    return getUpdateApiGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> getDescribeApiGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeApiGroup",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> getDescribeApiGroupMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> getDescribeApiGroupMethod;
+    if ((getDescribeApiGroupMethod = DataServiceGrpc.getDescribeApiGroupMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getDescribeApiGroupMethod = DataServiceGrpc.getDescribeApiGroupMethod) == null) {
+          DataServiceGrpc.getDescribeApiGroupMethod = getDescribeApiGroupMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup, com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeApiGroup"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("DescribeApiGroup"))
+              .build();
+        }
+      }
+    }
+    return getDescribeApiGroupMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs,
       com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> getListApiConfigsMethod;
 
@@ -478,6 +540,37 @@ public final class DataServiceGrpc {
       }
     }
     return getUpdateApiConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiBaseConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateApiBaseConfig",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.class,
+      responseType = com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig,
+      com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiBaseConfigMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> getUpdateApiBaseConfigMethod;
+    if ((getUpdateApiBaseConfigMethod = DataServiceGrpc.getUpdateApiBaseConfigMethod) == null) {
+      synchronized (DataServiceGrpc.class) {
+        if ((getUpdateApiBaseConfigMethod = DataServiceGrpc.getUpdateApiBaseConfigMethod) == null) {
+          DataServiceGrpc.getUpdateApiBaseConfigMethod = getUpdateApiBaseConfigMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig, com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateApiBaseConfig"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct.getDefaultInstance()))
+              .setSchemaDescriptor(new DataServiceMethodDescriptorSupplier("UpdateApiBaseConfig"))
+              .build();
+        }
+      }
+    }
+    return getUpdateApiBaseConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiConfigs,
@@ -889,6 +982,20 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void updateApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiGroupMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void describeApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeApiGroupMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListApiConfigsMethod(), responseObserver);
@@ -913,6 +1020,13 @@ public final class DataServiceGrpc {
     public void updateApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiConfigMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateApiBaseConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiBaseConfigMethod(), responseObserver);
     }
 
     /**
@@ -1058,6 +1172,20 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_DELETE_API_GROUPS)))
           .addMethod(
+            getUpdateApiGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_API_GROUP)))
+          .addMethod(
+            getDescribeApiGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup>(
+                  this, METHODID_DESCRIBE_API_GROUP)))
+          .addMethod(
             getListApiConfigsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1085,6 +1213,13 @@ public final class DataServiceGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig,
                 com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
                   this, METHODID_UPDATE_API_CONFIG)))
+          .addMethod(
+            getUpdateApiBaseConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig,
+                com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>(
+                  this, METHODID_UPDATE_API_BASE_CONFIG)))
           .addMethod(
             getDeleteApiConfigsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1259,6 +1394,22 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public void updateApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateApiGroupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void describeApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeApiGroupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request,
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -1287,6 +1438,14 @@ public final class DataServiceGrpc {
         io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateApiConfigMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateApiBaseConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateApiBaseConfigMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1458,6 +1617,20 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApiGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup describeApiGroup(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeApiGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs listApiConfigs(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListApiConfigsMethod(), getCallOptions(), request);
@@ -1482,6 +1655,13 @@ public final class DataServiceGrpc {
     public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateApiConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateApiConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct updateApiBaseConfig(com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApiBaseConfigMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1655,6 +1835,22 @@ public final class DataServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateApiGroup(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateApiGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup> describeApiGroup(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeApiGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs> listApiConfigs(
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -1683,6 +1879,14 @@ public final class DataServiceGrpc {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateApiConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct> updateApiBaseConfig(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateApiBaseConfigMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1769,19 +1973,22 @@ public final class DataServiceGrpc {
   private static final int METHODID_CREATE_API_GROUP = 8;
   private static final int METHODID_LIST_API_GROUPS = 9;
   private static final int METHODID_DELETE_API_GROUPS = 10;
-  private static final int METHODID_LIST_API_CONFIGS = 11;
-  private static final int METHODID_DESCRIBE_API_CONFIG = 12;
-  private static final int METHODID_CREATE_API_CONFIG = 13;
-  private static final int METHODID_UPDATE_API_CONFIG = 14;
-  private static final int METHODID_DELETE_API_CONFIGS = 15;
-  private static final int METHODID_TEST_DATA_SERVICE_API = 16;
-  private static final int METHODID_PUBLISH_DATA_SERVICE_API = 17;
-  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 18;
-  private static final int METHODID_DESCRIBE_PUBLISHED_API_HTTP_DETAILS = 19;
-  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 20;
-  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 21;
-  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 22;
-  private static final int METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID = 23;
+  private static final int METHODID_UPDATE_API_GROUP = 11;
+  private static final int METHODID_DESCRIBE_API_GROUP = 12;
+  private static final int METHODID_LIST_API_CONFIGS = 13;
+  private static final int METHODID_DESCRIBE_API_CONFIG = 14;
+  private static final int METHODID_CREATE_API_CONFIG = 15;
+  private static final int METHODID_UPDATE_API_CONFIG = 16;
+  private static final int METHODID_UPDATE_API_BASE_CONFIG = 17;
+  private static final int METHODID_DELETE_API_CONFIGS = 18;
+  private static final int METHODID_TEST_DATA_SERVICE_API = 19;
+  private static final int METHODID_PUBLISH_DATA_SERVICE_API = 20;
+  private static final int METHODID_ABOLISH_DATA_SERVICE_APIS = 21;
+  private static final int METHODID_DESCRIBE_PUBLISHED_API_HTTP_DETAILS = 22;
+  private static final int METHODID_LIST_DATA_SERVICE_API_VERSIONS = 23;
+  private static final int METHODID_DESCRIBE_DATA_SERVICE_API_VERSION = 24;
+  private static final int METHODID_REPUBLISH_DATA_SERVICE_API = 25;
+  private static final int METHODID_LIST_PUBLISHED_API_VERSIONS_BY_CLUSTER_ID = 26;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1844,6 +2051,14 @@ public final class DataServiceGrpc {
           serviceImpl.deleteApiGroups((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DeleteApiGroups) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
+        case METHODID_UPDATE_API_GROUP:
+          serviceImpl.updateApiGroup((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiGroup) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_API_GROUP:
+          serviceImpl.describeApiGroup((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.DescribeApiGroup) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.DescribeApiGroup>) responseObserver);
+          break;
         case METHODID_LIST_API_CONFIGS:
           serviceImpl.listApiConfigs((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataServiceManage.ListApiConfigs>) responseObserver);
@@ -1858,6 +2073,10 @@ public final class DataServiceGrpc {
           break;
         case METHODID_UPDATE_API_CONFIG:
           serviceImpl.updateApiConfig((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiConfig) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
+          break;
+        case METHODID_UPDATE_API_BASE_CONFIG:
+          serviceImpl.updateApiBaseConfig((com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.UpdateApiBaseConfig) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbmodel.PBModelEmpty.EmptyStruct>) responseObserver);
           break;
         case METHODID_DELETE_API_CONFIGS:
@@ -1968,10 +2187,13 @@ public final class DataServiceGrpc {
               .addMethod(getCreateApiGroupMethod())
               .addMethod(getListApiGroupsMethod())
               .addMethod(getDeleteApiGroupsMethod())
+              .addMethod(getUpdateApiGroupMethod())
+              .addMethod(getDescribeApiGroupMethod())
               .addMethod(getListApiConfigsMethod())
               .addMethod(getDescribeApiConfigMethod())
               .addMethod(getCreateApiConfigMethod())
               .addMethod(getUpdateApiConfigMethod())
+              .addMethod(getUpdateApiBaseConfigMethod())
               .addMethod(getDeleteApiConfigsMethod())
               .addMethod(getTestDataServiceApiMethod())
               .addMethod(getPublishDataServiceApiMethod())

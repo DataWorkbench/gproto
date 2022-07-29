@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\033PBResponseDataServiceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/types/response/dataservice_manage.proto\x12\x08response\x1a#proto/types/model/dataservice.proto\"d\n\x17ListDataServiceClusters\x12(\n\x05infos\x18\x01 \x03(\x0b\x32\x19.model.DataServiceCluster\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"E\n\x1a\x44\x65scribeDataServiceCluster\x12\'\n\x04info\x18\x01 \x01(\x0b\x32\x19.model.DataServiceCluster\"&\n\x18\x43reateDataServiceCluster\x12\n\n\x02id\x18\x01 \x01(\t\"P\n\rListApiGroups\x12\x1e\n\x05infos\x18\x01 \x03(\x0b\x32\x0f.model.ApiGroup\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1c\n\x0e\x43reateApiGroup\x12\n\n\x02id\x18\x01 \x01(\t\"R\n\x0eListApiConfigs\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.ApiConfig\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"\xc7\x01\n\x11\x44\x65scribeApiConfig\x12$\n\napi_config\x18\x01 \x01(\x0b\x32\x10.model.ApiConfig\x12\"\n\tapi_group\x18\x02 \x01(\x0b\x32\x0f.model.ApiGroup\x12/\n\x0b\x64\x61ta_source\x18\x03 \x01(\x0b\x32\x1a.model.ApiConfigDataSource\x12\x37\n\x0fservice_cluster\x18\x04 \x01(\x0b\x32\x1e.model.ApiConfigServiceCluster\"\x1d\n\x0f\x43reateApiConfig\x12\n\n\x02id\x18\x01 \x01(\t\"\xd5\x01\n\x1d\x44\x65scribeDataServiceApiVersion\x12&\n\x0b\x61pi_version\x18\x01 \x01(\x0b\x32\x11.model.ApiVersion\x12\"\n\tapi_group\x18\x02 \x01(\x0b\x32\x0f.model.ApiGroup\x12/\n\x0b\x64\x61ta_source\x18\x03 \x01(\x0b\x32\x1a.model.ApiConfigDataSource\x12\x37\n\x0fservice_cluster\x18\x04 \x01(\x0b\x32\x1e.model.ApiConfigServiceCluster\"_\n\x1aListDataServiceApiVersions\x12 \n\x05infos\x18\x01 \x03(\x0b\x32\x11.model.ApiVersion\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"t\n#ListPublishedApiVersionsByClusterId\x12,\n\x05infos\x18\x01 \x03(\x0b\x32\x1d.response.ApiVersionGroupInfo\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"\x9e\x01\n\x13\x41piVersionGroupInfo\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61pi_id\x18\x02 \x01(\t\x12\x10\n\x08\x61pi_name\x18\x03 \x01(\t\x12\x10\n\x08\x61pi_path\x18\x04 \x01(\t\x12\x12\n\ngroup_name\x18\x05 \x01(\t\x12\x12\n\ngroup_path\x18\x06 \x01(\t\x12\x17\n\x0f\x61pi_description\x18\x07 \x01(\t\"<\n\x12TestDataServiceApi\x12\x0c\n\x04logs\x18\x01 \x01(\t\x12\x18\n\x10response_content\x18\x02 \x01(\t\"\x7f\n\x1f\x44\x65scribePublishedApiHttpDetails\x12\x36\n\x0erequest_method\x18\x01 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethod\x12\x17\n\x0frequest_content\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"M\n\x1e\x44\x65scribeServiceDataSourceKinds\x12+\n\x05Kinds\x18\x01 \x03(\x0b\x32\x1c.model.ServiceDataSourceKindB|\n%com.dataomnis.gproto.types.pbresponseB\x1bPBResponseDataServiceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n-proto/types/response/dataservice_manage.proto\x12\x08response\x1a#proto/types/model/dataservice.proto\"d\n\x17ListDataServiceClusters\x12(\n\x05infos\x18\x01 \x03(\x0b\x32\x19.model.DataServiceCluster\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"E\n\x1a\x44\x65scribeDataServiceCluster\x12\'\n\x04info\x18\x01 \x01(\x0b\x32\x19.model.DataServiceCluster\"&\n\x18\x43reateDataServiceCluster\x12\n\n\x02id\x18\x01 \x01(\t\"P\n\rListApiGroups\x12\x1e\n\x05infos\x18\x01 \x03(\x0b\x32\x0f.model.ApiGroup\x12\x10\n\x08has_more\x18\x02 \x01(\x08\x12\r\n\x05total\x18\x03 \x01(\x03\"\x1c\n\x0e\x43reateApiGroup\x12\n\n\x02id\x18\x01 \x01(\t\"1\n\x10\x44\x65scribeApiGroup\x12\x1d\n\x04info\x18\x01 \x01(\x0b\x32\x0f.model.ApiGroup\"R\n\x0eListApiConfigs\x12\x1f\n\x05infos\x18\x01 \x03(\x0b\x32\x10.model.ApiConfig\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"\xc7\x01\n\x11\x44\x65scribeApiConfig\x12$\n\napi_config\x18\x01 \x01(\x0b\x32\x10.model.ApiConfig\x12\"\n\tapi_group\x18\x02 \x01(\x0b\x32\x0f.model.ApiGroup\x12/\n\x0b\x64\x61ta_source\x18\x03 \x01(\x0b\x32\x1a.model.ApiConfigDataSource\x12\x37\n\x0fservice_cluster\x18\x04 \x01(\x0b\x32\x1e.model.ApiConfigServiceCluster\"\x1d\n\x0f\x43reateApiConfig\x12\n\n\x02id\x18\x01 \x01(\t\"\xd4\x01\n\x1d\x44\x65scribeDataServiceApiVersion\x12%\n\napi_config\x18\x01 \x01(\x0b\x32\x11.model.ApiVersion\x12\"\n\tapi_group\x18\x02 \x01(\x0b\x32\x0f.model.ApiGroup\x12/\n\x0b\x64\x61ta_source\x18\x03 \x01(\x0b\x32\x1a.model.ApiConfigDataSource\x12\x37\n\x0fservice_cluster\x18\x04 \x01(\x0b\x32\x1e.model.ApiConfigServiceCluster\"_\n\x1aListDataServiceApiVersions\x12 \n\x05infos\x18\x01 \x03(\x0b\x32\x11.model.ApiVersion\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"t\n#ListPublishedApiVersionsByClusterId\x12,\n\x05infos\x18\x01 \x03(\x0b\x32\x1d.response.ApiVersionGroupInfo\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"\x9e\x01\n\x13\x41piVersionGroupInfo\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61pi_id\x18\x02 \x01(\t\x12\x10\n\x08\x61pi_name\x18\x03 \x01(\t\x12\x10\n\x08\x61pi_path\x18\x04 \x01(\t\x12\x12\n\ngroup_name\x18\x05 \x01(\t\x12\x12\n\ngroup_path\x18\x06 \x01(\t\x12\x17\n\x0f\x61pi_description\x18\x07 \x01(\t\"c\n\x12TestDataServiceApi\x12\x0c\n\x04logs\x18\x01 \x01(\t\x12\x18\n\x10response_content\x18\x02 \x01(\t\x12\x13\n\x0btest_status\x18\x03 \x01(\t\x12\x10\n\x08time_out\x18\x04 \x01(\x03\"\x7f\n\x1f\x44\x65scribePublishedApiHttpDetails\x12\x36\n\x0erequest_method\x18\x01 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethod\x12\x17\n\x0frequest_content\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"M\n\x1e\x44\x65scribeServiceDataSourceKinds\x12+\n\x05Kinds\x18\x01 \x03(\x0b\x32\x1c.model.ServiceDataSourceKindB|\n%com.dataomnis.gproto.types.pbresponseB\x1bPBResponseDataServiceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_model_dot_dataservice__pb2.DESCRIPTOR,])
 
@@ -215,6 +215,38 @@ _CREATEAPIGROUP = _descriptor.Descriptor(
 )
 
 
+_DESCRIBEAPIGROUP = _descriptor.Descriptor(
+  name='DescribeApiGroup',
+  full_name='response.DescribeApiGroup',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='info', full_name='response.DescribeApiGroup.info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=421,
+  serialized_end=470,
+)
+
+
 _LISTAPICONFIGS = _descriptor.Descriptor(
   name='ListApiConfigs',
   full_name='response.ListApiConfigs',
@@ -256,8 +288,8 @@ _LISTAPICONFIGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=503,
+  serialized_start=472,
+  serialized_end=554,
 )
 
 
@@ -309,8 +341,8 @@ _DESCRIBEAPICONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=506,
-  serialized_end=705,
+  serialized_start=557,
+  serialized_end=756,
 )
 
 
@@ -341,8 +373,8 @@ _CREATEAPICONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=707,
-  serialized_end=736,
+  serialized_start=758,
+  serialized_end=787,
 )
 
 
@@ -355,7 +387,7 @@ _DESCRIBEDATASERVICEAPIVERSION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='api_version', full_name='response.DescribeDataServiceApiVersion.api_version', index=0,
+      name='api_config', full_name='response.DescribeDataServiceApiVersion.api_config', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -394,8 +426,8 @@ _DESCRIBEDATASERVICEAPIVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=739,
-  serialized_end=952,
+  serialized_start=790,
+  serialized_end=1002,
 )
 
 
@@ -440,8 +472,8 @@ _LISTDATASERVICEAPIVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=954,
-  serialized_end=1049,
+  serialized_start=1004,
+  serialized_end=1099,
 )
 
 
@@ -486,8 +518,8 @@ _LISTPUBLISHEDAPIVERSIONSBYCLUSTERID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1051,
-  serialized_end=1167,
+  serialized_start=1101,
+  serialized_end=1217,
 )
 
 
@@ -560,8 +592,8 @@ _APIVERSIONGROUPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1170,
-  serialized_end=1328,
+  serialized_start=1220,
+  serialized_end=1378,
 )
 
 
@@ -587,6 +619,20 @@ _TESTDATASERVICEAPI = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='test_status', full_name='response.TestDataServiceApi.test_status', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='time_out', full_name='response.TestDataServiceApi.time_out', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -599,8 +645,8 @@ _TESTDATASERVICEAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1330,
-  serialized_end=1390,
+  serialized_start=1380,
+  serialized_end=1479,
 )
 
 
@@ -645,8 +691,8 @@ _DESCRIBEPUBLISHEDAPIHTTPDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1392,
-  serialized_end=1519,
+  serialized_start=1481,
+  serialized_end=1608,
 )
 
 
@@ -677,19 +723,20 @@ _DESCRIBESERVICEDATASOURCEKINDS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1521,
-  serialized_end=1598,
+  serialized_start=1610,
+  serialized_end=1687,
 )
 
 _LISTDATASERVICECLUSTERS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER
 _DESCRIBEDATASERVICECLUSTER.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER
 _LISTAPIGROUPS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIGROUP
+_DESCRIBEAPIGROUP.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIGROUP
 _LISTAPICONFIGS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG
 _DESCRIBEAPICONFIG.fields_by_name['api_config'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG
 _DESCRIBEAPICONFIG.fields_by_name['api_group'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIGROUP
 _DESCRIBEAPICONFIG.fields_by_name['data_source'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIGDATASOURCE
 _DESCRIBEAPICONFIG.fields_by_name['service_cluster'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIGSERVICECLUSTER
-_DESCRIBEDATASERVICEAPIVERSION.fields_by_name['api_version'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIVERSION
+_DESCRIBEDATASERVICEAPIVERSION.fields_by_name['api_config'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIVERSION
 _DESCRIBEDATASERVICEAPIVERSION.fields_by_name['api_group'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APIGROUP
 _DESCRIBEDATASERVICEAPIVERSION.fields_by_name['data_source'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIGDATASOURCE
 _DESCRIBEDATASERVICEAPIVERSION.fields_by_name['service_cluster'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIGSERVICECLUSTER
@@ -702,6 +749,7 @@ DESCRIPTOR.message_types_by_name['DescribeDataServiceCluster'] = _DESCRIBEDATASE
 DESCRIPTOR.message_types_by_name['CreateDataServiceCluster'] = _CREATEDATASERVICECLUSTER
 DESCRIPTOR.message_types_by_name['ListApiGroups'] = _LISTAPIGROUPS
 DESCRIPTOR.message_types_by_name['CreateApiGroup'] = _CREATEAPIGROUP
+DESCRIPTOR.message_types_by_name['DescribeApiGroup'] = _DESCRIBEAPIGROUP
 DESCRIPTOR.message_types_by_name['ListApiConfigs'] = _LISTAPICONFIGS
 DESCRIPTOR.message_types_by_name['DescribeApiConfig'] = _DESCRIBEAPICONFIG
 DESCRIPTOR.message_types_by_name['CreateApiConfig'] = _CREATEAPICONFIG
@@ -748,6 +796,13 @@ CreateApiGroup = _reflection.GeneratedProtocolMessageType('CreateApiGroup', (_me
   # @@protoc_insertion_point(class_scope:response.CreateApiGroup)
   })
 _sym_db.RegisterMessage(CreateApiGroup)
+
+DescribeApiGroup = _reflection.GeneratedProtocolMessageType('DescribeApiGroup', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBEAPIGROUP,
+  '__module__' : 'proto.types.response.dataservice_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.DescribeApiGroup)
+  })
+_sym_db.RegisterMessage(DescribeApiGroup)
 
 ListApiConfigs = _reflection.GeneratedProtocolMessageType('ListApiConfigs', (_message.Message,), {
   'DESCRIPTOR' : _LISTAPICONFIGS,

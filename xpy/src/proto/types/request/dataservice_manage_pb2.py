@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\032PBRequestDataServiceManageP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/request/dataservice_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a#proto/types/model/dataservice.proto\"\xea\x01\n\x17ListDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x12\n\x04name\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\"l\n\x1a\x44\x65scribeDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\"\xd7\x01\n\x18UpdateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\xf5\x01\n\x18\x43reateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12#\n\ncreated_by\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12L\n\rresource_spec\x18\x05 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"r\n\x19\x44\x65leteDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"q\n\x18StartDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"p\n\x17StopDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"\xcc\x01\n\rListApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"\xba\x01\n\x0e\x43reateApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12 \n\ngroup_path\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12#\n\ncreated_by\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"f\n\x0f\x44\x65leteApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12,\n\tgroup_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sg-\"^\n\x0eListApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\"\x9c\x06\n\x0fUpdateApiConfig\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12!\n\x08\x61pi_name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x05 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12-\n\tprotocols\x18\x07 \x01(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x08 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\t \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\n \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x0b \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xac\x02@\x01\x12*\n\rdatasource_id\x18\x0c \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\r \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1e\n\x06script\x18\x0e \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x0f \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\x1d\n\ncluster_id\x18\x10 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x30\n\x0erequest_params\x18\x11 \x01(\x0b\x32\x18.model.RequestParameters\x12\x32\n\x0fresponse_params\x18\x12 \x01(\x0b\x32\x19.model.ResponseParameters\"8\n\x11\x44\x65scribeApiConfig\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"e\n\x10\x44\x65leteApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\xa6\x04\n\x0f\x43reateApiConfig\x12!\n\x08\x61pi_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x03 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12-\n\tprotocols\x18\x06 \x01(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x07 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x08 \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\t \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\n \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xb4\x01@\x01\x12%\n\x08group_id\x18\x0b \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12#\n\ncreated_by\x18\x0c \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\xe1\x01\n\x1aListDataServiceApiVersions\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xee\x01\n#ListPublishedApiVersionsByClusterId\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xe8\x01\n\x11ListPublishedApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"\x8d\x01\n\x1d\x44\x65scribeDataServiceApiVersion\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12 \n\nversion_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x87\x01\n\x17RepublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12 \n\nversion_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"c\n\x15PublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"k\n\x16\x41\x62olishDataServiceApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\x97\x01\n\x12TestDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12\x35\n\x0erequest_params\x18\x03 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00\"\xa1\x01\n\x1f\x44\x65scribePublishedApiHttpDetails\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x35\n\x0erequest_params\x18\x03 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00\x42y\n$com.dataomnis.gproto.types.pbrequestB\x1aPBRequestDataServiceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n,proto/types/request/dataservice_manage.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\x1a#proto/types/model/dataservice.proto\"\xea\x01\n\x17ListDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x12\n\x04name\x18\x06 \x01(\tB\x04\xe2\xdf\x1f\x00\"l\n\x1a\x44\x65scribeDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\"\xd7\x01\n\x18UpdateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12L\n\rresource_spec\x18\x04 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"\xf5\x01\n\x18\x43reateDataServiceCluster\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12#\n\ncreated_by\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\x12 \n\x0bspace_owner\x18\x04 \x01(\tB\x0b\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12L\n\rresource_spec\x18\x05 \x01(\x0e\x32&.model.DataServiceCluster.ResourceSpecB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\"r\n\x19\x44\x65leteDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"q\n\x18StartDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"p\n\x17StopDataServiceClusters\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12.\n\x0b\x63luster_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sc-\"\xcc\x01\n\rListApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x15\n\x07reverse\x18\x05 \x01(\x08\x42\x04\xe2\xdf\x1f\x00\"\xba\x01\n\x0e\x43reateApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\x1d\n\x04name\x18\x02 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12 \n\ngroup_path\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\x12#\n\ncreated_by\x18\x05 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\xbc\x01\n\x0eUpdateApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\x1d\n\x04name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12 \n\ngroup_path\x18\x04 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\x98\x02@\x12\x1b\n\x04\x64\x65sc\x18\x05 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\xc8\x01\x80\x08\"`\n\x10\x44\x65scribeApiGroup\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\"f\n\x0f\x44\x65leteApiGroups\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12,\n\tgroup_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sg-\"^\n\x0eListApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12%\n\x08group_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\"\x9c\x06\n\x0fUpdateApiConfig\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12!\n\x08\x61pi_name\x18\x03 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x04 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x05 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x06 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12-\n\tprotocols\x18\x07 \x01(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x08 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\t \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\n \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\x0b \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xac\x02@\x01\x12*\n\rdatasource_id\x18\x0c \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04som-\x12#\n\ntable_name\x18\r \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\x1e\n\x06script\x18\x0e \x01(\tB\x0e\xe2\xdf\x1f\n\x12\x08\xc2\x01\x05\x98\x02\xa0\x9c\x01\x12%\n\x08group_id\x18\x0f \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12\x1d\n\ncluster_id\x18\x10 \x01(\tB\t\xe2\xdf\x1f\x05\x12\x03\xc2\x01\x00\x12\x30\n\x0erequest_params\x18\x11 \x01(\x0b\x32\x18.model.RequestParameters\x12\x32\n\x0fresponse_params\x18\x12 \x01(\x0b\x32\x19.model.ResponseParameters\"8\n\x11\x44\x65scribeApiConfig\x12#\n\x06\x61pi_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"e\n\x10\x44\x65leteApiConfigs\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\xaa\x04\n\x13UpdateApiBaseConfig\x12!\n\x08\x61pi_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x03 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12-\n\tprotocols\x18\x06 \x01(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x07 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x08 \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\t \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\n \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xac\x02@\x01\x12%\n\x08group_id\x18\x0b \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12#\n\x06\x61pi_id\x18\x0c \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"\xa6\x04\n\x0f\x43reateApiConfig\x12!\n\x08\x61pi_name\x18\x01 \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x98\x02@\x12\"\n\x08\x61pi_path\x18\x02 \x01(\tB\x10\xe2\xdf\x1f\x0c\x12\n\xc2\x01\x07\x80\x02\x00\x98\x02\xc8\x01\x12\x39\n\x08\x61pi_mode\x18\x03 \x01(\x0e\x32\x18.model.ApiConfig.ApiModeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12&\n\x0f\x61pi_description\x18\x04 \x01(\tB\r\xe2\xdf\x1f\t\x12\x07\xc2\x01\x04\x98\x02\x81\x02\x12%\n\x08space_id\x18\x05 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12-\n\tprotocols\x18\x06 \x01(\x0e\x32\x1a.model.ApiConfig.Protocols\x12\x45\n\x0erequest_method\x18\x07 \x01(\x0e\x32\x1e.model.ApiConfig.RequestMethodB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x43\n\rresponse_type\x18\x08 \x01(\x0e\x32\x1d.model.ApiConfig.ResponseTypeB\r\xe2\xdf\x1f\t\x12\x07\xda\x01\x04\x30\x00X\x01\x12\x1a\n\x0c\x63ross_domain\x18\t \x01(\x08\x42\x04\xe2\xdf\x1f\x00\x12\x1f\n\x07timeout\x18\n \x01(\x03\x42\x0e\xe2\xdf\x1f\n\x12\x08\xb2\x01\x05\x38\xac\x02@\x01\x12%\n\x08group_id\x18\x0b \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sg-\x12#\n\ncreated_by\x18\x0c \x01(\tB\x0f\xe2\xdf\x1f\x0b\x12\t\xc2\x01\x06\x80\x02\x00\x88\x02\x41\"\xe1\x01\n\x1aListDataServiceApiVersions\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xee\x01\n#ListPublishedApiVersionsByClusterId\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12\'\n\ncluster_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sc-\x12&\n\x05limit\x18\x03 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x04 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x32\n\x07sort_by\x18\x05 \x01(\tB!\xe2\xdf\x1f\x1d\x12\x1b\xc2\x01\x18J\x00J\x02idJ\x07\x63reatedJ\x07updated\"\xe8\x01\n\x11ListPublishedApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x1b\n\x06offset\x18\x03 \x01(\x05\x42\x0b\xe2\xdf\x1f\x07\x12\x05\xb2\x01\x02@\x00\x12\x38\n\x07sort_by\x18\x04 \x01(\tB\'\xe2\xdf\x1f#\x12!\xc2\x01\x1eJ\x00J\x02idJ\x07\x63reatedJ\x07updatedJ\x04name\x12\x0f\n\x07reverse\x18\x05 \x01(\x08\x12\x0e\n\x06search\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\"\x8d\x01\n\x1d\x44\x65scribeDataServiceApiVersion\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12 \n\nversion_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"\x87\x01\n\x17RepublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12 \n\nversion_id\x18\x03 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\"c\n\x15PublishDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\"k\n\x16\x41\x62olishDataServiceApis\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12*\n\x07\x61pi_ids\x18\x02 \x03(\tB\x19\xe2\xdf\x1f\x15\x12\x13\xea\x01\x10\x38\x64@\x01Z\n\xc2\x01\x07\xca\x02\x04\x64sa-\"\x97\x01\n\x12TestDataServiceApi\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12#\n\x06\x61pi_id\x18\x02 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04\x64sa-\x12\x35\n\x0erequest_params\x18\x03 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00\"\xa1\x01\n\x1f\x44\x65scribePublishedApiHttpDetails\x12%\n\x08space_id\x18\x01 \x01(\tB\x13\xe2\xdf\x1f\x0f\x12\r\xc2\x01\n\xf0\x01\x14\xca\x02\x04wks-\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe2\xdf\x1f\x08\x12\x06\xc2\x01\x03\xf0\x01\x10\x12\x35\n\x0erequest_params\x18\x03 \x03(\x0b\x32\x17.model.RequestParameterB\x04\xe2\xdf\x1f\x00\x42y\n$com.dataomnis.gproto.types.pbrequestB\x1aPBRequestDataServiceManageP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_dataservice__pb2.DESCRIPTOR,])
 
@@ -485,6 +485,105 @@ _CREATEAPIGROUP = _descriptor.Descriptor(
 )
 
 
+_UPDATEAPIGROUP = _descriptor.Descriptor(
+  name='UpdateApiGroup',
+  full_name='request.UpdateApiGroup',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.UpdateApiGroup.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='request.UpdateApiGroup.group_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='request.UpdateApiGroup.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='group_path', full_name='request.UpdateApiGroup.group_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\010\022\006\302\001\003\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='desc', full_name='request.UpdateApiGroup.desc', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\310\001\200\010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1754,
+  serialized_end=1942,
+)
+
+
+_DESCRIBEAPIGROUP = _descriptor.Descriptor(
+  name='DescribeApiGroup',
+  full_name='request.DescribeApiGroup',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.DescribeApiGroup.space_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='request.DescribeApiGroup.group_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1944,
+  serialized_end=2040,
+)
+
+
 _DELETEAPIGROUPS = _descriptor.Descriptor(
   name='DeleteApiGroups',
   full_name='request.DeleteApiGroups',
@@ -519,8 +618,8 @@ _DELETEAPIGROUPS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1753,
-  serialized_end=1855,
+  serialized_start=2042,
+  serialized_end=2144,
 )
 
 
@@ -558,8 +657,8 @@ _LISTAPICONFIGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1857,
-  serialized_end=1951,
+  serialized_start=2146,
+  serialized_end=2240,
 )
 
 
@@ -709,8 +808,8 @@ _UPDATEAPICONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1954,
-  serialized_end=2750,
+  serialized_start=2243,
+  serialized_end=3039,
 )
 
 
@@ -741,8 +840,8 @@ _DESCRIBEAPICONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2752,
-  serialized_end=2808,
+  serialized_start=3041,
+  serialized_end=3097,
 )
 
 
@@ -780,8 +879,117 @@ _DELETEAPICONFIGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2810,
-  serialized_end=2911,
+  serialized_start=3099,
+  serialized_end=3200,
+)
+
+
+_UPDATEAPIBASECONFIG = _descriptor.Descriptor(
+  name='UpdateApiBaseConfig',
+  full_name='request.UpdateApiBaseConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='api_name', full_name='request.UpdateApiBaseConfig.api_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\013\022\t\302\001\006\200\002\000\230\002@', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_path', full_name='request.UpdateApiBaseConfig.api_path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_mode', full_name='request.UpdateApiBaseConfig.api_mode', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_description', full_name='request.UpdateApiBaseConfig.api_description', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\302\001\004\230\002\201\002', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='space_id', full_name='request.UpdateApiBaseConfig.space_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='protocols', full_name='request.UpdateApiBaseConfig.protocols', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='request_method', full_name='request.UpdateApiBaseConfig.request_method', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='response_type', full_name='request.UpdateApiBaseConfig.response_type', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\t\022\007\332\001\0040\000X\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cross_domain', full_name='request.UpdateApiBaseConfig.cross_domain', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='request.UpdateApiBaseConfig.timeout', index=9,
+      number=10, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\n\022\010\262\001\0058\254\002@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='group_id', full_name='request.UpdateApiBaseConfig.group_id', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='api_id', full_name='request.UpdateApiBaseConfig.api_id', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3203,
+  serialized_end=3757,
 )
 
 
@@ -862,7 +1070,7 @@ _CREATEAPICONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\342\337\037\n\022\010\262\001\0058\264\001@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\342\337\037\n\022\010\262\001\0058\254\002@\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='group_id', full_name='request.CreateApiConfig.group_id', index=10,
       number=11, type=9, cpp_type=9, label=1,
@@ -889,8 +1097,8 @@ _CREATEAPICONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2914,
-  serialized_end=3464,
+  serialized_start=3760,
+  serialized_end=4310,
 )
 
 
@@ -949,8 +1157,8 @@ _LISTDATASERVICEAPIVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3467,
-  serialized_end=3692,
+  serialized_start=4313,
+  serialized_end=4538,
 )
 
 
@@ -1009,8 +1217,8 @@ _LISTPUBLISHEDAPIVERSIONSBYCLUSTERID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3695,
-  serialized_end=3933,
+  serialized_start=4541,
+  serialized_end=4779,
 )
 
 
@@ -1083,8 +1291,8 @@ _LISTPUBLISHEDAPIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3936,
-  serialized_end=4168,
+  serialized_start=4782,
+  serialized_end=5014,
 )
 
 
@@ -1129,8 +1337,8 @@ _DESCRIBEDATASERVICEAPIVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4171,
-  serialized_end=4312,
+  serialized_start=5017,
+  serialized_end=5158,
 )
 
 
@@ -1175,8 +1383,8 @@ _REPUBLISHDATASERVICEAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4315,
-  serialized_end=4450,
+  serialized_start=5161,
+  serialized_end=5296,
 )
 
 
@@ -1214,8 +1422,8 @@ _PUBLISHDATASERVICEAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4452,
-  serialized_end=4551,
+  serialized_start=5298,
+  serialized_end=5397,
 )
 
 
@@ -1253,8 +1461,8 @@ _ABOLISHDATASERVICEAPIS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4553,
-  serialized_end=4660,
+  serialized_start=5399,
+  serialized_end=5506,
 )
 
 
@@ -1299,8 +1507,8 @@ _TESTDATASERVICEAPI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4663,
-  serialized_end=4814,
+  serialized_start=5509,
+  serialized_end=5660,
 )
 
 
@@ -1345,8 +1553,8 @@ _DESCRIBEPUBLISHEDAPIHTTPDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4817,
-  serialized_end=4978,
+  serialized_start=5663,
+  serialized_end=5824,
 )
 
 _UPDATEDATASERVICECLUSTER.fields_by_name['resource_spec'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._DATASERVICECLUSTER_RESOURCESPEC
@@ -1357,6 +1565,10 @@ _UPDATEAPICONFIG.fields_by_name['request_method'].enum_type = proto_dot_types_do
 _UPDATEAPICONFIG.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
 _UPDATEAPICONFIG.fields_by_name['request_params'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._REQUESTPARAMETERS
 _UPDATEAPICONFIG.fields_by_name['response_params'].message_type = proto_dot_types_dot_model_dot_dataservice__pb2._RESPONSEPARAMETERS
+_UPDATEAPIBASECONFIG.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
+_UPDATEAPIBASECONFIG.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
+_UPDATEAPIBASECONFIG.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
+_UPDATEAPIBASECONFIG.fields_by_name['response_type'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_RESPONSETYPE
 _CREATEAPICONFIG.fields_by_name['api_mode'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_APIMODE
 _CREATEAPICONFIG.fields_by_name['protocols'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_PROTOCOLS
 _CREATEAPICONFIG.fields_by_name['request_method'].enum_type = proto_dot_types_dot_model_dot_dataservice__pb2._APICONFIG_REQUESTMETHOD
@@ -1372,11 +1584,14 @@ DESCRIPTOR.message_types_by_name['StartDataServiceClusters'] = _STARTDATASERVICE
 DESCRIPTOR.message_types_by_name['StopDataServiceClusters'] = _STOPDATASERVICECLUSTERS
 DESCRIPTOR.message_types_by_name['ListApiGroups'] = _LISTAPIGROUPS
 DESCRIPTOR.message_types_by_name['CreateApiGroup'] = _CREATEAPIGROUP
+DESCRIPTOR.message_types_by_name['UpdateApiGroup'] = _UPDATEAPIGROUP
+DESCRIPTOR.message_types_by_name['DescribeApiGroup'] = _DESCRIBEAPIGROUP
 DESCRIPTOR.message_types_by_name['DeleteApiGroups'] = _DELETEAPIGROUPS
 DESCRIPTOR.message_types_by_name['ListApiConfigs'] = _LISTAPICONFIGS
 DESCRIPTOR.message_types_by_name['UpdateApiConfig'] = _UPDATEAPICONFIG
 DESCRIPTOR.message_types_by_name['DescribeApiConfig'] = _DESCRIBEAPICONFIG
 DESCRIPTOR.message_types_by_name['DeleteApiConfigs'] = _DELETEAPICONFIGS
+DESCRIPTOR.message_types_by_name['UpdateApiBaseConfig'] = _UPDATEAPIBASECONFIG
 DESCRIPTOR.message_types_by_name['CreateApiConfig'] = _CREATEAPICONFIG
 DESCRIPTOR.message_types_by_name['ListDataServiceApiVersions'] = _LISTDATASERVICEAPIVERSIONS
 DESCRIPTOR.message_types_by_name['ListPublishedApiVersionsByClusterId'] = _LISTPUBLISHEDAPIVERSIONSBYCLUSTERID
@@ -1452,6 +1667,20 @@ CreateApiGroup = _reflection.GeneratedProtocolMessageType('CreateApiGroup', (_me
   })
 _sym_db.RegisterMessage(CreateApiGroup)
 
+UpdateApiGroup = _reflection.GeneratedProtocolMessageType('UpdateApiGroup', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEAPIGROUP,
+  '__module__' : 'proto.types.request.dataservice_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateApiGroup)
+  })
+_sym_db.RegisterMessage(UpdateApiGroup)
+
+DescribeApiGroup = _reflection.GeneratedProtocolMessageType('DescribeApiGroup', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBEAPIGROUP,
+  '__module__' : 'proto.types.request.dataservice_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.DescribeApiGroup)
+  })
+_sym_db.RegisterMessage(DescribeApiGroup)
+
 DeleteApiGroups = _reflection.GeneratedProtocolMessageType('DeleteApiGroups', (_message.Message,), {
   'DESCRIPTOR' : _DELETEAPIGROUPS,
   '__module__' : 'proto.types.request.dataservice_manage_pb2'
@@ -1486,6 +1715,13 @@ DeleteApiConfigs = _reflection.GeneratedProtocolMessageType('DeleteApiConfigs', 
   # @@protoc_insertion_point(class_scope:request.DeleteApiConfigs)
   })
 _sym_db.RegisterMessage(DeleteApiConfigs)
+
+UpdateApiBaseConfig = _reflection.GeneratedProtocolMessageType('UpdateApiBaseConfig', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEAPIBASECONFIG,
+  '__module__' : 'proto.types.request.dataservice_manage_pb2'
+  # @@protoc_insertion_point(class_scope:request.UpdateApiBaseConfig)
+  })
+_sym_db.RegisterMessage(UpdateApiBaseConfig)
 
 CreateApiConfig = _reflection.GeneratedProtocolMessageType('CreateApiConfig', (_message.Message,), {
   'DESCRIPTOR' : _CREATEAPICONFIG,
@@ -1592,6 +1828,13 @@ _CREATEAPIGROUP.fields_by_name['name']._options = None
 _CREATEAPIGROUP.fields_by_name['group_path']._options = None
 _CREATEAPIGROUP.fields_by_name['desc']._options = None
 _CREATEAPIGROUP.fields_by_name['created_by']._options = None
+_UPDATEAPIGROUP.fields_by_name['space_id']._options = None
+_UPDATEAPIGROUP.fields_by_name['group_id']._options = None
+_UPDATEAPIGROUP.fields_by_name['name']._options = None
+_UPDATEAPIGROUP.fields_by_name['group_path']._options = None
+_UPDATEAPIGROUP.fields_by_name['desc']._options = None
+_DESCRIBEAPIGROUP.fields_by_name['space_id']._options = None
+_DESCRIBEAPIGROUP.fields_by_name['group_id']._options = None
 _DELETEAPIGROUPS.fields_by_name['space_id']._options = None
 _DELETEAPIGROUPS.fields_by_name['group_ids']._options = None
 _LISTAPICONFIGS.fields_by_name['space_id']._options = None
@@ -1614,6 +1857,17 @@ _UPDATEAPICONFIG.fields_by_name['cluster_id']._options = None
 _DESCRIBEAPICONFIG.fields_by_name['api_id']._options = None
 _DELETEAPICONFIGS.fields_by_name['space_id']._options = None
 _DELETEAPICONFIGS.fields_by_name['api_ids']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['api_name']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['api_path']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['api_mode']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['api_description']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['space_id']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['request_method']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['response_type']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['cross_domain']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['timeout']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['group_id']._options = None
+_UPDATEAPIBASECONFIG.fields_by_name['api_id']._options = None
 _CREATEAPICONFIG.fields_by_name['api_name']._options = None
 _CREATEAPICONFIG.fields_by_name['api_path']._options = None
 _CREATEAPICONFIG.fields_by_name['api_mode']._options = None

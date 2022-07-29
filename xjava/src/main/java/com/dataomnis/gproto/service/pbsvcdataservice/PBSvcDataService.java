@@ -28,7 +28,7 @@ public final class PBSvcDataService {
       "dataservice_manage.proto\032-proto/types/re" +
       "sponse/dataservice_manage.proto\032\035proto/t" +
       "ypes/model/empty.proto\032#proto/types/mode" +
-      "l/dataservice.proto2\322\020\n\013DataService\022c\n\030C" +
+      "l/dataservice.proto2\253\022\n\013DataService\022c\n\030C" +
       "reateDataServiceCluster\022!.request.Create" +
       "DataServiceCluster\032\".response.CreateData" +
       "ServiceCluster\"\000\022`\n\027ListDataServiceClust" +
@@ -52,40 +52,45 @@ public final class PBSvcDataService {
       "ApiGroup\"\000\022B\n\rListApiGroups\022\026.request.Li" +
       "stApiGroups\032\027.response.ListApiGroups\"\000\022A" +
       "\n\017DeleteApiGroups\022\030.request.DeleteApiGro" +
-      "ups\032\022.model.EmptyStruct\"\000\022E\n\016ListApiConf" +
-      "igs\022\027.request.ListApiConfigs\032\030.response." +
-      "ListApiConfigs\"\000\022N\n\021DescribeApiConfig\022\032." +
-      "request.DescribeApiConfig\032\033.response.Des" +
-      "cribeApiConfig\"\000\022H\n\017CreateApiConfig\022\030.re" +
-      "quest.CreateApiConfig\032\031.response.CreateA" +
-      "piConfig\"\000\022A\n\017UpdateApiConfig\022\030.request." +
-      "UpdateApiConfig\032\022.model.EmptyStruct\"\000\022C\n" +
-      "\020DeleteApiConfigs\022\031.request.DeleteApiCon" +
-      "figs\032\022.model.EmptyStruct\"\000\022Q\n\022TestDataSe" +
-      "rviceApi\022\033.request.TestDataServiceApi\032\034." +
-      "response.TestDataServiceApi\"\000\022M\n\025Publish" +
-      "DataServiceApi\022\036.request.PublishDataServ" +
-      "iceApi\032\022.model.EmptyStruct\"\000\022O\n\026AbolishD" +
-      "ataServiceApis\022\037.request.AbolishDataServ" +
-      "iceApis\032\022.model.EmptyStruct\"\000\022x\n\037Describ" +
-      "ePublishedApiHttpDetails\022(.request.Descr" +
-      "ibePublishedApiHttpDetails\032).response.De" +
-      "scribePublishedApiHttpDetails\"\000\022i\n\032ListD" +
-      "ataServiceApiVersions\022#.request.ListData" +
-      "ServiceApiVersions\032$.response.ListDataSe" +
-      "rviceApiVersions\"\000\022r\n\035DescribeDataServic" +
-      "eApiVersion\022&.request.DescribeDataServic" +
-      "eApiVersion\032\'.response.DescribeDataServi" +
-      "ceApiVersion\"\000\022Q\n\027RepublishDataServiceAp" +
-      "i\022 .request.RepublishDataServiceApi\032\022.mo" +
-      "del.EmptyStruct\"\000\022\204\001\n#ListPublishedApiVe" +
-      "rsionsByClusterId\022,.request.ListPublishe" +
-      "dApiVersionsByClusterId\032-.response.ListP" +
-      "ublishedApiVersionsByClusterId\"\000B\201\001\n-com" +
-      ".dataomnis.gproto.service.pbsvcdataservi" +
-      "ceB\020PBSvcDataServiceP\000Z<github.com/DataW" +
-      "orkbench/gproto/xgo/service/pbsvcdataser" +
-      "viceb\006proto3"
+      "ups\032\022.model.EmptyStruct\"\000\022?\n\016UpdateApiGr" +
+      "oup\022\027.request.UpdateApiGroup\032\022.model.Emp" +
+      "tyStruct\"\000\022K\n\020DescribeApiGroup\022\031.request" +
+      ".DescribeApiGroup\032\032.response.DescribeApi" +
+      "Group\"\000\022E\n\016ListApiConfigs\022\027.request.List" +
+      "ApiConfigs\032\030.response.ListApiConfigs\"\000\022N" +
+      "\n\021DescribeApiConfig\022\032.request.DescribeAp" +
+      "iConfig\032\033.response.DescribeApiConfig\"\000\022H" +
+      "\n\017CreateApiConfig\022\030.request.CreateApiCon" +
+      "fig\032\031.response.CreateApiConfig\"\000\022A\n\017Upda" +
+      "teApiConfig\022\030.request.UpdateApiConfig\032\022." +
+      "model.EmptyStruct\"\000\022I\n\023UpdateApiBaseConf" +
+      "ig\022\034.request.UpdateApiBaseConfig\032\022.model" +
+      ".EmptyStruct\"\000\022C\n\020DeleteApiConfigs\022\031.req" +
+      "uest.DeleteApiConfigs\032\022.model.EmptyStruc" +
+      "t\"\000\022Q\n\022TestDataServiceApi\022\033.request.Test" +
+      "DataServiceApi\032\034.response.TestDataServic" +
+      "eApi\"\000\022M\n\025PublishDataServiceApi\022\036.reques" +
+      "t.PublishDataServiceApi\032\022.model.EmptyStr" +
+      "uct\"\000\022O\n\026AbolishDataServiceApis\022\037.reques" +
+      "t.AbolishDataServiceApis\032\022.model.EmptySt" +
+      "ruct\"\000\022x\n\037DescribePublishedApiHttpDetail" +
+      "s\022(.request.DescribePublishedApiHttpDeta" +
+      "ils\032).response.DescribePublishedApiHttpD" +
+      "etails\"\000\022i\n\032ListDataServiceApiVersions\022#" +
+      ".request.ListDataServiceApiVersions\032$.re" +
+      "sponse.ListDataServiceApiVersions\"\000\022r\n\035D" +
+      "escribeDataServiceApiVersion\022&.request.D" +
+      "escribeDataServiceApiVersion\032\'.response." +
+      "DescribeDataServiceApiVersion\"\000\022Q\n\027Repub" +
+      "lishDataServiceApi\022 .request.RepublishDa" +
+      "taServiceApi\032\022.model.EmptyStruct\"\000\022\204\001\n#L" +
+      "istPublishedApiVersionsByClusterId\022,.req" +
+      "uest.ListPublishedApiVersionsByClusterId" +
+      "\032-.response.ListPublishedApiVersionsByCl" +
+      "usterId\"\000B\201\001\n-com.dataomnis.gproto.servi" +
+      "ce.pbsvcdataserviceB\020PBSvcDataServiceP\000Z" +
+      "<github.com/DataWorkbench/gproto/xgo/ser" +
+      "vice/pbsvcdataserviceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

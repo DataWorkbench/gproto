@@ -12,6 +12,7 @@ option java_multiple_files = false;
 
 import "proto/types/model/syncjob/column.proto";
 import "github.com/yu31/protoc-plugin/proto/gosql.proto";
+import "proto/types/model/syncjob/baseenum.proto";
 
 message KafkaSource {
     option (gosql.serialize) = {json: {}};
@@ -22,7 +23,7 @@ message KafkaSource {
     string topic = 2;
     // mode
     // @inject_tag: json:"mode" 
-    string mode = 3;
+    BaseEnum.ConsumerMode mode = 3;
     // timestamp
     // @inject_tag: json:"timestamp" 
     int64 timestamp = 4;
@@ -33,21 +34,14 @@ message KafkaSource {
     // @inject_tag: json:"group_id" 
     string group_id = 6;
     // encoding
-    // @inject_tag: json:"encoding" 
-    string encoding = 7;
+    // @inject_tag: json:"encoding"
+    BaseEnum.Encoding encoding = 7;
     // codec
     // @inject_tag: json:"codec" 
-    string codec = 8;
+    BaseEnum.CodecMode codec = 8;
     // kafka consumer settings
     // @inject_tag: json:"consumer_settings" 
-    ConsumerSettings consumer_settings = 9;
-}
-
-message ConsumerSettings {
-    option (gosql.serialize) = {json: {}};
-    // auto commit position enable
-    // @inject_tag: json:"auto_commit_enable" 
-    string auto_commit_enable = 1;
+    map<string, string> consumer_settings = 9;
 }
 
 message KafkaTarget {
@@ -58,7 +52,7 @@ message KafkaTarget {
     // kafka topic
     // @inject_tag: json:"topic" 
     string topic = 2;
-    // kafka consumer settings
-    // @inject_tag: json:"consumer_settings" 
-    ConsumerSettings consumer_settings = 3;
+    // kafka producer settings
+    // @inject_tag: json:"producer_settings"
+    map<string, string> producer_settings = 3;
 }
