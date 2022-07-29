@@ -346,3 +346,91 @@ func (this *CreateDataServiceClusterInK8SV2) Validate() error {
 	}
 	return nil
 }
+
+func (this *DeleteDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("DeleteDataServiceClusterInK8SV2", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("DeleteDataServiceClusterInK8SV2", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *DeleteDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("DeleteDataServiceClusterInK8SV2", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
+		return protovalidator.FieldError1("DeleteDataServiceClusterInK8SV2", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+	}
+	return nil
+}
+
+func (this *DeleteDataServiceClusterInK8SV2) _xxx_xxx_Validator_CheckIf_vxnet_id() bool {
+	if !(this.VxnetId != "") {
+		return false
+	}
+	return true
+}
+
+func (this *DeleteDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_vxnet_id() error {
+	if !this._xxx_xxx_Validator_CheckIf_vxnet_id() {
+		return nil
+	}
+	if !(strings.HasPrefix(this.VxnetId, "vxnet-")) {
+		return protovalidator.FieldError1("DeleteDataServiceClusterInK8SV2", "the value of field 'vxnet_id' must start with string 'vxnet-'", this.VxnetId)
+	}
+	return nil
+}
+
+// Set default value for message request.DeleteDataServiceClusterInK8sV2
+func (this *DeleteDataServiceClusterInK8SV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_vxnet_id(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func (this *RestartDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("RestartDataServiceClusterInK8SV2", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("RestartDataServiceClusterInK8SV2", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *RestartDataServiceClusterInK8SV2) _xxx_xxx_Validator_Validate_cluster_id() error {
+	if !(len(this.ClusterId) == 20) {
+		return protovalidator.FieldError1("RestartDataServiceClusterInK8SV2", "the byte length of field 'cluster_id' must be equal to '20'", protovalidator.StringByteLenToString(this.ClusterId))
+	}
+	if !(strings.HasPrefix(this.ClusterId, "dsc-")) {
+		return protovalidator.FieldError1("RestartDataServiceClusterInK8SV2", "the value of field 'cluster_id' must start with string 'dsc-'", this.ClusterId)
+	}
+	return nil
+}
+
+// Set default value for message request.RestartDataServiceClusterInK8sV2
+func (this *RestartDataServiceClusterInK8SV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_cluster_id(); err != nil {
+		return err
+	}
+	return nil
+}

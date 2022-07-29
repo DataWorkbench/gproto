@@ -127,3 +127,19 @@ func (this *CreateDataServiceClusterInK8SV2) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message request.DeleteDataServiceClusterInK8sV2
+func (this *DeleteDataServiceClusterInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
+// Set default value for message request.RestartDataServiceClusterInK8sV2
+func (this *RestartDataServiceClusterInK8SV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

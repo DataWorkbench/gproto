@@ -109,3 +109,28 @@ message CreateDataServiceClusterInK8sV2 {
   model.DataServiceCluster info = 1 [ (validator.field).tags.message = { not_null: true } ];
 
 }
+
+message DeleteDataServiceClusterInK8sV2 {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // @inject_tag: json:"cluster_id"
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+
+  // vxnet id. Is required.
+  // @inject_tag: json:"vxnet_id"
+  string vxnet_id = 3 [
+    (validator.field).check_if = { field: "vxnet_id", tags: {string: { ne: "" }}},
+    (validator.field).tags.string = { prefix: "vxnet-" }
+  ];
+}
+
+message RestartDataServiceClusterInK8sV2 {
+  // Workspace ID it belongs to.
+  // @inject_tag: json:"space_id"
+  string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "wks-"} ];
+
+  // @inject_tag: json:"cluster_id"
+  string cluster_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsc-" } ];
+}

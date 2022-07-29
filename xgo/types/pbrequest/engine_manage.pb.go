@@ -610,6 +610,127 @@ func (x *CreateDataServiceClusterInK8SV2) GetInfo() *pbmodel.DataServiceCluster 
 	return nil
 }
 
+type DeleteDataServiceClusterInK8SV2 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Workspace ID it belongs to.
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id"`
+	// vxnet id. Is required.
+	VxnetId string `protobuf:"bytes,3,opt,name=vxnet_id,json=vxnetId,proto3" json:"vxnet_id"`
+}
+
+func (x *DeleteDataServiceClusterInK8SV2) Reset() {
+	*x = DeleteDataServiceClusterInK8SV2{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_request_engine_manage_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteDataServiceClusterInK8SV2) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteDataServiceClusterInK8SV2) ProtoMessage() {}
+
+func (x *DeleteDataServiceClusterInK8SV2) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_request_engine_manage_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteDataServiceClusterInK8SV2.ProtoReflect.Descriptor instead.
+func (*DeleteDataServiceClusterInK8SV2) Descriptor() ([]byte, []int) {
+	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *DeleteDataServiceClusterInK8SV2) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *DeleteDataServiceClusterInK8SV2) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
+func (x *DeleteDataServiceClusterInK8SV2) GetVxnetId() string {
+	if x != nil {
+		return x.VxnetId
+	}
+	return ""
+}
+
+type RestartDataServiceClusterInK8SV2 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Workspace ID it belongs to.
+	SpaceId   string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id"`
+	ClusterId string `protobuf:"bytes,2,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id"`
+}
+
+func (x *RestartDataServiceClusterInK8SV2) Reset() {
+	*x = RestartDataServiceClusterInK8SV2{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_request_engine_manage_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RestartDataServiceClusterInK8SV2) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RestartDataServiceClusterInK8SV2) ProtoMessage() {}
+
+func (x *RestartDataServiceClusterInK8SV2) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_request_engine_manage_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RestartDataServiceClusterInK8SV2.ProtoReflect.Descriptor instead.
+func (*RestartDataServiceClusterInK8SV2) Descriptor() ([]byte, []int) {
+	return file_proto_types_request_engine_manage_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *RestartDataServiceClusterInK8SV2) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *RestartDataServiceClusterInK8SV2) GetClusterId() string {
+	if x != nil {
+		return x.ClusterId
+	}
+	return ""
+}
+
 var File_proto_types_request_engine_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_request_engine_manage_proto_rawDesc = []byte{
@@ -704,14 +825,36 @@ var file_proto_types_request_engine_manage_proto_rawDesc = []byte{
 	0x28, 0x0b, 0x32, 0x19, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x42, 0x0b, 0xe2,
 	0xdf, 0x1f, 0x07, 0x12, 0x05, 0xe2, 0x01, 0x02, 0x10, 0x01, 0x52, 0x04, 0x69, 0x6e, 0x66, 0x6f,
-	0x42, 0x74, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
-	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
-	0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42, 0x15, 0x50, 0x42, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50,
-	0x00, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61,
-	0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0xcb, 0x01, 0x0a, 0x1f, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x4b,
+	0x38, 0x73, 0x56, 0x32, 0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01,
+	0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61,
+	0x63, 0x65, 0x49, 0x64, 0x12, 0x32, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f,
+	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d,
+	0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x64, 0x73, 0x63, 0x2d, 0x52, 0x09, 0x63,
+	0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x12, 0x44, 0x0a, 0x08, 0x76, 0x78, 0x6e, 0x65,
+	0x74, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x42, 0x29, 0xe2, 0xdf, 0x1f, 0x13,
+	0x0a, 0x11, 0x0a, 0x08, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x5f, 0x69, 0x64, 0x12, 0x05, 0xc2, 0x01,
+	0x02, 0x22, 0x00, 0xe2, 0xdf, 0x1f, 0x0e, 0x12, 0x0c, 0xc2, 0x01, 0x09, 0xca, 0x02, 0x06, 0x76,
+	0x78, 0x6e, 0x65, 0x74, 0x2d, 0x52, 0x07, 0x76, 0x78, 0x6e, 0x65, 0x74, 0x49, 0x64, 0x22, 0x86,
+	0x01, 0x0a, 0x20, 0x52, 0x65, 0x73, 0x74, 0x61, 0x72, 0x74, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x43, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x4b, 0x38,
+	0x73, 0x56, 0x32, 0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a,
+	0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63,
+	0x65, 0x49, 0x64, 0x12, 0x32, 0x0a, 0x0a, 0x63, 0x6c, 0x75, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x69,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2,
+	0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02, 0x04, 0x64, 0x73, 0x63, 0x2d, 0x52, 0x09, 0x63, 0x6c,
+	0x75, 0x73, 0x74, 0x65, 0x72, 0x49, 0x64, 0x42, 0x74, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64,
+	0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
+	0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42,
+	0x15, 0x50, 0x42, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x45, 0x6e, 0x67, 0x69, 0x6e, 0x65,
+	0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e,
+	0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79,
+	0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -726,30 +869,32 @@ func file_proto_types_request_engine_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_request_engine_manage_proto_rawDescData
 }
 
-var file_proto_types_request_engine_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_proto_types_request_engine_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_proto_types_request_engine_manage_proto_goTypes = []interface{}{
-	(*CreateFlinkClusterInK8S)(nil),         // 0: request.CreateFlinkClusterInK8s
-	(*DeleteFlinkClusterInK8S)(nil),         // 1: request.DeleteFlinkClusterInK8s
-	(*CreateNetworkBrokerInK8S)(nil),        // 2: request.CreateNetworkBrokerInK8s
-	(*DeleteNetworkBrokerInK8S)(nil),        // 3: request.DeleteNetworkBrokerInK8s
-	(*DeleteNamespacesInK8S)(nil),           // 4: request.DeleteNamespacesInK8s
-	(*CreateFlinkClusterInK8SV2)(nil),       // 5: request.CreateFlinkClusterInK8sV2
-	(*DeleteFlinkClusterInK8SV2)(nil),       // 6: request.DeleteFlinkClusterInK8sV2
-	(*RestartFlinkClusterInK8S)(nil),        // 7: request.RestartFlinkClusterInK8s
-	(*CreateNetworkBrokerInK8SV2)(nil),      // 8: request.CreateNetworkBrokerInK8sV2
-	(*DeleteNetworkBrokerInK8SV2)(nil),      // 9: request.DeleteNetworkBrokerInK8sV2
-	(*CreateDataServiceClusterInK8SV2)(nil), // 10: request.CreateDataServiceClusterInK8sV2
-	(*pbmodel.FlinkCluster)(nil),            // 11: model.FlinkCluster
-	(*pbmodel.Network)(nil),                 // 12: model.Network
-	(*pbmodel.DataServiceCluster)(nil),      // 13: model.DataServiceCluster
+	(*CreateFlinkClusterInK8S)(nil),          // 0: request.CreateFlinkClusterInK8s
+	(*DeleteFlinkClusterInK8S)(nil),          // 1: request.DeleteFlinkClusterInK8s
+	(*CreateNetworkBrokerInK8S)(nil),         // 2: request.CreateNetworkBrokerInK8s
+	(*DeleteNetworkBrokerInK8S)(nil),         // 3: request.DeleteNetworkBrokerInK8s
+	(*DeleteNamespacesInK8S)(nil),            // 4: request.DeleteNamespacesInK8s
+	(*CreateFlinkClusterInK8SV2)(nil),        // 5: request.CreateFlinkClusterInK8sV2
+	(*DeleteFlinkClusterInK8SV2)(nil),        // 6: request.DeleteFlinkClusterInK8sV2
+	(*RestartFlinkClusterInK8S)(nil),         // 7: request.RestartFlinkClusterInK8s
+	(*CreateNetworkBrokerInK8SV2)(nil),       // 8: request.CreateNetworkBrokerInK8sV2
+	(*DeleteNetworkBrokerInK8SV2)(nil),       // 9: request.DeleteNetworkBrokerInK8sV2
+	(*CreateDataServiceClusterInK8SV2)(nil),  // 10: request.CreateDataServiceClusterInK8sV2
+	(*DeleteDataServiceClusterInK8SV2)(nil),  // 11: request.DeleteDataServiceClusterInK8sV2
+	(*RestartDataServiceClusterInK8SV2)(nil), // 12: request.RestartDataServiceClusterInK8sV2
+	(*pbmodel.FlinkCluster)(nil),             // 13: model.FlinkCluster
+	(*pbmodel.Network)(nil),                  // 14: model.Network
+	(*pbmodel.DataServiceCluster)(nil),       // 15: model.DataServiceCluster
 }
 var file_proto_types_request_engine_manage_proto_depIdxs = []int32{
-	11, // 0: request.CreateFlinkClusterInK8s.info:type_name -> model.FlinkCluster
-	11, // 1: request.DeleteFlinkClusterInK8s.info:type_name -> model.FlinkCluster
-	12, // 2: request.CreateNetworkBrokerInK8s.info:type_name -> model.Network
-	12, // 3: request.DeleteNetworkBrokerInK8s.info:type_name -> model.Network
-	11, // 4: request.CreateFlinkClusterInK8sV2.info:type_name -> model.FlinkCluster
-	13, // 5: request.CreateDataServiceClusterInK8sV2.info:type_name -> model.DataServiceCluster
+	13, // 0: request.CreateFlinkClusterInK8s.info:type_name -> model.FlinkCluster
+	13, // 1: request.DeleteFlinkClusterInK8s.info:type_name -> model.FlinkCluster
+	14, // 2: request.CreateNetworkBrokerInK8s.info:type_name -> model.Network
+	14, // 3: request.DeleteNetworkBrokerInK8s.info:type_name -> model.Network
+	13, // 4: request.CreateFlinkClusterInK8sV2.info:type_name -> model.FlinkCluster
+	15, // 5: request.CreateDataServiceClusterInK8sV2.info:type_name -> model.DataServiceCluster
 	6,  // [6:6] is the sub-list for method output_type
 	6,  // [6:6] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -895,6 +1040,30 @@ func file_proto_types_request_engine_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_request_engine_manage_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteDataServiceClusterInK8SV2); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_types_request_engine_manage_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RestartDataServiceClusterInK8SV2); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -902,7 +1071,7 @@ func file_proto_types_request_engine_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_request_engine_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

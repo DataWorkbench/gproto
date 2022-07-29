@@ -38,4 +38,6 @@ service EngineManage {
   rpc DeleteNetworkBrokerInK8sV2(request.DeleteNetworkBrokerInK8sV2) returns (model.EmptyStruct) {}
 
   rpc CreateDataServiceClusterInK8SV2(request.CreateDataServiceClusterInK8sV2) returns (model.EmptyStruct) {}
+  rpc DeleteDataServiceClusterInK8SV2(request.DeleteDataServiceClusterInK8sV2) returns (model.EmptyStruct) {}
+  rpc RestartDataServiceClusterInK8SV2(request.RestartDataServiceClusterInK8sV2) returns (model.EmptyStruct) {}
 }
