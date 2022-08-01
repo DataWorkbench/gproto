@@ -28,6 +28,12 @@ message ListDataServiceClusters {
   // Filter by cluster name; valid if `search` is empty; Not required.
   // @inject_tag: json:"name" form:"name"
   string name = 6 [ (validator.field) = { } ];
+  //  Search with name; Not required.
+  // @inject_tag: json:"search" form:"search"
+  string search = 7;
+  // The cluster status.
+  // @inject_tag: json:"status" form:"status"
+  model.DataServiceCluster.Status status = 8;
 }
 
 message DescribeDataServiceCluster {
@@ -140,6 +146,9 @@ message ListApiConfigs {
   string space_id = 1 [(validator.field).tags.string = {byte_len_eq: 20; prefix: "wks-"}];
   // @inject_tag: json:"group_id" form:"group_id"
   string group_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "dsg-" } ];
+  //  Search with api name; Not required.
+  // @inject_tag: json:"search" form:"search"
+  string search = 3;
 }
 
 message UpdateApiConfig {
@@ -166,9 +175,9 @@ message UpdateApiConfig {
   // @inject_tag: json:"timeout"
   int64 timeout = 11 [ (validator.field).tags.int = { gte: 1 , lte: 300 } ];
   // @inject_tag: json:"datasource_id"
-  string datasource_id = 12 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "som-" } ];
+  string datasource_id = 12 [ (validator.field).tags.string = { } ];
   // @inject_tag: json:"table_name"
-  string table_name = 13 [ (validator.field).tags.string = {  byte_len_gt: 0, byte_len_lte: 64}  ];
+  string table_name = 13 [ (validator.field).tags.string = { }  ];
   // @inject_tag: json:"script"
   string script = 14 [ (validator.field).tags.string = { byte_len_lte: 20000 }  ];
   // @inject_tag: json:"group_id"
