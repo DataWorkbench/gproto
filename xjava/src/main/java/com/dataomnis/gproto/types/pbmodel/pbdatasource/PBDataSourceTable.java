@@ -1859,6 +1859,1082 @@ public final class PBDataSourceTable {
 
   }
 
+  public interface TableColumnForDataServiceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:datasource.TableColumnForDataService)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column_type"
+     * </pre>
+     *
+     * <code>string column_type = 2;</code>
+     * @return The columnType.
+     */
+    java.lang.String getColumnType();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column_type"
+     * </pre>
+     *
+     * <code>string column_type = 2;</code>
+     * @return The bytes for columnType.
+     */
+    com.google.protobuf.ByteString
+        getColumnTypeBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"is_primary_key"
+     * </pre>
+     *
+     * <code>bool is_primary_key = 3;</code>
+     * @return The isPrimaryKey.
+     */
+    boolean getIsPrimaryKey();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"param_type"
+     * </pre>
+     *
+     * <code>string param_type = 4;</code>
+     * @return The paramType.
+     */
+    java.lang.String getParamType();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"param_type"
+     * </pre>
+     *
+     * <code>string param_type = 4;</code>
+     * @return The bytes for paramType.
+     */
+    com.google.protobuf.ByteString
+        getParamTypeBytes();
+  }
+  /**
+   * Protobuf type {@code datasource.TableColumnForDataService}
+   */
+  public static final class TableColumnForDataService extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:datasource.TableColumnForDataService)
+      TableColumnForDataServiceOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TableColumnForDataService.newBuilder() to construct.
+    private TableColumnForDataService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TableColumnForDataService() {
+      name_ = "";
+      columnType_ = "";
+      paramType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TableColumnForDataService();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TableColumnForDataService(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              columnType_ = s;
+              break;
+            }
+            case 24: {
+
+              isPrimaryKey_ = input.readBool();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              paramType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.internal_static_datasource_TableColumnForDataService_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.internal_static_datasource_TableColumnForDataService_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * column name
+     * &#64;inject_tag: json:"name"
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLUMN_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object columnType_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column_type"
+     * </pre>
+     *
+     * <code>string column_type = 2;</code>
+     * @return The columnType.
+     */
+    @java.lang.Override
+    public java.lang.String getColumnType() {
+      java.lang.Object ref = columnType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        columnType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"column_type"
+     * </pre>
+     *
+     * <code>string column_type = 2;</code>
+     * @return The bytes for columnType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getColumnTypeBytes() {
+      java.lang.Object ref = columnType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        columnType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IS_PRIMARY_KEY_FIELD_NUMBER = 3;
+    private boolean isPrimaryKey_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"is_primary_key"
+     * </pre>
+     *
+     * <code>bool is_primary_key = 3;</code>
+     * @return The isPrimaryKey.
+     */
+    @java.lang.Override
+    public boolean getIsPrimaryKey() {
+      return isPrimaryKey_;
+    }
+
+    public static final int PARAM_TYPE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object paramType_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"param_type"
+     * </pre>
+     *
+     * <code>string param_type = 4;</code>
+     * @return The paramType.
+     */
+    @java.lang.Override
+    public java.lang.String getParamType() {
+      java.lang.Object ref = paramType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paramType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"param_type"
+     * </pre>
+     *
+     * <code>string param_type = 4;</code>
+     * @return The bytes for paramType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getParamTypeBytes() {
+      java.lang.Object ref = paramType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paramType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, columnType_);
+      }
+      if (isPrimaryKey_ != false) {
+        output.writeBool(3, isPrimaryKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, paramType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, columnType_);
+      }
+      if (isPrimaryKey_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isPrimaryKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(paramType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, paramType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService other = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getColumnType()
+          .equals(other.getColumnType())) return false;
+      if (getIsPrimaryKey()
+          != other.getIsPrimaryKey()) return false;
+      if (!getParamType()
+          .equals(other.getParamType())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + COLUMN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnType().hashCode();
+      hash = (37 * hash) + IS_PRIMARY_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPrimaryKey());
+      hash = (37 * hash) + PARAM_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getParamType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code datasource.TableColumnForDataService}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:datasource.TableColumnForDataService)
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.internal_static_datasource_TableColumnForDataService_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.internal_static_datasource_TableColumnForDataService_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.class, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        columnType_ = "";
+
+        isPrimaryKey_ = false;
+
+        paramType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.internal_static_datasource_TableColumnForDataService_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService build() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService buildPartial() {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService result = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService(this);
+        result.name_ = name_;
+        result.columnType_ = columnType_;
+        result.isPrimaryKey_ = isPrimaryKey_;
+        result.paramType_ = paramType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService) {
+          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService other) {
+        if (other == com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getColumnType().isEmpty()) {
+          columnType_ = other.columnType_;
+          onChanged();
+        }
+        if (other.getIsPrimaryKey() != false) {
+          setIsPrimaryKey(other.getIsPrimaryKey());
+        }
+        if (!other.getParamType().isEmpty()) {
+          paramType_ = other.paramType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * column name
+       * &#64;inject_tag: json:"name"
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object columnType_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column_type"
+       * </pre>
+       *
+       * <code>string column_type = 2;</code>
+       * @return The columnType.
+       */
+      public java.lang.String getColumnType() {
+        java.lang.Object ref = columnType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          columnType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column_type"
+       * </pre>
+       *
+       * <code>string column_type = 2;</code>
+       * @return The bytes for columnType.
+       */
+      public com.google.protobuf.ByteString
+          getColumnTypeBytes() {
+        java.lang.Object ref = columnType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          columnType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column_type"
+       * </pre>
+       *
+       * <code>string column_type = 2;</code>
+       * @param value The columnType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        columnType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column_type"
+       * </pre>
+       *
+       * <code>string column_type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearColumnType() {
+        
+        columnType_ = getDefaultInstance().getColumnType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"column_type"
+       * </pre>
+       *
+       * <code>string column_type = 2;</code>
+       * @param value The bytes for columnType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        columnType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isPrimaryKey_ ;
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"is_primary_key"
+       * </pre>
+       *
+       * <code>bool is_primary_key = 3;</code>
+       * @return The isPrimaryKey.
+       */
+      @java.lang.Override
+      public boolean getIsPrimaryKey() {
+        return isPrimaryKey_;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"is_primary_key"
+       * </pre>
+       *
+       * <code>bool is_primary_key = 3;</code>
+       * @param value The isPrimaryKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPrimaryKey(boolean value) {
+        
+        isPrimaryKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"is_primary_key"
+       * </pre>
+       *
+       * <code>bool is_primary_key = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPrimaryKey() {
+        
+        isPrimaryKey_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object paramType_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"param_type"
+       * </pre>
+       *
+       * <code>string param_type = 4;</code>
+       * @return The paramType.
+       */
+      public java.lang.String getParamType() {
+        java.lang.Object ref = paramType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          paramType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"param_type"
+       * </pre>
+       *
+       * <code>string param_type = 4;</code>
+       * @return The bytes for paramType.
+       */
+      public com.google.protobuf.ByteString
+          getParamTypeBytes() {
+        java.lang.Object ref = paramType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          paramType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"param_type"
+       * </pre>
+       *
+       * <code>string param_type = 4;</code>
+       * @param value The paramType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParamType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        paramType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"param_type"
+       * </pre>
+       *
+       * <code>string param_type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParamType() {
+        
+        paramType_ = getDefaultInstance().getParamType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"param_type"
+       * </pre>
+       *
+       * <code>string param_type = 4;</code>
+       * @param value The bytes for paramType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParamTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        paramType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:datasource.TableColumnForDataService)
+    }
+
+    // @@protoc_insertion_point(class_scope:datasource.TableColumnForDataService)
+    private static final com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService();
+    }
+
+    public static com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TableColumnForDataService>
+        PARSER = new com.google.protobuf.AbstractParser<TableColumnForDataService>() {
+      @java.lang.Override
+      public TableColumnForDataService parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TableColumnForDataService(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TableColumnForDataService> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TableColumnForDataService> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_datasource_TableSchema_descriptor;
   private static final 
@@ -1869,6 +2945,11 @@ public final class PBDataSourceTable {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_datasource_TableColumn_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_datasource_TableColumnForDataService_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_datasource_TableColumnForDataService_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1882,11 +2963,14 @@ public final class PBDataSourceTable {
       "e_table.proto\022\ndatasource\"7\n\013TableSchema" +
       "\022(\n\007columns\030\001 \003(\0132\027.datasource.TableColu" +
       "mn\"A\n\013TableColumn\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030" +
-      "\002 \001(\t\022\026\n\016is_primary_key\030\003 \001(\010B\206\001\n/com.da" +
-      "taomnis.gproto.types.pbmodel.pbdatasourc" +
-      "eB\021PBDataSourceTableP\000Z>github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbmodel/pbdata" +
-      "sourceb\006proto3"
+      "\002 \001(\t\022\026\n\016is_primary_key\030\003 \001(\010\"j\n\031TableCo" +
+      "lumnForDataService\022\014\n\004name\030\001 \001(\t\022\023\n\013colu" +
+      "mn_type\030\002 \001(\t\022\026\n\016is_primary_key\030\003 \001(\010\022\022\n" +
+      "\nparam_type\030\004 \001(\tB\206\001\n/com.dataomnis.gpro" +
+      "to.types.pbmodel.pbdatasourceB\021PBDataSou" +
+      "rceTableP\000Z>github.com/DataWorkbench/gpr" +
+      "oto/xgo/types/pbmodel/pbdatasourceb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1904,6 +2988,12 @@ public final class PBDataSourceTable {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_datasource_TableColumn_descriptor,
         new java.lang.String[] { "Name", "Type", "IsPrimaryKey", });
+    internal_static_datasource_TableColumnForDataService_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_datasource_TableColumnForDataService_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_datasource_TableColumnForDataService_descriptor,
+        new java.lang.String[] { "Name", "ColumnType", "IsPrimaryKey", "ParamType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

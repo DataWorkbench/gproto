@@ -100,6 +100,28 @@ public final class PBRequestAccount {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    java.lang.String getSearch();
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    com.google.protobuf.ByteString
+        getSearchBytes();
   }
   /**
    * Protobuf type {@code request.ListUsers}
@@ -116,6 +138,7 @@ public final class PBRequestAccount {
     private ListUsers() {
       userIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       name_ = "";
+      search_ = "";
     }
 
     @java.lang.Override
@@ -172,6 +195,12 @@ public final class PBRequestAccount {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              search_ = s;
               break;
             }
             default: {
@@ -338,6 +367,54 @@ public final class PBRequestAccount {
       }
     }
 
+    public static final int SEARCH_FIELD_NUMBER = 5;
+    private volatile java.lang.Object search_;
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    @java.lang.Override
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -363,6 +440,9 @@ public final class PBRequestAccount {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, search_);
       }
       unknownFields.writeTo(output);
     }
@@ -392,6 +472,9 @@ public final class PBRequestAccount {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, search_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -415,6 +498,8 @@ public final class PBRequestAccount {
           .equals(other.getUserIdsList())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -436,6 +521,8 @@ public final class PBRequestAccount {
       }
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -577,6 +664,8 @@ public final class PBRequestAccount {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = "";
 
+        search_ = "";
+
         return this;
       }
 
@@ -612,6 +701,7 @@ public final class PBRequestAccount {
         }
         result.userIds_ = userIds_;
         result.name_ = name_;
+        result.search_ = search_;
         onBuilt();
         return result;
       }
@@ -678,6 +768,10 @@ public final class PBRequestAccount {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getSearch().isEmpty()) {
+          search_ = other.search_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1039,6 +1133,107 @@ public final class PBRequestAccount {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object search_ = "";
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The search.
+       */
+      public java.lang.String getSearch() {
+        java.lang.Object ref = search_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          search_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The bytes for search.
+       */
+      public com.google.protobuf.ByteString
+          getSearchBytes() {
+        java.lang.Object ref = search_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          search_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        search_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSearch() {
+        
+        search_ = getDefaultInstance().getSearch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The bytes for search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        search_ = value;
         onChanged();
         return this;
       }
@@ -16326,47 +16521,48 @@ public final class PBRequestAccount {
       "\n(proto/types/request/account_manage.pro" +
       "to\022\007request\0323github.com/yu31/protoc-plug" +
       "in/proto/validator.proto\0322github.com/yu3" +
-      "1/protoc-plugin/proto/defaults.proto\"c\n\t" +
+      "1/protoc-plugin/proto/defaults.proto\"s\n\t" +
       "ListUsers\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t" +
       "\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\022\020\n\010user_ids\030\003 " +
-      "\003(\t\022\014\n\004name\030\004 \001(\t\",\n\013DeleteUsers\022\035\n\010user" +
-      "_ids\030\001 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\",\n\014DescribeUser\022" +
-      "\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"q\n\nCreateU" +
-      "ser\022\036\n\004name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010p" +
-      "assword\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\037\n\005email" +
-      "\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001\"U\n\nUpdateUser\022$" +
-      "\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004usr-\022\r\n\005" +
-      "email\030\004 \001(\t\022\022\n\nsession_id\030\005 \001(\t\"x\n\022Chang" +
-      "eUserPassword\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\022!\n\014old_password\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!" +
-      "\n\014new_password\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"T\n\021Res" +
-      "etUserPassword\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005\302" +
-      "\001\002\"\000\022!\n\014new_password\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"" +
-      "H\n\016ListAccessKeys\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
-      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\"*\n\020Del" +
-      "eteAccessKeys\022\026\n\016access_key_ids\030\001 \003(\t\"*\n" +
-      "\021DescribeAccessKey\022\025\n\raccess_key_id\030\001 \001(" +
-      "\t\"4\n\017CreateAccessKey\022\014\n\004name\030\001 \001(\t\022\023\n\013de" +
-      "scription\030\002 \001(\t\"5\n\020UpdatedAccessKey\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\"\n\014CheckS" +
-      "ession\022\022\n\nsession_id\030\001 \001(\t\"\207\001\n\rCreateSes" +
-      "sion\022#\n\tuser_name\030\001 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200" +
-      "\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n" +
-      "\017ignore_password\030\003 \001(\010\022\024\n\014raw_password\030\004" +
-      " \001(\t\"W\n\022CreateNotification\022\017\n\007user_id\030\001 " +
-      "\001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r" +
-      "\n\005email\030\004 \001(\t\"b\n\022UpdateNotification\022\032\n\005n" +
-      "f_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\014\n\004name\030\002 \001(\t\022\023\n" +
-      "\013description\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"%\n\023Del" +
-      "eteNotifications\022\016\n\006nf_ids\030\001 \003(\t\"\213\001\n\021Lis" +
-      "tNotifications\022\017\n\007user_id\030\001 \001(\t\022&\n\005limit" +
-      "\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offse" +
-      "t\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0048d@\000\022\016" +
-      "\n\006search\030\005 \001(\t\"2\n\024DescribeNotification\022\032" +
-      "\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000Bo\n$com.dataom" +
-      "nis.gproto.types.pbrequestB\020PBRequestAcc" +
-      "ountP\000Z3github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbrequestb\006proto3"
+      "\003(\t\022\014\n\004name\030\004 \001(\t\022\016\n\006search\030\005 \001(\t\",\n\013Del" +
+      "eteUsers\022\035\n\010user_ids\030\001 \003(\tB\013\342\337\037\007\022\005\352\001\0020\000\"" +
+      ",\n\014DescribeUser\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037\007\022\005" +
+      "\302\001\002\"\000\"q\n\nCreateUser\022\036\n\004name\030\001 \001(\tB\020\342\337\037\014\022" +
+      "\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
+      "\300\001\002\310\001\200\001\022\037\n\005email\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\001" +
+      "\"U\n\nUpdateUser\022$\n\007user_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004usr-\022\r\n\005email\030\004 \001(\t\022\022\n\nsession_i" +
+      "d\030\005 \001(\t\"x\n\022ChangeUserPassword\022\034\n\007user_id" +
+      "\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014old_password\030\002 \001(" +
+      "\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014new_password\030\003 \001(\tB\013\342\337" +
+      "\037\007\022\005\302\001\002\"\000\"T\n\021ResetUserPassword\022\034\n\007user_i" +
+      "d\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022!\n\014new_password\030\003 \001" +
+      "(\tB\013\342\337\037\007\022\005\302\001\002\"\000\"H\n\016ListAccessKeys\022&\n\005lim" +
+      "it\030\001 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006off" +
+      "set\030\002 \001(\005\"*\n\020DeleteAccessKeys\022\026\n\016access_" +
+      "key_ids\030\001 \003(\t\"*\n\021DescribeAccessKey\022\025\n\rac" +
+      "cess_key_id\030\001 \001(\t\"4\n\017CreateAccessKey\022\014\n\004" +
+      "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"5\n\020Updat" +
+      "edAccessKey\022\014\n\004name\030\001 \001(\t\022\023\n\013description" +
+      "\030\002 \001(\t\"\"\n\014CheckSession\022\022\n\nsession_id\030\001 \001" +
+      "(\t\"\207\001\n\rCreateSession\022#\n\tuser_name\030\001 \001(\tB" +
+      "\020\342\337\037\014\022\n\302\001\007\300\001\002\310\001\200\001\022\"\n\010password\030\002 \001(\tB\020\342\337\037" +
+      "\014\022\n\302\001\007\300\001\000\310\001\200\001\022\027\n\017ignore_password\030\003 \001(\010\022\024" +
+      "\n\014raw_password\030\004 \001(\t\"W\n\022CreateNotificati" +
+      "on\022\017\n\007user_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\"b\n\022UpdateN" +
+      "otification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022" +
+      "\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005em" +
+      "ail\030\004 \001(\t\"%\n\023DeleteNotifications\022\016\n\006nf_i" +
+      "ds\030\001 \003(\t\"\213\001\n\021ListNotifications\022\017\n\007user_i" +
+      "d\030\001 \001(\t\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007" +
+      "\262\001\0040\0008d\022\016\n\006offset\030\003 \001(\005\022\035\n\006nf_ids\030\004 \003(\tB" +
+      "\r\342\337\037\t\022\007\352\001\0048d@\000\022\016\n\006search\030\005 \001(\t\"2\n\024Descri" +
+      "beNotification\022\032\n\005nf_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002" +
+      "\"\000Bo\n$com.dataomnis.gproto.types.pbreque" +
+      "stB\020PBRequestAccountP\000Z3github.com/DataW" +
+      "orkbench/gproto/xgo/types/pbrequestb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -16379,7 +16575,7 @@ public final class PBRequestAccount {
     internal_static_request_ListUsers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListUsers_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "UserIds", "Name", });
+        new java.lang.String[] { "Limit", "Offset", "UserIds", "Name", "Search", });
     internal_static_request_DeleteUsers_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_DeleteUsers_fieldAccessorTable = new

@@ -109,6 +109,49 @@ public final class PBRequestDataServiceManage {
      */
     com.google.protobuf.ByteString
         getNameBytes();
+
+    /**
+     * <pre>
+     *  Search with name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 7;</code>
+     * @return The search.
+     */
+    java.lang.String getSearch();
+    /**
+     * <pre>
+     *  Search with name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 7;</code>
+     * @return The bytes for search.
+     */
+    com.google.protobuf.ByteString
+        getSearchBytes();
+
+    /**
+     * <pre>
+     * The cluster status.
+     * &#64;inject_tag: json:"status" form:"status"
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster.Status status = 8;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <pre>
+     * The cluster status.
+     * &#64;inject_tag: json:"status" form:"status"
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster.Status status = 8;</code>
+     * @return The status.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status getStatus();
   }
   /**
    * Protobuf type {@code request.ListDataServiceClusters}
@@ -126,6 +169,8 @@ public final class PBRequestDataServiceManage {
       spaceId_ = "";
       sortBy_ = "";
       name_ = "";
+      search_ = "";
+      status_ = 0;
     }
 
     @java.lang.Override
@@ -189,6 +234,18 @@ public final class PBRequestDataServiceManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              search_ = s;
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
               break;
             }
             default: {
@@ -408,6 +465,83 @@ public final class PBRequestDataServiceManage {
       }
     }
 
+    public static final int SEARCH_FIELD_NUMBER = 7;
+    private volatile java.lang.Object search_;
+    /**
+     * <pre>
+     *  Search with name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 7;</code>
+     * @return The search.
+     */
+    @java.lang.Override
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *  Search with name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 7;</code>
+     * @return The bytes for search.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 8;
+    private int status_;
+    /**
+     * <pre>
+     * The cluster status.
+     * &#64;inject_tag: json:"status" form:"status"
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster.Status status = 8;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * The cluster status.
+     * &#64;inject_tag: json:"status" form:"status"
+     * </pre>
+     *
+     * <code>.model.DataServiceCluster.Status status = 8;</code>
+     * @return The status.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status getStatus() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.valueOf(status_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -440,6 +574,12 @@ public final class PBRequestDataServiceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, search_);
+      }
+      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.StatusUnset.getNumber()) {
+        output.writeEnum(8, status_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -470,6 +610,13 @@ public final class PBRequestDataServiceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, search_);
+      }
+      if (status_ != com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.StatusUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, status_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -497,6 +644,9 @@ public final class PBRequestDataServiceManage {
           != other.getReverse()) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
+      if (status_ != other.status_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -521,6 +671,10 @@ public final class PBRequestDataServiceManage {
           getReverse());
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -666,6 +820,10 @@ public final class PBRequestDataServiceManage {
 
         name_ = "";
 
+        search_ = "";
+
+        status_ = 0;
+
         return this;
       }
 
@@ -698,6 +856,8 @@ public final class PBRequestDataServiceManage {
         result.sortBy_ = sortBy_;
         result.reverse_ = reverse_;
         result.name_ = name_;
+        result.search_ = search_;
+        result.status_ = status_;
         onBuilt();
         return result;
       }
@@ -766,6 +926,13 @@ public final class PBRequestDataServiceManage {
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
+        }
+        if (!other.getSearch().isEmpty()) {
+          search_ = other.search_;
+          onChanged();
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1214,6 +1381,186 @@ public final class PBRequestDataServiceManage {
   checkByteStringIsUtf8(value);
         
         name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object search_ = "";
+      /**
+       * <pre>
+       *  Search with name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 7;</code>
+       * @return The search.
+       */
+      public java.lang.String getSearch() {
+        java.lang.Object ref = search_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          search_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  Search with name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 7;</code>
+       * @return The bytes for search.
+       */
+      public com.google.protobuf.ByteString
+          getSearchBytes() {
+        java.lang.Object ref = search_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          search_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  Search with name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 7;</code>
+       * @param value The search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        search_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Search with name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSearch() {
+        
+        search_ = getDefaultInstance().getSearch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Search with name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 7;</code>
+       * @param value The bytes for search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        search_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <pre>
+       * The cluster status.
+       * &#64;inject_tag: json:"status" form:"status"
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster.Status status = 8;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <pre>
+       * The cluster status.
+       * &#64;inject_tag: json:"status" form:"status"
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster.Status status = 8;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The cluster status.
+       * &#64;inject_tag: json:"status" form:"status"
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster.Status status = 8;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status getStatus() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status result = com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.valueOf(status_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The cluster status.
+       * &#64;inject_tag: json:"status" form:"status"
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster.Status status = 8;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(com.dataomnis.gproto.types.pbmodel.PBModelDataService.DataServiceCluster.Status value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The cluster status.
+       * &#64;inject_tag: json:"status" form:"status"
+       * </pre>
+       *
+       * <code>.model.DataServiceCluster.Status status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
         onChanged();
         return this;
       }
@@ -12642,6 +12989,28 @@ public final class PBRequestDataServiceManage {
      */
     com.google.protobuf.ByteString
         getGroupIdBytes();
+
+    /**
+     * <pre>
+     *  Search with api name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 3;</code>
+     * @return The search.
+     */
+    java.lang.String getSearch();
+    /**
+     * <pre>
+     *  Search with api name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 3;</code>
+     * @return The bytes for search.
+     */
+    com.google.protobuf.ByteString
+        getSearchBytes();
   }
   /**
    * Protobuf type {@code request.ListApiConfigs}
@@ -12658,6 +13027,7 @@ public final class PBRequestDataServiceManage {
     private ListApiConfigs() {
       spaceId_ = "";
       groupId_ = "";
+      search_ = "";
     }
 
     @java.lang.Override
@@ -12700,6 +13070,12 @@ public final class PBRequestDataServiceManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               groupId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              search_ = s;
               break;
             }
             default: {
@@ -12826,6 +13202,54 @@ public final class PBRequestDataServiceManage {
       }
     }
 
+    public static final int SEARCH_FIELD_NUMBER = 3;
+    private volatile java.lang.Object search_;
+    /**
+     * <pre>
+     *  Search with api name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 3;</code>
+     * @return The search.
+     */
+    @java.lang.Override
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *  Search with api name; Not required.
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 3;</code>
+     * @return The bytes for search.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -12846,6 +13270,9 @@ public final class PBRequestDataServiceManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, search_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -12860,6 +13287,9 @@ public final class PBRequestDataServiceManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, search_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12880,6 +13310,8 @@ public final class PBRequestDataServiceManage {
           .equals(other.getSpaceId())) return false;
       if (!getGroupId()
           .equals(other.getGroupId())) return false;
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -12895,6 +13327,8 @@ public final class PBRequestDataServiceManage {
       hash = (53 * hash) + getSpaceId().hashCode();
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId().hashCode();
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13032,6 +13466,8 @@ public final class PBRequestDataServiceManage {
 
         groupId_ = "";
 
+        search_ = "";
+
         return this;
       }
 
@@ -13060,6 +13496,7 @@ public final class PBRequestDataServiceManage {
         com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataServiceManage.ListApiConfigs(this);
         result.spaceId_ = spaceId_;
         result.groupId_ = groupId_;
+        result.search_ = search_;
         onBuilt();
         return result;
       }
@@ -13114,6 +13551,10 @@ public final class PBRequestDataServiceManage {
         }
         if (!other.getGroupId().isEmpty()) {
           groupId_ = other.groupId_;
+          onChanged();
+        }
+        if (!other.getSearch().isEmpty()) {
+          search_ = other.search_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -13333,6 +13774,107 @@ public final class PBRequestDataServiceManage {
   checkByteStringIsUtf8(value);
         
         groupId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object search_ = "";
+      /**
+       * <pre>
+       *  Search with api name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 3;</code>
+       * @return The search.
+       */
+      public java.lang.String getSearch() {
+        java.lang.Object ref = search_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          search_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  Search with api name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 3;</code>
+       * @return The bytes for search.
+       */
+      public com.google.protobuf.ByteString
+          getSearchBytes() {
+        java.lang.Object ref = search_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          search_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  Search with api name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 3;</code>
+       * @param value The search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        search_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Search with api name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSearch() {
+        
+        search_ = getDefaultInstance().getSearch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  Search with api name; Not required.
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 3;</code>
+       * @param value The bytes for search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        search_ = value;
         onChanged();
         return this;
       }
@@ -33100,151 +33642,153 @@ public final class PBRequestDataServiceManage {
       ".proto\022\007request\0323github.com/yu31/protoc-" +
       "plugin/proto/validator.proto\0322github.com" +
       "/yu31/protoc-plugin/proto/defaults.proto" +
-      "\032#proto/types/model/dataservice.proto\"\352\001" +
+      "\032#proto/types/model/dataservice.proto\"\254\002" +
       "\n\027ListDataServiceClusters\022%\n\010space_id\030\001 " +
       "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B" +
       "\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005" +
       "B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001" +
       "\036J\000J\002idJ\007createdJ\007updatedJ\004name\022\025\n\007rever" +
-      "se\030\005 \001(\010B\004\342\337\037\000\022\022\n\004name\030\006 \001(\tB\004\342\337\037\000\"l\n\032De" +
-      "scribeDataServiceCluster\022%\n\010space_id\030\001 \001" +
-      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 " +
-      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\"\327\001\n\030UpdateDataS" +
-      "erviceCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r" +
-      "\302\001\n\360\001\024\312\002\004dsc-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
-      "\000\230\002@\022L\n\rresource_spec\030\004 \001(\0162&.model.Data" +
-      "ServiceCluster.ResourceSpecB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\"\365\001\n\030CreateDataServiceCluster\022%\n\010space" +
-      "_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002" +
-      " \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022#\n\ncreated_by\030\003 \001(" +
-      "\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\004 \001(\tB" +
-      "\013\342\337\037\007\022\005\302\001\002\"\000\022L\n\rresource_spec\030\005 \001(\0162&.mo" +
-      "del.DataServiceCluster.ResourceSpecB\r\342\337\037" +
-      "\t\022\007\332\001\0040\000X\001\"r\n\031DeleteDataServiceClusters\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022." +
-      "\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312" +
-      "\002\004dsc-\"q\n\030StartDataServiceClusters\022%\n\010sp" +
-      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013clu" +
-      "ster_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc" +
-      "-\"p\n\027StopDataServiceClusters\022%\n\010space_id" +
-      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_i" +
-      "ds\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc-\"\314\001\n\r" +
-      "ListApiGroups\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302" +
-      "\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342" +
-      "\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@" +
-      "\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007cre" +
-      "atedJ\007updatedJ\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337" +
-      "\037\000\"\272\001\n\016CreateApiGroup\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\200\002\000\230\002@\022 \n\ngroup_path\030\003 \001(\tB\014\342\337\037\010\022\006\302" +
-      "\001\003\230\002@\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022#\n\ncr" +
-      "eated_by\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\274\001\n\016Upda" +
-      "teApiGroup\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
-      "\001\024\312\002\004wks-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004dsg-\022\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022" +
-      " \n\ngroup_path\030\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004des" +
-      "c\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"`\n\020DescribeApiGro" +
-      "up\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
-      "\"f\n\017DeleteApiGroups\022%\n\010space_id\030\001 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022,\n\tgroup_ids\030\002 \003(\tB\031\342" +
-      "\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsg-\"^\n\016ListApiConfi" +
-      "gs\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
-      "-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
-      "\"\234\006\n\017UpdateApiConfig\022%\n\010space_id\030\001 \001(\tB\023" +
-      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n\010api_name\030\003 \001(\tB\017\342\337\037\013" +
-      "\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\004 \001(\tB\020\342\337\037\014\022\n\302\001\007" +
-      "\200\002\000\230\002\310\001\0229\n\010api_mode\030\005 \001(\0162\030.model.ApiCon" +
-      "fig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descri" +
-      "ption\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022-\n\tprotocols\030" +
-      "\007 \001(\0162\032.model.ApiConfig.Protocols\022E\n\016req" +
-      "uest_method\030\010 \001(\0162\036.model.ApiConfig.Requ" +
-      "estMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_typ" +
-      "e\030\t \001(\0162\035.model.ApiConfig.ResponseTypeB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\n \001(\010B\004\342\337\037" +
-      "\000\022\037\n\007timeout\030\013 \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022*\n\rda" +
-      "tasource_id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#" +
-      "\n\ntable_name\030\r \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006s" +
-      "cript\030\016 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030" +
-      "\017 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\035\n\ncluster_id" +
-      "\030\020 \001(\tB\t\342\337\037\005\022\003\302\001\000\0220\n\016request_params\030\021 \001(" +
-      "\0132\030.model.RequestParameters\0222\n\017response_" +
-      "params\030\022 \001(\0132\031.model.ResponseParameters\"" +
-      "8\n\021DescribeApiConfig\022#\n\006api_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"e\n\020DeleteApiConfigs\022%\n" +
-      "\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007" +
-      "api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-" +
-      "\"\252\004\n\023UpdateApiBaseConfig\022!\n\010api_name\030\001 \001" +
-      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342" +
-      "\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\003 \001(\0162\030.mode" +
-      "l.ApiConfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017ap" +
-      "i_description\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010sp" +
-      "ace_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tpro" +
-      "tocols\030\006 \001(\0162\032.model.ApiConfig.Protocols" +
-      "\022E\n\016request_method\030\007 \001(\0162\036.model.ApiConf" +
-      "ig.RequestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rrespo" +
-      "nse_type\030\010 \001(\0162\035.model.ApiConfig.Respons" +
-      "eTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001" +
-      "(\010B\004\342\337\037\000\022\037\n\007timeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@" +
-      "\001\022%\n\010group_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-" +
-      "\022#\n\006api_id\030\014 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"\246\004" +
-      "\n\017CreateApiConfig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001" +
-      "\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\003 \001(\0162\030.model.ApiCo" +
-      "nfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descr" +
-      "iption\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030" +
-      "\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030" +
-      "\006 \001(\0162\032.model.ApiConfig.Protocols\022E\n\016req" +
-      "uest_method\030\007 \001(\0162\036.model.ApiConfig.Requ" +
-      "estMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_typ" +
-      "e\030\010 \001(\0162\035.model.ApiConfig.ResponseTypeB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\t \001(\010B\004\342\337\037" +
-      "\000\022\037\n\007timeout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022%\n\010gr" +
-      "oup_id\030\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022#\n\ncre" +
-      "ated_by\030\014 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\341\001\n\032ListD" +
-      "ataServiceApiVersions\022%\n\010space_id\030\001 \001(\tB" +
-      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006" +
-      "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022" +
-      "\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002id" +
-      "J\007createdJ\007updated\"\356\001\n#ListPublishedApiV" +
-      "ersionsByClusterId\022%\n\010space_id\030\001 \001(\tB\023\342\337" +
-      "\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252" +
-      "\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007" +
-      "\022\005\262\001\002@\000\0222\n\007sort_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002i" +
-      "dJ\007createdJ\007updated\"\350\001\n\021ListPublishedApi" +
-      "s\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d" +
-      "\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by" +
-      "\030\004 \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007update" +
-      "dJ\004name\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t" +
-      "\022\014\n\004name\030\007 \001(\t\"\215\001\n\035DescribeDataServiceAp" +
-      "iVersion\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024" +
-      "\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "dsa-\022 \n\nversion_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\207" +
-      "\001\n\027RepublishDataServiceApi\022%\n\010space_id\030\001" +
-      " \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(" +
-      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022 \n\nversion_id\030\003 \001" +
-      "(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"c\n\025PublishDataServiceAp" +
-      "i\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-" +
-      "\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"k\n" +
-      "\026AbolishDataServiceApis\022%\n\010space_id\030\001 \001(" +
+      "se\030\005 \001(\010B\004\342\337\037\000\022\022\n\004name\030\006 \001(\tB\004\342\337\037\000\022\016\n\006se" +
+      "arch\030\007 \001(\t\0220\n\006status\030\010 \001(\0162 .model.DataS" +
+      "erviceCluster.Status\"l\n\032DescribeDataServ" +
+      "iceCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360" +
+      "\001\024\312\002\004wks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n" +
+      "\360\001\024\312\002\004dsc-\"\327\001\n\030UpdateDataServiceCluster\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\'" +
+      "\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022" +
+      "\035\n\004name\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022L\n\rresour" +
+      "ce_spec\030\004 \001(\0162&.model.DataServiceCluster" +
+      ".ResourceSpecB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\365\001\n\030CreateD" +
+      "ataServiceCluster\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
+      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\004name\030\002 \001(\tB\017\342\337\037\013\022\t\302\001" +
+      "\006\200\002\000\230\002@\022#\n\ncreated_by\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002" +
+      "\000\210\002A\022 \n\013space_owner\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022L" +
+      "\n\rresource_spec\030\005 \001(\0162&.model.DataServic" +
+      "eCluster.ResourceSpecB\r\342\337\037\t\022\007\332\001\0040\000X\001\"r\n\031" +
+      "DeleteDataServiceClusters\022%\n\010space_id\030\001 " +
+      "\001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030" +
+      "\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc-\"q\n\030Star" +
+      "tDataServiceClusters\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030\002 \003(\t" +
+      "B\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc-\"p\n\027StopDataS" +
+      "erviceClusters\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r" +
+      "\302\001\n\360\001\024\312\002\004wks-\022.\n\013cluster_ids\030\002 \003(\tB\031\342\337\037\025" +
+      "\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsc-\"\314\001\n\rListApiGroups\022" +
+      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&" +
+      "\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033" +
+      "\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004" +
+      " \001(\tB\'\342\337\037#\022!\302\001\036J\000J\002idJ\007createdJ\007updatedJ" +
+      "\004name\022\025\n\007reverse\030\005 \001(\010B\004\342\337\037\000\"\272\001\n\016CreateA" +
+      "piGroup\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022\035\n\004name\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022 \n" +
+      "\ngroup_path\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004desc\030" +
+      "\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\022#\n\ncreated_by\030\005 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\274\001\n\016UpdateApiGroup\022%\n\010" +
+      "space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010g" +
+      "roup_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\035\n\004na" +
+      "me\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022 \n\ngroup_path\030" +
+      "\004 \001(\tB\014\342\337\037\010\022\006\302\001\003\230\002@\022\033\n\004desc\030\005 \001(\tB\r\342\337\037\t\022" +
+      "\007\302\001\004\310\001\200\010\"`\n\020DescribeApiGroup\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010group_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\"f\n\017DeleteApiG" +
+      "roups\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "wks-\022,\n\tgroup_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001Z\n" +
+      "\302\001\007\312\002\004dsg-\"n\n\016ListApiConfigs\022%\n\010space_id" +
+      "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022%\n\010group_id\030" +
+      "\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\016\n\006search\030\003 \001" +
+      "(\t\"\214\006\n\017UpdateApiConfig\022%\n\010space_id\030\001 \001(\t" +
+      "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342" +
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022!\n\010api_name\030\003 \001(\tB\017\342\337" +
+      "\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\004 \001(\tB\020\342\337\037\014\022\n\302" +
+      "\001\007\200\002\000\230\002\310\001\0229\n\010api_mode\030\005 \001(\0162\030.model.ApiC" +
+      "onfig.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_desc" +
+      "ription\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022-\n\tprotocol" +
+      "s\030\007 \001(\0162\032.model.ApiConfig.Protocols\022E\n\016r" +
+      "equest_method\030\010 \001(\0162\036.model.ApiConfig.Re" +
+      "questMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_t" +
+      "ype\030\t \001(\0162\035.model.ApiConfig.ResponseType" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_domain\030\n \001(\010B\004\342" +
+      "\337\037\000\022\037\n\007timeout\030\013 \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022 \n\r" +
+      "datasource_id\030\014 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\035\n\ntable_" +
+      "name\030\r \001(\tB\t\342\337\037\005\022\003\302\001\000\022\036\n\006script\030\016 \001(\tB\016\342" +
+      "\337\037\n\022\010\302\001\005\230\002\240\234\001\022%\n\010group_id\030\017 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004dsg-\022\035\n\ncluster_id\030\020 \001(\tB\t\342\337\037\005\022\003" +
+      "\302\001\000\0220\n\016request_params\030\021 \001(\0132\030.model.Requ" +
+      "estParameters\0222\n\017response_params\030\022 \001(\0132\031" +
+      ".model.ResponseParameters\"8\n\021DescribeApi" +
+      "Config\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004d" +
+      "sa-\"e\n\020DeleteApiConfigs\022%\n\010space_id\030\001 \001(" +
       "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB" +
-      "\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\227\001\n\022TestDataS" +
-      "erviceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
-      "\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
-      "\004dsa-\0225\n\016request_params\030\003 \003(\0132\027.model.Re" +
-      "questParameterB\004\342\337\037\000\"\241\001\n\037DescribePublish" +
-      "edApiHttpDetails\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017" +
-      "\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\nversion_id\030\002 \001(\tB\014\342\337\037" +
-      "\010\022\006\302\001\003\360\001\020\0225\n\016request_params\030\003 \003(\0132\027.mode" +
-      "l.RequestParameterB\004\342\337\037\000By\n$com.dataomni" +
-      "s.gproto.types.pbrequestB\032PBRequestDataS" +
-      "erviceManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "\031\342\337\037\025\022\023\352\001\0208d@\001Z\n\302\001\007\312\002\004dsa-\"\252\004\n\023UpdateApi" +
+      "BaseConfig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200" +
+      "\002\000\230\002@\022\"\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310" +
+      "\001\0229\n\010api_mode\030\003 \001(\0162\030.model.ApiConfig.Ap" +
+      "iModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030" +
+      "\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \001(\0162\032" +
+      ".model.ApiConfig.Protocols\022E\n\016request_me" +
+      "thod\030\007 \001(\0162\036.model.ApiConfig.RequestMeth" +
+      "odB\r\342\337\037\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001(\016" +
+      "2\035.model.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332" +
+      "\001\0040\000X\001\022\032\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007ti" +
+      "meout\030\n \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022%\n\010group_id\030" +
+      "\013 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022#\n\006api_id\030\014 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"\246\004\n\017CreateApiCon" +
+      "fig\022!\n\010api_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"" +
+      "\n\010api_path\030\002 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\0229\n\010ap" +
+      "i_mode\030\003 \001(\0162\030.model.ApiConfig.ApiModeB\r" +
+      "\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_description\030\004 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022%\n\010space_id\030\005 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004wks-\022-\n\tprotocols\030\006 \001(\0162\032.model." +
+      "ApiConfig.Protocols\022E\n\016request_method\030\007 " +
+      "\001(\0162\036.model.ApiConfig.RequestMethodB\r\342\337\037" +
+      "\t\022\007\332\001\0040\000X\001\022C\n\rresponse_type\030\010 \001(\0162\035.mode" +
+      "l.ApiConfig.ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
+      "\032\n\014cross_domain\030\t \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\n" +
+      " \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022%\n\010group_id\030\013 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022#\n\ncreated_by\030\014 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\"\341\001\n\032ListDataServiceApiV" +
+      "ersions\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312" +
+      "\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004d" +
+      "sa-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040" +
+      "\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0222\n\007sort" +
+      "_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002idJ\007createdJ\007upd" +
+      "ated\"\356\001\n#ListPublishedApiVersionsByClust" +
+      "erId\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
+      "ks-\022\'\n\ncluster_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
+      "dsc-\022&\n\005limit\030\003 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\004" +
+      "0\0008d\022\033\n\006offset\030\004 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0222\n\007sor" +
+      "t_by\030\005 \001(\tB!\342\337\037\035\022\033\302\001\030J\000J\002idJ\007createdJ\007up" +
+      "dated\"\350\001\n\021ListPublishedApis\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002 \001(" +
+      "\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030\003 \001" +
+      "(\005B\013\342\337\037\007\022\005\262\001\002@\000\0228\n\007sort_by\030\004 \001(\tB\'\342\337\037#\022!" +
+      "\302\001\036J\000J\002idJ\007createdJ\007updatedJ\004name\022\017\n\007rev" +
+      "erse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022\014\n\004name\030\007 \001(\t" +
+      "\"\215\001\n\035DescribeDataServiceApiVersion\022%\n\010sp" +
+      "ace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api" +
+      "_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022 \n\nversio" +
+      "n_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\"\207\001\n\027RepublishDa" +
+      "taServiceApi\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004dsa-\022 \n\nversion_id\030\003 \001(\tB\014\342\337\037\010\022\006\302\001\003\360" +
+      "\001\020\"c\n\025PublishDataServiceApi\022%\n\010space_id\030" +
+      "\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006api_id\030\002 \001" +
+      "(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\"k\n\026AbolishDataSe" +
+      "rviceApis\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001" +
+      "\024\312\002\004wks-\022*\n\007api_ids\030\002 \003(\tB\031\342\337\037\025\022\023\352\001\0208d@\001" +
+      "Z\n\302\001\007\312\002\004dsa-\"\227\001\n\022TestDataServiceApi\022%\n\010s" +
+      "pace_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006ap" +
+      "i_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\0225\n\016reque" +
+      "st_params\030\003 \003(\0132\027.model.RequestParameter" +
+      "B\004\342\337\037\000\"\241\001\n\037DescribePublishedApiHttpDetai" +
+      "ls\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks" +
+      "-\022 \n\nversion_id\030\002 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\0225\n\016r" +
+      "equest_params\030\003 \003(\0132\027.model.RequestParam" +
+      "eterB\004\342\337\037\000By\n$com.dataomnis.gproto.types" +
+      ".pbrequestB\032PBRequestDataServiceManageP\000" +
+      "Z3github.com/DataWorkbench/gproto/xgo/ty" +
+      "pes/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -33258,7 +33802,7 @@ public final class PBRequestDataServiceManage {
     internal_static_request_ListDataServiceClusters_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListDataServiceClusters_descriptor,
-        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Name", });
+        new java.lang.String[] { "SpaceId", "Limit", "Offset", "SortBy", "Reverse", "Name", "Search", "Status", });
     internal_static_request_DescribeDataServiceCluster_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_DescribeDataServiceCluster_fieldAccessorTable = new
@@ -33330,7 +33874,7 @@ public final class PBRequestDataServiceManage {
     internal_static_request_ListApiConfigs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListApiConfigs_descriptor,
-        new java.lang.String[] { "SpaceId", "GroupId", });
+        new java.lang.String[] { "SpaceId", "GroupId", "Search", });
     internal_static_request_UpdateApiConfig_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_request_UpdateApiConfig_fieldAccessorTable = new

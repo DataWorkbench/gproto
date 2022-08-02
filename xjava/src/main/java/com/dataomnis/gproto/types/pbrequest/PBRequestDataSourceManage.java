@@ -14285,6 +14285,982 @@ public final class PBRequestDataSourceManage {
 
   }
 
+  public interface DescribeTableSchemaDataServiceApiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:request.DescribeTableSchemaDataServiceApi)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    java.lang.String getSpaceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    com.google.protobuf.ByteString
+        getSpaceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"source_id"
+     * </pre>
+     *
+     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+     * @return The sourceId.
+     */
+    java.lang.String getSourceId();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"source_id"
+     * </pre>
+     *
+     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for sourceId.
+     */
+    com.google.protobuf.ByteString
+        getSourceIdBytes();
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"table_name"
+     * </pre>
+     *
+     * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+     * @return The tableName.
+     */
+    java.lang.String getTableName();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"table_name"
+     * </pre>
+     *
+     * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for tableName.
+     */
+    com.google.protobuf.ByteString
+        getTableNameBytes();
+  }
+  /**
+   * Protobuf type {@code request.DescribeTableSchemaDataServiceApi}
+   */
+  public static final class DescribeTableSchemaDataServiceApi extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:request.DescribeTableSchemaDataServiceApi)
+      DescribeTableSchemaDataServiceApiOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeTableSchemaDataServiceApi.newBuilder() to construct.
+    private DescribeTableSchemaDataServiceApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeTableSchemaDataServiceApi() {
+      spaceId_ = "";
+      sourceId_ = "";
+      tableName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeTableSchemaDataServiceApi();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeTableSchemaDataServiceApi(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              spaceId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tableName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.internal_static_request_DescribeTableSchemaDataServiceApi_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.internal_static_request_DescribeTableSchemaDataServiceApi_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.Builder.class);
+    }
+
+    public static final int SPACE_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object spaceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The spaceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSpaceId() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        spaceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"space_id"
+     * </pre>
+     *
+     * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+     * @return The bytes for spaceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSpaceIdBytes() {
+      java.lang.Object ref = spaceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        spaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object sourceId_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"source_id"
+     * </pre>
+     *
+     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+     * @return The sourceId.
+     */
+    @java.lang.Override
+    public java.lang.String getSourceId() {
+      java.lang.Object ref = sourceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"source_id"
+     * </pre>
+     *
+     * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+     * @return The bytes for sourceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSourceIdBytes() {
+      java.lang.Object ref = sourceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object tableName_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"table_name"
+     * </pre>
+     *
+     * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+     * @return The tableName.
+     */
+    @java.lang.Override
+    public java.lang.String getTableName() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tableName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"table_name"
+     * </pre>
+     *
+     * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for tableName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTableNameBytes() {
+      java.lang.Object ref = tableName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tableName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, spaceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sourceId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi other = (com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi) obj;
+
+      if (!getSpaceId()
+          .equals(other.getSpaceId())) return false;
+      if (!getSourceId()
+          .equals(other.getSourceId())) return false;
+      if (!getTableName()
+          .equals(other.getTableName())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SPACE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSpaceId().hashCode();
+      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceId().hashCode();
+      hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getTableName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code request.DescribeTableSchemaDataServiceApi}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:request.DescribeTableSchemaDataServiceApi)
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApiOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.internal_static_request_DescribeTableSchemaDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.internal_static_request_DescribeTableSchemaDataServiceApi_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.class, com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        spaceId_ = "";
+
+        sourceId_ = "";
+
+        tableName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.internal_static_request_DescribeTableSchemaDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi build() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi buildPartial() {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi result = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi(this);
+        result.spaceId_ = spaceId_;
+        result.sourceId_ = sourceId_;
+        result.tableName_ = tableName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi) {
+          return mergeFrom((com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi other) {
+        if (other == com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance()) return this;
+        if (!other.getSpaceId().isEmpty()) {
+          spaceId_ = other.spaceId_;
+          onChanged();
+        }
+        if (!other.getSourceId().isEmpty()) {
+          sourceId_ = other.sourceId_;
+          onChanged();
+        }
+        if (!other.getTableName().isEmpty()) {
+          tableName_ = other.tableName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object spaceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The spaceId.
+       */
+      public java.lang.String getSpaceId() {
+        java.lang.Object ref = spaceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          spaceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return The bytes for spaceId.
+       */
+      public com.google.protobuf.ByteString
+          getSpaceIdBytes() {
+        java.lang.Object ref = spaceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          spaceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpaceId() {
+        
+        spaceId_ = getDefaultInstance().getSpaceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"space_id"
+       * </pre>
+       *
+       * <code>string space_id = 1 [(.validator.field) = { ... }</code>
+       * @param value The bytes for spaceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpaceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        spaceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sourceId_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"source_id"
+       * </pre>
+       *
+       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * @return The sourceId.
+       */
+      public java.lang.String getSourceId() {
+        java.lang.Object ref = sourceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"source_id"
+       * </pre>
+       *
+       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * @return The bytes for sourceId.
+       */
+      public com.google.protobuf.ByteString
+          getSourceIdBytes() {
+        java.lang.Object ref = sourceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sourceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"source_id"
+       * </pre>
+       *
+       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"source_id"
+       * </pre>
+       *
+       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceId() {
+        
+        sourceId_ = getDefaultInstance().getSourceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"source_id"
+       * </pre>
+       *
+       * <code>string source_id = 2 [(.validator.field) = { ... }</code>
+       * @param value The bytes for sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sourceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tableName_ = "";
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"table_name"
+       * </pre>
+       *
+       * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+       * @return The tableName.
+       */
+      public java.lang.String getTableName() {
+        java.lang.Object ref = tableName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"table_name"
+       * </pre>
+       *
+       * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for tableName.
+       */
+      public com.google.protobuf.ByteString
+          getTableNameBytes() {
+        java.lang.Object ref = tableName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tableName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"table_name"
+       * </pre>
+       *
+       * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"table_name"
+       * </pre>
+       *
+       * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTableName() {
+        
+        tableName_ = getDefaultInstance().getTableName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"table_name"
+       * </pre>
+       *
+       * <code>string table_name = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for tableName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tableName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:request.DescribeTableSchemaDataServiceApi)
+    }
+
+    // @@protoc_insertion_point(class_scope:request.DescribeTableSchemaDataServiceApi)
+    private static final com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi();
+    }
+
+    public static com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeTableSchemaDataServiceApi>() {
+      @java.lang.Override
+      public DescribeTableSchemaDataServiceApi parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeTableSchemaDataServiceApi(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_request_ListDataSources_descriptor;
   private static final 
@@ -14340,6 +15316,11 @@ public final class PBRequestDataSourceManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_request_DescribeDataSourceTableSchema_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_request_DescribeTableSchemaDataServiceApi_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_request_DescribeTableSchemaDataServiceApi_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -14411,10 +15392,14 @@ public final class PBRequestDataSourceManage {
       "escribeDataSourceTableSchema\022%\n\010space_id" +
       "\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id" +
       "\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_nam" +
-      "e\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomn" +
-      "is.gproto.types.pbrequestB\031PBRequestData" +
-      "SourceManageP\000Z3github.com/DataWorkbench" +
-      "/gproto/xgo/types/pbrequestb\006proto3"
+      "e\030\003 \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002\"\230\001\n!DescribeTa" +
+      "bleSchemaDataServiceApi\022%\n\010space_id\030\001 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\tsource_id\030\002 \001(" +
+      "\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022$\n\ntable_name\030\003 \001" +
+      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\001\230\002\200\002Bx\n$com.dataomnis.gp" +
+      "roto.types.pbrequestB\031PBRequestDataSourc" +
+      "eManageP\000Z3github.com/DataWorkbench/gpro" +
+      "to/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -14488,6 +15473,12 @@ public final class PBRequestDataSourceManage {
     internal_static_request_DescribeDataSourceTableSchema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_DescribeDataSourceTableSchema_descriptor,
+        new java.lang.String[] { "SpaceId", "SourceId", "TableName", });
+    internal_static_request_DescribeTableSchemaDataServiceApi_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_request_DescribeTableSchemaDataServiceApi_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_request_DescribeTableSchemaDataServiceApi_descriptor,
         new java.lang.String[] { "SpaceId", "SourceId", "TableName", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -26,7 +26,7 @@ public final class PBSvcEngineManage {
       "\n/proto/service/enginemanager/engine_man" +
       "age.proto\022\014enginecenter\032\035proto/types/mod" +
       "el/empty.proto\032\'proto/types/request/engi" +
-      "ne_manage.proto2\305\007\n\014EngineManage\022Q\n\027Crea" +
+      "ne_manage.proto2\215\t\n\014EngineManage\022Q\n\027Crea" +
       "teFlinkClusterInK8s\022 .request.CreateFlin" +
       "kClusterInK8s\032\022.model.EmptyStruct\"\000\022Q\n\027D" +
       "eleteFlinkClusterInK8s\022 .request.DeleteF" +
@@ -50,6 +50,11 @@ public final class PBSvcEngineManage {
       "teNetworkBrokerInK8sV2\032\022.model.EmptyStru" +
       "ct\"\000\022a\n\037CreateDataServiceClusterInK8SV2\022" +
       "(.request.CreateDataServiceClusterInK8sV" +
+      "2\032\022.model.EmptyStruct\"\000\022a\n\037DeleteDataSer" +
+      "viceClusterInK8SV2\022(.request.DeleteDataS" +
+      "erviceClusterInK8sV2\032\022.model.EmptyStruct" +
+      "\"\000\022c\n RestartDataServiceClusterInK8SV2\022)" +
+      ".request.RestartDataServiceClusterInK8sV" +
       "2\032\022.model.EmptyStruct\"\000Bx\n(com.dataomnis" +
       ".gproto.service.pbsvcengineB\021PBSvcEngine" +
       "ManageP\000Z7github.com/DataWorkbench/gprot" +

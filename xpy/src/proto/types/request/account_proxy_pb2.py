@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$com.dataomnis.gproto.types.pbrequestB\025PBRequestAccountProxyP\000Z3github.com/DataWorkbench/gproto/xgo/types/pbrequest',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'proto/types/request/account_proxy.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"1\n\x18\x44\x65scribeAccessKeyByProxy\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"}\n\x10ListUsersByProxy\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\x10\n\x08user_ids\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\troot_user\x18\x05 \x01(\t\"\xa4\x01\n\x18ListNotificationsByProxy\x12\x31\n\x07user_id\x18\x01 \x01(\tB \xe2\xdf\x1f\x11\n\x0f\n\x06nf_ids\x12\x05\xea\x01\x02\x18\x00\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x1d\n\x06nf_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestAccountProxyP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
+  serialized_pb=b'\n\'proto/types/request/account_proxy.proto\x12\x07request\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\x32github.com/yu31/protoc-plugin/proto/defaults.proto\"1\n\x18\x44\x65scribeAccessKeyByProxy\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"\x8d\x01\n\x10ListUsersByProxy\x12&\n\x05limit\x18\x01 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x02 \x01(\x05\x12\x10\n\x08user_ids\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x11\n\troot_user\x18\x05 \x01(\t\x12\x0e\n\x06search\x18\x06 \x01(\t\"\xa4\x01\n\x18ListNotificationsByProxy\x12\x31\n\x07user_id\x18\x01 \x01(\tB \xe2\xdf\x1f\x11\n\x0f\n\x06nf_ids\x12\x05\xea\x01\x02\x18\x00\xe2\xdf\x1f\x07\x12\x05\xc2\x01\x02\"\x00\x12&\n\x05limit\x18\x02 \x01(\x05\x42\x17\xa2\xa1\x1f\x06\xaa\x06\x03\x31\x30\x30\xe2\xdf\x1f\t\x12\x07\xb2\x01\x04\x30\x00\x38\x64\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x12\x1d\n\x06nf_ids\x18\x04 \x03(\tB\r\xe2\xdf\x1f\t\x12\x07\xea\x01\x04\x38\x64@\x00\x42t\n$com.dataomnis.gproto.types.pbrequestB\x15PBRequestAccountProxyP\x00Z3github.com/DataWorkbench/gproto/xgo/types/pbrequestb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_defaults__pb2.DESCRIPTOR,])
 
@@ -103,6 +103,13 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='search', full_name='request.ListUsersByProxy.search', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -115,8 +122,8 @@ _LISTUSERSBYPROXY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=208,
-  serialized_end=333,
+  serialized_start=209,
+  serialized_end=350,
 )
 
 
@@ -168,8 +175,8 @@ _LISTNOTIFICATIONSBYPROXY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=336,
-  serialized_end=500,
+  serialized_start=353,
+  serialized_end=517,
 )
 
 DESCRIPTOR.message_types_by_name['DescribeAccessKeyByProxy'] = _DESCRIBEACCESSKEYBYPROXY

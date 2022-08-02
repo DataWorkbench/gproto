@@ -5631,6 +5631,14 @@ public final class PBModelDataService {
        * <code>Enabled = 2;</code>
        */
       Enabled(2),
+      /**
+       * <code>Pass = 3;</code>
+       */
+      Pass(3),
+      /**
+       * <code>Failed = 4;</code>
+       */
+      Failed(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -5646,6 +5654,14 @@ public final class PBModelDataService {
        * <code>Enabled = 2;</code>
        */
       public static final int Enabled_VALUE = 2;
+      /**
+       * <code>Pass = 3;</code>
+       */
+      public static final int Pass_VALUE = 3;
+      /**
+       * <code>Failed = 4;</code>
+       */
+      public static final int Failed_VALUE = 4;
 
 
       public final int getNumber() {
@@ -5675,6 +5691,8 @@ public final class PBModelDataService {
           case 0: return StatusUnset;
           case 1: return Deleted;
           case 2: return Enabled;
+          case 3: return Pass;
+          case 4: return Failed;
           default: return null;
         }
       }
@@ -23201,7 +23219,7 @@ public final class PBModelDataService {
       "\001\022#\n\ncreated_by\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022\034" +
       "\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030" +
       "\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"3\n\006Status\022\017\n\013StatusUn" +
-      "set\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\352\t\n\tApiC" +
+      "set\020\000\022\013\n\007Deleted\020\001\022\013\n\007Enabled\020\002\"\200\n\n\tApiC" +
       "onfig\022#\n\006api_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004ds" +
       "a-\022%\n\010group_id\030\002 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg" +
       "-\022\035\n\ncluster_id\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\022%\n\010spac" +
@@ -23232,94 +23250,95 @@ public final class PBModelDataService {
       "0\n\014ResponseType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001" +
       "\022\007\n\003XML\020\002\"D\n\tProtocols\022\021\n\rProtocolUnset\020" +
       "\000\022\014\n\010HTTPOnly\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"" +
-      "3\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022" +
-      "\013\n\007Enabled\020\002\"R\n\021RequestParameters\0225\n\016req" +
-      "uest_params\030\026 \003(\0132\027.model.RequestParamet" +
-      "erB\004\342\337\037\000:\006\312\262\004\002\n\000\"\347\006\n\020RequestParameter\022$\n" +
-      "\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rd" +
-      "efault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexa" +
-      "mple_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_re" +
-      "quired\030\004 \001(\010B\004\342\337\037\000\022:\n\tdata_type\030\005 \001(\0162\030." +
-      "model.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(" +
-      "\n\021param_description\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002" +
-      "\022#\n\nparam_name\030\007 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n" +
-      "\016param_operator\030\010 \001(\0162).model.RequestPar" +
-      "ameter.ParameterOperatorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022" +
-      "P\n\016param_position\030\t \001(\0162).model.RequestP" +
-      "arameter.ParameterPositionB\r\342\337\037\t\022\007\332\001\0040\000X" +
-      "\001\022L\n\016field_category\030\n \001(\0162%.model.Reques" +
-      "tParameter.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"" +
-      "\247\001\n\021ParameterOperator\022\021\n\rOperatorUnset\020\000" +
-      "\022\t\n\005Equal\020\001\022\014\n\010NotEqual\020\002\022\017\n\013GreaterThan" +
-      "\020\003\022\020\n\014GreaterEqual\020\004\022\014\n\010LessThan\020\005\022\r\n\tLe" +
-      "ssEqual\020\006\022\010\n\004Like\020\007\022\t\n\005Const\020\010\022\006\n\002In\020\t\022\t" +
-      "\n\005NotIn\020\n\"O\n\021ParameterPosition\022\021\n\rPositi" +
-      "onUnset\020\000\022\010\n\004Body\020\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003" +
-      "\022\010\n\004Head\020\004\"F\n\rFieldCategory\022\021\n\rCategoryU" +
-      "nset\020\000\022\016\n\nPageConfig\020\001\022\022\n\016DataBaseColumn" +
-      "\020\002:\006\312\262\004\002\n\000\"U\n\022ResponseParameters\0227\n\017resp" +
-      "onse_params\030\026 \003(\0132\030.model.ResponseParame" +
-      "terB\004\342\337\037\000:\006\312\262\004\002\n\000\"\303\004\n\021ResponseParameter\022" +
-      "$\n\013column_name\030\001 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n" +
-      "\rdefault_value\030\002 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\re" +
-      "xample_value\030\003 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdat" +
-      "a_type\030\004 \001(\0162\030.model.ParameterDataTypeB\r" +
-      "\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_description\030\005 \001(\t" +
-      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\006 \001(\tB\017\342\337\037" +
-      "\013\022\t\302\001\006\200\002\000\230\002@\022\034\n\torder_num\030\007 \001(\003B\t\342\337\037\005\022\003\262" +
-      "\001\000\022C\n\norder_mode\030\010 \001(\0162\".model.ResponseP" +
-      "arameter.OrderModeB\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field" +
-      "_category\030\t \001(\0162&.model.ResponseParamete" +
-      "r.FieldCategoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderM" +
-      "ode\022\017\n\013StatusUnset\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"" +
-      "F\n\rFieldCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nP" +
-      "ageConfig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"" +
-      "\234\n\n\nApiVersion\022 \n\nversion_id\030\001 \001(\tB\014\342\337\037\010" +
-      "\022\006\302\001\003\360\001\020\022?\n\016publish_status\030\002 \001(\0162\030.model" +
-      ".ApiVersion.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\006api" +
-      "_id\030\004 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsa-\022%\n\010group_" +
-      "id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsg-\022\'\n\ncluster" +
-      "_id\030\006 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004dsc-\022%\n\010space_" +
-      "id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022!\n\010api_nam" +
-      "e\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\"\n\010api_path\030\t \001" +
-      "(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002\310\001\022:\n\010api_mode\030\n \001(\0162\031" +
-      ".model.ApiVersion.ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001" +
-      "\022&\n\017api_description\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002" +
-      "\022=\n\tprotocols\030\014 \001(\0162\033.model.ApiVersion.P" +
-      "rotocolsB\r\342\337\037\t\022\007\332\001\0040\000X\001\022F\n\016request_metho" +
-      "d\030\r \001(\0162\037.model.ApiVersion.RequestMethod" +
-      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022D\n\rresponse_type\030\016 \001(\0162\036" +
-      ".model.ApiVersion.ResponseTypeB\r\342\337\037\t\022\007\332\001" +
-      "\0040\000X\001\022\032\n\014cross_domain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007tim" +
-      "eout\030\020 \001(\003B\016\342\337\037\n\022\010\262\001\0058\254\002@\001\022*\n\rdatasource" +
-      "_id\030\021 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004som-\022#\n\ntable_" +
-      "name\030\022 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 " +
-      "\001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234\001\022\034\n\007created\030\003 \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022" +
-      "#\n\ncreated_by\030\027 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0226\n\016" +
-      "request_params\030\025 \001(\0132\030.model.RequestPara" +
-      "metersB\004\342\337\037\000\0228\n\017response_params\030\026 \001(\0132\031." +
-      "model.ResponseParametersB\004\342\337\037\000\"7\n\006Status" +
-      "\022\017\n\013StatusUnset\020\000\022\r\n\tPublished\020\001\022\r\n\tAbol" +
-      "ished\020\002\"0\n\007ApiMode\022\r\n\tModeUnset\020\000\022\n\n\006Wiz" +
-      "ard\020\001\022\n\n\006Script\020\002\"3\n\rRequestMethod\022\017\n\013Me" +
-      "thodUnset\020\000\022\007\n\003GET\020\001\022\010\n\004POST\020\002\"0\n\014Respon" +
-      "seType\022\r\n\tTypeUnset\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002" +
-      "\"D\n\tProtocols\022\021\n\rProtocolUnset\020\000\022\014\n\010HTTP" +
-      "Only\020\001\022\r\n\tHTTPSOnly\020\002\022\007\n\003ALL\020\003\"3\n\025Servic" +
-      "eDataSourceKind\022\014\n\004Name\030\001 \001(\t\022\014\n\004Type\030\002 " +
-      "\001(\003\"\301\001\n\023ApiConfigDataSource\022\025\n\002id\030\002 \001(\tB" +
-      "\t\342\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004t" +
-      "ype\030\005 \001(\0162\037.model.ApiConfigDataSource.Ty" +
-      "peB\t\342\337\037\005\022\003\332\001\000\"@\n\004Type\022\r\n\tTypeUnset\020\000\022\t\n\005" +
-      "MySQL\020\001\022\016\n\nPostgreSQL\020\002\022\016\n\nClickHouse\020\005\"" +
-      "I\n\027ApiConfigServiceCluster\022\025\n\002id\030\001 \001(\tB\t" +
-      "\342\337\037\005\022\003\302\001\000\022\027\n\004name\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021Pa" +
-      "rameterDataType\022\r\n\tTypeUnset\020\000\022\n\n\006String" +
-      "\020\001\022\007\n\003Int\020\002\022\n\n\006Double\020\003\022\013\n\007Boolean\020\004Bm\n\"" +
-      "com.dataomnis.gproto.types.pbmodelB\022PBMo" +
-      "delDataServiceP\000Z1github.com/DataWorkben" +
-      "ch/gproto/xgo/types/pbmodelb\006proto3"
+      "I\n\006Status\022\017\n\013StatusUnset\020\000\022\013\n\007Deleted\020\001\022" +
+      "\013\n\007Enabled\020\002\022\010\n\004Pass\020\003\022\n\n\006Failed\020\004\"R\n\021Re" +
+      "questParameters\0225\n\016request_params\030\026 \003(\0132" +
+      "\027.model.RequestParameterB\004\342\337\037\000:\006\312\262\004\002\n\000\"\347" +
+      "\006\n\020RequestParameter\022$\n\013column_name\030\001 \001(\t" +
+      "B\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\tB\r" +
+      "\342\337\037\t\022\007\302\001\004\230\002\201\002\022\031\n\013is_required\030\004 \001(\010B\004\342\337\037\000" +
+      "\022:\n\tdata_type\030\005 \001(\0162\030.model.ParameterDat" +
+      "aTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021param_descriptio" +
+      "n\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n\nparam_name\030\007 \001" +
+      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022P\n\016param_operator\030\010 " +
+      "\001(\0162).model.RequestParameter.ParameterOp" +
+      "eratorB\r\342\337\037\t\022\007\332\001\0040\000X\001\022P\n\016param_position\030" +
+      "\t \001(\0162).model.RequestParameter.Parameter" +
+      "PositionB\r\342\337\037\t\022\007\332\001\0040\000X\001\022L\n\016field_categor" +
+      "y\030\n \001(\0162%.model.RequestParameter.FieldCa" +
+      "tegoryB\r\342\337\037\t\022\007\332\001\0040\000X\001\"\247\001\n\021ParameterOpera" +
+      "tor\022\021\n\rOperatorUnset\020\000\022\t\n\005Equal\020\001\022\014\n\010Not" +
+      "Equal\020\002\022\017\n\013GreaterThan\020\003\022\020\n\014GreaterEqual" +
+      "\020\004\022\014\n\010LessThan\020\005\022\r\n\tLessEqual\020\006\022\010\n\004Like\020" +
+      "\007\022\t\n\005Const\020\010\022\006\n\002In\020\t\022\t\n\005NotIn\020\n\"O\n\021Param" +
+      "eterPosition\022\021\n\rPositionUnset\020\000\022\010\n\004Body\020" +
+      "\001\022\t\n\005Query\020\002\022\010\n\004Path\020\003\022\010\n\004Head\020\004\"F\n\rFiel" +
+      "dCategory\022\021\n\rCategoryUnset\020\000\022\016\n\nPageConf" +
+      "ig\020\001\022\022\n\016DataBaseColumn\020\002:\006\312\262\004\002\n\000\"U\n\022Resp" +
+      "onseParameters\0227\n\017response_params\030\026 \003(\0132" +
+      "\030.model.ResponseParameterB\004\342\337\037\000:\006\312\262\004\002\n\000\"" +
+      "\303\004\n\021ResponseParameter\022$\n\013column_name\030\001 \001" +
+      "(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022$\n\rdefault_value\030\002 \001" +
+      "(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022$\n\rexample_value\030\003 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022:\n\tdata_type\030\004 \001(\0162\030.mod" +
+      "el.ParameterDataTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022(\n\021p" +
+      "aram_description\030\005 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022#\n" +
+      "\nparam_name\030\006 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\230\002@\022\034\n\tor" +
+      "der_num\030\007 \001(\003B\t\342\337\037\005\022\003\262\001\000\022C\n\norder_mode\030\010" +
+      " \001(\0162\".model.ResponseParameter.OrderMode" +
+      "B\013\342\337\037\007\022\005\332\001\002X\001\022M\n\016field_category\030\t \001(\0162&." +
+      "model.ResponseParameter.FieldCategoryB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\"/\n\tOrderMode\022\017\n\013StatusUnset" +
+      "\020\000\022\007\n\003Ase\020\001\022\010\n\004Desc\020\002\"F\n\rFieldCategory\022\021" +
+      "\n\rCategoryUnset\020\000\022\016\n\nPageConfig\020\001\022\022\n\016Dat" +
+      "aBaseColumn\020\002:\006\312\262\004\002\n\000\"\234\n\n\nApiVersion\022 \n\n" +
+      "version_id\030\001 \001(\tB\014\342\337\037\010\022\006\302\001\003\360\001\020\022?\n\016publis" +
+      "h_status\030\002 \001(\0162\030.model.ApiVersion.Status" +
+      "B\r\342\337\037\t\022\007\332\001\0040\000X\001\022#\n\006api_id\030\004 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004dsa-\022%\n\010group_id\030\005 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004dsg-\022\'\n\ncluster_id\030\006 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004dsc-\022%\n\010space_id\030\007 \001(\tB\023\342\337\037\017\022\r\302\001" +
+      "\n\360\001\024\312\002\004wks-\022!\n\010api_name\030\010 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\200\002\000\230\002@\022\"\n\010api_path\030\t \001(\tB\020\342\337\037\014\022\n\302\001\007\200\002\000\230\002" +
+      "\310\001\022:\n\010api_mode\030\n \001(\0162\031.model.ApiVersion." +
+      "ApiModeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022&\n\017api_descriptio" +
+      "n\030\013 \001(\tB\r\342\337\037\t\022\007\302\001\004\230\002\201\002\022=\n\tprotocols\030\014 \001(" +
+      "\0162\033.model.ApiVersion.ProtocolsB\r\342\337\037\t\022\007\332\001" +
+      "\0040\000X\001\022F\n\016request_method\030\r \001(\0162\037.model.Ap" +
+      "iVersion.RequestMethodB\r\342\337\037\t\022\007\332\001\0040\000X\001\022D\n" +
+      "\rresponse_type\030\016 \001(\0162\036.model.ApiVersion." +
+      "ResponseTypeB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\032\n\014cross_dom" +
+      "ain\030\017 \001(\010B\004\342\337\037\000\022\037\n\007timeout\030\020 \001(\003B\016\342\337\037\n\022\010" +
+      "\262\001\0058\254\002@\001\022*\n\rdatasource_id\030\021 \001(\tB\023\342\337\037\017\022\r\302" +
+      "\001\n\360\001\024\312\002\004som-\022#\n\ntable_name\030\022 \001(\tB\017\342\337\037\013\022\t" +
+      "\302\001\006\200\002\000\230\002@\022\036\n\006script\030\023 \001(\tB\016\342\337\037\n\022\010\302\001\005\230\002\240\234" +
+      "\001\022\034\n\007created\030\003 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updat" +
+      "ed\030\024 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022#\n\ncreated_by\030\027 \001(" +
+      "\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0226\n\016request_params\030\025 \001" +
+      "(\0132\030.model.RequestParametersB\004\342\337\037\000\0228\n\017re" +
+      "sponse_params\030\026 \001(\0132\031.model.ResponsePara" +
+      "metersB\004\342\337\037\000\"7\n\006Status\022\017\n\013StatusUnset\020\000\022" +
+      "\r\n\tPublished\020\001\022\r\n\tAbolished\020\002\"0\n\007ApiMode" +
+      "\022\r\n\tModeUnset\020\000\022\n\n\006Wizard\020\001\022\n\n\006Script\020\002\"" +
+      "3\n\rRequestMethod\022\017\n\013MethodUnset\020\000\022\007\n\003GET" +
+      "\020\001\022\010\n\004POST\020\002\"0\n\014ResponseType\022\r\n\tTypeUnse" +
+      "t\020\000\022\010\n\004JSON\020\001\022\007\n\003XML\020\002\"D\n\tProtocols\022\021\n\rP" +
+      "rotocolUnset\020\000\022\014\n\010HTTPOnly\020\001\022\r\n\tHTTPSOnl" +
+      "y\020\002\022\007\n\003ALL\020\003\"3\n\025ServiceDataSourceKind\022\014\n" +
+      "\004Name\030\001 \001(\t\022\014\n\004Type\030\002 \001(\003\"\301\001\n\023ApiConfigD" +
+      "ataSource\022\025\n\002id\030\002 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\027\n\004name" +
+      "\030\003 \001(\tB\t\342\337\037\005\022\003\302\001\000\0228\n\004type\030\005 \001(\0162\037.model." +
+      "ApiConfigDataSource.TypeB\t\342\337\037\005\022\003\332\001\000\"@\n\004T" +
+      "ype\022\r\n\tTypeUnset\020\000\022\t\n\005MySQL\020\001\022\016\n\nPostgre" +
+      "SQL\020\002\022\016\n\nClickHouse\020\005\"I\n\027ApiConfigServic" +
+      "eCluster\022\025\n\002id\030\001 \001(\tB\t\342\337\037\005\022\003\302\001\000\022\027\n\004name\030" +
+      "\003 \001(\tB\t\342\337\037\005\022\003\302\001\000*P\n\021ParameterDataType\022\r\n" +
+      "\tTypeUnset\020\000\022\n\n\006String\020\001\022\007\n\003Int\020\002\022\n\n\006Dou" +
+      "ble\020\003\022\013\n\007Boolean\020\004Bm\n\"com.dataomnis.gpro" +
+      "to.types.pbmodelB\022PBModelDataServiceP\000Z1" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

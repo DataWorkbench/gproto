@@ -6557,6 +6557,911 @@ public final class PBResponseDataSourceManage {
 
   }
 
+  public interface DescribeTableSchemaDataServiceApiOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.DescribeTableSchemaDataServiceApi)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> 
+        getSchemaList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getSchema(int index);
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    int getSchemaCount();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder> 
+        getSchemaOrBuilderList();
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder getSchemaOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code response.DescribeTableSchemaDataServiceApi}
+   */
+  public static final class DescribeTableSchemaDataServiceApi extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.DescribeTableSchemaDataServiceApi)
+      DescribeTableSchemaDataServiceApiOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DescribeTableSchemaDataServiceApi.newBuilder() to construct.
+    private DescribeTableSchemaDataServiceApi(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DescribeTableSchemaDataServiceApi() {
+      schema_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DescribeTableSchemaDataServiceApi();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DescribeTableSchemaDataServiceApi(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                schema_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              schema_.add(
+                  input.readMessage(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          schema_ = java.util.Collections.unmodifiableList(schema_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.internal_static_response_DescribeTableSchemaDataServiceApi_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.internal_static_response_DescribeTableSchemaDataServiceApi_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.Builder.class);
+    }
+
+    public static final int SCHEMA_FIELD_NUMBER = 1;
+    private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> schema_;
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> getSchemaList() {
+      return schema_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder> 
+        getSchemaOrBuilderList() {
+      return schema_;
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    @java.lang.Override
+    public int getSchemaCount() {
+      return schema_.size();
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getSchema(int index) {
+      return schema_.get(index);
+    }
+    /**
+     * <pre>
+     * &#64;inject_tag: json:"schema"
+     * </pre>
+     *
+     * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder getSchemaOrBuilder(
+        int index) {
+      return schema_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < schema_.size(); i++) {
+        output.writeMessage(1, schema_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < schema_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, schema_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi other = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi) obj;
+
+      if (!getSchemaList()
+          .equals(other.getSchemaList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSchemaCount() > 0) {
+        hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getSchemaList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.DescribeTableSchemaDataServiceApi}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.DescribeTableSchemaDataServiceApi)
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApiOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.internal_static_response_DescribeTableSchemaDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.internal_static_response_DescribeTableSchemaDataServiceApi_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.class, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSchemaFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (schemaBuilder_ == null) {
+          schema_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          schemaBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.internal_static_response_DescribeTableSchemaDataServiceApi_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi result = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi(this);
+        int from_bitField0_ = bitField0_;
+        if (schemaBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            schema_ = java.util.Collections.unmodifiableList(schema_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.schema_ = schema_;
+        } else {
+          result.schema_ = schemaBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance()) return this;
+        if (schemaBuilder_ == null) {
+          if (!other.schema_.isEmpty()) {
+            if (schema_.isEmpty()) {
+              schema_ = other.schema_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSchemaIsMutable();
+              schema_.addAll(other.schema_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.schema_.isEmpty()) {
+            if (schemaBuilder_.isEmpty()) {
+              schemaBuilder_.dispose();
+              schemaBuilder_ = null;
+              schema_ = other.schema_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              schemaBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSchemaFieldBuilder() : null;
+            } else {
+              schemaBuilder_.addAllMessages(other.schema_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> schema_ =
+        java.util.Collections.emptyList();
+      private void ensureSchemaIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          schema_ = new java.util.ArrayList<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService>(schema_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder> schemaBuilder_;
+
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> getSchemaList() {
+        if (schemaBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(schema_);
+        } else {
+          return schemaBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public int getSchemaCount() {
+        if (schemaBuilder_ == null) {
+          return schema_.size();
+        } else {
+          return schemaBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService getSchema(int index) {
+        if (schemaBuilder_ == null) {
+          return schema_.get(index);
+        } else {
+          return schemaBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder setSchema(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService value) {
+        if (schemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaIsMutable();
+          schema_.set(index, value);
+          onChanged();
+        } else {
+          schemaBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder setSchema(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder builderForValue) {
+        if (schemaBuilder_ == null) {
+          ensureSchemaIsMutable();
+          schema_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          schemaBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder addSchema(com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService value) {
+        if (schemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaIsMutable();
+          schema_.add(value);
+          onChanged();
+        } else {
+          schemaBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder addSchema(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService value) {
+        if (schemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaIsMutable();
+          schema_.add(index, value);
+          onChanged();
+        } else {
+          schemaBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder addSchema(
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder builderForValue) {
+        if (schemaBuilder_ == null) {
+          ensureSchemaIsMutable();
+          schema_.add(builderForValue.build());
+          onChanged();
+        } else {
+          schemaBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder addSchema(
+          int index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder builderForValue) {
+        if (schemaBuilder_ == null) {
+          ensureSchemaIsMutable();
+          schema_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          schemaBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder addAllSchema(
+          java.lang.Iterable<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService> values) {
+        if (schemaBuilder_ == null) {
+          ensureSchemaIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, schema_);
+          onChanged();
+        } else {
+          schemaBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder clearSchema() {
+        if (schemaBuilder_ == null) {
+          schema_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          schemaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public Builder removeSchema(int index) {
+        if (schemaBuilder_ == null) {
+          ensureSchemaIsMutable();
+          schema_.remove(index);
+          onChanged();
+        } else {
+          schemaBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder getSchemaBuilder(
+          int index) {
+        return getSchemaFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder getSchemaOrBuilder(
+          int index) {
+        if (schemaBuilder_ == null) {
+          return schema_.get(index);  } else {
+          return schemaBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public java.util.List<? extends com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder> 
+           getSchemaOrBuilderList() {
+        if (schemaBuilder_ != null) {
+          return schemaBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(schema_);
+        }
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder addSchemaBuilder() {
+        return getSchemaFieldBuilder().addBuilder(
+            com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder addSchemaBuilder(
+          int index) {
+        return getSchemaFieldBuilder().addBuilder(
+            index, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * &#64;inject_tag: json:"schema"
+       * </pre>
+       *
+       * <code>repeated .datasource.TableColumnForDataService schema = 1;</code>
+       */
+      public java.util.List<com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder> 
+           getSchemaBuilderList() {
+        return getSchemaFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder> 
+          getSchemaFieldBuilder() {
+        if (schemaBuilder_ == null) {
+          schemaBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataService.Builder, com.dataomnis.gproto.types.pbmodel.pbdatasource.PBDataSourceTable.TableColumnForDataServiceOrBuilder>(
+                  schema_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          schema_ = null;
+        }
+        return schemaBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.DescribeTableSchemaDataServiceApi)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.DescribeTableSchemaDataServiceApi)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi>
+        PARSER = new com.google.protobuf.AbstractParser<DescribeTableSchemaDataServiceApi>() {
+      @java.lang.Override
+      public DescribeTableSchemaDataServiceApi parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DescribeTableSchemaDataServiceApi(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DescribeTableSchemaDataServiceApi> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_CreateDataSource_descriptor;
   private static final 
@@ -6597,6 +7502,11 @@ public final class PBResponseDataSourceManage {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_DescribeDataSourceTableSchema_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_DescribeTableSchemaDataServiceApi_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_DescribeTableSchemaDataServiceApi_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6624,10 +7534,13 @@ public final class PBResponseDataSourceManage {
       "rceConnectionB\006\342\337\037\002\022\000\")\n\030DescribeDataSou" +
       "rceTables\022\r\n\005items\030\001 \003(\t\"H\n\035DescribeData" +
       "SourceTableSchema\022\'\n\006schema\030\001 \001(\0132\027.data" +
-      "source.TableSchemaB{\n%com.dataomnis.gpro" +
-      "to.types.pbresponseB\032PBResponseDataSourc" +
-      "eManageP\000Z4github.com/DataWorkbench/gpro" +
-      "to/xgo/types/pbresponseb\006proto3"
+      "source.TableSchema\"Z\n!DescribeTableSchem" +
+      "aDataServiceApi\0225\n\006schema\030\001 \003(\0132%.dataso" +
+      "urce.TableColumnForDataServiceB{\n%com.da" +
+      "taomnis.gproto.types.pbresponseB\032PBRespo" +
+      "nseDataSourceManageP\000Z4github.com/DataWo" +
+      "rkbench/gproto/xgo/types/pbresponseb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6683,6 +7596,12 @@ public final class PBResponseDataSourceManage {
     internal_static_response_DescribeDataSourceTableSchema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_DescribeDataSourceTableSchema_descriptor,
+        new java.lang.String[] { "Schema", });
+    internal_static_response_DescribeTableSchemaDataServiceApi_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_response_DescribeTableSchemaDataServiceApi_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_DescribeTableSchemaDataServiceApi_descriptor,
         new java.lang.String[] { "Schema", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -390,6 +390,37 @@ public final class DataSourceManageGrpc {
     return getDescribeDataSourceTableSchemaMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> getDescribeTableSchemaDataServiceApiMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DescribeTableSchemaDataServiceApi",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi,
+      com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> getDescribeTableSchemaDataServiceApiMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> getDescribeTableSchemaDataServiceApiMethod;
+    if ((getDescribeTableSchemaDataServiceApiMethod = DataSourceManageGrpc.getDescribeTableSchemaDataServiceApiMethod) == null) {
+      synchronized (DataSourceManageGrpc.class) {
+        if ((getDescribeTableSchemaDataServiceApiMethod = DataSourceManageGrpc.getDescribeTableSchemaDataServiceApiMethod) == null) {
+          DataSourceManageGrpc.getDescribeTableSchemaDataServiceApiMethod = getDescribeTableSchemaDataServiceApiMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi, com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DescribeTableSchemaDataServiceApi"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi.getDefaultInstance()))
+              .setSchemaDescriptor(new DataSourceManageMethodDescriptorSupplier("DescribeTableSchemaDataServiceApi"))
+              .build();
+        }
+      }
+    }
+    return getDescribeTableSchemaDataServiceApiMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -534,6 +565,13 @@ public final class DataSourceManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeDataSourceTableSchemaMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void describeTableSchemaDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDescribeTableSchemaDataServiceApiMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -620,6 +658,13 @@ public final class DataSourceManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeDataSourceTableSchema,
                 com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeDataSourceTableSchema>(
                   this, METHODID_DESCRIBE_DATA_SOURCE_TABLE_SCHEMA)))
+          .addMethod(
+            getDescribeTableSchemaDataServiceApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi,
+                com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi>(
+                  this, METHODID_DESCRIBE_TABLE_SCHEMA_DATA_SERVICE_API)))
           .build();
     }
   }
@@ -745,6 +790,14 @@ public final class DataSourceManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDescribeDataSourceTableSchemaMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void describeTableSchemaDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDescribeTableSchemaDataServiceApiMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -855,6 +908,13 @@ public final class DataSourceManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeDataSourceTableSchema describeDataSourceTableSchema(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeDataSourceTableSchema request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDescribeDataSourceTableSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi describeTableSchemaDataServiceApi(com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDescribeTableSchemaDataServiceApiMethod(), getCallOptions(), request);
     }
   }
 
@@ -979,6 +1039,14 @@ public final class DataSourceManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDescribeDataSourceTableSchemaMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi> describeTableSchemaDataServiceApi(
+        com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDescribeTableSchemaDataServiceApiMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DATA_SOURCES = 0;
@@ -993,6 +1061,7 @@ public final class DataSourceManageGrpc {
   private static final int METHODID_PING_DATA_SOURCE_CONNECTION = 9;
   private static final int METHODID_DESCRIBE_DATA_SOURCE_TABLES = 10;
   private static final int METHODID_DESCRIBE_DATA_SOURCE_TABLE_SCHEMA = 11;
+  private static final int METHODID_DESCRIBE_TABLE_SCHEMA_DATA_SERVICE_API = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1058,6 +1127,10 @@ public final class DataSourceManageGrpc {
         case METHODID_DESCRIBE_DATA_SOURCE_TABLE_SCHEMA:
           serviceImpl.describeDataSourceTableSchema((com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeDataSourceTableSchema) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeDataSourceTableSchema>) responseObserver);
+          break;
+        case METHODID_DESCRIBE_TABLE_SCHEMA_DATA_SERVICE_API:
+          serviceImpl.describeTableSchemaDataServiceApi((com.dataomnis.gproto.types.pbrequest.PBRequestDataSourceManage.DescribeTableSchemaDataServiceApi) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseDataSourceManage.DescribeTableSchemaDataServiceApi>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1132,6 +1205,7 @@ public final class DataSourceManageGrpc {
               .addMethod(getPingDataSourceConnectionMethod())
               .addMethod(getDescribeDataSourceTablesMethod())
               .addMethod(getDescribeDataSourceTableSchemaMethod())
+              .addMethod(getDescribeTableSchemaDataServiceApiMethod())
               .build();
         }
       }

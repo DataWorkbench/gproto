@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.dataomnis.gproto.types.pbresponseB\032PBResponseDataSourceManageP\000Z4github.com/DataWorkbench/gproto/xgo/types/pbresponse',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,proto/types/response/datasource_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/datasource.proto\x1a\x33proto/types/model/datasource/datasource_table.proto\"\x1e\n\x10\x43reateDataSource\x12\n\n\x02id\x18\x01 \x01(\t\"5\n\x12\x44\x65scribeDataSource\x12\x1f\n\x04info\x18\x01 \x01(\x0b\x32\x11.model.DataSource\"T\n\x0fListDataSources\x12 \n\x05infos\x18\x01 \x03(\x0b\x32\x11.model.DataSource\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"?\n\x17\x44\x65scribeDataSourceKinds\x12$\n\x05Kinds\x18\x01 \x03(\x0b\x32\x15.model.DataSourceKind\"h\n\x19ListDataSourceConnections\x12*\n\x05infos\x18\x01 \x03(\x0b\x32\x1b.model.DataSourceConnection\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"M\n\x18PingDataSourceConnection\x12\x31\n\x04info\x18\x01 \x01(\x0b\x32\x1b.model.DataSourceConnectionB\x06\xe2\xdf\x1f\x02\x12\x00\")\n\x18\x44\x65scribeDataSourceTables\x12\r\n\x05items\x18\x01 \x03(\t\"H\n\x1d\x44\x65scribeDataSourceTableSchema\x12\'\n\x06schema\x18\x01 \x01(\x0b\x32\x17.datasource.TableSchemaB{\n%com.dataomnis.gproto.types.pbresponseB\x1aPBResponseDataSourceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
+  serialized_pb=b'\n,proto/types/response/datasource_manage.proto\x12\x08response\x1a\x33github.com/yu31/protoc-plugin/proto/validator.proto\x1a\"proto/types/model/datasource.proto\x1a\x33proto/types/model/datasource/datasource_table.proto\"\x1e\n\x10\x43reateDataSource\x12\n\n\x02id\x18\x01 \x01(\t\"5\n\x12\x44\x65scribeDataSource\x12\x1f\n\x04info\x18\x01 \x01(\x0b\x32\x11.model.DataSource\"T\n\x0fListDataSources\x12 \n\x05infos\x18\x01 \x03(\x0b\x32\x11.model.DataSource\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"?\n\x17\x44\x65scribeDataSourceKinds\x12$\n\x05Kinds\x18\x01 \x03(\x0b\x32\x15.model.DataSourceKind\"h\n\x19ListDataSourceConnections\x12*\n\x05infos\x18\x01 \x03(\x0b\x32\x1b.model.DataSourceConnection\x12\r\n\x05total\x18\x02 \x01(\x03\x12\x10\n\x08has_more\x18\x03 \x01(\x08\"M\n\x18PingDataSourceConnection\x12\x31\n\x04info\x18\x01 \x01(\x0b\x32\x1b.model.DataSourceConnectionB\x06\xe2\xdf\x1f\x02\x12\x00\")\n\x18\x44\x65scribeDataSourceTables\x12\r\n\x05items\x18\x01 \x03(\t\"H\n\x1d\x44\x65scribeDataSourceTableSchema\x12\'\n\x06schema\x18\x01 \x01(\x0b\x32\x17.datasource.TableSchema\"Z\n!DescribeTableSchemaDataServiceApi\x12\x35\n\x06schema\x18\x01 \x03(\x0b\x32%.datasource.TableColumnForDataServiceB{\n%com.dataomnis.gproto.types.pbresponseB\x1aPBResponseDataSourceManageP\x00Z4github.com/DataWorkbench/gproto/xgo/types/pbresponseb\x06proto3'
   ,
   dependencies=[github_dot_com_dot_yu31_dot_protoc__plugin_dot_proto_dot_validator__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource__pb2.DESCRIPTOR,proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2.DESCRIPTOR,])
 
@@ -312,12 +312,45 @@ _DESCRIBEDATASOURCETABLESCHEMA = _descriptor.Descriptor(
   serialized_end=738,
 )
 
+
+_DESCRIBETABLESCHEMADATASERVICEAPI = _descriptor.Descriptor(
+  name='DescribeTableSchemaDataServiceApi',
+  full_name='response.DescribeTableSchemaDataServiceApi',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='schema', full_name='response.DescribeTableSchemaDataServiceApi.schema', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=740,
+  serialized_end=830,
+)
+
 _DESCRIBEDATASOURCE.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCE
 _LISTDATASOURCES.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCE
 _DESCRIBEDATASOURCEKINDS.fields_by_name['Kinds'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCEKIND
 _LISTDATASOURCECONNECTIONS.fields_by_name['infos'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCECONNECTION
 _PINGDATASOURCECONNECTION.fields_by_name['info'].message_type = proto_dot_types_dot_model_dot_datasource__pb2._DATASOURCECONNECTION
 _DESCRIBEDATASOURCETABLESCHEMA.fields_by_name['schema'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2._TABLESCHEMA
+_DESCRIBETABLESCHEMADATASERVICEAPI.fields_by_name['schema'].message_type = proto_dot_types_dot_model_dot_datasource_dot_datasource__table__pb2._TABLECOLUMNFORDATASERVICE
 DESCRIPTOR.message_types_by_name['CreateDataSource'] = _CREATEDATASOURCE
 DESCRIPTOR.message_types_by_name['DescribeDataSource'] = _DESCRIBEDATASOURCE
 DESCRIPTOR.message_types_by_name['ListDataSources'] = _LISTDATASOURCES
@@ -326,6 +359,7 @@ DESCRIPTOR.message_types_by_name['ListDataSourceConnections'] = _LISTDATASOURCEC
 DESCRIPTOR.message_types_by_name['PingDataSourceConnection'] = _PINGDATASOURCECONNECTION
 DESCRIPTOR.message_types_by_name['DescribeDataSourceTables'] = _DESCRIBEDATASOURCETABLES
 DESCRIPTOR.message_types_by_name['DescribeDataSourceTableSchema'] = _DESCRIBEDATASOURCETABLESCHEMA
+DESCRIPTOR.message_types_by_name['DescribeTableSchemaDataServiceApi'] = _DESCRIBETABLESCHEMADATASERVICEAPI
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateDataSource = _reflection.GeneratedProtocolMessageType('CreateDataSource', (_message.Message,), {
@@ -383,6 +417,13 @@ DescribeDataSourceTableSchema = _reflection.GeneratedProtocolMessageType('Descri
   # @@protoc_insertion_point(class_scope:response.DescribeDataSourceTableSchema)
   })
 _sym_db.RegisterMessage(DescribeDataSourceTableSchema)
+
+DescribeTableSchemaDataServiceApi = _reflection.GeneratedProtocolMessageType('DescribeTableSchemaDataServiceApi', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBETABLESCHEMADATASERVICEAPI,
+  '__module__' : 'proto.types.response.datasource_manage_pb2'
+  # @@protoc_insertion_point(class_scope:response.DescribeTableSchemaDataServiceApi)
+  })
+_sym_db.RegisterMessage(DescribeTableSchemaDataServiceApi)
 
 
 DESCRIPTOR._options = None

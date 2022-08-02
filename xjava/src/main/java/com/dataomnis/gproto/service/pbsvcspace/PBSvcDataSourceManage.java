@@ -27,7 +27,7 @@ public final class PBSvcDataSourceManage {
       "anage.proto\022\014spacemanager\032\035proto/types/m" +
       "odel/empty.proto\032+proto/types/request/da" +
       "tasource_manage.proto\032,proto/types/respo" +
-      "nse/datasource_manage.proto2\222\010\n\020DataSour" +
+      "nse/datasource_manage.proto2\222\t\n\020DataSour" +
       "ceManage\022H\n\017ListDataSources\022\030.request.Li" +
       "stDataSources\032\031.response.ListDataSources" +
       "\"\000\022K\n\020CreateDataSource\022\031.request.CreateD" +
@@ -53,11 +53,14 @@ public final class PBSvcDataSourceManage {
       ".response.DescribeDataSourceTables\"\000\022r\n\035" +
       "DescribeDataSourceTableSchema\022&.request." +
       "DescribeDataSourceTableSchema\032\'.response" +
-      ".DescribeDataSourceTableSchema\"\000Bz\n\'com." +
-      "dataomnis.gproto.service.pbsvcspaceB\025PBS" +
-      "vcDataSourceManageP\000Z6github.com/DataWor" +
-      "kbench/gproto/xgo/service/pbsvcspaceb\006pr" +
-      "oto3"
+      ".DescribeDataSourceTableSchema\"\000\022~\n!Desc" +
+      "ribeTableSchemaDataServiceApi\022*.request." +
+      "DescribeTableSchemaDataServiceApi\032+.resp" +
+      "onse.DescribeTableSchemaDataServiceApi\"\000" +
+      "Bz\n\'com.dataomnis.gproto.service.pbsvcsp" +
+      "aceB\025PBSvcDataSourceManageP\000Z6github.com" +
+      "/DataWorkbench/gproto/xgo/service/pbsvcs" +
+      "paceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

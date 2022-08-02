@@ -59,6 +59,28 @@ public final class PBRequestMemberManage {
      */
     com.google.protobuf.ByteString
         getSpaceOwnerBytes();
+
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    java.lang.String getSearch();
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    com.google.protobuf.ByteString
+        getSearchBytes();
   }
   /**
    * Protobuf type {@code request.ListAvailableUsers}
@@ -74,6 +96,7 @@ public final class PBRequestMemberManage {
     }
     private ListAvailableUsers() {
       spaceOwner_ = "";
+      search_ = "";
     }
 
     @java.lang.Override
@@ -120,6 +143,12 @@ public final class PBRequestMemberManage {
               java.lang.String s = input.readStringRequireUtf8();
 
               spaceOwner_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              search_ = s;
               break;
             }
             default: {
@@ -232,6 +261,54 @@ public final class PBRequestMemberManage {
       }
     }
 
+    public static final int SEARCH_FIELD_NUMBER = 5;
+    private volatile java.lang.Object search_;
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The search.
+     */
+    @java.lang.Override
+    public java.lang.String getSearch() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        search_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Search with user name;
+     * &#64;inject_tag: json:"search" form:"search"
+     * </pre>
+     *
+     * <code>string search = 5;</code>
+     * @return The bytes for search.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSearchBytes() {
+      java.lang.Object ref = search_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        search_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -255,6 +332,9 @@ public final class PBRequestMemberManage {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, spaceOwner_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, search_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -274,6 +354,9 @@ public final class PBRequestMemberManage {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceOwner_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, spaceOwner_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(search_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, search_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -296,6 +379,8 @@ public final class PBRequestMemberManage {
           != other.getOffset()) return false;
       if (!getSpaceOwner()
           .equals(other.getSpaceOwner())) return false;
+      if (!getSearch()
+          .equals(other.getSearch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -313,6 +398,8 @@ public final class PBRequestMemberManage {
       hash = (53 * hash) + getOffset();
       hash = (37 * hash) + SPACE_OWNER_FIELD_NUMBER;
       hash = (53 * hash) + getSpaceOwner().hashCode();
+      hash = (37 * hash) + SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getSearch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -452,6 +539,8 @@ public final class PBRequestMemberManage {
 
         spaceOwner_ = "";
 
+        search_ = "";
+
         return this;
       }
 
@@ -481,6 +570,7 @@ public final class PBRequestMemberManage {
         result.limit_ = limit_;
         result.offset_ = offset_;
         result.spaceOwner_ = spaceOwner_;
+        result.search_ = search_;
         onBuilt();
         return result;
       }
@@ -537,6 +627,10 @@ public final class PBRequestMemberManage {
         }
         if (!other.getSpaceOwner().isEmpty()) {
           spaceOwner_ = other.spaceOwner_;
+          onChanged();
+        }
+        if (!other.getSearch().isEmpty()) {
+          search_ = other.search_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -751,6 +845,107 @@ public final class PBRequestMemberManage {
   checkByteStringIsUtf8(value);
         
         spaceOwner_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object search_ = "";
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The search.
+       */
+      public java.lang.String getSearch() {
+        java.lang.Object ref = search_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          search_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return The bytes for search.
+       */
+      public com.google.protobuf.ByteString
+          getSearchBytes() {
+        java.lang.Object ref = search_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          search_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearch(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        search_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSearch() {
+        
+        search_ = getDefaultInstance().getSearch();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Search with user name;
+       * &#64;inject_tag: json:"search" form:"search"
+       * </pre>
+       *
+       * <code>string search = 5;</code>
+       * @param value The bytes for search to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        search_ = value;
         onChanged();
         return this;
       }
@@ -7656,34 +7851,34 @@ public final class PBRequestMemberManage {
       "\n\'proto/types/request/member_manage.prot" +
       "o\022\007request\0323github.com/yu31/protoc-plugi" +
       "n/proto/validator.proto\0322github.com/yu31" +
-      "/protoc-plugin/proto/defaults.proto\"a\n\022L" +
+      "/protoc-plugin/proto/defaults.proto\"q\n\022L" +
       "istAvailableUsers\022&\n\005limit\030\001 \001(\005B\027\242\241\037\006\252\006" +
       "\003100\342\337\037\t\022\007\262\001\0040\0008d\022\016\n\006offset\030\002 \001(\005\022\023\n\013spa" +
-      "ce_owner\030\003 \001(\t\"\365\001\n\013ListMembers\022%\n\010space_" +
-      "id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022&\n\005limit\030\002" +
-      " \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001\0040\0008d\022\033\n\006offset\030" +
-      "\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007sort_by\030\004 \001(\tB&\342\337\037" +
-      "\"\022 \302\001\035J\000J\007user_idJ\007createdJ\007updated\022\017\n\007r" +
-      "everse\030\005 \001(\010\022\016\n\006search\030\006 \001(\t\022\020\n\010user_ids" +
-      "\030\007 \003(\t\022\016\n\006filter\030\010 \003(\t\"U\n\rDeleteMembers\022" +
-      "%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022\035" +
-      "\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005\352\001\0028d\"\354\001\n\nAddMem" +
-      "bers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004w" +
-      "ks-\022#\n\ncreated_by\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A" +
-      "\022 \n\013space_owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\037\n\010us" +
-      "er_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040\0008d\0222\n\017system_ro" +
-      "le_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022" +
-      "\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"\250\001\n\014UpdateM" +
-      "ember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004" +
-      "wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\0222" +
-      "\n\017system_role_ids\030\003 \003(\tB\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n" +
-      "\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"" +
-      "Y\n\016DescribeMember\022%\n\010space_id\030\001 \001(\tB\023\342\337\037" +
-      "\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342\337\037\013\022" +
-      "\t\302\001\006\200\002\000\210\002ABt\n$com.dataomnis.gproto.types" +
-      ".pbrequestB\025PBRequestMemberManageP\000Z3git" +
-      "hub.com/DataWorkbench/gproto/xgo/types/p" +
-      "brequestb\006proto3"
+      "ce_owner\030\003 \001(\t\022\016\n\006search\030\005 \001(\t\"\365\001\n\013ListM" +
+      "embers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002" +
+      "\004wks-\022&\n\005limit\030\002 \001(\005B\027\242\241\037\006\252\006\003100\342\337\037\t\022\007\262\001" +
+      "\0040\0008d\022\033\n\006offset\030\003 \001(\005B\013\342\337\037\007\022\005\262\001\002@\000\0227\n\007so" +
+      "rt_by\030\004 \001(\tB&\342\337\037\"\022 \302\001\035J\000J\007user_idJ\007creat" +
+      "edJ\007updated\022\017\n\007reverse\030\005 \001(\010\022\016\n\006search\030\006" +
+      " \001(\t\022\020\n\010user_ids\030\007 \003(\t\022\016\n\006filter\030\010 \003(\t\"U" +
+      "\n\rDeleteMembers\022%\n\010space_id\030\001 \001(\tB\023\342\337\037\017\022" +
+      "\r\302\001\n\360\001\024\312\002\004wks-\022\035\n\010user_ids\030\002 \003(\tB\013\342\337\037\007\022\005" +
+      "\352\001\0028d\"\354\001\n\nAddMembers\022%\n\010space_id\030\001 \001(\tB\023" +
+      "\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\ncreated_by\030\002 \001(\tB" +
+      "\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002A\022 \n\013space_owner\030\003 \001(\tB\013\342" +
+      "\337\037\007\022\005\302\001\002\"\000\022\037\n\010user_ids\030\004 \003(\tB\r\342\337\037\t\022\007\352\001\0040" +
+      "\0008d\0222\n\017system_role_ids\030\005 \003(\tB\031\342\337\037\025\022\023\352\001\0200" +
+      "\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\006 \001(\tB\r\342\337\037\t\022\007\302\001\004" +
+      "\310\001\200\010\"\250\001\n\014UpdateMember\022%\n\010space_id\030\001 \001(\tB" +
+      "\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user_id\030\002 \001(\tB\017\342" +
+      "\337\037\013\022\t\302\001\006\200\002\000\210\002A\0222\n\017system_role_ids\030\003 \003(\tB" +
+      "\031\342\337\037\025\022\023\352\001\0200\000P\001Z\n\302\001\007\312\002\004ros-\022\033\n\004desc\030\004 \001(\t" +
+      "B\r\342\337\037\t\022\007\302\001\004\310\001\200\010\"Y\n\016DescribeMember\022%\n\010spa" +
+      "ce_id\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022 \n\007user" +
+      "_id\030\002 \001(\tB\017\342\337\037\013\022\t\302\001\006\200\002\000\210\002ABt\n$com.dataom" +
+      "nis.gproto.types.pbrequestB\025PBRequestMem" +
+      "berManageP\000Z3github.com/DataWorkbench/gp" +
+      "roto/xgo/types/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7696,7 +7891,7 @@ public final class PBRequestMemberManage {
     internal_static_request_ListAvailableUsers_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_request_ListAvailableUsers_descriptor,
-        new java.lang.String[] { "Limit", "Offset", "SpaceOwner", });
+        new java.lang.String[] { "Limit", "Offset", "SpaceOwner", "Search", });
     internal_static_request_ListMembers_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_request_ListMembers_fieldAccessorTable = new

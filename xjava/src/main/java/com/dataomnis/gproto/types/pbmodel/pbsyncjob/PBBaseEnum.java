@@ -1094,6 +1094,267 @@ public final class PBBaseEnum {
       // @@protoc_insertion_point(enum_scope:model.BaseEnum.NullMode)
     }
 
+    /**
+     * Protobuf enum {@code model.BaseEnum.CodecMode}
+     */
+    public enum CodecMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CodecModeUnset = 0;</code>
+       */
+      CodecModeUnset(0),
+      /**
+       * <code>CodecText = 1;</code>
+       */
+      CodecText(1),
+      /**
+       * <code>CodecJson = 2;</code>
+       */
+      CodecJson(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CodecModeUnset = 0;</code>
+       */
+      public static final int CodecModeUnset_VALUE = 0;
+      /**
+       * <code>CodecText = 1;</code>
+       */
+      public static final int CodecText_VALUE = 1;
+      /**
+       * <code>CodecJson = 2;</code>
+       */
+      public static final int CodecJson_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static CodecMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static CodecMode forNumber(int value) {
+        switch (value) {
+          case 0: return CodecModeUnset;
+          case 1: return CodecText;
+          case 2: return CodecJson;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<CodecMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CodecMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CodecMode>() {
+              public CodecMode findValueByNumber(int number) {
+                return CodecMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.getDescriptor().getEnumTypes().get(8);
+      }
+
+      private static final CodecMode[] VALUES = values();
+
+      public static CodecMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private CodecMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.BaseEnum.CodecMode)
+    }
+
+    /**
+     * Protobuf enum {@code model.BaseEnum.ConsumerMode}
+     */
+    public enum ConsumerMode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>ConsumerModeUnset = 0;</code>
+       */
+      ConsumerModeUnset(0),
+      /**
+       * <code>GroupOffsets = 1;</code>
+       */
+      GroupOffsets(1),
+      /**
+       * <code>EarliestOffset = 2;</code>
+       */
+      EarliestOffset(2),
+      /**
+       * <code>LatestOffset = 3;</code>
+       */
+      LatestOffset(3),
+      /**
+       * <code>Timestamp = 4;</code>
+       */
+      Timestamp(4),
+      /**
+       * <code>SpecificOffsets = 5;</code>
+       */
+      SpecificOffsets(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>ConsumerModeUnset = 0;</code>
+       */
+      public static final int ConsumerModeUnset_VALUE = 0;
+      /**
+       * <code>GroupOffsets = 1;</code>
+       */
+      public static final int GroupOffsets_VALUE = 1;
+      /**
+       * <code>EarliestOffset = 2;</code>
+       */
+      public static final int EarliestOffset_VALUE = 2;
+      /**
+       * <code>LatestOffset = 3;</code>
+       */
+      public static final int LatestOffset_VALUE = 3;
+      /**
+       * <code>Timestamp = 4;</code>
+       */
+      public static final int Timestamp_VALUE = 4;
+      /**
+       * <code>SpecificOffsets = 5;</code>
+       */
+      public static final int SpecificOffsets_VALUE = 5;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ConsumerMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ConsumerMode forNumber(int value) {
+        switch (value) {
+          case 0: return ConsumerModeUnset;
+          case 1: return GroupOffsets;
+          case 2: return EarliestOffset;
+          case 3: return LatestOffset;
+          case 4: return Timestamp;
+          case 5: return SpecificOffsets;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ConsumerMode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ConsumerMode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConsumerMode>() {
+              public ConsumerMode findValueByNumber(int number) {
+                return ConsumerMode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.getDescriptor().getEnumTypes().get(9);
+      }
+
+      private static final ConsumerMode[] VALUES = values();
+
+      public static ConsumerMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ConsumerMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.BaseEnum.ConsumerMode)
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1446,7 +1707,7 @@ public final class PBBaseEnum {
   static {
     java.lang.String[] descriptorData = {
       "\n(proto/types/model/syncjob/baseenum.pro" +
-      "to\022\005model\"\237\004\n\010BaseEnum\"F\n\rPartitionType\022" +
+      "to\022\005model\"\342\005\n\010BaseEnum\"F\n\rPartitionType\022" +
       "\026\n\022PartitionTypeUnset\020\000\022\007\n\003DAY\020\001\022\010\n\004HOUR" +
       "\020\002\022\n\n\006MINUTE\020\003\":\n\tWriteMode\022\022\n\016WriteMode" +
       "Unset\020\000\022\n\n\006append\020\001\022\r\n\toverwrite\020\002\"=\n\010Fi" +
@@ -1459,11 +1720,16 @@ public final class PBBaseEnum {
       "\000\022\010\n\004Name\020\001\022\007\n\003Row\020\002\022\010\n\004Auto\020\003\"G\n\rCondit" +
       "ionType\022\026\n\022ConditionTypeUnset\020\000\022\021\n\rVisua" +
       "lization\020\001\022\013\n\007Express\020\002\"2\n\010NullMode\022\021\n\rN" +
-      "ullModeUnset\020\000\022\010\n\004skip\020\001\022\t\n\005empty\020\002By\n,c" +
-      "om.dataomnis.gproto.types.pbmodel.pbsync" +
-      "jobB\nPBBaseEnumP\000Z;github.com/DataWorkbe" +
-      "nch/gproto/xgo/types/pbmodel/pbsyncjobb\006" +
-      "proto3"
+      "ullModeUnset\020\000\022\010\n\004skip\020\001\022\t\n\005empty\020\002\"=\n\tC" +
+      "odecMode\022\022\n\016CodecModeUnset\020\000\022\r\n\tCodecTex" +
+      "t\020\001\022\r\n\tCodecJson\020\002\"\201\001\n\014ConsumerMode\022\025\n\021C" +
+      "onsumerModeUnset\020\000\022\020\n\014GroupOffsets\020\001\022\022\n\016" +
+      "EarliestOffset\020\002\022\020\n\014LatestOffset\020\003\022\r\n\tTi" +
+      "mestamp\020\004\022\023\n\017SpecificOffsets\020\005By\n,com.da" +
+      "taomnis.gproto.types.pbmodel.pbsyncjobB\n" +
+      "PBBaseEnumP\000Z;github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodel/pbsyncjobb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

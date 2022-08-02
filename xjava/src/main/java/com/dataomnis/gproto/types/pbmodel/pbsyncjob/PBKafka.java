@@ -90,21 +90,20 @@ public final class PBKafka {
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 3;</code>
-     * @return The mode.
+     * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+     * @return The enum numeric value on the wire for mode.
      */
-    java.lang.String getMode();
+    int getModeValue();
     /**
      * <pre>
      * mode
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 3;</code>
-     * @return The bytes for mode.
+     * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+     * @return The mode.
      */
-    com.google.protobuf.ByteString
-        getModeBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode getMode();
 
     /**
      * <pre>
@@ -164,24 +163,23 @@ public final class PBKafka {
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    java.lang.String getEncoding();
+    int getEncodingValue();
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+     * @return The encoding.
      */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
 
     /**
      * <pre>
@@ -189,21 +187,20 @@ public final class PBKafka {
      * &#64;inject_tag: json:"codec" 
      * </pre>
      *
-     * <code>string codec = 8;</code>
+     * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+     * @return The enum numeric value on the wire for codec.
+     */
+    int getCodecValue();
+    /**
+     * <pre>
+     * codec
+     * &#64;inject_tag: json:"codec" 
+     * </pre>
+     *
+     * <code>.model.BaseEnum.CodecMode codec = 8;</code>
      * @return The codec.
      */
-    java.lang.String getCodec();
-    /**
-     * <pre>
-     * codec
-     * &#64;inject_tag: json:"codec" 
-     * </pre>
-     *
-     * <code>string codec = 8;</code>
-     * @return The bytes for codec.
-     */
-    com.google.protobuf.ByteString
-        getCodecBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode getCodec();
 
     /**
      * <pre>
@@ -211,29 +208,58 @@ public final class PBKafka {
      * &#64;inject_tag: json:"consumer_settings" 
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-     * @return Whether the consumerSettings field is set.
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
      */
-    boolean hasConsumerSettings();
+    int getConsumerSettingsCount();
     /**
      * <pre>
      * kafka consumer settings
      * &#64;inject_tag: json:"consumer_settings" 
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-     * @return The consumerSettings.
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings();
+    boolean containsConsumerSettings(
+        java.lang.String key);
+    /**
+     * Use {@link #getConsumerSettingsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getConsumerSettings();
     /**
      * <pre>
      * kafka consumer settings
      * &#64;inject_tag: json:"consumer_settings" 
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder();
+    java.util.Map<java.lang.String, java.lang.String>
+    getConsumerSettingsMap();
+    /**
+     * <pre>
+     * kafka consumer settings
+     * &#64;inject_tag: json:"consumer_settings" 
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+     */
+
+    java.lang.String getConsumerSettingsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * kafka consumer settings
+     * &#64;inject_tag: json:"consumer_settings" 
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+     */
+
+    java.lang.String getConsumerSettingsOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code model.KafkaSource}
@@ -250,11 +276,11 @@ public final class PBKafka {
     private KafkaSource() {
       column_ = java.util.Collections.emptyList();
       topic_ = "";
-      mode_ = "";
+      mode_ = 0;
       offset_ = "";
       groupId_ = "";
-      encoding_ = "";
-      codec_ = "";
+      encoding_ = 0;
+      codec_ = 0;
     }
 
     @java.lang.Override
@@ -303,10 +329,10 @@ public final class PBKafka {
               topic_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              mode_ = s;
+              mode_ = rawValue;
               break;
             }
             case 32: {
@@ -326,29 +352,29 @@ public final class PBKafka {
               groupId_ = s;
               break;
             }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 56: {
+              int rawValue = input.readEnum();
 
-              encoding_ = s;
+              encoding_ = rawValue;
               break;
             }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 64: {
+              int rawValue = input.readEnum();
 
-              codec_ = s;
+              codec_ = rawValue;
               break;
             }
             case 74: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder subBuilder = null;
-              if (consumerSettings_ != null) {
-                subBuilder = consumerSettings_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                consumerSettings_ = com.google.protobuf.MapField.newMapField(
+                    ConsumerSettingsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
               }
-              consumerSettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(consumerSettings_);
-                consumerSettings_ = subBuilder.buildPartial();
-              }
-
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              consumerSettings__ = input.readMessage(
+                  ConsumerSettingsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              consumerSettings_.getMutableMap().put(
+                  consumerSettings__.getKey(), consumerSettings__.getValue());
               break;
             }
             default: {
@@ -378,6 +404,18 @@ public final class PBKafka {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaSource_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetConsumerSettings();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -495,28 +533,18 @@ public final class PBKafka {
     }
 
     public static final int MODE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object mode_;
+    private int mode_;
     /**
      * <pre>
      * mode
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 3;</code>
-     * @return The mode.
+     * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+     * @return The enum numeric value on the wire for mode.
      */
-    @java.lang.Override
-    public java.lang.String getMode() {
-      java.lang.Object ref = mode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mode_ = s;
-        return s;
-      }
+    @java.lang.Override public int getModeValue() {
+      return mode_;
     }
     /**
      * <pre>
@@ -524,22 +552,13 @@ public final class PBKafka {
      * &#64;inject_tag: json:"mode" 
      * </pre>
      *
-     * <code>string mode = 3;</code>
-     * @return The bytes for mode.
+     * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+     * @return The mode.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getModeBytes() {
-      java.lang.Object ref = mode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode getMode() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.valueOf(mode_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.UNRECOGNIZED : result;
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
@@ -655,76 +674,47 @@ public final class PBKafka {
     }
 
     public static final int ENCODING_FIELD_NUMBER = 7;
-    private volatile java.lang.Object encoding_;
+    private int encoding_;
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
     }
     /**
      * <pre>
      * encoding
-     * &#64;inject_tag: json:"encoding" 
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 7;</code>
-     * @return The bytes for encoding.
+     * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+     * @return The encoding.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
     public static final int CODEC_FIELD_NUMBER = 8;
-    private volatile java.lang.Object codec_;
+    private int codec_;
     /**
      * <pre>
      * codec
      * &#64;inject_tag: json:"codec" 
      * </pre>
      *
-     * <code>string codec = 8;</code>
-     * @return The codec.
+     * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+     * @return The enum numeric value on the wire for codec.
      */
-    @java.lang.Override
-    public java.lang.String getCodec() {
-      java.lang.Object ref = codec_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        codec_ = s;
-        return s;
-      }
+    @java.lang.Override public int getCodecValue() {
+      return codec_;
     }
     /**
      * <pre>
@@ -732,38 +722,40 @@ public final class PBKafka {
      * &#64;inject_tag: json:"codec" 
      * </pre>
      *
-     * <code>string codec = 8;</code>
-     * @return The bytes for codec.
+     * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+     * @return The codec.
      */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCodecBytes() {
-      java.lang.Object ref = codec_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        codec_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode getCodec() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.valueOf(codec_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.UNRECOGNIZED : result;
     }
 
     public static final int CONSUMER_SETTINGS_FIELD_NUMBER = 9;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings consumerSettings_;
-    /**
-     * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
-     * </pre>
-     *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-     * @return Whether the consumerSettings field is set.
-     */
-    @java.lang.Override
-    public boolean hasConsumerSettings() {
-      return consumerSettings_ != null;
+    private static final class ConsumerSettingsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaSource_ConsumerSettingsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> consumerSettings_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetConsumerSettings() {
+      if (consumerSettings_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConsumerSettingsDefaultEntryHolder.defaultEntry);
+      }
+      return consumerSettings_;
+    }
+
+    public int getConsumerSettingsCount() {
+      return internalGetConsumerSettings().getMap().size();
     }
     /**
      * <pre>
@@ -771,12 +763,22 @@ public final class PBKafka {
      * &#64;inject_tag: json:"consumer_settings" 
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-     * @return The consumerSettings.
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsConsumerSettings(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetConsumerSettings().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getConsumerSettingsMap()} instead.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings() {
-      return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getConsumerSettings() {
+      return getConsumerSettingsMap();
     }
     /**
      * <pre>
@@ -784,11 +786,50 @@ public final class PBKafka {
      * &#64;inject_tag: json:"consumer_settings" 
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
-      return getConsumerSettings();
+
+    public java.util.Map<java.lang.String, java.lang.String> getConsumerSettingsMap() {
+      return internalGetConsumerSettings().getMap();
+    }
+    /**
+     * <pre>
+     * kafka consumer settings
+     * &#64;inject_tag: json:"consumer_settings" 
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getConsumerSettingsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConsumerSettings().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * kafka consumer settings
+     * &#64;inject_tag: json:"consumer_settings" 
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getConsumerSettingsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConsumerSettings().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -811,8 +852,8 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, mode_);
+      if (mode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.ConsumerModeUnset.getNumber()) {
+        output.writeEnum(3, mode_);
       }
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
@@ -823,15 +864,18 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, groupId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, encoding_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        output.writeEnum(7, encoding_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, codec_);
+      if (codec_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.CodecModeUnset.getNumber()) {
+        output.writeEnum(8, codec_);
       }
-      if (consumerSettings_ != null) {
-        output.writeMessage(9, getConsumerSettings());
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetConsumerSettings(),
+          ConsumerSettingsDefaultEntryHolder.defaultEntry,
+          9);
       unknownFields.writeTo(output);
     }
 
@@ -848,8 +892,9 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, mode_);
+      if (mode_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.ConsumerModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, mode_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -861,15 +906,23 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(groupId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, groupId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, encoding_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, codec_);
-      }
-      if (consumerSettings_ != null) {
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getConsumerSettings());
+          .computeEnumSize(7, encoding_);
+      }
+      if (codec_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.CodecModeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, codec_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetConsumerSettings().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        consumerSettings__ = ConsumerSettingsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, consumerSettings__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -890,23 +943,17 @@ public final class PBKafka {
           .equals(other.getColumnList())) return false;
       if (!getTopic()
           .equals(other.getTopic())) return false;
-      if (!getMode()
-          .equals(other.getMode())) return false;
+      if (mode_ != other.mode_) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
       if (!getOffset()
           .equals(other.getOffset())) return false;
       if (!getGroupId()
           .equals(other.getGroupId())) return false;
-      if (!getEncoding()
-          .equals(other.getEncoding())) return false;
-      if (!getCodec()
-          .equals(other.getCodec())) return false;
-      if (hasConsumerSettings() != other.hasConsumerSettings()) return false;
-      if (hasConsumerSettings()) {
-        if (!getConsumerSettings()
-            .equals(other.getConsumerSettings())) return false;
-      }
+      if (encoding_ != other.encoding_) return false;
+      if (codec_ != other.codec_) return false;
+      if (!internalGetConsumerSettings().equals(
+          other.internalGetConsumerSettings())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -925,7 +972,7 @@ public final class PBKafka {
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + getMode().hashCode();
+      hash = (53 * hash) + mode_;
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
@@ -934,12 +981,12 @@ public final class PBKafka {
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupId().hashCode();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
+      hash = (53 * hash) + encoding_;
       hash = (37 * hash) + CODEC_FIELD_NUMBER;
-      hash = (53 * hash) + getCodec().hashCode();
-      if (hasConsumerSettings()) {
+      hash = (53 * hash) + codec_;
+      if (!internalGetConsumerSettings().getMap().isEmpty()) {
         hash = (37 * hash) + CONSUMER_SETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getConsumerSettings().hashCode();
+        hash = (53 * hash) + internalGetConsumerSettings().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1048,6 +1095,28 @@ public final class PBKafka {
         return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaSource_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetConsumerSettings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetMutableConsumerSettings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1083,7 +1152,7 @@ public final class PBKafka {
         }
         topic_ = "";
 
-        mode_ = "";
+        mode_ = 0;
 
         timestamp_ = 0L;
 
@@ -1091,16 +1160,11 @@ public final class PBKafka {
 
         groupId_ = "";
 
-        encoding_ = "";
+        encoding_ = 0;
 
-        codec_ = "";
+        codec_ = 0;
 
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = null;
-        } else {
-          consumerSettings_ = null;
-          consumerSettingsBuilder_ = null;
-        }
+        internalGetMutableConsumerSettings().clear();
         return this;
       }
 
@@ -1144,11 +1208,8 @@ public final class PBKafka {
         result.groupId_ = groupId_;
         result.encoding_ = encoding_;
         result.codec_ = codec_;
-        if (consumerSettingsBuilder_ == null) {
-          result.consumerSettings_ = consumerSettings_;
-        } else {
-          result.consumerSettings_ = consumerSettingsBuilder_.build();
-        }
+        result.consumerSettings_ = internalGetConsumerSettings();
+        result.consumerSettings_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -1227,9 +1288,8 @@ public final class PBKafka {
           topic_ = other.topic_;
           onChanged();
         }
-        if (!other.getMode().isEmpty()) {
-          mode_ = other.mode_;
-          onChanged();
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
@@ -1242,17 +1302,14 @@ public final class PBKafka {
           groupId_ = other.groupId_;
           onChanged();
         }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
-        if (!other.getCodec().isEmpty()) {
-          codec_ = other.codec_;
-          onChanged();
+        if (other.codec_ != 0) {
+          setCodecValue(other.getCodecValue());
         }
-        if (other.hasConsumerSettings()) {
-          mergeConsumerSettings(other.getConsumerSettings());
-        }
+        internalGetMutableConsumerSettings().mergeFrom(
+            other.internalGetConsumerSettings());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1696,27 +1753,18 @@ public final class PBKafka {
         return this;
       }
 
-      private java.lang.Object mode_ = "";
+      private int mode_ = 0;
       /**
        * <pre>
        * mode
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 3;</code>
-       * @return The mode.
+       * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+       * @return The enum numeric value on the wire for mode.
        */
-      public java.lang.String getMode() {
-        java.lang.Object ref = mode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getModeValue() {
+        return mode_;
       }
       /**
        * <pre>
@@ -1724,38 +1772,12 @@ public final class PBKafka {
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 3;</code>
-       * @return The bytes for mode.
-       */
-      public com.google.protobuf.ByteString
-          getModeBytes() {
-        java.lang.Object ref = mode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * mode
-       * &#64;inject_tag: json:"mode" 
-       * </pre>
-       *
-       * <code>string mode = 3;</code>
-       * @param value The mode to set.
+       * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+       * @param value The enum numeric value on the wire for mode to set.
        * @return This builder for chaining.
        */
-      public Builder setMode(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setModeValue(int value) {
+        
         mode_ = value;
         onChanged();
         return this;
@@ -1766,33 +1788,46 @@ public final class PBKafka {
        * &#64;inject_tag: json:"mode" 
        * </pre>
        *
-       * <code>string mode = 3;</code>
+       * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode getMode() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.valueOf(mode_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * mode
+       * &#64;inject_tag: json:"mode" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.ConsumerMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * mode
+       * &#64;inject_tag: json:"mode" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.ConsumerMode mode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMode() {
         
-        mode_ = getDefaultInstance().getMode();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * mode
-       * &#64;inject_tag: json:"mode" 
-       * </pre>
-       *
-       * <code>string mode = 3;</code>
-       * @param value The bytes for mode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        mode_ = value;
+        mode_ = 0;
         onChanged();
         return this;
       }
@@ -2045,66 +2080,31 @@ public final class PBKafka {
         return this;
       }
 
-      private java.lang.Object encoding_ = "";
+      private int encoding_ = 0;
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
-       * @return The encoding.
+       * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The encoding to set.
+       * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setEncoding(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setEncodingValue(int value) {
+        
         encoding_ = value;
         onChanged();
         return this;
@@ -2112,61 +2112,65 @@ public final class PBKafka {
       /**
        * <pre>
        * encoding
-       * &#64;inject_tag: json:"encoding" 
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 7;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 7;</code>
+       * @param value The encoding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        encoding_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
         
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding" 
-       * </pre>
-       *
-       * <code>string encoding = 7;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
+        encoding_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object codec_ = "";
+      private int codec_ = 0;
       /**
        * <pre>
        * codec
        * &#64;inject_tag: json:"codec" 
        * </pre>
        *
-       * <code>string codec = 8;</code>
-       * @return The codec.
+       * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+       * @return The enum numeric value on the wire for codec.
        */
-      public java.lang.String getCodec() {
-        java.lang.Object ref = codec_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          codec_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getCodecValue() {
+        return codec_;
       }
       /**
        * <pre>
@@ -2174,38 +2178,12 @@ public final class PBKafka {
        * &#64;inject_tag: json:"codec" 
        * </pre>
        *
-       * <code>string codec = 8;</code>
-       * @return The bytes for codec.
-       */
-      public com.google.protobuf.ByteString
-          getCodecBytes() {
-        java.lang.Object ref = codec_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          codec_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * codec
-       * &#64;inject_tag: json:"codec" 
-       * </pre>
-       *
-       * <code>string codec = 8;</code>
-       * @param value The codec to set.
+       * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+       * @param value The enum numeric value on the wire for codec to set.
        * @return This builder for chaining.
        */
-      public Builder setCodec(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setCodecValue(int value) {
+        
         codec_ = value;
         onChanged();
         return this;
@@ -2216,88 +2194,75 @@ public final class PBKafka {
        * &#64;inject_tag: json:"codec" 
        * </pre>
        *
-       * <code>string codec = 8;</code>
+       * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+       * @return The codec.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode getCodec() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.valueOf(codec_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * codec
+       * &#64;inject_tag: json:"codec" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.CodecMode codec = 8;</code>
+       * @param value The codec to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodec(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.CodecMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        codec_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * codec
+       * &#64;inject_tag: json:"codec" 
+       * </pre>
+       *
+       * <code>.model.BaseEnum.CodecMode codec = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCodec() {
         
-        codec_ = getDefaultInstance().getCodec();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * codec
-       * &#64;inject_tag: json:"codec" 
-       * </pre>
-       *
-       * <code>string codec = 8;</code>
-       * @param value The bytes for codec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCodecBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        codec_ = value;
+        codec_ = 0;
         onChanged();
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings consumerSettings_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder> consumerSettingsBuilder_;
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-       * @return Whether the consumerSettings field is set.
-       */
-      public boolean hasConsumerSettings() {
-        return consumerSettingsBuilder_ != null || consumerSettings_ != null;
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-       * @return The consumerSettings.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings() {
-        if (consumerSettingsBuilder_ == null) {
-          return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
-        } else {
-          return consumerSettingsBuilder_.getMessage();
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> consumerSettings_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetConsumerSettings() {
+        if (consumerSettings_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ConsumerSettingsDefaultEntryHolder.defaultEntry);
         }
+        return consumerSettings_;
       }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
-       */
-      public Builder setConsumerSettings(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings value) {
-        if (consumerSettingsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          consumerSettings_ = value;
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.setMessage(value);
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableConsumerSettings() {
+        onChanged();;
+        if (consumerSettings_ == null) {
+          consumerSettings_ = com.google.protobuf.MapField.newMapField(
+              ConsumerSettingsDefaultEntryHolder.defaultEntry);
         }
+        if (!consumerSettings_.isMutable()) {
+          consumerSettings_ = consumerSettings_.copy();
+        }
+        return consumerSettings_;
+      }
 
-        return this;
+      public int getConsumerSettingsCount() {
+        return internalGetConsumerSettings().getMap().size();
       }
       /**
        * <pre>
@@ -2305,18 +2270,22 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
-      public Builder setConsumerSettings(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder builderForValue) {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = builderForValue.build();
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.setMessage(builderForValue.build());
-        }
 
-        return this;
+      @java.lang.Override
+      public boolean containsConsumerSettings(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetConsumerSettings().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getConsumerSettingsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getConsumerSettings() {
+        return getConsumerSettingsMap();
       }
       /**
        * <pre>
@@ -2324,22 +2293,12 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
-      public Builder mergeConsumerSettings(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings value) {
-        if (consumerSettingsBuilder_ == null) {
-          if (consumerSettings_ != null) {
-            consumerSettings_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.newBuilder(consumerSettings_).mergeFrom(value).buildPartial();
-          } else {
-            consumerSettings_ = value;
-          }
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.mergeFrom(value);
-        }
+      @java.lang.Override
 
-        return this;
+      public java.util.Map<java.lang.String, java.lang.String> getConsumerSettingsMap() {
+        return internalGetConsumerSettings().getMap();
       }
       /**
        * <pre>
@@ -2347,17 +2306,42 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
+      @java.lang.Override
+
+      public java.lang.String getConsumerSettingsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetConsumerSettings().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * kafka consumer settings
+       * &#64;inject_tag: json:"consumer_settings" 
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getConsumerSettingsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetConsumerSettings().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearConsumerSettings() {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = null;
-          onChanged();
-        } else {
-          consumerSettings_ = null;
-          consumerSettingsBuilder_ = null;
-        }
-
+        internalGetMutableConsumerSettings().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -2366,12 +2350,23 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder getConsumerSettingsBuilder() {
-        
-        onChanged();
-        return getConsumerSettingsFieldBuilder().getBuilder();
+
+      public Builder removeConsumerSettings(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableConsumerSettings().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableConsumerSettings() {
+        return internalGetMutableConsumerSettings().getMutableMap();
       }
       /**
        * <pre>
@@ -2379,15 +2374,19 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
-        if (consumerSettingsBuilder_ != null) {
-          return consumerSettingsBuilder_.getMessageOrBuilder();
-        } else {
-          return consumerSettings_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
-        }
+      public Builder putConsumerSettings(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableConsumerSettings().getMutableMap()
+            .put(key, value);
+        return this;
       }
       /**
        * <pre>
@@ -2395,20 +2394,14 @@ public final class PBKafka {
        * &#64;inject_tag: json:"consumer_settings" 
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 9;</code>
+       * <code>map&lt;string, string&gt; consumer_settings = 9;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder> 
-          getConsumerSettingsFieldBuilder() {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder>(
-                  getConsumerSettings(),
-                  getParentForChildren(),
-                  isClean());
-          consumerSettings_ = null;
-        }
-        return consumerSettingsBuilder_;
+
+      public Builder putAllConsumerSettings(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableConsumerSettings().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2458,619 +2451,6 @@ public final class PBKafka {
 
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.KafkaSource getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ConsumerSettingsOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:model.ConsumerSettings)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * auto commit position enable
-     * &#64;inject_tag: json:"auto_commit_enable" 
-     * </pre>
-     *
-     * <code>string auto_commit_enable = 1;</code>
-     * @return The autoCommitEnable.
-     */
-    java.lang.String getAutoCommitEnable();
-    /**
-     * <pre>
-     * auto commit position enable
-     * &#64;inject_tag: json:"auto_commit_enable" 
-     * </pre>
-     *
-     * <code>string auto_commit_enable = 1;</code>
-     * @return The bytes for autoCommitEnable.
-     */
-    com.google.protobuf.ByteString
-        getAutoCommitEnableBytes();
-  }
-  /**
-   * Protobuf type {@code model.ConsumerSettings}
-   */
-  public static final class ConsumerSettings extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:model.ConsumerSettings)
-      ConsumerSettingsOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ConsumerSettings.newBuilder() to construct.
-    private ConsumerSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ConsumerSettings() {
-      autoCommitEnable_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ConsumerSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ConsumerSettings(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              autoCommitEnable_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_ConsumerSettings_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_ConsumerSettings_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder.class);
-    }
-
-    public static final int AUTO_COMMIT_ENABLE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object autoCommitEnable_;
-    /**
-     * <pre>
-     * auto commit position enable
-     * &#64;inject_tag: json:"auto_commit_enable" 
-     * </pre>
-     *
-     * <code>string auto_commit_enable = 1;</code>
-     * @return The autoCommitEnable.
-     */
-    @java.lang.Override
-    public java.lang.String getAutoCommitEnable() {
-      java.lang.Object ref = autoCommitEnable_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        autoCommitEnable_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * auto commit position enable
-     * &#64;inject_tag: json:"auto_commit_enable" 
-     * </pre>
-     *
-     * <code>string auto_commit_enable = 1;</code>
-     * @return The bytes for autoCommitEnable.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAutoCommitEnableBytes() {
-      java.lang.Object ref = autoCommitEnable_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        autoCommitEnable_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(autoCommitEnable_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, autoCommitEnable_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(autoCommitEnable_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, autoCommitEnable_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings)) {
-        return super.equals(obj);
-      }
-      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings other = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings) obj;
-
-      if (!getAutoCommitEnable()
-          .equals(other.getAutoCommitEnable())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AUTO_COMMIT_ENABLE_FIELD_NUMBER;
-      hash = (53 * hash) + getAutoCommitEnable().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code model.ConsumerSettings}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:model.ConsumerSettings)
-        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_ConsumerSettings_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_ConsumerSettings_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.class, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder.class);
-      }
-
-      // Construct using com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        autoCommitEnable_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_ConsumerSettings_descriptor;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getDefaultInstanceForType() {
-        return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings build() {
-        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings buildPartial() {
-        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings result = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings(this);
-        result.autoCommitEnable_ = autoCommitEnable_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings) {
-          return mergeFrom((com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings other) {
-        if (other == com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance()) return this;
-        if (!other.getAutoCommitEnable().isEmpty()) {
-          autoCommitEnable_ = other.autoCommitEnable_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object autoCommitEnable_ = "";
-      /**
-       * <pre>
-       * auto commit position enable
-       * &#64;inject_tag: json:"auto_commit_enable" 
-       * </pre>
-       *
-       * <code>string auto_commit_enable = 1;</code>
-       * @return The autoCommitEnable.
-       */
-      public java.lang.String getAutoCommitEnable() {
-        java.lang.Object ref = autoCommitEnable_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          autoCommitEnable_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * auto commit position enable
-       * &#64;inject_tag: json:"auto_commit_enable" 
-       * </pre>
-       *
-       * <code>string auto_commit_enable = 1;</code>
-       * @return The bytes for autoCommitEnable.
-       */
-      public com.google.protobuf.ByteString
-          getAutoCommitEnableBytes() {
-        java.lang.Object ref = autoCommitEnable_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          autoCommitEnable_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * auto commit position enable
-       * &#64;inject_tag: json:"auto_commit_enable" 
-       * </pre>
-       *
-       * <code>string auto_commit_enable = 1;</code>
-       * @param value The autoCommitEnable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAutoCommitEnable(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        autoCommitEnable_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * auto commit position enable
-       * &#64;inject_tag: json:"auto_commit_enable" 
-       * </pre>
-       *
-       * <code>string auto_commit_enable = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAutoCommitEnable() {
-        
-        autoCommitEnable_ = getDefaultInstance().getAutoCommitEnable();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * auto commit position enable
-       * &#64;inject_tag: json:"auto_commit_enable" 
-       * </pre>
-       *
-       * <code>string auto_commit_enable = 1;</code>
-       * @param value The bytes for autoCommitEnable to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAutoCommitEnableBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        autoCommitEnable_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:model.ConsumerSettings)
-    }
-
-    // @@protoc_insertion_point(class_scope:model.ConsumerSettings)
-    private static final com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings();
-    }
-
-    public static com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ConsumerSettings>
-        PARSER = new com.google.protobuf.AbstractParser<ConsumerSettings>() {
-      @java.lang.Override
-      public ConsumerSettings parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ConsumerSettings(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ConsumerSettings> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ConsumerSettings> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3153,33 +2533,62 @@ public final class PBKafka {
 
     /**
      * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-     * @return Whether the consumerSettings field is set.
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
      */
-    boolean hasConsumerSettings();
+    int getProducerSettingsCount();
     /**
      * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-     * @return The consumerSettings.
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings();
+    boolean containsProducerSettings(
+        java.lang.String key);
+    /**
+     * Use {@link #getProducerSettingsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getProducerSettings();
     /**
      * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
      */
-    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder();
+    java.util.Map<java.lang.String, java.lang.String>
+    getProducerSettingsMap();
+    /**
+     * <pre>
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+     */
+
+    java.lang.String getProducerSettingsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+     */
+
+    java.lang.String getProducerSettingsOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code model.KafkaTarget}
@@ -3245,16 +2654,16 @@ public final class PBKafka {
               break;
             }
             case 26: {
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder subBuilder = null;
-              if (consumerSettings_ != null) {
-                subBuilder = consumerSettings_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                producerSettings_ = com.google.protobuf.MapField.newMapField(
+                    ProducerSettingsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
               }
-              consumerSettings_ = input.readMessage(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(consumerSettings_);
-                consumerSettings_ = subBuilder.buildPartial();
-              }
-
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              producerSettings__ = input.readMessage(
+                  ProducerSettingsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              producerSettings_.getMutableMap().put(
+                  producerSettings__.getKey(), producerSettings__.getValue());
               break;
             }
             default: {
@@ -3284,6 +2693,18 @@ public final class PBKafka {
       return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaTarget_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetProducerSettings();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3405,45 +2826,105 @@ public final class PBKafka {
       }
     }
 
-    public static final int CONSUMER_SETTINGS_FIELD_NUMBER = 3;
-    private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings consumerSettings_;
-    /**
-     * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
-     * </pre>
-     *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-     * @return Whether the consumerSettings field is set.
-     */
-    @java.lang.Override
-    public boolean hasConsumerSettings() {
-      return consumerSettings_ != null;
+    public static final int PRODUCER_SETTINGS_FIELD_NUMBER = 3;
+    private static final class ProducerSettingsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaTarget_ProducerSettingsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> producerSettings_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetProducerSettings() {
+      if (producerSettings_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ProducerSettingsDefaultEntryHolder.defaultEntry);
+      }
+      return producerSettings_;
+    }
+
+    public int getProducerSettingsCount() {
+      return internalGetProducerSettings().getMap().size();
     }
     /**
      * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-     * @return The consumerSettings.
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsProducerSettings(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetProducerSettings().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getProducerSettingsMap()} instead.
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings() {
-      return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getProducerSettings() {
+      return getProducerSettingsMap();
     }
     /**
      * <pre>
-     * kafka consumer settings
-     * &#64;inject_tag: json:"consumer_settings" 
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
      * </pre>
      *
-     * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
      */
     @java.lang.Override
-    public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
-      return getConsumerSettings();
+
+    public java.util.Map<java.lang.String, java.lang.String> getProducerSettingsMap() {
+      return internalGetProducerSettings().getMap();
+    }
+    /**
+     * <pre>
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getProducerSettingsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetProducerSettings().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * kafka producer settings
+     * &#64;inject_tag: json:"producer_settings"
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getProducerSettingsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetProducerSettings().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3466,9 +2947,12 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, topic_);
       }
-      if (consumerSettings_ != null) {
-        output.writeMessage(3, getConsumerSettings());
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetProducerSettings(),
+          ProducerSettingsDefaultEntryHolder.defaultEntry,
+          3);
       unknownFields.writeTo(output);
     }
 
@@ -3485,9 +2969,15 @@ public final class PBKafka {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(topic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
       }
-      if (consumerSettings_ != null) {
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetProducerSettings().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        producerSettings__ = ProducerSettingsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getConsumerSettings());
+            .computeMessageSize(3, producerSettings__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3508,11 +2998,8 @@ public final class PBKafka {
           .equals(other.getTableFieldsList())) return false;
       if (!getTopic()
           .equals(other.getTopic())) return false;
-      if (hasConsumerSettings() != other.hasConsumerSettings()) return false;
-      if (hasConsumerSettings()) {
-        if (!getConsumerSettings()
-            .equals(other.getConsumerSettings())) return false;
-      }
+      if (!internalGetProducerSettings().equals(
+          other.internalGetProducerSettings())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3530,9 +3017,9 @@ public final class PBKafka {
       }
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
-      if (hasConsumerSettings()) {
-        hash = (37 * hash) + CONSUMER_SETTINGS_FIELD_NUMBER;
-        hash = (53 * hash) + getConsumerSettings().hashCode();
+      if (!internalGetProducerSettings().getMap().isEmpty()) {
+        hash = (37 * hash) + PRODUCER_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetProducerSettings().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3641,6 +3128,28 @@ public final class PBKafka {
         return com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.internal_static_model_KafkaTarget_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetProducerSettings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 3:
+            return internalGetMutableProducerSettings();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -3676,12 +3185,7 @@ public final class PBKafka {
         }
         topic_ = "";
 
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = null;
-        } else {
-          consumerSettings_ = null;
-          consumerSettingsBuilder_ = null;
-        }
+        internalGetMutableProducerSettings().clear();
         return this;
       }
 
@@ -3719,11 +3223,8 @@ public final class PBKafka {
           result.tableFields_ = tableFieldsBuilder_.build();
         }
         result.topic_ = topic_;
-        if (consumerSettingsBuilder_ == null) {
-          result.consumerSettings_ = consumerSettings_;
-        } else {
-          result.consumerSettings_ = consumerSettingsBuilder_.build();
-        }
+        result.producerSettings_ = internalGetProducerSettings();
+        result.producerSettings_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -3802,9 +3303,8 @@ public final class PBKafka {
           topic_ = other.topic_;
           onChanged();
         }
-        if (other.hasConsumerSettings()) {
-          mergeConsumerSettings(other.getConsumerSettings());
-        }
+        internalGetMutableProducerSettings().mergeFrom(
+            other.internalGetProducerSettings());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4266,168 +3766,170 @@ public final class PBKafka {
         return this;
       }
 
-      private com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings consumerSettings_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder> consumerSettingsBuilder_;
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       * @return Whether the consumerSettings field is set.
-       */
-      public boolean hasConsumerSettings() {
-        return consumerSettingsBuilder_ != null || consumerSettings_ != null;
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       * @return The consumerSettings.
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings getConsumerSettings() {
-        if (consumerSettingsBuilder_ == null) {
-          return consumerSettings_ == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
-        } else {
-          return consumerSettingsBuilder_.getMessage();
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> producerSettings_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetProducerSettings() {
+        if (producerSettings_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ProducerSettingsDefaultEntryHolder.defaultEntry);
         }
+        return producerSettings_;
       }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       */
-      public Builder setConsumerSettings(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings value) {
-        if (consumerSettingsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          consumerSettings_ = value;
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.setMessage(value);
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableProducerSettings() {
+        onChanged();;
+        if (producerSettings_ == null) {
+          producerSettings_ = com.google.protobuf.MapField.newMapField(
+              ProducerSettingsDefaultEntryHolder.defaultEntry);
         }
+        if (!producerSettings_.isMutable()) {
+          producerSettings_ = producerSettings_.copy();
+        }
+        return producerSettings_;
+      }
 
+      public int getProducerSettingsCount() {
+        return internalGetProducerSettings().getMap().size();
+      }
+      /**
+       * <pre>
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsProducerSettings(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetProducerSettings().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getProducerSettingsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getProducerSettings() {
+        return getProducerSettingsMap();
+      }
+      /**
+       * <pre>
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getProducerSettingsMap() {
+        return internalGetProducerSettings().getMap();
+      }
+      /**
+       * <pre>
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getProducerSettingsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetProducerSettings().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getProducerSettingsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetProducerSettings().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearProducerSettings() {
+        internalGetMutableProducerSettings().getMutableMap()
+            .clear();
         return this;
       }
       /**
        * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
        */
-      public Builder setConsumerSettings(
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder builderForValue) {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = builderForValue.build();
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.setMessage(builderForValue.build());
-        }
 
+      public Builder removeProducerSettings(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableProducerSettings().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableProducerSettings() {
+        return internalGetMutableProducerSettings().getMutableMap();
+      }
+      /**
+       * <pre>
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
+       */
+      public Builder putProducerSettings(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableProducerSettings().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
        * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
+       * kafka producer settings
+       * &#64;inject_tag: json:"producer_settings"
        * </pre>
        *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
+       * <code>map&lt;string, string&gt; producer_settings = 3;</code>
        */
-      public Builder mergeConsumerSettings(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings value) {
-        if (consumerSettingsBuilder_ == null) {
-          if (consumerSettings_ != null) {
-            consumerSettings_ =
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.newBuilder(consumerSettings_).mergeFrom(value).buildPartial();
-          } else {
-            consumerSettings_ = value;
-          }
-          onChanged();
-        } else {
-          consumerSettingsBuilder_.mergeFrom(value);
-        }
 
+      public Builder putAllProducerSettings(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableProducerSettings().getMutableMap()
+            .putAll(values);
         return this;
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       */
-      public Builder clearConsumerSettings() {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettings_ = null;
-          onChanged();
-        } else {
-          consumerSettings_ = null;
-          consumerSettingsBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder getConsumerSettingsBuilder() {
-        
-        onChanged();
-        return getConsumerSettingsFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       */
-      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder getConsumerSettingsOrBuilder() {
-        if (consumerSettingsBuilder_ != null) {
-          return consumerSettingsBuilder_.getMessageOrBuilder();
-        } else {
-          return consumerSettings_ == null ?
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.getDefaultInstance() : consumerSettings_;
-        }
-      }
-      /**
-       * <pre>
-       * kafka consumer settings
-       * &#64;inject_tag: json:"consumer_settings" 
-       * </pre>
-       *
-       * <code>.model.ConsumerSettings consumer_settings = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder> 
-          getConsumerSettingsFieldBuilder() {
-        if (consumerSettingsBuilder_ == null) {
-          consumerSettingsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettings.Builder, com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBKafka.ConsumerSettingsOrBuilder>(
-                  getConsumerSettings(),
-                  getParentForChildren(),
-                  isClean());
-          consumerSettings_ = null;
-        }
-        return consumerSettingsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -4488,15 +3990,20 @@ public final class PBKafka {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_KafkaSource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_model_ConsumerSettings_descriptor;
+    internal_static_model_KafkaSource_ConsumerSettingsEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_model_ConsumerSettings_fieldAccessorTable;
+      internal_static_model_KafkaSource_ConsumerSettingsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_KafkaTarget_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_KafkaTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_KafkaTarget_ProducerSettingsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_KafkaTarget_ProducerSettingsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4509,26 +4016,33 @@ public final class PBKafka {
       "\n%proto/types/model/syncjob/kafka.proto\022" +
       "\005model\032&proto/types/model/syncjob/column" +
       ".proto\032/github.com/yu31/protoc-plugin/pr" +
-      "oto/gosql.proto\"\333\001\n\013KafkaSource\022\035\n\006colum" +
-      "n\030\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022\014\n" +
-      "\004mode\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\016\n\006offset" +
-      "\030\005 \001(\t\022\020\n\010group_id\030\006 \001(\t\022\020\n\010encoding\030\007 \001" +
-      "(\t\022\r\n\005codec\030\010 \001(\t\0222\n\021consumer_settings\030\t" +
-      " \001(\0132\027.model.ConsumerSettings:\006\312\262\004\002\n\000\"6\n" +
-      "\020ConsumerSettings\022\032\n\022auto_commit_enable\030" +
-      "\001 \001(\t:\006\312\262\004\002\n\000\"|\n\013KafkaTarget\022\"\n\013tableFie" +
-      "lds\030\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022" +
-      "2\n\021consumer_settings\030\003 \001(\0132\027.model.Consu" +
-      "merSettings:\006\312\262\004\002\n\000Bv\n,com.dataomnis.gpr" +
-      "oto.types.pbmodel.pbsyncjobB\007PBKafkaP\000Z;" +
-      "github.com/DataWorkbench/gproto/xgo/type" +
-      "s/pbmodel/pbsyncjobb\006proto3"
+      "oto/gosql.proto\032(proto/types/model/syncj" +
+      "ob/baseenum.proto\"\370\002\n\013KafkaSource\022\035\n\006col" +
+      "umn\030\001 \003(\0132\r.model.Column\022\r\n\005topic\030\002 \001(\t\022" +
+      "*\n\004mode\030\003 \001(\0162\034.model.BaseEnum.ConsumerM" +
+      "ode\022\021\n\ttimestamp\030\004 \001(\003\022\016\n\006offset\030\005 \001(\t\022\020" +
+      "\n\010group_id\030\006 \001(\t\022*\n\010encoding\030\007 \001(\0162\030.mod" +
+      "el.BaseEnum.Encoding\022(\n\005codec\030\010 \001(\0162\031.mo" +
+      "del.BaseEnum.CodecMode\022C\n\021consumer_setti" +
+      "ngs\030\t \003(\0132(.model.KafkaSource.ConsumerSe" +
+      "ttingsEntry\0327\n\025ConsumerSettingsEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\006\312\262\004\002\n\000\"\306\001\n" +
+      "\013KafkaTarget\022\"\n\013tableFields\030\001 \003(\0132\r.mode" +
+      "l.Column\022\r\n\005topic\030\002 \001(\t\022C\n\021producer_sett" +
+      "ings\030\003 \003(\0132(.model.KafkaTarget.ProducerS" +
+      "ettingsEntry\0327\n\025ProducerSettingsEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\006\312\262\004\002\n\000Bv\n" +
+      ",com.dataomnis.gproto.types.pbmodel.pbsy" +
+      "ncjobB\007PBKafkaP\000Z;github.com/DataWorkben" +
+      "ch/gproto/xgo/types/pbmodel/pbsyncjobb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor(),
           io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor(),
+          com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor(),
         });
     internal_static_model_KafkaSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4536,18 +4050,24 @@ public final class PBKafka {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaSource_descriptor,
         new java.lang.String[] { "Column", "Topic", "Mode", "Timestamp", "Offset", "GroupId", "Encoding", "Codec", "ConsumerSettings", });
-    internal_static_model_ConsumerSettings_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_model_ConsumerSettings_fieldAccessorTable = new
+    internal_static_model_KafkaSource_ConsumerSettingsEntry_descriptor =
+      internal_static_model_KafkaSource_descriptor.getNestedTypes().get(0);
+    internal_static_model_KafkaSource_ConsumerSettingsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_model_ConsumerSettings_descriptor,
-        new java.lang.String[] { "AutoCommitEnable", });
+        internal_static_model_KafkaSource_ConsumerSettingsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_model_KafkaTarget_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_model_KafkaTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_KafkaTarget_descriptor,
-        new java.lang.String[] { "TableFields", "Topic", "ConsumerSettings", });
+        new java.lang.String[] { "TableFields", "Topic", "ProducerSettings", });
+    internal_static_model_KafkaTarget_ProducerSettingsEntry_descriptor =
+      internal_static_model_KafkaTarget_descriptor.getNestedTypes().get(0);
+    internal_static_model_KafkaTarget_ProducerSettingsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_KafkaTarget_ProducerSettingsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);
@@ -4555,6 +4075,7 @@ public final class PBKafka {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBColumn.getDescriptor();
     io.github.yu31.protoc.pb.pbgosql.PBGoSQL.getDescriptor();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
