@@ -22,26 +22,23 @@ message HbaseSource {
     // hbase table
     // @inject_tag: json:"table"
     string table = 2;
-    // change_log
-    // @inject_tag: json:"change_log"
-    string change_log = 3;
     // encoding
     // @inject_tag: json:"encoding"
-    string encoding = 4;
+    BaseEnum.Encoding encoding = 3;
     // scan cache size
     // @inject_tag: json:"scan_cache_size"
-    int32 scan_cache_size = 5;
+    int32 scan_cache_size = 4;
     // hbase scan batch size
     // @inject_tag: json:"scan_batch_size"
-    int32 scan_batch_size = 6;
+    int32 scan_batch_size = 5;
     // @inject_tag: json:"start_row_key"
-    string start_row_key = 7;
+    string start_row_key = 6;
     // end row key
     // @inject_tag: json:"end_row_key"
-    string end_row_key = 8;
+    string end_row_key = 7;
     // is binary rowkey
     // @inject_tag: json:"is_binary_rowkey"
-    bool is_binary_rowkey = 9;
+    bool is_binary_rowkey = 8;
 
 }
 
@@ -61,27 +58,18 @@ message HbaseTarget {
     // write buffer size
     // @inject_tag: json:"write_buffer_size"
     int32 write_buffer_size = 5;
-    // change_log
-    // @inject_tag: json:"change_log"
-    string change_log = 6;
     // rowkey express
     // @inject_tag: json:"rowkey_express"
-    string rowkey_express = 7;
+    string rowkey_express = 6;
     // version column index
     // @inject_tag: json:"version_column_index"
-    int32 version_column_index = 8;
+    int32 version_column_index = 7;
     // version column value
     // @inject_tag: json:"version_column_value"
-    string version_column_value = 9;
-    // scan cache size
-    // @inject_tag: json:"scan_cache_size"
-    int32 scan_cache_size = 10;
-    // hbase scan batch size
-    // @inject_tag: json:"scan_batch_size"
-    int32 scan_batch_size = 11;
+    string version_column_value = 8;
     // hbase scan batch size
     // @inject_tag: json:"encoding"
-    BaseEnum.Encoding encoding = 12;
+    BaseEnum.Encoding encoding = 9;
 }
 
 
