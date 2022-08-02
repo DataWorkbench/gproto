@@ -26,6 +26,10 @@ message ListUsers {
   // Filter by user name.
   // @inject_tag: json:"name" form:"name"
   string name = 4;
+
+  // Search with user name;
+  // @inject_tag: json:"search" form:"search"
+  string search = 5;
 }
 
 message DeleteUsers {

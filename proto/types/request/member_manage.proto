@@ -24,6 +24,10 @@ message ListAvailableUsers {
   // The owner of workspace, only used to check quota. Set by APIServer.
   // @inject_tag: json:"space_owner" swaggerignore:"true"
   string space_owner = 3;
+
+  // Search with user name;
+  // @inject_tag: json:"search" form:"search"
+  string search = 5;
 }
 
 // ListMembers used as a request parameters for RPC and HTTP(based on URL-Query)
