@@ -535,7 +535,7 @@ type ApiServiceEntity struct {
 	AuthKeyId  string     `protobuf:"bytes,6,opt,name=auth_key_id,json=authKeyId,proto3" json:"auth_key_id" gorm:"column:auth_key_id;"`
 	Domain     string     `protobuf:"bytes,7,opt,name=domain,proto3" json:"domain" gorm:"column:domain;"`
 	CreatedBy  string     `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"user_id" gorm:"column:created_by;"`
-	ApiCount   int32      `protobuf:"varint,9,opt,name=api_count,json=apiCount,proto3" json:"api_count" gorm:"column:api_count;"`
+	ApiCount   int32      `protobuf:"varint,9,opt,name=api_count,json=apiCount,proto3" json:"api_count"`
 	SpaceId    string     `protobuf:"bytes,10,opt,name=space_id,json=spaceId,proto3" json:"space_id" gorm:"column:space_id;"`
 	CurrStatus StatusType `protobuf:"varint,11,opt,name=curr_status,json=currStatus,proto3,enum=model.StatusType" json:"curr_status" gorm:"column:curr_status;"`
 	PrePath    string     `protobuf:"bytes,12,opt,name=pre_path,json=prePath,proto3" json:"pre_path" gorm:"column:pre_path;"`

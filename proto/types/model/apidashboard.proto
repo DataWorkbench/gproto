@@ -122,7 +122,7 @@ message ApiServiceEntity {
   string domain = 7;
   // @inject_tag: json:"user_id" gorm:"column:created_by;"
   string created_by = 8 [ (validator.field).tags.string = { byte_len_gt: 0 } ];
-  // @inject_tag: json:"api_count" gorm:"column:api_count;"
+  // @inject_tag: json:"api_count"
   int32 api_count = 9;
   // @inject_tag: json:"space_id" gorm:"column:space_id;"
   string space_id = 10;
