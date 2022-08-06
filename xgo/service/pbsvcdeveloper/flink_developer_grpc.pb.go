@@ -26,6 +26,7 @@ const _ = grpc.SupportPackageIsVersion7
 type FlinkDeveloperClient interface {
 	SubmitFlinkJob(ctx context.Context, in *pbrequest.SubmitFlinkJob, opts ...grpc.CallOption) (*pbresponse.SubmitFlinkJob, error)
 	SubmitFlinkJobInteractive(ctx context.Context, opts ...grpc.CallOption) (FlinkDeveloper_SubmitFlinkJobInteractiveClient, error)
+	SubmitFlinkJobInteractiveV2(ctx context.Context, in *pbrequest.SubmitFlinkJobInteractive, opts ...grpc.CallOption) (FlinkDeveloper_SubmitFlinkJobInteractiveV2Client, error)
 	ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
 	ValidateFlinkJobV2(ctx context.Context, in *pbrequest.ValidateFlinkJobV2, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error)
 }
@@ -78,6 +79,38 @@ func (x *flinkDeveloperSubmitFlinkJobInteractiveClient) Recv() (*pbresponse.Subm
 	return m, nil
 }
 
+func (c *flinkDeveloperClient) SubmitFlinkJobInteractiveV2(ctx context.Context, in *pbrequest.SubmitFlinkJobInteractive, opts ...grpc.CallOption) (FlinkDeveloper_SubmitFlinkJobInteractiveV2Client, error) {
+	stream, err := c.cc.NewStream(ctx, &FlinkDeveloper_ServiceDesc.Streams[1], "/developer.FlinkDeveloper/SubmitFlinkJobInteractive_v2", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &flinkDeveloperSubmitFlinkJobInteractiveV2Client{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type FlinkDeveloper_SubmitFlinkJobInteractiveV2Client interface {
+	Recv() (*pbresponse.SubmitFlinkJobInteractiveV2, error)
+	grpc.ClientStream
+}
+
+type flinkDeveloperSubmitFlinkJobInteractiveV2Client struct {
+	grpc.ClientStream
+}
+
+func (x *flinkDeveloperSubmitFlinkJobInteractiveV2Client) Recv() (*pbresponse.SubmitFlinkJobInteractiveV2, error) {
+	m := new(pbresponse.SubmitFlinkJobInteractiveV2)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func (c *flinkDeveloperClient) ValidateFlinkJob(ctx context.Context, in *pbrequest.ValidateFlinkJob, opts ...grpc.CallOption) (*pbresponse.ValidateFlinkJob, error) {
 	out := new(pbresponse.ValidateFlinkJob)
 	err := c.cc.Invoke(ctx, "/developer.FlinkDeveloper/ValidateFlinkJob", in, out, opts...)
@@ -102,6 +135,7 @@ func (c *flinkDeveloperClient) ValidateFlinkJobV2(ctx context.Context, in *pbreq
 type FlinkDeveloperServer interface {
 	SubmitFlinkJob(context.Context, *pbrequest.SubmitFlinkJob) (*pbresponse.SubmitFlinkJob, error)
 	SubmitFlinkJobInteractive(FlinkDeveloper_SubmitFlinkJobInteractiveServer) error
+	SubmitFlinkJobInteractiveV2(*pbrequest.SubmitFlinkJobInteractive, FlinkDeveloper_SubmitFlinkJobInteractiveV2Server) error
 	ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error)
 	ValidateFlinkJobV2(context.Context, *pbrequest.ValidateFlinkJobV2) (*pbresponse.ValidateFlinkJob, error)
 	mustEmbedUnimplementedFlinkDeveloperServer()
@@ -116,6 +150,9 @@ func (UnimplementedFlinkDeveloperServer) SubmitFlinkJob(context.Context, *pbrequ
 }
 func (UnimplementedFlinkDeveloperServer) SubmitFlinkJobInteractive(FlinkDeveloper_SubmitFlinkJobInteractiveServer) error {
 	return status.Errorf(codes.Unimplemented, "method SubmitFlinkJobInteractive not implemented")
+}
+func (UnimplementedFlinkDeveloperServer) SubmitFlinkJobInteractiveV2(*pbrequest.SubmitFlinkJobInteractive, FlinkDeveloper_SubmitFlinkJobInteractiveV2Server) error {
+	return status.Errorf(codes.Unimplemented, "method SubmitFlinkJobInteractiveV2 not implemented")
 }
 func (UnimplementedFlinkDeveloperServer) ValidateFlinkJob(context.Context, *pbrequest.ValidateFlinkJob) (*pbresponse.ValidateFlinkJob, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ValidateFlinkJob not implemented")
@@ -180,6 +217,27 @@ func (x *flinkDeveloperSubmitFlinkJobInteractiveServer) Recv() (*pbrequest.Submi
 	return m, nil
 }
 
+func _FlinkDeveloper_SubmitFlinkJobInteractiveV2_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(pbrequest.SubmitFlinkJobInteractive)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(FlinkDeveloperServer).SubmitFlinkJobInteractiveV2(m, &flinkDeveloperSubmitFlinkJobInteractiveV2Server{stream})
+}
+
+type FlinkDeveloper_SubmitFlinkJobInteractiveV2Server interface {
+	Send(*pbresponse.SubmitFlinkJobInteractiveV2) error
+	grpc.ServerStream
+}
+
+type flinkDeveloperSubmitFlinkJobInteractiveV2Server struct {
+	grpc.ServerStream
+}
+
+func (x *flinkDeveloperSubmitFlinkJobInteractiveV2Server) Send(m *pbresponse.SubmitFlinkJobInteractiveV2) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 func _FlinkDeveloper_ValidateFlinkJob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ValidateFlinkJob)
 	if err := dec(in); err != nil {
@@ -242,6 +300,11 @@ var FlinkDeveloper_ServiceDesc = grpc.ServiceDesc{
 			Handler:       _FlinkDeveloper_SubmitFlinkJobInteractive_Handler,
 			ServerStreams: true,
 			ClientStreams: true,
+		},
+		{
+			StreamName:    "SubmitFlinkJobInteractive_v2",
+			Handler:       _FlinkDeveloper_SubmitFlinkJobInteractiveV2_Handler,
+			ServerStreams: true,
 		},
 	},
 	Metadata: "proto/service/developer/flink_developer.proto",

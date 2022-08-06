@@ -3033,6 +3033,1907 @@ public final class PBResponseFlinkDeveloper {
 
   }
 
+  public interface SubmitFlinkJobInteractive_v2OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:response.SubmitFlinkJobInteractive_v2)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type getType();
+
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     * @return The data.
+     */
+    com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getData();
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     */
+    com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder getDataOrBuilder();
+
+    /**
+     * <pre>
+     * error message
+     * &#64;inject_tag: json:"error_message"
+     * </pre>
+     *
+     * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+     * @return The errorMessage.
+     */
+    java.lang.String getErrorMessage();
+    /**
+     * <pre>
+     * error message
+     * &#64;inject_tag: json:"error_message"
+     * </pre>
+     *
+     * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for errorMessage.
+     */
+    com.google.protobuf.ByteString
+        getErrorMessageBytes();
+  }
+  /**
+   * Protobuf type {@code response.SubmitFlinkJobInteractive_v2}
+   */
+  public static final class SubmitFlinkJobInteractive_v2 extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:response.SubmitFlinkJobInteractive_v2)
+      SubmitFlinkJobInteractive_v2OrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubmitFlinkJobInteractive_v2.newBuilder() to construct.
+    private SubmitFlinkJobInteractive_v2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubmitFlinkJobInteractive_v2() {
+      type_ = 0;
+      errorMessage_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new SubmitFlinkJobInteractive_v2();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubmitFlinkJobInteractive_v2(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 18: {
+              com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errorMessage_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.class, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code response.SubmitFlinkJobInteractive_v2.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      TypeUnset(0),
+      /**
+       * <code>Schema = 1;</code>
+       */
+      Schema(1),
+      /**
+       * <code>Data = 2;</code>
+       */
+      Data(2),
+      /**
+       * <code>NOData = 3;</code>
+       */
+      NOData(3),
+      /**
+       * <code>ErrorMsg = 4;</code>
+       */
+      ErrorMsg(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>TypeUnset = 0;</code>
+       */
+      public static final int TypeUnset_VALUE = 0;
+      /**
+       * <code>Schema = 1;</code>
+       */
+      public static final int Schema_VALUE = 1;
+      /**
+       * <code>Data = 2;</code>
+       */
+      public static final int Data_VALUE = 2;
+      /**
+       * <code>NOData = 3;</code>
+       */
+      public static final int NOData_VALUE = 3;
+      /**
+       * <code>ErrorMsg = 4;</code>
+       */
+      public static final int ErrorMsg_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0: return TypeUnset;
+          case 1: return Schema;
+          case 2: return Data;
+          case 3: return NOData;
+          case 4: return ErrorMsg;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Type> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:response.SubmitFlinkJobInteractive_v2.Type)
+    }
+
+    public interface InteractiveDataOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:response.SubmitFlinkJobInteractive_v2.InteractiveData)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @return A list containing the message.
+       */
+      java.util.List<java.lang.String>
+          getMessageList();
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @return The count of message.
+       */
+      int getMessageCount();
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @param index The index of the element to return.
+       * @return The message at the given index.
+       */
+      java.lang.String getMessage(int index);
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the message at the given index.
+       */
+      com.google.protobuf.ByteString
+          getMessageBytes(int index);
+    }
+    /**
+     * Protobuf type {@code response.SubmitFlinkJobInteractive_v2.InteractiveData}
+     */
+    public static final class InteractiveData extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:response.SubmitFlinkJobInteractive_v2.InteractiveData)
+        InteractiveDataOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use InteractiveData.newBuilder() to construct.
+      private InteractiveData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private InteractiveData() {
+        message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new InteractiveData();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private InteractiveData(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  message_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                message_.add(s);
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            message_ = message_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.class, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder.class);
+      }
+
+      public static final int MESSAGE_FIELD_NUMBER = 1;
+      private com.google.protobuf.LazyStringList message_;
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @return A list containing the message.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMessageList() {
+        return message_;
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @return The count of message.
+       */
+      public int getMessageCount() {
+        return message_.size();
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @param index The index of the element to return.
+       * @return The message at the given index.
+       */
+      public java.lang.String getMessage(int index) {
+        return message_.get(index);
+      }
+      /**
+       * <pre>
+       * message
+       * &#64;inject_tag: json:"message"
+       * </pre>
+       *
+       * <code>repeated string message = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the message at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes(int index) {
+        return message_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < message_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_.getRaw(i));
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < message_.size(); i++) {
+            dataSize += computeStringSizeNoTag(message_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getMessageList().size();
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData)) {
+          return super.equals(obj);
+        }
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData other = (com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData) obj;
+
+        if (!getMessageList()
+            .equals(other.getMessageList())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getMessageCount() > 0) {
+          hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+          hash = (53 * hash) + getMessageList().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code response.SubmitFlinkJobInteractive_v2.InteractiveData}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:response.SubmitFlinkJobInteractive_v2.InteractiveData)
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.class, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder.class);
+        }
+
+        // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getDefaultInstanceForType() {
+          return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData build() {
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData buildPartial() {
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData result = new com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            message_ = message_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.message_ = message_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData) {
+            return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData other) {
+          if (other == com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.getDefaultInstance()) return this;
+          if (!other.message_.isEmpty()) {
+            if (message_.isEmpty()) {
+              message_ = other.message_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMessageIsMutable();
+              message_.addAll(other.message_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringList message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureMessageIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            message_ = new com.google.protobuf.LazyStringArrayList(message_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @return A list containing the message.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getMessageList() {
+          return message_.getUnmodifiableView();
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @return The count of message.
+         */
+        public int getMessageCount() {
+          return message_.size();
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param index The index of the element to return.
+         * @return The message at the given index.
+         */
+        public java.lang.String getMessage(int index) {
+          return message_.get(index);
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the message at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getMessageBytes(int index) {
+          return message_.getByteString(index);
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param index The index to set the value at.
+         * @param value The message to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessage(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMessageIsMutable();
+          message_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param value The message to add.
+         * @return This builder for chaining.
+         */
+        public Builder addMessage(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMessageIsMutable();
+          message_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param values The message to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllMessage(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureMessageIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, message_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearMessage() {
+          message_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * message
+         * &#64;inject_tag: json:"message"
+         * </pre>
+         *
+         * <code>repeated string message = 1;</code>
+         * @param value The bytes of the message to add.
+         * @return This builder for chaining.
+         */
+        public Builder addMessageBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          ensureMessageIsMutable();
+          message_.add(value);
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:response.SubmitFlinkJobInteractive_v2.InteractiveData)
+      }
+
+      // @@protoc_insertion_point(class_scope:response.SubmitFlinkJobInteractive_v2.InteractiveData)
+      private static final com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData();
+      }
+
+      public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InteractiveData>
+          PARSER = new com.google.protobuf.AbstractParser<InteractiveData>() {
+        @java.lang.Override
+        public InteractiveData parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InteractiveData(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<InteractiveData> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InteractiveData> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * type
+     * &#64;inject_tag: json:"type"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type result = com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.valueOf(type_);
+      return result == null ? com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.UNRECOGNIZED : result;
+    }
+
+    public static final int DATA_FIELD_NUMBER = 2;
+    private com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData data_;
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return data_ != null;
+    }
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getData() {
+      return data_ == null ? com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.getDefaultInstance() : data_;
+    }
+    /**
+     * <pre>
+     * dataset
+     * &#64;inject_tag: json:"data"
+     * </pre>
+     *
+     * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+     */
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder getDataOrBuilder() {
+      return getData();
+    }
+
+    public static final int ERROR_MESSAGE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object errorMessage_;
+    /**
+     * <pre>
+     * error message
+     * &#64;inject_tag: json:"error_message"
+     * </pre>
+     *
+     * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+     * @return The errorMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getErrorMessage() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errorMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * error message
+     * &#64;inject_tag: json:"error_message"
+     * </pre>
+     *
+     * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+     * @return The bytes for errorMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorMessageBytes() {
+      java.lang.Object ref = errorMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errorMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (type_ != com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.TypeUnset.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (data_ != null) {
+        output.writeMessage(2, getData());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errorMessage_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_ != com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.TypeUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_);
+      }
+      if (data_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getData());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorMessage_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errorMessage_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2)) {
+        return super.equals(obj);
+      }
+      com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 other = (com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2) obj;
+
+      if (type_ != other.type_) return false;
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData()
+            .equals(other.getData())) return false;
+      }
+      if (!getErrorMessage()
+          .equals(other.getErrorMessage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      hash = (37 * hash) + ERROR_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code response.SubmitFlinkJobInteractive_v2}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:response.SubmitFlinkJobInteractive_v2)
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.class, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Builder.class);
+      }
+
+      // Construct using com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = 0;
+
+        if (dataBuilder_ == null) {
+          data_ = null;
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+        errorMessage_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.internal_static_response_SubmitFlinkJobInteractive_v2_descriptor;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 getDefaultInstanceForType() {
+        return com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 build() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 buildPartial() {
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 result = new com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2(this);
+        result.type_ = type_;
+        if (dataBuilder_ == null) {
+          result.data_ = data_;
+        } else {
+          result.data_ = dataBuilder_.build();
+        }
+        result.errorMessage_ = errorMessage_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2) {
+          return mergeFrom((com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 other) {
+        if (other == com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        if (!other.getErrorMessage().isEmpty()) {
+          errorMessage_ = other.errorMessage_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type getType() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type result = com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.valueOf(type_);
+        return result == null ? com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type
+       * &#64;inject_tag: json:"type"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.Type type = 1 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData data_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder> dataBuilder_;
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return dataBuilder_ != null || data_ != null;
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       * @return The data.
+       */
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setData(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder setData(
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder mergeData(com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData value) {
+        if (dataBuilder_ == null) {
+          if (data_ != null) {
+            data_ =
+              com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.newBuilder(data_).mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          data_ = null;
+          onChanged();
+        } else {
+          data_ = null;
+          dataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder getDataBuilder() {
+        
+        onChanged();
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ?
+              com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.getDefaultInstance() : data_;
+        }
+      }
+      /**
+       * <pre>
+       * dataset
+       * &#64;inject_tag: json:"data"
+       * </pre>
+       *
+       * <code>.response.SubmitFlinkJobInteractive_v2.InteractiveData data = 2 [(.validator.field) = { ... }</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveData.Builder, com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2.InteractiveDataOrBuilder>(
+                  getData(),
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+
+      private java.lang.Object errorMessage_ = "";
+      /**
+       * <pre>
+       * error message
+       * &#64;inject_tag: json:"error_message"
+       * </pre>
+       *
+       * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+       * @return The errorMessage.
+       */
+      public java.lang.String getErrorMessage() {
+        java.lang.Object ref = errorMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errorMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * error message
+       * &#64;inject_tag: json:"error_message"
+       * </pre>
+       *
+       * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+       * @return The bytes for errorMessage.
+       */
+      public com.google.protobuf.ByteString
+          getErrorMessageBytes() {
+        java.lang.Object ref = errorMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errorMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * error message
+       * &#64;inject_tag: json:"error_message"
+       * </pre>
+       *
+       * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+       * @param value The errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errorMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * error message
+       * &#64;inject_tag: json:"error_message"
+       * </pre>
+       *
+       * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrorMessage() {
+        
+        errorMessage_ = getDefaultInstance().getErrorMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * error message
+       * &#64;inject_tag: json:"error_message"
+       * </pre>
+       *
+       * <code>string error_message = 3 [(.validator.field) = { ... }</code>
+       * @param value The bytes for errorMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errorMessage_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:response.SubmitFlinkJobInteractive_v2)
+    }
+
+    // @@protoc_insertion_point(class_scope:response.SubmitFlinkJobInteractive_v2)
+    private static final com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2();
+    }
+
+    public static com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubmitFlinkJobInteractive_v2>
+        PARSER = new com.google.protobuf.AbstractParser<SubmitFlinkJobInteractive_v2>() {
+      @java.lang.Override
+      public SubmitFlinkJobInteractive_v2 parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubmitFlinkJobInteractive_v2(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubmitFlinkJobInteractive_v2> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubmitFlinkJobInteractive_v2> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.dataomnis.gproto.types.pbresponse.PBResponseFlinkDeveloper.SubmitFlinkJobInteractive_v2 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ValidateFlinkJobOrBuilder extends
       // @@protoc_insertion_point(interface_extends:response.ValidateFlinkJob)
       com.google.protobuf.MessageOrBuilder {
@@ -3921,6 +5822,16 @@ public final class PBResponseFlinkDeveloper {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_response_SubmitFlinkJobInteractive_DataSet_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_SubmitFlinkJobInteractive_v2_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_SubmitFlinkJobInteractive_v2_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_response_ValidateFlinkJob_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3947,14 +5858,21 @@ public final class PBResponseFlinkDeveloper {
       "\037\000\022\033\n\rerror_message\030\003 \001(\tB\004\342\337\037\000\032\032\n\007DataS" +
       "et\022\017\n\007message\030\001 \003(\t\"E\n\004Type\022\r\n\tTypeUnset" +
       "\020\000\022\n\n\006Schema\020\001\022\010\n\004Data\020\002\022\n\n\006NOData\020\003\022\014\n\010" +
-      "ErrorMsg\020\004\"\215\001\n\020ValidateFlinkJob\0221\n\006resul" +
-      "t\030\001 \001(\0162!.response.ValidateFlinkJob.Resu" +
-      "lt\022\017\n\007message\030\002 \001(\t\"5\n\006Result\022\017\n\013ResultU" +
-      "nset\020\000\022\013\n\007Correct\020\001\022\r\n\tIncorrect\020\002By\n%co" +
-      "m.dataomnis.gproto.types.pbresponseB\030PBR" +
-      "esponseFlinkDeveloperP\000Z4github.com/Data" +
-      "Workbench/gproto/xgo/types/pbresponseb\006p" +
-      "roto3"
+      "ErrorMsg\020\004\"\263\002\n\034SubmitFlinkJobInteractive" +
+      "_v2\022?\n\004type\030\001 \001(\0162+.response.SubmitFlink" +
+      "JobInteractive_v2.TypeB\004\342\337\037\000\022J\n\004data\030\002 \001" +
+      "(\01326.response.SubmitFlinkJobInteractive_" +
+      "v2.InteractiveDataB\004\342\337\037\000\022\033\n\rerror_messag" +
+      "e\030\003 \001(\tB\004\342\337\037\000\032\"\n\017InteractiveData\022\017\n\007mess" +
+      "age\030\001 \003(\t\"E\n\004Type\022\r\n\tTypeUnset\020\000\022\n\n\006Sche" +
+      "ma\020\001\022\010\n\004Data\020\002\022\n\n\006NOData\020\003\022\014\n\010ErrorMsg\020\004" +
+      "\"\215\001\n\020ValidateFlinkJob\0221\n\006result\030\001 \001(\0162!." +
+      "response.ValidateFlinkJob.Result\022\017\n\007mess" +
+      "age\030\002 \001(\t\"5\n\006Result\022\017\n\013ResultUnset\020\000\022\013\n\007" +
+      "Correct\020\001\022\r\n\tIncorrect\020\002By\n%com.dataomni" +
+      "s.gproto.types.pbresponseB\030PBResponseFli" +
+      "nkDeveloperP\000Z4github.com/DataWorkbench/" +
+      "gproto/xgo/types/pbresponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3979,8 +5897,20 @@ public final class PBResponseFlinkDeveloper {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_SubmitFlinkJobInteractive_DataSet_descriptor,
         new java.lang.String[] { "Message", });
-    internal_static_response_ValidateFlinkJob_descriptor =
+    internal_static_response_SubmitFlinkJobInteractive_v2_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_response_SubmitFlinkJobInteractive_v2_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_SubmitFlinkJobInteractive_v2_descriptor,
+        new java.lang.String[] { "Type", "Data", "ErrorMessage", });
+    internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor =
+      internal_static_response_SubmitFlinkJobInteractive_v2_descriptor.getNestedTypes().get(0);
+    internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_response_SubmitFlinkJobInteractive_v2_InteractiveData_descriptor,
+        new java.lang.String[] { "Message", });
+    internal_static_response_ValidateFlinkJob_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_response_ValidateFlinkJob_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_response_ValidateFlinkJob_descriptor,

@@ -33,6 +33,27 @@ func (this *SubmitFlinkJobInteractive_DataSet) SetDefaults() {
 	return
 }
 
+// Set default value for message response.SubmitFlinkJobInteractive_v2
+func (this *SubmitFlinkJobInteractiveV2) SetDefaults() {
+	if this == nil {
+		return
+	}
+	if this.Data != nil {
+		if dt, ok := interface{}(this.Data).(interface{ SetDefaults() }); ok {
+			dt.SetDefaults()
+		}
+	}
+	return
+}
+
+// Set default value for message response.SubmitFlinkJobInteractive_v2.InteractiveData
+func (this *SubmitFlinkJobInteractiveV2_InteractiveData) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}
+
 // Set default value for message response.ValidateFlinkJob
 func (this *ValidateFlinkJob) SetDefaults() {
 	if this == nil {

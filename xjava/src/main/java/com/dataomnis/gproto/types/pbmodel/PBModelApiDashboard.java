@@ -7771,7 +7771,7 @@ public final class PBModelApiDashboard {
 
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_count" gorm:"column:api_count;"
+     * &#64;inject_tag: json:"api_count"
      * </pre>
      *
      * <code>int32 api_count = 9;</code>
@@ -8303,7 +8303,7 @@ public final class PBModelApiDashboard {
     private int apiCount_;
     /**
      * <pre>
-     * &#64;inject_tag: json:"api_count" gorm:"column:api_count;"
+     * &#64;inject_tag: json:"api_count"
      * </pre>
      *
      * <code>int32 api_count = 9;</code>
@@ -9588,7 +9588,7 @@ public final class PBModelApiDashboard {
       private int apiCount_ ;
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_count" gorm:"column:api_count;"
+       * &#64;inject_tag: json:"api_count"
        * </pre>
        *
        * <code>int32 api_count = 9;</code>
@@ -9600,7 +9600,7 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_count" gorm:"column:api_count;"
+       * &#64;inject_tag: json:"api_count"
        * </pre>
        *
        * <code>int32 api_count = 9;</code>
@@ -9615,7 +9615,7 @@ public final class PBModelApiDashboard {
       }
       /**
        * <pre>
-       * &#64;inject_tag: json:"api_count" gorm:"column:api_count;"
+       * &#64;inject_tag: json:"api_count"
        * </pre>
        *
        * <code>int32 api_count = 9;</code>

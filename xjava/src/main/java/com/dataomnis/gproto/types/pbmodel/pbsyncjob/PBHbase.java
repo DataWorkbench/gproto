@@ -91,47 +91,24 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
+     * encoding
+     * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string change_log = 3;</code>
-     * @return The changeLog.
+     * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+     * @return The enum numeric value on the wire for encoding.
      */
-    java.lang.String getChangeLog();
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 3;</code>
-     * @return The bytes for changeLog.
-     */
-    com.google.protobuf.ByteString
-        getChangeLogBytes();
-
+    int getEncodingValue();
     /**
      * <pre>
      * encoding
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 4;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 3;</code>
      * @return The encoding.
      */
-    java.lang.String getEncoding();
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding"
-     * </pre>
-     *
-     * <code>string encoding = 4;</code>
-     * @return The bytes for encoding.
-     */
-    com.google.protobuf.ByteString
-        getEncodingBytes();
+    com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
 
     /**
      * <pre>
@@ -139,7 +116,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"scan_cache_size"
      * </pre>
      *
-     * <code>int32 scan_cache_size = 5;</code>
+     * <code>int32 scan_cache_size = 4;</code>
      * @return The scanCacheSize.
      */
     int getScanCacheSize();
@@ -150,7 +127,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"scan_batch_size"
      * </pre>
      *
-     * <code>int32 scan_batch_size = 6;</code>
+     * <code>int32 scan_batch_size = 5;</code>
      * @return The scanBatchSize.
      */
     int getScanBatchSize();
@@ -160,7 +137,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 7;</code>
+     * <code>string start_row_key = 6;</code>
      * @return The startRowKey.
      */
     java.lang.String getStartRowKey();
@@ -169,7 +146,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 7;</code>
+     * <code>string start_row_key = 6;</code>
      * @return The bytes for startRowKey.
      */
     com.google.protobuf.ByteString
@@ -181,7 +158,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 8;</code>
+     * <code>string end_row_key = 7;</code>
      * @return The endRowKey.
      */
     java.lang.String getEndRowKey();
@@ -191,7 +168,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 8;</code>
+     * <code>string end_row_key = 7;</code>
      * @return The bytes for endRowKey.
      */
     com.google.protobuf.ByteString
@@ -203,7 +180,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"is_binary_rowkey"
      * </pre>
      *
-     * <code>bool is_binary_rowkey = 9;</code>
+     * <code>bool is_binary_rowkey = 8;</code>
      * @return The isBinaryRowkey.
      */
     boolean getIsBinaryRowkey();
@@ -223,8 +200,7 @@ public final class PBHbase {
     private HbaseSource() {
       column_ = java.util.Collections.emptyList();
       table_ = "";
-      changeLog_ = "";
-      encoding_ = "";
+      encoding_ = 0;
       startRowKey_ = "";
       endRowKey_ = "";
     }
@@ -275,41 +251,35 @@ public final class PBHbase {
               table_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 24: {
+              int rawValue = input.readEnum();
 
-              changeLog_ = s;
+              encoding_ = rawValue;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              encoding_ = s;
-              break;
-            }
-            case 40: {
+            case 32: {
 
               scanCacheSize_ = input.readInt32();
               break;
             }
-            case 48: {
+            case 40: {
 
               scanBatchSize_ = input.readInt32();
               break;
             }
-            case 58: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               startRowKey_ = s;
               break;
             }
-            case 66: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               endRowKey_ = s;
               break;
             }
-            case 72: {
+            case 64: {
 
               isBinaryRowkey_ = input.readBool();
               break;
@@ -462,103 +432,36 @@ public final class PBHbase {
       }
     }
 
-    public static final int CHANGE_LOG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object changeLog_;
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 3;</code>
-     * @return The changeLog.
-     */
-    @java.lang.Override
-    public java.lang.String getChangeLog() {
-      java.lang.Object ref = changeLog_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        changeLog_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 3;</code>
-     * @return The bytes for changeLog.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getChangeLogBytes() {
-      java.lang.Object ref = changeLog_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        changeLog_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENCODING_FIELD_NUMBER = 4;
-    private volatile java.lang.Object encoding_;
+    public static final int ENCODING_FIELD_NUMBER = 3;
+    private int encoding_;
     /**
      * <pre>
      * encoding
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>string encoding = 4;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+     * @return The enum numeric value on the wire for encoding.
+     */
+    @java.lang.Override public int getEncodingValue() {
+      return encoding_;
+    }
+    /**
+     * <pre>
+     * encoding
+     * &#64;inject_tag: json:"encoding"
+     * </pre>
+     *
+     * <code>.model.BaseEnum.Encoding encoding = 3;</code>
      * @return The encoding.
      */
-    @java.lang.Override
-    public java.lang.String getEncoding() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encoding_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * encoding
-     * &#64;inject_tag: json:"encoding"
-     * </pre>
-     *
-     * <code>string encoding = 4;</code>
-     * @return The bytes for encoding.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEncodingBytes() {
-      java.lang.Object ref = encoding_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encoding_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
     }
 
-    public static final int SCAN_CACHE_SIZE_FIELD_NUMBER = 5;
+    public static final int SCAN_CACHE_SIZE_FIELD_NUMBER = 4;
     private int scanCacheSize_;
     /**
      * <pre>
@@ -566,7 +469,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"scan_cache_size"
      * </pre>
      *
-     * <code>int32 scan_cache_size = 5;</code>
+     * <code>int32 scan_cache_size = 4;</code>
      * @return The scanCacheSize.
      */
     @java.lang.Override
@@ -574,7 +477,7 @@ public final class PBHbase {
       return scanCacheSize_;
     }
 
-    public static final int SCAN_BATCH_SIZE_FIELD_NUMBER = 6;
+    public static final int SCAN_BATCH_SIZE_FIELD_NUMBER = 5;
     private int scanBatchSize_;
     /**
      * <pre>
@@ -582,7 +485,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"scan_batch_size"
      * </pre>
      *
-     * <code>int32 scan_batch_size = 6;</code>
+     * <code>int32 scan_batch_size = 5;</code>
      * @return The scanBatchSize.
      */
     @java.lang.Override
@@ -590,14 +493,14 @@ public final class PBHbase {
       return scanBatchSize_;
     }
 
-    public static final int START_ROW_KEY_FIELD_NUMBER = 7;
+    public static final int START_ROW_KEY_FIELD_NUMBER = 6;
     private volatile java.lang.Object startRowKey_;
     /**
      * <pre>
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 7;</code>
+     * <code>string start_row_key = 6;</code>
      * @return The startRowKey.
      */
     @java.lang.Override
@@ -618,7 +521,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"start_row_key"
      * </pre>
      *
-     * <code>string start_row_key = 7;</code>
+     * <code>string start_row_key = 6;</code>
      * @return The bytes for startRowKey.
      */
     @java.lang.Override
@@ -636,7 +539,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int END_ROW_KEY_FIELD_NUMBER = 8;
+    public static final int END_ROW_KEY_FIELD_NUMBER = 7;
     private volatile java.lang.Object endRowKey_;
     /**
      * <pre>
@@ -644,7 +547,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 8;</code>
+     * <code>string end_row_key = 7;</code>
      * @return The endRowKey.
      */
     @java.lang.Override
@@ -666,7 +569,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"end_row_key"
      * </pre>
      *
-     * <code>string end_row_key = 8;</code>
+     * <code>string end_row_key = 7;</code>
      * @return The bytes for endRowKey.
      */
     @java.lang.Override
@@ -684,7 +587,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int IS_BINARY_ROWKEY_FIELD_NUMBER = 9;
+    public static final int IS_BINARY_ROWKEY_FIELD_NUMBER = 8;
     private boolean isBinaryRowkey_;
     /**
      * <pre>
@@ -692,7 +595,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"is_binary_rowkey"
      * </pre>
      *
-     * <code>bool is_binary_rowkey = 9;</code>
+     * <code>bool is_binary_rowkey = 8;</code>
      * @return The isBinaryRowkey.
      */
     @java.lang.Override
@@ -720,26 +623,23 @@ public final class PBHbase {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, changeLog_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, encoding_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        output.writeEnum(3, encoding_);
       }
       if (scanCacheSize_ != 0) {
-        output.writeInt32(5, scanCacheSize_);
+        output.writeInt32(4, scanCacheSize_);
       }
       if (scanBatchSize_ != 0) {
-        output.writeInt32(6, scanBatchSize_);
+        output.writeInt32(5, scanBatchSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startRowKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, startRowKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, endRowKey_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, endRowKey_);
       }
       if (isBinaryRowkey_ != false) {
-        output.writeBool(9, isBinaryRowkey_);
+        output.writeBool(8, isBinaryRowkey_);
       }
       unknownFields.writeTo(output);
     }
@@ -757,29 +657,27 @@ public final class PBHbase {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(table_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, changeLog_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(encoding_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, encoding_);
+      if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, encoding_);
       }
       if (scanCacheSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, scanCacheSize_);
+          .computeInt32Size(4, scanCacheSize_);
       }
       if (scanBatchSize_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, scanBatchSize_);
+          .computeInt32Size(5, scanBatchSize_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startRowKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startRowKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, startRowKey_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endRowKey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, endRowKey_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, endRowKey_);
       }
       if (isBinaryRowkey_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isBinaryRowkey_);
+          .computeBoolSize(8, isBinaryRowkey_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -800,10 +698,7 @@ public final class PBHbase {
           .equals(other.getColumnList())) return false;
       if (!getTable()
           .equals(other.getTable())) return false;
-      if (!getChangeLog()
-          .equals(other.getChangeLog())) return false;
-      if (!getEncoding()
-          .equals(other.getEncoding())) return false;
+      if (encoding_ != other.encoding_) return false;
       if (getScanCacheSize()
           != other.getScanCacheSize()) return false;
       if (getScanBatchSize()
@@ -831,10 +726,8 @@ public final class PBHbase {
       }
       hash = (37 * hash) + TABLE_FIELD_NUMBER;
       hash = (53 * hash) + getTable().hashCode();
-      hash = (37 * hash) + CHANGE_LOG_FIELD_NUMBER;
-      hash = (53 * hash) + getChangeLog().hashCode();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
-      hash = (53 * hash) + getEncoding().hashCode();
+      hash = (53 * hash) + encoding_;
       hash = (37 * hash) + SCAN_CACHE_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getScanCacheSize();
       hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
@@ -988,9 +881,7 @@ public final class PBHbase {
         }
         table_ = "";
 
-        changeLog_ = "";
-
-        encoding_ = "";
+        encoding_ = 0;
 
         scanCacheSize_ = 0;
 
@@ -1039,7 +930,6 @@ public final class PBHbase {
           result.column_ = columnBuilder_.build();
         }
         result.table_ = table_;
-        result.changeLog_ = changeLog_;
         result.encoding_ = encoding_;
         result.scanCacheSize_ = scanCacheSize_;
         result.scanBatchSize_ = scanBatchSize_;
@@ -1124,13 +1014,8 @@ public final class PBHbase {
           table_ = other.table_;
           onChanged();
         }
-        if (!other.getChangeLog().isEmpty()) {
-          changeLog_ = other.changeLog_;
-          onChanged();
-        }
-        if (!other.getEncoding().isEmpty()) {
-          encoding_ = other.encoding_;
-          onChanged();
+        if (other.encoding_ != 0) {
+          setEncodingValue(other.getEncodingValue());
         }
         if (other.getScanCacheSize() != 0) {
           setScanCacheSize(other.getScanCacheSize());
@@ -1610,167 +1495,31 @@ public final class PBHbase {
         return this;
       }
 
-      private java.lang.Object changeLog_ = "";
+      private int encoding_ = 0;
       /**
        * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string change_log = 3;</code>
-       * @return The changeLog.
+       * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+       * @return The enum numeric value on the wire for encoding.
        */
-      public java.lang.String getChangeLog() {
-        java.lang.Object ref = changeLog_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          changeLog_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override public int getEncodingValue() {
+        return encoding_;
       }
       /**
        * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
+       * encoding
+       * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string change_log = 3;</code>
-       * @return The bytes for changeLog.
-       */
-      public com.google.protobuf.ByteString
-          getChangeLogBytes() {
-        java.lang.Object ref = changeLog_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          changeLog_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 3;</code>
-       * @param value The changeLog to set.
+       * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+       * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
-      public Builder setChangeLog(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        changeLog_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChangeLog() {
+      public Builder setEncodingValue(int value) {
         
-        changeLog_ = getDefaultInstance().getChangeLog();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 3;</code>
-       * @param value The bytes for changeLog to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChangeLogBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        changeLog_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object encoding_ = "";
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding"
-       * </pre>
-       *
-       * <code>string encoding = 4;</code>
-       * @return The encoding.
-       */
-      public java.lang.String getEncoding() {
-        java.lang.Object ref = encoding_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          encoding_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding"
-       * </pre>
-       *
-       * <code>string encoding = 4;</code>
-       * @return The bytes for encoding.
-       */
-      public com.google.protobuf.ByteString
-          getEncodingBytes() {
-        java.lang.Object ref = encoding_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          encoding_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding"
-       * </pre>
-       *
-       * <code>string encoding = 4;</code>
-       * @param value The encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncoding(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
         encoding_ = value;
         onChanged();
         return this;
@@ -1781,33 +1530,46 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>string encoding = 4;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+       * @return The encoding.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding result = com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.valueOf(encoding_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 3;</code>
+       * @param value The encoding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncoding(com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        encoding_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * encoding
+       * &#64;inject_tag: json:"encoding"
+       * </pre>
+       *
+       * <code>.model.BaseEnum.Encoding encoding = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
         
-        encoding_ = getDefaultInstance().getEncoding();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * encoding
-       * &#64;inject_tag: json:"encoding"
-       * </pre>
-       *
-       * <code>string encoding = 4;</code>
-       * @param value The bytes for encoding to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEncodingBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        encoding_ = value;
+        encoding_ = 0;
         onChanged();
         return this;
       }
@@ -1819,7 +1581,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_cache_size"
        * </pre>
        *
-       * <code>int32 scan_cache_size = 5;</code>
+       * <code>int32 scan_cache_size = 4;</code>
        * @return The scanCacheSize.
        */
       @java.lang.Override
@@ -1832,7 +1594,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_cache_size"
        * </pre>
        *
-       * <code>int32 scan_cache_size = 5;</code>
+       * <code>int32 scan_cache_size = 4;</code>
        * @param value The scanCacheSize to set.
        * @return This builder for chaining.
        */
@@ -1848,7 +1610,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_cache_size"
        * </pre>
        *
-       * <code>int32 scan_cache_size = 5;</code>
+       * <code>int32 scan_cache_size = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearScanCacheSize() {
@@ -1865,7 +1627,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_batch_size"
        * </pre>
        *
-       * <code>int32 scan_batch_size = 6;</code>
+       * <code>int32 scan_batch_size = 5;</code>
        * @return The scanBatchSize.
        */
       @java.lang.Override
@@ -1878,7 +1640,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_batch_size"
        * </pre>
        *
-       * <code>int32 scan_batch_size = 6;</code>
+       * <code>int32 scan_batch_size = 5;</code>
        * @param value The scanBatchSize to set.
        * @return This builder for chaining.
        */
@@ -1894,7 +1656,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"scan_batch_size"
        * </pre>
        *
-       * <code>int32 scan_batch_size = 6;</code>
+       * <code>int32 scan_batch_size = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearScanBatchSize() {
@@ -1910,7 +1672,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 7;</code>
+       * <code>string start_row_key = 6;</code>
        * @return The startRowKey.
        */
       public java.lang.String getStartRowKey() {
@@ -1930,7 +1692,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 7;</code>
+       * <code>string start_row_key = 6;</code>
        * @return The bytes for startRowKey.
        */
       public com.google.protobuf.ByteString
@@ -1951,7 +1713,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 7;</code>
+       * <code>string start_row_key = 6;</code>
        * @param value The startRowKey to set.
        * @return This builder for chaining.
        */
@@ -1970,7 +1732,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 7;</code>
+       * <code>string start_row_key = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearStartRowKey() {
@@ -1984,7 +1746,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"start_row_key"
        * </pre>
        *
-       * <code>string start_row_key = 7;</code>
+       * <code>string start_row_key = 6;</code>
        * @param value The bytes for startRowKey to set.
        * @return This builder for chaining.
        */
@@ -2007,7 +1769,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 8;</code>
+       * <code>string end_row_key = 7;</code>
        * @return The endRowKey.
        */
       public java.lang.String getEndRowKey() {
@@ -2028,7 +1790,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 8;</code>
+       * <code>string end_row_key = 7;</code>
        * @return The bytes for endRowKey.
        */
       public com.google.protobuf.ByteString
@@ -2050,7 +1812,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 8;</code>
+       * <code>string end_row_key = 7;</code>
        * @param value The endRowKey to set.
        * @return This builder for chaining.
        */
@@ -2070,7 +1832,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 8;</code>
+       * <code>string end_row_key = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearEndRowKey() {
@@ -2085,7 +1847,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"end_row_key"
        * </pre>
        *
-       * <code>string end_row_key = 8;</code>
+       * <code>string end_row_key = 7;</code>
        * @param value The bytes for endRowKey to set.
        * @return This builder for chaining.
        */
@@ -2108,7 +1870,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 9;</code>
+       * <code>bool is_binary_rowkey = 8;</code>
        * @return The isBinaryRowkey.
        */
       @java.lang.Override
@@ -2121,7 +1883,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 9;</code>
+       * <code>bool is_binary_rowkey = 8;</code>
        * @param value The isBinaryRowkey to set.
        * @return This builder for chaining.
        */
@@ -2137,7 +1899,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"is_binary_rowkey"
        * </pre>
        *
-       * <code>bool is_binary_rowkey = 9;</code>
+       * <code>bool is_binary_rowkey = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsBinaryRowkey() {
@@ -2314,33 +2076,11 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 6;</code>
-     * @return The changeLog.
-     */
-    java.lang.String getChangeLog();
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 6;</code>
-     * @return The bytes for changeLog.
-     */
-    com.google.protobuf.ByteString
-        getChangeLogBytes();
-
-    /**
-     * <pre>
      * rowkey express
      * &#64;inject_tag: json:"rowkey_express"
      * </pre>
      *
-     * <code>string rowkey_express = 7;</code>
+     * <code>string rowkey_express = 6;</code>
      * @return The rowkeyExpress.
      */
     java.lang.String getRowkeyExpress();
@@ -2350,7 +2090,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"rowkey_express"
      * </pre>
      *
-     * <code>string rowkey_express = 7;</code>
+     * <code>string rowkey_express = 6;</code>
      * @return The bytes for rowkeyExpress.
      */
     com.google.protobuf.ByteString
@@ -2362,7 +2102,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_index"
      * </pre>
      *
-     * <code>int32 version_column_index = 8;</code>
+     * <code>int32 version_column_index = 7;</code>
      * @return The versionColumnIndex.
      */
     int getVersionColumnIndex();
@@ -2373,7 +2113,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_value"
      * </pre>
      *
-     * <code>string version_column_value = 9;</code>
+     * <code>string version_column_value = 8;</code>
      * @return The versionColumnValue.
      */
     java.lang.String getVersionColumnValue();
@@ -2383,7 +2123,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_value"
      * </pre>
      *
-     * <code>string version_column_value = 9;</code>
+     * <code>string version_column_value = 8;</code>
      * @return The bytes for versionColumnValue.
      */
     com.google.protobuf.ByteString
@@ -2391,33 +2131,11 @@ public final class PBHbase {
 
     /**
      * <pre>
-     * scan cache size
-     * &#64;inject_tag: json:"scan_cache_size"
-     * </pre>
-     *
-     * <code>int32 scan_cache_size = 10;</code>
-     * @return The scanCacheSize.
-     */
-    int getScanCacheSize();
-
-    /**
-     * <pre>
-     * hbase scan batch size
-     * &#64;inject_tag: json:"scan_batch_size"
-     * </pre>
-     *
-     * <code>int32 scan_batch_size = 11;</code>
-     * @return The scanBatchSize.
-     */
-    int getScanBatchSize();
-
-    /**
-     * <pre>
      * hbase scan batch size
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 9;</code>
      * @return The enum numeric value on the wire for encoding.
      */
     int getEncodingValue();
@@ -2427,7 +2145,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 9;</code>
      * @return The encoding.
      */
     com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding();
@@ -2448,7 +2166,6 @@ public final class PBHbase {
       column_ = java.util.Collections.emptyList();
       table_ = "";
       nullMode_ = 0;
-      changeLog_ = "";
       rowkeyExpress_ = "";
       versionColumnValue_ = "";
       encoding_ = 0;
@@ -2519,37 +2236,21 @@ public final class PBHbase {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              changeLog_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               rowkeyExpress_ = s;
               break;
             }
-            case 64: {
+            case 56: {
 
               versionColumnIndex_ = input.readInt32();
               break;
             }
-            case 74: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               versionColumnValue_ = s;
               break;
             }
-            case 80: {
-
-              scanCacheSize_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              scanBatchSize_ = input.readInt32();
-              break;
-            }
-            case 96: {
+            case 72: {
               int rawValue = input.readEnum();
 
               encoding_ = rawValue;
@@ -2759,55 +2460,7 @@ public final class PBHbase {
       return writeBufferSize_;
     }
 
-    public static final int CHANGE_LOG_FIELD_NUMBER = 6;
-    private volatile java.lang.Object changeLog_;
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 6;</code>
-     * @return The changeLog.
-     */
-    @java.lang.Override
-    public java.lang.String getChangeLog() {
-      java.lang.Object ref = changeLog_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        changeLog_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * change_log
-     * &#64;inject_tag: json:"change_log"
-     * </pre>
-     *
-     * <code>string change_log = 6;</code>
-     * @return The bytes for changeLog.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getChangeLogBytes() {
-      java.lang.Object ref = changeLog_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        changeLog_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROWKEY_EXPRESS_FIELD_NUMBER = 7;
+    public static final int ROWKEY_EXPRESS_FIELD_NUMBER = 6;
     private volatile java.lang.Object rowkeyExpress_;
     /**
      * <pre>
@@ -2815,7 +2468,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"rowkey_express"
      * </pre>
      *
-     * <code>string rowkey_express = 7;</code>
+     * <code>string rowkey_express = 6;</code>
      * @return The rowkeyExpress.
      */
     @java.lang.Override
@@ -2837,7 +2490,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"rowkey_express"
      * </pre>
      *
-     * <code>string rowkey_express = 7;</code>
+     * <code>string rowkey_express = 6;</code>
      * @return The bytes for rowkeyExpress.
      */
     @java.lang.Override
@@ -2855,7 +2508,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int VERSION_COLUMN_INDEX_FIELD_NUMBER = 8;
+    public static final int VERSION_COLUMN_INDEX_FIELD_NUMBER = 7;
     private int versionColumnIndex_;
     /**
      * <pre>
@@ -2863,7 +2516,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_index"
      * </pre>
      *
-     * <code>int32 version_column_index = 8;</code>
+     * <code>int32 version_column_index = 7;</code>
      * @return The versionColumnIndex.
      */
     @java.lang.Override
@@ -2871,7 +2524,7 @@ public final class PBHbase {
       return versionColumnIndex_;
     }
 
-    public static final int VERSION_COLUMN_VALUE_FIELD_NUMBER = 9;
+    public static final int VERSION_COLUMN_VALUE_FIELD_NUMBER = 8;
     private volatile java.lang.Object versionColumnValue_;
     /**
      * <pre>
@@ -2879,7 +2532,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_value"
      * </pre>
      *
-     * <code>string version_column_value = 9;</code>
+     * <code>string version_column_value = 8;</code>
      * @return The versionColumnValue.
      */
     @java.lang.Override
@@ -2901,7 +2554,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"version_column_value"
      * </pre>
      *
-     * <code>string version_column_value = 9;</code>
+     * <code>string version_column_value = 8;</code>
      * @return The bytes for versionColumnValue.
      */
     @java.lang.Override
@@ -2919,39 +2572,7 @@ public final class PBHbase {
       }
     }
 
-    public static final int SCAN_CACHE_SIZE_FIELD_NUMBER = 10;
-    private int scanCacheSize_;
-    /**
-     * <pre>
-     * scan cache size
-     * &#64;inject_tag: json:"scan_cache_size"
-     * </pre>
-     *
-     * <code>int32 scan_cache_size = 10;</code>
-     * @return The scanCacheSize.
-     */
-    @java.lang.Override
-    public int getScanCacheSize() {
-      return scanCacheSize_;
-    }
-
-    public static final int SCAN_BATCH_SIZE_FIELD_NUMBER = 11;
-    private int scanBatchSize_;
-    /**
-     * <pre>
-     * hbase scan batch size
-     * &#64;inject_tag: json:"scan_batch_size"
-     * </pre>
-     *
-     * <code>int32 scan_batch_size = 11;</code>
-     * @return The scanBatchSize.
-     */
-    @java.lang.Override
-    public int getScanBatchSize() {
-      return scanBatchSize_;
-    }
-
-    public static final int ENCODING_FIELD_NUMBER = 12;
+    public static final int ENCODING_FIELD_NUMBER = 9;
     private int encoding_;
     /**
      * <pre>
@@ -2959,7 +2580,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 9;</code>
      * @return The enum numeric value on the wire for encoding.
      */
     @java.lang.Override public int getEncodingValue() {
@@ -2971,7 +2592,7 @@ public final class PBHbase {
      * &#64;inject_tag: json:"encoding"
      * </pre>
      *
-     * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+     * <code>.model.BaseEnum.Encoding encoding = 9;</code>
      * @return The encoding.
      */
     @java.lang.Override public com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding getEncoding() {
@@ -3009,26 +2630,17 @@ public final class PBHbase {
       if (writeBufferSize_ != 0) {
         output.writeInt32(5, writeBufferSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, changeLog_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowkeyExpress_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, rowkeyExpress_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, rowkeyExpress_);
       }
       if (versionColumnIndex_ != 0) {
-        output.writeInt32(8, versionColumnIndex_);
+        output.writeInt32(7, versionColumnIndex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnValue_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, versionColumnValue_);
-      }
-      if (scanCacheSize_ != 0) {
-        output.writeInt32(10, scanCacheSize_);
-      }
-      if (scanBatchSize_ != 0) {
-        output.writeInt32(11, scanBatchSize_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, versionColumnValue_);
       }
       if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
-        output.writeEnum(12, encoding_);
+        output.writeEnum(9, encoding_);
       }
       unknownFields.writeTo(output);
     }
@@ -3058,30 +2670,19 @@ public final class PBHbase {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, writeBufferSize_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(changeLog_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, changeLog_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rowkeyExpress_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, rowkeyExpress_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, rowkeyExpress_);
       }
       if (versionColumnIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, versionColumnIndex_);
+          .computeInt32Size(7, versionColumnIndex_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionColumnValue_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, versionColumnValue_);
-      }
-      if (scanCacheSize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, scanCacheSize_);
-      }
-      if (scanBatchSize_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, scanBatchSize_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, versionColumnValue_);
       }
       if (encoding_ != com.dataomnis.gproto.types.pbmodel.pbsyncjob.PBBaseEnum.BaseEnum.Encoding.EncodingUnset.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, encoding_);
+          .computeEnumSize(9, encoding_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3107,18 +2708,12 @@ public final class PBHbase {
           != other.getWalFlag()) return false;
       if (getWriteBufferSize()
           != other.getWriteBufferSize()) return false;
-      if (!getChangeLog()
-          .equals(other.getChangeLog())) return false;
       if (!getRowkeyExpress()
           .equals(other.getRowkeyExpress())) return false;
       if (getVersionColumnIndex()
           != other.getVersionColumnIndex()) return false;
       if (!getVersionColumnValue()
           .equals(other.getVersionColumnValue())) return false;
-      if (getScanCacheSize()
-          != other.getScanCacheSize()) return false;
-      if (getScanBatchSize()
-          != other.getScanBatchSize()) return false;
       if (encoding_ != other.encoding_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -3144,18 +2739,12 @@ public final class PBHbase {
           getWalFlag());
       hash = (37 * hash) + WRITE_BUFFER_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getWriteBufferSize();
-      hash = (37 * hash) + CHANGE_LOG_FIELD_NUMBER;
-      hash = (53 * hash) + getChangeLog().hashCode();
       hash = (37 * hash) + ROWKEY_EXPRESS_FIELD_NUMBER;
       hash = (53 * hash) + getRowkeyExpress().hashCode();
       hash = (37 * hash) + VERSION_COLUMN_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getVersionColumnIndex();
       hash = (37 * hash) + VERSION_COLUMN_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getVersionColumnValue().hashCode();
-      hash = (37 * hash) + SCAN_CACHE_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getScanCacheSize();
-      hash = (37 * hash) + SCAN_BATCH_SIZE_FIELD_NUMBER;
-      hash = (53 * hash) + getScanBatchSize();
       hash = (37 * hash) + ENCODING_FIELD_NUMBER;
       hash = (53 * hash) + encoding_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3306,17 +2895,11 @@ public final class PBHbase {
 
         writeBufferSize_ = 0;
 
-        changeLog_ = "";
-
         rowkeyExpress_ = "";
 
         versionColumnIndex_ = 0;
 
         versionColumnValue_ = "";
-
-        scanCacheSize_ = 0;
-
-        scanBatchSize_ = 0;
 
         encoding_ = 0;
 
@@ -3360,12 +2943,9 @@ public final class PBHbase {
         result.nullMode_ = nullMode_;
         result.walFlag_ = walFlag_;
         result.writeBufferSize_ = writeBufferSize_;
-        result.changeLog_ = changeLog_;
         result.rowkeyExpress_ = rowkeyExpress_;
         result.versionColumnIndex_ = versionColumnIndex_;
         result.versionColumnValue_ = versionColumnValue_;
-        result.scanCacheSize_ = scanCacheSize_;
-        result.scanBatchSize_ = scanBatchSize_;
         result.encoding_ = encoding_;
         onBuilt();
         return result;
@@ -3454,10 +3034,6 @@ public final class PBHbase {
         if (other.getWriteBufferSize() != 0) {
           setWriteBufferSize(other.getWriteBufferSize());
         }
-        if (!other.getChangeLog().isEmpty()) {
-          changeLog_ = other.changeLog_;
-          onChanged();
-        }
         if (!other.getRowkeyExpress().isEmpty()) {
           rowkeyExpress_ = other.rowkeyExpress_;
           onChanged();
@@ -3468,12 +3044,6 @@ public final class PBHbase {
         if (!other.getVersionColumnValue().isEmpty()) {
           versionColumnValue_ = other.versionColumnValue_;
           onChanged();
-        }
-        if (other.getScanCacheSize() != 0) {
-          setScanCacheSize(other.getScanCacheSize());
-        }
-        if (other.getScanBatchSize() != 0) {
-          setScanBatchSize(other.getScanBatchSize());
         }
         if (other.encoding_ != 0) {
           setEncodingValue(other.getEncodingValue());
@@ -4092,107 +3662,6 @@ public final class PBHbase {
         return this;
       }
 
-      private java.lang.Object changeLog_ = "";
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 6;</code>
-       * @return The changeLog.
-       */
-      public java.lang.String getChangeLog() {
-        java.lang.Object ref = changeLog_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          changeLog_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 6;</code>
-       * @return The bytes for changeLog.
-       */
-      public com.google.protobuf.ByteString
-          getChangeLogBytes() {
-        java.lang.Object ref = changeLog_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          changeLog_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 6;</code>
-       * @param value The changeLog to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChangeLog(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        changeLog_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChangeLog() {
-        
-        changeLog_ = getDefaultInstance().getChangeLog();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * change_log
-       * &#64;inject_tag: json:"change_log"
-       * </pre>
-       *
-       * <code>string change_log = 6;</code>
-       * @param value The bytes for changeLog to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChangeLogBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        changeLog_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object rowkeyExpress_ = "";
       /**
        * <pre>
@@ -4200,7 +3669,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"rowkey_express"
        * </pre>
        *
-       * <code>string rowkey_express = 7;</code>
+       * <code>string rowkey_express = 6;</code>
        * @return The rowkeyExpress.
        */
       public java.lang.String getRowkeyExpress() {
@@ -4221,7 +3690,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"rowkey_express"
        * </pre>
        *
-       * <code>string rowkey_express = 7;</code>
+       * <code>string rowkey_express = 6;</code>
        * @return The bytes for rowkeyExpress.
        */
       public com.google.protobuf.ByteString
@@ -4243,7 +3712,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"rowkey_express"
        * </pre>
        *
-       * <code>string rowkey_express = 7;</code>
+       * <code>string rowkey_express = 6;</code>
        * @param value The rowkeyExpress to set.
        * @return This builder for chaining.
        */
@@ -4263,7 +3732,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"rowkey_express"
        * </pre>
        *
-       * <code>string rowkey_express = 7;</code>
+       * <code>string rowkey_express = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRowkeyExpress() {
@@ -4278,7 +3747,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"rowkey_express"
        * </pre>
        *
-       * <code>string rowkey_express = 7;</code>
+       * <code>string rowkey_express = 6;</code>
        * @param value The bytes for rowkeyExpress to set.
        * @return This builder for chaining.
        */
@@ -4301,7 +3770,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_index"
        * </pre>
        *
-       * <code>int32 version_column_index = 8;</code>
+       * <code>int32 version_column_index = 7;</code>
        * @return The versionColumnIndex.
        */
       @java.lang.Override
@@ -4314,7 +3783,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_index"
        * </pre>
        *
-       * <code>int32 version_column_index = 8;</code>
+       * <code>int32 version_column_index = 7;</code>
        * @param value The versionColumnIndex to set.
        * @return This builder for chaining.
        */
@@ -4330,7 +3799,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_index"
        * </pre>
        *
-       * <code>int32 version_column_index = 8;</code>
+       * <code>int32 version_column_index = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersionColumnIndex() {
@@ -4347,7 +3816,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_value"
        * </pre>
        *
-       * <code>string version_column_value = 9;</code>
+       * <code>string version_column_value = 8;</code>
        * @return The versionColumnValue.
        */
       public java.lang.String getVersionColumnValue() {
@@ -4368,7 +3837,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_value"
        * </pre>
        *
-       * <code>string version_column_value = 9;</code>
+       * <code>string version_column_value = 8;</code>
        * @return The bytes for versionColumnValue.
        */
       public com.google.protobuf.ByteString
@@ -4390,7 +3859,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_value"
        * </pre>
        *
-       * <code>string version_column_value = 9;</code>
+       * <code>string version_column_value = 8;</code>
        * @param value The versionColumnValue to set.
        * @return This builder for chaining.
        */
@@ -4410,7 +3879,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_value"
        * </pre>
        *
-       * <code>string version_column_value = 9;</code>
+       * <code>string version_column_value = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearVersionColumnValue() {
@@ -4425,7 +3894,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"version_column_value"
        * </pre>
        *
-       * <code>string version_column_value = 9;</code>
+       * <code>string version_column_value = 8;</code>
        * @param value The bytes for versionColumnValue to set.
        * @return This builder for chaining.
        */
@@ -4441,98 +3910,6 @@ public final class PBHbase {
         return this;
       }
 
-      private int scanCacheSize_ ;
-      /**
-       * <pre>
-       * scan cache size
-       * &#64;inject_tag: json:"scan_cache_size"
-       * </pre>
-       *
-       * <code>int32 scan_cache_size = 10;</code>
-       * @return The scanCacheSize.
-       */
-      @java.lang.Override
-      public int getScanCacheSize() {
-        return scanCacheSize_;
-      }
-      /**
-       * <pre>
-       * scan cache size
-       * &#64;inject_tag: json:"scan_cache_size"
-       * </pre>
-       *
-       * <code>int32 scan_cache_size = 10;</code>
-       * @param value The scanCacheSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScanCacheSize(int value) {
-        
-        scanCacheSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * scan cache size
-       * &#64;inject_tag: json:"scan_cache_size"
-       * </pre>
-       *
-       * <code>int32 scan_cache_size = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScanCacheSize() {
-        
-        scanCacheSize_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int scanBatchSize_ ;
-      /**
-       * <pre>
-       * hbase scan batch size
-       * &#64;inject_tag: json:"scan_batch_size"
-       * </pre>
-       *
-       * <code>int32 scan_batch_size = 11;</code>
-       * @return The scanBatchSize.
-       */
-      @java.lang.Override
-      public int getScanBatchSize() {
-        return scanBatchSize_;
-      }
-      /**
-       * <pre>
-       * hbase scan batch size
-       * &#64;inject_tag: json:"scan_batch_size"
-       * </pre>
-       *
-       * <code>int32 scan_batch_size = 11;</code>
-       * @param value The scanBatchSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScanBatchSize(int value) {
-        
-        scanBatchSize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * hbase scan batch size
-       * &#64;inject_tag: json:"scan_batch_size"
-       * </pre>
-       *
-       * <code>int32 scan_batch_size = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScanBatchSize() {
-        
-        scanBatchSize_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int encoding_ = 0;
       /**
        * <pre>
@@ -4540,7 +3917,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 9;</code>
        * @return The enum numeric value on the wire for encoding.
        */
       @java.lang.Override public int getEncodingValue() {
@@ -4552,7 +3929,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 9;</code>
        * @param value The enum numeric value on the wire for encoding to set.
        * @return This builder for chaining.
        */
@@ -4568,7 +3945,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 9;</code>
        * @return The encoding.
        */
       @java.lang.Override
@@ -4583,7 +3960,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 9;</code>
        * @param value The encoding to set.
        * @return This builder for chaining.
        */
@@ -4602,7 +3979,7 @@ public final class PBHbase {
        * &#64;inject_tag: json:"encoding"
        * </pre>
        *
-       * <code>.model.BaseEnum.Encoding encoding = 12;</code>
+       * <code>.model.BaseEnum.Encoding encoding = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEncoding() {
@@ -4687,25 +4064,23 @@ public final class PBHbase {
       "\005model\032(proto/types/model/syncjob/baseen" +
       "um.proto\032&proto/types/model/syncjob/colu" +
       "mn.proto\032/github.com/yu31/protoc-plugin/" +
-      "proto/gosql.proto\"\341\001\n\013HbaseSource\022\035\n\006col" +
+      "proto/gosql.proto\"\347\001\n\013HbaseSource\022\035\n\006col" +
       "umn\030\001 \003(\0132\r.model.Column\022\r\n\005table\030\002 \001(\t\022" +
-      "\022\n\nchange_log\030\003 \001(\t\022\020\n\010encoding\030\004 \001(\t\022\027\n" +
-      "\017scan_cache_size\030\005 \001(\005\022\027\n\017scan_batch_siz" +
-      "e\030\006 \001(\005\022\025\n\rstart_row_key\030\007 \001(\t\022\023\n\013end_ro" +
-      "w_key\030\010 \001(\t\022\030\n\020is_binary_rowkey\030\t \001(\010:\006\312" +
-      "\262\004\002\n\000\"\343\002\n\013HbaseTarget\022\035\n\006column\030\001 \003(\0132\r." +
-      "model.Column\022\r\n\005table\030\002 \001(\t\022+\n\tnull_mode" +
-      "\030\003 \001(\0162\030.model.BaseEnum.NullMode\022\020\n\010wal_" +
-      "flag\030\004 \001(\010\022\031\n\021write_buffer_size\030\005 \001(\005\022\022\n" +
-      "\nchange_log\030\006 \001(\t\022\026\n\016rowkey_express\030\007 \001(" +
-      "\t\022\034\n\024version_column_index\030\010 \001(\005\022\034\n\024versi" +
-      "on_column_value\030\t \001(\t\022\027\n\017scan_cache_size" +
-      "\030\n \001(\005\022\027\n\017scan_batch_size\030\013 \001(\005\022*\n\010encod" +
-      "ing\030\014 \001(\0162\030.model.BaseEnum.Encoding:\006\312\262\004" +
-      "\002\n\000Bv\n,com.dataomnis.gproto.types.pbmode" +
-      "l.pbsyncjobB\007PBHbaseP\000Z;github.com/DataW" +
-      "orkbench/gproto/xgo/types/pbmodel/pbsync" +
-      "jobb\006proto3"
+      "*\n\010encoding\030\003 \001(\0162\030.model.BaseEnum.Encod" +
+      "ing\022\027\n\017scan_cache_size\030\004 \001(\005\022\027\n\017scan_bat" +
+      "ch_size\030\005 \001(\005\022\025\n\rstart_row_key\030\006 \001(\t\022\023\n\013" +
+      "end_row_key\030\007 \001(\t\022\030\n\020is_binary_rowkey\030\010 " +
+      "\001(\010:\006\312\262\004\002\n\000\"\235\002\n\013HbaseTarget\022\035\n\006column\030\001 " +
+      "\003(\0132\r.model.Column\022\r\n\005table\030\002 \001(\t\022+\n\tnul" +
+      "l_mode\030\003 \001(\0162\030.model.BaseEnum.NullMode\022\020" +
+      "\n\010wal_flag\030\004 \001(\010\022\031\n\021write_buffer_size\030\005 " +
+      "\001(\005\022\026\n\016rowkey_express\030\006 \001(\t\022\034\n\024version_c" +
+      "olumn_index\030\007 \001(\005\022\034\n\024version_column_valu" +
+      "e\030\010 \001(\t\022*\n\010encoding\030\t \001(\0162\030.model.BaseEn" +
+      "um.Encoding:\006\312\262\004\002\n\000Bv\n,com.dataomnis.gpr" +
+      "oto.types.pbmodel.pbsyncjobB\007PBHbaseP\000Z;" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbmodel/pbsyncjobb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4719,13 +4094,13 @@ public final class PBHbase {
     internal_static_model_HbaseSource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseSource_descriptor,
-        new java.lang.String[] { "Column", "Table", "ChangeLog", "Encoding", "ScanCacheSize", "ScanBatchSize", "StartRowKey", "EndRowKey", "IsBinaryRowkey", });
+        new java.lang.String[] { "Column", "Table", "Encoding", "ScanCacheSize", "ScanBatchSize", "StartRowKey", "EndRowKey", "IsBinaryRowkey", });
     internal_static_model_HbaseTarget_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_model_HbaseTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_HbaseTarget_descriptor,
-        new java.lang.String[] { "Column", "Table", "NullMode", "WalFlag", "WriteBufferSize", "ChangeLog", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "ScanCacheSize", "ScanBatchSize", "Encoding", });
+        new java.lang.String[] { "Column", "Table", "NullMode", "WalFlag", "WriteBufferSize", "RowkeyExpress", "VersionColumnIndex", "VersionColumnValue", "Encoding", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(io.github.yu31.protoc.pb.pbgosql.PBGoSQL.serialize);

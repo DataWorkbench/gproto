@@ -48,6 +48,34 @@ func (this *SubmitFlinkJobInteractive_DataSet) Validate() error {
 	return nil
 }
 
+func (this *SubmitFlinkJobInteractiveV2) _xxx_xxx_Validator_Validate_data() error {
+	if dt, ok := interface{}(this.Data).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message response.SubmitFlinkJobInteractive_v2
+func (this *SubmitFlinkJobInteractiveV2) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_data(); err != nil {
+		return err
+	}
+	return nil
+}
+
+// Set default value for message response.SubmitFlinkJobInteractive_v2.InteractiveData
+func (this *SubmitFlinkJobInteractiveV2_InteractiveData) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}
+
 // Set default value for message response.ValidateFlinkJob
 func (this *ValidateFlinkJob) Validate() error {
 	if this == nil {
