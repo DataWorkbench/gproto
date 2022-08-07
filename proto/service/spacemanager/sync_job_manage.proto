@@ -93,13 +93,4 @@ service SyncJobManage {
 
     rpc ConvertSyncJobMode(request.ConvertSyncJobMode) returns (response.ConvertSyncJobMode) {}
 
-//    // Interface for helper.
-//    // FIXME: remove it.
-//    rpc DescribeSyncFlinkUIByInstanceId(request.DescribeSyncFlinkUIByInstanceId)  returns (response.DescribeSyncFlinkUIByInstanceId) {}
-
-    // FIXME: remove it.
-//    // PingSyncJobConnection for check the network connection between cluster and datasource that used in sync job.
-//    rpc PingSyncJobConnection(request.PingSyncJobConnection)   returns (response.PingSyncJobConnection) {}
-//    // DescribeSyncConnection fro query the connection results of sync job. return nil means no check connection.
-//    rpc DescribeSyncConnection(request.DescribeSyncConnection) returns (response.DescribeSyncConnection) {}
 }
