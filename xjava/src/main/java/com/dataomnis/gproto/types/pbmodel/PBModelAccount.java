@@ -7601,11 +7601,21 @@ public final class PBModelAccount {
         getOwnerBytes();
 
     /**
+     * <pre>
+     * The name of access key.
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
      * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
+     * <pre>
+     * The name of access key.
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
      * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
@@ -8251,6 +8261,11 @@ public final class PBModelAccount {
     public static final int NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object name_;
     /**
+     * <pre>
+     * The name of access key.
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
      * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The name.
      */
@@ -8268,6 +8283,11 @@ public final class PBModelAccount {
       }
     }
     /**
+     * <pre>
+     * The name of access key.
+     * &#64;inject_tag: json:"name" gorm:"column:name;"
+     * </pre>
+     *
      * <code>string name = 4 [(.validator.field) = { ... }</code>
      * @return The bytes for name.
      */
@@ -9224,6 +9244,11 @@ public final class PBModelAccount {
 
       private java.lang.Object name_ = "";
       /**
+       * <pre>
+       * The name of access key.
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
        * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The name.
        */
@@ -9240,6 +9265,11 @@ public final class PBModelAccount {
         }
       }
       /**
+       * <pre>
+       * The name of access key.
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
        * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return The bytes for name.
        */
@@ -9257,6 +9287,11 @@ public final class PBModelAccount {
         }
       }
       /**
+       * <pre>
+       * The name of access key.
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
        * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The name to set.
        * @return This builder for chaining.
@@ -9272,6 +9307,11 @@ public final class PBModelAccount {
         return this;
       }
       /**
+       * <pre>
+       * The name of access key.
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
        * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @return This builder for chaining.
        */
@@ -9282,6 +9322,11 @@ public final class PBModelAccount {
         return this;
       }
       /**
+       * <pre>
+       * The name of access key.
+       * &#64;inject_tag: json:"name" gorm:"column:name;"
+       * </pre>
+       *
        * <code>string name = 4 [(.validator.field) = { ... }</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n+com.dataomnis.gproto.service.pbsvcdeveloperB\023PBSvcFlinkDeveloperP\000Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloper',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\xe3\x02\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12j\n\x19SubmitFlinkJobInteractive\x12\".request.SubmitFlinkJobInteractive\x1a#.response.SubmitFlinkJobInteractive\"\x00(\x01\x30\x01\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12Q\n\x13ValidateFlinkJob_v2\x12\x1c.request.ValidateFlinkJob_v2\x1a\x1a.response.ValidateFlinkJob\"\x00\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
+  serialized_pb=b'\n-proto/service/developer/flink_developer.proto\x12\tdeveloper\x1a)proto/types/request/flink_developer.proto\x1a*proto/types/response/flink_developer.proto2\xd5\x03\n\x0e\x46linkDeveloper\x12\x45\n\x0eSubmitFlinkJob\x12\x17.request.SubmitFlinkJob\x1a\x18.response.SubmitFlinkJob\"\x00\x12j\n\x19SubmitFlinkJobInteractive\x12\".request.SubmitFlinkJobInteractive\x1a#.response.SubmitFlinkJobInteractive\"\x00(\x01\x30\x01\x12p\n\x1cSubmitFlinkJobInteractive_v2\x12\".request.SubmitFlinkJobInteractive\x1a&.response.SubmitFlinkJobInteractive_v2\"\x00(\x01\x30\x01\x12K\n\x10ValidateFlinkJob\x12\x19.request.ValidateFlinkJob\x1a\x1a.response.ValidateFlinkJob\"\x00\x12Q\n\x13ValidateFlinkJob_v2\x12\x1c.request.ValidateFlinkJob_v2\x1a\x1a.response.ValidateFlinkJob\"\x00\x42\x80\x01\n+com.dataomnis.gproto.service.pbsvcdeveloperB\x13PBSvcFlinkDeveloperP\x00Z:github.com/DataWorkbench/gproto/xgo/service/pbsvcdeveloperb\x06proto3'
   ,
   dependencies=[proto_dot_types_dot_request_dot_flink__developer__pb2.DESCRIPTOR,proto_dot_types_dot_response_dot_flink__developer__pb2.DESCRIPTOR,])
 
@@ -40,7 +40,7 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=148,
-  serialized_end=503,
+  serialized_end=617,
   methods=[
   _descriptor.MethodDescriptor(
     name='SubmitFlinkJob',
@@ -63,9 +63,19 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='SubmitFlinkJobInteractive_v2',
+    full_name='developer.FlinkDeveloper.SubmitFlinkJobInteractive_v2',
+    index=2,
+    containing_service=None,
+    input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._SUBMITFLINKJOBINTERACTIVE,
+    output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._SUBMITFLINKJOBINTERACTIVE_V2,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ValidateFlinkJob',
     full_name='developer.FlinkDeveloper.ValidateFlinkJob',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._VALIDATEFLINKJOB,
     output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._VALIDATEFLINKJOB,
@@ -75,7 +85,7 @@ _FLINKDEVELOPER = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ValidateFlinkJob_v2',
     full_name='developer.FlinkDeveloper.ValidateFlinkJob_v2',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=proto_dot_types_dot_request_dot_flink__developer__pb2._VALIDATEFLINKJOB_V2,
     output_type=proto_dot_types_dot_response_dot_flink__developer__pb2._VALIDATEFLINKJOB,
