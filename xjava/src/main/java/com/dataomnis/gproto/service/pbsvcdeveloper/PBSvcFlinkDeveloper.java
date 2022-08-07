@@ -26,22 +26,22 @@ public final class PBSvcFlinkDeveloper {
       "\n-proto/service/developer/flink_develope" +
       "r.proto\022\tdeveloper\032)proto/types/request/" +
       "flink_developer.proto\032*proto/types/respo" +
-      "nse/flink_developer.proto2\323\003\n\016FlinkDevel" +
+      "nse/flink_developer.proto2\325\003\n\016FlinkDevel" +
       "oper\022E\n\016SubmitFlinkJob\022\027.request.SubmitF" +
       "linkJob\032\030.response.SubmitFlinkJob\"\000\022j\n\031S" +
       "ubmitFlinkJobInteractive\022\".request.Submi" +
       "tFlinkJobInteractive\032#.response.SubmitFl" +
-      "inkJobInteractive\"\000(\0010\001\022n\n\034SubmitFlinkJo" +
+      "inkJobInteractive\"\000(\0010\001\022p\n\034SubmitFlinkJo" +
       "bInteractive_v2\022\".request.SubmitFlinkJob" +
       "Interactive\032&.response.SubmitFlinkJobInt" +
-      "eractive_v2\"\0000\001\022K\n\020ValidateFlinkJob\022\031.re" +
-      "quest.ValidateFlinkJob\032\032.response.Valida" +
-      "teFlinkJob\"\000\022Q\n\023ValidateFlinkJob_v2\022\034.re" +
-      "quest.ValidateFlinkJob_v2\032\032.response.Val" +
-      "idateFlinkJob\"\000B\200\001\n+com.dataomnis.gproto" +
-      ".service.pbsvcdeveloperB\023PBSvcFlinkDevel" +
-      "operP\000Z:github.com/DataWorkbench/gproto/" +
-      "xgo/service/pbsvcdeveloperb\006proto3"
+      "eractive_v2\"\000(\0010\001\022K\n\020ValidateFlinkJob\022\031." +
+      "request.ValidateFlinkJob\032\032.response.Vali" +
+      "dateFlinkJob\"\000\022Q\n\023ValidateFlinkJob_v2\022\034." +
+      "request.ValidateFlinkJob_v2\032\032.response.V" +
+      "alidateFlinkJob\"\000B\200\001\n+com.dataomnis.gpro" +
+      "to.service.pbsvcdeveloperB\023PBSvcFlinkDev" +
+      "eloperP\000Z:github.com/DataWorkbench/gprot" +
+      "o/xgo/service/pbsvcdeveloperb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

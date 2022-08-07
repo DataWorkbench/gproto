@@ -19,7 +19,7 @@ service FlinkDeveloper {
 
   rpc SubmitFlinkJobInteractive(stream request.SubmitFlinkJobInteractive) returns (stream response.SubmitFlinkJobInteractive){}
 
-  rpc SubmitFlinkJobInteractive_v2(request.SubmitFlinkJobInteractive) returns (stream response.SubmitFlinkJobInteractive_v2){}
+  rpc SubmitFlinkJobInteractive_v2(stream request.SubmitFlinkJobInteractive) returns (stream response.SubmitFlinkJobInteractive_v2){}
 
   rpc ValidateFlinkJob(request.ValidateFlinkJob) returns(response.ValidateFlinkJob) {}
 
