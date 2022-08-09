@@ -413,11 +413,11 @@ message MongoDbURL {
 
   // User specifies the username of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"user"
-  string user = 2 [ (validator.field).tags.string = { byte_len_gte: 1 , byte_len_lte: 64 } ];
+  string user = 2 ;
 
   // Password specifies the password of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"password"
-  string password = 3 [ (validator.field).tags.string = { byte_len_gte: 1, byte_len_lte: 64 } ];
+  string password = 3;
 
   // Database specifies the database name of db. Is Required. Length Min: 1, Length Max: 64.
   // @inject_tag: json:"database"
