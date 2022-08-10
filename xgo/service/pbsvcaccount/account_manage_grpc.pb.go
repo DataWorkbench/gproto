@@ -41,6 +41,7 @@ type AccountManageClient interface {
 	// Session API
 	CreateSession(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
 	CheckSession(ctx context.Context, in *pbrequest.CheckSession, opts ...grpc.CallOption) (*pbresponse.CheckSession, error)
+	CreateSessionAuth(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error)
 	// Notification API
 	ListNotifications(ctx context.Context, in *pbrequest.ListNotifications, opts ...grpc.CallOption) (*pbresponse.ListNotifications, error)
 	DescribeNotification(ctx context.Context, in *pbrequest.DescribeNotification, opts ...grpc.CallOption) (*pbresponse.DescribeNotification, error)
@@ -183,6 +184,15 @@ func (c *accountManageClient) CheckSession(ctx context.Context, in *pbrequest.Ch
 	return out, nil
 }
 
+func (c *accountManageClient) CreateSessionAuth(ctx context.Context, in *pbrequest.CreateSession, opts ...grpc.CallOption) (*pbresponse.CreateSession, error) {
+	out := new(pbresponse.CreateSession)
+	err := c.cc.Invoke(ctx, "/account.AccountManage/CreateSessionAuth", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *accountManageClient) ListNotifications(ctx context.Context, in *pbrequest.ListNotifications, opts ...grpc.CallOption) (*pbresponse.ListNotifications, error) {
 	out := new(pbresponse.ListNotifications)
 	err := c.cc.Invoke(ctx, "/account.AccountManage/ListNotifications", in, out, opts...)
@@ -248,6 +258,7 @@ type AccountManageServer interface {
 	// Session API
 	CreateSession(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
 	CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error)
+	CreateSessionAuth(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error)
 	// Notification API
 	ListNotifications(context.Context, *pbrequest.ListNotifications) (*pbresponse.ListNotifications, error)
 	DescribeNotification(context.Context, *pbrequest.DescribeNotification) (*pbresponse.DescribeNotification, error)
@@ -302,6 +313,9 @@ func (UnimplementedAccountManageServer) CreateSession(context.Context, *pbreques
 }
 func (UnimplementedAccountManageServer) CheckSession(context.Context, *pbrequest.CheckSession) (*pbresponse.CheckSession, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckSession not implemented")
+}
+func (UnimplementedAccountManageServer) CreateSessionAuth(context.Context, *pbrequest.CreateSession) (*pbresponse.CreateSession, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSessionAuth not implemented")
 }
 func (UnimplementedAccountManageServer) ListNotifications(context.Context, *pbrequest.ListNotifications) (*pbresponse.ListNotifications, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListNotifications not implemented")
@@ -583,6 +597,24 @@ func _AccountManage_CheckSession_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AccountManage_CreateSessionAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.CreateSession)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AccountManageServer).CreateSessionAuth(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/account.AccountManage/CreateSessionAuth",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AccountManageServer).CreateSessionAuth(ctx, req.(*pbrequest.CreateSession))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _AccountManage_ListNotifications_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(pbrequest.ListNotifications)
 	if err := dec(in); err != nil {
@@ -735,6 +767,10 @@ var AccountManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CheckSession",
 			Handler:    _AccountManage_CheckSession_Handler,
+		},
+		{
+			MethodName: "CreateSessionAuth",
+			Handler:    _AccountManage_CreateSessionAuth_Handler,
 		},
 		{
 			MethodName: "ListNotifications",

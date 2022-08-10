@@ -692,7 +692,7 @@ type User struct {
 	Password string `protobuf:"bytes,6,opt,name=password,proto3" json:"password" gorm:"column:password"`
 	// The user source. 1 indicates the user is add in local.
 	// And 2 indicates the user is add by enfei.
-	Source  User_Source `protobuf:"varint,9,opt,name=source,proto3,enum=model.User_Source" json:"source" gorm:"column:source"`
+	Source  User_Source `protobuf:"varint,9,opt,name=source,proto3,enum=model.User_Source" json:"source" gorm:"column:source;default:1"`
 	Created int64       `protobuf:"varint,7,opt,name=created,proto3" json:"created" gorm:"column:created;autoUpdateTime;"`
 	Updated int64       `protobuf:"varint,8,opt,name=updated,proto3" json:"updated" gorm:"column:updated;autoUpdateTime;"`
 }
