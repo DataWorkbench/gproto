@@ -34,6 +34,8 @@ service AccountManage {
   rpc CreateSession(request.CreateSession) returns (response.CreateSession) {}
   rpc CheckSession(request.CheckSession) returns (response.CheckSession) {}
 
+  rpc CreateSessionAuth(request.CreateSession) returns (response.CreateSession) {}
+
   // Notification API
   rpc ListNotifications(request.ListNotifications) returns (response.ListNotifications) {}
   rpc DescribeNotification(request.DescribeNotification) returns (response.DescribeNotification) {}

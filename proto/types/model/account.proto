@@ -153,7 +153,7 @@ message User {
 
   // The user source. 1 indicates the user is add in local.
   // And 2 indicates the user is add by enfei.
-  // @inject_tag: json:"source" gorm:"column:source"
+  // @inject_tag: json:"source" gorm:"column:source;default:1"
   Source source = 9;
 
   // @inject_tag: json:"created" gorm:"column:created;autoUpdateTime;"
