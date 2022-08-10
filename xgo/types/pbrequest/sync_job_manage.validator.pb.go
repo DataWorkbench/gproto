@@ -909,9 +909,6 @@ func (this *LoadSyncJobScheduleParameters) _xxx_xxx_Validator_Validate_job_id() 
 }
 
 func (this *LoadSyncJobScheduleParameters) _xxx_xxx_Validator_Validate_conf() error {
-	if !(this.Conf != nil) {
-		return protovalidator.FieldError2("LoadSyncJobScheduleParameters", "the value of field 'conf' cannot be null")
-	}
 	if dt, ok := interface{}(this.Conf).(interface{ Validate() error }); ok {
 		if err := dt.Validate(); err != nil {
 			return err

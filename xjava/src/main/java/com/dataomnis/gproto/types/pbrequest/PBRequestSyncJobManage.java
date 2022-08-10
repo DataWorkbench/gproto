@@ -20830,31 +20830,31 @@ public final class PBRequestSyncJobManage {
 
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      * @return Whether the conf field is set.
      */
     boolean hasConf();
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      * @return The conf.
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf();
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      */
     com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder();
   }
@@ -21066,11 +21066,11 @@ public final class PBRequestSyncJobManage {
     private com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf conf_;
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      * @return Whether the conf field is set.
      */
     @java.lang.Override
@@ -21079,11 +21079,11 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      * @return The conf.
      */
     @java.lang.Override
@@ -21092,11 +21092,11 @@ public final class PBRequestSyncJobManage {
     }
     /**
      * <pre>
-     * The conf set.
+     * The job conf, not required.
      * &#64;inject_tag: json:"conf"
      * </pre>
      *
-     * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+     * <code>.model.SyncJobConf conf = 3;</code>
      */
     @java.lang.Override
     public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
@@ -21663,11 +21663,11 @@ public final class PBRequestSyncJobManage {
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> confBuilder_;
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        * @return Whether the conf field is set.
        */
       public boolean hasConf() {
@@ -21675,11 +21675,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        * @return The conf.
        */
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf getConf() {
@@ -21691,11 +21691,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public Builder setConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
         if (confBuilder_ == null) {
@@ -21712,11 +21712,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public Builder setConf(
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder builderForValue) {
@@ -21731,11 +21731,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public Builder mergeConf(com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf value) {
         if (confBuilder_ == null) {
@@ -21754,11 +21754,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public Builder clearConf() {
         if (confBuilder_ == null) {
@@ -21773,11 +21773,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder getConfBuilder() {
         
@@ -21786,11 +21786,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       public com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder getConfOrBuilder() {
         if (confBuilder_ != null) {
@@ -21802,11 +21802,11 @@ public final class PBRequestSyncJobManage {
       }
       /**
        * <pre>
-       * The conf set.
+       * The job conf, not required.
        * &#64;inject_tag: json:"conf"
        * </pre>
        *
-       * <code>.model.SyncJobConf conf = 3 [(.validator.field) = { ... }</code>
+       * <code>.model.SyncJobConf conf = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConf.Builder, com.dataomnis.gproto.types.pbmodel.PBSyncManageSyncJob.SyncJobConfOrBuilder> 
@@ -22060,14 +22060,14 @@ public final class PBRequestSyncJobManage {
       "\tB&\342\337\037\"\022 \302\001\035J\000J\007versionJ\007createdJ\007update" +
       "d\022\017\n\007reverse\030\004 \001(\010\022\017\n\007version\030\006 \001(\t\022\017\n\007v" +
       "erbose\030\007 \001(\005\"6\n\017GenerateJobJson\022#\n\006job_i" +
-      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\232\001\n\035LoadSyn" +
+      "d\030\001 \001(\tB\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\"\215\001\n\035LoadSyn" +
       "cJobScheduleParameters\022%\n\010space_id\030\001 \001(\t" +
       "B\023\342\337\037\017\022\r\302\001\n\360\001\024\312\002\004wks-\022#\n\006job_id\030\002 \001(\tB\023\342" +
-      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022-\n\004conf\030\003 \001(\0132\022.model" +
-      ".SyncJobConfB\013\342\337\037\007\022\005\342\001\002\020\001Bu\n$com.dataomn" +
-      "is.gproto.types.pbrequestB\026PBRequestSync" +
-      "JobManageP\000Z3github.com/DataWorkbench/gp" +
-      "roto/xgo/types/pbrequestb\006proto3"
+      "\337\037\017\022\r\302\001\n\360\001\024\312\002\004syj-\022 \n\004conf\030\003 \001(\0132\022.model" +
+      ".SyncJobConfBu\n$com.dataomnis.gproto.typ" +
+      "es.pbrequestB\026PBRequestSyncJobManageP\000Z3" +
+      "github.com/DataWorkbench/gproto/xgo/type" +
+      "s/pbrequestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

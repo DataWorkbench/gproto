@@ -403,7 +403,7 @@ message LoadSyncJobScheduleParameters {
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 
-    // The conf set.
+    // The job conf, not required.
     // @inject_tag: json:"conf"
-    model.SyncJobConf conf = 3 [ (validator.field).tags.message = { not_null: true } ];
+    model.SyncJobConf conf = 3;
 }
