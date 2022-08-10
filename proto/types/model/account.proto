@@ -123,6 +123,7 @@ message User {
     SourceUnset = 0;
     Native = 1;
     EnFei = 2;
+    Ldap = 3;
   }
 
   // The id of user. Both in Dataomnis and IaaS.
