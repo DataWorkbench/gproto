@@ -93,4 +93,5 @@ service SyncJobManage {
 
     rpc ConvertSyncJobMode(request.ConvertSyncJobMode) returns (response.ConvertSyncJobMode) {}
 
+    rpc LoadSyncJobScheduleParameters(request.LoadSyncJobScheduleParameters) returns (response.LoadSyncJobScheduleParameters) {}
 }

@@ -82,3 +82,9 @@ message ConvertSyncJobMode {
     // @inject_tag: json:"job"
     string job = 1;
 }
+
+// ConvertSyncJobMode
+message LoadSyncJobScheduleParameters {
+    // @inject_tag: json:"items"
+    repeated string items = 1;
+}

@@ -392,3 +392,18 @@ message GenerateJobJson {
     // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
     string job_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
 }
+
+// LoadSyncJobScheduleParameters used as a request parameters for RPC.
+message LoadSyncJobScheduleParameters {
+    // The workspace id in HTTP Request-URI
+    // @inject_tag: json:"space_id" uri:"space_id" swaggerignore:"true"
+    string space_id = 1 [ (validator.field).tags.string = { byte_len_eq: 20; prefix: "wks-" } ];
+
+    // The sync job ID it belongs to.
+    // @inject_tag: json:"job_id" uri:"job_id" swaggerignore:"true"
+    string job_id = 2 [ (validator.field).tags.string = { byte_len_eq: 20, prefix: "syj-" } ];
+
+    // The conf set.
+    // @inject_tag: json:"conf"
+    model.SyncJobConf conf = 3 [ (validator.field).tags.message = { not_null: true } ];
+}
