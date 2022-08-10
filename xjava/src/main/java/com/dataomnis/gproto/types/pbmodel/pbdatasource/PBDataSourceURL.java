@@ -17951,7 +17951,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 2 [(.validator.field) = { ... }</code>
+     * <code>string user = 2;</code>
      * @return The user.
      */
     java.lang.String getUser();
@@ -17961,7 +17961,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 2 [(.validator.field) = { ... }</code>
+     * <code>string user = 2;</code>
      * @return The bytes for user.
      */
     com.google.protobuf.ByteString
@@ -17973,7 +17973,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 3 [(.validator.field) = { ... }</code>
+     * <code>string password = 3;</code>
      * @return The password.
      */
     java.lang.String getPassword();
@@ -17983,7 +17983,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 3 [(.validator.field) = { ... }</code>
+     * <code>string password = 3;</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
@@ -18200,7 +18200,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 2 [(.validator.field) = { ... }</code>
+     * <code>string user = 2;</code>
      * @return The user.
      */
     @java.lang.Override
@@ -18222,7 +18222,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"user"
      * </pre>
      *
-     * <code>string user = 2 [(.validator.field) = { ... }</code>
+     * <code>string user = 2;</code>
      * @return The bytes for user.
      */
     @java.lang.Override
@@ -18248,7 +18248,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 3 [(.validator.field) = { ... }</code>
+     * <code>string password = 3;</code>
      * @return The password.
      */
     @java.lang.Override
@@ -18270,7 +18270,7 @@ public final class PBDataSourceURL {
      * &#64;inject_tag: json:"password"
      * </pre>
      *
-     * <code>string password = 3 [(.validator.field) = { ... }</code>
+     * <code>string password = 3;</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -19070,7 +19070,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 2 [(.validator.field) = { ... }</code>
+       * <code>string user = 2;</code>
        * @return The user.
        */
       public java.lang.String getUser() {
@@ -19091,7 +19091,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 2 [(.validator.field) = { ... }</code>
+       * <code>string user = 2;</code>
        * @return The bytes for user.
        */
       public com.google.protobuf.ByteString
@@ -19113,7 +19113,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 2 [(.validator.field) = { ... }</code>
+       * <code>string user = 2;</code>
        * @param value The user to set.
        * @return This builder for chaining.
        */
@@ -19133,7 +19133,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 2 [(.validator.field) = { ... }</code>
+       * <code>string user = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUser() {
@@ -19148,7 +19148,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"user"
        * </pre>
        *
-       * <code>string user = 2 [(.validator.field) = { ... }</code>
+       * <code>string user = 2;</code>
        * @param value The bytes for user to set.
        * @return This builder for chaining.
        */
@@ -19171,7 +19171,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 3 [(.validator.field) = { ... }</code>
+       * <code>string password = 3;</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -19192,7 +19192,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 3 [(.validator.field) = { ... }</code>
+       * <code>string password = 3;</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -19214,7 +19214,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 3 [(.validator.field) = { ... }</code>
+       * <code>string password = 3;</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -19234,7 +19234,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 3 [(.validator.field) = { ... }</code>
+       * <code>string password = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
@@ -19249,7 +19249,7 @@ public final class PBDataSourceURL {
        * &#64;inject_tag: json:"password"
        * </pre>
        *
-       * <code>string password = 3 [(.validator.field) = { ... }</code>
+       * <code>string password = 3;</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -20718,17 +20718,17 @@ public final class PBDataSourceURL {
       "\001\n\020ElasticSearchURL\022\035\n\004host\030\001 \001(\tB\017\342\337\037\013\022" +
       "\t\302\001\006\220\002\001\230\002@\022\035\n\004port\030\002 \001(\005B\017\342\337\037\013\022\t\262\001\0068\200\200\004@" +
       "\000\022\014\n\004user\030\003 \001(\t\022\020\n\010password\030\004 \001(\t\022 \n\007ver" +
-      "sion\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\252\001\n\n" +
+      "sion\030\005 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@:\006\312\262\004\002\n\000\"\210\001\n\n" +
       "MongoDbURL\022/\n\005hosts\030\001 \003(\0132\020.datasource.H" +
-      "ostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\035\n\004user\030\002 \001(\tB\017\342\337\037\013\022" +
-      "\t\302\001\006\220\002\001\230\002@\022!\n\010password\030\003 \001(\tB\017\342\337\037\013\022\t\302\001\006\220" +
-      "\002\001\230\002@\022!\n\010database\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006\220\002\001\230\002@" +
-      ":\006\312\262\004\002\n\000\"U\n\010RedisURL\022/\n\005hosts\030\001 \003(\0132\020.da" +
-      "tasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\020\n\010passwor" +
-      "d\030\002 \001(\t:\006\312\262\004\002\n\000B\204\001\n/com.dataomnis.gproto" +
-      ".types.pbmodel.pbdatasourceB\017PBDataSourc" +
-      "eURLP\000Z>github.com/DataWorkbench/gproto/" +
-      "xgo/types/pbmodel/pbdatasourceb\006proto3"
+      "ostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\014\n\004user\030\002 \001(\t\022\020\n\010pas" +
+      "sword\030\003 \001(\t\022!\n\010database\030\004 \001(\tB\017\342\337\037\013\022\t\302\001\006" +
+      "\220\002\001\230\002@:\006\312\262\004\002\n\000\"U\n\010RedisURL\022/\n\005hosts\030\001 \003(" +
+      "\0132\020.datasource.HostB\016\342\337\037\n\022\010\352\001\0058\200\001@\001\022\020\n\010p" +
+      "assword\030\002 \001(\t:\006\312\262\004\002\n\000B\204\001\n/com.dataomnis." +
+      "gproto.types.pbmodel.pbdatasourceB\017PBDat" +
+      "aSourceURLP\000Z>github.com/DataWorkbench/g" +
+      "proto/xgo/types/pbmodel/pbdatasourceb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

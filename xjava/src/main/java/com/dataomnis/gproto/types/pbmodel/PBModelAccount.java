@@ -5703,6 +5703,29 @@ public final class PBModelAccount {
 
     /**
      * <pre>
+     * The user source. 1 indicates the user is add in local.
+     * And 2 indicates the user is add by third part.
+     * &#64;inject_tag: json:"source" gorm:"column:source"
+     * </pre>
+     *
+     * <code>.model.User.Source source = 9;</code>
+     * @return The enum numeric value on the wire for source.
+     */
+    int getSourceValue();
+    /**
+     * <pre>
+     * The user source. 1 indicates the user is add in local.
+     * And 2 indicates the user is add by third part.
+     * &#64;inject_tag: json:"source" gorm:"column:source"
+     * </pre>
+     *
+     * <code>.model.User.Source source = 9;</code>
+     * @return The source.
+     */
+    com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source getSource();
+
+    /**
+     * <pre>
      * &#64;inject_tag: json:"created" gorm:"column:created;autoUpdateTime;"
      * </pre>
      *
@@ -5744,6 +5767,7 @@ public final class PBModelAccount {
       role_ = 0;
       status_ = 0;
       password_ = "";
+      source_ = 0;
     }
 
     @java.lang.Override
@@ -5820,6 +5844,12 @@ public final class PBModelAccount {
             case 64: {
 
               updated_ = input.readInt64();
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+
+              source_ = rawValue;
               break;
             }
             default: {
@@ -6122,6 +6152,123 @@ public final class PBModelAccount {
       // @@protoc_insertion_point(enum_scope:model.User.Role)
     }
 
+    /**
+     * Protobuf enum {@code model.User.Source}
+     */
+    public enum Source
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SourceUnset = 0;</code>
+       */
+      SourceUnset(0),
+      /**
+       * <code>Native = 1;</code>
+       */
+      Native(1),
+      /**
+       * <code>EnFei = 2;</code>
+       */
+      EnFei(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>SourceUnset = 0;</code>
+       */
+      public static final int SourceUnset_VALUE = 0;
+      /**
+       * <code>Native = 1;</code>
+       */
+      public static final int Native_VALUE = 1;
+      /**
+       * <code>EnFei = 2;</code>
+       */
+      public static final int EnFei_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Source valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Source forNumber(int value) {
+        switch (value) {
+          case 0: return SourceUnset;
+          case 1: return Native;
+          case 2: return EnFei;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Source>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          Source> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+              public Source findValueByNumber(int number) {
+                return Source.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.getDescriptor().getEnumTypes().get(2);
+      }
+
+      private static final Source[] VALUES = values();
+
+      public static Source valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Source(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:model.User.Source)
+    }
+
     public static final int USER_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object userId_;
     /**
@@ -6374,6 +6521,37 @@ public final class PBModelAccount {
       }
     }
 
+    public static final int SOURCE_FIELD_NUMBER = 9;
+    private int source_;
+    /**
+     * <pre>
+     * The user source. 1 indicates the user is add in local.
+     * And 2 indicates the user is add by third part.
+     * &#64;inject_tag: json:"source" gorm:"column:source"
+     * </pre>
+     *
+     * <code>.model.User.Source source = 9;</code>
+     * @return The enum numeric value on the wire for source.
+     */
+    @java.lang.Override public int getSourceValue() {
+      return source_;
+    }
+    /**
+     * <pre>
+     * The user source. 1 indicates the user is add in local.
+     * And 2 indicates the user is add by third part.
+     * &#64;inject_tag: json:"source" gorm:"column:source"
+     * </pre>
+     *
+     * <code>.model.User.Source source = 9;</code>
+     * @return The source.
+     */
+    @java.lang.Override public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source getSource() {
+      @SuppressWarnings("deprecation")
+      com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.valueOf(source_);
+      return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.UNRECOGNIZED : result;
+    }
+
     public static final int CREATED_FIELD_NUMBER = 7;
     private long created_;
     /**
@@ -6442,6 +6620,9 @@ public final class PBModelAccount {
       if (updated_ != 0L) {
         output.writeInt64(8, updated_);
       }
+      if (source_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.SourceUnset.getNumber()) {
+        output.writeEnum(9, source_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6479,6 +6660,10 @@ public final class PBModelAccount {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, updated_);
       }
+      if (source_ != com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.SourceUnset.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, source_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6504,6 +6689,7 @@ public final class PBModelAccount {
       if (status_ != other.status_) return false;
       if (!getPassword()
           .equals(other.getPassword())) return false;
+      if (source_ != other.source_) return false;
       if (getCreated()
           != other.getCreated()) return false;
       if (getUpdated()
@@ -6531,6 +6717,8 @@ public final class PBModelAccount {
       hash = (53 * hash) + status_;
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + source_;
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
@@ -6686,6 +6874,8 @@ public final class PBModelAccount {
 
         password_ = "";
 
+        source_ = 0;
+
         created_ = 0L;
 
         updated_ = 0L;
@@ -6722,6 +6912,7 @@ public final class PBModelAccount {
         result.role_ = role_;
         result.status_ = status_;
         result.password_ = password_;
+        result.source_ = source_;
         result.created_ = created_;
         result.updated_ = updated_;
         onBuilt();
@@ -6793,6 +6984,9 @@ public final class PBModelAccount {
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
           onChanged();
+        }
+        if (other.source_ != 0) {
+          setSourceValue(other.getSourceValue());
         }
         if (other.getCreated() != 0L) {
           setCreated(other.getCreated());
@@ -7392,6 +7586,90 @@ public final class PBModelAccount {
   checkByteStringIsUtf8(value);
         
         password_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int source_ = 0;
+      /**
+       * <pre>
+       * The user source. 1 indicates the user is add in local.
+       * And 2 indicates the user is add by third part.
+       * &#64;inject_tag: json:"source" gorm:"column:source"
+       * </pre>
+       *
+       * <code>.model.User.Source source = 9;</code>
+       * @return The enum numeric value on the wire for source.
+       */
+      @java.lang.Override public int getSourceValue() {
+        return source_;
+      }
+      /**
+       * <pre>
+       * The user source. 1 indicates the user is add in local.
+       * And 2 indicates the user is add by third part.
+       * &#64;inject_tag: json:"source" gorm:"column:source"
+       * </pre>
+       *
+       * <code>.model.User.Source source = 9;</code>
+       * @param value The enum numeric value on the wire for source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceValue(int value) {
+        
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user source. 1 indicates the user is add in local.
+       * And 2 indicates the user is add by third part.
+       * &#64;inject_tag: json:"source" gorm:"column:source"
+       * </pre>
+       *
+       * <code>.model.User.Source source = 9;</code>
+       * @return The source.
+       */
+      @java.lang.Override
+      public com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source getSource() {
+        @SuppressWarnings("deprecation")
+        com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source result = com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.valueOf(source_);
+        return result == null ? com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The user source. 1 indicates the user is add in local.
+       * And 2 indicates the user is add by third part.
+       * &#64;inject_tag: json:"source" gorm:"column:source"
+       * </pre>
+       *
+       * <code>.model.User.Source source = 9;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSource(com.dataomnis.gproto.types.pbmodel.PBModelAccount.User.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        source_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The user source. 1 indicates the user is add in local.
+       * And 2 indicates the user is add by third part.
+       * &#64;inject_tag: json:"source" gorm:"column:source"
+       * </pre>
+       *
+       * <code>.model.User.Source source = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSource() {
+        
+        source_ = 0;
         onChanged();
         return this;
       }
@@ -11471,36 +11749,38 @@ public final class PBModelAccount {
       "\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
       "\000\"V\n\004Type\022\r\n\tTypeUnset\020\000\022\016\n\nSuperAdmin\020\001" +
       "\022\t\n\005Admin\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\022\r\n\tDe" +
-      "veloper\020\005\"\367\002\n\004User\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037" +
+      "veloper\020\005\"\315\003\n\004User\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037" +
       "\007\022\005\302\001\002\"\000\022\031\n\004name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\r\n\005e" +
       "mail\030\003 \001(\t\022-\n\004role\030\004 \001(\0162\020.model.User.Ro" +
       "leB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\006status\030\005 \001(\0162\022.mode" +
       "l.User.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\020\n\010password" +
-      "\030\006 \001(\t\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007" +
-      "updated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\">\n\006Status\022\017\n\013" +
-      "StatusUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006active\020\002\022\n" +
-      "\n\006banned\020\003\"7\n\004Role\022\r\n\tTypeUnset\020\000\022\010\n\004Use" +
-      "r\020\001\022\t\n\005Admin\020\002\022\013\n\007Visitor\020\003\"\371\003\n\tAccessKe" +
-      "y\022\"\n\raccess_key_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022&\n" +
-      "\021secret_access_key\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\032\n" +
-      "\005owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\031\n\004name\030\004 \001(\tB" +
-      "\013\342\337\037\007\022\005\302\001\002\"\000\022>\n\ncontroller\030\005 \001(\0162\033.model" +
-      ".AccessKey.ControllerB\r\342\337\037\t\022\007\332\001\0040\000X\001\0226\n\006" +
-      "status\030\006 \001(\0162\027.model.AccessKey.StatusB\r\342" +
-      "\337\037\t\022\007\332\001\0040\000X\001\022\"\n\013description\030\007 \001(\tB\r\342\337\037\t\022" +
-      "\007\302\001\004\310\001\200\002\022\025\n\rip_white_list\030\010 \001(\t\022\034\n\007creat" +
-      "ed\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n \001(\003B\013" +
-      "\342\337\037\007\022\005\262\001\0020\000\"7\n\nController\022\023\n\017ControllerU" +
-      "nset\020\000\022\n\n\006pitrix\020\001\022\010\n\004self\020\002\"A\n\006Status\022\020" +
-      "\n\014_StatusUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006active\020" +
-      "\002\022\014\n\010inactive\020\003\"\227\001\n\014Notification\022\r\n\005owne" +
-      "r\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\023\n\013des" +
-      "cription\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\034\n\007created" +
-      "\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001(\003B\013\342\337" +
-      "\037\007\022\005\262\001\0020\000Bi\n\"com.dataomnis.gproto.types." +
-      "pbmodelB\016PBModelAccountP\000Z1github.com/Da" +
-      "taWorkbench/gproto/xgo/types/pbmodelb\006pr" +
-      "oto3"
+      "\030\006 \001(\t\022\"\n\006source\030\t \001(\0162\022.model.User.Sour" +
+      "ce\022\034\n\007created\030\007 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007upda" +
+      "ted\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\">\n\006Status\022\017\n\013Stat" +
+      "usUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006active\020\002\022\n\n\006ba" +
+      "nned\020\003\"7\n\004Role\022\r\n\tTypeUnset\020\000\022\010\n\004User\020\001\022" +
+      "\t\n\005Admin\020\002\022\013\n\007Visitor\020\003\"0\n\006Source\022\017\n\013Sou" +
+      "rceUnset\020\000\022\n\n\006Native\020\001\022\t\n\005EnFei\020\002\"\371\003\n\tAc" +
+      "cessKey\022\"\n\raccess_key_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022&\n\021secret_access_key\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
+      "\002\"\000\022\032\n\005owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\031\n\004name\030" +
+      "\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022>\n\ncontroller\030\005 \001(\0162\033" +
+      ".model.AccessKey.ControllerB\r\342\337\037\t\022\007\332\001\0040\000" +
+      "X\001\0226\n\006status\030\006 \001(\0162\027.model.AccessKey.Sta" +
+      "tusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\"\n\013description\030\007 \001(\tB" +
+      "\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022\025\n\rip_white_list\030\010 \001(\t\022\034\n" +
+      "\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n" +
+      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"7\n\nController\022\023\n\017Contr" +
+      "ollerUnset\020\000\022\n\n\006pitrix\020\001\022\010\n\004self\020\002\"A\n\006St" +
+      "atus\022\020\n\014_StatusUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006a" +
+      "ctive\020\002\022\014\n\010inactive\020\003\"\227\001\n\014Notification\022\r" +
+      "\n\005owner\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022" +
+      "\023\n\013description\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\034\n\007c" +
+      "reated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001" +
+      "(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.dataomnis.gproto." +
+      "types.pbmodelB\016PBModelAccountP\000Z1github." +
+      "com/DataWorkbench/gproto/xgo/types/pbmod" +
+      "elb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11542,7 +11822,7 @@ public final class PBModelAccount {
     internal_static_model_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_User_descriptor,
-        new java.lang.String[] { "UserId", "Name", "Email", "Role", "Status", "Password", "Created", "Updated", });
+        new java.lang.String[] { "UserId", "Name", "Email", "Role", "Status", "Password", "Source", "Created", "Updated", });
     internal_static_model_AccessKey_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_model_AccessKey_fieldAccessorTable = new
