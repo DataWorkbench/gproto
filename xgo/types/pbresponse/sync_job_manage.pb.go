@@ -503,6 +503,54 @@ func (x *ConvertSyncJobMode) GetJob() string {
 	return ""
 }
 
+// ConvertSyncJobMode
+type LoadSyncJobScheduleParameters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Items []string `protobuf:"bytes,1,rep,name=items,proto3" json:"items"`
+}
+
+func (x *LoadSyncJobScheduleParameters) Reset() {
+	*x = LoadSyncJobScheduleParameters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LoadSyncJobScheduleParameters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoadSyncJobScheduleParameters) ProtoMessage() {}
+
+func (x *LoadSyncJobScheduleParameters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_response_sync_job_manage_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoadSyncJobScheduleParameters.ProtoReflect.Descriptor instead.
+func (*LoadSyncJobScheduleParameters) Descriptor() ([]byte, []int) {
+	return file_proto_types_response_sync_job_manage_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *LoadSyncJobScheduleParameters) GetItems() []string {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
 var File_proto_types_response_sync_job_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_response_sync_job_manage_proto_rawDesc = []byte{
@@ -557,15 +605,18 @@ var file_proto_types_response_sync_job_manage_proto_rawDesc = []byte{
 	0x6f, 0x62, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x22, 0x26, 0x0a, 0x12, 0x43, 0x6f, 0x6e, 0x76,
 	0x65, 0x72, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x10,
 	0x0a, 0x03, 0x6a, 0x6f, 0x62, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6a, 0x6f, 0x62,
-	0x42, 0x78, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69,
-	0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70,
-	0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x17, 0x50, 0x42, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61,
-	0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f,
-	0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x33,
+	0x22, 0x35, 0x0a, 0x1d, 0x4c, 0x6f, 0x61, 0x64, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x53,
+	0x63, 0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72,
+	0x73, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09,
+	0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x42, 0x78, 0x0a, 0x25, 0x63, 0x6f, 0x6d, 0x2e, 0x64,
+	0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
+	0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x42, 0x17, 0x50, 0x42, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x53, 0x79, 0x6e, 0x63,
+	0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00, 0x5a, 0x34, 0x67, 0x69, 0x74,
+	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b,
+	0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f,
+	0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -580,29 +631,30 @@ func file_proto_types_response_sync_job_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_response_sync_job_manage_proto_rawDescData
 }
 
-var file_proto_types_response_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_proto_types_response_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_proto_types_response_sync_job_manage_proto_goTypes = []interface{}{
-	(*ListSyncJobs)(nil),            // 0: response.ListSyncJobs
-	(*CreateSyncJob)(nil),           // 1: response.CreateSyncJob
-	(*DescribeSyncJob)(nil),         // 2: response.DescribeSyncJob
-	(*GetSyncJobConf)(nil),          // 3: response.GetSyncJobConf
-	(*GetSyncJobSchedule)(nil),      // 4: response.GetSyncJobSchedule
-	(*ListReleaseSyncJobs)(nil),     // 5: response.ListReleaseSyncJobs
-	(*ListSyncJobVersions)(nil),     // 6: response.ListSyncJobVersions
-	(*GenerateJobJson)(nil),         // 7: response.GenerateJobJson
-	(*ConvertSyncJobMode)(nil),      // 8: response.ConvertSyncJobMode
-	(*pbmodel.SyncJob)(nil),         // 9: model.SyncJob
-	(*pbmodel.SyncJobConf)(nil),     // 10: model.SyncJobConf
-	(*pbmodel.SyncJobSchedule)(nil), // 11: model.SyncJobSchedule
-	(*pbmodel.SyncJobRelease)(nil),  // 12: model.SyncJobRelease
+	(*ListSyncJobs)(nil),                  // 0: response.ListSyncJobs
+	(*CreateSyncJob)(nil),                 // 1: response.CreateSyncJob
+	(*DescribeSyncJob)(nil),               // 2: response.DescribeSyncJob
+	(*GetSyncJobConf)(nil),                // 3: response.GetSyncJobConf
+	(*GetSyncJobSchedule)(nil),            // 4: response.GetSyncJobSchedule
+	(*ListReleaseSyncJobs)(nil),           // 5: response.ListReleaseSyncJobs
+	(*ListSyncJobVersions)(nil),           // 6: response.ListSyncJobVersions
+	(*GenerateJobJson)(nil),               // 7: response.GenerateJobJson
+	(*ConvertSyncJobMode)(nil),            // 8: response.ConvertSyncJobMode
+	(*LoadSyncJobScheduleParameters)(nil), // 9: response.LoadSyncJobScheduleParameters
+	(*pbmodel.SyncJob)(nil),               // 10: model.SyncJob
+	(*pbmodel.SyncJobConf)(nil),           // 11: model.SyncJobConf
+	(*pbmodel.SyncJobSchedule)(nil),       // 12: model.SyncJobSchedule
+	(*pbmodel.SyncJobRelease)(nil),        // 13: model.SyncJobRelease
 }
 var file_proto_types_response_sync_job_manage_proto_depIdxs = []int32{
-	9,  // 0: response.ListSyncJobs.infos:type_name -> model.SyncJob
-	9,  // 1: response.DescribeSyncJob.info:type_name -> model.SyncJob
-	10, // 2: response.GetSyncJobConf.conf:type_name -> model.SyncJobConf
-	11, // 3: response.GetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
-	12, // 4: response.ListReleaseSyncJobs.infos:type_name -> model.SyncJobRelease
-	9,  // 5: response.ListSyncJobVersions.infos:type_name -> model.SyncJob
+	10, // 0: response.ListSyncJobs.infos:type_name -> model.SyncJob
+	10, // 1: response.DescribeSyncJob.info:type_name -> model.SyncJob
+	11, // 2: response.GetSyncJobConf.conf:type_name -> model.SyncJobConf
+	12, // 3: response.GetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
+	13, // 4: response.ListReleaseSyncJobs.infos:type_name -> model.SyncJobRelease
+	10, // 5: response.ListSyncJobVersions.infos:type_name -> model.SyncJob
 	6,  // [6:6] is the sub-list for method output_type
 	6,  // [6:6] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -724,6 +776,18 @@ func file_proto_types_response_sync_job_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_response_sync_job_manage_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LoadSyncJobScheduleParameters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -731,7 +795,7 @@ func file_proto_types_response_sync_job_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_response_sync_job_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

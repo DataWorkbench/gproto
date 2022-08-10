@@ -152,3 +152,11 @@ func (this *ConvertSyncJobMode) Validate() error {
 	}
 	return nil
 }
+
+// Set default value for message response.LoadSyncJobScheduleParameters
+func (this *LoadSyncJobScheduleParameters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	return nil
+}

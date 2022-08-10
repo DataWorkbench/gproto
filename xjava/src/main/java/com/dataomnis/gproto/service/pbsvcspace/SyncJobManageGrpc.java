@@ -669,6 +669,37 @@ public final class SyncJobManageGrpc {
     return getConvertSyncJobModeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> getLoadSyncJobScheduleParametersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LoadSyncJobScheduleParameters",
+      requestType = com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters.class,
+      responseType = com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters,
+      com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> getLoadSyncJobScheduleParametersMethod() {
+    io.grpc.MethodDescriptor<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> getLoadSyncJobScheduleParametersMethod;
+    if ((getLoadSyncJobScheduleParametersMethod = SyncJobManageGrpc.getLoadSyncJobScheduleParametersMethod) == null) {
+      synchronized (SyncJobManageGrpc.class) {
+        if ((getLoadSyncJobScheduleParametersMethod = SyncJobManageGrpc.getLoadSyncJobScheduleParametersMethod) == null) {
+          SyncJobManageGrpc.getLoadSyncJobScheduleParametersMethod = getLoadSyncJobScheduleParametersMethod =
+              io.grpc.MethodDescriptor.<com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters, com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LoadSyncJobScheduleParameters"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters.getDefaultInstance()))
+              .setSchemaDescriptor(new SyncJobManageMethodDescriptorSupplier("LoadSyncJobScheduleParameters"))
+              .build();
+        }
+      }
+    }
+    return getLoadSyncJobScheduleParametersMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -939,6 +970,13 @@ public final class SyncJobManageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getConvertSyncJobModeMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void loadSyncJobScheduleParameters(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLoadSyncJobScheduleParametersMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -1088,6 +1126,13 @@ public final class SyncJobManageGrpc {
                 com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode,
                 com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode>(
                   this, METHODID_CONVERT_SYNC_JOB_MODE)))
+          .addMethod(
+            getLoadSyncJobScheduleParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters,
+                com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters>(
+                  this, METHODID_LOAD_SYNC_JOB_SCHEDULE_PARAMETERS)))
           .build();
     }
   }
@@ -1348,6 +1393,14 @@ public final class SyncJobManageGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getConvertSyncJobModeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void loadSyncJobScheduleParameters(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters request,
+        io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoadSyncJobScheduleParametersMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1584,6 +1637,13 @@ public final class SyncJobManageGrpc {
     public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode convertSyncJobMode(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getConvertSyncJobModeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters loadSyncJobScheduleParameters(com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoadSyncJobScheduleParametersMethod(), getCallOptions(), request);
     }
   }
 
@@ -1843,6 +1903,14 @@ public final class SyncJobManageGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getConvertSyncJobModeMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters> loadSyncJobScheduleParameters(
+        com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoadSyncJobScheduleParametersMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SYNC_JOBS = 0;
@@ -1866,6 +1934,7 @@ public final class SyncJobManageGrpc {
   private static final int METHODID_GET_SYNC_JOB_VERSION_SCHEDULE = 18;
   private static final int METHODID_GENERATE_JOB_JSON = 19;
   private static final int METHODID_CONVERT_SYNC_JOB_MODE = 20;
+  private static final int METHODID_LOAD_SYNC_JOB_SCHEDULE_PARAMETERS = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1968,6 +2037,10 @@ public final class SyncJobManageGrpc {
           serviceImpl.convertSyncJobMode((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.ConvertSyncJobMode) request,
               (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.ConvertSyncJobMode>) responseObserver);
           break;
+        case METHODID_LOAD_SYNC_JOB_SCHEDULE_PARAMETERS:
+          serviceImpl.loadSyncJobScheduleParameters((com.dataomnis.gproto.types.pbrequest.PBRequestSyncJobManage.LoadSyncJobScheduleParameters) request,
+              (io.grpc.stub.StreamObserver<com.dataomnis.gproto.types.pbresponse.PBResponseSyncJobManage.LoadSyncJobScheduleParameters>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2050,6 +2123,7 @@ public final class SyncJobManageGrpc {
               .addMethod(getGetSyncJobVersionScheduleMethod())
               .addMethod(getGenerateJobJsonMethod())
               .addMethod(getConvertSyncJobModeMethod())
+              .addMethod(getLoadSyncJobScheduleParametersMethod())
               .build();
         }
       }

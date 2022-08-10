@@ -78,6 +78,7 @@ type SyncJobManageClient interface {
 	// Generate Job Json
 	GenerateJobJson(ctx context.Context, in *pbrequest.GenerateJobJson, opts ...grpc.CallOption) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(ctx context.Context, in *pbrequest.ConvertSyncJobMode, opts ...grpc.CallOption) (*pbresponse.ConvertSyncJobMode, error)
+	LoadSyncJobScheduleParameters(ctx context.Context, in *pbrequest.LoadSyncJobScheduleParameters, opts ...grpc.CallOption) (*pbresponse.LoadSyncJobScheduleParameters, error)
 }
 
 type syncJobManageClient struct {
@@ -277,6 +278,15 @@ func (c *syncJobManageClient) ConvertSyncJobMode(ctx context.Context, in *pbrequ
 	return out, nil
 }
 
+func (c *syncJobManageClient) LoadSyncJobScheduleParameters(ctx context.Context, in *pbrequest.LoadSyncJobScheduleParameters, opts ...grpc.CallOption) (*pbresponse.LoadSyncJobScheduleParameters, error) {
+	out := new(pbresponse.LoadSyncJobScheduleParameters)
+	err := c.cc.Invoke(ctx, "/spacemanager.SyncJobManage/LoadSyncJobScheduleParameters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SyncJobManageServer is the server API for SyncJobManage service.
 // All implementations must embed UnimplementedSyncJobManageServer
 // for forward compatibility
@@ -334,6 +344,7 @@ type SyncJobManageServer interface {
 	// Generate Job Json
 	GenerateJobJson(context.Context, *pbrequest.GenerateJobJson) (*pbresponse.GenerateJobJson, error)
 	ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error)
+	LoadSyncJobScheduleParameters(context.Context, *pbrequest.LoadSyncJobScheduleParameters) (*pbresponse.LoadSyncJobScheduleParameters, error)
 	mustEmbedUnimplementedSyncJobManageServer()
 }
 
@@ -403,6 +414,9 @@ func (UnimplementedSyncJobManageServer) GenerateJobJson(context.Context, *pbrequ
 }
 func (UnimplementedSyncJobManageServer) ConvertSyncJobMode(context.Context, *pbrequest.ConvertSyncJobMode) (*pbresponse.ConvertSyncJobMode, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConvertSyncJobMode not implemented")
+}
+func (UnimplementedSyncJobManageServer) LoadSyncJobScheduleParameters(context.Context, *pbrequest.LoadSyncJobScheduleParameters) (*pbresponse.LoadSyncJobScheduleParameters, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LoadSyncJobScheduleParameters not implemented")
 }
 func (UnimplementedSyncJobManageServer) mustEmbedUnimplementedSyncJobManageServer() {}
 
@@ -795,6 +809,24 @@ func _SyncJobManage_ConvertSyncJobMode_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SyncJobManage_LoadSyncJobScheduleParameters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(pbrequest.LoadSyncJobScheduleParameters)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SyncJobManageServer).LoadSyncJobScheduleParameters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/spacemanager.SyncJobManage/LoadSyncJobScheduleParameters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SyncJobManageServer).LoadSyncJobScheduleParameters(ctx, req.(*pbrequest.LoadSyncJobScheduleParameters))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // SyncJobManage_ServiceDesc is the grpc.ServiceDesc for SyncJobManage service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -885,6 +917,10 @@ var SyncJobManage_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConvertSyncJobMode",
 			Handler:    _SyncJobManage_ConvertSyncJobMode_Handler,
+		},
+		{
+			MethodName: "LoadSyncJobScheduleParameters",
+			Handler:    _SyncJobManage_LoadSyncJobScheduleParameters_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

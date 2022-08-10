@@ -96,3 +96,11 @@ func (this *ConvertSyncJobMode) SetDefaults() {
 	}
 	return
 }
+
+// Set default value for message response.LoadSyncJobScheduleParameters
+func (this *LoadSyncJobScheduleParameters) SetDefaults() {
+	if this == nil {
+		return
+	}
+	return
+}

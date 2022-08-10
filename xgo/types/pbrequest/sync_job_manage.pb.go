@@ -1428,6 +1428,73 @@ func (x *GenerateJobJson) GetJobId() string {
 	return ""
 }
 
+// LoadSyncJobScheduleParameters used as a request parameters for RPC.
+type LoadSyncJobScheduleParameters struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// The workspace id in HTTP Request-URI
+	SpaceId string `protobuf:"bytes,1,opt,name=space_id,json=spaceId,proto3" json:"space_id" uri:"space_id" swaggerignore:"true"`
+	// The sync job ID it belongs to.
+	JobId string `protobuf:"bytes,2,opt,name=job_id,json=jobId,proto3" json:"job_id" uri:"job_id" swaggerignore:"true"`
+	// The conf set.
+	Conf *pbmodel.SyncJobConf `protobuf:"bytes,3,opt,name=conf,proto3" json:"conf"`
+}
+
+func (x *LoadSyncJobScheduleParameters) Reset() {
+	*x = LoadSyncJobScheduleParameters{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LoadSyncJobScheduleParameters) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoadSyncJobScheduleParameters) ProtoMessage() {}
+
+func (x *LoadSyncJobScheduleParameters) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_types_request_sync_job_manage_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoadSyncJobScheduleParameters.ProtoReflect.Descriptor instead.
+func (*LoadSyncJobScheduleParameters) Descriptor() ([]byte, []int) {
+	return file_proto_types_request_sync_job_manage_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *LoadSyncJobScheduleParameters) GetSpaceId() string {
+	if x != nil {
+		return x.SpaceId
+	}
+	return ""
+}
+
+func (x *LoadSyncJobScheduleParameters) GetJobId() string {
+	if x != nil {
+		return x.JobId
+	}
+	return ""
+}
+
+func (x *LoadSyncJobScheduleParameters) GetConf() *pbmodel.SyncJobConf {
+	if x != nil {
+		return x.Conf
+	}
+	return nil
+}
+
 var File_proto_types_request_sync_job_manage_proto protoreflect.FileDescriptor
 
 var file_proto_types_request_sync_job_manage_proto_rawDesc = []byte{
@@ -1676,15 +1743,26 @@ var file_proto_types_request_sync_job_manage_proto_rawDesc = []byte{
 	0x3d, 0x0a, 0x0f, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4a, 0x6f, 0x62, 0x4a, 0x73,
 	0x6f, 0x6e, 0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
-	0xca, 0x02, 0x04, 0x73, 0x79, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x42, 0x75,
-	0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e, 0x69, 0x73, 0x2e,
-	0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x62, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42, 0x16, 0x50, 0x42, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x50, 0x00,
-	0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x44, 0x61, 0x74,
-	0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70, 0x62, 0x72, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0xca, 0x02, 0x04, 0x73, 0x79, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x22, 0xb0,
+	0x01, 0x0a, 0x1d, 0x4c, 0x6f, 0x61, 0x64, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x53, 0x63,
+	0x68, 0x65, 0x64, 0x75, 0x6c, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x65, 0x74, 0x65, 0x72, 0x73,
+	0x12, 0x2e, 0x0a, 0x08, 0x73, 0x70, 0x61, 0x63, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14,
+	0xca, 0x02, 0x04, 0x77, 0x6b, 0x73, 0x2d, 0x52, 0x07, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x64,
+	0x12, 0x2a, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x42, 0x13, 0xe2, 0xdf, 0x1f, 0x0f, 0x12, 0x0d, 0xc2, 0x01, 0x0a, 0xf0, 0x01, 0x14, 0xca, 0x02,
+	0x04, 0x73, 0x79, 0x6a, 0x2d, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x33, 0x0a, 0x04,
+	0x63, 0x6f, 0x6e, 0x66, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x2e, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x43, 0x6f, 0x6e, 0x66, 0x42, 0x0b,
+	0xe2, 0xdf, 0x1f, 0x07, 0x12, 0x05, 0xe2, 0x01, 0x02, 0x10, 0x01, 0x52, 0x04, 0x63, 0x6f, 0x6e,
+	0x66, 0x42, 0x75, 0x0a, 0x24, 0x63, 0x6f, 0x6d, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x6f, 0x6d, 0x6e,
+	0x69, 0x73, 0x2e, 0x67, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
+	0x70, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x42, 0x16, 0x50, 0x42, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x53, 0x79, 0x6e, 0x63, 0x4a, 0x6f, 0x62, 0x4d, 0x61, 0x6e, 0x61, 0x67,
+	0x65, 0x50, 0x00, 0x5a, 0x33, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x44, 0x61, 0x74, 0x61, 0x57, 0x6f, 0x72, 0x6b, 0x62, 0x65, 0x6e, 0x63, 0x68, 0x2f, 0x67, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x78, 0x67, 0x6f, 0x2f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2f, 0x70,
+	0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1699,46 +1777,48 @@ func file_proto_types_request_sync_job_manage_proto_rawDescGZIP() []byte {
 	return file_proto_types_request_sync_job_manage_proto_rawDescData
 }
 
-var file_proto_types_request_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_proto_types_request_sync_job_manage_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_proto_types_request_sync_job_manage_proto_goTypes = []interface{}{
-	(*ListSyncJobs)(nil),               // 0: request.ListSyncJobs
-	(*CreateSyncJob)(nil),              // 1: request.CreateSyncJob
-	(*DeleteSyncJobs)(nil),             // 2: request.DeleteSyncJobs
-	(*MoveSyncJobs)(nil),               // 3: request.MoveSyncJobs
-	(*UpdateSyncJob)(nil),              // 4: request.UpdateSyncJob
-	(*DescribeSyncJob)(nil),            // 5: request.DescribeSyncJob
-	(*SetSyncJobSchedule)(nil),         // 6: request.SetSyncJobSchedule
-	(*SetSyncJobConf)(nil),             // 7: request.SetSyncJobConf
-	(*GetSyncJobSchedule)(nil),         // 8: request.GetSyncJobSchedule
-	(*GetSyncJobConf)(nil),             // 9: request.GetSyncJobConf
-	(*ListReleaseSyncJobs)(nil),        // 10: request.ListReleaseSyncJobs
-	(*UpdateReleaseSyncJobStatus)(nil), // 11: request.UpdateReleaseSyncJobStatus
-	(*ReleaseSyncJob)(nil),             // 12: request.ReleaseSyncJob
-	(*OfflineReleaseSyncJob)(nil),      // 13: request.OfflineReleaseSyncJob
-	(*ReopenReleaseSyncJob)(nil),       // 14: request.ReopenReleaseSyncJob
-	(*ConvertSyncJobMode)(nil),         // 15: request.ConvertSyncJobMode
-	(*ListSyncJobVersions)(nil),        // 16: request.ListSyncJobVersions
-	(*GenerateJobJson)(nil),            // 17: request.GenerateJobJson
-	(pbmodel.SyncJob_Type)(0),          // 18: model.SyncJob.Type
-	(pbmodel.DataSource_Type)(0),       // 19: model.DataSource.Type
-	(*pbmodel.SyncJobSchedule)(nil),    // 20: model.SyncJobSchedule
-	(*pbmodel.SyncJobConf)(nil),        // 21: model.SyncJobConf
-	(pbmodel.SyncJobRelease_Status)(0), // 22: model.SyncJobRelease.Status
+	(*ListSyncJobs)(nil),                  // 0: request.ListSyncJobs
+	(*CreateSyncJob)(nil),                 // 1: request.CreateSyncJob
+	(*DeleteSyncJobs)(nil),                // 2: request.DeleteSyncJobs
+	(*MoveSyncJobs)(nil),                  // 3: request.MoveSyncJobs
+	(*UpdateSyncJob)(nil),                 // 4: request.UpdateSyncJob
+	(*DescribeSyncJob)(nil),               // 5: request.DescribeSyncJob
+	(*SetSyncJobSchedule)(nil),            // 6: request.SetSyncJobSchedule
+	(*SetSyncJobConf)(nil),                // 7: request.SetSyncJobConf
+	(*GetSyncJobSchedule)(nil),            // 8: request.GetSyncJobSchedule
+	(*GetSyncJobConf)(nil),                // 9: request.GetSyncJobConf
+	(*ListReleaseSyncJobs)(nil),           // 10: request.ListReleaseSyncJobs
+	(*UpdateReleaseSyncJobStatus)(nil),    // 11: request.UpdateReleaseSyncJobStatus
+	(*ReleaseSyncJob)(nil),                // 12: request.ReleaseSyncJob
+	(*OfflineReleaseSyncJob)(nil),         // 13: request.OfflineReleaseSyncJob
+	(*ReopenReleaseSyncJob)(nil),          // 14: request.ReopenReleaseSyncJob
+	(*ConvertSyncJobMode)(nil),            // 15: request.ConvertSyncJobMode
+	(*ListSyncJobVersions)(nil),           // 16: request.ListSyncJobVersions
+	(*GenerateJobJson)(nil),               // 17: request.GenerateJobJson
+	(*LoadSyncJobScheduleParameters)(nil), // 18: request.LoadSyncJobScheduleParameters
+	(pbmodel.SyncJob_Type)(0),             // 19: model.SyncJob.Type
+	(pbmodel.DataSource_Type)(0),          // 20: model.DataSource.Type
+	(*pbmodel.SyncJobSchedule)(nil),       // 21: model.SyncJobSchedule
+	(*pbmodel.SyncJobConf)(nil),           // 22: model.SyncJobConf
+	(pbmodel.SyncJobRelease_Status)(0),    // 23: model.SyncJobRelease.Status
 }
 var file_proto_types_request_sync_job_manage_proto_depIdxs = []int32{
-	18, // 0: request.CreateSyncJob.type:type_name -> model.SyncJob.Type
-	19, // 1: request.CreateSyncJob.source_type:type_name -> model.DataSource.Type
-	19, // 2: request.CreateSyncJob.target_type:type_name -> model.DataSource.Type
-	20, // 3: request.SetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
-	21, // 4: request.SetSyncJobConf.conf:type_name -> model.SyncJobConf
-	22, // 5: request.ListReleaseSyncJobs.status:type_name -> model.SyncJobRelease.Status
-	22, // 6: request.UpdateReleaseSyncJobStatus.status:type_name -> model.SyncJobRelease.Status
-	21, // 7: request.ConvertSyncJobMode.conf:type_name -> model.SyncJobConf
-	8,  // [8:8] is the sub-list for method output_type
-	8,  // [8:8] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	19, // 0: request.CreateSyncJob.type:type_name -> model.SyncJob.Type
+	20, // 1: request.CreateSyncJob.source_type:type_name -> model.DataSource.Type
+	20, // 2: request.CreateSyncJob.target_type:type_name -> model.DataSource.Type
+	21, // 3: request.SetSyncJobSchedule.schedule:type_name -> model.SyncJobSchedule
+	22, // 4: request.SetSyncJobConf.conf:type_name -> model.SyncJobConf
+	23, // 5: request.ListReleaseSyncJobs.status:type_name -> model.SyncJobRelease.Status
+	23, // 6: request.UpdateReleaseSyncJobStatus.status:type_name -> model.SyncJobRelease.Status
+	22, // 7: request.ConvertSyncJobMode.conf:type_name -> model.SyncJobConf
+	22, // 8: request.LoadSyncJobScheduleParameters.conf:type_name -> model.SyncJobConf
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_proto_types_request_sync_job_manage_proto_init() }
@@ -1963,6 +2043,18 @@ func file_proto_types_request_sync_job_manage_proto_init() {
 				return nil
 			}
 		}
+		file_proto_types_request_sync_job_manage_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*LoadSyncJobScheduleParameters); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -1970,7 +2062,7 @@ func file_proto_types_request_sync_job_manage_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_types_request_sync_job_manage_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -887,3 +887,52 @@ func (this *GenerateJobJson) Validate() error {
 	}
 	return nil
 }
+
+func (this *LoadSyncJobScheduleParameters) _xxx_xxx_Validator_Validate_space_id() error {
+	if !(len(this.SpaceId) == 20) {
+		return protovalidator.FieldError1("LoadSyncJobScheduleParameters", "the byte length of field 'space_id' must be equal to '20'", protovalidator.StringByteLenToString(this.SpaceId))
+	}
+	if !(strings.HasPrefix(this.SpaceId, "wks-")) {
+		return protovalidator.FieldError1("LoadSyncJobScheduleParameters", "the value of field 'space_id' must start with string 'wks-'", this.SpaceId)
+	}
+	return nil
+}
+
+func (this *LoadSyncJobScheduleParameters) _xxx_xxx_Validator_Validate_job_id() error {
+	if !(len(this.JobId) == 20) {
+		return protovalidator.FieldError1("LoadSyncJobScheduleParameters", "the byte length of field 'job_id' must be equal to '20'", protovalidator.StringByteLenToString(this.JobId))
+	}
+	if !(strings.HasPrefix(this.JobId, "syj-")) {
+		return protovalidator.FieldError1("LoadSyncJobScheduleParameters", "the value of field 'job_id' must start with string 'syj-'", this.JobId)
+	}
+	return nil
+}
+
+func (this *LoadSyncJobScheduleParameters) _xxx_xxx_Validator_Validate_conf() error {
+	if !(this.Conf != nil) {
+		return protovalidator.FieldError2("LoadSyncJobScheduleParameters", "the value of field 'conf' cannot be null")
+	}
+	if dt, ok := interface{}(this.Conf).(interface{ Validate() error }); ok {
+		if err := dt.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Set default value for message request.LoadSyncJobScheduleParameters
+func (this *LoadSyncJobScheduleParameters) Validate() error {
+	if this == nil {
+		return nil
+	}
+	if err := this._xxx_xxx_Validator_Validate_space_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_job_id(); err != nil {
+		return err
+	}
+	if err := this._xxx_xxx_Validator_Validate_conf(); err != nil {
+		return err
+	}
+	return nil
+}

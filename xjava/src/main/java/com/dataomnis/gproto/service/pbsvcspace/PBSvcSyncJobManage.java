@@ -27,7 +27,7 @@ public final class PBSvcSyncJobManage {
       "nage.proto\022\014spacemanager\032\035proto/types/mo" +
       "del/empty.proto\032)proto/types/request/syn" +
       "c_job_manage.proto\032*proto/types/response" +
-      "/sync_job_manage.proto2\267\014\n\rSyncJobManage" +
+      "/sync_job_manage.proto2\253\r\n\rSyncJobManage" +
       "\022?\n\014ListSyncJobs\022\025.request.ListSyncJobs\032" +
       "\026.response.ListSyncJobs\"\000\022?\n\016DeleteSyncJ" +
       "obs\022\027.request.DeleteSyncJobs\032\022.model.Emp" +
@@ -67,10 +67,13 @@ public final class PBSvcSyncJobManage {
       ".request.GenerateJobJson\032\031.response.Gene" +
       "rateJobJson\"\000\022Q\n\022ConvertSyncJobMode\022\033.re" +
       "quest.ConvertSyncJobMode\032\034.response.Conv" +
-      "ertSyncJobMode\"\000Bw\n\'com.dataomnis.gproto" +
-      ".service.pbsvcspaceB\022PBSvcSyncJobManageP" +
-      "\000Z6github.com/DataWorkbench/gproto/xgo/s" +
-      "ervice/pbsvcspaceb\006proto3"
+      "ertSyncJobMode\"\000\022r\n\035LoadSyncJobScheduleP" +
+      "arameters\022&.request.LoadSyncJobScheduleP" +
+      "arameters\032\'.response.LoadSyncJobSchedule" +
+      "Parameters\"\000Bw\n\'com.dataomnis.gproto.ser" +
+      "vice.pbsvcspaceB\022PBSvcSyncJobManageP\000Z6g" +
+      "ithub.com/DataWorkbench/gproto/xgo/servi" +
+      "ce/pbsvcspaceb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
