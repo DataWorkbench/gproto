@@ -5704,7 +5704,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The user source. 1 indicates the user is add in local.
-     * And 2 indicates the user is add by third part.
+     * And 2 indicates the user is add by enfei.
      * &#64;inject_tag: json:"source" gorm:"column:source"
      * </pre>
      *
@@ -5715,7 +5715,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The user source. 1 indicates the user is add in local.
-     * And 2 indicates the user is add by third part.
+     * And 2 indicates the user is add by enfei.
      * &#64;inject_tag: json:"source" gorm:"column:source"
      * </pre>
      *
@@ -6169,6 +6169,10 @@ public final class PBModelAccount {
        * <code>EnFei = 2;</code>
        */
       EnFei(2),
+      /**
+       * <code>Ldap = 3;</code>
+       */
+      Ldap(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -6184,6 +6188,10 @@ public final class PBModelAccount {
        * <code>EnFei = 2;</code>
        */
       public static final int EnFei_VALUE = 2;
+      /**
+       * <code>Ldap = 3;</code>
+       */
+      public static final int Ldap_VALUE = 3;
 
 
       public final int getNumber() {
@@ -6213,6 +6221,7 @@ public final class PBModelAccount {
           case 0: return SourceUnset;
           case 1: return Native;
           case 2: return EnFei;
+          case 3: return Ldap;
           default: return null;
         }
       }
@@ -6526,7 +6535,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The user source. 1 indicates the user is add in local.
-     * And 2 indicates the user is add by third part.
+     * And 2 indicates the user is add by enfei.
      * &#64;inject_tag: json:"source" gorm:"column:source"
      * </pre>
      *
@@ -6539,7 +6548,7 @@ public final class PBModelAccount {
     /**
      * <pre>
      * The user source. 1 indicates the user is add in local.
-     * And 2 indicates the user is add by third part.
+     * And 2 indicates the user is add by enfei.
      * &#64;inject_tag: json:"source" gorm:"column:source"
      * </pre>
      *
@@ -7594,7 +7603,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The user source. 1 indicates the user is add in local.
-       * And 2 indicates the user is add by third part.
+       * And 2 indicates the user is add by enfei.
        * &#64;inject_tag: json:"source" gorm:"column:source"
        * </pre>
        *
@@ -7607,7 +7616,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The user source. 1 indicates the user is add in local.
-       * And 2 indicates the user is add by third part.
+       * And 2 indicates the user is add by enfei.
        * &#64;inject_tag: json:"source" gorm:"column:source"
        * </pre>
        *
@@ -7624,7 +7633,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The user source. 1 indicates the user is add in local.
-       * And 2 indicates the user is add by third part.
+       * And 2 indicates the user is add by enfei.
        * &#64;inject_tag: json:"source" gorm:"column:source"
        * </pre>
        *
@@ -7640,7 +7649,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The user source. 1 indicates the user is add in local.
-       * And 2 indicates the user is add by third part.
+       * And 2 indicates the user is add by enfei.
        * &#64;inject_tag: json:"source" gorm:"column:source"
        * </pre>
        *
@@ -7660,7 +7669,7 @@ public final class PBModelAccount {
       /**
        * <pre>
        * The user source. 1 indicates the user is add in local.
-       * And 2 indicates the user is add by third part.
+       * And 2 indicates the user is add by enfei.
        * &#64;inject_tag: json:"source" gorm:"column:source"
        * </pre>
        *
@@ -11749,7 +11758,7 @@ public final class PBModelAccount {
       "\r\342\337\037\t\022\007\332\001\0040\000X\001\022\031\n\004name\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
       "\000\"V\n\004Type\022\r\n\tTypeUnset\020\000\022\016\n\nSuperAdmin\020\001" +
       "\022\t\n\005Admin\020\002\022\010\n\004User\020\003\022\013\n\007Visitor\020\004\022\r\n\tDe" +
-      "veloper\020\005\"\315\003\n\004User\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037" +
+      "veloper\020\005\"\327\003\n\004User\022\034\n\007user_id\030\001 \001(\tB\013\342\337\037" +
       "\007\022\005\302\001\002\"\000\022\031\n\004name\030\002 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\r\n\005e" +
       "mail\030\003 \001(\t\022-\n\004role\030\004 \001(\0162\020.model.User.Ro" +
       "leB\r\342\337\037\t\022\007\332\001\0040\000X\001\0221\n\006status\030\005 \001(\0162\022.mode" +
@@ -11759,28 +11768,28 @@ public final class PBModelAccount {
       "ted\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\">\n\006Status\022\017\n\013Stat" +
       "usUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006active\020\002\022\n\n\006ba" +
       "nned\020\003\"7\n\004Role\022\r\n\tTypeUnset\020\000\022\010\n\004User\020\001\022" +
-      "\t\n\005Admin\020\002\022\013\n\007Visitor\020\003\"0\n\006Source\022\017\n\013Sou" +
-      "rceUnset\020\000\022\n\n\006Native\020\001\022\t\n\005EnFei\020\002\"\371\003\n\tAc" +
-      "cessKey\022\"\n\raccess_key_id\030\001 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\022&\n\021secret_access_key\030\002 \001(\tB\013\342\337\037\007\022\005\302\001" +
-      "\002\"\000\022\032\n\005owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022\031\n\004name\030" +
-      "\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022>\n\ncontroller\030\005 \001(\0162\033" +
-      ".model.AccessKey.ControllerB\r\342\337\037\t\022\007\332\001\0040\000" +
-      "X\001\0226\n\006status\030\006 \001(\0162\027.model.AccessKey.Sta" +
-      "tusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\"\n\013description\030\007 \001(\tB" +
-      "\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022\025\n\rip_white_list\030\010 \001(\t\022\034\n" +
-      "\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\n" +
-      " \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"7\n\nController\022\023\n\017Contr" +
-      "ollerUnset\020\000\022\n\n\006pitrix\020\001\022\010\n\004self\020\002\"A\n\006St" +
-      "atus\022\020\n\014_StatusUnset\020\000\022\013\n\007deleted\020\001\022\n\n\006a" +
-      "ctive\020\002\022\014\n\010inactive\020\003\"\227\001\n\014Notification\022\r" +
-      "\n\005owner\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022" +
-      "\023\n\013description\030\004 \001(\t\022\r\n\005email\030\005 \001(\t\022\034\n\007c" +
-      "reated\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007updated\030\t \001" +
-      "(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.dataomnis.gproto." +
-      "types.pbmodelB\016PBModelAccountP\000Z1github." +
-      "com/DataWorkbench/gproto/xgo/types/pbmod" +
-      "elb\006proto3"
+      "\t\n\005Admin\020\002\022\013\n\007Visitor\020\003\":\n\006Source\022\017\n\013Sou" +
+      "rceUnset\020\000\022\n\n\006Native\020\001\022\t\n\005EnFei\020\002\022\010\n\004Lda" +
+      "p\020\003\"\371\003\n\tAccessKey\022\"\n\raccess_key_id\030\001 \001(\t" +
+      "B\013\342\337\037\007\022\005\302\001\002\"\000\022&\n\021secret_access_key\030\002 \001(\t" +
+      "B\013\342\337\037\007\022\005\302\001\002\"\000\022\032\n\005owner\030\003 \001(\tB\013\342\337\037\007\022\005\302\001\002\"" +
+      "\000\022\031\n\004name\030\004 \001(\tB\013\342\337\037\007\022\005\302\001\002\"\000\022>\n\ncontroll" +
+      "er\030\005 \001(\0162\033.model.AccessKey.ControllerB\r\342" +
+      "\337\037\t\022\007\332\001\0040\000X\001\0226\n\006status\030\006 \001(\0162\027.model.Acc" +
+      "essKey.StatusB\r\342\337\037\t\022\007\332\001\0040\000X\001\022\"\n\013descript" +
+      "ion\030\007 \001(\tB\r\342\337\037\t\022\007\302\001\004\310\001\200\002\022\025\n\rip_white_lis" +
+      "t\030\010 \001(\t\022\034\n\007created\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n" +
+      "\007updated\030\n \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\"7\n\nControlle" +
+      "r\022\023\n\017ControllerUnset\020\000\022\n\n\006pitrix\020\001\022\010\n\004se" +
+      "lf\020\002\"A\n\006Status\022\020\n\014_StatusUnset\020\000\022\013\n\007dele" +
+      "ted\020\001\022\n\n\006active\020\002\022\014\n\010inactive\020\003\"\227\001\n\014Noti" +
+      "fication\022\r\n\005owner\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\014\n\004n" +
+      "ame\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\r\n\005email\030" +
+      "\005 \001(\t\022\034\n\007created\030\010 \001(\003B\013\342\337\037\007\022\005\262\001\0020\000\022\034\n\007u" +
+      "pdated\030\t \001(\003B\013\342\337\037\007\022\005\262\001\0020\000Bi\n\"com.dataomn" +
+      "is.gproto.types.pbmodelB\016PBModelAccountP" +
+      "\000Z1github.com/DataWorkbench/gproto/xgo/t" +
+      "ypes/pbmodelb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
