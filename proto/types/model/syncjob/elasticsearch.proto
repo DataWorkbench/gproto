@@ -18,12 +18,12 @@ message ElasticSearchSource {
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
-    // version
-    // @inject_tag: json:"version" 
-    string version = 2;
     // index
-    // @inject_tag: json:"index" 
-    string index = 3;
+    // @inject_tag: json:"index"
+    string index = 2;
+    // type
+    // @inject_tag: json:"type"
+    string type = 3;
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 4;
@@ -36,12 +36,12 @@ message ElasticSearchTarget {
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
-    // version
-    // @inject_tag: json:"version" 
-    string version = 2;
     // index
-    // @inject_tag: json:"index" 
-    string index = 3;
+    // @inject_tag: json:"index"
+    string index = 2;
+    // type
+    // @inject_tag: json:"type"
+    string type = 3;
     // batch size
     // @inject_tag: json:"batch_size" 
     int32 batch_size = 4;
