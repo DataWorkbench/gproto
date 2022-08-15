@@ -14,11 +14,6 @@ func (this *MongodbSource) SetDefaults() {
 	if this == nil {
 		return
 	}
-	if this.Visualization != nil {
-		if dt, ok := interface{}(this.Visualization).(interface{ SetDefaults() }); ok {
-			dt.SetDefaults()
-		}
-	}
 	return
 }
 

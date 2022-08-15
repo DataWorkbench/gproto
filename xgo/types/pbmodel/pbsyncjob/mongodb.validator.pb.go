@@ -21,24 +21,12 @@ func (this *MongodbSource) _xxx_xxx_Validator_Validate_column() error {
 	return nil
 }
 
-func (this *MongodbSource) _xxx_xxx_Validator_Validate_visualization() error {
-	if dt, ok := interface{}(this.Visualization).(interface{ Validate() error }); ok {
-		if err := dt.Validate(); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
 // Set default value for message model.MongodbSource
 func (this *MongodbSource) Validate() error {
 	if this == nil {
 		return nil
 	}
 	if err := this._xxx_xxx_Validator_Validate_column(); err != nil {
-		return err
-	}
-	if err := this._xxx_xxx_Validator_Validate_visualization(); err != nil {
 		return err
 	}
 	return nil

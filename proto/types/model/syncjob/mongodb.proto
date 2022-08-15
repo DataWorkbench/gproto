@@ -20,24 +20,15 @@ message MongodbSource {
     // column
     // @inject_tag: json:"column" 
     repeated Column column = 1;
-    // database
-    // @inject_tag: json:"database" 
-    string database = 2;
     // collection name
     // @inject_tag: json:"collection_name" 
-    string collection_name = 3;
+    string collection_name = 2;
     // fetch size
     // @inject_tag: json:"fetch_size" 
-    int32 fetch_size = 4;
-    // condition type
-    // @inject_tag: json:"condition_type"
-    BaseEnum.ConditionType condition_type = 5;
-    // visualization condition
-    // @inject_tag: json:"visualization"
-    Condition visualization = 6;
-    // express condition
-    // @inject_tag: json:"express"
-    string express = 7;
+    int32 fetch_size = 3;
+    // filter
+    // @inject_tag: json:"filter"
+    string filter = 4;
 
 }
 
