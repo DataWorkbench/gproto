@@ -11,8 +11,8 @@ import (
 )
 
 func (this *Column) _xxx_xxx_Validator_Validate_name() error {
-	if !(len(this.Name) > 1) {
-		return protovalidator.FieldError1("Column", "the byte length of field 'name' must be greater than '1'", protovalidator.StringByteLenToString(this.Name))
+	if !(len(this.Name) > 0) {
+		return protovalidator.FieldError1("Column", "the byte length of field 'name' must be greater than '0'", protovalidator.StringByteLenToString(this.Name))
 	}
 	if !(len(this.Name) <= 128) {
 		return protovalidator.FieldError1("Column", "the byte length of field 'name' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Name))
@@ -21,8 +21,8 @@ func (this *Column) _xxx_xxx_Validator_Validate_name() error {
 }
 
 func (this *Column) _xxx_xxx_Validator_Validate_type() error {
-	if !(len(this.Type) > 1) {
-		return protovalidator.FieldError1("Column", "the byte length of field 'type' must be greater than '1'", protovalidator.StringByteLenToString(this.Type))
+	if !(len(this.Type) > 0) {
+		return protovalidator.FieldError1("Column", "the byte length of field 'type' must be greater than '0'", protovalidator.StringByteLenToString(this.Type))
 	}
 	if !(len(this.Type) <= 128) {
 		return protovalidator.FieldError1("Column", "the byte length of field 'type' must be less than or equal to '128'", protovalidator.StringByteLenToString(this.Type))

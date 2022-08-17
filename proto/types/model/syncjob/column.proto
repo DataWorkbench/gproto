@@ -14,10 +14,10 @@ message Column{
 
     // column name
     // @inject_tag: json:"name" 
-    string name = 1 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    string name = 1 [(validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 128 }];
     // column type
     // @inject_tag: json:"type" 
-    string type = 2 [(validator.field).tags.string = { byte_len_gt: 1, byte_len_lte: 128 }];
+    string type = 2 [(validator.field).tags.string = { byte_len_gt: 0, byte_len_lte: 128 }];
     // column index
     // @inject_tag: json:"index"
     int32 index=3;
