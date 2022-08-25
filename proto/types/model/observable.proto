@@ -154,27 +154,27 @@ message WorkspaceOverview {
 
     // The total CU of flink cluster in the workspace.
     // @inject_tag: json:"cu_total" gorm:"cu_total;<-:false"
-    int64 cu_total = 7;
+    double cu_total = 7;
 
     // The number CU of flink cluster in the workspace that are in the running status.
     // @inject_tag: json:"cu_running" gorm:"cu_running;<-:false"
-    int64 cu_running = 8;
+    double cu_running = 8;
 
     // The number CU of flink cluster in the workspace that are in the stopped status.
     // @inject_tag: json:"cu_stopped" gorm:"cu_stopped;<-:false"
-    int64 cu_stopped = 9;
+    double cu_stopped = 9;
 
     // The number CU of flink cluster in the workspace that are in the starting status.
     // @inject_tag: json:"cu_starting" gorm:"cu_starting;<-:false"
-    int64 cu_starting = 10;
+    double cu_starting = 10;
 
     // The number CU of flink cluster in the workspace that are in the exception status.
     // @inject_tag: json:"cu_exception" gorm:"cu_exception;<-:false"
-    int64 cu_exception = 11;
+    double cu_exception = 11;
 
     // The number CU of flink cluster in the workspace that are in the arrears status.
     // @inject_tag: json:"cu_arrears" gorm:"cu_arrears;<-:false"
-    int64 cu_arrears = 12;
+    double cu_arrears = 12;
   }
 
   // The workspace id.
