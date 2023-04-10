@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+// Warn: This File Has Be Deprecated
+
 option go_package = "github.com/DataWorkbench/gproto/pkg/request";
 
 // Package name of class.

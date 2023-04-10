@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+set -e;
+
 # Generate protobuf code for go
 
 if ! [[ "$0" =~ scripts/generate_go.sh ]]; then
